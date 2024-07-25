@@ -100,7 +100,7 @@ const FormBank = ({ isiPenting }) => {
                         <span className="absolute w-32 h-32 -top-8 -left-2 bg-biruTuwa-200 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left"></span>
                         <span className="absolute w-32 h-32 -top-8 -left-2 bg-biruTuwa-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-left"></span>
                         <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-                            Submit!
+                        Ajukan!
                         </span>
                     </button>
 
@@ -112,7 +112,7 @@ const FormBank = ({ isiPenting }) => {
                         <span className="absolute w-40 h-32 -top-9 -left-2 bg-biruTuwa-200 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left"></span>
                         <span className="absolute w-40 h-32 -top-9 -left-2 bg-biruTuwa-300 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-left"></span>
                         <span className="group-hover:opacity-100 group-hover:duration-1000 group-hover:text-primary duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-                            Contact Us
+                        Hubungi Kami
                         </span>
                     </button>
                 </div>

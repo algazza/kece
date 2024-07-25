@@ -1,6 +1,6 @@
 const SyaratPage = () => {
     return (
-        <div>Hello Worlddd</div>
+        <div>Hello Worlddd</div> // Mahes
     );
 };
 
