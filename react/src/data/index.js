@@ -3,7 +3,7 @@
 // =========================== FORM ====================
 export const formIdentitas= [
     {
-        id: "name",
+        id: "nama",
         title: "Name",
         type: "text"
     },
@@ -28,6 +28,7 @@ export const formPekerjaan=[
     {
         id: "wirausaha",
         title: "Wirausaha",
+
     },
     {
         id: "karyawan",
@@ -50,19 +51,19 @@ export const formPekerjaan=[
 
 export const formPenghasilan=[
     {
-        id: "normal",
+        id: "5 Juta",
         title: "5 Juta",
     },
     {
-        id: "lehuga",
+        id: "5 - 10 Juta",
         title: "5 - 10 Juta",
     },
     {
-        id: "orkay",
+        id: "10 -15 Juta",
         title: "10 - 15 Juta",
     },
     {
-        id: "sugih",
+        id: "> 15 Juta",
         title: ">15 Juta",
     },
 ]
@@ -92,7 +93,7 @@ export const formSelectKredit= [
         option1: "Flat",
         option2: "Anuitas",
         option3: "Efektif",
-        name: "bunga"
+        name: "perhitungan_bunga"
     },
 ]
 
