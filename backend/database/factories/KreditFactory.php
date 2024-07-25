@@ -30,7 +30,7 @@ class KreditFactory extends Factory
             'bunga_pertahun' => $this->faker->randomFloat(2, 5, 20) . '%',
             'penghasilan_perbulan' => $this->faker->numberBetween(3000000, 50000000),
             'catatan' => $this->faker->sentence(),
-            'jenis' => $this->faker->randomElement(['Kredit Usaha', 'Kredit Konsumsi', 'Kredit Modal Kerja']),
+            'jenis' => $this->faker->randomElement(['Tabungan', 'Deposit', 'Kredit']),
         ];
     }
 }

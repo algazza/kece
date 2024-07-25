@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kredit;
 use App\Charts\KreditChart;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class KreditController extends Controller
 {
@@ -58,7 +59,13 @@ class KreditController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $kredit = Kredit::find($id);
+
+        if (!$kredit) {
+            return redirect()->route('kredit.index')->with('error', 'Data not found');
+        }
+    
+        return view('admin.kredit.KreditUser', compact('kredit'));
     }
 
     /**

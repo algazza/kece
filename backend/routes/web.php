@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KreditController;
-
+use App\Http\Controllers\DashboardController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,18 +16,15 @@ use App\Http\Controllers\KreditController;
 |
 */
 
-Route::get('/', function(){
-    return view('admin.Dashboard');
-});
 
 
-Route::get('/id', function(){
-    return view('admin.kredit.KreditUser');
-});
 
 
+// Dashboard
+Route::get('/', [DashboardController::class, 'index']);
 
 
 // Kredit
-Route::get('/Kredit', [KreditController::class, 'index']);
 
+Route::get('/Kredit', [KreditController::class, 'index']);
+Route::get('/Kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
