@@ -16,7 +16,9 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const Kredit = () => {
+
+const Kredit = ({inputs, handleChange}) => {
+
     return (
         <div className="">
             <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
@@ -39,6 +41,9 @@ const Kredit = () => {
                             }
                             label="Total Pinjaman"
                             type="number"
+                            name="total_pinjaman"
+                            value={inputs.total_pinjaman}
+                            onChange={handleChange}
                         />
                     </FormControl>
 
@@ -51,6 +56,10 @@ const Kredit = () => {
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
                                 label={selek.title}
+                                name={selek.name}
+                                value={inputs[selek.name]}
+                                onChange={handleChange}
+
                             >
                                 <MenuItem value={selek.option1}>
                                     {selek.option1}
@@ -77,6 +86,9 @@ const Kredit = () => {
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
                             label={"Bunga Pertahun"}
+                            name="bunga_pertahun"
+                            value={inputs.bunga_pertahun}
+                            onChange={handleChange}
                         >
                             <MenuItem value={"10%"}>10%</MenuItem>
                             <MenuItem value={"15%"}>15%</MenuItem>
@@ -87,7 +99,11 @@ const Kredit = () => {
                     <div className="form-control bg-abuTerang p-6 border border-black rounded-md min-w-[90px]">
                         <h1 className="">Penghasilan Perbulan</h1>
                         <FormGroup className="">
-                            <RadioGroup>
+                            <RadioGroup
+                                value={inputs.penghasilan_perbulan}
+                                name="penghasilan_perbulan"
+                                onChange={handleChange}
+                            >
                                 {formPenghasilan.map((gaji) => (
                                     <FormControlLabel
                                         key={gaji.id}
@@ -108,6 +124,9 @@ const Kredit = () => {
                         aria-label="Catatan"
                         minRows={3}
                         placeholder="Catatan"
+                        name="catatan"
+                        value={inputs.catatan}
+                        onChange={handleChange}
                     />
                     <p className={`${styles.fontCaption} mt-2`}>
                         Mohon mengisi di CATATAN kalo memang ada Informasi Awal
