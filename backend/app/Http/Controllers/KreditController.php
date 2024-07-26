@@ -45,7 +45,9 @@ class KreditController extends Controller
             'bunga_pertahun' => $request->bunga_pertahun,
             'penghasilan_perbulan' => $request->penghasilan_perbulan,
             'catatan' => $request->catatan,
-            'jenis' => $request->jenis
+            'jenis' => $request->jenis,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
     
 
@@ -90,6 +92,14 @@ class KreditController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+
+
+    public function fetch()
+    {
+        $kredit = Kredit::orderBy('created_at', 'desc')->get();
+        return response()->json($kredit);
     }
 }
 
