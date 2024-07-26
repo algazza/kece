@@ -1,3 +1,5 @@
+@php use Carbon\Carbon; @endphp
+
 @extends('layout')
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen font-poppins">
@@ -155,172 +157,35 @@
             <div class="bg-gray-50 w-[26rem] my-[1rem] rounded-[5px] h-[100%]  box-border border-[0.5px] border-black shadow-lg overflow-auto">
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem]">
                     <p>All Person Data</p>
+                    <div class="pagination-links">
+                        {{ $kredit->links() }}
+                    </div>
                 </div>
                 <div class=" h-full mt-[1.5rem]">
-                    <a href="/id">
-                        <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                            <p class="text-[1.3rem]">
-                                1
-                            </p>
-                            <div class="block px-[1rem] text-left">
-                                <h3 class="text-[0.8rem] font-medium">Fadhil Al Ghaza Aswadira</h3>
-                                <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                    <p>15:30</p>
-                                    <p class="px-[0.4rem]">|</p>
-                                    <p>16 December 2024</p>
+                    @foreach ($kredit as $no => $data)
+                        <a href="{{ route('kredit.show', $data->id ) }}">
+                            <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
+                                <p class="text-[1.3rem]">
+                                    {{ ($kredit->currentPage() - 1) * $kredit->perPage() + $no + 1 }}
+                                </p>
+                                <div class="block px-[1rem] text-left">
+                                    <h3 class="text-[0.8rem] font-medium">{{ $data->nama }}</h3>
+                                    <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
+                                        <p>{{ Carbon::parse($data->tanggal)->format('H:i') }}</p>
+                                        <p class="px-[0.4rem]">|</p>
+                                        <p>{{ Carbon::parse($data->tanggal)->format('d F Y') }}</p>
+                                    </div>
                                 </div>
+                                <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
+                                    {{ $data->jenis }}
+                                </p>
                             </div>
-                            <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                                Deposit
-                            </p>
-                        </div>
-                    </a>
-                    <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                        <p class="text-[1.3rem]">
-                            2
-                        </p>
-                        <div class="block px-[1rem] text-left">
-                            <h3 class="text-[0.8rem] font-medium">Fadhil Al Ghaza Aswadira</h3>
-                            <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                <p>15:30</p>
-                                <p class="px-[0.4rem]">|</p>
-                                <p>16 December 2024</p>
-                            </div>
-                        </div>
-                         <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                            Deposit
-                        </p>
-                    </div>
-                    <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                        <p class="text-[1.3rem]">
-                            3
-                        </p>
-                        <div class="block px-[1rem] text-left">
-                            <h3 class="text-[0.8rem] font-medium">Fadhil Al Ghaza Aswadira</h3>
-                            <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                <p>15:30</p>
-                                <p class="px-[0.4rem]">|</p>
-                                <p>16 December 2024</p>
-                            </div>
-                        </div>
-                         <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                            Deposit
-                        </p>
-                    </div>
-                    <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                        <p class="text-[1.3rem]">
-                            4
-                        </p>
-                        <div class="block px-[1rem] text-left">
-                            <h3 class="text-[0.8rem] font-medium">Fadhil Al Ghaza Aswadira</h3>
-                            <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                <p>15:30</p>
-                                <p class="px-[0.4rem]">|</p>
-                                <p>16 December 2024</p>
-                            </div>
-                        </div>
-                         <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                            Deposit
-                        </p>
-                    </div>
-                    <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                        <p class="text-[1.3rem]">
-                            5
-                        </p>
-                        <div class="block px-[1rem] text-left">
-                            <h3 class="text-[0.8rem] font-medium">Fadhil Al Ghaza Aswadira</h3>
-                            <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                <p>15:30</p>
-                                <p class="px-[0.4rem]">|</p>
-                                <p>16 December 2024</p>
-                            </div>
-                        </div>
-                         <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                            Deposit
-                        </p>
-                    </div>
-                    <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                        <p class="text-[1.3rem]">
-                            5
-                        </p>
-                        <div class="block px-[1rem] text-left">
-                            <h3 class="text-[0.8rem] font-medium">Fadhil Al Ghaza Aswadira</h3>
-                            <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                <p>15:30</p>
-                                <p class="px-[0.4rem]">|</p>
-                                <p>16 December 2024</p>
-                            </div>
-                        </div>
-                         <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                            Deposit
-                        </p>
-                    </div>
-                    <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                        <p class="text-[1.3rem]">
-                            5
-                        </p>
-                        <div class="block px-[1rem] text-left">
-                            <h3 class="text-[0.8rem] font-medium">Fadhil Al Ghaza Aswadira</h3>
-                            <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                <p>15:30</p>
-                                <p class="px-[0.4rem]">|</p>
-                                <p>16 December 2024</p>
-                            </div>
-                        </div>
-                         <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                            Deposit
-                        </p>
-                    </div>
-                    <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                        <p class="text-[1.3rem]">
-                            5
-                        </p>
-                        <div class="block px-[1rem] text-left">
-                            <h3 class="text-[0.8rem] font-medium">Fadhil Al Ghaza Aswadira</h3>
-                            <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                <p>15:30</p>
-                                <p class="px-[0.4rem]">|</p>
-                                <p>16 December 2024</p>
-                            </div>
-                        </div>
-                         <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                            Deposit
-                        </p>
-                    </div>
-                    <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                        <p class="text-[1.3rem]">
-                            5
-                        </p>
-                        <div class="block px-[1rem] text-left">
-                            <h3 class="text-[0.8rem] font-medium">Fadhil Al Ghaza Aswadira</h3>
-                            <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                <p>15:30</p>
-                                <p class="px-[0.4rem]">|</p>
-                                <p>16 December 2024</p>
-                            </div>
-                        </div>
-                         <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                            Deposit
-                        </p>
-                    </div>
-                    <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                        <p class="text-[1.3rem]">
-                            5
-                        </p>
-                        <div class="block px-[1rem] text-left">
-                            <h3 class="text-[0.8rem] font-medium">Fadhil Al Ghaza Aswadira</h3>
-                            <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                <p>15:30</p>
-                                <p class="px-[0.4rem]">|</p>
-                                <p>16 December 2024</p>
-                            </div>
-                        </div>
-                         <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                            Deposit
-                        </p>
-                    </div>
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
+
+    
 @endsection
