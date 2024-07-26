@@ -189,7 +189,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             function fetchData() {
-                fetch('/api/kredit')  // Endpoint untuk mendapatkan data terbaru
+                fetch('/api/kredit')
                     .then(response => response.json())
                     .then(data => {
                         let container = document.getElementById('kredit-data');
@@ -197,10 +197,10 @@
                         data.forEach(item => {
                             let element = document.createElement('div');
                             element.innerHTML = `
-                                <a href="${ route('kredit.show', $item->id ) }">
+                                <a href="/kredit/${item.id}">
                                     <div class="border-b-[0.5px] border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
                                         <p class="text-[1.3rem]">
-                                            ${item.nama}   
+                                            ${item.nama}
                                         </p>
                                         <div class="block px-[1rem] text-left">
                                             <h3 class="text-[0.8rem] font-medium">${item.nama}</h3>
@@ -221,11 +221,10 @@
                     })
                     .catch(error => console.error('Error:', error));
             }
-        
-            // Panggil fetchData setiap 5 detik
+
             setInterval(fetchData, 5000);
-            fetchData();  // Panggil sekali saat halaman dimuat pertama kali
+            fetchData();
         });
-        </script>
+    </script>
     
 @endsection
