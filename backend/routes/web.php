@@ -28,4 +28,5 @@ Route::get('/', [DashboardController::class, 'index']);
 
 Route::get('/Kredit', [KreditController::class, 'index']);
 Route::get('/Kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
-Route::get('/api/kredit', [KreditController::class, 'fetch']);
+Route::get('/api/kredit', [DashboardController::class, 'kredit']);
+

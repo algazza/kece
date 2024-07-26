@@ -161,7 +161,7 @@
                         {{ $kredit->links() }}
                     </div>
                 </div>
-                <div id="kredit-data" class=" h-full mt-[1.5rem]">
+                <div class=" h-full mt-[1.5rem]" id="content">
                     @foreach ($kredit as $no => $data)
                         <a href="{{ route('kredit.show', $data->id ) }}">
                             <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
@@ -186,45 +186,88 @@
             </div>
         </div>
     </section>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            function fetchData() {
-                fetch('/api/kredit')
-                    .then(response => response.json())
-                    .then(data => {
-                        let container = document.getElementById('kredit-data');
-                        container.innerHTML = '';
-                        data.forEach(item => {
-                            let element = document.createElement('div');
-                            element.innerHTML = `
-                                <a href="/kredit/${item.id}">
-                                    <div class="border-b-[0.5px] border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                                        <p class="text-[1.3rem]">
-                                            ${item.nama}
-                                        </p>
-                                        <div class="block px-[1rem] text-left">
-                                            <h3 class="text-[0.8rem] font-medium">${item.nama}</h3>
-                                            <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                                <p>${new Date(item.created_at).toLocaleTimeString()}</p>
-                                                <p class="px-[0.4rem]">|</p>
-                                                <p>${new Date(item.created_at).toLocaleDateString()}</p>
-                                            </div>
-                                        </div>
-                                        <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                                            ${item.jenis}
-                                        </p>
-                                    </div>
-                                </a>
-                            `;
-                            container.appendChild(element);
-                        });
-                    })
-                    .catch(error => console.error('Error:', error));
-            }
 
-            setInterval(fetchData, 5000);
-            fetchData();
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+<script>
+    let currentPage = 1;
+    const pollingInterval = 3000;
+
+    function fetchData(page = 1) {
+        $.ajax({
+            url: `/api/kredit?page=${page}`,
+            method: 'GET',
+            success: function(response) {
+                currentPage = response.pagination.current_page; // Simpan halaman saat ini
+                updateContent(response.data);
+                updatePagination(response.pagination);
+            },
+            error: function(xhr, status, error) {
+                console.error('Gagal mengambil data:', error);
+            }
         });
-    </script>
-    
+    }
+
+    function updateContent(data) {
+        let content = '';
+        data.forEach((item, index) => {
+            const createdAt = new Date(item.created_at);
+            const time = createdAt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+            const date = createdAt.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+
+            content += `
+                <a href="/Kredit/${item.id}">
+                    <div class="border-b border-black border-dashed mx-8 flex items-center cursor-pointer py-2 my-2">
+                        <p class="text-lg">${index + 1}</p>
+                        <div class="px-4 text-left">
+                            <h3 class="text-sm font-medium">${item.nama}</h3>
+                            <div class="flex text-xs text-gray-400">
+                                <p>${time}</p>
+                                <p class="px-1">|</p>
+                                <p>${date}</p>
+                            </div>
+                        </div>
+                        <p class="ml-auto py-1 px-3 bg-slate-200 text-xs rounded">${item.jenis}</p>
+                    </div>
+                </a>
+            `;
+        });
+        $('#content').html(content);
+    }
+
+    function updatePagination(pagination) {
+        let paginationHtml = '';
+
+        if (pagination.current_page > 1) {
+            paginationHtml += `<a href="#" class="pagination-link" data-page="${pagination.current_page - 1}">&laquo; Previous</a>`;
+        }
+
+        for (let page = 1; page <= pagination.last_page; page++) {
+            if (page === pagination.current_page) {
+                paginationHtml += `<span class="pagination-link current">${page}</span>`;
+            } else {
+                paginationHtml += `<a href="#" class="pagination-link" data-page="${page}">${page}</a>`;
+            }
+        }
+
+        if (pagination.current_page < pagination.last_page) {
+            paginationHtml += `<a href="#" class="pagination-link" data-page="${pagination.current_page + 1}">Next &raquo;</a>`;
+        }
+
+        $('.pagination-links').html(paginationHtml);
+    }
+
+    $(document).on('click', '.pagination-link', function(e) {
+        e.preventDefault();
+        const page = $(this).data('page');
+        if (page) {
+            fetchData(page);
+        }
+    });
+    fetchData(currentPage);
+    setInterval(() => fetchData(currentPage), pollingInterval);
+
+</script>
+
 @endsection

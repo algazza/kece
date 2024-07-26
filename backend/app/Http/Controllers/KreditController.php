@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Kredit;
 use App\Charts\KreditChart;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use App\Events\KreditCreated;
 
 class KreditController extends Controller
 {
@@ -31,7 +32,7 @@ class KreditController extends Controller
      */
     public function store(Request $request)
     {
-        Kredit::create([
+        $kredit = Kredit::create([
             'nama' => $request->nama,
             'email' => $request->email,
             'no_handphone' => $request->no_handphone,
@@ -51,7 +52,6 @@ class KreditController extends Controller
         ]);
     
 
-    
         return response()->json('success');
     }
     
@@ -62,13 +62,14 @@ class KreditController extends Controller
     public function show(string $id)
     {
         $kredit = Kredit::find($id);
-
+    
         if (!$kredit) {
-            return redirect()->route('kredit.index')->with('error', 'Data not found');
+            return redirect()->route('admin.Dashboard')->with('error', 'Data not found');
         }
     
         return view('admin.kredit.KreditUser', compact('kredit'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -96,10 +97,7 @@ class KreditController extends Controller
 
 
 
-    public function fetch()
-    {
-        $kredit = Kredit::orderBy('created_at', 'desc')->get();
-        return response()->json($kredit);
-    }
+
+
 }
 
