@@ -189,85 +189,84 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-
-<script>
-    let currentPage = 1;
-    const pollingInterval = 3000;
-
-    function fetchData(page = 1) {
-        $.ajax({
-            url: `/api/kredit?page=${page}`,
-            method: 'GET',
-            success: function(response) {
-                currentPage = response.pagination.current_page; // Simpan halaman saat ini
-                updateContent(response.data);
-                updatePagination(response.pagination);
-            },
-            error: function(xhr, status, error) {
-                console.error('Gagal mengambil data:', error);
-            }
-        });
-    }
-
-    function updateContent(data) {
-        let content = '';
-        data.forEach((item, index) => {
-            const createdAt = new Date(item.created_at);
-            const time = createdAt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
-            const date = createdAt.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-
-            content += `
-                <a href="/Kredit/${item.id}">
-                    <div class="border-b border-black border-dashed mx-8 flex items-center cursor-pointer py-2 my-2">
-                        <p class="text-lg">${index + 1}</p>
-                        <div class="px-4 text-left">
-                            <h3 class="text-sm font-medium">${item.nama}</h3>
-                            <div class="flex text-xs text-gray-400">
-                                <p>${time}</p>
-                                <p class="px-1">|</p>
-                                <p>${date}</p>
+    <script>
+        let currentPage = 1;
+        const pollingInterval = 3000;
+    
+        function fetchData(page = 1) {
+            $.ajax({
+                url: `/api/kredit?page=${page}`,
+                method: 'GET',
+                success: function(response) {
+                    currentPage = response.pagination.current_page;
+                    updateContent(response.data);
+                    updatePagination(response.pagination);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Gagal mengambil data:', error);
+                }
+            });
+        }
+    
+        function updateContent(data) {
+            let content = '';
+            data.forEach((item, index) => {
+                const createdAt = new Date(item.created_at);
+                const time = createdAt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+                const date = createdAt.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    
+                content += `
+                    <a href="/Kredit/${item.id}">
+                        <div class="border-b border-black border-dashed mx-8 flex items-center cursor-pointer py-2 my-2">
+                            <p class="text-lg">${(currentPage - 1) * data.length + index + 1}</p>
+                            <div class="px-4 text-left">
+                                <h3 class="text-sm font-medium">${item.nama}</h3>
+                                <div class="flex text-xs text-gray-400">
+                                    <p>${time}</p>
+                                    <p class="px-1">|</p>
+                                    <p>${date}</p>
+                                </div>
                             </div>
+                            <p class="ml-auto py-1 px-3 bg-slate-200 text-xs rounded">${item.jenis}</p>
                         </div>
-                        <p class="ml-auto py-1 px-3 bg-slate-200 text-xs rounded">${item.jenis}</p>
-                    </div>
-                </a>
-            `;
-        });
-        $('#content').html(content);
-    }
-
-    function updatePagination(pagination) {
-        let paginationHtml = '';
-
-        if (pagination.current_page > 1) {
-            paginationHtml += `<a href="#" class="pagination-link" data-page="${pagination.current_page - 1}">&laquo; Previous</a>`;
+                    </a>
+                `;
+            });
+            $('#content').html(content);
         }
-
-        for (let page = 1; page <= pagination.last_page; page++) {
-            if (page === pagination.current_page) {
-                paginationHtml += `<span class="pagination-link current">${page}</span>`;
-            } else {
-                paginationHtml += `<a href="#" class="pagination-link" data-page="${page}">${page}</a>`;
+    
+        function updatePagination(pagination) {
+            let paginationHtml = '';
+    
+            if (pagination.current_page > 1) {
+                paginationHtml += `<a href="#" class="pagination-link" data-page="${pagination.current_page - 1} ">&laquo;</a>`;
             }
+    
+            for (let page = 1; page <= pagination.last_page; page++) {
+                if (page === pagination.current_page) {
+                    paginationHtml += `<span class="pagination-link current"></span>`;
+                } else {
+                    paginationHtml += `<a href="#" class="pagination-link" data-page="${page}"></a>`;
+                }
+            }
+    
+            if (pagination.current_page < pagination.last_page) {
+                paginationHtml += `<a href="#" class="pagination-link" data-page="${pagination.current_page + 1}">&raquo;</a>`;
+            }
+    
+            $('.pagination-links').html(paginationHtml);
         }
-
-        if (pagination.current_page < pagination.last_page) {
-            paginationHtml += `<a href="#" class="pagination-link" data-page="${pagination.current_page + 1}">Next &raquo;</a>`;
-        }
-
-        $('.pagination-links').html(paginationHtml);
-    }
-
-    $(document).on('click', '.pagination-link', function(e) {
-        e.preventDefault();
-        const page = $(this).data('page');
-        if (page) {
-            fetchData(page);
-        }
-    });
-    fetchData(currentPage);
-    setInterval(() => fetchData(currentPage), pollingInterval);
-
-</script>
+    
+        $(document).on('click', '.pagination-link', function(e) {
+            e.preventDefault();
+            const page = $(this).data('page');
+            if (page) {
+                fetchData(page);
+            }
+        });
+    
+        fetchData(currentPage);
+        setInterval(() => fetchData(currentPage), pollingInterval);
+    </script>
 
 @endsection

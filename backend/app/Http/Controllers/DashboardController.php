@@ -10,13 +10,13 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $kredit = Kredit::orderBy('created_at', 'desc')->paginate(6);
+        $kredit = Kredit::orderBy('created_at', 'desc')->paginate(5);
         return view('admin.Dashboard', compact('kredit'));
     }
 
     public function kredit(Request $request)
     {
-        $kredit = Kredit::orderBy('created_at', 'desc')->paginate(10);
+        $kredit = Kredit::orderBy('created_at', 'desc')->paginate(5);
         
         return response()->json([
             'data' => $kredit->items(),
