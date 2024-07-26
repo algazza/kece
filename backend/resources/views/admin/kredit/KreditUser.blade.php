@@ -3,7 +3,7 @@
 <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen font-poppins overflow-hidden">
     <section class="bg-gray-50 h-[77%] w-[87%] mt-[8%] ml-[9%] rounded-[5px] py-[3rem] text-left justify-center flex flex-col">
         <div class="inline-block mx-[3rem]">
-            <p class="bg-gray-500 inline-block rounded-[15px] text-[1.1rem] font-semibold text-gray-50 box-border border-[0.5px] border-white shadow-lg px-[2rem] py-[0.5rem]">
+            <p class="bg-gray-300 inline-block rounded-[20px] text-[1.1rem] font-semibold text-gray-50 box-border border-[0.5px] border-white shadow-lg px-[2rem] py-[0.5rem]">
                 Jonatahan Iatsa Augta Viallainku
             </p>
         </div>
