@@ -9,8 +9,9 @@ const KreditPage = () => {
             <div className={`${styles.flexCenter}`}>
                 <FormBank
                     isiPenting={<Kredit />}
-                    value={""}
-                    routes={"{{route}}"}
+                    value={"Kredit"}
+                    page={"/KreditPage"}
+                    endpoint={"http://localhost:8000/api/kredit"}
                 />
             </div>
         </section>
