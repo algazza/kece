@@ -200,7 +200,7 @@
                                 <a href="${ route('kredit.show', $item->id ) }">
                                     <div class="border-b-[0.5px] border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
                                         <p class="text-[1.3rem]">
-                                            ${item.nama}b   
+                                            ${item.nama}   
                                         </p>
                                         <div class="block px-[1rem] text-left">
                                             <h3 class="text-[0.8rem] font-medium">${item.nama}</h3>
