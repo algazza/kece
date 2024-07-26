@@ -12,7 +12,6 @@ const KreditPage = () => {
                     value={"Kredit"}
                     page={"/KreditPage"}
                     endpoint={"http://localhost:8000/api/kredit"}
-                    tipe= {}
                 />
             </div>
         </section>

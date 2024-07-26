@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::resource('kredit',KreditController::class);
+Route::get('/api/kredit', [KreditController::class, 'fetch']);

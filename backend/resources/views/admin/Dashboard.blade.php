@@ -161,7 +161,7 @@
                         {{ $kredit->links() }}
                     </div>
                 </div>
-                <div class=" h-full mt-[1.5rem]">
+                <div id="kredit-data" class=" h-full mt-[1.5rem]">
                     @foreach ($kredit as $no => $data)
                         <a href="{{ route('kredit.show', $data->id ) }}">
                             <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
@@ -171,9 +171,9 @@
                                 <div class="block px-[1rem] text-left">
                                     <h3 class="text-[0.8rem] font-medium">{{ $data->nama }}</h3>
                                     <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                        <p>{{ Carbon::parse($data->tanggal)->format('H:i') }}</p>
+                                        <p>{{ Carbon::parse($data->created_at)->format('H:i') }}</p>
                                         <p class="px-[0.4rem]">|</p>
-                                        <p>{{ Carbon::parse($data->tanggal)->format('d F Y') }}</p>
+                                        <p>{{ Carbon::parse($data->created_at)->format('d F Y') }}</p>
                                     </div>
                                 </div>
                                 <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
@@ -186,6 +186,46 @@
             </div>
         </div>
     </section>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function fetchData() {
+                fetch('/api/kredit')  // Endpoint untuk mendapatkan data terbaru
+                    .then(response => response.json())
+                    .then(data => {
+                        let container = document.getElementById('kredit-data');
+                        container.innerHTML = '';
+                        data.forEach(item => {
+                            let element = document.createElement('div');
+                            element.innerHTML = `
+                                <a href="${ route('kredit.show', $item->id ) }">
+                                    <div class="border-b-[0.5px] border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
+                                        <p class="text-[1.3rem]">
+                                            ${item.nama}   
+                                        </p>
+                                        <div class="block px-[1rem] text-left">
+                                            <h3 class="text-[0.8rem] font-medium">${item.nama}</h3>
+                                            <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
+                                                <p>${new Date(item.created_at).toLocaleTimeString()}</p>
+                                                <p class="px-[0.4rem]">|</p>
+                                                <p>${new Date(item.created_at).toLocaleDateString()}</p>
+                                            </div>
+                                        </div>
+                                        <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
+                                            ${item.jenis}
+                                        </p>
+                                    </div>
+                                </a>
+                            `;
+                            container.appendChild(element);
+                        });
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        
+            // Panggil fetchData setiap 5 detik
+            setInterval(fetchData, 5000);
+            fetchData();  // Panggil sekali saat halaman dimuat pertama kali
+        });
+        </script>
     
 @endsection

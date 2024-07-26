@@ -72,6 +72,7 @@ export const formTrueorFalse=[
     {
         id: "name",
         status: true
+        
     }
 ]
 
