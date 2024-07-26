@@ -1,7 +1,5 @@
-import http from "../http";
 import {useNavigate} from "react-router-dom";
 import { useState, useEffect } from "react";
-import Kredit from "./Form/Kredit";
 import React from 'react';
 import axios from 'axios';
 import styles from "../data/style";
@@ -15,8 +13,6 @@ import {
     TextField,
     TextareaAutosize,
 } from "@mui/material";
-
-
 
 const FormBank = ({ isiPenting, value, page, endpoint }) => {
     const [inputs, setInputs] = useState({});
@@ -35,7 +31,7 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
 
     const submitForm = () => {
         axios.post(endpoint, inputs)
-            .then((res) => {
+            .then((page) => {
                 navigate(page);
             })
             .catch((error) => {
