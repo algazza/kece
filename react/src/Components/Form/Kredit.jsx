@@ -104,7 +104,8 @@ const Kredit = () => {
                 <div className={`${styles.inputSpan}`}>
                     <span>Catatan</span>
                     <TextareaAutosize
-                        className="resize-none text-sm font-normal font-sans leading-normal p-3 rounded-md rounded-br focus-visible:outline-0 box-border"
+                        className="resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
                         aria-label="Catatan"
                         minRows={3}
                         placeholder="Catatan"

@@ -67,6 +67,13 @@ export const formPenghasilan=[
     },
 ]
 
+export const formTrueorFalse=[
+    {
+        id: "name",
+        status: true
+    }
+]
+
 export const formSelectKredit= [
     {
         id: "waktu",
