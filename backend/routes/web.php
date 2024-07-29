@@ -47,6 +47,10 @@ Route::get('/api/kredit', [KreditController::class, 'fetch']);
 
 
 
+
 Route::get('/Tabungan', function(){
     return view ('admin.tabungan.Tabungan');
+});
+Route::get('/News', function(){
+    return view ('admin.News');
 });
