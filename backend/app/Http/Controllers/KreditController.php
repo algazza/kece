@@ -10,6 +10,11 @@ use App\Events\KreditCreated;
 
 class KreditController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('kredit.access')->only('index');
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -51,10 +56,8 @@ class KreditController extends Controller
             'updated_at' => Carbon::now()
         ]);
     
-
         return response()->json('success');
     }
-    
 
     /**
      * Display the specified resource.
@@ -69,7 +72,6 @@ class KreditController extends Controller
     
         return view('admin.kredit.KreditUser', compact('kredit'));
     }
-    
 
     /**
      * Show the form for editing the specified resource.
@@ -94,10 +96,4 @@ class KreditController extends Controller
     {
         //
     }
-
-
-
-
-
 }
-

@@ -21,12 +21,11 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 // Dashboard
-Route::get('/', [DashboardController::class, 'index']);
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 
 // Kredit
-
-Route::get('/Kredit', [KreditController::class, 'index']);
+Route::get('/generate-token', [DashboardController::class, 'generateToken'])->name('generate.token');
+Route::get('/Kredit', [KreditController::class, 'index'])->middleware('kredit.access')->name('kredit.index');
 Route::get('/Kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
 Route::get('/api/kredit', [DashboardController::class, 'kredit']);
-
