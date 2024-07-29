@@ -6,23 +6,20 @@ import footerbg from "../img/footerimg.svg"
 const Footer = () => {
   return (
     <footer className="my-8">
-      <div className="flex flex-col md:flex-row justify-between mr-4 bg-footerimage bg-no-repeat">
-        <div className="">
-            {/* <img src={footerbg} alt="" /> */}
-          <div className="flex flex-col p-10">
+      <div className="flex flex-col md:flex-row justify-between mr-4 xs:bg-footerimage bg-no-repeat">
+          <div className="flex flex-col p-3 xs:p-10">
             <a href="/" className=" flex items-center gap-3">
               <img src={logoArmor} alt="logo" />
               <span
-                className={`${styles.heading4} w-10 xs:leading-[24px] leading-[20px]`}
+                className={`${styles.heading5} w-10 xs:leading-[24px] leading-[20px]`}
               >
                 BPR ARTO MORO
               </span>
             </a>
-            <p className="">
+            <p className={`${styles.fontSmall}`}>
               Office : Jl. Elang Raya No. 99 Mangunharjo, Tembalang, Semarang
             </p>
           </div>
-        </div>
 
         <div className="grid md:grid-cols-2 grid-cols-3 mx-10 gap-2">
           <div className="mr-8">

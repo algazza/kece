@@ -10,7 +10,8 @@ const styles = {
     heading6: "font-bold xs:text-[20px] text-[16.8px]",
     fontBodyBold: "font-bold xs:text-[16px] text-[14px]",
     fontBody: "xs:text-[16px] text-[14px]",
-    fontSmall: "font-bold xs:text-[12.8px] text-[11.67px]",
+    fontSmallBold: "font-bold xs:text-[12.8px] text-[11.67px]",
+    fontSmall: "xs:text-[12.8px] text-[11.67px]",
     fontCaption: "xs:text-[10.24px] text-[9.72px] font-medium",
 
     flexCenter: "flex justify-center items-center",
