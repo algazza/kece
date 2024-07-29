@@ -57,9 +57,10 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
                                     label={iden.title}
                                     key={iden.id}
                                     type={iden.type}
+                                    // {...(iden.inputmode ? { inputProps: { inputMode: iden.inputmode } } : {})}
                                     name={iden.id}
                                     variant="outlined"
-                                    className="rounded-md"
+                                    className="rounded-md outline-none"
                                     value={inputs[iden.id]}
                                     onChange={handleChange}
                                 />

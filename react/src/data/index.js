@@ -15,12 +15,12 @@ export const formIdentitas= [
     {
         id: "no_handphone",
         title: "No. Handphone",
-        type: "number"
+        type: "number",
     },
     {
         id: "nik",
         title: "NIK",
-        type: "number"
+        type: "number",
     },
 ]
 
@@ -66,6 +66,14 @@ export const formPenghasilan=[
         id: "> 15 Juta",
         title: ">15 Juta",
     },
+]
+
+export const formTrueorFalse=[
+    {
+        id: "name",
+        status: true
+
+    }
 ]
 
 export const formSelectKredit= [
