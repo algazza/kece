@@ -47,8 +47,9 @@ export default {
         x250: "250px",
       },
       backgroundImage: {
-        footerimg: "url('../img/Footer-img.svg')",
-        footerbg: "http://[::1]:5173/resources/js/img/Footer-img.svg",
+        footerimg: "url('./src/img/Footer-img.svg')",
+        footerimage: "url('./src/img/footerimg.svg')",
+        footerimagexs: "url('./src/img/footerimg-xs.svg')",
       },
     },
   },

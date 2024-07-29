@@ -15,12 +15,12 @@ export const formIdentitas= [
     {
         id: "no_handphone",
         title: "No. Handphone",
-        type: "number"
+        type: "number",
     },
     {
         id: "nik",
         title: "NIK",
-        type: "number"
+        type: "number",
     },
 ]
 
@@ -72,7 +72,7 @@ export const formTrueorFalse=[
     {
         id: "name",
         status: true
-        
+
     }
 ]
 
