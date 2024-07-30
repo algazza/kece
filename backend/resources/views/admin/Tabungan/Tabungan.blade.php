@@ -207,7 +207,7 @@
                     <p>Kredit</p>
                 </div>
                 <div class="w-[40rem] h-[12rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg">
-                    {!! $chart->container() !!}
+                    {{-- {!! $chart->container() !!} --}}
                 </div>    
                 <div class="flex flex-wrap mt-[1rem] mr-[2rem] gap-4">
                     <div class="bg-gray-50 w-[19.5rem] rounded-[5px] box-border border-[0.2px] border-black shadow-lg h-[50%rem] text-left p-[0.9rem]">
@@ -381,6 +381,6 @@
         </section>
     </section>
 
-    <script src="{{ $chart->cdn() }}"></script>
-    {{ $chart->script() }}
+    {{-- <script src="{{ $chart->cdn() }}"></script>
+    {{ $chart->script() }} --}}
 @endsection
