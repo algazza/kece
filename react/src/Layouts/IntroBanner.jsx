@@ -1,24 +1,19 @@
+import Button from "../Components/Button";
 import styles from "../data/style";
-import sample from "../img/sampleimage.svg";
 
-const IntroBanner = () => {
+const IntroBanner = ({TitleBanner, DescriptionBanner, ImageBanner}) => {
   return (
-    <section className="flex flex-col md:flex-row sm:py-16">
+    <section className={`flex flex-col md:flex-row ${styles.paddingY}`}>
       <div
-        className={`flex-1 ${styles.flexStart} ${styles.marginY} ${styles.paddingX} flex-col shadow-[0px_0px_167px_250px_#fcfffe]`}
+        className={`flex-1 flex-col shadow-[0px_0px_56px_90px_#fcfffe] ss:shadow-[0px_0px_48px_105px_#fcfffe] gap-2 ${styles.flexStart} ${styles.marginY} ${styles.paddingX}`}
       >
-        <h2 className={`${styles.heading2}`}>Kredit</h2>
-        <p className="">
-          Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
-          memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
-          dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-          menawarkan berbagai produk kredit yang dapat disesuaikan dengan
-          keperluan Anda.
-        </p>
+        <h2 className={`${styles.heading2}`}>{TitleBanner}</h2>
+        <p className="text-abuGelap">{DescriptionBanner}</p>
+        <Button/>
       </div>
 
       <div className="flex-1">
-        <img src={sample} alt="" className="w-full h-full relative -z-[1]" />
+        <img src={ImageBanner} alt="" className="w-full h-full relative -z-[1]" />
       </div>
     </section>
   );

@@ -127,7 +127,7 @@ const Kredit = ({inputs, handleChange}) => {
                         value={inputs.catatan}
                         onChange={handleChange}
                     />
-                    <p className={`${styles.fontCaption} mt-2`}>
+                    <p className={`${styles.fontCaption} mt-2 text-abuGelap`}>
                         Mohon mengisi di CATATAN kalo memang ada Informasi Awal
                         yang perlu disampaikan kepada kami. Terima kasih telah
                         memberikan kepercayaan kepada BPR ARTO MORO Semarang,

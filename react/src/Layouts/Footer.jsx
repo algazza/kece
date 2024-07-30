@@ -6,7 +6,7 @@ import footerbg from "../img/footerimg.svg";
 const Footer = () => {
   return (
     <footer className="my-8">
-      <div className="flex flex-col md:flex-row justify-between mr-4 bg-footerimagexs xs:bg-footerimage bg-no-repeat">
+      <div className="flex flex-col md:flex-row justify-between mr-4 bg-blue-200 bg-footerimagexs xs:bg-footerimage bg-no-repeat">
         <div className="grid p-4 xs:p-10 gap-2 xs:gap-3 text-white">
           <a href="/" className=" flex items-center gap-3">
             <div className="">
@@ -18,12 +18,12 @@ const Footer = () => {
               BPR ARTO MORO
             </span>
           </a>
-          <p className={`${styles.fontSmall} xs:w-8`}>
+          <p className={`${styles.fontSmall} `}>
             Office : Jl. Elang Raya No. 99 Mangunharjo, Tembalang, Semarang
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 grid-cols-3 ml-10 gap-2">
+        <div className="grid md:grid-cols-2 grid-cols-3 gap-2">
           <div className="mr-8">
             <h4 className={`${styles.heading5}`}>Informasi Perusahaan</h4>
             <ul>

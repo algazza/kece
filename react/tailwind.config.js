@@ -6,6 +6,7 @@ export default {
       colors: {
         primary: "#fcfffe",
         abuTerang: "#F9F9F9",
+        abuGelap: "#646464",
         biruTuwa: {
           100: "#d5d6e6",
           200: "#abaccd",
@@ -50,6 +51,7 @@ export default {
         footerimg: "url('./src/img/Footer-img.svg')",
         footerimage: "url('./src/img/footerimg.svg')",
         footerimagexs: "url('./src/img/footerimg-xs.svg')",
+        imagebgWithTitle: "url('./src/img/imageWithTitle.svg')",
       },
     },
   },
