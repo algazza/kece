@@ -11,9 +11,13 @@
                     </div>
                 </div>
                 </a>
-            <a href="">
-                <div class="bg-slate-400 w-[15rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg"></div>
-            </a>
+                <div>
+                    <div class="bg-slate-400 w-[15rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg"></div>
+                    <div class="bg-gray-50 w-[40rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg">
+                        <h1 class="font-bold">p</h1>
+                        <p class="absolute ml-[0.7] font-medium">Text</p>
+                    </div>
+                </div>
         </section>
     </section>
 @endsection
