@@ -25,3 +25,35 @@ Route::get('/Kredit', [KreditController::class, 'index'])->middleware('kredit.ac
 Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
 Route::get('/api/kredit', [DashboardController::class, 'kredit']);
 Route::get('/kredit/check-token', [KreditController::class, 'checkToken'])->name('kredit.check-token');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/News', function(){
+    return view ('admin.News');
+});
+Route::get('/Tabungan', function(){
+    return view ('admin.tabungan.Tabungan');
+});
+Route::get('/Banner', function(){
+    return view ('admin.Banner');
+});

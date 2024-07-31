@@ -104,7 +104,7 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
                 {React.cloneElement(isiPenting, { inputs, handleChange })}
 
                 <div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 ">
                         <FormGroup>
                             <FormControlLabel
                                 required
@@ -112,7 +112,7 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
                                 label="Dengan ini saya menyetujui penggunaan data
                                 diatas untuk pengajuan kredit melalui BPR Arto
                                 Moro."
-                                className={`${styles.fontBody} `}
+                                className={`${styles.fontBody}`}
                             />
                         </FormGroup>
                         <span>* Pengajuan melalui website ini gratis</span>
