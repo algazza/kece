@@ -21,50 +21,36 @@ class KreditController extends Controller
     {
         $token = bin2hex(random_bytes(32));
         $tokenExpiry = Carbon::now()->addSeconds(5);
-    
+
         $request->session()->put('kredit_access_token', $token);
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
         $request->session()->put('last_dashboard_visit', Carbon::now());
-    
+
         $kredit = Kredit::orderBy('created_at', 'desc')->get();
+
         return view('admin.kredit.Kredit', [
             'kredit' => $kredit,
             'chart' => $chart->build(),
             'token' => $token,
         ]);
-    }    
+    }
+
 
     public function checkToken(Request $request)
     {
-        $token = $request->header('Authorization');
-        Log::info('Authorization header:', ['token' => $token]);
-    
-        if (!$token) {
-            Log::error('Authorization token missing');
-            return response()->json(['expired' => true], 401);
-        }
-    
-        $token = str_replace('Bearer ', '', $token);
-    
-        $storedToken = $request->session()->get('kredit_access_token');
+        $token = $request->session()->get('kredit_access_token');
         $tokenExpiry = $request->session()->get('kredit_access_expiry');
         $currentTime = Carbon::now();
-    
-        Log::info('Check Token', [
-            'storedToken' => $storedToken,
-            'tokenExpiry' => $tokenExpiry,
-            'currentTime' => $currentTime,
-        ]);
-    
-        if ($token !== $storedToken || !$tokenExpiry || $currentTime->greaterThan(Carbon::parse($tokenExpiry))) {
-            Log::info('Token expired or invalid');
-            return response()->json(['expired' => true]);
-        }
-    
-        Log::info('Token valid');
-        return response()->json(['expired' => false]);
-    }    
 
+        if (!$token || !$tokenExpiry || $currentTime->greaterThan(Carbon::parse($tokenExpiry))) {
+            return response()->json(['valid' => false]);
+        }
+
+        return response()->json(['valid' => true]);
+    }
+
+
+    
     public function create()
     {
         
@@ -107,19 +93,19 @@ class KreditController extends Controller
 
     public function edit(string $id)
     {
-        //
+        
     }
 
 
     public function update(Request $request, string $id)
     {
-        //
+        
     }
 
 
     public function destroy(string $id)
     {
-        //
+        
     }
 
 

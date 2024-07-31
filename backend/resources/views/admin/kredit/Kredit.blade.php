@@ -203,10 +203,10 @@
             </div>
 
             <div class=" mt-[1.5rem] absolute left-[45%]">
-                <div class="w-[13rem] py-[0.3rem] mb-[1rem] rounded-[7px] text-[1.1rem] font-semibold bg-gray-50 box-border border-slate-950 shadow-lg">
+                <div class="w-[13rem] py-[0.3rem] mb-[1rem] rounded-[7px] text-[1.1rem] font-semibold bg-gray-50 box-border border-black shadow-lg">
                     <p>Kredit</p>
                 </div>
-                <div class="w-[40rem] h-[12rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-md">
+                <div class="w-[40rem] h-[12rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg">
                     {!! $chart->container() !!}
                 </div>    
                 <div class="flex flex-wrap mt-[1rem] mr-[2rem] gap-4">
@@ -383,69 +383,30 @@
 
     <script src="{{ $chart->cdn() }}"></script>
     {{ $chart->script() }}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7b7dd5c0h/jN8o=" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const token = '{{ $token }}';
-            sessionStorage.setItem('token', token);
-            console.log('Token stored:', token);
-        
-            const checkTokenPresence = () => {
-                const token = sessionStorage.getItem('token');
-                if (!token) {
-                    console.log('Token tidak ditemukan, mengarahkan ke dashboard.');
-                    // window.location.href = '{{ route('dashboard') }}';
-                }
-            };
-        
-            // Fungsi untuk memeriksa kevalidan token
-            const checkTokenValidity = async () => {
-                try {
-                    const token = sessionStorage.getItem('token');
-                    console.log('Token retrieved:', token);
-        
-                    if (!token) {
-                        console.log('Token tidak ditemukan, mengarahkan ke dashboard.');
-                        // window.location.href = '{{ route('dashboard') }}';
-                        return;
-                    }
-        
-                    const response = await fetch('{{ route('kredit.check-token') }}', {
-                        method: 'GET',
-                        headers: {
-                            'Authorization': `Bearer ${token}`,
+        $(document).ready(function() {
+            function checkToken() {
+                console.log('Checking token...');
+                $.ajax({
+                    url: '/api/check-token/kredit',
+                    method: 'GET',
+                    success: function(response) {
+                        console.log('Token check response:', response);
+                        if (!response.valid) {
+
+                            alert('Waktu Untuk Mengakses Telah Habis !!')
+                            window.location.href = '/';
                         }
-                    });
-        
-                    if (!response.ok) {
-                        console.error('Response jaringan tidak oke:', response.statusText);
-                        // window.location.href = '{{ route('dashboard') }}';
-                        return;
+                    },
+                    error: function() {
+                        alert('Terjadi Maslaah')
+                        window.location.href = '/';
                     }
-        
-                    const data = await response.json();
-                    console.log('Respons kevalidan token:', data);
-        
-                    if (data.expired) {
-                        console.log('Token kedaluwarsa. Mengarahkan ke dashboard.');
-                        // window.location.href = '{{ route('dashboard') }}';
-                    }
-                } catch (error) {
-                    console.error('Error saat memeriksa kevalidan token:', error);
-                    // window.location.href = '{{ route('dashboard') }}';
-                }
-            };
-        
-            // Periksa kevalidan token segera setelah halaman dimuat dan kemudian setiap detik
-            checkTokenValidity();
-            setInterval(checkTokenValidity, 1000);
-        
-            // Periksa keberadaan token setiap detik
-            setInterval(checkTokenPresence, 1000);
+                });
+            }
+            setInterval(checkToken, 1000);
         });
-        </script>
-        
-        
+    </script>
     
 @endsection

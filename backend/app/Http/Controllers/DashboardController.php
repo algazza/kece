@@ -11,13 +11,16 @@ class DashboardController extends Controller
 {
     public function index(Request $request)
     {
+        $token = bin2hex(random_bytes(32));
+        $tokenExpiry = Carbon::now()->addMinutes(60); 
+        $request->session()->put('kredit_access_token', $token);
+        $request->session()->put('kredit_access_expiry', $tokenExpiry);
         $request->session()->put('last_dashboard_visit', Carbon::now());
 
         $kredit = Kredit::orderBy('created_at', 'desc')->paginate(5);
         return view('admin.Dashboard', compact('kredit'));
     }
     
-
     public function kredit(Request $request)
     {
         $kredit = Kredit::orderBy('created_at', 'desc')->paginate(5);

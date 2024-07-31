@@ -17,15 +17,13 @@ use App\Http\Middleware\Admin\KreditAccess;
 */
 
 // Dashboard
-// Dashboard
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 // Kredit
 Route::get('/Kredit', [KreditController::class, 'index'])->middleware('kredit.access')->name('kredit.index');
 Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
 Route::get('/api/kredit', [DashboardController::class, 'kredit']);
-Route::get('/kredit/check-token', [KreditController::class, 'checkToken'])->name('kredit.check-token');
-
+Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
 
 
 
