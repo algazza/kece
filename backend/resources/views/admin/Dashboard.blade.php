@@ -216,7 +216,7 @@
                 const date = createdAt.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
     
                 content += `
-                    <a href="/Kredit/${item.id}">
+                    <a href="/kredit/${item.id}">
                         <div class="border-b border-black border-dashed mx-8 flex items-center cursor-pointer py-2 my-2">
                             <p class="text-lg">${(currentPage - 1) * data.length + index + 1}</p>
                             <div class="px-4 text-left">

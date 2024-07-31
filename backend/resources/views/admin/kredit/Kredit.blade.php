@@ -383,4 +383,69 @@
 
     <script src="{{ $chart->cdn() }}"></script>
     {{ $chart->script() }}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7b7dd5c0h/jN8o=" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const token = '{{ $token }}';
+            sessionStorage.setItem('token', token);
+            console.log('Token stored:', token);
+        
+            const checkTokenPresence = () => {
+                const token = sessionStorage.getItem('token');
+                if (!token) {
+                    console.log('Token tidak ditemukan, mengarahkan ke dashboard.');
+                    // window.location.href = '{{ route('dashboard') }}';
+                }
+            };
+        
+            // Fungsi untuk memeriksa kevalidan token
+            const checkTokenValidity = async () => {
+                try {
+                    const token = sessionStorage.getItem('token');
+                    console.log('Token retrieved:', token);
+        
+                    if (!token) {
+                        console.log('Token tidak ditemukan, mengarahkan ke dashboard.');
+                        // window.location.href = '{{ route('dashboard') }}';
+                        return;
+                    }
+        
+                    const response = await fetch('{{ route('kredit.check-token') }}', {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                        }
+                    });
+        
+                    if (!response.ok) {
+                        console.error('Response jaringan tidak oke:', response.statusText);
+                        // window.location.href = '{{ route('dashboard') }}';
+                        return;
+                    }
+        
+                    const data = await response.json();
+                    console.log('Respons kevalidan token:', data);
+        
+                    if (data.expired) {
+                        console.log('Token kedaluwarsa. Mengarahkan ke dashboard.');
+                        // window.location.href = '{{ route('dashboard') }}';
+                    }
+                } catch (error) {
+                    console.error('Error saat memeriksa kevalidan token:', error);
+                    // window.location.href = '{{ route('dashboard') }}';
+                }
+            };
+        
+            // Periksa kevalidan token segera setelah halaman dimuat dan kemudian setiap detik
+            checkTokenValidity();
+            setInterval(checkTokenValidity, 1000);
+        
+            // Periksa keberadaan token setiap detik
+            setInterval(checkTokenPresence, 1000);
+        });
+        </script>
+        
+        
+    
 @endsection

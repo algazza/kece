@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KreditController;
 use App\Http\Controllers\DashboardController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Middleware\Admin\KreditAccess;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,16 +16,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-
-
-
-
+// Dashboard
 // Dashboard
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-
 // Kredit
-Route::get('/generate-token', [DashboardController::class, 'generateToken'])->name('generate.token');
 Route::get('/Kredit', [KreditController::class, 'index'])->middleware('kredit.access')->name('kredit.index');
-Route::get('/Kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
+Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
 Route::get('/api/kredit', [DashboardController::class, 'kredit']);
+Route::get('/kredit/check-token', [KreditController::class, 'checkToken'])->name('kredit.check-token');

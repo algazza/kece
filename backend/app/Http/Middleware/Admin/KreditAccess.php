@@ -10,30 +10,32 @@ class KreditAccess
 {
     public function handle($request, Closure $next)
     {
-        $startTime = Carbon::now();
-
         $token = $request->session()->get('kredit_access_token');
         $tokenExpiry = $request->session()->get('kredit_access_expiry');
         $lastDashboardVisit = $request->session()->get('last_dashboard_visit');
-
         $currentTime = Carbon::now();
 
-        Log::info('Middleware executed.');
-        Log::info('Token: ' . $token);
-        Log::info('Token Expiry: ' . $tokenExpiry);
-        Log::info('Last Dashboard Visit: ' . $lastDashboardVisit);
-        Log::info('Current Time: ' . $currentTime);
+        Log::info('KreditAccess Middleware', [
+            'token' => $token,
+            'tokenExpiry' => $tokenExpiry,
+            'lastDashboardVisit' => $lastDashboardVisit,
+            'currentTime' => $currentTime,
+        ]);
 
-        if (!$token || $currentTime->greaterThan(Carbon::parse($tokenExpiry))) {
-            Log::info('Token invalid or expired.');
-            return redirect()->route('generate.token')->with('error', 'Akses halaman kredit sudah habis atau tidak valid.');
+        // Jika token sudah kedaluwarsa
+        if ($currentTime->greaterThan(Carbon::parse($tokenExpiry))) {
+            $request->session()->forget('kredit_access_token');
+            $request->session()->forget('kredit_access_expiry');
+            return redirect()->route('dashboard')->with('error', 'Token Anda telah kedaluwarsa. Anda harus mengunjungi dashboard terlebih dahulu.');
         }
 
-        if (!$lastDashboardVisit || $currentTime->diffInSeconds(Carbon::parse($lastDashboardVisit)) > 5) {
-            Log::info('Dashboard visit invalid or expired.');
-            return redirect()->route('dashboard')->with('error', 'Anda harus mengunjungi dashboard terlebih dahulu.');
+        // Jika akses melebihi 5 detik
+        if ($lastDashboardVisit && $currentTime->diffInSeconds(Carbon::parse($lastDashboardVisit)) > 5) {
+            $request->session()->forget('kredit_access_token');
+            $request->session()->forget('kredit_access_expiry');
+            return redirect()->route('dashboard')->with('error', 'Token Anda telah kedaluwarsa. Anda harus mengunjungi dashboard terlebih dahulu.');
         }
 
         return $next($request);
-    }
+    }    
 }
