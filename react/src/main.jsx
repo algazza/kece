@@ -29,17 +29,6 @@ const router = createBrowserRouter([
 
 ]);
 
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route path="/">
-//       <Route path='syarat' element={<SyaratPage/>}/>
-//       {/* <Route path='dashboard' element={'../../backend/resources/view/admin/tabungan/Tabungan'}>
-//         <Route path='tabungan'/>
-//       </Route> */}
-//     </Route>
-//   )
-// )
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />

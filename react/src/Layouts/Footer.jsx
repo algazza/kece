@@ -1,29 +1,63 @@
-import { footer1, footer2 } from "../data/index";
+// ----- Folder Data -----
+import { footer1, footer2, logoArmor, marqueeImage } from "../data/index";
 import styles from "../data/style";
-import logoArmor from "../img/LOGO-AM-CORAL-BARU.svg";
-import footerbg from "../img/footerimg.svg";
+// ----- MUI -----
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+// ----- Router DOM -----
+import { Link } from "react-router-dom";
+// ----- Framer Motion -----
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="my-8">
-      <div className="flex flex-col md:flex-row justify-between mr-4 bg-blue-200 bg-footerimagexs xs:bg-footerimage bg-no-repeat">
-        <div className="grid p-4 xs:p-10 gap-2 xs:gap-3 text-white">
+    <footer className="mt-8 bg-biruMuda-100 shadow-[inset_0px_0px_164px_116px_#fcfffe]">
+      <div className={`${styles.paddingY} border-t-2 border-abuGelap`}>
+        <h3 className={`${styles.heading3} text-center mb-10`}>Stackholder</h3>
+
+        <div className={`overflow-hidden flex`}>
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: "-100%" }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            className="flex flex-shrink-0"
+          >
+            {marqueeImage.map((img) => (
+              <img src={img.image} key={img.id} className="pr-20" />
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: "-100%" }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            className="flex flex-shrink-0"
+          >
+            {marqueeImage.map((img) => (
+              <img src={img.image} key={img.id} className="pr-20" />
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-between bg-footerimagexs xs:bg-footerimage bg-no-repeat">
+        <div className="flex flex-col py-4 pl-8 pr-12 xs:p-7 gap-2 xs:gap-5 text-white">
           <a href="/" className=" flex items-center gap-3">
-            <div className="">
-              <img src={logoArmor} alt="logo" className="w-12 xs:w-16" />
-            </div>
+            <img src={logoArmor} alt="logo" className=" xs:w-16" />
             <span
-              className={`${styles.heading5} w-10 xs:leading-[24px] leading-[20px]`}
+              className={`${styles.heading5} xs:leading-[24px] leading-[20px]`}
             >
               BPR ARTO MORO
             </span>
           </a>
-          <p className={`${styles.fontSmall} `}>
+          <p className={`${styles.fontSmall} pr-4`}>
             Office : Jl. Elang Raya No. 99 Mangunharjo, Tembalang, Semarang
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 gap-2 mt-4 xs:mt-12 md:mt-0 px-5 md:px-0">
           <div className="mr-8">
             <h4 className={`${styles.heading5}`}>Informasi Perusahaan</h4>
             <ul>
@@ -50,11 +84,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="grid justify-center md:col-span-2 ">
+          <div className="grid justify-center col-span-2 ">
             <h4 className={`${styles.heading5} text-center`}>
               Unduh Aplikasi Kami
             </h4>
-            <div className="m-2 gap-4 flex md:flex-row flex-col">
+            <div className="m-2 gap-4 flex flex-row">
               <a
                 className="inline-flex items-center justify-center border-2 border-black rounded-full bg-black py-[0.625rem] px-[1.5rem] text-center outline-none text-white"
                 href="#"
@@ -98,6 +132,53 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="bg-biruMuda-500 flex md:flex-row flex-col md:justify-between items-center py-4 md:px-8 gap-4 mt-4">
+        <ul className="flex gap-4 text-primary">
+          <li>
+            <a href="/" className="">
+              <FacebookRoundedIcon />
+            </a>
+          </li>
+          <li>
+            <a href="/" className="">
+              <InstagramIcon />
+            </a>
+          </li>
+          <li>
+            <a href="/" className="">
+              <LinkedInIcon />
+            </a>
+          </li>
+          <li>
+            <a href="/" className="">
+              <YouTubeIcon />
+            </a>
+          </li>
+        </ul>
+
+        <ul className={`flex gap-8 text-primary ${styles.fontSmall}`}>
+          <li>
+            <Link to="" className="">
+              Privacy Policy
+            </Link>
+          </li>
+          <li>
+            <Link to="" className="">
+              Term & Condition
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="">
+              Help & Support
+            </Link>
+          </li>
+        </ul>
+
+        <span className={`text-primary ${styles.fontSmall} `}>
+          &#169; 2024 Bank BPR Arto Moro All rights reserved.
+        </span>
       </div>
     </footer>
   );

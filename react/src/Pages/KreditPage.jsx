@@ -1,13 +1,15 @@
+// ----- Folder Component -----
 import Kredit from "@/Components/Form/Kredit";
 import FormBank from "@/Components/FormBank";
 import Footer from "../Layouts/Footer";
-import styles from "../data/style";
 import IntroBanner from "../Layouts/IntroBanner";
-import sample from "../img/sampleimage.svg";
+import styles from "../data/style";
+import { sample } from "../data/index";
+
 
 const KreditPage = () => {
   return (
-    <section className={`${styles.paddingY}`}>
+    <section className="pt-6 sm:pt-16">
       <div className="">
         <IntroBanner
           ImageBanner={sample}
