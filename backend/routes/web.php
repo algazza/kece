@@ -47,7 +47,7 @@ Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
 
 
 Route::get('/News', function(){
-    return view ('admin.News');
+    return view ('admin.news.News');
 });
 Route::get('/Tabungan', function(){
     return view ('admin.tabungan.Tabungan');
