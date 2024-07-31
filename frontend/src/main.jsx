@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import SyaratPage from './Components/SyaratForm/SyaratPage.jsx';
 import Kredit from './Components/Form/Tabungan.jsx';
 import KreditPage from './Pages/KreditPage.jsx';
