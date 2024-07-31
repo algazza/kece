@@ -7,29 +7,55 @@ use App\Models\Kredit;
 use App\Charts\KreditChart;
 use Illuminate\Http\Request;
 use App\Events\KreditCreated;
+use Illuminate\Support\Facades\Log;
 
 class KreditController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(KreditChart $chart)
+
+    public function __construct()
     {
-        $kredit = Kredit::orderBy('created_at', 'desc')->get();
-        return view('admin.kredit.Kredit', compact('kredit'), ['chart' => $chart->build()]);
+        $this->middleware('kredit.access')->only('index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function index(Request $request, KreditChart $chart)
+    {
+        $token = bin2hex(random_bytes(32));
+        $tokenExpiry = Carbon::now()->addSeconds(5);
+
+        $request->session()->put('kredit_access_token', $token);
+        $request->session()->put('kredit_access_expiry', $tokenExpiry);
+        $request->session()->put('last_dashboard_visit', Carbon::now());
+
+        $kredit = Kredit::orderBy('created_at', 'desc')->get();
+
+        return view('admin.kredit.Kredit', [
+            'kredit' => $kredit,
+            'chart' => $chart->build(),
+            'token' => $token,
+        ]);
+    }
+
+
+    public function checkToken(Request $request)
+    {
+        $token = $request->session()->get('kredit_access_token');
+        $tokenExpiry = $request->session()->get('kredit_access_expiry');
+        $currentTime = Carbon::now();
+
+        if (!$token || !$tokenExpiry || $currentTime->greaterThan(Carbon::parse($tokenExpiry))) {
+            return response()->json(['valid' => false]);
+        }
+
+        return response()->json(['valid' => true]);
+    }
+
+
+    
     public function create()
     {
-        //
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $kredit = Kredit::create([
@@ -51,53 +77,36 @@ class KreditController extends Controller
             'updated_at' => Carbon::now()
         ]);
     
-
         return response()->json('success');
     }
-    
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         $kredit = Kredit::find($id);
     
         if (!$kredit) {
-            return redirect()->route('admin.Dashboard')->with('error', 'Data not found');
+            return redirect()->route('dashboard')->with('error', 'Data not found');
         }
     
         return view('admin.kredit.KreditUser', compact('kredit'));
     }
-    
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, string $id)
     {
-        //
+        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(string $id)
     {
-        //
+        
     }
-
-
-
 
 
 }
-

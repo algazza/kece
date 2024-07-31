@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KreditController;
 use App\Http\Controllers\DashboardController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Middleware\Admin\KreditAccess;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,19 +16,16 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-
-
-
-
 // Dashboard
-Route::get('/', [DashboardController::class, 'index']);
-
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 // Kredit
+Route::get('/Kredit', [KreditController::class, 'index'])->middleware('kredit.access')->name('kredit.index');
+Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
+Route::get('/api/kredit', [DashboardController::class, 'kredit']);
+Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
 
-Route::get('/Kredit', [KreditController::class, 'index']);
-Route::get('/Kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
-Route::get('/api/kredit', [KreditController::class, 'fetch']);
+
 
 
 
@@ -50,7 +47,7 @@ Route::get('/api/kredit', [KreditController::class, 'fetch']);
 
 
 Route::get('/News', function(){
-    return view ('admin.News');
+    return view ('admin.news.News');
 });
 Route::get('/Tabungan', function(){
     return view ('admin.tabungan.Tabungan');
@@ -58,4 +55,3 @@ Route::get('/Tabungan', function(){
 Route::get('/Banner', function(){
     return view ('admin.Banner');
 });
-

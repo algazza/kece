@@ -203,10 +203,10 @@
             </div>
 
             <div class=" mt-[1.5rem] absolute left-[45%]">
-                <div class="w-[13rem] py-[0.3rem] mb-[1rem] rounded-[7px] text-[1.1rem] font-semibold bg-gray-50 box-border border-slate-950 shadow-lg">
+                <div class="w-[13rem] py-[0.3rem] mb-[1rem] rounded-[7px] text-[1.1rem] font-semibold bg-gray-50 box-border border-black shadow-lg">
                     <p>Kredit</p>
                 </div>
-                <div class="w-[40rem] h-[12rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-md">
+                <div class="w-[40rem] h-[12rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg">
                     {!! $chart->container() !!}
                 </div>    
                 <div class="flex flex-wrap mt-[1rem] mr-[2rem] gap-4">
@@ -383,4 +383,30 @@
 
     <script src="{{ $chart->cdn() }}"></script>
     {{ $chart->script() }}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function checkToken() {
+                console.log('Checking token...');
+                $.ajax({
+                    url: '/api/check-token/kredit',
+                    method: 'GET',
+                    success: function(response) {
+                        console.log('Token check response:', response);
+                        if (!response.valid) {
+
+                            alert('Waktu Untuk Mengakses Telah Habis !!')
+                            window.location.href = '/';
+                        }
+                    },
+                    error: function() {
+                        alert('Terjadi Maslaah')
+                        window.location.href = '/';
+                    }
+                });
+            }
+            setInterval(checkToken, 1000);
+        });
+    </script>
+    
 @endsection
