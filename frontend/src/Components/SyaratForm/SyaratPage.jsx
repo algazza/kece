@@ -64,10 +64,32 @@ const SyaratPage = () => {
                         </div>
                     </ul>
                 </div>
-                    <div className="pl-5 mt-16 flex space-x-4 text-2xl">
-                        <button className="p-5 bg-blue-300 rounded-lg ">yes</button>
-                        <button className="p-5 bg-yellow-300 rounded-lg">no</button>
-                    </div>
+
+                <div className="flex gap-10 mt-16">
+                    <button
+                        className={`overflow-hidden relative w-28 p-2 h-12 bg-biruTuwa-500 text-primary border-none rounded-md ${styles.fontBody} font-semibold cursor-pointer z-10 group`} 
+                    >
+                        Ajukan!
+                        <span className="absolute w-32 h-32 -top-8 -left-2 bg-primary rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-left"></span>
+                        <span className="absolute w-32 h-32 -top-8 -left-2 bg-biruTuwa-200 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left"></span>
+                        <span className="absolute w-32 h-32 -top-8 -left-2 bg-biruTuwa-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-left"></span>
+                        <span className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
+                        Ajukan!
+                        </span>
+                    </button>
+
+                    <button
+                        className={`overflow-hidden relative w-36 p-2 h-12 text-biruTuwa-500 border-2 border-biruTuwa-500 rounded-md ${styles.fontBody} font-semibold cursor-pointer z-10 group`}
+                    >
+                        Hubungi Kami
+                        <span className="absolute w-40 h-32 -top-9 -left-2 bg-abuTerang rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-left"></span>
+                        <span className="absolute w-40 h-32 -top-9 -left-2 bg-biruTuwa-200 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left"></span>
+                        <span className="absolute w-40 h-32 -top-9 -left-2 bg-biruTuwa-300 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-left"></span>
+                        <span className="group-hover:opacity-100 group-hover:duration-1000 group-hover:text-primary duration-100 opacity-0 absolute top-2.5 left-6 z-10">
+                        Hubungi Kami
+                        </span>
+                    </button>
+                </div>
             </div>
             <Footer />
         </> // Mahes (1 agustus 2024)
