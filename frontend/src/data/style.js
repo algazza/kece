@@ -8,6 +8,7 @@ const styles = {
     heading4: "font-bold xs:text-[31.25px] text-[24.19px]",
     heading5: "font-bold xs:text-[25px] text-[20.16px]",
     heading6: "font-bold xs:text-[20px] text-[16.8px]",
+    heading6Normal: "xs:text-[20px] text-[16.8px]",
     fontBodyBold: "font-bold xs:text-[16px] text-[14px]",
     fontBody: "xs:text-[16px] text-[14px]",
     fontSmallBold: "font-bold xs:text-[12.8px] text-[11.67px]",
