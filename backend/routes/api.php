@@ -1,9 +1,10 @@
 <?php
 
+use App\Models\Kredit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KreditController;
-use App\Models\Kredit;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::resource('kredit',KreditController::class);
+Route::get('/api/kredit', [DashboardController::class, 'kredit']);

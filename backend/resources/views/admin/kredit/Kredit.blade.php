@@ -383,4 +383,30 @@
 
     <script src="{{ $chart->cdn() }}"></script>
     {{ $chart->script() }}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function checkToken() {
+                console.log('Checking token...');
+                $.ajax({
+                    url: '/api/check-token/kredit',
+                    method: 'GET',
+                    success: function(response) {
+                        console.log('Token check response:', response);
+                        if (!response.valid) {
+
+                            alert('Waktu Untuk Mengakses Telah Habis !!')
+                            window.location.href = '/';
+                        }
+                    },
+                    error: function() {
+                        alert('Terjadi Maslaah')
+                        window.location.href = '/';
+                    }
+                });
+            }
+            setInterval(checkToken, 1000);
+        });
+    </script>
+    
 @endsection

@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KreditController;
-
+use App\Http\Controllers\DashboardController;
+use App\Http\Middleware\Admin\KreditAccess;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,18 +16,42 @@ use App\Http\Controllers\KreditController;
 |
 */
 
-Route::get('/', function(){
-    return view('admin.Dashboard');
-});
-
-
-Route::get('/id', function(){
-    return view('admin.kredit.KreditUser');
-});
-
-
-
+// Dashboard
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 // Kredit
-Route::get('/Kredit', [KreditController::class, 'index']);
+Route::get('/Kredit', [KreditController::class, 'index'])->middleware('kredit.access')->name('kredit.index');
+Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
+Route::get('/api/kredit', [DashboardController::class, 'kredit']);
+Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/News', function(){
+    return view ('admin.news.News');
+});
+Route::get('/Tabungan', function(){
+    return view ('admin.tabungan.Tabungan');
+});
+Route::get('/Banner', function(){
+    return view ('admin.Banner');
+});
