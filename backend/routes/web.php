@@ -55,3 +55,6 @@ Route::get('/Tabungan', function(){
 Route::get('/Banner', function(){
     return view ('admin.Banner');
 });
+Route::get('/User', function(){
+    return view ('admin.user.User');
+});
