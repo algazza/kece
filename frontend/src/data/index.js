@@ -20,8 +20,6 @@ export {
     partnerImage6,
     partnerImage7,
 };
-// ======================= HEADER =========================
-
 
 // =========================== FORM ====================
 export const formIdentitas = [
@@ -86,13 +84,6 @@ export const formPenghasilan = [
   {
     id: "> 15 Juta",
     title: ">15 Juta",
-  },
-];
-
-export const formTrueorFalse = [
-  {
-    id: "name",
-    status: true,
   },
 ];
 

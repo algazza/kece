@@ -1,4 +1,4 @@
-import Button from "../Components/Button";
+import ButtonGetDown from "../Components/Button";
 import styles from "../data/style";
 
 const IntroBanner = ({TitleBanner, DescriptionBanner, ImageBanner}) => {
@@ -9,7 +9,7 @@ const IntroBanner = ({TitleBanner, DescriptionBanner, ImageBanner}) => {
       >
         <h2 className={`${styles.heading2}`}>{TitleBanner}</h2>
         <p className="text-abuGelap">{DescriptionBanner}</p>
-        <Button/>
+        <ButtonGetDown/>
       </div>
 
       <div className="flex-1">

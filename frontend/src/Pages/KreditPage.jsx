@@ -13,7 +13,7 @@ const KreditPage = () => {
   return (
 <>
 <Header/>
-      <section className={`${styles.paddingY}`}>
+      <section className="">
         <div className="">
           <IntroBanner
             ImageBanner={sample}
