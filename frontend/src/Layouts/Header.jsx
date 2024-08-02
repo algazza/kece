@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Header = () => {
   const [hasShadow, setHasShadow] = useState(false);
@@ -65,46 +65,92 @@ const Header = () => {
             )}
           </div>
 
-          {toggle && (
-            <div className="absolute -z-[1] top-0 right-0 w-full px-6 py-20 bg-blue-400">
-              <ul className="font-semibold grid gap-4">
-                <li>
-                  <Link to={"/"}>Home</Link>
-                </li>
-                <li>
-                  <Accordion >
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1-content"
-                      id="panel1-header"
-                      className="p-0"
-                      sx={{padding: "0px", border: "none"}}
-                    >
-                      Tentang Kami
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <ul>
-                        <li className="flex flex-col gap-4 pl-4 text-abuGelap font-normal">
-                          <Link to={"/"}>Sejarah</Link>
-                          <Link to={"/"}>Visi Misi</Link>
-                          <Link to={"/"}>Struktur Organisasi</Link>
-                        </li>
-                      </ul>
-                    </AccordionDetails>
-                  </Accordion>
-                </li>
-                <li>
-                  <Link to={"/"}>Home</Link>
-                </li>
-                <li>
-                  <Link to={"/"}>Home</Link>
-                </li>
-                <li>
-                  <Link to={"/"}>Home</Link>
-                </li>
-              </ul>
-            </div>
-          )}
+          <AnimatePresence>
+            {toggle && (
+              <motion.div
+                key="menu"
+                initial={{ y: "-100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-100%" }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="absolute -z-[100] top-0 right-0 w-full px-8 pt-20 pb-4 bg-primary shadow-[0px_0px_90px_9px_#00000024]"
+              >
+                <ul className="font-semibold">
+                  <li className="my-3">
+                    <Link to={"/"}>Home</Link>
+                  </li>
+                  <li>
+                    <Accordion sx={{ boxShadow: "none" }}>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1-content"
+                        id="panel1-header"
+                        sx={{ padding: "0px", border: "none" }}
+                      >
+                        Tentang Kami
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <ul>
+                          <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
+                            <Link to={"/"}>Sejarah</Link>
+                            <Link to={"/"}>Visi Misi</Link>
+                            <Link to={"/"}>Struktur Organisasi</Link>
+                          </li>
+                        </ul>
+                      </AccordionDetails>
+                    </Accordion>
+                  </li>
+                  <li className="my-3">
+                    <Link to={"/"}>News</Link>
+                  </li>
+                  <li>
+                    <Accordion sx={{ boxShadow: "none" }}>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1-content"
+                        id="panel1-header"
+                        sx={{ padding: "0px", border: "none" }}
+                      >
+                        Layanan
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <ul>
+                          <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
+                            <Link to={"/"}>Kredit</Link>
+                            <Link to={"/"}>Deposit</Link>
+                            <Link to={"/"}>Tabungan</Link>
+                            <Link to={"/"}>Sponsor</Link>
+                          </li>
+                        </ul>
+                      </AccordionDetails>
+                    </Accordion>
+                  </li>
+                  <li>
+                    <Accordion sx={{ boxShadow: "none" }}>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1-content"
+                        id="panel1-header"
+                        sx={{ padding: "0px", border: "none" }}
+                      >
+                        Informasi
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <ul>
+                          <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
+                            <Link to={"/"}>Recruitment</Link>
+                            <Link to={"/"}>Sosial Media</Link>
+                            <Link to={"/"}>Promo</Link>
+                            <Link to={"/"}>Sponsor</Link>
+                          </li>
+                        </ul>
+                      </AccordionDetails>
+                    </Accordion>
+                  </li>
+                </ul>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </nav>
     </header>
