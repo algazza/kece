@@ -51,12 +51,21 @@ Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
 Route::get('/News', function(){
     return view ('admin.news.News');
 });
+Route::get('/Newse', function(){
+    return view ('admin.news.NewsEdit');
+});
 Route::get('/Tabungan', function(){
     return view ('admin.tabungan.Tabungan');
 });
 Route::get('/Banner', function(){
-    return view ('admin.Banner');
+    return view ('admin.banner.Banner');
+});
+Route::get('/Bannere', function(){
+    return view ('admin.banner.BannerEdit');
 });
 Route::get('/User', function(){
     return view ('admin.user.User');
+});
+Route::get('/Usere', function(){
+    return view ('admin.user.UserEdit');
 });
