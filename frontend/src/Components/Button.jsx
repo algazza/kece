@@ -1,6 +1,7 @@
 import { Component } from "react";
 import styles from "../data/style";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { Link } from "react-router-dom";
 
 export const ButtonGetDown = ({
   TextColor = "text-merahh",
@@ -88,3 +89,4 @@ export const ButtonOutline = ({
     </a>
   );
 };
+// Al 2 Agustusy

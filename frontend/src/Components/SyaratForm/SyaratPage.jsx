@@ -26,7 +26,7 @@ const SyaratPage = () => {
 
       <div className="h-auto mx-6 sm:mx-10 mt-10 bg-abuTerang sm:p-10 rounded-lg">
         <h3 className={`${styles.heading3} mb-10`}>Kredit Umum</h3>
-        
+
         <div>
           <ul className={` text-abuGelap`}>
             <li
