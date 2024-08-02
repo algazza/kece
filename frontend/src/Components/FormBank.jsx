@@ -136,6 +136,7 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
         </div>
       </div>
     </section>
+
   );
 };
 
