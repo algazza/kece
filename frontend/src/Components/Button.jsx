@@ -35,7 +35,7 @@ export const ButtonFull = ({
   return (
     <Component
       to={to}
-      Onclick = {isLink ? undefined : onClick}
+      onClick = {isLink ? undefined : onClick}
       className={`overflow-hidden relative grid justify-center ${WidthButton} p-2 h-12 ${ColorPrimary} text-primary border-none rounded-md ${styles.fontBody} font-semibold cursor-pointer z-10 group`}
     >
       {children}
