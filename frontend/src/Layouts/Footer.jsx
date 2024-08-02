@@ -63,7 +63,7 @@ const Footer = () => {
             <ul>
               {footer1.map((futer) => (
                 <li key={futer.id} className="">
-                  <a href={futer.link} className={`${styles.fontSmall}`}>
+                  <a href={futer.link} className={`${styles.fontBody}`}>
                     {futer.title}
                   </a>
                 </li>
@@ -76,7 +76,7 @@ const Footer = () => {
             <ul>
               {footer2.map((futer) => (
                 <li key={futer.id} className="">
-                  <a href={futer.link} className={`${styles.fontSmall}`}>
+                  <a href={futer.link} className={`${styles.fontBody}`}>
                     {futer.title}
                   </a>
                 </li>
