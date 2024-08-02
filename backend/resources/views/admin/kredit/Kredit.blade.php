@@ -217,7 +217,6 @@
     <script>
         $(document).ready(function() {
             function checkToken() {
-                console.log('Checking token...');
                 $.ajax({
                     url: '/api/check-token/kredit',
                     method: 'GET',
