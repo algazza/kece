@@ -19,12 +19,10 @@ use App\Http\Controllers\DashboardController;
 */
 
 
-// Login
-// Dashboard
 // Dashboard
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
-Route::get('/api/dashboard/kredit', [DashboardController::class, 'kredit']);
+Route::get('/api/dashboard/kredit',   [DashboardController::class, 'kredit']);
 
 // Kredit
 Route::get('/kredit', [KreditController::class, 'index'])->middleware('kredit.access')->name('kredit.index');

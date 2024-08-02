@@ -67,10 +67,12 @@
             p-2 w-16 overflow-y-auto text-center bg-gray-50 shadow-2xl h-screen overflow-hidden font-semibold pt-[5rem] z-10">
             <div class="text-gray-100 text-xl">
               <div>
-                <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200">
-                    <i class='bx bxl-xing text-black'></i>
-                  <span class="text-[18px] ml-6 text-black ">Dashboard</span>
-                </div>
+                <a href="{{ route('dashboard')}}">
+                    <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200">
+                      <i class='bx bxl-xing text-black'></i>
+                    <span class="text-[18px] ml-6 text-black ">Dashboard</span>
+                  </div>
+                </a>
         
                 <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-gray-200" onclick="dropDown()">
                     <i class='bx bxl-xing text-black' ></i>
@@ -82,7 +84,9 @@
                   </div>
                 </div>
                 <div class=" leading-7 text-left text-sm font-thin mt-2 w-4/5 mx-auto pl-[3rem]" id="submenu">
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Kredit</h1>
+                  <a href="{{ route('kredit.index') }}">
+                    <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Kredit</h1>
+                  </a>
                   <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Personal</h1>
                   <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Friends</h1>
                 </div>

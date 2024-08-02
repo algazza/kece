@@ -20,7 +20,7 @@ class KreditController extends Controller
     public function index(Request $request, KreditChart $chart)
     {
         $token = bin2hex(random_bytes(32));
-        $tokenExpiry = Carbon::now()->addSeconds(10);
+        $tokenExpiry = Carbon::now()->addSeconds(5);
 
         $request->session()->put('kredit_access_token', $token);
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
