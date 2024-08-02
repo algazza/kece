@@ -7,7 +7,7 @@ const App = () => {
     <>
       <main className="bg-primary overflow-hidden font-jakarta">
         <div className={`${styles.flexCenter}`}>
-          <FormBank isiPenting={<Tabungan />} value={""} routes={"{{route}}"} />
+          <FormBank isiPenting={<Tabungan />} />
         </div>
       </main>
       {/* <Footer/> */}

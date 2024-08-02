@@ -23,9 +23,6 @@ const router = createBrowserRouter([
     path: "/Kreditpage",
     element: <KreditPage />,
   },
-  {
-    path: "/dashboard"
-  }
 
 ]);
 
