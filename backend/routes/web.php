@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KreditController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Middleware\Admin\KreditAccess;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,16 +18,18 @@ use App\Http\Middleware\Admin\KreditAccess;
 |
 */
 
+
+// Login
+// Dashboard
 // Dashboard
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
+Route::get('/api/dashboard/kredit', [DashboardController::class, 'kredit']);
 
 // Kredit
-Route::get('/Kredit', [KreditController::class, 'index'])->middleware('kredit.access')->name('kredit.index');
+Route::get('/kredit', [KreditController::class, 'index'])->middleware('kredit.access')->name('kredit.index');
 Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
-Route::get('/api/kredit', [DashboardController::class, 'kredit']);
 Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
-
-
 
 
 

@@ -158,15 +158,15 @@
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem]">
                     <p>All Person Data</p>
                     <div class="pagination-links">
-                        {{ $kredit->links() }}
+                        {{ $dashboard->links() }}
                     </div>
                 </div>
                 <div class=" h-full mt-[1.5rem]" id="content">
-                    @foreach ($kredit as $no => $data)
-                        <a href="{{ route('kredit.show', $data->id ) }}">
+                    @foreach ($dashboard as $no => $data)
+                        <a href="{{ route('dashboard.show', $data->id ) }}">
                             <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
                                 <p class="text-[1.3rem]">
-                                    {{ ($kredit->currentPage() - 1) * $kredit->perPage() + $no + 1 }}
+                                    {{ ($dashboard->currentPage() - 1) * $dashboard->perPage() + $no + 1 }}
                                 </p>
                                 <div class="block px-[1rem] text-left">
                                     <h3 class="text-[0.8rem] font-medium">{{ $data->nama }}</h3>
@@ -195,7 +195,7 @@
     
         function fetchData(page = 1) {
             $.ajax({
-                url: `/api/kredit?page=${page}`,
+                url: `/api/dashboard/kredit?page=${page}`,
                 method: 'GET',
                 success: function(response) {
                     currentPage = response.pagination.current_page;
@@ -216,7 +216,7 @@
                 const date = createdAt.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
     
                 content += `
-                    <a href="/kredit/${item.id}">
+                    <a href="/dashboard/${item.id}">
                         <div class="border-b border-black border-dashed mx-8 flex items-center cursor-pointer py-2 my-2">
                             <p class="text-lg">${(currentPage - 1) * data.length + index + 1}</p>
                             <div class="px-4 text-left">
