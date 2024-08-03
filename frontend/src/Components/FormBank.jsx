@@ -43,7 +43,7 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
 
   return (
     <section className={`${styles.fontBody} mx-14 md:mx-auto `}>
-      <div className="grid my-12 gap-6 sm:gap-12">
+      <FormGroup className="grid my-12 gap-6 sm:gap-12">
         <div className="">
           <h2 className={`${styles.heading3} mb-4 `}>Identitas</h2>
 
@@ -55,7 +55,6 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
                   label={iden.title}
                   key={iden.id}
                   type={iden.type}
-                  // {...(iden.inputmode ? { inputProps: { inputMode: iden.inputmode } } : {})}
                   name={iden.id}
                   variant="outlined"
                   className="rounded-md outline-none"
@@ -85,7 +84,7 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
               <span>Alamat</span>
               <TextareaAutosize
                 className="resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
-                                border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
+                          border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
                 aria-label="Alamat"
                 minRows={3}
                 placeholder="Alamat"
@@ -130,13 +129,12 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
         </div>
 
         <div className="flex gap-10">
-            <ButtonFull onClick={submitForm}>Ajukan!</ButtonFull>
-          
+          <ButtonFull onClick={submitForm}>Ajukan!</ButtonFull>
+
           <ButtonOutline href="/">Hubungi Kami</ButtonOutline>
         </div>
-      </div>
+      </FormGroup>
     </section>
-
   );
 };
 
