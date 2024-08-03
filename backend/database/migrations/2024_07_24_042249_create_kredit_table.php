@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('email');
-            $table->string('no_handphone');
-            $table->string('nik');
+            $table->bigInteger('no_handphone');
+            $table->bigInteger('nik');
             $table->string('pekerjaan');
             $table->string('alamat');
-            $table->string('total_pinjaman');
+            $table->bigInteger('total_pinjaman'); 
             $table->string('jangka_waktu');
             $table->string('jenis_angunan');
             $table->string('perhitungan_bunga');
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('penghasilan_perbulan');
             $table->string('catatan');
             $table->string('jenis');
+            $table->bigInteger('code');
             $table->timestamps();
         });
     }

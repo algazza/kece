@@ -55,8 +55,8 @@
                     <img src="{{ asset('images/coba.jpg') }}" alt="" class="h-full">
                   </div>
                   <div class="mt-[0.6rem]">
-                    <p class="font-semibold">Wahitukam</p>
-                    <p class="text-[0.8rem] mt-[-0.3rem]">Wujud aseli</p>
+                    <p class="font-semibold">{{ Auth::user()->name }}</p>
+                    <p class="text-[0.8rem] mt-[-0.3rem]">{{ Auth::user()->role }}</p>
                   </div>
                 </div>
               </div>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600 bottom-0 w-screen mr-[1rem]">
                     <i class='bx bxl-xing' ></i>
-                  <span class="text-[15px] ml-6 text-gray-200">Logout</span>
+                <div><a href="/logout" class="text-[15px] ml-6 text-gray-200">Logout >></a></div>
                 </div>
               </div>
             </div>

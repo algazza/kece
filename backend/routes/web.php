@@ -1,11 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SesiController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KreditController;
 use App\Http\Middleware\Admin\KreditAccess;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,17 +21,35 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
+Route::get('/home', function(){
+    return redirect('/Dashboard');
+});
 
-// Dashboard
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
-Route::get('/api/dashboard/kredit',   [DashboardController::class, 'kredit']);
+// Route::get('/admin', function(){
+//     return redirect('/logout');
+// });
 
-// Kredit
-Route::get('/kredit', [KreditController::class, 'index'])->middleware('kredit.access')->name('kredit.index');
-Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
-Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
+Route::middleware(['guest'])->group(function(){
+    Route::get('/', [AdminController::class, 'index'])->name('login');
+    Route::post('/', [AdminController::class, 'login']);
+});
 
+
+Route::middleware(['auth'])->group(function(){
+
+    // Dashboard
+    Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit');
+    Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
+    Route::get('/api/dashboard/kredit',   [DashboardController::class, 'kredit']);
+
+
+    // Kredit
+    Route::get('/Kredit', [KreditController::class, 'index'])->middleware('kredit.access')->name('kredit.index');
+    Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
+    Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
+
+    Route::get('/logout', [AdminController::class, 'logout']); 
+});
 
 
 

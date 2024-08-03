@@ -31,6 +31,7 @@ class KreditFactory extends Factory
             'penghasilan_perbulan' => $this->faker->numberBetween(3000000, 50000000),
             'catatan' => $this->faker->sentence(),
             'jenis' => $this->faker->randomElement(['Tabungan', 'Deposit', 'Kredit']),
+            'code' => $this->faker->numerify('##########'),
         ];
     }
 }

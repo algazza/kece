@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Kredit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -18,9 +19,12 @@ class DashboardController extends Controller
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
         $request->session()->put('last_dashboard_visit', Carbon::now());
     
+        $totalData = Kredit::count();
         $dashboard = Kredit::orderBy('created_at', 'desc')->paginate(5);
-        return view('admin.dashboard.Dashboard', compact('dashboard'));
+    
+        return view('admin.dashboard.Dashboard', compact('dashboard', 'totalData'));
     }
+    
     
     public function kredit(Request $request)
     {
@@ -36,6 +40,14 @@ class DashboardController extends Controller
             ]
         ]);
     }
+
+    public function getTotalData()
+    {
+        Log::info('getTotalData called');
+        $totalData = Kredit::count();
+        return response()->json(['totalData' => $totalData]);
+    }
+
 
 
     public function show(string $id)
