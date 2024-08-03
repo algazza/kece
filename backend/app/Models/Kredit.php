@@ -26,5 +26,6 @@ class Kredit extends Model
         'penghasilan_perbulan',
         'catatan',
         'jenis',
+        'code',
     ];
 }

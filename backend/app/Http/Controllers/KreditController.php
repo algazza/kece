@@ -20,7 +20,7 @@ class KreditController extends Controller
     public function index(Request $request, KreditChart $chart)
     {
         $token = bin2hex(random_bytes(32));
-        $tokenExpiry = Carbon::now()->addSeconds(5);
+        $tokenExpiry = Carbon::now()->addSeconds(60);
 
         $request->session()->put('kredit_access_token', $token);
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
@@ -73,6 +73,7 @@ class KreditController extends Controller
             'penghasilan_perbulan' => $request->penghasilan_perbulan,
             'catatan' => $request->catatan,
             'jenis' => $request->jenis,
+            'code' => $request->code,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);

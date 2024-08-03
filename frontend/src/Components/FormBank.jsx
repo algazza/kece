@@ -30,10 +30,19 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
+  const generateCode = () => {
+    const now = new Date();
+    const code = `${Math.floor(now.getMilliseconds() / 10).toString().padStart(2, '0')}${now.getSeconds().toString().padStart(2, '0')}${now.getMinutes().toString().padStart(2, '0')}${now.getHours().toString().padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}${(now.getFullYear() % 100).toString().padStart(2, '0')}`;
+    return code;
+  };
+  
+
   const submitForm = () => {
+    const code = generateCode();
+    const updatedInputs = { ...inputs, code };
     axios
-      .post(endpoint, inputs)
-      .then((page) => {
+      .post(endpoint, updatedInputs)
+      .then((response) => {
         navigate(page);
       })
       .catch((error) => {
@@ -101,6 +110,12 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
           type="hidden"
           name="jenis"
           value={inputs.jenis}
+          onChange={handleChange}
+        />
+        <input
+          type="hidden"
+          name="code"
+          value={inputs.code}
           onChange={handleChange}
         />
 
