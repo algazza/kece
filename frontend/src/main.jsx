@@ -6,6 +6,7 @@ import SyaratPage from './Components/SyaratForm/SyaratPage.jsx';
 import Kredit from './Components/Form/Tabungan.jsx';
 import KreditPage from './Pages/KreditPage.jsx';
 import News from './Pages/News.jsx';
+import Success from './Components/Success.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/news",
     element: <News />,
+  },
+  {
+    path: "/succes",
+    element: <Success />,
   },
 
 ]);
