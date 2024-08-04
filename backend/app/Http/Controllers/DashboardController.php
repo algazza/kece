@@ -20,15 +20,15 @@ class DashboardController extends Controller
         $request->session()->put('last_dashboard_visit', Carbon::now());
     
         $totalData = Kredit::count();
-        $dashboard = Kredit::orderBy('created_at', 'desc')->paginate(5);
+        $dashboard = Kredit::orderBy('created_at', 'desc')->get();
     
         return view('admin.dashboard.Dashboard', compact('dashboard', 'totalData'));
     }
     
     
-    public function kredit(Request $request)
+    public function data(Request $request)
     {
-        $dashboard = Kredit::orderBy('created_at', 'desc')->paginate(5);
+        $dashboard = Kredit::orderBy('created_at', 'desc')->paginate(20);
 
         return response()->json([
             'data' => $dashboard->items(),

@@ -24,5 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('kredit',KreditController::class);
 
-Route::get('/api/dashboard/kredit', [DashboardController::class, 'kredit']);
+Route::get('/api/dashboard/kredit', [DashboardController::class, 'data']);
 Route::get('/dashboard/total-data', [DashboardController::class, 'getTotalData']);
