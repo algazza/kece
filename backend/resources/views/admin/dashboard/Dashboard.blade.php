@@ -206,6 +206,7 @@
     }
 
     function updateContent(data) {
+        console.log('updateContent')
         let content = '';
         data.forEach((item, index) => {
             const createdAt = new Date(item.created_at);
@@ -278,3 +279,5 @@
     </script>
 
 @endsection
+
+

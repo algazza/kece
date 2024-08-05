@@ -220,121 +220,112 @@
 
     <script src="{{ $chart->cdn() }}"></script>
     {{ $chart->script() }}
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-
-    let currentPage = 1;
-    const pollingInterval = 1000;
-
-    $(document).ready(function() {
-        let lastUpdate = new Date().getTime();
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let currentPage = 1;
+        const pollingInterval = 5000;  // Mengatur interval polling menjadi 5 detik
     
-        function checkToken() {
-            $.ajax({
-                url: '/api/check-token/kredit',
-                method: 'GET',
-                success: function(response) {
-                    if (!response.valid) {
-                        alert('Waktu Untuk Mengakses Telah Habis !!');
+        $(document).ready(function() {
+            function checkToken() {
+                $.ajax({
+                    url: '/api/check-token/kredit',
+                    method: 'GET',
+                    success: function(response) {
+                        if (!response.valid) {
+                            alert('Waktu Untuk Mengakses Telah Habis !!');
+                            window.location.href = '/';
+                        }
+                    },
+                    error: function() {
+                        alert('Terjadi Masalah');
                         window.location.href = '/';
                     }
-                },
-                error: function() {
-                    alert('Terjadi Masalah');
-                    window.location.href = '/';
+                });
+            }
+    
+            function fetchData(page = 1) {
+                $.ajax({
+                    url: `/api/kredit?page=${page}`,
+                    method: 'GET',
+                    success: function(response) {
+                        currentPage = response.pagination.current_page;
+                        updateContent(response.data);
+                        updatePagination(response.pagination);
+                        console.log('Data berhasil diperbarui');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Gagal mengambil data:', error);
+                    }
+                });
+            }
+    
+            function updateContent(data) {
+                let content = '';
+                data.forEach((item, index) => {
+                    const createdAt = new Date(item.created_at);
+                    const time = createdAt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+                    const date = createdAt.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    
+                    content += `
+                    <a href="/kredit/${item.id}">
+                        <div class="border-b-[0.5px] border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
+                            <p class="text-[1.3rem]">
+                                ${(currentPage - 1) * data.length + index + 1}
+                            </p>
+                            <div class="block px-[1rem] text-left">
+                                <h3 class="text-[0.9rem] font-medium">${item.nama}</h3>
+                                <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
+                                    <p>${time}</p>
+                                    <p class="px-[0.4rem]">|</p>
+                                    <p>${date}</p>
+                                    <p class="px-[0.4rem]">|</p>
+                                    <p>${item.code}</p>
+                                </div>
+                            </div>
+                            <p class="ml-auto py-1 px-3 bg-slate-200 text-xs rounded">${item.jenis}</p>
+                        </div>
+                    </a>
+                    `;
+                });
+                $('#content').html(content);
+                console.log('Konten diperbarui');
+            }
+    
+            function updatePagination(pagination) {
+                let paginationHtml = '';
+    
+                if (pagination.current_page > 1) {
+                    paginationHtml += `<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 rounded-s hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page - 1}">
+                                        Prev
+                                      </button>`;
+                }
+    
+                if (pagination.current_page < pagination.last_page) {
+                    paginationHtml += `<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page + 1}">
+                                        Next
+                                       </button>`;
+                }
+    
+                $('.pagination-links').html(paginationHtml);
+                console.log('Pagination diperbarui');
+            }
+    
+            $(document).on('click', '.pagination-link', function(e) {
+                e.preventDefault();
+                const page = $(this).data('page');
+                if (page) {
+                    fetchData(page);
                 }
             });
-        }
     
-        function fetchData(page = 1) {
-        $.ajax({
-            url: `/api/kredit?page=${page}`,
-            method: 'GET',
-            success: function(response) {
-                currentPage = response.pagination.current_page;
-                updateContent(response.data);
-                updatePagination(response.pagination);
-            },
-            error: function(xhr, status, error) {  
-                console.error('Gagal mengambil data:', error);
-            }
-        });
-    }
-
-    function updateContent(data) {
-        let content = '';
-        data.forEach((item, index) => {
-            const createdAt = new Date(item.created_at);
-            const time = createdAt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
-            const date = createdAt.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-
-            content += `
-            <a href="/kredit/${item.id}">
-                <div class="border-b-[0.5px] border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                    <p class="text-[1.3rem]">
-                        ${(currentPage - 1) * data.length + index + 1}
-                    </p>
-                    <div class="block px-[1rem] text-left">
-                        <h3 class="text-[0.9rem] font-medium">${item.nama}</h3>
-                        <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                            <p>${time}</p>
-                            <p class="px-[0.4rem]">|</p>
-                            <p>${date}</p>
-                            <p class="px-[0.4rem]">|</p>
-                            <p>${item.code}</p>
-                        </div>
-                    </div>
-                    <p class="ml-auto py-1 px-3 bg-slate-200 text-xs rounded">${item.jenis}</p>
-                </div>
-            </a>
-            `;
-        });
-        $('#content').html(content);
-    }
-
-    function updatePagination(pagination) {
-        let paginationHtml = '';
-
-        if (pagination.current_page > 1) {
-            paginationHtml +=`<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 rounded-s hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"data-page="${pagination.current_page - 1}">
-                                Prev
-                              </button>`;
-        }
-
-
-        if (pagination.current_page < pagination.last_page) {
-            paginationHtml += `<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page + 1}">
-                                Next
-                               </button>`;
-        }
-
-        $('.pagination-links').html(paginationHtml);
-    }
-
-    $(document).on('click', '.pagination-link', function(e) {
-        e.preventDefault();
-        const page = $(this).data('page');
-        if (page) {
-            fetchData(page);
-        }
-    });
-
-    $(document).ready(function() {
-        fetchData(currentPage);
-        fetchTotalData();
-        setInterval(() => {
             fetchData(currentPage);
-            fetchTotalData();
-        }, pollingInterval);
-    });
-
+            setInterval(() => {
+                fetchData(currentPage);
+            }, pollingInterval);
     
-        // Cek token setiap detik
-        setInterval(checkToken, 1000);
+            // Cek token setiap detik
+            setInterval(checkToken, 1000);
+        });
+    </script>
     
-        // Cek pembaruan data setiap 10 detik
-        setInterval(checkForUpdates, 1000);
-    });
-</script>
-
 @endsection

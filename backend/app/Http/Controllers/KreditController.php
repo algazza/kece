@@ -20,7 +20,7 @@ class KreditController extends Controller
     public function index(Request $request, KreditChart $chart)
     {
         $token = bin2hex(random_bytes(32));
-        $tokenExpiry = Carbon::now()->addSeconds(360);
+        $tokenExpiry = Carbon::now()->addSeconds(5);
 
         $request->session()->put('kredit_access_token', $token);
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
@@ -51,15 +51,15 @@ class KreditController extends Controller
 
     public function data(Request $request)
     {
-        $dashboard = Kredit::orderBy('created_at', 'desc')->paginate(20);
+        $kredit = Kredit::orderBy('created_at', 'desc')->paginate(20);
 
         return response()->json([
-            'data' => $dashboard->items(),
+            'data' => $kredit->items(),
             'pagination' => [
-                'current_page' => $dashboard->currentPage(),
-                'last_page' => $dashboard->lastPage(),
-                'per_page' => $dashboard->perPage(),
-                'total' => $dashboard->total()
+                'current_page' => $kredit->currentPage(),
+                'last_page' => $kredit->lastPage(),
+                'per_page' => $kredit->perPage(),
+                'total' => $kredit->total()
             ]
         ]);
     }
