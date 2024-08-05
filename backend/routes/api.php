@@ -26,3 +26,6 @@ Route::resource('kredit',KreditController::class);
 
 Route::get('/api/dashboard/kredit', [DashboardController::class, 'data']);
 Route::get('/dashboard/total-data', [DashboardController::class, 'getTotalData']);
+
+
+Route::get('/api/kredit', [KreditController::class, 'data']);

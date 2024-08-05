@@ -52,7 +52,7 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
   };
 
   return (
-    <section className={`${styles.fontBody} mx-14 md:mx-auto `}>
+    <section className={`${styles.fontBody} mx-14 md:mx-au~to `}>
       <div className="grid my-12 gap-6 sm:gap-12">
         <div className="">
           <h2 className={`${styles.heading3} mb-4 `}>Identitas</h2>

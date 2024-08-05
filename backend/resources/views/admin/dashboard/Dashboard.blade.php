@@ -199,7 +199,7 @@
                 updateContent(response.data);
                 updatePagination(response.pagination);
             },
-            error: function(xhr, status, error) {
+            error: function(xhr, status, error) {  
                 console.error('Gagal mengambil data:', error);
             }
         });
