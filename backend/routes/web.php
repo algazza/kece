@@ -92,3 +92,6 @@ Route::get('/User', function(){
 Route::get('/Usere', function(){
     return view ('admin.user.UserEdit');
 });
+Route::get('/Admin', function(){
+    return view ('admin.Admin');
+});
