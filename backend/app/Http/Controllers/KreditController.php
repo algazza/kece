@@ -73,6 +73,7 @@ class KreditController extends Controller
             'penghasilan_perbulan' => $request->penghasilan_perbulan,
             'catatan' => $request->catatan,
             'jenis' => $request->jenis,
+            'code' => $request->code,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);

@@ -8,12 +8,11 @@ import { sample } from "../data/index";
 import Header from "../Layouts/Header";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 
-
 const KreditPage = () => {
   return (
-<>
-<Header/>
-      <section className={`${styles.paddingY}`}>
+    <>
+      <Header />
+      <section className="sm:py-0 py-6">
         <div className="">
           <IntroBanner
             ImageBanner={sample}
@@ -26,9 +25,7 @@ const KreditPage = () => {
               keperluan Anda.
             `}
           />
-          <TitleBlueBanner
-            title={"Deposito"}
-          />
+          <TitleBlueBanner title={"Deposito"} />
         </div>
 
         <section className={`${styles.flexCenter}`}>
@@ -40,8 +37,8 @@ const KreditPage = () => {
           />
         </section>
       </section>
-        <Footer />
-</>
+      <Footer />
+    </>
   );
 };
 
