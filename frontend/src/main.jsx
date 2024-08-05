@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import SyaratPage from './Components/SyaratForm/SyaratPage.jsx';
 import Kredit from './Components/Form/Tabungan.jsx';
 import KreditPage from './Pages/KreditPage.jsx';
+import LocationPage from './Components/location/LocationPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
     path: "/Kreditpage",
     element: <KreditPage />,
   },
+  {
+    path: "/Location",
+    element: <LocationPage />,
+  },
+  
   {
     path: "/dashboard"
   }

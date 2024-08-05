@@ -20,7 +20,7 @@ const SyaratPage = () => {
             `}
                 />
                 <TitleBlueBanner
-                title={"Deposito"}
+                title={"Syarat"}
                 />
             </div>
             <div className="h-auto mx-10 mt-10 bg-abuTerang p-10 rounded-lg">
