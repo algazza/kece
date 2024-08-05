@@ -56,8 +56,7 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold  pt-2">Kredit</h3>
                             </div>
                         </div>
                     </div>
@@ -69,8 +68,7 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Deposito</h3>
                             </div>
                         </div>
                     </div>
@@ -82,8 +80,20 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Tabungan</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
+                        <div class="flex">
+                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                <i class='text-black bx bx-home' ></i>
+                            </div>
+                            <div class="block mt-[0.8rem]">
+                                <h3 class="text-[1.1rem] font-bold pt-2">Armor Property</h3>
+                               
                             </div>
                         </div>
                     </div>
@@ -95,8 +105,7 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
                             </div>
                         </div>
                     </div>
@@ -108,8 +117,7 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
                             </div>
                         </div>
                     </div>
@@ -121,8 +129,7 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
                             </div>
                         </div>
                     </div>
@@ -134,29 +141,32 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-credit-card' ></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="bg-gray-50 w-[26rem] my-[1rem] rounded-[5px] h-[100%] box-border border-[0.5px] border-black shadow-lg relative">
+                
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem]">
-                    <p>All Person Data</p>
+                    
+                    <div>
+                        <div class="">
+
+                        </div>
+                        <p>All Person Data</p> 
+                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                            Kredit
+                          </button>
+                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                            Tabungan
+                          </button>
+                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                            Deposito
+                          </button>
+                    </div>
+                    
                 </div>
                 <div class="h-[calc(100%-4.7rem)] pb-[2rem] overflow-auto" id="content">
                     @foreach ($dashboard as $no => $data)
@@ -199,13 +209,14 @@
                 updateContent(response.data);
                 updatePagination(response.pagination);
             },
-            error: function(xhr, status, error) {
+            error: function(xhr, status, error) {  
                 console.error('Gagal mengambil data:', error);
             }
         });
     }
 
     function updateContent(data) {
+        console.log('updateContent')
         let content = '';
         data.forEach((item, index) => {
             const createdAt = new Date(item.created_at);
@@ -278,3 +289,5 @@
     </script>
 
 @endsection
+
+

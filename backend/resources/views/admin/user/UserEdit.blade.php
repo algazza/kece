@@ -5,9 +5,7 @@
     <div class="flex-gap-[1.5rem] pt-[5rem] px-[8rem] bg-gray-200  flex flex-col justify-start">
         <h1 class="text-xl mb-2 font-bold">Admin Edit</h1>
     </div>
-    <div class="flex-gap-[1.5rem] pt-[2rem] px-[8rem] bg-gray-200 flex">
     
-    </div>
     
     </section>
 @endsection

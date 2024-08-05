@@ -26,7 +26,7 @@ class KreditController extends Controller
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
         $request->session()->put('last_dashboard_visit', Carbon::now());
 
-        $kredit = Kredit::orderBy('created_at', 'desc')->get();
+        $kredit = Kredit::orderBy('created_at', 'desc')->paginate(20);
 
         return view('admin.kredit.Kredit', [
             'kredit' => $kredit,
@@ -49,6 +49,20 @@ class KreditController extends Controller
         return response()->json(['valid' => true]);
     }
 
+    public function data(Request $request)
+    {
+        $kredit = Kredit::orderBy('created_at', 'desc')->paginate(20);
+
+        return response()->json([
+            'data' => $kredit->items(),
+            'pagination' => [
+                'current_page' => $kredit->currentPage(),
+                'last_page' => $kredit->lastPage(),
+                'per_page' => $kredit->perPage(),
+                'total' => $kredit->total()
+            ]
+        ]);
+    }
 
     
     public function create()

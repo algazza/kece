@@ -34,6 +34,7 @@
                         <p class="leading-7">{{ $dashboard->alamat }}</p>
                     </div>
                     <div class="bg-gray-100 rounded-[15px] text-[0.9rem] box-border border-[0.5px] border-white shadow-2xl h-[6.5rem] mt-[0.7rem] p-[0.5rem]">
+                        <h4 class="font-semibold font-poppins pb-[0.5rem]">Notes</h4>
                         <p>{{ $dashboard->catatan }}</p>
                     </div>
                 </div>
