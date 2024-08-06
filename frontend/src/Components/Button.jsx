@@ -64,11 +64,14 @@ export const ButtonOutline = ({
   ColorPrimary400 = "bg-biruTuwa-300",
   WidthShadow = "w-40",
   WidthButton = "w-36",
+  TopShadow = "top-2.5",
+  LeftShadow = "left-[19px]",
   children,
-  href
+  href,
+  target
 }) => {
   return (
-    <a href={href}
+    <a href={href} target={target}
       className={`overflow-hidden relative grid justify-center ${WidthButton} p-2 h-12 ${ColorText} border-2 ${ColorPrimary} rounded-md ${styles.fontBody} font-semibold cursor-pointer z-10 group`}
     >
       {children}
@@ -82,7 +85,7 @@ export const ButtonOutline = ({
         className={`absolute ${WidthShadow} h-32 -top-9 -left-2 ${ColorPrimary400} rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-left`}
       ></span>
       <span
-        className={`group-hover:opacity-100 group-hover:duration-1000 group-hover:text-primary duration-100 opacity-0 absolute top-2.5 left-[19px] z-10`}
+        className={`group-hover:opacity-100 group-hover:duration-1000 group-hover:text-primary duration-100 opacity-0 absolute ${TopShadow} ${LeftShadow} z-10`}
       >
         {children}
       </span>

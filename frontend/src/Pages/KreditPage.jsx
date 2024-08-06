@@ -1,6 +1,6 @@
 // ----- Folder Component -----
-import Kredit from "@/Components/Form/Kredit";
-import FormBank from "@/Components/FormBank";
+import Kredit from "../Components/Form/Kredit"
+import FormBank from "../Components/FormBank"
 import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
 import styles from "../data/style";
@@ -12,8 +12,8 @@ const KreditPage = () => {
   return (
     <>
       <Header />
-      <section className="sm:py-0 py-6">
-        <div className="">
+      <main className="sm:py-0 py-6">
+        <section className="">
           <IntroBanner
             ImageBanner={sample}
             TitleBanner={"Kredit"}
@@ -25,8 +25,8 @@ const KreditPage = () => {
               keperluan Anda.
             `}
           />
-          <TitleBlueBanner title={"Deposito"} />
-        </div>
+          <TitleBlueBanner title={"Kredit"} />
+        </section>
 
         <section className={`${styles.flexCenter}`}>
           <FormBank
@@ -36,7 +36,7 @@ const KreditPage = () => {
             endpoint={"http://localhost:8000/api/kredit"}
           />
         </section>
-      </section>
+      </main>
       <Footer />
     </>
   );

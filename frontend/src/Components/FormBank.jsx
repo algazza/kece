@@ -14,6 +14,7 @@ import {
   TextareaAutosize,
 } from "@mui/material";
 import { ButtonFull, ButtonOutline } from "./Button";
+import Success from "./Success";
 
 const FormBank = ({ isiPenting, value, page, endpoint }) => {
   const [inputs, setInputs] = useState({});
@@ -43,7 +44,7 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
     axios
       .post(endpoint, updatedInputs)
       .then((response) => {
-        navigate(page);
+        navigate(<Success/>);
       })
       .catch((error) => {
         console.error("Error:", error);

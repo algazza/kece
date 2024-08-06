@@ -9,7 +9,7 @@ import {
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
-const Kredit = () => {
+const PickupService = () => {
   return (
     <div className="">
       <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
@@ -73,4 +73,4 @@ const Kredit = () => {
   );
 };
 
-export default Kredit;
+export default PickupService;

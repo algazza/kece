@@ -1,7 +1,6 @@
 const styles = {
     inputSpan: "grid grid-col",
 
-    // heading2: "font-semibold xs:text-[48px] text-[40px] xs:leading-[76.8px] leading-[66.8px] w-full",
     heading1: "font-bold xs:text-[61.04px] text-[41.8px]",
     heading2: "font-bold xs:text-[48.83px] text-[34.84px]",
     heading3: "font-bold xs:text-[39.06px] text-[29.03px]",

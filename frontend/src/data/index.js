@@ -131,6 +131,26 @@ export const formSelectTabungan = [
   },
 ];
 
+// ===================== TABEL ======================
+export const PenempatanDana = [
+  { amount: 100000000, term: '1 tahun', reward: 4000000 },
+  { amount: 100000000, term: '2 tahun', reward: 8000000 },
+  { amount: 100000000, term: '3 tahun', reward: 12000000 },
+  { amount: 200000000, term: '1 tahun', reward: 8000000 },
+  { amount: 200000000, term: '2 tahun', reward: 16000000 },
+  { amount: 200000000, term: '3 tahun', reward: 24000000 },
+  { amount: 300000000, term: '1 tahun', reward: 12000000 },
+  { amount: 300000000, term: '2 tahun', reward: 24000000 },
+  { amount: 300000000, term: '3 tahun', reward: 36000000 },
+  { amount: 400000000, term: '1 tahun', reward: 16000000 },
+  { amount: 400000000, term: '2 tahun', reward: 32000000 },
+  { amount: 400000000, term: '3 tahun', reward: 48000000 },
+  { amount: 500000000, term: '1 tahun', reward: 20000000 },
+  { amount: 500000000, term: '2 tahun', reward: 40000000 },
+  { amount: 500000000, term: '3 tahun', reward: 60000000 },
+];
+
+
 // ===================== FOOTER ========================
 export const marqueeImage = [
   { id: "1", image: partnerImage1 },
