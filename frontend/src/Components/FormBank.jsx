@@ -48,6 +48,7 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
       })
       .catch((error) => {
         console.error("Error:", error);
+        alert('gagal')
       });
   };
 

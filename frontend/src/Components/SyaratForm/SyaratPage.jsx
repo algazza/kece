@@ -20,8 +20,11 @@ const SyaratPage = () => {
                 menawarkan berbagai produk kredit yang dapat disesuaikan dengan
                 keperluan Anda.
             `}
-        />
-        <TitleBlueBanner title={"Deposito"} />
+                />
+                <TitleBlueBanner
+                title={"Syarat"}
+                />
+        
       </div>
 
       <div className="h-auto mx-6 sm:mx-10 mt-10 bg-abuTerang sm:p-10 rounded-lg">
@@ -30,7 +33,7 @@ const SyaratPage = () => {
         <div>
           <ul className={` text-abuGelap`}>
             <li
-              className={`${styles.heading5} text-biruMuda-500 mb-5 ml-10 list-decimal`}
+              className={`${styles.heading5} text-abuGelap mb-5 ml-10 list-decimal`}
             >
               Kredit Progana Ceria
             </li>
@@ -59,7 +62,7 @@ const SyaratPage = () => {
               </ul>
             </div>
 
-            <li className={`${styles.heading5} text-biruMuda-500 mb-5 mt-16 ml-10 list-decimal`}>
+            <li className={`${styles.heading5}  text-abuGelap mb-5 mt-16 ml-10 list-decimal`}>
               Kredit Progana
             </li>
 
@@ -79,7 +82,7 @@ const SyaratPage = () => {
               </ul>
             </div>
 
-            <li className={`${styles.heading5} text-biruMuda-500 mb-5 mt-16 ml-10 list-decimal`}>
+            <li className={`${styles.heading5}  text-abuGelap mb-5 mt-16 ml-10 list-decimal`}>
               Syarat pembukaan rekening kredit pegawai
             </li>
 

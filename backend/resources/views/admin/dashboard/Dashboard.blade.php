@@ -56,8 +56,7 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold  pt-2">Kredit</h3>
                             </div>
                         </div>
                     </div>
@@ -69,8 +68,7 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Deposito</h3>
                             </div>
                         </div>
                     </div>
@@ -82,8 +80,20 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Tabungan</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
+                        <div class="flex">
+                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                <i class='text-black bx bx-home' ></i>
+                            </div>
+                            <div class="block mt-[0.8rem]">
+                                <h3 class="text-[1.1rem] font-bold pt-2">Armor Property</h3>
+                               
                             </div>
                         </div>
                     </div>
@@ -95,8 +105,7 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
                             </div>
                         </div>
                     </div>
@@ -108,8 +117,7 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
                             </div>
                         </div>
                     </div>
@@ -121,8 +129,7 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
                             </div>
                         </div>
                     </div>
@@ -134,56 +141,43 @@
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-credit-card' ></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold">Kredit</h3>
-                                <p class="mt-[-0.4rem]">opka oajdajdjoa doadoajd ad</p>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="bg-gray-50 w-[26rem] my-[1rem] rounded-[5px] h-[100%]  box-border border-[0.5px] border-black shadow-lg overflow-auto">
-                <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem]">
-                    <p>All Person Data</p>
-                    <div class="pagination-links flex">
-                        {{-- {{ $dashboard->links() }} --}}
+            <div class="bg-gray-50 w-[26rem] my-[1rem] rounded-[5px] h-[100%] box-border border-[0.5px] border-black shadow-lg relative">
+                
+                <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem]">
+                    
+                    <div>
+                        <div class="">
+
+                        </div>
+                        <p>All Person Data</p> 
+                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                            Kredit
+                          </button>
+                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                            Tabungan
+                          </button>
+                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                            Deposito
+                          </button>
                     </div>
+                    
                 </div>
-                <div class=" h-full mt-[1.5rem]" id="content">
+                <div class="h-[calc(100%-4.7rem)] pb-[2rem] overflow-auto" id="content">
                     @foreach ($dashboard as $no => $data)
-                        <a href="{{ route('dashboard.show', $data->id ) }}">
-                            <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
-                                <p class="text-[1.3rem]">
-                                    {{ ($dashboard->currentPage() - 1) * $dashboard->perPage() + $no + 1 }}
-                                </p>
-                                <div class="block px-[1rem] text-left">
-                                    <h3 class="text-[0.8rem] font-medium">{{ $data->nama }}</h3>
-                                    <div class="flex text-[0.7rem] mt-[-0.2rem] text-gray-400">
-                                        <p>{{ Carbon::parse($data->created_at)->format('H:i') }}</p>
-                                        <p class="px-[0.4rem]">|</p>
-                                        <p>{{ Carbon::parse($data->created_at)->format('d F Y') }}</p>
-                                    </div>
-                                </div>
-                                <p class="right-[2.2rem] py-[0.1rem] px-[1.3rem] bg-slate-200 text-[0.75rem] rounded-[10px]">
-                                    {{ $data->jenis }}
-                                </p>
-                            </div>
-                        </a>
+                        {{-- data user form --}}
                     @endforeach
                 </div>
+                <div class="pagination-links flex absolute bottom-0 right-0 bg-gray-50">
+                    {{-- {{ $dashboard->links() }} --}}
+                </div>
             </div>
+            
         </div>
     </section>
 
@@ -215,13 +209,14 @@
                 updateContent(response.data);
                 updatePagination(response.pagination);
             },
-            error: function(xhr, status, error) {
+            error: function(xhr, status, error) {  
                 console.error('Gagal mengambil data:', error);
             }
         });
     }
 
     function updateContent(data) {
+        console.log('updateContent')
         let content = '';
         data.forEach((item, index) => {
             const createdAt = new Date(item.created_at);
@@ -253,22 +248,22 @@
 
         if (pagination.current_page > 1) {
             paginationHtml += `  <a href="#" class="pagination-link flex items-center justify-center px-4 h-10 me-3 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page - 1}">
-    <svg class="w-3.5 h-3.5 me-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
-    </svg>
-    Previous
-  </a>
+                                    <svg class="w-3.5 h-3.5 me-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                                    </svg>
+                                    Previous
+                                </a>
 `;
         }
 
 
         if (pagination.current_page < pagination.last_page) {
-            paginationHtml += `  <a href="#" class="pagination-link flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page + 1}">
-    Next
-    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-    </svg>
-  </a>`;
+            paginationHtml += `  <a href="#" class="pagination-link flex items-center justify-center px-4 h-10 text-base text-[0.7rem] font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page + 1}">
+                                    Next
+                                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                    </svg>
+                                </a>`;
         }
 
         $('.pagination-links').html(paginationHtml);
@@ -294,3 +289,5 @@
     </script>
 
 @endsection
+
+
