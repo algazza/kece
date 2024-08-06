@@ -16,7 +16,7 @@ import {
 import { ButtonFull, ButtonOutline } from "./Button";
 import Success from "./Success";
 
-const FormBank = ({ isiPenting, value, page, endpoint }) => {
+const FormBank = ({ isiPenting, value, endpoint }) => {
   const [inputs, setInputs] = useState({});
   const navigate = useNavigate();
 
@@ -44,7 +44,7 @@ const FormBank = ({ isiPenting, value, page, endpoint }) => {
     axios
       .post(endpoint, updatedInputs)
       .then((response) => {
-        navigate(<Success/>);
+        navigate("/succes");
       })
       .catch((error) => {
         console.error("Error:", error);

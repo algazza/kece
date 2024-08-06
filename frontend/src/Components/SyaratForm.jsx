@@ -233,7 +233,8 @@ const SyaratForm = () => {
         {/* Form */}
         <div className={tabs === 4 ? "mx-6 sm:mx-10 sm:px-10" : "hidden"}>
           <div className={`${styles.flexCenter}`}>
-            <FormBank isiPenting={<Kredit />} value={"Kredit"} />
+            <FormBank isiPenting={<Kredit />} value={"Kredit"}
+            endpoint={"http://localhost:8000/api/kredit"} />
           </div>
         </div>
       </section>
