@@ -39,194 +39,30 @@
                 </div>
             </div>
 
-            <div class=" mt-[1.5rem] absolute left-[45%]">
+            <div class=" mt-[1.5rem] absolute left-[45%] fle">
                 <div class="w-[13rem] py-[0.3rem] mb-[1rem] rounded-[7px] text-[1.1rem] font-semibold bg-gray-50 box-border border-black shadow-lg">
                     <p>Kredit</p>
                 </div>
-                <div class="w-[40rem] h-[12rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg" id="chart">
-                    {!! $chart->container() !!}
-                </div>    
-                <div class="flex flex-wrap mt-[1rem] mr-[2rem] gap-4">
-                    <div class="bg-gray-50 w-[19.5rem] rounded-[5px] box-border border-[0.2px] border-black shadow-lg h-[50%rem] text-left p-[0.9rem]">
-                        <div class="text-[0.9rem]">
-                            <p>Total Credit</p>
-                        </div>
-                        <div class="text-[1.5rem] rounded-[10px]">
-                            <p>Rp. 100.000.000</p>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 mt-[1.5rem]">
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 w-[19.5rem] rounded-[5px] box-border border-[0.2px] border-black shadow-lg h-[50%rem] text-left p-[0.9rem]">
-                        <div class="text-[0.9rem]">
-                            <p>Total Credit</p>
-                        </div>
-                        <div class="text-[1.5rem] rounded-[10px]">
-                            <p>Rp. 100.000.000</p>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 mt-[1.5rem]">
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            <div class="bg-gray-100 box-border border-[0.2px] border-black justify-center content-center h-[2.3rem] flex gap-[0.5rem] p-[0.1rem] rounded-[10px]">
-                                <div class="bg-slate-50 rounded-[20px] w-[3rem] h-[1.5rem]  box-border border-[0.5px] border-black  justify-center text-center relative mt-[0.25rem]">
-                                    <p class="text-[0.8rem] leading-[1.5rem]">300</p>
-                                </div>
-                                <div class="mt-[0.3rem]">
-                                    <p class="text-[0.6rem]">Kredit</p>
-                                    <p class="text-[0.7rem] font-semibold mt-[-0.5rem]">Investasi</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+                <div class="grid grid-cols-1 gap-3">
+                    <div class="w-[40rem] h-[15rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg">
+                        {!! $chartWeek->container() !!}
+                    </div>    
+                    <div class="w-[40rem] h-[15rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg">
+                        {!! $chartMonth->container() !!}
+                    </div>    
                 </div>
             </div>     
         </section>
     </section>
 
-    <script src="{{ $chart->cdn() }}"></script>
-    {{ $chart->script() }}
+    <script src="{{ $chartWeek->cdn() }}"></script>
+    {{ $chartWeek->script() }}
+    <script src="{{ $chartMonth->cdn() }}"></script>
+    {{ $chartMonth->script() }}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/larapex-charts@2.0.10/dist/umd/larapex-charts.min.js"></script>
     <script>
         let currentPage = 1;
         const pollingInterval = 5000;  // Mengatur interval polling menjadi 5 detik
-        let resetInterval = 60000;  // Mengatur reset interval menjadi 1 menit
-        let lastReset = Date.now();
     
         $(document).ready(function() {
             function checkToken() {
@@ -321,30 +157,6 @@
                 }
             });
     
-            function fetchChartData() {
-                $.ajax({
-                    url: '/api/kredit/chart-data',
-                    method: 'GET',
-                    success: function(response) {
-                        console.log('Chart data:', response);
-                        {!! $chart->id !!}.updateSeries([{
-                            name: 'Physical sales',
-                            data: response.data
-                        }]);
-                        {!! $chart->id !!}.updateOptions({
-                            xaxis: {
-                                categories: response.labels
-                            }
-                        });
-                        console.log('Chart data berhasil diperbarui');
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Gagal mengambil data chart:', error);
-                    }
-                });
-            }
-
-    
             fetchData(currentPage);
             setInterval(() => {
                 fetchData(currentPage);
@@ -352,17 +164,7 @@
     
             // Cek token setiap detik
             setInterval(checkToken, 1000);
-    
-            // Update chart data setiap 5 detik dan reset setiap menit
-            setInterval(() => {
-                const currentTime = Date.now();
-                if (currentTime - lastReset >= resetInterval) {
-                    lastReset = currentTime;
-                    fetchChartData();
-                }
-            }, pollingInterval);
         });
     </script>
-    
     
 @endsection

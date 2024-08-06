@@ -1,26 +1,23 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Kredit;
-use App\Charts\KreditChart;
 use Illuminate\Http\Request;
-use App\Events\KreditCreated;
-use Illuminate\Support\Facades\Log;
+use App\Charts\kredit\KreditWeek;
+use App\Charts\kredit\KreditMounth;
 
 class KreditController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('kredit.access')->only('index');
     }
 
-    public function index(Request $request, KreditChart $chart)
+    public function index(Request $request, KreditWeek $chart, KreditMounth $chartMonth)
     {
         $token = bin2hex(random_bytes(32));
-        $tokenExpiry = Carbon::now()->addSeconds(3600);
+        $tokenExpiry = Carbon::now()->addSeconds(10);
 
         $request->session()->put('kredit_access_token', $token);
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
@@ -30,35 +27,11 @@ class KreditController extends Controller
 
         return view('admin.kredit.Kredit', [
             'kredit' => $kredit,
-            'chart' => $chart->build([], []),
+            'chartWeek' => $chart->build(),
+            'chartMonth' => $chartMonth->build(),
             'token' => $token,
         ]);
     }
-
-
-    public function getChartData()
-    {
-        $currentMinute = Carbon::now()->minute;
-        $data = [];
-        $labels = [];
-    
-        for ($i = 0; $i < 12; $i++) {
-            $count = Kredit::whereBetween('created_at', [
-                Carbon::now()->startOfMinute()->addSeconds($i * 5),
-                Carbon::now()->startOfMinute()->addSeconds(($i + 1) * 5)
-            ])->count();
-            $data[] = $count;
-            $labels[] = Carbon::now()->startOfMinute()->addSeconds($i * 5)->format('H:i:s');
-    
-            // Log untuk debugging
-            Log::info('Data for interval ' . $i . ': ' . $count);
-        }
-    
-        return response()->json(['data' => $data, 'labels' => $labels]);
-    }
-    
-    
-    
 
     public function checkToken(Request $request)
     {
@@ -88,7 +61,6 @@ class KreditController extends Controller
         ]);
     }
 
-    
     public function create()
     {
         
@@ -135,17 +107,14 @@ class KreditController extends Controller
         
     }
 
-
     public function update(Request $request, string $id)
     {
         
     }
 
-
     public function destroy(string $id)
     {
         
     }
-
-
 }
+
