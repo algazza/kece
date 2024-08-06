@@ -14,7 +14,6 @@ import {
   TextareaAutosize,
 } from "@mui/material";
 import { ButtonFull, ButtonOutline } from "./Button";
-import Success from "./Success";
 
 const FormBank = ({ isiPenting, value, endpoint }) => {
   const [inputs, setInputs] = useState({});
@@ -33,10 +32,19 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
 
   const generateCode = () => {
     const now = new Date();
-    const code = `${Math.floor(now.getMilliseconds() / 10).toString().padStart(2, '0')}${now.getSeconds().toString().padStart(2, '0')}${now.getMinutes().toString().padStart(2, '0')}${now.getHours().toString().padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}${(now.getFullYear() % 100).toString().padStart(2, '0')}`;
+    const code = `${Math.floor(now.getMilliseconds() / 10)
+      .toString()
+      .padStart(2, "0")}${now.getSeconds().toString().padStart(2, "0")}${now
+      .getMinutes()
+      .toString()
+      .padStart(2, "0")}${now.getHours().toString().padStart(2, "0")}${now
+      .getDate()
+      .toString()
+      .padStart(2, "0")}${(now.getFullYear() % 100)
+      .toString()
+      .padStart(2, "0")}`;
     return code;
   };
-  
 
   const submitForm = () => {
     const code = generateCode();
@@ -48,13 +56,13 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
       })
       .catch((error) => {
         console.error("Error:", error);
-        alert('gagal')
+        alert("gagal");
       });
   };
 
   return (
     <section className={`${styles.fontBody} mx-14 md:mx-auto `}>
-      <FormGroup className="grid my-12 gap-6 sm:gap-12">
+      <FormGroup className="grid mb-12 gap-6 sm:gap-12">
         <div className="">
           <h2 className={`${styles.heading3} mb-4 `}>Identitas</h2>
 

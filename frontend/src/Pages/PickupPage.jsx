@@ -3,7 +3,7 @@ import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import Footer from "../Layouts/Footer";
 import FormBank from "../Components/FormBank"
-import PickupService from "../Components/Form/PickupService"
+import {PickupService} from "../Components/Form"
 import styles from "../data/style";
 import { sample } from "../data";
 

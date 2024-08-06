@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../data/style";
 import CheckIcon from "@mui/icons-material/Check";
-import { ButtonOutline } from "./Button";
-import { AnimatePresence, motion } from "framer-motion";
+import { ButtonOutline } from "../Components/Button";
+import { motion } from "framer-motion";
 
 const Success = () => {
   return (

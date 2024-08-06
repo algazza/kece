@@ -1,11 +1,11 @@
 // ----- Folder Component -----
-import Kredit from "../Components/Form/Kredit"
-import FormBank from "../Components/FormBank"
-import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
+import {Kredit} from "../Components/Form";
+import FormBank from "../Components/FormBank";
 import styles from "../data/style";
 import { sample } from "../data/index";
 import Header from "../Layouts/Header";
+import Footer from "../Layouts/Footer";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 
 const KreditPage = () => {

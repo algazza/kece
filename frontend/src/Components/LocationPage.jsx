@@ -1,8 +1,8 @@
-import { sample } from "../../data";
-import styles from "../../data/style";
-import Footer from "../../Layouts/Footer";
-import IntroBanner from "../../Layouts/IntroBanner";
-import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
+import { sample } from "../data";
+import styles from "../data/style";
+import Footer from "../Layouts/Footer";
+import IntroBanner from "../Layouts/IntroBanner";
+import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 
 const LocationPage = () => {
   return (

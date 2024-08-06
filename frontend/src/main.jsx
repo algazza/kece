@@ -3,13 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SyaratPage from "./Components/SyaratForm/SyaratPage.jsx";
-import Kredit from "./Components/Form/Kredit.jsx";
 import KreditPage from "./Pages/KreditPage.jsx";
 import News from "./Pages/News.jsx";
-import Success from "./Components/Success.jsx";
+import Success from "./Pages/Success.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
 import SyaratForm from "./Components/SyaratForm.jsx";
-import MergedTable from "./Components/tabel.jsx";
+import LocationPage from "./Components/LocationPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,10 +18,6 @@ const router = createBrowserRouter([
   {
     path: "/syarat",
     element: <SyaratPage />,
-  },
-  {
-    path: "/Kredit",
-    element: <Kredit />,
   },
   {
     path: "/Kreditpage",
@@ -45,10 +40,9 @@ const router = createBrowserRouter([
     element: <SyaratForm />,
   },
   {
-    path: "/table",
-    element: <MergedTable />,
+    path: "/location",
+    element: <LocationPage />,
   },
-
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
