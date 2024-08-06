@@ -23,11 +23,11 @@ return new class extends Migration
             $table->string('jangka_waktu');
             $table->string('jenis_angunan');
             $table->string('perhitungan_bunga');
-            $table->string('bunga_pertahun');
             $table->string('penghasilan_perbulan');
             $table->string('catatan');
             $table->string('jenis');
             $table->bigInteger('code');
+            $table->string('ip_user');
             $table->timestamps();
         });
     }

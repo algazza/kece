@@ -79,11 +79,11 @@ class KreditController extends Controller
             'jangka_waktu' => $request->jangka_waktu,
             'jenis_angunan' => $request->jenis_angunan,
             'perhitungan_bunga' => $request->perhitungan_bunga,
-            'bunga_pertahun' => $request->bunga_pertahun,
             'penghasilan_perbulan' => $request->penghasilan_perbulan,
             'catatan' => $request->catatan,
             'jenis' => $request->jenis,
             'code' => $request->code,
+            'ip_user' => $request->ip_user,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
