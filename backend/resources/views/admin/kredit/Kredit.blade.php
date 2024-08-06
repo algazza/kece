@@ -43,7 +43,7 @@
                 <div class="w-[13rem] py-[0.3rem] mb-[1rem] rounded-[7px] text-[1.1rem] font-semibold bg-gray-50 box-border border-black shadow-lg">
                     <p>Kredit</p>
                 </div>
-                <div class="w-[40rem] h-[12rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg">
+                <div class="w-[40rem] h-[12rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg" id="chart">
                     {!! $chart->container() !!}
                 </div>    
                 <div class="flex flex-wrap mt-[1rem] mr-[2rem] gap-4">
@@ -221,9 +221,12 @@
     <script src="{{ $chart->cdn() }}"></script>
     {{ $chart->script() }}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/larapex-charts@2.0.10/dist/umd/larapex-charts.min.js"></script>
     <script>
         let currentPage = 1;
         const pollingInterval = 5000;  // Mengatur interval polling menjadi 5 detik
+        let resetInterval = 60000;  // Mengatur reset interval menjadi 1 menit
+        let lastReset = Date.now();
     
         $(document).ready(function() {
             function checkToken() {
@@ -318,6 +321,30 @@
                 }
             });
     
+            function fetchChartData() {
+                $.ajax({
+                    url: '/api/kredit/chart-data',
+                    method: 'GET',
+                    success: function(response) {
+                        console.log('Chart data:', response);
+                        {!! $chart->id !!}.updateSeries([{
+                            name: 'Physical sales',
+                            data: response.data
+                        }]);
+                        {!! $chart->id !!}.updateOptions({
+                            xaxis: {
+                                categories: response.labels
+                            }
+                        });
+                        console.log('Chart data berhasil diperbarui');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Gagal mengambil data chart:', error);
+                    }
+                });
+            }
+
+    
             fetchData(currentPage);
             setInterval(() => {
                 fetchData(currentPage);
@@ -325,7 +352,17 @@
     
             // Cek token setiap detik
             setInterval(checkToken, 1000);
+    
+            // Update chart data setiap 5 detik dan reset setiap menit
+            setInterval(() => {
+                const currentTime = Date.now();
+                if (currentTime - lastReset >= resetInterval) {
+                    lastReset = currentTime;
+                    fetchChartData();
+                }
+            }, pollingInterval);
         });
     </script>
+    
     
 @endsection

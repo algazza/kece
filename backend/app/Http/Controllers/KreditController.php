@@ -20,7 +20,7 @@ class KreditController extends Controller
     public function index(Request $request, KreditChart $chart)
     {
         $token = bin2hex(random_bytes(32));
-        $tokenExpiry = Carbon::now()->addSeconds(5);
+        $tokenExpiry = Carbon::now()->addSeconds(3600);
 
         $request->session()->put('kredit_access_token', $token);
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
@@ -30,11 +30,35 @@ class KreditController extends Controller
 
         return view('admin.kredit.Kredit', [
             'kredit' => $kredit,
-            'chart' => $chart->build(),
+            'chart' => $chart->build([], []),
             'token' => $token,
         ]);
     }
 
+
+    public function getChartData()
+    {
+        $currentMinute = Carbon::now()->minute;
+        $data = [];
+        $labels = [];
+    
+        for ($i = 0; $i < 12; $i++) {
+            $count = Kredit::whereBetween('created_at', [
+                Carbon::now()->startOfMinute()->addSeconds($i * 5),
+                Carbon::now()->startOfMinute()->addSeconds(($i + 1) * 5)
+            ])->count();
+            $data[] = $count;
+            $labels[] = Carbon::now()->startOfMinute()->addSeconds($i * 5)->format('H:i:s');
+    
+            // Log untuk debugging
+            Log::info('Data for interval ' . $i . ': ' . $count);
+        }
+    
+        return response()->json(['data' => $data, 'labels' => $labels]);
+    }
+    
+    
+    
 
     public function checkToken(Request $request)
     {

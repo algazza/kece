@@ -49,7 +49,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
     Route::get('/api/kredit', [KreditController::class, 'data']);
 
-
     Route::get('/logout', [AdminController::class, 'logout']); 
 });
 

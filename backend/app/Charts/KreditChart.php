@@ -13,12 +13,13 @@ class KreditChart
         $this->chart = $chart;
     }
 
-    public function build(): \ArielMejiaDev\LarapexCharts\LineChart
+    public function build(array $data, array $labels): \ArielMejiaDev\LarapexCharts\LineChart
     {
         return $this->chart->lineChart()
-        ->setTitle('Sales during 2021.')
-        ->addData('Physical sales', [40, 93, 35, 42, 18, 82,40, 93, 35, 42, 18, 82])
-        ->setHeight(170)
-        ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June','January', 'February', 'March', 'April', 'May', 'June']);
+            ->setTitle('Sales during 2021.')
+            ->addData('Physical sales', $data)
+            ->setHeight(170)
+            ->setXAxis($labels);
     }
 }
+

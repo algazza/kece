@@ -29,3 +29,4 @@ Route::get('/dashboard/total-data', [DashboardController::class, 'getTotalData']
 
 
 Route::get('/api/kredit', [KreditController::class, 'data']);
+Route::get('/api/kredit/chart-data', [KreditController::class, 'getChartData'])->name('kredit.chart-data');
