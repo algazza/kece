@@ -10,7 +10,7 @@
                         <p class="absolute ml-[0.7] font-medium">Text</p>
                     </div>
                     <button class="bg-zinc-400 text-white py-2 px-4 rounded-[5px] transition-transform transform hover:scale-105 hover:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-white">
-                        Edit
+                        Edit 
                         <i class='bx bx-edit-alt'></i>
                       </button>
                     </div>
