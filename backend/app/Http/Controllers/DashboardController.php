@@ -43,7 +43,6 @@ class DashboardController extends Controller
 
     public function getTotalData()
     {
-        Log::info('getTotalData called');
         $totalData = Kredit::count();
         return response()->json(['totalData' => $totalData]);
     }
