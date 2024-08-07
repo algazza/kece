@@ -58,7 +58,7 @@
                         </label>
                     </div>
                     <div class="text-sm">
-                        <a href="javascript:void(0);" class="text-blue-600 hover:underline font-semibold">
+                        <a href="{{ route('forget') }}" class="text-blue-600 hover:underline font-semibold">
                             Forgot your password?
                         </a>
                     </div>

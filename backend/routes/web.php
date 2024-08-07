@@ -8,6 +8,7 @@ use App\Http\Controllers\KreditController;
 use App\Http\Middleware\Admin\KreditAccess;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Models\Admin;
 use Illuminate\Routing\Route as RoutingRoute;
 
 /*
@@ -29,8 +30,13 @@ Route::get('/home', function(){
 //     return redirect('/logout');
 // });
 
+// web.php
 Route::middleware(['guest'])->group(function(){
     Route::get('/', [AdminController::class, 'viewLogin'])->name('login');
+    Route::get('/lupa-password', [AdminController::class, 'forget'])->name('forget');
+    Route::post('/cari-email', [AdminController::class, 'findEmail'])->name('find.email');
+    Route::get('/reset-password/{email}', [AdminController::class, 'showResetForm'])->name('reset.form');
+    Route::post('/reset-password', [AdminController::class, 'resetPassword'])->name('reset.password');
     Route::post('/', [AdminController::class, 'login']);
 });
 
@@ -39,7 +45,8 @@ Route::middleware(['auth'])->group(function(){
 
     // Login and Admin 
     Route::get('/logout', [AdminController::class, 'logout']); 
-    Route::get('/Add', [AdminController::class, 'viewAddUser']);
+    Route::get('/Admin/Add', [AdminController::class, 'viewAddUser']);
+    Route::post('/Admin/Add/Post', [AdminController::class, 'store'])->name('admin.add');
 
     // Dashboard
     Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit');

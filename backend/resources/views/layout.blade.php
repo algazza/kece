@@ -52,12 +52,13 @@
                 </div> 
                 <div class="flex gap-2">
                   <div class="bg-gray-100 w-[2.7rem] h-[2.7rem] justify-center text-center items-center relative mt-[0.5rem] leading-[2.5rem] rounded-[5px] box-border border-[0.5px] border-black">
-                    <img src="{{ asset('images/coba.jpg') }}" alt="" class="h-full">
-                  </div>
-                  <div class="mt-[0.6rem]">
+                    <img src="{{ asset('image/public/' . (Auth::user()->image ?? 'profil.jpg'))  }}" class="h-full" id="userImage">
+                </div>
+                <div class="mt-[0.6rem]">
                     <p class="font-semibold">{{ Auth::user()->name }}</p>
                     <p class="text-[0.8rem] mt-[-0.3rem]">{{ Auth::user()->role }}</p>
-                  </div>
+                </div>
+                
                 </div>
               </div>
           </div>
@@ -116,6 +117,18 @@
                 sidebar.classList.add('w-16');
               }
             }
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+        // Mengambil elemen gambar
+        var userImage = document.getElementById('userImage');
+        
+        // Mengecek apakah elemen gambar ada
+        if (userImage) {
+            // Mencetak URL gambar ke konsol
+            console.log('Image URL:', userImage.src);
+        }
+    });
 
           </script>
     </section>

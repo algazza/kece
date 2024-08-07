@@ -11,7 +11,9 @@
                     Profile
                 </h1>
                 <h2 class="text-grey text-sm mb-4 dark:text-gray-400">Create Profile</h2>
-                <form>
+                <form enctype="multipart/form-data" method="post" action="{{ route('admin.add') }}">
+
+                    @csrf
                     <!-- Cover Image -->
                     <div
                         class="w-full rounded-sm bg-[url('https://images.unsplash.com/photo-1449844908441-8829872d2607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw2fHxob21lfGVufDB8MHx8fDE3MTA0MDE1NDZ8MA&ixlib=rb-4.0.3&q=80&w=1080')] bg-cover bg-center bg-no-repeat items-center">
@@ -21,7 +23,7 @@
 
                             <div class="bg-white/90 rounded-full w-6 h-6 text-center ml-28 mt-4">
 
-                                <input type="file" name="profile" id="upload_profile" hidden required>
+                                <input type="file" name="image" id="upload_profile" hidden>
 
                                 <label for="upload_profile">
                                         <svg data-slot="icon" class="w-6 h-5 text-blue-700" fill="none"
@@ -46,13 +48,13 @@
                             <label for="" class="mb-2 dark:text-gray-300">Name</label>
                             <input type="text"
                                     class="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
-                                    placeholder="First Name">
+                                    placeholder="First Name" name="name">
                         </div>
                         <div class="w-full  mb-4 lg:mt-6">
                             <label for="" class=" dark:text-gray-300">Email</label>
                             <input type="text"
                                     class="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
-                                    placeholder="Last Name">
+                                    placeholder="Email" name="email">
                         </div>
                     </div>
 
@@ -60,16 +62,20 @@
                         <div class="w-full">
                             <h3 class="dark:text-gray-300 mb-2">Role</h3>
                             <select
-                                    class="w-full text-grey border-2 rounded-lg p-4 pl-2 pr-2 dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800">
+                                    class="w-full text-grey border-2 rounded-lg p-4 pl-2 pr-2 dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800" name="role">
                                     <option disabled value="">Role</option>
-                                    <option value="Male">Admin</option>
-                                    <option value="Kredit">Kredit</option>
-                                    <option value="Deposit">Deposit</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="kredit">Kredit</option>
+                                    <option value="deposit">Deposit</option>
                                 </select>
                         </div>
                         <div class="w-full">
-                            <h3 class="dark:text-gray-300 mb-2">Passwword</h3>
-                            <input type="password" class="text-grey p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800">
+                            <h3 class="dark:text-gray-300 mb-2">Password</h3>
+                            <input type="password" class="text-grey p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800" name="password">
+                        </div>
+                        <div class="w-full">
+                            <h3 class="dark:text-gray-300 mb-2">No Handphone</h3>
+                            <input type="text" class="text-grey p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800" name="no_handphone">
                         </div>
                     </div>
                     <div class="w-full rounded-lg bg-blue-500 mt-4 text-white text-lg font-semibold">
