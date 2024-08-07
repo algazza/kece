@@ -3,11 +3,13 @@ import styles from "../data/style";
 import CheckIcon from "@mui/icons-material/Check";
 import { ButtonOutline } from "../Components/Button";
 import { motion } from "framer-motion";
+import Header from "../Layouts/Header";
 
 const Success = () => {
   return (
     <section className={`${styles.flexCenter} h-screen bg-primary`}>
-      <div className="bg-[#d9d9d9] px-32 py-16">
+      <Header />  
+      <div className=" px-32 py-16">
         <div className={`${styles.flexCenter} px-10 py-16`}>
           <div className="bg-biruMuda-500 px-10 py-10 rounded-full relative z-[1] ">
             <CheckIcon sx={{ fontSize: 80 }} className="text-primary" />
