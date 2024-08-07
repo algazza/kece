@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { Kredit } from "./Form";
+import Footer from "../Layouts/Footer";
 
 const calculateRowSpan = (data, key) => {
   const rowSpanData = [];
@@ -40,6 +41,10 @@ const SyaratForm = () => {
 
   function updateTabs(id) {
     setTabs(id);
+  }
+
+  function nextTab(id) {
+    updateTabs(id + 1)
   }
 
   return (
@@ -86,7 +91,7 @@ const SyaratForm = () => {
         </div>
       </section>
 
-      <section className="sm:pb-16 pb-6">
+      <section className="sm:pb-16 ">
         {/* Syarat */}
         {tabs === 1 ? (
           <motion.div
@@ -102,8 +107,8 @@ const SyaratForm = () => {
                 A. Syarat Pembukuan rekening
               </h3>
               <ul className="list-inside list-disc pl-16">
-                <li>Perorangan</li>
-                <li>Perusahaan</li>
+                <li>Perorangan <br /> - KTP/SIM/Passport asli yang masih berlaku </li>
+                <li>Perusahaan <br /> - KTP/SIM/Passport asli pejabat yang berwenang  <br /> - SIUP, NPWP, Akta Pendirian Perusahaan dan Perubahannya</li>
               </ul>
 
               <h3 className={`${styles.heading5} text-black my-4`}>
@@ -122,10 +127,13 @@ const SyaratForm = () => {
               </ul>
 
               <h3 className={`${styles.heading5} text-black my-4`}>C. Fitur</h3>
-              <ul className="list-inside list-disc pl-16">
+              <ul className="list-inside list-disc grid grid-cols-2 pl-16">
                 <li>Setoran Awal & Akhir </li>
+                <>: Sesuai nominal penempatan dana </>
                 <li>Biaya Administrasi Bulanan</li>
+                <>: Rp. 1.000,- </>
                 <li>Bunga tabungan</li>
+                <>: 2% pa </>
               </ul>
             </ul>
           </motion.div>
@@ -138,7 +146,7 @@ const SyaratForm = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5 }}
-            className="mx-6 sm:mx-10 sm:px-10"
+            className="mx-7 sm:mx-10 sm:px-10"
           >
             <ul className="text-abuGelap ml-5">
               <h3 className={`${styles.heading5} text-black my-4`}>
@@ -275,8 +283,22 @@ const SyaratForm = () => {
           </motion.div>
         ) : null}
       </section>
+
+      <section className={`${styles.paddingY} flex ml-16 `}>
+        <div
+          onClick={() => nextTab(tabs)}
+          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""}`}
+        >
+          next
+        </div>
+        
+        
+      </section>
+      <Footer />
     </main>
+    
   );
 };
+
 
 export default SyaratForm;
