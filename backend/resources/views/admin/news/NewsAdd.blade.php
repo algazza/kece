@@ -1,9 +1,9 @@
 @extends('layout')
 @section('content')
-    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center  font-poppins">
+    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center font-poppins">
        
         <main class="flex-1 p-8 justify-center pt-[5rem] pl-[5rem]">
-            <h1 class="text-3xl font-semibold mb-4">Edit News</h1>
+            <h1 class="text-3xl font-semibold mb-4">Add News</h1>
     
             <!-- Form to Add News -->
             <form class="bg-white p-6 rounded-lg shadow-md">
@@ -36,11 +36,11 @@
                 <div clas>
                     <button id="menuButton" class="bg-blue-400 text-white px-4  py-2 rounded-md shadow-lg focus:outline-none hover:bg-blue-500 transition duration-300 ease-in-out">
                         Select from folder</button>
-                        <img src="https://i.ytimg.com/vi/C6hPRgBvRVA/hqdefault.jpg" alt="News Image" class=" rounded-md mb-2 px-[27.5rem] pt-[3rem]">
+                        <img src="https://i.ytimg.com/vi/C6hPRgBvRVA/hqdefault.jpg" alt="News Image" class=" rounded-md mb-2 pl-[27.5rem] pt-[3rem]">
                     </div>
                     <div class="flex justify-end">
                         <button id="menuButton" class="bg-blue-400 text-white px-8 py-2 rounded-md shadow-lg focus:outline-none hover:bg-blue-500 transition duration-300 ease-in-out">
-                            Submit</button>
+                            Add News</button>
                     </div>
             </form>
             

@@ -82,6 +82,9 @@ Route::middleware(['auth'])->group(function(){
 Route::get('/News', function(){
     return view ('admin.news.News');
 });
+Route::get('/Newsa', function(){
+    return view ('admin.news.NewsAdd');
+});
 Route::get('/Newse', function(){
     return view ('admin.news.NewsEdit');
 });
