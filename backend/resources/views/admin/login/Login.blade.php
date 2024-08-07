@@ -14,7 +14,7 @@
         <div class="max-w-md w-full">
 
             <div class="p-8 rounded-2xl bg-transparent shadow-md">
-            <h2 class="text-gray-800 text-center pb-3 text-2xl font-bold">Wellcome back admin</h2>
+            <h2 class="text-gray-800 text-center pb-3 text-2xl font-bold">Welcome back admin</h2>
             <a href="javascript:void(0)"><img
                 src="{{ asset('image/admin/LOGO-AM-CORAL-BARU.svg') }}" alt="logo" class='w-20 mx-auto block' />
             </a>
