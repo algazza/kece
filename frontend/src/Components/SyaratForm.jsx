@@ -16,6 +16,7 @@ import {
 import { motion } from "framer-motion";
 import { Kredit } from "./Form";
 import Footer from "../Layouts/Footer";
+import Header from "../Layouts/Header";
 
 const calculateRowSpan = (data, key) => {
   const rowSpanData = [];
@@ -46,9 +47,11 @@ const SyaratForm = () => {
   function nextTab(id) {
     updateTabs(id + 1)
   }
+  
 
   return (
     <main>
+      <Header />
       <section>
         <IntroBanner
           ImageBanner={sample}
@@ -64,7 +67,7 @@ const SyaratForm = () => {
         <TitleBlueBanner title={"Kredit"} />
       </section>
 
-      <section className={`${styles.paddingY} flex justify-center`}>
+      <section className="pt-10 flex justify-center">
         <div
           onClick={() => updateTabs(1)}
           className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""}`}
@@ -91,19 +94,19 @@ const SyaratForm = () => {
         </div>
       </section>
 
-      <section className="sm:pb-16 ">
+      <section className="sm:pb-16 m-8 bg-abuTerang p-10 rounded-lg">
         {/* Syarat */}
-        {tabs === 1 ? (
+        {tabs === 1 ? ( 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5 }}
-            className="mx-6 sm:mx-10 sm:px-10"
+            className="mx-6 sm:mx-10 sm:px-10 "
           >
             {" "}
             <ul className="text-abuGelap ml-5">
-              <h3 className={`${styles.heading5} text-black my-4`}>
+              <h3 className={`${styles.heading5} text-black my-5`}>
                 A. Syarat Pembukuan rekening
               </h3>
               <ul className="list-inside list-disc pl-16">
@@ -111,7 +114,7 @@ const SyaratForm = () => {
                 <li>Perusahaan <br /> - KTP/SIM/Passport asli pejabat yang berwenang  <br /> - SIUP, NPWP, Akta Pendirian Perusahaan dan Perubahannya</li>
               </ul>
 
-              <h3 className={`${styles.heading5} text-black my-4`}>
+              <h3 className={`${styles.heading5} text-black my-5`}>
                 B. Keuntungan
               </h3>
               <ul className="list-inside list-disc pl-16">
@@ -126,7 +129,7 @@ const SyaratForm = () => {
                 <li>Hadiah dipilih, dibawa pulang, langsung, tanpa diundi.</li>
               </ul>
 
-              <h3 className={`${styles.heading5} text-black my-4`}>C. Fitur</h3>
+              <h3 className={`${styles.heading5} text-black my-5 `}>C. Fitur</h3>
               <ul className="list-inside list-disc grid grid-cols-2 pl-16">
                 <li>Setoran Awal & Akhir </li>
                 <>: Sesuai nominal penempatan dana </>
@@ -153,26 +156,26 @@ const SyaratForm = () => {
                 D. Ketentuan
               </h3>
               <ul className="list-inside list-disc pl-16">
-                <li>
+                <li className="p-4">
                   Bunga dihitung dan dibayarkan pada akhir bulan dengan cara
                   ditambahbukukan pada rekening tabungan.
                 </li>
-                <li>
+                <li className="p-4">
                   Sebagai bukti transaksi tabungan, bank akan menerbitkan
                   sertipikat tabungan berjangka dan menatausahakan rekening atas
                   nama penabung.
                 </li>
-                <li>
+                <li className="p-4">
                   Jika terjadi penarikan tabungan sebelum jatuh tempo maka
                   penabung akan dikenakan pinalti sebesar hadiah yang diterima
                   di awal (nilai hadiah pada saat diterima).
                 </li>
-                <li>
+                <li className="p-4">
                   Jika hadiah yang dikehendaki nasabah sudah tidak tersedia di
                   pasaran, maka hadiah akan diganti dengan hadiah lain yang
                   setara atas persetujuan nasabah.
                 </li>
-                <li>
+                <li className="p-4">
                   Jika penabung meninggal dunia maka saldo tabungan akan
                   dibayarkan kepada ahli warisnya sesuai ketentuan di BPR Arto
                   Moro.
@@ -284,7 +287,7 @@ const SyaratForm = () => {
         ) : null}
       </section>
 
-      <section className={`${styles.paddingY} flex ml-16 `}>
+      <section className="flex ml-16"  >
         <div
           onClick={() => nextTab(tabs)}
           className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""}`}
