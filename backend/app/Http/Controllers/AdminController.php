@@ -8,8 +8,19 @@ use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
 {
-    function index(){
+    function viewLogin(){
         return view('admin.login');
+    }
+
+    function viewAddUser(){
+        return view('admin.user.UserAdd');
+    }
+
+
+    function store(Request $request){
+        $request->validate([
+
+        ]);
     }
 
     function login(Request $request){

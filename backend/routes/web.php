@@ -30,12 +30,16 @@ Route::get('/home', function(){
 // });
 
 Route::middleware(['guest'])->group(function(){
-    Route::get('/', [AdminController::class, 'index'])->name('login');
+    Route::get('/', [AdminController::class, 'viewLogin'])->name('login');
     Route::post('/', [AdminController::class, 'login']);
 });
 
 
 Route::middleware(['auth'])->group(function(){
+
+    // Login and Admin 
+    Route::get('/logout', [AdminController::class, 'logout']); 
+    Route::get('/Add', [AdminController::class, 'viewAddUser']);
 
     // Dashboard
     Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit');
@@ -48,9 +52,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
     Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
     Route::get('/api/kredit', [KreditController::class, 'data']);
-
-
-    Route::get('/logout', [AdminController::class, 'logout']); 
 });
 
 
