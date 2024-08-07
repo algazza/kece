@@ -59,7 +59,7 @@ export const formPekerjaan = [
     title: "ASN(PNS)",
   },
   {
-    id: "nganggur",
+    id: "Tidak bekerja",
     title: "Tidak Bekerja",
   },
   {

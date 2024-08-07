@@ -33,7 +33,7 @@ Route::get('/home', function(){
 // web.php
 Route::middleware(['guest'])->group(function(){
     Route::get('/', [AdminController::class, 'viewLogin'])->name('login');
-    Route::get('/lupa-password', [AdminController::class, 'forget'])->name('forget');
+    Route::get('/forget', [AdminController::class, 'forget'])->name('forget');
     Route::post('/cari-email', [AdminController::class, 'findEmail'])->name('find.email');
     Route::get('/reset-password/{email}', [AdminController::class, 'showResetForm'])->name('reset.form');
     Route::post('/reset-password', [AdminController::class, 'resetPassword'])->name('reset.password');

@@ -14,6 +14,10 @@ import {
   TextareaAutosize,
 } from "@mui/material";
 import { ButtonFull, ButtonOutline } from "./Button";
+import { DatePicker, TimePicker } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import dayjs from "dayjs";
+
 
 const FormBank = ({ isiPenting, value, endpoint }) => {
   const [inputs, setInputs] = useState({});
@@ -38,6 +42,15 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
 
     setInputs((values) => ({ ...values, [name]: value }));
   };
+
+  const handleDateChange = (newValue) => {
+    setInputs((values) => ({ ...values, tanggal: newValue.format('DD/MM/YYYY') }));
+  };
+
+  const handleTimeChange = (newValue) => {
+    setInputs((values) => ({ ...values, waktu: newValue.format('HH:mm') }));
+  };
+
 
   const generateCode = () => {
     const now = new Date();
@@ -67,6 +80,7 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
         console.error("Error:", error);
         alert("gagal");
       });
+
   };
 
   return (
@@ -143,7 +157,7 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
           onChange={handleChange}
         />
 
-        {React.cloneElement(isiPenting, { inputs, handleChange })}
+        {React.cloneElement(isiPenting, { inputs, handleChange, handleDateChange, handleTimeChange  })}
 
         <div>
           <div className="flex flex-col gap-2 ">
