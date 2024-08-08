@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kredit', function (Blueprint $table) {
+        Schema::create('pickup', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->string('email');
@@ -19,13 +19,12 @@ return new class extends Migration
             $table->bigInteger('nik');
             $table->string('pekerjaan');
             $table->string('alamat');
-            $table->bigInteger('total_pinjaman'); 
-            $table->string('jangka_waktu');
-            $table->string('jenis_angunan');
-            $table->string('perhitungan_bunga');
-            $table->string('penghasilan_perbulan');
-            $table->string('catatan');
             $table->string('jenis');
+            $table->string('produk_tabungan');
+            $table->string('tanggal');
+            $table->string('waktu');
+            $table->string('lokasi');
+            $table->string('catatan');
             $table->bigInteger('code');
             $table->string('ip_user');
             $table->timestamps();
@@ -37,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kredit');
+        Schema::dropIfExists('pickup');
     }
 };

@@ -14,13 +14,26 @@ import {
   TextareaAutosize,
 } from "@mui/material";
 import { ButtonFull, ButtonOutline } from "./Button";
+import { DatePicker, TimePicker } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import dayjs from "dayjs";
+
 
 const FormBank = ({ isiPenting, value, endpoint }) => {
   const [inputs, setInputs] = useState({});
+  const [ip, setIp] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     setInputs((values) => ({ ...values, jenis: value }));
+
+    axios.get('https://api.ipify.org?format=json')
+      .then(response => {
+        setIp(response.data.ip);
+      })
+      .catch(error => {
+        console.error('Error fetching IP address:', error);
+      });
   }, [value]);
 
   const handleChange = (event) => {
@@ -29,6 +42,15 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
 
     setInputs((values) => ({ ...values, [name]: value }));
   };
+
+  const handleDateChange = (newValue) => {
+    setInputs((values) => ({ ...values, tanggal: newValue.format('DD/MM/YYYY') }));
+  };
+
+  const handleTimeChange = (newValue) => {
+    setInputs((values) => ({ ...values, waktu: newValue.format('HH:mm') }));
+  };
+
 
   const generateCode = () => {
     const now = new Date();
@@ -48,7 +70,7 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
 
   const submitForm = () => {
     const code = generateCode();
-    const updatedInputs = { ...inputs, code };
+    const updatedInputs = { ...inputs, code, ip_user: ip };
     axios
       .post(endpoint, updatedInputs)
       .then((response) => {
@@ -58,6 +80,7 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
         console.error("Error:", error);
         alert("gagal");
       });
+
   };
 
   return (
@@ -127,8 +150,14 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
           value={inputs.code}
           onChange={handleChange}
         />
+        <input
+          type="hidden"
+          name="ip_user"
+          value={ip}
+          onChange={handleChange}
+        />
 
-        {React.cloneElement(isiPenting, { inputs, handleChange })}
+        {React.cloneElement(isiPenting, { inputs, handleChange, handleDateChange, handleTimeChange  })}
 
         <div>
           <div className="flex flex-col gap-2 ">

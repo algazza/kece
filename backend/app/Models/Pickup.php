@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kredit extends Model
+class Pickup extends Model
 {
     use HasFactory;
 
-    protected $table = 'kredit';
+    protected $table = 'pickup';
 
     protected $fillable = [
         'nama',
@@ -18,14 +18,14 @@ class Kredit extends Model
         'nik',
         'pekerjaan',
         'alamat',
-        'total_pinjaman',
-        'jangka_waktu',
-        'jenis_angunan',
-        'perhitungan_bunga',
-        'penghasilan_perbulan',
+        'produk_tabungan',
+        'tanggal',
+        'waktu',
+        'lokasi',
         'catatan',
         'jenis',
         'code',
         'ip_user',
     ];
 }
+

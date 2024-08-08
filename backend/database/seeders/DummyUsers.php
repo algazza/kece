@@ -18,18 +18,21 @@ class DummyUsers extends Seeder
                 'name' => 'El Rakkai',
                 'email' => 'admin@gmail.com',
                 'role' => 'admin',
+                'no_handphone' => '088997998998',
                 'password' => bcrypt('123456')
             ],
             [
                 'name' => 'Jontol nih bozz',
                 'email' => 'kredit@gmail.com',
                 'role' => 'kredit',
+                'no_handphone' => '088997998998',
                 'password' => bcrypt('123456')
             ],
             [
                 'name' => 'Iatsa Villainku',
                 'email' => 'deposit@gmail.com',
                 'role' => 'deposit',
+                'no_handphone' => '088997998998',
                 'password' => bcrypt('123456')
             ],
         ];
