@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { sample } from "../../data";
+import { samplebanner } from "../../data";
 import styles from "../../data/style";
 import Footer from "../../Layouts/Footer";
 import IntroBanner from "../../Layouts/IntroBanner";
@@ -11,7 +11,7 @@ const SyaratPage = () => {
     <>
       <div className="">
         <IntroBanner
-          ImageBanner={sample}
+          ImageBanner={samplebanner}
           TitleBanner={"Syarat"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
@@ -20,11 +20,8 @@ const SyaratPage = () => {
                 menawarkan berbagai produk kredit yang dapat disesuaikan dengan
                 keperluan Anda.
             `}
-                />
-                <TitleBlueBanner
-                title={"Syarat"}
-                />
-        
+        />
+        <TitleBlueBanner title={"Syarat"} />
       </div>
 
       <div className="h-auto mx-6 sm:mx-10 mt-10 bg-abuTerang sm:p-10 rounded-lg">
@@ -62,7 +59,9 @@ const SyaratPage = () => {
               </ul>
             </div>
 
-            <li className={`${styles.heading5}  text-abuGelap mb-5 mt-16 ml-10 list-decimal`}>
+            <li
+              className={`${styles.heading5}  text-abuGelap mb-5 mt-16 ml-10 list-decimal`}
+            >
               Kredit Progana
             </li>
 
@@ -82,7 +81,9 @@ const SyaratPage = () => {
               </ul>
             </div>
 
-            <li className={`${styles.heading5}  text-abuGelap mb-5 mt-16 ml-10 list-decimal`}>
+            <li
+              className={`${styles.heading5}  text-abuGelap mb-5 mt-16 ml-10 list-decimal`}
+            >
               Syarat pembukaan rekening kredit pegawai
             </li>
 
@@ -117,7 +118,9 @@ const SyaratPage = () => {
         </div>
 
         <div className="flex gap-10 mt-16">
-          <ButtonFull as={Link} to="/" WidthButton="w-36" WidthShadow="w-48">Ajukan Kredit</ButtonFull>
+          <ButtonFull as={Link} to="/" WidthButton="w-36" WidthShadow="w-48">
+            Ajukan Kredit
+          </ButtonFull>
 
           <ButtonOutline>Hubungi Kami</ButtonOutline>
         </div>

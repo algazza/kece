@@ -1,4 +1,4 @@
-import { sample } from "../data";
+import { samplebanner } from "../data";
 import styles from "../data/style";
 import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
@@ -9,7 +9,7 @@ const LocationPage = () => {
     <>
       <div className="">
         <IntroBanner
-          ImageBanner={sample}
+          ImageBanner={samplebanner}
           TitleBanner={"Location"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
@@ -45,9 +45,9 @@ const LocationPage = () => {
               </h4>
               <div className="bg-abuGelap p-0.5 h1 m-1"></div>
               <h4
-                className={`${styles.heading6} flex-auto border-2 rounded-md p-1 text-gray-500`}
+                className={`${styles.heading6} flex-auto border-2 rounded-md p-1 text-gray-500 flex-shrink-0`}
               >
-                KantorKas
+                Kantor Kas
               </h4>
             </div>
 

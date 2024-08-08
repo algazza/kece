@@ -2,10 +2,10 @@ import Header from "../Layouts/Header";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import Footer from "../Layouts/Footer";
-import FormBank from "../Components/FormBank"
-import {PickupService} from "../Components/Form"
+import FormBank from "../Components/FormBank";
+import { PickupService } from "../Components/Form";
 import styles from "../data/style";
-import { sample } from "../data";
+import { samplebanner } from "../data";
 
 const PickupPage = () => {
   return (
@@ -14,7 +14,7 @@ const PickupPage = () => {
       <main className="sm:py-0 py-6">
         <section>
           <IntroBanner
-            ImageBanner={sample}
+            ImageBanner={samplebanner}
             TitleBanner={"Deposito"}
             DescriptionBanner={`
                   Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
