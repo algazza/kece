@@ -1,5 +1,5 @@
 @extends('layout')
-@section('content')
+@section('content')  
 <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins">
   <div class="flex gap-[2rem] pt-[5rem] pb-[2rem] px-[9rem] bg-gray-200 w-screen">
   <div class="p-4 text-black dark:text-black outline-none focus:outline-none">
