@@ -1,8 +1,4 @@
-import Header from "../Layouts/Header";
-import Footer from "../Layouts/Footer";
-import IntroBanner from "../Layouts/IntroBanner";
-import { samplebanner } from "../data";
-import styles from "../data/style";
+import React, { useEffect, useState } from "react";
 import {
   createTheme,
   InputAdornment,
@@ -11,8 +7,11 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { useEffect, useState } from "react"
-import { DataBerita } from "../data/user";
+import Header from "../Layouts/Header";
+import Footer from "../Layouts/Footer";
+import IntroBanner from "../Layouts/IntroBanner";
+import { samplebanner } from "../data";
+import styles from "../data/style";
 
 // theme mui
 const theme = createTheme({
@@ -23,20 +22,8 @@ const theme = createTheme({
   },
 });
 
-// total data berita yang muncul
+// total data berita yang muncul per halaman
 const pageSize = 10;
-
-// mengambil data dan memisahkan from dan to
-const service = {
-  getData: () => {
-    return new Promise((resolve, reject) => {
-      resolve({
-        count: DataBerita.length,
-        data: DataBerita,
-      });
-    });
-  },
-};
 
 const News = () => {
   const [query, setQuery] = useState("");
@@ -51,19 +38,27 @@ const News = () => {
 
   // memunculkan data ke berapa saja yang akan muncul
   useEffect(() => {
-    service.getData().then((response) => {
-      setBerita(response.data);
-      setFilteredBerita(response.data);
-      setPagination({ ...pagination, count: response.count });
-    });
+    fetch("http://localhost:8000/api/news")
+      .then((response) => response.json())
+      .then((data) => {
+        // Membalikkan urutan data di sini
+        const reversedData = data.reverse();
+        setBerita(reversedData);
+        setFilteredBerita(reversedData);
+        setPagination({ ...pagination, count: reversedData.length });
+      })
+      .catch((error) => {
+        console.error("Error fetching news:", error);
+      });
   }, []);
+
 
   useEffect(() => {
     let filteredData = berita;
 
     if (selectFilter !== "All") {
       filteredData = filteredData.filter(
-        (news) => news.kategori === selectFilter
+        (news) => news.kategory === selectFilter
       );
     }
 
@@ -76,7 +71,7 @@ const News = () => {
     filteredData = filteredData.reverse();
 
     // mengatur ulang pagination dan berita berdasarkan yang telah di filter 
-    setFilteredBerita(filteredData)
+    setFilteredBerita(filteredData);
     setPagination({
       ...pagination,
       count: filteredData.length,
@@ -175,15 +170,15 @@ const News = () => {
             className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
           >
             <img
-              src={news.gambar}
-              alt=""
+              src={`http://localhost:8000/image/public/news/${news.image}`}
+              alt={news.judul}
               className="h-fit sm:w-40 rounded-l-xl"
             />
             <div className="p-4 flex flex-col justify-center">
               <h6 className={`${styles.heading6} `}>{news.judul}</h6>
-              <p className="py-1 hidden sm:block">{news.ringkasan}</p>
+              <p className="py-1 hidden sm:block">{news.keterangan_singkat}</p>
               <p className={`${styles.fontSmall} text-abuGelap`}>
-                {news.tanggal}
+                {news.created_at}
               </p>
             </div>
           </div>
@@ -203,4 +198,3 @@ const News = () => {
 };
 
 export default News;
-// al 7 agustus
