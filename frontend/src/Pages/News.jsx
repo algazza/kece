@@ -15,6 +15,7 @@ import { DataBerita } from "../data/user";
 import { useEffect, useState } from "react";
 import { TextFieldsRounded } from "@mui/icons-material";
 
+// theme mui
 const theme = createTheme({
   palette: {
     merah: {
@@ -23,16 +24,16 @@ const theme = createTheme({
   },
 });
 
+// total data berita yang muncul
 const pageSize = 10;
 
+// mengambil data dan memisahkan from dan to
 const service = {
-  getData: ({ from, to }) => {
+  getData: () => {
     return new Promise((resolve, reject) => {
-      const dataNews = DataBerita.slice(from, to);
-
       resolve({
         count: DataBerita.length,
-        data: dataNews,
+        data: DataBerita,
       });
     });
   },
@@ -40,26 +41,55 @@ const service = {
 
 const News = () => {
   const [query, setQuery] = useState("");
-  const [berita, setBerita] = useState([])
+  const [berita, setBerita] = useState([]);
+  const [filteredBerita, setFilteredBerita] = useState([]);
+  const [selectFilter, setSelectFilter] = useState("All");
   const [pagination, setPagination] = useState({
     count: 0,
     from: 0,
     to: pageSize,
   });
 
+  // memunculkan data ke berapa saja yang akan muncul
   useEffect(() => {
-    service
-      .getData({ from: pagination.from, to: pagination.to })
-      .then((response) => {
-        setPagination({ ...pagination, count: response.count });
-        setBerita(response.data)
-      });
-  }, [pagination.from, pagination.to]);
+    service.getData().then((response) => {
+      setBerita(response.data);
+      setFilteredBerita(response.data);
+      setPagination({ ...pagination, count: response.count });
+    });
+  }, []);
 
+  useEffect(() => {
+    let filteredData = berita;
+
+    if (selectFilter !== "All") {
+      filteredData = filteredData.filter(
+        (news) => news.kategori === selectFilter
+      );
+    }
+
+    // filter berdasarkan query pencarian judul
+    filteredData = filteredData.filter((news) =>
+      news.judul.toLowerCase().includes(query.toLowerCase())
+    );
+
+    // membalikkan array
+    filteredData = filteredData.reverse();
+
+    // mengatur ulang pagination dan berita berdasarkan yang telah di filter 
+    setFilteredBerita(filteredData)
+    setPagination({
+      ...pagination,
+      count: filteredData.length,
+      from: 0,
+      to: pageSize,
+    });
+  }, [query, berita, selectFilter]);
+
+  // sebagai handlechange dari pagination
   const handlePageChange = (event, page) => {
     const from = (page - 1) * pageSize;
     const to = (page - 1) * pageSize + pageSize;
-
     setPagination({ ...pagination, from: from, to: to });
   };
 
@@ -84,31 +114,21 @@ const News = () => {
         </div>
 
         <div className="flex gap-4 sm:max-w-full max-w-80 overflow-auto">
-          <div
-            className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer`}
-          >
-            All
-          </div>
-          <div
-            className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer`}
-          >
-            Penghargaan
-          </div>
-          <div
-            className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer`}
-          >
-            Promo
-          </div>
-          <div
-            className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer`}
-          >
-            Pengunguman
-          </div>
-          <div
-            className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0`}
-          >
-            Siaran Pers
-          </div>
+          {["All", "Penghargaan", "Promo", "Pengumuman", "Siaran Pers"].map(
+            (category) => (
+              <div
+                key={category}
+                onClick={() => setSelectFilter(category)}
+                className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
+                  selectFilter === category
+                    ? "bg-biruMuda-500 text-primary"
+                    : ""
+                }`}
+              >
+                {category}
+              </div>
+            )
+          )}
         </div>
 
         <ThemeProvider theme={theme}>
@@ -148,30 +168,33 @@ const News = () => {
       </section>
 
       <section
-        className={`${styles.paddingY} grid sm:grid-cols-x600 justify-center px-12 gap-6 sm:gap-12`}
+        className={`${styles.paddingY} grid sm:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
       >
-        {berita.filter((news) => news.judul.toLowerCase().includes(query)).map(
-          (news) => (
-            <div
-              key={news.id}
-              className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl "
-            >
-              <img src={news.gambar} alt="" className="h-fit sm:w-40 rounded-l-xl" />
-              <div className="p-4 flex flex-col justify-center">
-                <h6 className={`${styles.heading6} `}>{news.judul}</h6>
-                <p className="py-1 hidden sm:block">{news.ringkasan}</p>
-                <p className={`${styles.fontSmall} text-abuGelap`}>
-                  {news.tanggal}
-                </p>
-              </div>
+        {filteredBerita.slice(pagination.from, pagination.to).map((news) => (
+          <div
+            key={news.id}
+            className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
+          >
+            <img
+              src={news.gambar}
+              alt=""
+              className="h-fit sm:w-40 rounded-l-xl"
+            />
+            <div className="p-4 flex flex-col justify-center">
+              <h6 className={`${styles.heading6} `}>{news.judul}</h6>
+              <p className="py-1 hidden sm:block">{news.ringkasan}</p>
+              <p className={`${styles.fontSmall} text-abuGelap`}>
+                {news.tanggal}
+              </p>
             </div>
-          )
-        )}
+          </div>
+        ))}
       </section>
 
       <section className={`${styles.flexCenter} py-12`}>
         <Pagination
           count={Math.ceil(pagination.count / pageSize)}
+          page={Math.ceil(pagination.from / pageSize) + 1}
           onChange={handlePageChange}
         />
       </section>
@@ -181,4 +204,4 @@ const News = () => {
 };
 
 export default News;
-// al 7 agustus 
+// al 7 agustus
