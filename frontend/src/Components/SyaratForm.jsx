@@ -302,6 +302,6 @@ const SyaratForm = () => {
     
   );
 };
-
-
+ 
+// mahes 7 agustus 2024
 export default SyaratForm;
