@@ -1,9 +1,9 @@
 // ----- Folder Component -----
 import IntroBanner from "../Layouts/IntroBanner";
-import {Kredit} from "../Components/Form";
+import { Kredit } from "../Components/Form";
 import FormBank from "../Components/FormBank";
 import styles from "../data/style";
-import { sample } from "../data/index";
+import { samplebanner } from "../data/index";
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
@@ -15,7 +15,7 @@ const KreditPage = () => {
       <main className="sm:py-0 py-6">
         <section className="">
           <IntroBanner
-            ImageBanner={sample}
+            ImageBanner={samplebanner}
             TitleBanner={"Kredit"}
             DescriptionBanner={`
               Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk

@@ -19,6 +19,8 @@ import {
   TimePicker,
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import dayjs from "dayjs";
+
 
 export const Kredit = ({ inputs, handleChange }) => {
   return (
@@ -116,23 +118,25 @@ export const Kredit = ({ inputs, handleChange }) => {
   );
 };
 
-export const PickupService = () => {
+
+export const PickupService = ({ inputs, handleChange }) => {
   return (
-    <div className="">
+    <div>
       <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
-      <div action="" className="grid justify-center gap-4 mx-auto md:w-[850px]">
+      <div className="grid justify-center gap-4 mx-auto md:w-[850px]">
         <div className="grid sm:grid-cols-3 gap-4">
           <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">
-              Produk Tabungan
-            </InputLabel>
+            <InputLabel id="demo-simple-select-label">Produk Tabungan</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              label={"Produk Tabungan"}
+              label="Produk Tabungan"
+              name="produk_tabungan"
+              value={inputs.produk_tabungan || ''}
+              onChange={handleChange}
             >
               {formSelectTabungan.map((produk) => (
-                <MenuItem key={produk.id} value={produk.title}>
+                <MenuItem key={produk.id} value={produk.id}>
                   {produk.title}
                 </MenuItem>
               ))}
@@ -140,11 +144,19 @@ export const PickupService = () => {
           </FormControl>
 
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker label="Tentukan Tanggal" />
+            <DatePicker
+              label="Tentukan Tanggal"
+              value={inputs.tanggal ? dayjs(inputs.tanggal, 'DD/MM/YYYY') : null}
+              onChange={(newValue) => handleChange({ target: { name: 'tanggal', value: newValue.format('DD/MM/YYYY') } })}
+            />
           </LocalizationProvider>
 
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <TimePicker label="Tentukan Waktu" />
+            <TimePicker
+              label="Tentukan Waktu"
+              value={inputs.waktu ? dayjs(inputs.waktu, 'HH:mm') : null}
+              onChange={(newValue) => handleChange({ target: { name: 'waktu', value: newValue.format('HH:mm') } })}
+            />
           </LocalizationProvider>
 
           <div className={`${styles.inputSpan} sm:col-span-3`}>
@@ -152,9 +164,12 @@ export const PickupService = () => {
             <TextareaAutosize
               className="resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
                   border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
-              aria-label="empty textarea"
+              aria-label="Lokasi"
               minRows={3}
               placeholder="Tentukan Lokasi"
+              name="lokasi"
+              value={inputs.lokasi || ''}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -164,9 +179,12 @@ export const PickupService = () => {
           <TextareaAutosize
             className="resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
                   border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
-            aria-label="empty textarea"
+            aria-label="Catatan"
             minRows={3}
             placeholder="Catatan"
+            name="catatan"
+            value={inputs.catatan || ''}
+            onChange={handleChange}
           />
           <p className={`${styles.fontCaption} mt-2`}>
             Mohon mengisi di CATATAN kalo memang ada Informasi Awal yang perlu

@@ -1,9 +1,9 @@
 @extends('layout')
 @section('content')
-    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center font-poppins">
+    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center  font-poppins">
        
         <main class="flex-1 p-8 justify-center pt-[5rem] pl-[5rem]">
-            <h1 class="text-3xl font-semibold mb-4">Add News</h1>
+            <h1 class="text-3xl font-semibold mb-4">Edit News</h1>
     
             <!-- Form to Add News -->
             <form class="bg-white p-6 rounded-lg shadow-md">
@@ -30,23 +30,21 @@
                     </select>
                 </div>
     
-                <div class="flex justify-end">
-                    <button id="menuButton" class="bg-blue-400 text-white px-8 py-2 rounded-md shadow-lg focus:outline-none hover:bg-blue-500 transition duration-300 ease-in-out">
-                        Add News</button>
-                </div>
-            </form>
-    
-            <!-- Display Added News (Example) -->
-            <div class="mt-8">
                 <h2 class="text-2xl font-semibold mb-4">Select your image</h2>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <!-- Example News Item -->
-                    <h3 class="text-xl font-semibold mb-2"> Title</h3>
-                    <p class="text-gray-700 mb-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque natus, non, voluptate maxime doloribus autem quasi recusandae quo, nihil eveniet fugit ipsa itaque sapiente molestias error magni. Quis, rem ut.(description)</p>
-                    <img src="https://i.ytimg.com/vi/C6hPRgBvRVA/hqdefault.jpg" alt="News Image" class="w-full rounded-md mb-2">
-                    <p class="text-gray-500 text-sm">Category: Technology</p>
-                </div>
-            </div> 
+                
+                
+                <div clas>
+                    <button id="menuButton" class="bg-blue-400 text-white px-4  py-2 rounded-md shadow-lg focus:outline-none hover:bg-blue-500 transition duration-300 ease-in-out">
+                        Select from folder</button>
+                        <img src="https://i.ytimg.com/vi/C6hPRgBvRVA/hqdefault.jpg" alt="News Image" class=" rounded-md mb-2 px-[27.5rem] pt-[3rem]">
+                    </div>
+                    <div class="flex justify-end">
+                        <button id="menuButton" class="bg-blue-400 text-white px-8 py-2 rounded-md shadow-lg focus:outline-none hover:bg-blue-500 transition duration-300 ease-in-out">
+                            Submit</button>
+                    </div>
+            </form>
+            
+              
         </main>
     </section>
 @endsection

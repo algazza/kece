@@ -3,7 +3,7 @@ import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import FormBank from "./FormBank";
 import styles from "../data/style";
-import { PenempatanDana, sample } from "../data";
+import { PenempatanDana, samplebanner } from "../data";
 import {
   Paper,
   Table,
@@ -54,7 +54,7 @@ const SyaratForm = () => {
       <Header />
       <section>
         <IntroBanner
-          ImageBanner={sample}
+          ImageBanner={samplebanner}
           TitleBanner={"Kredit"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
@@ -70,25 +70,33 @@ const SyaratForm = () => {
       <section className="pt-10 flex justify-center">
         <div
           onClick={() => updateTabs(1)}
-          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""}`}
+          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+            tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""
+          }`}
         >
           Syarat
         </div>
         <div
           onClick={() => updateTabs(2)}
-          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${tabs === 2 ? "bg-biruMuda-500 text-primary rounded-md" : ""}`}
+          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+            tabs === 2 ? "bg-biruMuda-500 text-primary rounded-md" : ""
+          }`}
         >
           Ketentuan
         </div>
         <div
           onClick={() => updateTabs(3)}
-          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${tabs === 3 ? "bg-biruMuda-500 text-primary rounded-md" : ""}`}
+          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+            tabs === 3 ? "bg-biruMuda-500 text-primary rounded-md" : ""
+          }`}
         >
           Tabel
         </div>
         <div
           onClick={() => updateTabs(4)}
-          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${tabs === 4 ? "bg-biruMuda-500 text-primary rounded-md" : ""}`}
+          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+            tabs === 4 ? "bg-biruMuda-500 text-primary rounded-md" : ""
+          }`}
         >
           Pengajuan
         </div>
@@ -270,11 +278,11 @@ const SyaratForm = () => {
         {/* Form */}
         {tabs === 4 ? (
           <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -50 }}
-          transition={{ duration: 0.5 }}
-          className="mx-6 sm:mx-10 sm:px-10"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.5 }}
+            className="mx-6 sm:mx-10 sm:px-10"
           >
             <div className={`${styles.flexCenter}`}>
               <FormBank
