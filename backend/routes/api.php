@@ -33,4 +33,7 @@ Route::get('/dashboard/total-data', [DashboardController::class, 'getTotalData']
 
 
 Route::get('/api/kredit', [KreditController::class, 'data']);
+Route::get('/api/pickup', [PickupController::class, 'data']);
+
+
 Route::get('/news', [NewsController::class, 'index']);
