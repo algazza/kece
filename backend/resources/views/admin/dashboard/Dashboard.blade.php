@@ -156,13 +156,13 @@
 
                         </div>
                         <p>All Person Data</p> 
-                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                        <button class="bg-transparent border-2 transition-all duration-300 hover:border-black text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50  ease-in-out">
                             Kredit
                           </button>
-                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                        <button class="bg-white text-black border-2 transition-all duration-300 hover:border-black font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 ease-in-out">
                             Tabungan
                           </button>
-                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                        <button class="bg-white text-black border-2 transition-all duration-300 hover:border-black font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 ease-in-out">
                             Deposito
                           </button>
                     </div>
