@@ -105,8 +105,8 @@ Route::get('/User', function(){
     return view ('admin.user.User');
 });
 Route::get('/Usere', function(){
-    return view ('admin.user.UserEdit');
+    return view ('admin.user.UserAdd');
 });
 Route::get('/Admin', function(){
-    return view ('admin.Admin');
+    return view ('admin.user.Admin');
 });

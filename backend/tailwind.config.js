@@ -53,6 +53,7 @@ export default {
             gridTemplateColumns: {
                 x2500: "620px 230px",
                 x250: "250px",
+                x600: "550px 550px",
             },
             backgroundImage: {
                 footerimg: "url('../img/Footer-img.svg')",

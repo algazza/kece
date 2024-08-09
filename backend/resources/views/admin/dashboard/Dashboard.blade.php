@@ -6,12 +6,12 @@
         <div class="flex gap-[1.5rem] pt-[5rem] pb-[2rem] px-[10rem] bg-gray-200 w-screen">
             <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg">
                 <div>
-                    <h3 id="totalData" class="absolute ml-[0.7rem] mt-[-0.2rem] text-[1.3rem] font-semibold ">{{ $totalData }}</h3>
+                    <h3 id="totalData" class="absolute ml-[0.7rem] mt-[-0.2rem] text-[1.3rem] font-semibold max-w-12 mx-auto">{{ $totalData }}</h3>
                     <div class="mt-[0.5rem]">
                         <div class="text-[6rem] ">
                             <i class='text-black bx bx-bar-chart'></i>
                         </div>
-                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Jumlah Deposito</p>
+                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem] max-w-">All incoming data</p>
                     </div>
                 </div>
             </div>
@@ -19,9 +19,9 @@
                 <div>
                     <div class="mt-[1.3rem]">
                         <div class="text-[5rem]">
-                            <i class='text-black bx bx-briefcase-alt-2' ></i>
+                            <i class='text-black bx bx-news' ></i>
                         </div>
-                        <p class="bg-black text-white mx-[4.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-1.5rem]">Project</p>
+                        <p class="bg-black text-white mx-[4.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-1.5rem]">News Edit</p>
                     </div>
                 </div>
             </div>
@@ -156,13 +156,13 @@
 
                         </div>
                         <p>All Person Data</p> 
-                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                        <button class="bg-transparent border-2 transition-all duration-300 hover:border-black text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50  ease-in-out">
                             Kredit
                           </button>
-                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                        <button class="bg-white text-black border-2 transition-all duration-300 hover:border-black font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 ease-in-out">
                             Tabungan
                           </button>
-                        <button class="bg-white text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
+                        <button class="bg-white text-black border-2 transition-all duration-300 hover:border-black font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 ease-in-out">
                             Deposito
                           </button>
                     </div>
