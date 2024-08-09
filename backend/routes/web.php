@@ -63,7 +63,7 @@ Route::middleware(['auth'])->group(function(){
 
 
     // News
-    Route::get('/News/Add', [NewsController::class, 'viewNewsAdd']);
+    Route::get('/News/Add', [NewsController::class, 'viewNewsAdd'])->name('news.form');
     Route::post('/News/Add/Post', [NewsController::class, 'store'])->name('news.post');
 });
 

@@ -19,6 +19,7 @@ class NewsController extends Controller
             'keterangan_singkat' => 'required|string|max:255',
             'keterangan' => 'required|string',
             'kategory' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
     
         $news = new News();
@@ -27,9 +28,17 @@ class NewsController extends Controller
         $news->keterangan = $request->keterangan;
         $news->kategory = $request->kategory;
         
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();  
+            $request->image->move(public_path('image/public/news'), $imageName);
+            $news->image = $imageName;
+        } else {
+            $news->image = 'profil.jpg';
+        }
+
         $news->save();
-    
-        return response()->json(['message' => 'News created successfully'], 201);
+
+        return redirect()->route('news.form');
     }
 
 
