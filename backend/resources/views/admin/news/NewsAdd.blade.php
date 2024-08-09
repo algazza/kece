@@ -82,17 +82,17 @@ document.getElementById('upload_profile').addEventListener('change', function(ev
         
         reader.onload = function(e) {
             previewImage.src = e.target.result;
-            previewImage.style.display = 'block'; // Show the image
+            previewImage.style.display = 'block';
         }
         
         reader.readAsDataURL(file);
     } else {
         previewImage.src = '';
-        previewImage.style.display = 'none'; // Hide the image
+        previewImage.style.display = 'none'; 
     }
 });
 
-// Simulate click on file input when clicking on the preview image
+
 document.getElementById('previewImage').addEventListener('click', function() {
     document.getElementById('upload_profile').click();
 });
