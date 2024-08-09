@@ -46,19 +46,19 @@
                         <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
                             <div class="w-full  mb-4 mt-6">
                                 <label for="" class="mb-2 dark:text-black">Name</label>
-                                <p type="text" class="mt-2 p-4 w-full border-2 rounded-lg dark:text-white dark:border-gray-500 dark:bg-gray-400">Wahit</p>
+                                <p type="text" class="mt-2 p-4 w-full border-2 rounded-lg dark:text-white dark:border-gray-500 dark:bg-gray-300">Wahit</p>
                             </div>
                             <div class="w-full  mb-4 lg:mt-6">
                                 <label for="" class=" dark:text-black">Email</label>
                                 <p type="text"
-                                        class="mt-2 p-4 w-full border-2 rounded-lg dark:text-white dark:border-gray-500 dark:bg-gray-400">wahitukam@gmail.com</p>
+                                        class="mt-2 p-4 w-full border-2 rounded-lg dark:text-white dark:border-gray-500 dark:bg-gray-300">wahitukam@gmail.com</p>
                             </div>
                         </div>
     
                         <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
                             <div class="w-full">
                                 <h3 class="dark:text-black mb-2">Role</h3>
-                                <p class="mt-2 p-4 w-full border-2 rounded-lg dark:text-white dark:border-gray-500 dark:bg-gray-400">Super Admin</p>
+                                <p class="mt-2 p-4 w-full border-2 rounded-lg dark:text-white dark:border-gray-500 dark:bg-gray-300">Super Admin</p>
                             </div>
                                 
                                 
@@ -66,7 +66,7 @@
                                 
                             <div class="w-full">
                                 <h3 class="dark:text-black mb-2">Passwword</h3>
-                                <p type="password" class="text-grey p-4 w-full border-2 rounded-lg dark:text-white dark:border-gray-500 dark:bg-gray-400">ejoiaji</p>
+                                <p type="password" class="text-grey p-4 w-full border-2 rounded-lg dark:text-white dark:border-gray-500 dark:bg-gray-300">ejoiaji</p>
                             </div>
                         </div>
                         

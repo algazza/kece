@@ -1,7 +1,7 @@
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
-import { sample, samplebanner } from "../data";
+import { samplebanner } from "../data";
 import styles from "../data/style";
 import {
   createTheme,
@@ -11,9 +11,8 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { useEffect, useState } from "react"
 import { DataBerita } from "../data/user";
-import { useEffect, useState } from "react";
-import { TextFieldsRounded } from "@mui/icons-material";
 
 // theme mui
 const theme = createTheme({

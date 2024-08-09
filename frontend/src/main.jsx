@@ -8,8 +8,13 @@ import News from "./Pages/News.jsx";
 import Success from "./Pages/Success.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
 import SyaratForm from "./Components/SyaratForm.jsx";
+<<<<<<< HEAD
 import LocationPage from "./Pages/LocationPage.jsx";
 import Home from "./Pages/Home.jsx"
+=======
+import LocationPage from "./Components/LocationPage.jsx";
+import NewsTemplate from "./Components/NewsTemplate.jsx";
+>>>>>>> 880e67c47346ad5a14dad1a207f7c6838b2c56fd
 
 const router = createBrowserRouter([
   {
@@ -39,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/syaratt",
     element: <SyaratForm />,
+  },
+  {
+    path: "/newss",
+    element: <NewsTemplate />,
   },
   {
     path: "/location",
