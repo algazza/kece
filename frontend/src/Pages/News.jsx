@@ -36,12 +36,10 @@ const News = () => {
     to: pageSize,
   });
 
-  // memunculkan data ke berapa saja yang akan muncul
   useEffect(() => {
     fetch("http://localhost:8000/api/news")
       .then((response) => response.json())
       .then((data) => {
-        // Membalikkan urutan data di sini
         const reversedData = data.reverse();
         setBerita(reversedData);
         setFilteredBerita(reversedData);
@@ -67,10 +65,8 @@ const News = () => {
       news.judul.toLowerCase().includes(query.toLowerCase())
     );
 
-    // membalikkan array
     filteredData = filteredData.reverse();
 
-    // mengatur ulang pagination dan berita berdasarkan yang telah di filter 
     setFilteredBerita(filteredData);
     setPagination({
       ...pagination,
@@ -162,18 +158,21 @@ const News = () => {
       </section>
 
       <section
-        className={`${styles.paddingY} grid sm:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
+        className={`${styles.paddingY} grid md:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
       >
         {filteredBerita.slice(pagination.from, pagination.to).map((news) => (
           <div
             key={news.id}
             className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
           >
+            <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
             <img
               src={`http://localhost:8000/image/public/news/${news.image}`}
               alt={news.judul}
-              className="h-fit sm:w-40 rounded-l-xl"
+              className="object-cover w-full h-full"
             />
+            </div>
+
             <div className="p-4 flex flex-col justify-center">
               <h6 className={`${styles.heading6} `}>{news.judul}</h6>
               <p className="py-1 hidden sm:block">{news.keterangan_singkat}</p>
