@@ -1,8 +1,4 @@
-import Header from "../Layouts/Header";
-import Footer from "../Layouts/Footer";
-import IntroBanner from "../Layouts/IntroBanner";
-import { samplebanner } from "../data";
-import styles from "../data/style";
+import React, { useEffect, useState } from "react";
 import {
   createTheme,
   InputAdornment,
@@ -14,7 +10,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useEffect, useState } from "react";
 import axios from "axios";
 // import { format } from "date-fns";
+import Header from "../Layouts/Header";
+import Footer from "../Layouts/Footer";
+import IntroBanner from "../Layouts/IntroBanner";
+import { samplebanner } from "../data";
+import styles from "../data/style";
 
+// theme mui
 const theme = createTheme({
   palette: {
     merah: {
@@ -23,11 +25,14 @@ const theme = createTheme({
   },
 });
 
+// total data berita yang muncul per halaman
 const pageSize = 10;
 
 const News = () => {
   const [query, setQuery] = useState("");
   const [berita, setBerita] = useState([]);
+  const [filteredBerita, setFilteredBerita] = useState([]);
+  const [selectFilter, setSelectFilter] = useState("All");
   const [pagination, setPagination] = useState({
     count: 0,
     from: 0,
@@ -35,24 +40,49 @@ const News = () => {
   });
 
   useEffect(() => {
-    fetchData(pagination.from, pagination.to);
-  }, [pagination.from, pagination.to]);
+    fetch("http://localhost:8000/api/news")
+      .then((response) => response.json())
+      .then((data) => {
+        const reversedData = data.reverse();
+        setBerita(reversedData);
+        setFilteredBerita(reversedData);
+        setPagination({ ...pagination, count: reversedData.length });
+      })
+      .catch((error) => {
+        console.error("Error fetching news:", error);
+      });
+  }, []);
 
-  const fetchData = async (from, to) => {
-    try {
-      const response = await axios.get("http://localhost:8000/api/news");
-      const dataNews = response.data.slice(from, to);
-      setPagination({ ...pagination, count: response.data.length });
-      setBerita(dataNews);
-    } catch (error) {
-      console.error("Error fetching data: ", error);
+
+  useEffect(() => {
+    let filteredData = berita;
+
+    if (selectFilter !== "All") {
+      filteredData = filteredData.filter(
+        (news) => news.kategory === selectFilter
+      );
     }
-  };
 
+    // filter berdasarkan query pencarian judul
+    filteredData = filteredData.filter((news) =>
+      news.judul.toLowerCase().includes(query.toLowerCase())
+    );
+
+    filteredData = filteredData.reverse();
+
+    setFilteredBerita(filteredData);
+    setPagination({
+      ...pagination,
+      count: filteredData.length,
+      from: 0,
+      to: pageSize,
+    });
+  }, [query, berita, selectFilter]);
+
+  // sebagai handlechange dari pagination
   const handlePageChange = (event, page) => {
     const from = (page - 1) * pageSize;
     const to = (page - 1) * pageSize + pageSize;
-
     setPagination({ ...pagination, from: from, to: to });
   };
 
@@ -77,31 +107,21 @@ const News = () => {
         </div>
 
         <div className="flex gap-4 sm:max-w-full max-w-80 overflow-auto">
-          <div
-            className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer`}
-          >
-            All
-          </div>
-          <div
-            className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer`}
-          >
-            Penghargaan
-          </div>
-          <div
-            className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer`}
-          >
-            Promo
-          </div>
-          <div
-            className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer`}
-          >
-            Pengunguman
-          </div>
-          <div
-            className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0`}
-          >
-            Siaran Pers
-          </div>
+          {["All", "Penghargaan", "Promo", "Pengumuman", "Siaran Pers"].map(
+            (category) => (
+              <div
+                key={category}
+                onClick={() => setSelectFilter(category)}
+                className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
+                  selectFilter === category
+                    ? "bg-biruMuda-500 text-primary"
+                    : ""
+                }`}
+              >
+                {category}
+              </div>
+            )
+          )}
         </div>
 
         <ThemeProvider theme={theme}>
@@ -141,30 +161,36 @@ const News = () => {
       </section>
 
       <section
-        className={`${styles.paddingY} grid sm:grid-cols-x600 justify-center px-12 gap-6 sm:gap-12`}
+        className={`${styles.paddingY} grid md:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
       >
-        {berita.filter((news) => news.judul.toLowerCase().includes(query.toLowerCase())).map(
-          (news) => (
-            <div
-              key={news.id}
-              className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl "
-            >
-              <img src={`http://localhost:8000/image/public/news/${news.image}`} alt="" className="h-fit sm:w-40 rounded-l-xl" />
-              <div className="p-4 flex flex-col justify-center">
-                <h6 className={`${styles.heading6} `}>{news.judul}</h6>
-                <p className="py-1 hidden sm:block">{news.keterangan_singkat}</p>
-                <p className={`${styles.fontSmall} text-abuGelap`}>
-                  {format(new Date(news.created_at), "dd MMMM yyyy")}
-                </p>
-              </div>
+        {filteredBerita.slice(pagination.from, pagination.to).map((news) => (
+          <div
+            key={news.id}
+            className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
+          >
+            <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
+            <img
+              src={`http://localhost:8000/image/public/news/${news.image}`}
+              alt={news.judul}
+              className="object-cover w-full h-full"
+            />
             </div>
-          )
-        )}
+
+            <div className="p-4 flex flex-col justify-center">
+              <h6 className={`${styles.heading6} `}>{news.judul}</h6>
+              <p className="py-1 hidden sm:block">{news.keterangan_singkat}</p>
+              <p className={`${styles.fontSmall} text-abuGelap`}>
+                {news.created_at}
+              </p>
+            </div>
+          </div>
+        ))}
       </section>
 
       <section className={`${styles.flexCenter} py-12`}>
         <Pagination
           count={Math.ceil(pagination.count / pageSize)}
+          page={Math.ceil(pagination.from / pageSize) + 1}
           onChange={handlePageChange}
         />
       </section>

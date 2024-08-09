@@ -17,7 +17,7 @@ class NewsController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'keterangan_singkat' => 'required|string|max:255',
-            'keterangan' => 'required|string',
+            'keterangan' => 'required|string|max:10000',
             'kategory' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);

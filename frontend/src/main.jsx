@@ -9,12 +9,13 @@ import Success from "./Pages/Success.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
 import SyaratForm from "./Components/SyaratForm.jsx";
 import LocationPage from "./Pages/LocationPage.jsx";
+import Home from "./Pages/Home.jsx";
 import NewsTemplate from "./Components/NewsTemplate.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world</div>,
+    element: <Home />,
   },
   {
     path: "/syarat",
