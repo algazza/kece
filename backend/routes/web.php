@@ -9,6 +9,7 @@ use App\Http\Middleware\Admin\KreditAccess;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PickupController;
 use App\Models\Admin;
 use Illuminate\Routing\Route as RoutingRoute;
 
@@ -60,6 +61,13 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
     Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
     Route::get('/api/kredit', [KreditController::class, 'data']);
+
+
+    // Pickup
+    Route::get('/Pickup', [PickupController::class, 'index'])->middleware('kredit.access')->name('pickup.index');
+    Route::get('/pickup/{id}', [PickupController::class, 'show'])->name('pickup.show');
+    Route::get('/api/check-token/pickup', [PickupController::class, 'checkToken']);
+    Route::get('/api/pickup', [PickupController::class, 'data']);
 
 
     // News
