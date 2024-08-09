@@ -3,6 +3,7 @@
 use App\Models\Kredit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\KreditController;
 use App\Http\Controllers\PickupController;
 use App\Http\Controllers\DashboardController;
@@ -32,3 +33,4 @@ Route::get('/dashboard/total-data', [DashboardController::class, 'getTotalData']
 
 
 Route::get('/api/kredit', [KreditController::class, 'data']);
+Route::get('/news', [NewsController::class, 'index']);

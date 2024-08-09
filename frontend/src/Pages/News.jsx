@@ -1,7 +1,7 @@
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
-import { sample, samplebanner } from "../data";
+import { samplebanner } from "../data";
 import styles from "../data/style";
 import {
   createTheme,
@@ -11,9 +11,9 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { DataBerita } from "../data/user";
 import { useEffect, useState } from "react";
-import { TextFieldsRounded } from "@mui/icons-material";
+import axios from "axios";
+import { format } from "date-fns";
 
 const theme = createTheme({
   palette: {
@@ -25,22 +25,9 @@ const theme = createTheme({
 
 const pageSize = 10;
 
-const service = {
-  getData: ({ from, to }) => {
-    return new Promise((resolve, reject) => {
-      const dataNews = DataBerita.slice(from, to);
-
-      resolve({
-        count: DataBerita.length,
-        data: dataNews,
-      });
-    });
-  },
-};
-
 const News = () => {
   const [query, setQuery] = useState("");
-  const [berita, setBerita] = useState([])
+  const [berita, setBerita] = useState([]);
   const [pagination, setPagination] = useState({
     count: 0,
     from: 0,
@@ -48,13 +35,19 @@ const News = () => {
   });
 
   useEffect(() => {
-    service
-      .getData({ from: pagination.from, to: pagination.to })
-      .then((response) => {
-        setPagination({ ...pagination, count: response.count });
-        setBerita(response.data)
-      });
+    fetchData(pagination.from, pagination.to);
   }, [pagination.from, pagination.to]);
+
+  const fetchData = async (from, to) => {
+    try {
+      const response = await axios.get("http://localhost:8000/api/news");
+      const dataNews = response.data.slice(from, to);
+      setPagination({ ...pagination, count: response.data.length });
+      setBerita(dataNews);
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  };
 
   const handlePageChange = (event, page) => {
     const from = (page - 1) * pageSize;
@@ -150,18 +143,18 @@ const News = () => {
       <section
         className={`${styles.paddingY} grid sm:grid-cols-x600 justify-center px-12 gap-6 sm:gap-12`}
       >
-        {berita.filter((news) => news.judul.toLowerCase().includes(query)).map(
+        {berita.filter((news) => news.judul.toLowerCase().includes(query.toLowerCase())).map(
           (news) => (
             <div
               key={news.id}
               className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl "
             >
-              <img src={news.gambar} alt="" className="h-fit sm:w-40 rounded-l-xl" />
+              <img src={`http://localhost:8000/image/public/news/${news.image}`} alt="" className="h-fit sm:w-40 rounded-l-xl" />
               <div className="p-4 flex flex-col justify-center">
                 <h6 className={`${styles.heading6} `}>{news.judul}</h6>
-                <p className="py-1 hidden sm:block">{news.ringkasan}</p>
+                <p className="py-1 hidden sm:block">{news.keterangan_singkat}</p>
                 <p className={`${styles.fontSmall} text-abuGelap`}>
-                  {news.tanggal}
+                  {format(new Date(news.created_at), "dd MMMM yyyy")}
                 </p>
               </div>
             </div>
@@ -181,4 +174,3 @@ const News = () => {
 };
 
 export default News;
-// al 7 agustus 

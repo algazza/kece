@@ -18,6 +18,8 @@ const LocationPage = () => {
                 menawarkan berbagai produk kredit yang dapat disesuaikan dengan
                 keperluan Anda.
             `}
+            hook
+            paragraf
         />
         <TitleBlueBanner title={"Our Location"} />
       </div>

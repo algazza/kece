@@ -8,6 +8,7 @@ use App\Http\Controllers\KreditController;
 use App\Http\Middleware\Admin\KreditAccess;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NewsController;
 use App\Models\Admin;
 use Illuminate\Routing\Route as RoutingRoute;
 
@@ -59,6 +60,11 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
     Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
     Route::get('/api/kredit', [KreditController::class, 'data']);
+
+
+    // News
+    Route::get('/News/Add', [NewsController::class, 'viewNewsAdd']);
+    Route::post('/News/Add/Post', [NewsController::class, 'store'])->name('news.post');
 });
 
 
@@ -82,9 +88,7 @@ Route::middleware(['auth'])->group(function(){
 Route::get('/News', function(){
     return view ('admin.news.News');
 });
-Route::get('/Newsa', function(){
-    return view ('admin.news.NewsAdd');
-});
+
 Route::get('/Newse', function(){
     return view ('admin.news.NewsEdit');
 });

@@ -118,7 +118,7 @@ class AdminController extends Controller
 
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->extension();  
-            $request->image->move(public_path('image/public'), $imageName);
+            $request->image->move(public_path('image/admin'), $imageName);
             $admin->image = $imageName;
         } else {
             $admin->image = 'profil.jpg';
