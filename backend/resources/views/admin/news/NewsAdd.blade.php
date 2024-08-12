@@ -3,6 +3,15 @@
 <div class="bg-gray-100 font-[sans-serif] min-h-screen flex items-center justify-center">
     <div class="w-full max-w-[50rem] p-6">
         <div class="p-8 rounded-2xl bg-transparent shadow-md w-full">
+                @if(session('success'))
+                    <div class="bg-green-100 text-green-700 p-4 rounded-md mb-4">
+                        {{ session('success') }}
+                    </div>
+                @elseif(session('error'))
+                    <div class="bg-red-100 text-red-700 p-4 rounded-md mb-4">
+                        {{ session('error') }}
+                    </div>
+                @endif
             <form action="{{ route('news.post') }}" method="POST" class="mt-4 space-y-4" enctype="multipart/form-data">
                 @csrf
                 <div class="sm:flex">
