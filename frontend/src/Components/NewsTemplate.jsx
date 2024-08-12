@@ -1,65 +1,104 @@
-import { sample } from "../data";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import LinkIcon from "@mui/icons-material/Link";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import XIcon from "@mui/icons-material/X";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import styles from "../data/style";
-import Footer from "../Layouts/Footer";
-import Header from "../Layouts/Header";
 
-const NewsTemplate = () => {
-    return (
-        <>
-    <Header />
-        <main className={`${styles.paddingY}`} >
-            <section className={`${styles.paddingY} ${styles.marginX} `}>
+const NewsTemplate = ({
+  NewsJudul,
+  NewsImage,
+  NewsBeritaLengkap,
+  NewsTanggal,
+}) => {
+  const location = useLocation();
 
-                <h4 className={`${styles.heading4} ${styles.marginX}flex justify-center text-center `}>Lorem ipsum dolor sit amet consectetur. Malesuada phasellus malesuada amet congue hac suspendisse. lorem ipsum 2024</h4>
+  const handleCopyLink = () => {
+    const currentUrl = window.location.origin + location.pathname;
+    navigator.clipboard
+      .writeText(currentUrl)
+      .then(() => {
+        toast.success("Link berhasil disalin!");
+      })
+      .catch((err) => {
+        toast.error("Gagal menyalin link!");
+      });
+  };
 
-                <div className="flex justify-center">
-                <img src={sample} alt="" srcset="" className="w-3/4 aspect-video mt-16" />
-                </div>
+  return (
+    <>
+      <main className={`${styles.paddingY} `}>
+        <section
+          className={`${styles.paddingY} ${styles.marginX} ${styles.flexCenter} flex-col gap-12 pt-12`}
+        >
+          <h5 className={`${styles.heading4} ${styles.marginX} text-center `}>
+            {NewsJudul}
+          </h5>
 
-                {/* Deskripsi berita start */}
-                <div className={`${styles.fontBody} mx-32 mt-10`}>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur. Libero amet mi turpis phasellus. At nullam in nisl sagittis interdum euismod non feugiat. Arcu vestibulum tempus rhoncus nunc. In arcu nunc viverra eget erat. Duis mauris lacus luctus dui. Cras iaculis mauris orci dapibus.
-                        <br />
-                        <br />
-                        Pellentesque nulla aliquam pellentesque vitae sit morbi risus. Risus tincidunt quisque nullam sem in orci pharetra. Tellus amet vulputate purus nunc sed at. Ac eros augue nulla sem quam. In mauris quam tempus ut. Vitae in proin amet nulla nisi tellus massa vestibulum dui. Id molestie ac euismod eget malesuada. Elit risus dictum ut quisque orci in. Augue augue pellentesque justo fusce at viverra faucibus massa a. Maecenas id ullamcorper id ac interdum scelerisque mattis diam nunc. Sed dui tempus volutpat duis ultricies augue. Placerat vel molestie sodales auctor pellentesque ut. Tincidunt donec augue lacus dictum. Posuere mauris nisi consequat morbi dui.
-                        <br />
-                        <br />
-                        Mollis arcu velit orci pretium ipsum quam porttitor urna. Donec felis morbi sem consequat. Feugiat diam integer ultricies rutrum suspendisse sodales enim. Nibh sociis arcu a augue et lobortis enim. Risus sodales nam sit iaculis sit. Eleifend dignissim commodo pellentesque sit fringilla congue elit. Arcu pretium duis vitae congue semper diam quam. Velit id nullam commodo cras justo. Proin velit neque suspendisse volutpat eros sodales ut scelerisque. Luctus ipsum lacus pellentesque praesent. Quam magna nulla molestie lectus amet ut. Cras diam aenean lobortis commodo enim justo consequat convallis in. Duis et consectetur sodales semper euismod auctor. In sed mi sem felis erat risus.
-                        <br />
-                        <br />
-                        Ut tempus enim mattis in sagittis nisl id turpis ultrices. Non maecenas erat fames et mauris tincidunt ac donec purus. Morbi enim viverra vivamus morbi. Non consequat enim ipsum nibh aenean. Platea amet aliquam gravida ut sit vel. Enim felis nulla vel in. Ipsum tempus enim id aliquam neque magna ac lacus. Aliquam tristique lacus massa quisque blandit mauris diam. Dictum risus sit orci tortor arcu netus a. Ac cras maecenas quis enim. In risus sollicitudin ac odio sed metus amet amet euismod. Sed scelerisque tempus ipsum non amet pellentesque. Cras etiam neque vitae nibh nulla hendrerit rutrum ultrices massa. Convallis mauris amet nibh integer. Dui in dapibus non sed.
-                        <br />
-                        <br />
-                        Mollis arcu velit orci pretium ipsum quam porttitor urna. Donec felis morbi sem consequat. Feugiat diam integer ultricies rutrum suspendisse sodales enim. Nibh sociis arcu a augue et lobortis enim. Risus sodales nam sit iaculis sit. Eleifend dignissim commodo pellentesque sit fringilla congue elit. Arcu pretium duis vitae congue semper diam quam. Velit id nullam commodo cras justo. Proin velit neque suspendisse volutpat eros sodales ut scelerisque. Luctus ipsum lacus pellentesque praesent. Quam magna nulla molestie lectus amet ut. Cras diam aenean lobortis commodo enim justo consequat convallis in. Duis et consectetur sodales semper euismod auctor. In sed mi sem felis erat risus.
-                        <br />
-                        <br />
-                        Ut tempus enim mattis in sagittis nisl id turpis ultrices. Non maecenas erat fames et mauris tincidunt ac donec purus. Morbi enim viverra vivamus morbi. Non consequat enim ipsum nibh aenean. Platea amet aliquam gravida ut sit vel. Enim felis nulla vel in. Ipsum tempus enim id aliquam neque magna ac lacus. Aliquam tristique lacus massa quisque blandit mauris diam. Dictum risus sit orci tortor arcu netus a. Ac cras maecenas quis enim. In risus sollicitudin ac odio sed metus amet amet euismod. Sed scelerisque tempus ipsum non amet pellentesque. Cras etiam neque vitae nibh nulla hendrerit rutrum ultrices massa. Convallis mauris amet nibh integer. Dui in dapibus non sed.
+          <div>
+            <img src={NewsImage} alt={NewsJudul} />
+            <div className="flex justify-end pt-2 gap-4">
+              <button onClick={handleCopyLink}>
+                <LinkIcon className="text-[#646464]" />
+              </button>
+              <button>
+                <WhatsAppIcon className="text-[#25D366]" />
+              </button>
+              <button>
+                <XIcon className="text-[#000]" />
+              </button>
+              <button>
+                <FacebookRoundedIcon className="text-[#4267B2]" />
+              </button>
+            </div>
+          </div>
+
+          <div className={`${styles.fontBody} sm:mx-32 `}>
+            {NewsBeritaLengkap}
+
+            <div className={`${styles.fontBodyBold}`}>
+              <p>{NewsTanggal}</p>
+              <p>Promosi Arto Moro</p>
+            </div>
+          </div>
+
+          <div className="px-12">
+            <div className="flex justify-between">
+              <h6 className={`${styles.heading6} mb-4`}>Baca juga:</h6>
+              <Link className={`${styles.heading6} mb-4 text-abuGelap`}>
+                Lainnya...
+              </Link>
+            </div>
+            <section className="grid sm:grid-cols-x550 justify-center gap-6 sm:gap-12">
+              {DataBerita.slice(0, 2).map((news) => (
+                <div
+                  key={news.id}
+                  className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
+                >
+                  <img
+                    src={news.gambar}
+                    alt={news.judul}
+                    className="h-fit sm:w-40 rounded-l-xl"
+                  />
+                  <div className="p-4 flex flex-col justify-center">
+                    <h6 className={`${styles.heading6} `}>{news.judul}</h6>
+                    <p className="py-1 hidden sm:block">{news.ringkasan}</p>
+                    <p className={`${styles.fontSmall} text-abuGelap`}>
+                      {news.tanggal}
                     </p>
-                    {/* Deskripsi berita end */}
-
-
-                    {/* Penerbit start */}
-                    <p className={`${styles.fontBodyBold} mt-10`}>
-                        Semarang 1 agustus 2024
-                        <br />
-                        <br />
-                        <span className="underline-offset-auto">
-                        Departemen Komunikasi
-                        </span>
-                        <br />
-                        <br />
-                        Fadhil AL Ghaza
-                        </p>
-                    {/* penerbit end */}
+                  </div>
                 </div>
-
+              ))}
             </section>
-
-        </main>
-    <Footer />
-        </>
-    )
-}
+          </div>
+        </section>
+      </main>
+      <ToastContainer />
+    </>
+  );
+};
 
 export default NewsTemplate;

@@ -9,11 +9,15 @@ import partnerImage4 from "../img/partnerImage4.svg";
 import partnerImage5 from "../img/partnerImage5.svg";
 import partnerImage6 from "../img/partnerImage6.svg";
 import partnerImage7 from "../img/partnerImage7.svg";
+import nunezimg from "../img/668f755b3c2ba.jpg";
+import sampleNews from "../img/sample-news-684x385.jpg"
 
 export {
   logoArmor,
   samplebanner,
   sample,
+  nunezimg,
+  sampleNews,
   partnerImage1,
   partnerImage2,
   partnerImage3,
