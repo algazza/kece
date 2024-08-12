@@ -1,4 +1,4 @@
-import styles from "../data/style";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -6,7 +6,7 @@ import LinkIcon from "@mui/icons-material/Link";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-import { DataBerita } from "../data/user";
+import styles from "../data/style";
 
 const NewsTemplate = ({
   NewsJudul,
@@ -39,7 +39,7 @@ const NewsTemplate = ({
           </h5>
 
           <div>
-            <img src={NewsImage} alt="" />
+            <img src={NewsImage} alt={NewsJudul} />
             <div className="flex justify-end pt-2 gap-4">
               <button onClick={handleCopyLink}>
                 <LinkIcon className="text-[#646464]" />

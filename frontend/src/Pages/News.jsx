@@ -8,12 +8,12 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
-// import { format } from "date-fns";
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
 import { samplebanner } from "../data";
 import styles from "../data/style";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 // theme mui
 const theme = createTheme({
@@ -37,6 +37,8 @@ const News = () => {
     from: 0,
     to: pageSize,
   });
+
+  const navigate = useNavigate(); // Hook untuk navigasi
 
   useEffect(() => {
     fetch("http://localhost:8000/api/news")
@@ -165,7 +167,7 @@ const News = () => {
           <div
             key={news.id}
             className="flex flex-col sm:flex-row shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer w-full"
-            onClick={() => navigate(`/news/${news.id}`)}
+            onClick={() => navigate(`/news/${news.id}`)} // Ubah navigate
           >
             <div className="w-full sm:w-40 h-auto sm:h-40 overflow-hidden rounded-t-xl sm:rounded-l-xl">
               <img

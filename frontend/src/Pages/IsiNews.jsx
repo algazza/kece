@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import NewsTemplate from "../Components/NewsTemplate";
-import { DataBerita } from "../data/user";
 import { useParams } from "react-router-dom";
 
 const IsiNews = () => {
-  const { id } = useParams;
-  const showNews = DataBerita.find((item) => item.id === parseInt(id)); // Cari berita berdasarkan id
+  const { id } = useParams();
+  const [news, setNews] = useState(null);
 
-  if (!showNews) {
+  useEffect(() => {
+    fetch(`http://localhost:8000/api/news/${id}`)
+      .then((response) => response.json())
+      .then((data) => setNews(data))
+      .catch((error) => {
+        console.error("Error fetching news:", error);
+      });
+  }, [id]);
+
+  if (!news) {
     return <p>Berita tidak ditemukan!</p>;
   }
 
@@ -19,7 +27,7 @@ const IsiNews = () => {
       <NewsTemplate
         NewsImage={`http://localhost:8000/image/public/news/${news.image}`}
         NewsJudul={news.judul}
-        NewsBeritaLengkap={news.isiBerita}
+        NewsBeritaLengkap={news.keterangan}
         NewsTanggal={news.created_at}
       />
       <Footer />

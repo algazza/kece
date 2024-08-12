@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import SyaratPage from "./Components/SyaratForm/SyaratPage.jsx";
 import KreditPage from "./Pages/KreditPage.jsx";
 import News from "./Pages/News.jsx";
 import Success from "./Pages/Success.jsx";
@@ -17,10 +16,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-  },
-  {
-    path: "/syarat",
-    element: <SyaratPage />,
   },
   {
     path: "/Kreditpage",
