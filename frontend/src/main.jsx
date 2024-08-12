@@ -11,6 +11,7 @@ import SyaratForm from "./Components/SyaratForm.jsx";
 import LocationPage from "./Pages/LocationPage.jsx";
 import Home from "./Pages/Home.jsx";
 import NewsTemplate from "./Components/NewsTemplate.jsx";
+import IsiNews from "./Pages/IsiNews.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,12 @@ const router = createBrowserRouter([
   {
     path: "/news",
     element: <News />,
+    children: [
+      {
+        path: ":id",
+        element: <IsiNews/>
+      }
+    ]
   },
   {
     path: "/succes",

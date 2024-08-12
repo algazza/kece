@@ -231,7 +231,7 @@ const Information = () => {
 // Template subMenu
 const MenuList = ({ items }) => {
   return (
-    <div className="w-52 py-6 px-8">
+    <div className="w-52 py-6 px-8 shadow-[0px_20px_20px_0px_#00000024]">
       <ul className="flex flex-col text-center flex-1 gap-2">
         {items.map((item, index) => (
           <li key={index}>

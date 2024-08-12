@@ -32,6 +32,7 @@ export const DataBerita = [
     tanggal: "1 April 2024",
     gambar: sample,
     kategori: "Siaran Pers",
+    IsiBerita: "halo",
   },
   {
     id: 2,
