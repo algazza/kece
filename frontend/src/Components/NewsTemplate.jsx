@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LinkIcon from "@mui/icons-material/Link";
@@ -30,7 +30,7 @@ const NewsTemplate = ({
 
   return (
     <>
-      <main className={`${styles.paddingY} `}>
+      <main className={`${styles.paddingY}`}>
         <section
           className={`${styles.paddingY} ${styles.marginX} ${styles.flexCenter} flex-col gap-12 pt-12`}
         >
@@ -39,7 +39,7 @@ const NewsTemplate = ({
           </h5>
 
           <div>
-            <img src={NewsImage} alt={NewsJudul} />
+            <img src={NewsImage} alt="" />
             <div className="flex justify-end pt-2 gap-4">
               <button onClick={handleCopyLink}>
                 <LinkIcon className="text-[#646464]" />
@@ -56,7 +56,7 @@ const NewsTemplate = ({
             </div>
           </div>
 
-          <div className={`${styles.fontBody} sm:mx-32 `}>
+          <div className={`${styles.fontBody} sm:mx-32`}>
             {NewsBeritaLengkap}
 
             <div className={`${styles.fontBodyBold}`}>
@@ -73,25 +73,7 @@ const NewsTemplate = ({
               </Link>
             </div>
             <section className="grid sm:grid-cols-x550 justify-center gap-6 sm:gap-12">
-              {DataBerita.slice(0, 2).map((news) => (
-                <div
-                  key={news.id}
-                  className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
-                >
-                  <img
-                    src={news.gambar}
-                    alt={news.judul}
-                    className="h-fit sm:w-40 rounded-l-xl"
-                  />
-                  <div className="p-4 flex flex-col justify-center">
-                    <h6 className={`${styles.heading6} `}>{news.judul}</h6>
-                    <p className="py-1 hidden sm:block">{news.ringkasan}</p>
-                    <p className={`${styles.fontSmall} text-abuGelap`}>
-                      {news.tanggal}
-                    </p>
-                  </div>
-                </div>
-              ))}
+              {/* Ini harus memuat berita terkait */}
             </section>
           </div>
         </section>

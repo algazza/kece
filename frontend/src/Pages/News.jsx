@@ -7,13 +7,11 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import axios from "axios";
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
 import { samplebanner } from "../data";
 import styles from "../data/style";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 // theme mui
 const theme = createTheme({
@@ -38,8 +36,6 @@ const News = () => {
     to: pageSize,
   });
 
-  const navigate = useNavigate(); // Hook untuk navigasi
-
   useEffect(() => {
     fetch("http://localhost:8000/api/news")
       .then((response) => response.json())
@@ -63,7 +59,6 @@ const News = () => {
       );
     }
 
-    // filter berdasarkan query pencarian judul
     filteredData = filteredData.filter((news) =>
       news.judul.toLowerCase().includes(query.toLowerCase())
     );
@@ -166,10 +161,10 @@ const News = () => {
         {filteredBerita.slice(pagination.from, pagination.to).map((news) => (
           <div
             key={news.id}
-            className="flex flex-col sm:flex-row shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer w-full"
-            onClick={() => navigate(`/news/${news.id}`)} // Ubah navigate
+            className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
+            style={{ overflowWrap: "break-word", wordWrap: "break-word", whiteSpace: "normal" }}
           >
-            <div className="w-full sm:w-40 h-auto sm:h-40 overflow-hidden rounded-t-xl sm:rounded-l-xl">
+            <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
               <img
                 src={`http://localhost:8000/image/public/news/${news.image}`}
                 alt={news.judul}
@@ -177,19 +172,14 @@ const News = () => {
               />
             </div>
 
-            <div className="p-4 flex flex-col justify-center w-full">
-              <h6
-                className={`${styles.heading6} break-words whitespace-normal`}
-              >
-                {news.judul}
-              </h6>
+            <div className="p-4 flex flex-col justify-center">
+              <h6 className={`${styles.heading6}`} style={{ overflowWrap: "break-word", wordWrap: "break-word", whiteSpace: "normal" }}>{news.judul}</h6>
               <div
-                className="py-1 break-words whitespace-normal"
+                className="py-1 hidden sm:block"
                 dangerouslySetInnerHTML={{ __html: news.keterangan_singkat }}
+                style={{ overflowWrap: "break-word", wordWrap: "break-word", whiteSpace: "normal" }}
               />
-              <p
-                className={`${styles.fontSmall} text-abuGelap break-words whitespace-normal`}
-              >
+              <p className={`${styles.fontSmall} text-abuGelap`}>
                 {new Intl.DateTimeFormat("id-ID", {
                   day: "2-digit",
                   month: "2-digit",

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import NewsTemplate from "../Components/NewsTemplate";
-import { useParams } from "react-router-dom";
 
 const IsiNews = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // Ambil id dari URL
   const [news, setNews] = useState(null);
 
   useEffect(() => {
@@ -13,13 +13,11 @@ const IsiNews = () => {
       .then((response) => response.json())
       .then((data) => setNews(data))
       .catch((error) => {
-        console.error("Error fetching news:", error);
+        console.error("Error fetching news details:", error);
       });
   }, [id]);
 
-  if (!news) {
-    return <p>Berita tidak ditemukan!</p>;
-  }
+  if (!news) return <p>Loading...</p>;
 
   return (
     <>
@@ -28,7 +26,11 @@ const IsiNews = () => {
         NewsImage={`http://localhost:8000/image/public/news/${news.image}`}
         NewsJudul={news.judul}
         NewsBeritaLengkap={news.keterangan}
-        NewsTanggal={news.created_at}
+        NewsTanggal={new Intl.DateTimeFormat("id-ID", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        }).format(new Date(news.created_at))}
       />
       <Footer />
     </>
