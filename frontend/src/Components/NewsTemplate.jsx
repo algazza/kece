@@ -8,7 +8,12 @@ import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import { DataBerita } from "../data/user";
 
-const NewsTemplate = ({sampleNews, NewsJudul, NewsBeritaLengkap, NewsTanggal}) => {
+const NewsTemplate = ({
+  NewsJudul,
+  NewsImage,
+  NewsBeritaLengkap,
+  NewsTanggal,
+}) => {
   const location = useLocation();
 
   const handleCopyLink = () => {
@@ -34,7 +39,7 @@ const NewsTemplate = ({sampleNews, NewsJudul, NewsBeritaLengkap, NewsTanggal}) =
           </h5>
 
           <div>
-            <img src={sampleNews} alt="" />
+            <img src={NewsImage} alt="" />
             <div className="flex justify-end pt-2 gap-4">
               <button onClick={handleCopyLink}>
                 <LinkIcon className="text-[#646464]" />
@@ -63,7 +68,9 @@ const NewsTemplate = ({sampleNews, NewsJudul, NewsBeritaLengkap, NewsTanggal}) =
           <div className="px-12">
             <div className="flex justify-between">
               <h6 className={`${styles.heading6} mb-4`}>Baca juga:</h6>
-              <Link className={`${styles.heading6} mb-4 text-abuGelap`}>Lainnya...</Link>
+              <Link className={`${styles.heading6} mb-4 text-abuGelap`}>
+                Lainnya...
+              </Link>
             </div>
             <section className="grid sm:grid-cols-x550 justify-center gap-6 sm:gap-12">
               {DataBerita.slice(0, 2).map((news) => (

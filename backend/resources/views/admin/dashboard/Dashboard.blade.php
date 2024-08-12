@@ -15,13 +15,13 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg">
+            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                 <div>
                     <div class="mt-[1.3rem]">
                         <div class="text-[5rem]">
                             <i class='text-black bx bx-news' ></i>
                         </div>
-                        <p class="bg-black text-white mx-[4.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-1.5rem]">News Edit</p>
+                        <p class="bg-black text-white mx-[4.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-1.5rem] ">News Edit</p>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg">
+            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                 <div>
  
                     <div class="mt-[0.5rem]">
@@ -50,7 +50,7 @@
         <div class="flex h-[53%] ml-[10rem] mt-[-1rem] gap-8">
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
                 <a href="{{ route('kredit.index') }}">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
+                    <div class="w-[31rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-credit-card' ></i>
@@ -62,7 +62,7 @@
                     </div>
                 </a>
                 <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
+                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-credit-card' ></i>
@@ -74,7 +74,7 @@
                     </div>
                 </a>
                 <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
+                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-credit-card' ></i>
@@ -86,7 +86,7 @@
                     </div>
                 </a>
                 <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
+                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-home' ></i>
@@ -98,8 +98,13 @@
                         </div>
                     </div>
                 </a>
+<<<<<<< HEAD
                 <a href="{{ route('pickup.index') }}">
                     <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
+=======
+                <a href="">
+                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+>>>>>>> 576489b (sigma hover scale to item)
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bxs-truck'></i>
@@ -111,7 +116,7 @@
                     </div>
                 </a>
                 <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
+                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-credit-card' ></i>
@@ -123,7 +128,7 @@
                     </div>
                 </a>
                 <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
+                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-credit-card' ></i>
@@ -135,7 +140,7 @@
                     </div>
                 </a>
                 <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
+                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-credit-card' ></i>
@@ -149,20 +154,18 @@
             </div>
             <div class="bg-gray-50 w-[26rem] my-[1rem] rounded-[5px] h-[100%] box-border border-[0.5px] border-black shadow-lg relative">
                 
-                <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem]">
+                <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
                     
                     <div>
-                        <div class="">
-
-                        </div>
+                        
                         <p>All Person Data</p> 
-                        <button class="bg-transparent border-2 transition-all duration-300 hover:border-black text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50  ease-in-out">
+                        <button class="bg-transparent border-2 transition-all duration-300 hover:border-black text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50  ease-in-out cursor-pointer hover:scale-95">
                             Kredit
                           </button>
-                        <button class="bg-white text-black border-2 transition-all duration-300 hover:border-black font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 ease-in-out">
+                        <button class="bg-white text-black border-2 transition-all duration-300 hover:border-black font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 ease-in-out cursor-pointer hover:scale-95">
                             Tabungan
                           </button>
-                        <button class="bg-white text-black border-2 transition-all duration-300 hover:border-black font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 ease-in-out">
+                        <button class="bg-white text-black border-2 transition-all hover:border-black font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 ease-in-out cursor-pointer hover:scale-95 duration-300">
                             Deposito
                           </button>
                     </div>

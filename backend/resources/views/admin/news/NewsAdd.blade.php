@@ -5,7 +5,7 @@
         <div class="p-8 rounded-2xl bg-transparent shadow-md w-full">
             <form action="{{ route('news.post') }}" method="POST" class="mt-4 space-y-4" enctype="multipart/form-data">
                 @csrf
-                <div class="flex">
+                <div class="sm:flex">
                     <div class="flex justify-center items-center">
                         <div class="overflow-hidden box-border flex justify-center items-center mr-[2rem] border-black border-[4px] h-[14rem] w-[14rem]">
                             <img id="previewImage" src="" alt="" class="w-full h-full object-cover z-10" style="cursor: pointer; display: none;">
@@ -27,8 +27,6 @@
                             <div class="relative flex items-center">
                                 <input name="judul" type="text" required class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter user name" />
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-4 h-4 absolute right-4" viewBox="0 0 24 24">
-                                    <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
-                                    <path d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z" data-original="#000000"></path>
                                 </svg>
                             </div>
                         </div>
@@ -38,18 +36,16 @@
                             <div class="relative flex items-center">
                                 <input name="keterangan_singkat" type="text" required class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter user name" />
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-4 h-4 absolute right-4" viewBox="0 0 24 24">
-                                    <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
-                                    <path d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z" data-original="#000000"></path>
                                 </svg>
                             </div>
                         </div>
                         
                         <div class="mb-2 w-full">
                             <label class="text-slate-500 text-sm mt-2 block">Kategori</label>
-                            <select class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" name="kategory">
+                            <select class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" name="kategory" required>
                                 <option disabled value="">kategory</option>
-                                <option value="admin">Admin</option>
-                                <option value="kredit">Kredit</option>
+                                <option value="Penghargaan">Penghargaan</option>
+                                <option value="Pengumuman">Pengumuman</option>
                                 <option value="deposit">Deposit</option>
                             </select>
                         </div>
@@ -58,7 +54,7 @@
                 
                 <div class="mb-4">
                     <label class="text-slate-500 text-sm mt-2 block">Keterangan</label>
-                    <textarea name="keterangan" id="" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter keterangan"></textarea>
+                    <textarea name="keterangan" id="editor" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter keterangan" required></textarea>
                 </div>
                 
                 <div class="mt-8">
@@ -72,7 +68,13 @@
     </div>
 </div>
 
+
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 <script>
+
+CKEDITOR.replace('editor');
+
+
 document.getElementById('upload_profile').addEventListener('change', function(event) {
     const file = event.target.files[0];
     const previewImage = document.getElementById('previewImage');

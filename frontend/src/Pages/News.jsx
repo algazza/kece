@@ -7,6 +7,9 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { useEffect, useState } from "react";
+import axios from "axios";
+// import { format } from "date-fns";
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
@@ -36,12 +39,10 @@ const News = () => {
     to: pageSize,
   });
 
-  // memunculkan data ke berapa saja yang akan muncul
   useEffect(() => {
     fetch("http://localhost:8000/api/news")
       .then((response) => response.json())
       .then((data) => {
-        // Membalikkan urutan data di sini
         const reversedData = data.reverse();
         setBerita(reversedData);
         setFilteredBerita(reversedData);
@@ -51,7 +52,6 @@ const News = () => {
         console.error("Error fetching news:", error);
       });
   }, []);
-
 
   useEffect(() => {
     let filteredData = berita;
@@ -67,10 +67,8 @@ const News = () => {
       news.judul.toLowerCase().includes(query.toLowerCase())
     );
 
-    // membalikkan array
     filteredData = filteredData.reverse();
 
-    // mengatur ulang pagination dan berita berdasarkan yang telah di filter 
     setFilteredBerita(filteredData);
     setPagination({
       ...pagination,
@@ -162,23 +160,40 @@ const News = () => {
       </section>
 
       <section
-        className={`${styles.paddingY} grid sm:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
+        className={`${styles.paddingY} grid md:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
       >
         {filteredBerita.slice(pagination.from, pagination.to).map((news) => (
           <div
             key={news.id}
-            className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
+            className="flex flex-col sm:flex-row shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer w-full"
+            onClick={() => navigate(`/news/${news.id}`)}
           >
-            <img
-              src={`http://localhost:8000/image/public/news/${news.image}`}
-              alt={news.judul}
-              className="h-fit sm:w-40 rounded-l-xl"
-            />
-            <div className="p-4 flex flex-col justify-center">
-              <h6 className={`${styles.heading6} `}>{news.judul}</h6>
-              <p className="py-1 hidden sm:block">{news.keterangan_singkat}</p>
-              <p className={`${styles.fontSmall} text-abuGelap`}>
-                {news.created_at}
+            <div className="w-full sm:w-40 h-auto sm:h-40 overflow-hidden rounded-t-xl sm:rounded-l-xl">
+              <img
+                src={`http://localhost:8000/image/public/news/${news.image}`}
+                alt={news.judul}
+                className="object-cover w-full h-full"
+              />
+            </div>
+
+            <div className="p-4 flex flex-col justify-center w-full">
+              <h6
+                className={`${styles.heading6} break-words whitespace-normal`}
+              >
+                {news.judul}
+              </h6>
+              <div
+                className="py-1 break-words whitespace-normal"
+                dangerouslySetInnerHTML={{ __html: news.keterangan_singkat }}
+              />
+              <p
+                className={`${styles.fontSmall} text-abuGelap break-words whitespace-normal`}
+              >
+                {new Intl.DateTimeFormat("id-ID", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                }).format(new Date(news.created_at))}
               </p>
             </div>
           </div>
