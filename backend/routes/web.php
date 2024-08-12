@@ -100,6 +100,9 @@ Route::get('/News', function(){
 Route::get('/Newse', function(){
     return view ('admin.news.NewsEdit');
 });
+Route::get('/Newsa', function(){
+    return view ('admin.news.NewsAdd');
+});
 Route::get('/Tabungan', function(){
     return view ('admin.tabungan.Tabungan');
 });
