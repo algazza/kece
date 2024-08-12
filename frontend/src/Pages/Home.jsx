@@ -1,18 +1,18 @@
 
-import { sample } from "../data";
 import styles from "../data/style";
+import Footer from "../Layouts/Footer";
+import Header from "../Layouts/Header";
 
 const Home = () => {
 
 
   return (
     <>
-      <main className="bg-primary overflow-hidden font-jakarta">
-    {/* <img src={maxwidth ? "sample" : "samplebanner"} alt="" className="bg-red sm:bg-blue" />
-    <img src={sm ? "sample" : "samplebanner"} alt="" className="bg-red sm:bg-blue" />
-    <img src={sm ? "sample" : "samplebanner"} alt="" className="bg-red sm:bg-blue" /> */}
+    <Header/>
+      <main className={`${styles.paddingY} bg-primary overflow-hidden font-jakarta`}>
+        
       </main>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 };

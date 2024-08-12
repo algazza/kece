@@ -159,43 +159,45 @@ const News = () => {
       </section>
 
       <section
-  className={`${styles.paddingY} grid md:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
->
-  {filteredBerita.slice(pagination.from, pagination.to).map((news) => (
-    <div
-      key={news.id}
-      className="flex flex-col sm:flex-row shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer w-full"
-    >
-      <div className="w-full sm:w-40 h-auto sm:h-40 overflow-hidden rounded-t-xl sm:rounded-l-xl">
-        <img
-          src={`http://localhost:8000/image/public/news/${news.image}`}
-          alt={news.judul}
-          className="object-cover w-full h-full"
-        />
-      </div>
+        className={`${styles.paddingY} grid md:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
+      >
+        {filteredBerita.slice(pagination.from, pagination.to).map((news) => (
+          <div
+            key={news.id}
+            className="flex flex-col sm:flex-row shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer w-full"
+            onClick={() => navigate(`/news/${news.id}`)}
+          >
+            <div className="w-full sm:w-40 h-auto sm:h-40 overflow-hidden rounded-t-xl sm:rounded-l-xl">
+              <img
+                src={`http://localhost:8000/image/public/news/${news.image}`}
+                alt={news.judul}
+                className="object-cover w-full h-full"
+              />
+            </div>
 
-      <div className="p-4 flex flex-col justify-center w-full">
-        <h6 className={`${styles.heading6} break-words whitespace-normal`}>
-          {news.judul}
-        </h6>
-        <div
-          className="py-1 break-words whitespace-normal"
-          dangerouslySetInnerHTML={{ __html: news.keterangan_singkat }}
-        />
-        <p className={`${styles.fontSmall} text-abuGelap break-words whitespace-normal`}>
-          {new Intl.DateTimeFormat("id-ID", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          }).format(new Date(news.created_at))}
-        </p>
-      </div>
-    </div>
-  ))}
-</section>
-
-
-
+            <div className="p-4 flex flex-col justify-center w-full">
+              <h6
+                className={`${styles.heading6} break-words whitespace-normal`}
+              >
+                {news.judul}
+              </h6>
+              <div
+                className="py-1 break-words whitespace-normal"
+                dangerouslySetInnerHTML={{ __html: news.keterangan_singkat }}
+              />
+              <p
+                className={`${styles.fontSmall} text-abuGelap break-words whitespace-normal`}
+              >
+                {new Intl.DateTimeFormat("id-ID", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                }).format(new Date(news.created_at))}
+              </p>
+            </div>
+          </div>
+        ))}
+      </section>
 
       <section className={`${styles.flexCenter} py-12`}>
         <Pagination
