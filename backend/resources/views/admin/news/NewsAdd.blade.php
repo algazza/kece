@@ -16,7 +16,7 @@
                 @csrf
                 <div class="sm:flex">
                     <div class="flex justify-center items-center">
-                        <div class="overflow-hidden box-border flex justify-center items-center mr-[2rem] border-black border-[4px] h-[14rem] w-[14rem]">
+                        <div class="overflow-hidden box-border flex justify-center items-center mr-[2rem] border-blue-400 border-[4px] h-[14rem] w-[14rem]">
                             <img id="previewImage" src="" alt="" class="w-full h-full object-cover z-10" style="cursor: pointer; display: none;">
                             <div class="bg-white/90 rounded-full w-6 h-6 text-center absolute">
                                 <input type="file" name="image" id="upload_profile" hidden>
