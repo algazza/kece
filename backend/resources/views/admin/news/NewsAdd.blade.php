@@ -58,7 +58,7 @@
                 
                 <div class="mb-4">
                     <label class="text-slate-500 text-sm mt-2 block">Keterangan</label>
-                    <textarea name="keterangan" id="" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter keterangan" required></textarea>
+                    <textarea name="keterangan" id="editor" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter keterangan" required></textarea>
                 </div>
                 
                 <div class="mt-8">
@@ -72,7 +72,13 @@
     </div>
 </div>
 
+
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 <script>
+
+CKEDITOR.replace('editor');
+
+
 document.getElementById('upload_profile').addEventListener('change', function(event) {
     const file = event.target.files[0];
     const previewImage = document.getElementById('previewImage');
