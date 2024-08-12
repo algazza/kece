@@ -13,7 +13,7 @@ class News extends Model
 
     protected $fillable = [
         'judul',
-        'keterangan_singkat',
+        'penulis',
         'keterangan',
         'image',
         'kategory',

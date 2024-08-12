@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class NewsController extends Controller
 {
@@ -19,7 +20,7 @@ class NewsController extends Controller
         try {
             $request->validate([
                 'judul' => 'required|string|max:255',
-                'keterangan_singkat' => 'required|string|max:10000',
+                'penulis' => 'required|string|max:10000',
                 'keterangan' => 'required|string|max:100000',
                 'kategory' => 'required|string|max:255',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -27,7 +28,7 @@ class NewsController extends Controller
 
             $news = new News();
             $news->judul = $request->judul;
-            $news->keterangan_singkat = $request->keterangan_singkat;
+            $news->penulis = $request->penulis;
             $news->keterangan = $request->keterangan;
             $news->kategory = $request->kategory;
             
@@ -53,5 +54,18 @@ class NewsController extends Controller
     {
         $news = News::orderBy('created_at', 'desc')->get();
         return response()->json($news);
+    }
+
+
+    public function show($id)
+    {
+        try {
+            // Menggunakan findOrFail untuk mengambil berita berdasarkan ID
+            $news = News::findOrFail($id);
+            
+            return response()->json($news);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['error' => 'Berita tidak ditemukan.'], 404);
+        }
     }
 }

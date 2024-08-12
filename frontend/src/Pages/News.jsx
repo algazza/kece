@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   createTheme,
   InputAdornment,
@@ -11,8 +12,8 @@ import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
 import { samplebanner } from "../data";
 import styles from "../data/style";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
-// theme mui
 const theme = createTheme({
   palette: {
     merah: {
@@ -21,7 +22,6 @@ const theme = createTheme({
   },
 });
 
-// total data berita yang muncul per halaman
 const pageSize = 10;
 
 const News = () => {
@@ -34,6 +34,8 @@ const News = () => {
     from: 0,
     to: pageSize,
   });
+
+  const navigate = useNavigate(); // Hook untuk navigasi
 
   useEffect(() => {
     fetch("http://localhost:8000/api/news")
@@ -73,7 +75,6 @@ const News = () => {
     });
   }, [query, berita, selectFilter]);
 
-  // sebagai handlechange dari pagination
   const handlePageChange = (event, page) => {
     const from = (page - 1) * pageSize;
     const to = (page - 1) * pageSize + pageSize;
@@ -86,7 +87,7 @@ const News = () => {
       <section className="">
         <IntroBanner
           TitleBanner="Berita"
-          DescriptionBanner="Daparkan informasi secara tepat, cepat dan terpercaya mengenai BPR Arto Moro"
+          DescriptionBanner="Dapatkan informasi secara tepat, cepat, dan terpercaya mengenai BPR Arto Moro"
           ImageBanner={samplebanner}
         />
       </section>
@@ -154,6 +155,8 @@ const News = () => {
         </ThemeProvider>
       </section>
 
+
+
       <section
         className={`${styles.paddingY} grid md:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
       >
@@ -161,30 +164,27 @@ const News = () => {
           <div
             key={news.id}
             className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
-            style={{ overflowWrap: "break-word", wordWrap: "break-word", whiteSpace: "normal" }}
+            onClick={() => navigate(`/news/${news.id}`)}
           >
             <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
-              <img
-                src={`http://localhost:8000/image/public/news/${news.image}`}
-                alt={news.judul}
-                className="object-cover w-full h-full"
-              />
+            <img
+              src={`http://localhost:8000/image/public/news/${news.image}`}
+              alt={news.judul}
+              className="object-cover w-full h-full"
+            />
             </div>
 
             <div className="p-4 flex flex-col justify-center">
-              <h6 className={`${styles.heading6}`} style={{ overflowWrap: "break-word", wordWrap: "break-word", whiteSpace: "normal" }}>{news.judul}</h6>
-              <div
-                className="py-1 hidden sm:block"
-                dangerouslySetInnerHTML={{ __html: news.keterangan_singkat }}
-                style={{ overflowWrap: "break-word", wordWrap: "break-word", whiteSpace: "normal" }}
-              />
+              <p className={`${styles.fontSmallBold} text-merahh`}>{news.kategory}</p>
+              <h6 className={`${styles.heading6} `}>{news.judul}</h6>
               <p className={`${styles.fontSmall} text-abuGelap`}>
-                {new Intl.DateTimeFormat("id-ID", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
+                {new Intl.DateTimeFormat('id-ID', {
+                  day: '2-digit',
+                  month: '2-digit',
+                  year: 'numeric',
                 }).format(new Date(news.created_at))}
               </p>
+
             </div>
           </div>
         ))}

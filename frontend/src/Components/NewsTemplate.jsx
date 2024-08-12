@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LinkIcon from "@mui/icons-material/Link";
@@ -7,12 +7,14 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import styles from "../data/style";
+import { sampleNews } from "../data";
 
 const NewsTemplate = ({
   NewsJudul,
   NewsImage,
-  NewsBeritaLengkap,
+  NewsBeritaLengkap, // HTML content
   NewsTanggal,
+  NewsPenulis,
 }) => {
   const location = useLocation();
 
@@ -39,7 +41,7 @@ const NewsTemplate = ({
           </h5>
 
           <div>
-            <img src={NewsImage} alt="" />
+            <img className="max-w-[800px]" src={NewsImage} alt="" />
             <div className="flex justify-end pt-2 gap-4">
               <button onClick={handleCopyLink}>
                 <LinkIcon className="text-[#646464]" />
@@ -57,23 +59,22 @@ const NewsTemplate = ({
           </div>
 
           <div className={`${styles.fontBody} sm:mx-32`}>
-            {NewsBeritaLengkap}
+            <div className="pb-6" dangerouslySetInnerHTML={{ __html: NewsBeritaLengkap }} />
 
             <div className={`${styles.fontBodyBold}`}>
               <p>{NewsTanggal}</p>
-              <p>Promosi Arto Moro</p>
+              <p>{NewsPenulis}</p>
             </div>
           </div>
 
           <div className="px-12">
             <div className="flex justify-between">
               <h6 className={`${styles.heading6} mb-4`}>Baca juga:</h6>
-              <Link className={`${styles.heading6} mb-4 text-abuGelap`}>
+              <Link to={"/news"} className={`${styles.heading6} mb-4 text-abuGelap`}>
                 Lainnya...
               </Link>
             </div>
             <section className="grid sm:grid-cols-x550 justify-center gap-6 sm:gap-12">
-              {/* Ini harus memuat berita terkait */}
             </section>
           </div>
         </section>
