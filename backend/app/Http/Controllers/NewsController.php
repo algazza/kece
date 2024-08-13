@@ -15,6 +15,76 @@ class NewsController extends Controller
         return view ('admin.news.NewsAdd');
     }
 
+    function viewNews(){
+        $news = News::orderBy('created_at', 'DESC')->get();
+        return view ('admin.news.News', compact('news'));
+    }
+
+    function editAdmin($id){
+        $news = News::find($id);
+
+        if(!$news){
+            return redirect()->route('news')->with('eror','tidak di temukan');
+        };
+
+        return view('admin.news.NewsEdit', compact('news'));
+    }
+
+    function updateAdmin(Request $request, $id){
+
+        $news = News::find($id);
+
+        $validateData = $request->validate([
+            'judul' => 'required|string|max:255',
+            'penulis' => 'required|string|max:255',
+            'kategory' => 'required|string|max:255',
+            'keterangan' => 'required|string',
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();  
+            $request->image->move(public_path('image/public/news'), $imageName);
+            $validateData['image'] = $imageName;
+        } else {
+            if (!isset($validateData['image'])) {
+                $validateData['image'] = $news->image;
+            }
+        }
+
+        if(!$news){
+            return redirect()->route('news')->with('eror','tidak di temukan');
+        };
+
+        $news->update($validateData);
+
+        return redirect()->route('news')->with('success', 'News updated successfully');
+    }
+
+
+    function destroyAdmin($id){
+        $news = News::find($id);
+
+        if(!$news){
+            return redirect()->route('news')->with('eror','tidak di temukan');
+        }
+
+        $news->delete();
+
+        return redirect()->route('news')->with('success', 'News deleted successfully');
+    }
+
+
+
+    // JSON DATA API
+
+    function index()
+    {
+        $news = News::orderBy('created_at', 'desc')->get();
+        return response()->json($news);
+    }
+
+
     function store(Request $request)
     {
         try {
@@ -49,18 +119,9 @@ class NewsController extends Controller
         }
     }
 
-
-    function index()
-    {
-        $news = News::orderBy('created_at', 'desc')->get();
-        return response()->json($news);
-    }
-
-
     public function show($id)
     {
         try {
-            // Menggunakan findOrFail untuk mengambil berita berdasarkan ID
             $news = News::findOrFail($id);
             
             return response()->json($news);

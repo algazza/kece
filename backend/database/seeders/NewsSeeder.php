@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\News;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class NewsSeeder extends Seeder
 {
@@ -15,152 +14,21 @@ class NewsSeeder extends Seeder
      */
     public function run()
     {
-        $userData = [
-            [
-                'judul' => 'awal',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Siaran Pers',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'Al Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Penghargaan',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'Al Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Penghargaan',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'Al Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Penghargaan',
-                'image' => 'profil.jpg',
-            ],
+        $faker = \Faker\Factory::create('id_ID');
+        $userData = [];
 
-            [
-                'judul' => 'Al Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Penghargaan',
+        for ($i = 1; $i <= 20; $i++) {
+            $userData[] = [
+                'judul' => $faker->sentence(5, true) . ' ' . $faker->word,
+                'penulis' => $faker->name,
+                'keterangan' => $faker->paragraphs(rand(3, 6), true),
+                'kategory' => $faker->randomElement(['Siaran Pers', 'Penghargaan', 'Promo', 'Pengumuman']),
                 'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'El Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Penghargaan',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'El Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Promo',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'El Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Promo',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'El Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Promo',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'El Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Promo',
-                'image' => 'profil.jpg',
-            ],
+            ];
+        }
 
-            [
-                'judul' => 'El Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Promo',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'El Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Pengumuman',
-                'image' => 'profil.jpg',
-            ],
-
-
-            [
-                'judul' => 'El Rakkai',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Pengumuman',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'jordan',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Pengumuman',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'jordan',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Pengumuman',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'jordan',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Pengumuman',
-                'image' => 'profil.jpg',
-            ],
-
-            [
-                'judul' => 'jordan',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Siaran Pers',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'jordan',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Siaran Pers',
-                'image' => 'profil.jpg',
-            ],
-            [
-                'judul' => 'akhir',
-                'penulis' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'keterangan' => 'jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda jaDKNNN NNNNNNNNNNN NNNNNNNNNNN NNNkpakda',
-                'kategory' => 'Siaran Pers',
-                'image' => 'profil.jpg',
-            ],
-
-        ];
-
-
-        foreach($userData as $key => $val ){
+        foreach($userData as $key => $val){
             News::create($val);
         }
-    
     }
 }

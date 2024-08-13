@@ -12,7 +12,7 @@ import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
 import { samplebanner } from "../data";
 import styles from "../data/style";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -35,7 +35,7 @@ const News = () => {
     to: pageSize,
   });
 
-  const navigate = useNavigate(); // Hook untuk navigasi
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     fetch("http://localhost:8000/api/news")
