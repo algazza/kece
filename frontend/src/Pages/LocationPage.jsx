@@ -1,4 +1,4 @@
-import { samplebanner } from "../data";
+import { BlueBanner } from "../data";
 import styles from "../data/style";
 import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
@@ -9,7 +9,7 @@ const LocationPage = () => {
     <>
       <div className="">
         <IntroBanner
-          ImageBanner={samplebanner}
+          ImageBanner={BlueBanner}
           TitleBanner={"Location"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
@@ -18,8 +18,8 @@ const LocationPage = () => {
                 menawarkan berbagai produk kredit yang dapat disesuaikan dengan
                 keperluan Anda.
             `}
-            hook
-            paragraf
+          hook
+          paragraf
         />
         <TitleBlueBanner title={"Our Location"} />
       </div>

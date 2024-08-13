@@ -3,7 +3,7 @@ import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import FormBank from "./FormBank";
 import styles from "../data/style";
-import { PenempatanDana, samplebanner } from "../data";
+import { PenempatanDana, BlueBanner } from "../data";
 import {
   Paper,
   Table,
@@ -45,16 +45,15 @@ const SyaratForm = () => {
   }
 
   function nextTab(id) {
-    updateTabs(id + 1)
+    updateTabs(id + 1);
   }
-  
 
   return (
     <main>
       <Header />
       <section>
         <IntroBanner
-          ImageBanner={samplebanner}
+          ImageBanner={BlueBanner}
           TitleBanner={"Kredit"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
@@ -104,7 +103,7 @@ const SyaratForm = () => {
 
       <section className="sm:pb-16 m-8 bg-abuTerang p-10 rounded-lg">
         {/* Syarat */}
-        {tabs === 1 ? ( 
+        {tabs === 1 ? (
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -118,8 +117,14 @@ const SyaratForm = () => {
                 A. Syarat Pembukuan rekening
               </h3>
               <ul className="list-inside list-disc pl-16">
-                <li>Perorangan <br /> - KTP/SIM/Passport asli yang masih berlaku </li>
-                <li>Perusahaan <br /> - KTP/SIM/Passport asli pejabat yang berwenang  <br /> - SIUP, NPWP, Akta Pendirian Perusahaan dan Perubahannya</li>
+                <li>
+                  Perorangan <br /> - KTP/SIM/Passport asli yang masih berlaku{" "}
+                </li>
+                <li>
+                  Perusahaan <br /> - KTP/SIM/Passport asli pejabat yang
+                  berwenang <br /> - SIUP, NPWP, Akta Pendirian Perusahaan dan
+                  Perubahannya
+                </li>
               </ul>
 
               <h3 className={`${styles.heading5} text-black my-5`}>
@@ -137,7 +142,9 @@ const SyaratForm = () => {
                 <li>Hadiah dipilih, dibawa pulang, langsung, tanpa diundi.</li>
               </ul>
 
-              <h3 className={`${styles.heading5} text-black my-5 `}>C. Fitur</h3>
+              <h3 className={`${styles.heading5} text-black my-5 `}>
+                C. Fitur
+              </h3>
               <ul className="list-inside list-disc grid grid-cols-2 pl-16">
                 <li>Setoran Awal & Akhir </li>
                 <>: Sesuai nominal penempatan dana </>
@@ -295,21 +302,20 @@ const SyaratForm = () => {
         ) : null}
       </section>
 
-      <section className="flex ml-16"  >
+      <section className="flex ml-16">
         <div
           onClick={() => nextTab(tabs)}
-          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""}`}
+          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+            tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""
+          }`}
         >
           next
         </div>
-        
-        
       </section>
       <Footer />
     </main>
-    
   );
 };
- 
+
 // mahes 7 agustus 2024
 export default SyaratForm;

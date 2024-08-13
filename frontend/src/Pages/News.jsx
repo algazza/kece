@@ -11,7 +11,7 @@ import axios from "axios";
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
-import { samplebanner } from "../data";
+import { BlueBanner } from "../data";
 import styles from "../data/style";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
@@ -93,7 +93,7 @@ const News = () => {
         <IntroBanner
           TitleBanner="Berita"
           DescriptionBanner="Daparkan informasi secara tepat, cepat dan terpercaya mengenai BPR Arto Moro"
-          ImageBanner={samplebanner}
+          ImageBanner={BlueBanner}
         />
       </section>
 

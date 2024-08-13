@@ -40,19 +40,19 @@ const Header = () => {
           className={`list-none sm:flex hidden justify-end items-center flex-1 gap-12 ${styles.fontBody} font-semibold`}
         >
           <li>
-            <FlyoutLink to={"/"}>Home</FlyoutLink>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
             <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink to={"/"}>News</FlyoutLink>
+            <Link to={"/news"}>News</Link>
+          </li>
+          <li>
+            <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>
           </li>
           <li>
             <FlyoutLink FlyoutContent={Service}>Layanan</FlyoutLink>
-          </li>
-          <li>
-            <FlyoutLink FlyoutContent={Information}>Informasi</FlyoutLink>
           </li>
         </ul>
 
@@ -101,7 +101,28 @@ const Header = () => {
                     </Accordion>
                   </li>
                   <li className="my-3">
-                    <Link to={"/"}>News</Link>
+                    <Link to={"/news"}>News</Link>
+                  </li>
+                  <li>
+                    <Accordion sx={{ boxShadow: "none" }}>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1-content"
+                        id="panel1-header"
+                        sx={{ padding: "0px", border: "none" }}
+                      >
+                        Produk
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <ul>
+                          <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
+                            <Link to={"/"}>Kredit</Link>
+                            <Link to={"/"}>Deposit</Link>
+                            <Link to={"/"}>Tabungan</Link>
+                          </li>
+                        </ul>
+                      </AccordionDetails>
+                    </Accordion>
                   </li>
                   <li>
                     <Accordion sx={{ boxShadow: "none" }}>
@@ -116,30 +137,8 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Kredit</Link>
-                            <Link to={"/"}>Deposit</Link>
-                            <Link to={"/"}>Tabungan</Link>
-                            <Link to={"/"}>Sponsor</Link>
-                          </li>
-                        </ul>
-                      </AccordionDetails>
-                    </Accordion>
-                  </li>
-                  <li>
-                    <Accordion sx={{ boxShadow: "none" }}>
-                      <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1-content"
-                        id="panel1-header"
-                        sx={{ padding: "0px", border: "none" }}
-                      >
-                        Informasi
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <ul>
-                          <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Recruitment</Link>
                             <Link to={"/"}>Sosial Media</Link>
+                            <Link to={"/"}>Sponsor</Link>
                             <Link to={"/"}>Promo</Link>
                             <Link to={"/"}>Sponsor</Link>
                           </li>
@@ -206,22 +205,21 @@ const AboutUs = () => {
   return <MenuList items={items} />;
 };
 
-const Service = () => {
+const Product = () => {
   const items = [
     { name: "Kredit", link: "/" },
     { name: "Deposit", link: "/" },
     { name: "Tabungan", link: "/" },
-    { name: "Sponsor", link: "/" },
   ];
 
   return <MenuList items={items} />;
 };
 
-const Information = () => {
+const Service = () => {
   const items = [
-    { name: "Recruitment", link: "/" },
     { name: "Sosial Media", link: "/" },
     { name: "Promo", link: "/" },
+    { name: "Sponsor", link: "/" },
     { name: "Laporan", link: "/" },
   ];
 

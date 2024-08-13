@@ -1,19 +1,20 @@
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useSwipeable } from "react-swipeable";
+import { nunezimg, sampleBanner } from "../data";
+import ImageBanner from "./ImageBanner";
 
-import styles from "../data/style";
-import Footer from "../Layouts/Footer";
-import Header from "../Layouts/Header";
+const images = [
+  sampleBanner,
+  sampleBanner,
+];
 
 const Home = () => {
 
-
   return (
-    <>
-    <Header/>
-      <main className={`${styles.paddingY} bg-primary overflow-hidden font-jakarta`}>
-        
-      </main>
-      <Footer/>
-    </>
+    <div className="">
+      <ImageBanner images={images}/>
+    </div>
   );
 };
 
