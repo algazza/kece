@@ -87,13 +87,9 @@ const News = () => {
       <section className="">
         <IntroBanner
           TitleBanner="Berita"
-<<<<<<< HEAD
           DescriptionBanner="Daparkan informasi secara tepat, cepat dan terpercaya mengenai BPR Arto Moro"
           ImageBanner={BlueBanner}
-=======
-          DescriptionBanner="Dapatkan informasi secara tepat, cepat, dan terpercaya mengenai BPR Arto Moro"
-          ImageBanner={samplebanner}
->>>>>>> cb9ef496ef5540e437bfc00c18bbd3c96abbb1d8
+          
         />
       </section>
 
