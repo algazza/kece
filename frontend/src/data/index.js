@@ -1,6 +1,6 @@
 // ======================== IMAGE ===========================
 import logoArmor from "../img/LOGO-AM-CORAL-BARU.svg";
-import samplebanner from "../img/sampleimage.svg";
+import BlueBanner from "../img/sampleimage.svg";
 import sample from "../img/sampleNews.svg"
 import partnerImage1 from "../img/partnerImage1.svg";
 import partnerImage2 from "../img/partnerImage2.svg";
@@ -11,10 +11,12 @@ import partnerImage6 from "../img/partnerImage6.svg";
 import partnerImage7 from "../img/partnerImage7.svg";
 import nunezimg from "../img/668f755b3c2ba.jpg";
 import sampleNews from "../img/sample-news-684x385.jpg"
+import sampleBanner from "../img/samplebanner.svg"
 
 export {
   logoArmor,
-  samplebanner,
+  BlueBanner,
+  sampleBanner,
   sample,
   nunezimg,
   sampleNews,

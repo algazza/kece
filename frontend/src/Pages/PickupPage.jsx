@@ -5,7 +5,7 @@ import Footer from "../Layouts/Footer";
 import FormBank from "../Components/FormBank";
 import { PickupService } from "../Components/Form";
 import styles from "../data/style";
-import { samplebanner } from "../data";
+import { BlueBanner } from "../data";
 
 const PickupPage = () => {
   return (
@@ -14,7 +14,7 @@ const PickupPage = () => {
       <main className="sm:py-0 py-6">
         <section>
           <IntroBanner
-            ImageBanner={samplebanner}
+            ImageBanner={BlueBanner}
             TitleBanner={"Deposito"}
             DescriptionBanner={`
                   Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk

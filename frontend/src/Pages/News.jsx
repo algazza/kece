@@ -10,7 +10,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import IntroBanner from "../Layouts/IntroBanner";
-import { samplebanner } from "../data";
+import { BlueBanner } from "../data";
 import styles from "../data/style";
 import { useNavigate } from "react-router-dom";
 
@@ -87,8 +87,9 @@ const News = () => {
       <section className="">
         <IntroBanner
           TitleBanner="Berita"
-          DescriptionBanner="Dapatkan informasi secara tepat, cepat, dan terpercaya mengenai BPR Arto Moro"
-          ImageBanner={samplebanner}
+          DescriptionBanner="Daparkan informasi secara tepat, cepat dan terpercaya mengenai BPR Arto Moro"
+          ImageBanner={BlueBanner}
+          
         />
       </section>
 

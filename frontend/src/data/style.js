@@ -9,7 +9,7 @@ const styles = {
     heading6: "font-bold xs:text-[20px] text-[16.8px] leading-[24px] xs:leading-[28px] ",
     heading6Normal: "xs:text-[20px] text-[16.8px]",
     fontBodyBold: "font-bold xs:text-[16px] text-[14px]",
-    fontBody: "xs:text-[16px] text-[14px]",
+    fontBody: "xs:text-[18px] text-[14px]",
     fontSmallBold: "font-bold xs:text-[12.8px] text-[11.67px]",
     fontSmall: "xs:text-[12.8px] text-[11.67px]",
     fontCaption: "xs:text-[10.24px] text-[9.72px] font-medium",
