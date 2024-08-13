@@ -98,13 +98,8 @@
                         </div>
                     </div>
                 </a>
-<<<<<<< HEAD
                 <a href="{{ route('pickup.index') }}">
                     <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md">
-=======
-                <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
->>>>>>> d150b539338ed510f2c46a977afd2971aaf66a09
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bxs-truck'></i>
