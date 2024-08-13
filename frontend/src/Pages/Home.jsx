@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useSwipeable } from "react-swipeable";
 import { nunezimg, sampleBanner } from "../data";
 import ImageBanner from "./ImageBanner";
 
@@ -14,6 +13,7 @@ const Home = () => {
   return (
     <div className="">
       <ImageBanner images={images}/>
+      <div className="clip-custom-shape"><img src={nunezimg} alt=""/></div>
     </div>
   );
 };

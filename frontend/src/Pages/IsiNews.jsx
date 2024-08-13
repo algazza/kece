@@ -44,7 +44,6 @@ const IsiNews = () => {
 
   return (
     <>
-      <Header />
       <NewsTemplate
         NewsImage={`http://localhost:8000/image/public/news/${news.image}`}
         NewsJudul={news.judul}
@@ -56,7 +55,6 @@ const IsiNews = () => {
           year: "numeric",
         }).format(new Date(news.created_at))}
       />
-      <Footer />
     </>
   );
 };

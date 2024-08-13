@@ -1,14 +1,11 @@
 import { BlueBanner } from "../data";
 import styles from "../data/style";
-import Footer from "../Layouts/Footer";
-import Header from "../Layouts/Header";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 
 const LocationPage = () => {
   return (
     <>
-    <Header />
       <div className="">
         <IntroBanner
           ImageBanner={BlueBanner}
@@ -100,7 +97,6 @@ const LocationPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

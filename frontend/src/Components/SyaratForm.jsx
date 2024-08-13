@@ -15,8 +15,6 @@ import {
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { Kredit } from "./Form";
-import Footer from "../Layouts/Footer";
-import Header from "../Layouts/Header";
 
 const calculateRowSpan = (data, key) => {
   const rowSpanData = [];
@@ -49,8 +47,7 @@ const SyaratForm = () => {
   }
 
   return (
-    <main>
-      <Header />
+    <>
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
@@ -312,8 +309,7 @@ const SyaratForm = () => {
           next
         </div>
       </section>
-      <Footer />
-    </main>
+    </>
   );
 };
 

@@ -49,7 +49,7 @@ const ImageBanner = ({ images }) => {
           onLoad={handleImageLoad}
         />
       </AnimatePresence>
-      <Box className="absolute bottom-4 right-4 flex space-x-2">
+      <Box className="absolute bottom-4 left-4 flex space-x-2">
         {images.map((_, index) => (
           <Box
             key={index}
