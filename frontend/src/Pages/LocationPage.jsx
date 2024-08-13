@@ -1,12 +1,14 @@
 import { BlueBanner } from "../data";
 import styles from "../data/style";
 import Footer from "../Layouts/Footer";
+import Header from "../Layouts/Header";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 
 const LocationPage = () => {
   return (
     <>
+    <Header />
       <div className="">
         <IntroBanner
           ImageBanner={BlueBanner}
@@ -28,10 +30,7 @@ const LocationPage = () => {
         <div>
           <h3 className="text-6xl text-center ">Get In Touch</h3>
           <p className="mt-5 text-center text-xl">
-            Lorem ipsum dolor sit amet consectetur. Semper ultricies et tortor
-            tempus hac viverra nulla tristique. Est magna dolor quis dignissim
-            viverra amet. Est tempus non diam eu tincidunt at vulputate
-            venenatis. Vel tellus nibh tortor fermentum faucibus hendrerit.
+          Kami selalu siap mendengar dan membantu Anda! Jika Anda memiliki pertanyaan, butuh bantuan, atau ingin tahu lebih lanjut tentang produk dan layanan kami, jangan ragu untuk menghubungi kami. Tim kami yang ramah dan profesional akan dengan senang hati menjawab semua kebutuhan Anda secepat mungkin
           </p>
         </div>
 
@@ -64,23 +63,23 @@ const LocationPage = () => {
                 <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
               </div>
               <div className="flex mt-5">
-                <p className="flex-auto text-xl">Senin</p>
+                <p className="flex-auto text-xl">Selasa</p>
                 <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
               </div>
               <div className="flex mt-5">
-                <p className="flex-auto text-xl">Senin</p>
+                <p className="flex-auto text-xl">Rabu</p>
                 <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
               </div>
               <div className="flex mt-5">
-                <p className="flex-auto text-xl">Senin</p>
+                <p className="flex-auto text-xl">Kamis</p>
                 <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
               </div>
               <div className="flex mt-5">
-                <p className="flex-auto text-xl">Senin</p>
+                <p className="flex-auto text-xl">Jumat</p>
                 <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
               </div>
               <div className="flex mt-5">
-                <p className="flex-auto text-xl">Senin</p>
+                <p className="flex-auto text-xl">Sabtu</p>
                 <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
               </div>
             </div>

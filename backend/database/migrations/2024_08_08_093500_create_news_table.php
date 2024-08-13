@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('judul');
             $table->text('keterangan');
             $table->string('kategory');
-            $table->text('keterangan_singkat');
+            $table->text('penulis');
             $table->string('image')->nullable();
             $table->timestamps();
         });

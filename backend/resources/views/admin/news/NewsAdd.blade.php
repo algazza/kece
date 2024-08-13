@@ -16,7 +16,7 @@
                 @csrf
                 <div class="sm:flex">
                     <div class="flex justify-center items-center">
-                        <div class="overflow-hidden box-border flex justify-center items-center mr-[2rem] border-black border-[4px] h-[14rem] w-[14rem]">
+                        <div class="overflow-hidden box-border flex justify-center items-center mr-[2rem] border-blue-400 border-[4px] h-[14rem] w-[14rem]">
                             <img id="previewImage" src="" alt="" class="w-full h-full object-cover z-10" style="cursor: pointer; display: none;">
                             <div class="bg-white/90 rounded-full w-6 h-6 text-center absolute">
                                 <input type="file" name="image" id="upload_profile" hidden>
@@ -39,16 +39,6 @@
                                 </svg>
                             </div>
                         </div>
-                    
-                        <div class="mb-2">
-                            <label class="text-slate-500 text-sm mt-2 block">Keterangan Singkat</label>
-                            <div class="relative flex items-center">
-                                <input name="keterangan_singkat" type="text" required class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter user name" />
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-4 h-4 absolute right-4" viewBox="0 0 24 24">
-                                </svg>
-                            </div>
-                        </div>
-                        
                         <div class="mb-2 w-full">
                             <label class="text-slate-500 text-sm mt-2 block">Kategori</label>
                             <select class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" name="kategory" required>
@@ -65,6 +55,9 @@
                     <label class="text-slate-500 text-sm mt-2 block">Keterangan</label>
                     <textarea name="keterangan" id="editor" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter keterangan" required></textarea>
                 </div>
+
+                <input name="penulis" type="hidden" required class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter user name" value="{{ Auth::user()->name }}"/>
+                        
                 
                 <div class="mt-8">
                     <button type="submit" class="bg-blue-600 text-white w-full font-normal text-md py-3 px-4 rounded-[5px] shadow-md hover:bg-blue-800 active:bg-white focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50 transition-colors duration-300 ease-in-out">

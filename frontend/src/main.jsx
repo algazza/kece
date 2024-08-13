@@ -8,8 +8,13 @@ import News from "./Pages/News.jsx";
 import Success from "./Pages/Success.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
 import SyaratForm from "./Components/SyaratForm.jsx";
+<<<<<<< HEAD
 import NewsTemplate from "./Components/NewsTemplate.jsx";
 import LocationPage from "./Pages/LocationPage.jsx";
+=======
+import LocationPage from "./Pages/LocationPage.jsx";
+import Home from "./Pages/Home.jsx";
+>>>>>>> cb9ef496ef5540e437bfc00c18bbd3c96abbb1d8
 import IsiNews from "./Pages/IsiNews.jsx";
 
 const router = createBrowserRouter([
@@ -28,24 +33,18 @@ const router = createBrowserRouter([
   {
     path: "/news",
     element: <News />,
-    children: [
-      {
-        path: ":id",
-        element: <IsiNews/>
-      }
-    ]
   },
   {
-    path: "/succes",
+    path: "/news/:id",
+    element: <IsiNews />,
+  },
+  {
+    path: "/success",
     element: <Success />,
   },
   {
     path: "/syarat",
     element: <SyaratForm />,
-  },
-  {
-    path: "/newss",
-    element: <NewsTemplate />,
   },
   {
     path: "/location",

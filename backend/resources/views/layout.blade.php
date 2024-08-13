@@ -50,16 +50,7 @@
                     <p class="font-semibold">EN</p>
                   </div>
                 </div> 
-                <div class="flex gap-2">
-                  <div class="bg-gray-100 w-[2.7rem] h-[2.7rem] justify-center text-center items-center relative mt-[0.5rem] leading-[2.5rem] rounded-[5px] box-border border-[0.5px] border-black">
-                    <img src="{{ asset('image/admin/' . (Auth::user()->image ?? 'profil.jpg'))  }}" class="h-full rounded-[4px]" id="userImage">
-                </div>
-                <div class="mt-[0.6rem]">
-                    <p class="font-semibold">{{ Auth::user()->name }}</p>
-                    <p class="text-[0.8rem] mt-[-0.3rem]">{{ Auth::user()->role }}</p>
-                </div>
-                
-                </div>
+              
               </div>
           </div>
 
