@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Home from "./Pages/Home.jsx";
 import KreditPage from "./Pages/KreditPage.jsx";
 import News from "./Pages/News.jsx";
 import Success from "./Pages/Success.jsx";
