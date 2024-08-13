@@ -41,16 +41,16 @@
                 </label>
               </div>
 
-              <div class="flex right-6 absolute gap-8">
-                <div class="flex gap-1 mt-[0.7rem]">
-                  <div class="bg-gray-300 w-[2.3rem] h-[2.3rem] justify-center text-center items-center relative leading-[2.3rem] rounded-[5px] box-border border-[0.5px] border-black cursor-pointer">
-                    <i class='bx bxs-bell text-[1.5rem] mt-[0.3rem]'></i>
+              <div class="flex right-6 absolute gap-8 pr-20">
+                <div class="sm:flex gap-2">
+                  <div class="bg-gray-100 w-[2.7rem] h-[2.7rem] justify-center text-center items-center relative  mt-[0.5rem] leading-[2.5rem] rounded-[5px] box-border border-[0.5px] border-black">
+                    <img src="{{ asset('image/admin/' . (Auth::user()->image ?? 'profil.jpg'))  }}" class="h-full rounded-[4px]" id="userImage">
                   </div>
-                  <div class="bg-gray-300 w-[2.3rem] h-[2.3rem] justify-center text-center items-center relative leading-[2.2rem] rounded-[5px] box-border border-[0.5px] border-black cursor-pointer">
-                    <p class="font-semibold">EN</p>
-                  </div>
-                </div> 
-              
+                  <div class="mt-[0.6rem]">
+                    <p class="font-semibold">{{ Auth::user()->name }}</p>
+                    <p class="text-[0.8rem] mt-[-0.3rem]">{{ Auth::user()->role }}</p>
+                  </div>   
+                </div>
               </div>
           </div>
 
@@ -98,15 +98,6 @@
               </div>
             </div>
 
-            <div class="sm:flex gap-2">
-              <div class="bg-gray-100 w-[2.7rem] h-[2.7rem] justify-center text-center items-center relative  mt-[0.5rem] leading-[2.5rem] rounded-[5px] box-border border-[0.5px] border-black">
-                <img src="{{ asset('image/admin/' . (Auth::user()->image ?? 'profil.jpg'))  }}" class="h-full rounded-[4px]" id="userImage">
-              </div>
-              <div class="mt-[0.6rem]">
-                <p class="font-semibold">{{ Auth::user()->name }}</p>
-                <p class="text-[0.8rem] mt-[-0.3rem]">{{ Auth::user()->role }}</p>
-              </div>   
-            </div>
           </div>
           <script>
             function dropDown() {
