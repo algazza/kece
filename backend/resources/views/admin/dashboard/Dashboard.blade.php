@@ -25,13 +25,13 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg">
+            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                 <div>
                     <div class="mt-[0.5rem]">
                         <div class="text-[6rem] ">
                             <i class='text-black bx bx-user'></i>
                         </div>
-                        <p class="bg-black text-white mx-[3.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Total Client</p>
+                        <p class="bg-black text-white mx-[3.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Sponsor</p>
                     </div>
                 </div>
             </div>
@@ -43,6 +43,17 @@
                             <i class='text-black bx bx-credit-card' ></i>
                         </div>
                         <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Edit Banner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                <div>
+ 
+                    <div class="mt-[0.5rem]">
+                        <div class="text-[6rem] ">
+                            <i class='text-black bx bx-credit-card' ></i>
+                        </div>
+                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Edit Kordinat</p>
                     </div>
                 </div>
             </div>
@@ -154,15 +165,6 @@
                     <div>
                         
                         <p>All Person Data</p> 
-                        <button class="bg-transparent border-2 transition-all duration-300 hover:border-black text-black  font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50  ease-in-out cursor-pointer hover:scale-95">
-                            Kredit
-                          </button>
-                        <button class="bg-white text-black border-2 transition-all duration-300 hover:border-black font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 ease-in-out cursor-pointer hover:scale-95">
-                            Tabungan
-                          </button>
-                        <button class="bg-white text-black border-2 transition-all hover:border-black font-normal text-sm py-0.5 px-4 rounded-[5px] shadow-md hover:bg-gray-200 active:bg-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 ease-in-out cursor-pointer hover:scale-95 duration-300">
-                            Deposito
-                          </button>
                     </div>
                     
                 </div>
