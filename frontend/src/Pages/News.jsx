@@ -33,7 +33,7 @@ const News = () => {
     to: pageSize,
   });
 
-  const navigate = useNavigate(); // Hook untuk navigasi
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     fetch("http://localhost:8000/api/news")

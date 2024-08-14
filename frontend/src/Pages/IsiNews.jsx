@@ -7,7 +7,7 @@ import NewsTemplate from "../Components/NewsTemplate";
 const IsiNews = () => {
   const { id } = useParams(); // Ambil id dari URL
   const [news, setNews] = useState(null);
-  const [error, setError] = useState(null); // Tambahkan state untuk error
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     console.log("Fetching news for ID:", id);
@@ -20,7 +20,7 @@ const IsiNews = () => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        return response.text(); // Ambil respons sebagai teks
+        return response.text(); 
       })
       .then((text) => {
         try {
