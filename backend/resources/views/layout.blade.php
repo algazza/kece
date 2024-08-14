@@ -25,21 +25,27 @@
                 </div>
               </div>
 
-              <div class="mt-[0.6rem] ml-[1rem]">
+              <div class="mt-[0.6rem] ml-[1rem] hidden sm:block">
                 <label class="input flex items-center gap-2 rounded-[10px] bg-gray-100 box-border border-[0.5px] border-black h-[2.5rem]">
-                  <input type="text" class=" rounded-[10px] h-[2rem] ml-[-0.8rem]" placeholder="Search"/>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                    class="h-5 w-5 opacity-70">
-                    <path
-                      fill-rule="evenodd"
-                      d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                      clip-rule="evenodd" />
-                  </svg>
+                  <form action="{{ route('dashboard.search') }}" method="post">
+                    @csrf
+                      <input type="text" class="rounded-[10px] h-[2rem] ml-[-0.8rem]" placeholder="Search" id="searchInput" name="query"/>
+                      <button type="submit">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        class="h-5 w-5 opacity-70">
+                        <path
+                          fill-rule="evenodd"
+                          d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                          clip-rule="evenodd" />
+                      </svg>
+                      </button>
+                  </form>
                 </label>
-              </div>
+            </div>
+            
 
               <div class="flex right-6 absolute gap-8 pr-8">
                 <div class="sm:flex gap-2">
