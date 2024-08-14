@@ -73,6 +73,11 @@ Route::middleware(['auth'])->group(function(){
     // News
     Route::get('/News/Add', [NewsController::class, 'viewNewsAdd'])->name('news.form');
     Route::post('/News/Add/Post', [NewsController::class, 'store'])->name('news.post');
+
+    Route::get('/News', [NewsController::class, 'viewNews'])->name('news');
+    Route::get('/News/{id}/edit', [NewsController::class, 'editAdmin'])->name('news.edit');
+    Route::put('/News/{id}', [NewsController::class, 'updateAdmin'])->name('news.update');
+    Route::delete('/News/{id}/delete', [NewsController::class, 'destroyAdmin'])->name('news.delete');
 });
 
 
@@ -92,16 +97,9 @@ Route::middleware(['auth'])->group(function(){
 
 
 
-
-Route::get('/News', function(){
-    return view ('admin.news.News');
-});
 
 Route::get('/Newse', function(){
     return view ('admin.news.NewsEdit');
-});
-Route::get('/Newsa', function(){
-    return view ('admin.news.NewsAdd');
 });
 Route::get('/Tabungan', function(){
     return view ('admin.tabungan.Tabungan');

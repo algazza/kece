@@ -46,17 +46,6 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                <div>
- 
-                    <div class="mt-[0.5rem]">
-                        <div class="text-[6rem] ">
-                            <i class='text-black bx bx-credit-card' ></i>
-                        </div>
-                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Edit Kordinat</p>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="flex h-[53%] ml-[10rem] mt-[-1rem] gap-8">
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
@@ -121,14 +110,14 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="{{ route('news') }}">
                     <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-credit-card' ></i>
+                                <i class='text-black bx bx-news' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
+                                <h3 class="text-[1.1rem] font-bold pt-2">News</h3>
                             </div>
                         </div>
                     </div>
@@ -173,7 +162,7 @@
                         {{-- data user form --}}
                     @endforeach
                 </div>
-                <div class="pagination-links flex absolute bottom-0 right-0 bg-gray-50">
+                <div class="pagination-links flex pl-[18rem] text-[1.2rem] text-black bottom-0 py-[0.5rem] absolute w-full bg-gray-50 box-border border-black border-t-[0.1px]">
                     {{-- {{ $dashboard->links() }} --}}
                 </div>
             </div>
@@ -247,23 +236,17 @@
         let paginationHtml = '';
 
         if (pagination.current_page > 1) {
-            paginationHtml += `  <a href="#" class="pagination-link flex items-center justify-center px-4 h-10 me-3 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page - 1}">
-                                    <svg class="w-3.5 h-3.5 me-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
-                                    </svg>
-                                    Previous
-                                </a>
+            paginationHtml += `  <button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 rounded-s hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page - 1}">
+                                        Prev
+                                      </button> 
 `;
         }
 
 
         if (pagination.current_page < pagination.last_page) {
-            paginationHtml += `  <a href="#" class="pagination-link flex items-center justify-center px-4 h-10 text-base text-[0.7rem] font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page + 1}">
-                                    Next
-                                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                    </svg>
-                                </a>`;
+            paginationHtml += `  <button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page + 1}">
+                                        Next
+                                       </button>`;
         }
 
         $('.pagination-links').html(paginationHtml);

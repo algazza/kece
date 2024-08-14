@@ -7,8 +7,7 @@ import Header from "../Layouts/Header";
 
 const Success = () => {
   return (
-    <section className={`${styles.flexCenter} h-screen bg-primary`}>
-      <Header />  
+    <section className={`${styles.flexCenter} h-screen bg-primary`}> 
       <div className=" px-32 py-16">
         <div className={`${styles.flexCenter} px-10 py-16`}>
           <div className="bg-biruMuda-500 px-10 py-10 rounded-full relative z-[1] ">

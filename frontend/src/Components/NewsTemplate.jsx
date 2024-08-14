@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LinkIcon from "@mui/icons-material/Link";
@@ -7,7 +7,6 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import styles from "../data/style";
-import { sampleNews } from "../data";
 
 const NewsTemplate = ({
   NewsJudul,
@@ -16,7 +15,21 @@ const NewsTemplate = ({
   NewsTanggal,
   NewsPenulis,
 }) => {
+  const [newsData, setNewsData] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Ganti URL dengan endpoint API Anda
+    fetch("http://localhost:8000/api/news")
+      .then(response => response.json())
+      .then(data => {
+        setNewsData(data);
+      })
+      .catch(error => {
+        console.error("Error fetching news data:", error);
+      });
+  }, []);
 
   const handleCopyLink = () => {
     const currentUrl = window.location.origin + location.pathname;
@@ -75,6 +88,39 @@ const NewsTemplate = ({
               </Link>
             </div>
             <section className="grid sm:grid-cols-x550 justify-center gap-6 sm:gap-12">
+              {newsData.slice(0, 2).map((news) => {
+                console.log('News Data:', news); 
+                console.log('Created At:', news.created_at); 
+                return (
+                  <div
+                    key={news.id}
+                    className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
+                    onClick={() => navigate(`/news/${news.id}`)}
+                  >
+                    <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
+                      <img
+                        src={`http://localhost:8000/image/public/news/${news.image}`}
+                        alt={news.judul}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+
+                    <div className="p-4 flex flex-col justify-center">
+                      <p className={`${styles.fontSmallBold} text-merahh`}>{news.kategory}</p>
+                      <h6 className={`${styles.heading6}`}>{news.judul}</h6>
+                      <p className={`${styles.fontSmall} text-abuGelap`}>
+                        {news.created_at
+                          ? new Intl.DateTimeFormat('id-ID', {
+                              day: '2-digit',
+                              month: '2-digit',
+                              year: 'numeric',
+                            }).format(new Date(news.created_at))
+                          : 'Tanggal tidak tersedia'}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </section>
           </div>
         </section>

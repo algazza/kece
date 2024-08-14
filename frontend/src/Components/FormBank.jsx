@@ -74,7 +74,7 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
     axios
       .post(endpoint, updatedInputs)
       .then((response) => {
-        navigate("/succes");
+        navigate("/success");
       })
       .catch((error) => {
         console.error("Error:", error);

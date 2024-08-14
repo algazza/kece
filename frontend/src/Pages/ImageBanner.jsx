@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const ImageBanner = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [imageHeight, setImageHeight] = useState('auto');
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -15,9 +14,9 @@ const ImageBanner = ({ images }) => {
   }, [images.length]);
 
   const handleDragEnd = (event, info) => {
-    if (info.offset.x > 100) {
+    if (info.offset.x > 10) {
       setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    } else if (info.offset.x < -100) {
+    } else if (info.offset.x < -10) {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }
   };
@@ -26,12 +25,9 @@ const ImageBanner = ({ images }) => {
     setCurrentIndex(index);
   };
 
-  const handleImageLoad = (event) => {
-    setImageHeight(`${event.target.offsetHeight}px`);
-  };
 
   return (
-    <Box className="relative w-full" style={{ height: imageHeight }}>
+    <Box className="relative w-full h-[500px]">
       <AnimatePresence initial={false}>
         <motion.img
           key={currentIndex}
@@ -46,15 +42,14 @@ const ImageBanner = ({ images }) => {
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           onDragEnd={handleDragEnd}
-          onLoad={handleImageLoad}
         />
       </AnimatePresence>
-      <Box className="absolute bottom-4 right-4 flex space-x-2">
+      <Box className="absolute bottom-4 left-8 flex space-x-2">
         {images.map((_, index) => (
           <Box
             key={index}
-            className={`w-3 h-3 rounded-full cursor-pointer ${
-              index === currentIndex ? 'bg-white' : 'bg-gray-400'
+            className={`w-3 h-3 rounded-full cursor-pointer shadow-2xl ${
+              index === currentIndex ? 'bg-biruMuda-500' : 'bg-biruMuda-200'
             }`}
             onClick={() => handleIndicatorClick(index)}
           />
