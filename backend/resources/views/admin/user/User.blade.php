@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-<section class="box-border p-0 m-0 bg-gray-200   h-screen font-poppins">
+<section class="box-border p-0 m-0 bg-gray-200  w-screen h-screen font-poppins">
 
     <div class="flex-gap-[1.5rem] pt-[5rem] pl-[12rem] bg-gray-200  flex flex-col justify-start">
         <h1 class="text-xl mb-2 font-bold">Admin Page</h1>
@@ -13,8 +13,8 @@
         </div>
       
     </div>
-    <div class="flex-gap-[1.5rem] pt-[2rem] px-[8rem] bg-gray-200  justify-center  flex">
-        <table class="shadow-2xl border-2 border-white w-11/12 overflow-hidden ">
+    <div class="flex-gap-[1.5rem] pt-[2rem] px-[8rem] bg-gray-200 justify-center flex">
+        <table class="shadow-2xl border-2 border-white w-11/12 overflow-hidden">
             <thead class="text-white">
                 <tr>
                     <th class="py-3 bg-slate-400">No</th>
