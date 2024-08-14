@@ -21,6 +21,8 @@ class DashboardController extends Controller
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
         $request->session()->put('last_dashboard_visit', Carbon::now());
     
+        $userIp = $request->ip();
+
         $totalData = Kredit::count() + Pickup::count();
         $kreditData = Kredit::orderBy('created_at', 'desc')->get();
         $pickupData = Pickup::orderBy('created_at', 'desc')->get();
@@ -32,23 +34,17 @@ class DashboardController extends Controller
     
     public function data(Request $request)
     {
-        // Mengambil data dari tabel Kredit dan Pickup
         $kreditData = Kredit::orderBy('created_at', 'desc')->get();
         $pickupData = Pickup::orderBy('created_at', 'desc')->get();
     
-        // Menggabungkan kedua koleksi data dan mengurutkannya berdasarkan created_at
         $dashboard = $kreditData->concat($pickupData)->sortByDesc('created_at')->values();
     
-        // Mengambil current page dari request, default 1
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
-    
-        // Tentukan jumlah item per halaman
+
         $perPage = 20;
     
-        // Mengambil item untuk halaman yang sekarang
         $currentPageItems = $dashboard->slice(($currentPage - 1) * $perPage, $perPage)->values();
     
-        // Membuat LengthAwarePaginator
         $paginatedItems = new LengthAwarePaginator(
             $currentPageItems,
             $dashboard->count(),
@@ -89,5 +85,20 @@ class DashboardController extends Controller
         return view('admin.dashboard.DashboardUser', compact('dashboard'));
     }
     
+
+    public function search(Request $request)
+    {
+        $query = strtolower($request->input('query'));
+
+        if ($query === 'kredit') {
+            return redirect()->route('kredit.index');
+        } elseif ($query === 'pickup') {
+            return redirect()->route('pickup.index');
+        } elseif ($query === 'admin') {
+            return redirect()->route('admin');
+        }
+
+        return redirect()->route('dashboard')->with('error', 'Pencarian tidak ditemukan');
+    }
 
 }

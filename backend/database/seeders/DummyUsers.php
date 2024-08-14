@@ -22,13 +22,6 @@ class DummyUsers extends Seeder
                 'password' => bcrypt('123456')
             ],
             [
-                'name' => 'Jontol nih bozz',
-                'email' => 'kredit@gmail.com',
-                'role' => 'kredit',
-                'no_handphone' => '088997998998',
-                'password' => bcrypt('123456')
-            ],
-            [
                 'name' => 'Iatsa Villainku',
                 'email' => 'deposit@gmail.com',
                 'role' => 'deposit',
