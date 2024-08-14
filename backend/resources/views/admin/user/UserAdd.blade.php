@@ -11,7 +11,7 @@
                     Profile
                 </h1>
                 <h2 class="text-grey text-sm mb-4 dark:text-gray-400">Create Profile</h2>
-                <form enctype="multipart/form-data" method="post" action="{{ route('admin.add') }}">
+                <form enctype="multipart/form-data" method="post" action="{{ route('admin.post') }}">
 
                     @csrf
                     <!-- Cover Image -->

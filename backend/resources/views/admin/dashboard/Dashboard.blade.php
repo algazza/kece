@@ -122,14 +122,14 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="{{ route('admin') }}">
                     <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-credit-card' ></i>
                             </div>
                             <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
+                                <h3 class="text-[1.1rem] font-bold pt-2">Admin</h3>
                             </div>
                         </div>
                     </div>

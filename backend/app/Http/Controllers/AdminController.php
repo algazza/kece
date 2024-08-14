@@ -98,6 +98,11 @@ class AdminController extends Controller
         return view('admin.user.UserAdd');
     }
 
+    function viewUser(){
+        $admin = Admin::orderBy('created_at', 'DESC')->get();
+        return view ('admin.user.User', compact('admin'));
+    }
+
     function store(Request $request){
         $request->validate([
             'name' => 'required',
@@ -126,6 +131,19 @@ class AdminController extends Controller
     
         $admin->save();
         return redirect('/Admin/Add')->with('success', 'User Berhasil Ditambahkan');
+    }
+
+
+    function destroyAdmin($id){
+        $admin = Admin::find($id);
+
+        if(!$admin){
+            return redirect()->route('admin')->with('error', 'Data tidak ditemukan');
+        }
+
+        $admin->delete();
+
+        return redirect()->route('admin')->with('success', 'Data Berhasil Dihapus');
     }
 }
 
