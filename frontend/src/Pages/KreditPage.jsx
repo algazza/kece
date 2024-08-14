@@ -11,8 +11,7 @@ import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 const KreditPage = () => {
   return (
     <>
-      <Header />
-      <main className="sm:py-0 py-6">
+      <main className="">
         <section className="">
           <IntroBanner
             ImageBanner={BlueBanner}
