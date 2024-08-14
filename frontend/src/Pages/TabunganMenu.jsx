@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { BlueBanner } from "../data";
 import styles from "../data/style";
 import Footer from "../Layouts/Footer";
@@ -8,35 +7,35 @@ import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 
 // ===================================
-const buttonMenuKredit = [
+const buttonMenuTabungan = [
     {
       icon:(className) => <TrendingUpIcon className={className}/>,
-      title:"Kredit Investasi",
+      title:"Tabungan Pro Active",
       deskripsi:"panduan perilaku dan prinsip moral bagi karyawan bank.",
     },
     {
       icon:(className) => <TrendingUpIcon className={className}/>,
-      title:"Kredit Modal Usaha",
+      title:"Tabungan Arisan Bulanan ARTOMORO",
       deskripsi:"Lorem ipsum dolor sit amet consectetur.",
     },
     {
       icon:(className) => <TrendingUpIcon className={className}/>,
-      title:"Kredit KPR",
+      title:"Tabungan Gemilang (TAGAR)",
       deskripsi:"Lorem ipsum dolor sit amet consectetur.",
     },
     {
       icon:(className) => <TrendingUpIcon className={className}/>,
-      title:"Kredit Multiguna",
+      title:"Tabungan Umroh (TABUR)",
       deskripsi:"Lorem ipsum dolor sit amet consectetur.",
     },
     {
       icon:(className) => <TrendingUpIcon className={className}/>,
-      title:"Kredit Konsumtif",
+      title:"Simpanan Pelajar (SIMPEL)",
       deskripsi:"Lorem ipsum dolor sit amet consectetur.",
     },
     {
       icon:(className) => <TrendingUpIcon className={className}/>,
-      title:"Kredit Pembiayaan Umroh (PAMOR)",
+      title:"Tabungan Berhadiah Suka - suka (TABSUS)",
       deskripsi:"Lorem ipsum dolor sit amet consectetur.",
     },
     {
@@ -44,12 +43,18 @@ const buttonMenuKredit = [
       title:"Kredit Pembiayaan Ziarah (ZAMRUD)",
       deskripsi:"Lorem ipsum dolor sit amet consectetur.",
     },
+    {
+      icon:(className) => <TrendingUpIcon className={className}/>,
+      title:"Tabungan Berhadiah Suka - suka (TABSUS)",
+      deskripsi:"Lorem ipsum dolor sit amet consectetur.",
+    },
     
   ]
   
 
-const KreditMenu = () => {
-    const indexColsSpan = []
+const TabunganMenu = () => {
+  const indexColsSpan = [1, 4, 6, 7]
+
     return (
         <>
         <Header />
@@ -57,7 +62,7 @@ const KreditMenu = () => {
                 <section className="">
                     <IntroBanner
                         ImageBanner={BlueBanner}
-                        TitleBanner={"Kredit"}
+                        TitleBanner={"Tabungan"}
                         DescriptionBanner={`
                         Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                         memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -66,7 +71,7 @@ const KreditMenu = () => {
                         keperluan Anda.
                         `}
                     />
-                    <TitleBlueBanner title={"Kredit"} />
+                    <TitleBlueBanner title={"Tabungan"} />
                 </section>
 
                 <section className="">
@@ -77,15 +82,15 @@ const KreditMenu = () => {
                     </div>
 
                             {/* menu button */}
-                    <div className="grid gap-8 justify-center justify-items-center grid-cols-x3300">
+                    <div className="grid grid-cols-x3170 gap-8 justify-center justify-items-center">
                         {/* sdsdf */}
-                        {buttonMenuKredit.map((menu, index) => (
+                        {buttonMenuTabungan.map((menu, index) => (
 
-                            <Link to={"/news"} className={`${indexColsSpan.includes(index) ? "col-span-2" : "" } bg-abuTerang  drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center`} key={index}>
+                        <div className={`${indexColsSpan.includes(index) ? "col-span-2" : "" } bg-abuTerang  drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center`} key={index}>
                             {menu.icon("m-2 text-blue-400  ")}
                             <h6 className={`${styles.heading6}`}>{menu.title}</h6>
                             <p className="mt-4">{menu.deskripsi}</p>
-                            </Link>
+                        </div>
                         ))}
                         {/* dasdasd */}
                         
@@ -97,4 +102,4 @@ const KreditMenu = () => {
     )
 };
 
-export default KreditMenu
+export default TabunganMenu
