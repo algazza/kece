@@ -61,6 +61,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit');
     Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
     Route::get('/api/dashboard/kredit',   [DashboardController::class, 'data']);
+    Route::post('/search', [DashboardController::class, 'search'])->name('dashboard.search');
 
 
     // Kredit

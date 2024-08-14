@@ -27,7 +27,7 @@
 
               <div class="mt-[0.6rem] ml-[1rem]">
                 <label class="input flex items-center gap-2 rounded-[10px] bg-gray-100 box-border border-[0.5px] border-black h-[2.5rem]">
-                  <input type="text" class=" rounded-[10px] h-[2rem] ml-[-0.8rem]" placeholder="Search" />
+                  <input type="text" class=" rounded-[10px] h-[2rem] ml-[-0.8rem]" placeholder="Search"/>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
