@@ -2,15 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import App from "./App.jsx";
+import Home from "./Pages/Home.jsx";
 import KreditPage from "./Pages/KreditPage.jsx";
 import News from "./Pages/News.jsx";
-import Success from "./Pages/Success.jsx";
+import IsiNews from "./Pages/IsiNews.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
 import SyaratForm from "./Components/SyaratForm.jsx";
-import NewsTemplate from "./Components/NewsTemplate.jsx";
 import LocationPage from "./Pages/LocationPage.jsx";
-import IsiNews from "./Pages/IsiNews.jsx";
-import App from "./App.jsx";
+import Success from "./Pages/Success.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
             path: ":id",
             element: <IsiNews />,
           },
-        ]
+        ],
       },
       {
         path: "syarat",

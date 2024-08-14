@@ -86,10 +86,6 @@ const News = () => {
           TitleBanner="Berita"
           DescriptionBanner="Daparkan informasi secara tepat, cepat dan terpercaya mengenai BPR Arto Moro"
           ImageBanner={BlueBanner}
-<<<<<<< HEAD
-=======
-          
->>>>>>> 9d722c8a872cb36f8ac9db454e10c38dfdf23ba4
         />
       </section>
 

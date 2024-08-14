@@ -46,7 +46,7 @@ const Header = () => {
             <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
           </li>
           <li>
-            <Link to={"/news"}>News</Link>
+            <FlyoutLink to={"/news"}>News</FlyoutLink>
           </li>
           <li>
             <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>
@@ -156,13 +156,14 @@ const Header = () => {
   );
 };
 
-const FlyoutLink = ({ children, href, FlyoutContent }) => {
+const FlyoutLink = ({ children, href, FlyoutContent, to }) => {
   const [open, setOpen] = useState(false);
 
   const showFlyout = open && FlyoutContent;
 
   return (
-    <div
+    <Link
+    to={to}
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
       className="relative h-fit w-fit"
@@ -190,7 +191,7 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </Link>
   );
 };
 
@@ -207,7 +208,7 @@ const AboutUs = () => {
 
 const Product = () => {
   const items = [
-    { name: "Kredit", link: "/" },
+    { name: "Kredit", link: "/syarat" },
     { name: "Deposit", link: "/" },
     { name: "Tabungan", link: "/" },
   ];

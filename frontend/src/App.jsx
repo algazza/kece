@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
     <Header/>
-      <main className={`overflow-hidden font-jakarta ${styles.fontBody} sm:py-0 py-6`}>
+      <main className={`overflow-hidden font-jakarta ${styles.fontBody} sm:py-0 py-16`}>
         <Outlet/>
       </main>
       <Footer/>
