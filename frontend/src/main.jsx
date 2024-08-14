@@ -11,6 +11,7 @@ import NewsTemplate from "./Components/NewsTemplate.jsx";
 import LocationPage from "./Pages/LocationPage.jsx";
 import Home from "./Pages/Home.jsx";
 import IsiNews from "./Pages/IsiNews.jsx";
+import KreditMenu from "./Pages/KreditMenu.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/syarat",
     element: <SyaratForm />,
+  },
+  {
+    path: "/Menu",
+    element: <KreditMenu />,
   },
   {
     path: "/location",
