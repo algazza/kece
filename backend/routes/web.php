@@ -123,9 +123,6 @@ Route::get('/Usere', function(){
 Route::get('/Adminn', function(){
     return view ('admin.user.Admin');
 });
-Route::get('/kor', function(){
-    return view ('admin.Kordinat');
-});
 Route::get('/sp', function(){
     return view ('admin.Sponsor');
 });
