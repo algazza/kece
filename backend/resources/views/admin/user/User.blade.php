@@ -22,17 +22,23 @@
                     <th class="py-3 bg-slate-400">No_Handphone</th>
                     <th class="py-3 bg-slate-400">Email</th>
                     <th class="py-3 bg-slate-400">Role</th>
+                    <th class="py-3 bg-slate-400">Edit</th>
                     <th class="py-3 bg-slate-400">Delete</th>
                 </tr>
             </thead>
             <tbody class="text-black text-center overflow-hidden">
                 @foreach ($admin as $no => $item)
-                    <tr class="bg-slate-100 cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300">
+                    <tr class="bg-slate-100 cursor-pointer hover:bg-slate-200 hover:scale-[1.01] duration-300">
                         <td class="py-6 px-3">{{ $no + 1 }}</td>
                         <td class="py-6 px-3">{{ $item->name }}</td>
-                        <td class="py-6 px-3">{{ $item->no_handphone }}</td>
+                        <td class="py-6 px-3">{{   $item->no_handphone }}</td>
                         <td class="py-6 px-3">{{ $item->email }}</td>
                         <td class="py-6 px-3">{{ $item->role }}</td>
+                        <td class="py-6 px-3">
+                            <a href="{{ route('admin.edit', $item->id) }}">
+                                <i class='bx bx-edit text-blue-500'></i>
+                            </a>
+                        </td>
                         <td class="py-6 px-3">
                             <form action="{{ route('admin.delete', $item->id) }}" method="POST">
                                 @csrf

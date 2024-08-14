@@ -13,6 +13,8 @@ class AdminController extends Controller
         return view('admin.login.login');
     }
 
+    // Login
+
     function login(Request $request){
         $request->validate([
             'email' => 'required|email', 
@@ -93,9 +95,9 @@ class AdminController extends Controller
 
 
 
-    // Add User
+    // Admin
     function viewAddUser(){
-        return view('admin.user.UserAdd');
+        return view('admin.user.AdminAdd');
     }
 
     function viewUser(){
@@ -130,8 +132,51 @@ class AdminController extends Controller
         }
     
         $admin->save();
-        return redirect('/Admin/Add')->with('success', 'User Berhasil Ditambahkan');
+        return redirect()->route('admin')->with('success', 'User Berhasil Ditambahkan');
     }
+
+
+    function editAdmin($id){
+        $admin = Admin::find($id);
+
+        if(!$admin){
+            return redirect()->route('admin')->with('error', 'User Tidak Ditemukan');
+        };
+
+        return view('admin.user.AdminEdit', compact('admin'));
+    }
+
+    function updateAdmin(Request $request, $id) {
+        $admin = Admin::find($id);
+    
+        $validateData = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'no_handphone' => 'required',
+            'role' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+    
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();  
+            $request->image->move(public_path('image/admin'), $imageName);
+            $admin->image = $imageName;
+        } else {
+            if (!$admin->image) {
+                $admin->image = 'profil.jpg';
+            }
+        }
+        
+    
+        if (!$admin) {
+            return redirect()->route('admin')->with('error', 'User tidak ditemukan');
+        }
+
+        $admin->update($validateData);
+    
+        return redirect()->route('admin')->with('success', 'Admin berhasil diperbarui');
+    }
+    
 
 
     function destroyAdmin($id){

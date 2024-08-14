@@ -49,6 +49,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/logout', [AdminController::class, 'logout']); 
 
     Route::get('/Admin',[AdminController::class, 'viewUser'])->name('admin');
+    Route::get('Admin/{id}/edit',[AdminController::class, 'editAdmin'])->name('admin.edit');
+    Route::put('Admin/{id}/update',[AdminController::class, 'updateAdmin'])->name('admin.update');
     Route::delete('Admin/{id}/Delete', [AdminController::class, 'destroyAdmin'])->name('admin.delete');
 
 
