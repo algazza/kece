@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #06a3e8;
+  border-radius: 10px;
+}
+
+@layer utilities {
+  .clip-custom-shape {
+    clip-path: path("M0 0H100%Vcalc(100% - 50px)Q100% 100% calc(100% - 50px) 100%H0V0Z");
+  }
+}

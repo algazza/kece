@@ -25,52 +25,52 @@
                 </div>
               </div>
 
-              <div class="mt-[0.6rem] ml-[1rem]">
+              <div class="mt-[0.6rem] ml-[1rem] hidden sm:block">
                 <label class="input flex items-center gap-2 rounded-[10px] bg-gray-100 box-border border-[0.5px] border-black h-[2.5rem]">
-                  <input type="text" class=" rounded-[10px] h-[2rem] ml-[-0.8rem]" placeholder="Search" />
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                    class="h-5 w-5 opacity-70">
-                    <path
-                      fill-rule="evenodd"
-                      d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                      clip-rule="evenodd" />
-                  </svg>
+                  <form action="{{ route('dashboard.search') }}" method="post">
+                    @csrf
+                      <input type="text" class="rounded-[10px] h-[2rem] ml-[-0.8rem]" placeholder="Search" id="searchInput" name="query"/>
+                      <button type="submit">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        class="h-5 w-5 opacity-70">
+                        <path
+                          fill-rule="evenodd"
+                          d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                          clip-rule="evenodd" />
+                      </svg>
+                      </button>
+                  </form>
                 </label>
-              </div>
+            </div>
+            
 
-              <div class="flex right-6 absolute gap-8">
-                <div class="flex gap-1 mt-[0.7rem]">
-                  <div class="bg-gray-300 w-[2.3rem] h-[2.3rem] justify-center text-center items-center relative leading-[2.3rem] rounded-[5px] box-border border-[0.5px] border-black cursor-pointer">
-                    <i class='bx bxs-bell text-[1.5rem] mt-[0.3rem]'></i>
-                  </div>
-                  <div class="bg-gray-300 w-[2.3rem] h-[2.3rem] justify-center text-center items-center relative leading-[2.2rem] rounded-[5px] box-border border-[0.5px] border-black cursor-pointer">
-                    <p class="font-semibold">EN</p>
-                  </div>
-                </div> 
-                <div class="flex gap-2">
-                  <div class="bg-gray-100 w-[2.7rem] h-[2.7rem] justify-center text-center items-center relative mt-[0.5rem] leading-[2.5rem] rounded-[5px] box-border border-[0.5px] border-black">
-                    <img src="{{ asset('images/coba.jpg') }}" alt="" class="h-full">
+              <div class="flex right-6 absolute gap-8 pr-8">
+                <div class="sm:flex gap-2">
+                  <div class="bg-gray-100 w-[2.7rem] h-[2.7rem] justify-center text-center items-center relative  mt-[0.5rem] leading-[2.5rem] rounded-[5px] box-border border-[0.5px] border-black">
+                    <img src="{{ asset('image/admin/' . (Auth::user()->image ?? 'profil.jpg'))  }}" class="h-full rounded-[4px]" id="userImage">
                   </div>
                   <div class="mt-[0.6rem]">
-                    <p class="font-semibold">Jonathan Iatsa</p>
-                    <p class="text-[0.8rem] mt-[-0.3rem]">Admin</p>
-                  </div>
+                    <p class="font-semibold">{{ Auth::user()->name }}</p>
+                    <p class="text-[0.8rem] mt-[-0.3rem]">{{ Auth::user()->role }}</p>
+                  </div>   
                 </div>
               </div>
           </div>
 
 
-          <div class="sidebar fixed top-0 bottom-0 lg:left-0 left-[-300px] duration-1000
+          <div class="sidebar fixed top-0 bottom-0 lg:left-0 left-[-300px] duration-1000 flex flex-col justify-between py-10
             p-2 w-16 overflow-y-auto text-center bg-gray-50 shadow-2xl h-screen overflow-hidden font-semibold pt-[5rem] z-10">
             <div class="text-gray-100 text-xl">
               <div>
-                <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200">
-                    <i class='bx bxl-xing text-black'></i>
-                  <span class="text-[18px] ml-6 text-black ">Dashboard</span>
-                </div>
+                <a href="{{ route('dashboard')}}">
+                    <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200">
+                      <i class='bx bxl-xing text-black'></i>
+                    <span class="text-[18px] ml-6 text-black ">Dashboard</span>
+                  </div>
+                </a>  
         
                 <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-gray-200" onclick="dropDown()">
                     <i class='bx bxl-xing text-black' ></i>
@@ -81,17 +81,29 @@
                     </span>
                   </div>
                 </div>
-                <div class=" leading-7 text-left text-sm font-thin mt-2 w-4/5 mx-auto pl-[3rem]" id="submenu">
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Kredit</h1>
+
+                <div class=" leading-7 text-left text-sm font-thin mt-2 w-4/5 mx-auto pl-[3rem] " id="submenu">
+                  <a href="{{ route('kredit.index') }}">
+                    <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Kredit</h1>
+                  </a>
                   <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Personal</h1>
                   <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Friends</h1>
                 </div>
+
                 <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600 bottom-0 w-screen mr-[1rem]">
                     <i class='bx bxl-xing' ></i>
-                  <span class="text-[15px] ml-6 text-gray-200">Logout</span>
+                
+                    <div>
+                      <a href="/logout" class="text-[15px] ml-6 text-gray-200">
+                        Logout >>
+                      </a>
+                    </div>
+                
+                
                 </div>
               </div>
             </div>
+
           </div>
           <script>
             function dropDown() {
@@ -112,6 +124,18 @@
                 sidebar.classList.add('w-16');
               }
             }
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+        // Mengambil elemen gambar
+        var userImage = document.getElementById('userImage');
+        
+        // Mengecek apakah elemen gambar ada
+        if (userImage) {
+            // Mencetak URL gambar ke konsol
+            console.log('Image URL:', userImage.src);
+        }
+    });
 
           </script>
     </section>

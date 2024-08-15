@@ -22,9 +22,10 @@ class Kredit extends Model
         'jangka_waktu',
         'jenis_angunan',
         'perhitungan_bunga',
-        'bunga_pertahun',
         'penghasilan_perbulan',
         'catatan',
         'jenis',
+        'code',
+        'ip_user',
     ];
 }

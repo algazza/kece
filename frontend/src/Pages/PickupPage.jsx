@@ -1,0 +1,38 @@
+import IntroBanner from "../Layouts/IntroBanner";
+import TitleBlueBanner from "../Layouts/TitleBlueBanner";
+import FormBank from "../Components/FormBank";
+import { PickupService } from "../Components/Form";
+import styles from "../data/style";
+import { BlueBanner } from "../data";
+
+const PickupPage = () => {
+  return (
+    <>
+        <section>
+          <IntroBanner
+            ImageBanner={BlueBanner}
+            TitleBanner={"Deposito"}
+            DescriptionBanner={`
+                  Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
+                  memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
+                  dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
+                  menawarkan berbagai produk kredit yang dapat disesuaikan dengan
+                  keperluan Anda.
+                `}
+          />
+          <TitleBlueBanner title={"Deposito"} />
+        </section>
+
+        <section className={`${styles.flexCenter}`}>
+          <FormBank
+            isiPenting={<PickupService />}
+            value={"Pickup"}
+            page={"/PickupPage"}
+            endpoint={"http://localhost:8000/api/Pickup"}
+          />
+        </section>
+    </>
+  );
+};
+
+export default PickupPage;

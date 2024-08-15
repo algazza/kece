@@ -2,31 +2,103 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kredit;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Models\Kredit;
+use App\Models\Pickup;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $kredit = Kredit::orderBy('created_at', 'desc')->paginate(5);
-        return view('admin.Dashboard', compact('kredit'));
-    }
+        $token = bin2hex(random_bytes(32));
+        $tokenExpiry = Carbon::now()->addMinutes(60); 
+        $request->session()->put('kredit_access_token', $token);
+        $request->session()->put('kredit_access_expiry', $tokenExpiry);
+        $request->session()->put('last_dashboard_visit', Carbon::now());
+    
+        $userIp = $request->ip();
 
-    public function kredit(Request $request)
+        $totalData = Kredit::count() + Pickup::count();
+        $kreditData = Kredit::orderBy('created_at', 'desc')->get();
+        $pickupData = Pickup::orderBy('created_at', 'desc')->get();
+        $dashboard = $kreditData->concat($pickupData)->sortByDesc('created_at')->values();
+    
+        return view('admin.dashboard.Dashboard', compact('dashboard', 'totalData'));
+    }
+    
+    
+    public function data(Request $request)
     {
-        $kredit = Kredit::orderBy('created_at', 'desc')->paginate(5);
-        
+        $kreditData = Kredit::orderBy('created_at', 'desc')->get();
+        $pickupData = Pickup::orderBy('created_at', 'desc')->get();
+    
+        $dashboard = $kreditData->concat($pickupData)->sortByDesc('created_at')->values();
+    
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+
+        $perPage = 20;
+    
+        $currentPageItems = $dashboard->slice(($currentPage - 1) * $perPage, $perPage)->values();
+    
+        $paginatedItems = new LengthAwarePaginator(
+            $currentPageItems,
+            $dashboard->count(),
+            $perPage,
+            $currentPage,
+            ['path' => $request->url(), 'query' => $request->query()]
+        );
+    
         return response()->json([
-            'data' => $kredit->items(),
+            'data' => $paginatedItems->items(),
             'pagination' => [
-                'current_page' => $kredit->currentPage(),
-                'last_page' => $kredit->lastPage(),
-                'per_page' => $kredit->perPage(),
-                'total' => $kredit->total()
+                'current_page' => $paginatedItems->currentPage(),
+                'last_page' => $paginatedItems->lastPage(),
+                'per_page' => $paginatedItems->perPage(),
+                'total' => $paginatedItems->total()
             ]
         ]);
     }
+
+    public function getTotalData()
+    {
+        $totalData = Kredit::count() + Pickup::count();
+        return response()->json(['totalData' => $totalData]);
+    }
+
+
+
+    public function show(string $id)
+    {   
+        $dashboard = Kredit::find($id);
+        if (!$dashboard) {
+            $dashboard = Pickup::find($id);
+        }
+        if (!$dashboard) {
+            return redirect()->route('dashboard')->with('error', 'Data not found');
+        }
     
+        return view('admin.dashboard.DashboardUser', compact('dashboard'));
+    }
+    
+
+    public function search(Request $request)
+    {
+        $query = strtolower($request->input('query'));
+
+        if ($query === 'kredit') {
+            return redirect()->route('kredit.index');
+        } elseif ($query === 'pickup') {
+            return redirect()->route('pickup.index');
+        } elseif ($query === 'admin') {
+            return redirect()->route('admin');
+        }
+
+        return redirect()->route('dashboard')->with('error', 'Pencarian tidak ditemukan');
+    }
+
 }
