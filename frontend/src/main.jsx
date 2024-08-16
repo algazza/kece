@@ -11,6 +11,8 @@ import PickupPage from "./Pages/PickupPage.jsx";
 import SyaratForm from "./Components/SyaratForm.jsx";
 import LocationPage from "./Pages/LocationPage.jsx";
 import Success from "./Pages/Success.jsx";
+import KreditMenu from "./Pages/KreditMenu.jsx";
+import TabunganMenu from "./Pages/TabunganMenu.jsx";
 
 
 const router = createBrowserRouter([
@@ -33,12 +35,10 @@ const router = createBrowserRouter([
       {
         path: "news",
         element: <News />,
-        children: [
-          {
-            path: ":id",
-            element: <IsiNews />,
-          },
-        ],
+      },
+      {
+        path: "news/:id",
+        element: <IsiNews />,
       },
       {
         path: "syarat",
@@ -47,6 +47,14 @@ const router = createBrowserRouter([
       {
         path: "location",
         element: <LocationPage />,
+      },
+      {
+        path: "menu",
+        element: <KreditMenu />,
+      },
+      {
+        path: "menuT",
+        element: <TabunganMenu />,
       },
     ],
   },

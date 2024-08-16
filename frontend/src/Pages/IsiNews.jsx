@@ -24,7 +24,7 @@ const IsiNews = () => {
       })
       .then((text) => {
         try {
-          const data = JSON.parse(text); // Parse teks menjadi JSON
+          const data = JSON.parse(text); 
           console.log("Fetched news data:", data);
           setNews(data);
         } catch (error) {

@@ -20,7 +20,7 @@ class NewsController extends Controller
         return view ('admin.news.News', compact('news'));
     }
 
-    function editAdmin($id){
+    function editNews($id){
         $news = News::find($id);
 
         if(!$news){
@@ -30,7 +30,7 @@ class NewsController extends Controller
         return view('admin.news.NewsEdit', compact('news'));
     }
 
-    function updateAdmin(Request $request, $id){
+    function updateNews(Request $request, $id){
 
         $news = News::find($id);
 
@@ -62,7 +62,7 @@ class NewsController extends Controller
     }
 
 
-    function destroyAdmin($id){
+    function destroyNews($id){
         $news = News::find($id);
 
         if(!$news){

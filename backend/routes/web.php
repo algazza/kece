@@ -47,13 +47,21 @@ Route::middleware(['auth'])->group(function(){
 
     // Login and Admin 
     Route::get('/logout', [AdminController::class, 'logout']); 
-    Route::get('/Admin/Add', [AdminController::class, 'viewAddUser']);
-    Route::post('/Admin/Add/Post', [AdminController::class, 'store'])->name('admin.add');
+
+    Route::get('/Admin',[AdminController::class, 'viewUser'])->name('admin');
+    Route::get('Admin/{id}/edit',[AdminController::class, 'editAdmin'])->name('admin.edit');
+    Route::put('Admin/{id}/update',[AdminController::class, 'updateAdmin'])->name('admin.update');
+    Route::delete('Admin/{id}/Delete', [AdminController::class, 'destroyAdmin'])->name('admin.delete');
+
+
+    Route::get('/Admin/Add', [AdminController::class, 'viewAddUser'])->name('admin.add');
+    Route::post('/Admin/Add/Post', [AdminController::class, 'store'])->name('admin.post');
 
     // Dashboard
     Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit');
     Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
     Route::get('/api/dashboard/kredit',   [DashboardController::class, 'data']);
+    Route::post('/search', [DashboardController::class, 'search'])->name('dashboard.search');
 
 
     // Kredit
@@ -75,9 +83,9 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/News/Add/Post', [NewsController::class, 'store'])->name('news.post');
 
     Route::get('/News', [NewsController::class, 'viewNews'])->name('news');
-    Route::get('/News/{id}/edit', [NewsController::class, 'editAdmin'])->name('news.edit');
-    Route::put('/News/{id}', [NewsController::class, 'updateAdmin'])->name('news.update');
-    Route::delete('/News/{id}/delete', [NewsController::class, 'destroyAdmin'])->name('news.delete');
+    Route::get('/News/{id}/edit', [NewsController::class, 'editNews'])->name('news.edit');
+    Route::put('/News/{id}', [NewsController::class, 'updateNews'])->name('news.update');
+    Route::delete('/News/{id}/delete', [NewsController::class, 'destroyNews'])->name('news.delete');
 });
 
 
@@ -110,17 +118,11 @@ Route::get('/Banner', function(){
 Route::get('/Bannere', function(){
     return view ('admin.banner.BannerEdit');
 });
-Route::get('/User', function(){
-    return view ('admin.user.User');
-});
 Route::get('/Usere', function(){
     return view ('admin.user.UserAdd');
 });
-Route::get('/Admin', function(){
+Route::get('/Adminn', function(){
     return view ('admin.user.Admin');
-});
-Route::get('/kor', function(){
-    return view ('admin.Kordinat');
 });
 Route::get('/sp', function(){
     return view ('admin.Sponsor');

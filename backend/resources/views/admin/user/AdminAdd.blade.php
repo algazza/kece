@@ -11,15 +11,14 @@
                     Profile
                 </h1>
                 <h2 class="text-grey text-sm mb-4 dark:text-gray-400">Create Profile</h2>
-                <form enctype="multipart/form-data" method="post" action="{{ route('admin.add') }}">
+                <form enctype="multipart/form-data" method="post" action="{{ route('admin.post') }}">
 
                     @csrf
                     <!-- Cover Image -->
                     <div
                         class="w-full rounded-sm bg-[url('https://images.unsplash.com/photo-1449844908441-8829872d2607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw2fHxob21lfGVufDB8MHx8fDE3MTA0MDE1NDZ8MA&ixlib=rb-4.0.3&q=80&w=1080')] bg-cover bg-center bg-no-repeat items-center">
-                        <!-- Profile Image -->
                         <div
-                            class="mx-auto flex justify-center w-[141px] h-[141px] bg-blue-300/20 rounded-full bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw4fHxwcm9maWxlfGVufDB8MHx8fDE3MTEwMDM0MjN8MA&ixlib=rb-4.0.3&q=80&w=1080')] bg-cover bg-center bg-no-repeat">
+                            class="mx-auto flex justify-center w-[141px] h-[141px] bg-blue-300/20 rounded-full  bg-cover bg-center bg-no-repeat"      style="background-image: url('{{ asset('image/admin/profil.jpg') }}');">>
 
                             <div class="bg-white/90 rounded-full w-6 h-6 text-center ml-28 mt-4">
 
