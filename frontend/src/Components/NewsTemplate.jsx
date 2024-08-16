@@ -20,7 +20,6 @@ const NewsTemplate = ({
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Ganti URL dengan endpoint API Anda
     fetch("http://localhost:8000/api/news")
       .then(response => response.json())
       .then(data => {

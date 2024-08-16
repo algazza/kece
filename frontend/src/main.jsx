@@ -33,12 +33,10 @@ const router = createBrowserRouter([
       {
         path: "news",
         element: <News />,
-        children: [
-          {
-            path: ":id",
-            element: <IsiNews />,
-          },
-        ],
+      },
+      {
+        path: "news/:id",
+        element: <IsiNews />,
       },
       {
         path: "syarat",
