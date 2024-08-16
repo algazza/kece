@@ -136,6 +136,17 @@ class AdminController extends Controller
     }
 
 
+    function showAdmin($id){
+        $admin = Admin::find($id);
+
+        if(!$admin){
+            return redirect()->route('admin');
+        }
+
+        return view ('admin.user.Admin', compact('admin'));
+    }
+
+
     function editAdmin($id){
         $admin = Admin::find($id);
 
