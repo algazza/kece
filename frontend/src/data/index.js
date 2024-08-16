@@ -12,22 +12,13 @@ import partnerImage7 from "../img/partnerImage7.svg";
 import nunezimg from "../img/668f755b3c2ba.jpg";
 import sampleNews from "../img/sample-news-684x385.jpg"
 import sampleBanner from "../img/samplebanner.svg"
-// ==================== ICON ===========================
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import HomeIcon from '@mui/icons-material/Home';
-import DiscountIcon from '@mui/icons-material/Discount';
-import CalculateIcon from '@mui/icons-material/Calculate';
-import PercentIcon from '@mui/icons-material/Percent';
+import phoneimg from "../img/phoneimg.svg"
 
 export {
   logoArmor,
   BlueBanner,
   sampleBanner,
+  phoneimg,
   sample,
   nunezimg,
   sampleNews,

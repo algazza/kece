@@ -47,7 +47,7 @@ const Success = () => {
             ColorPrimary400="bg-[#41b73c] "
             TopShadow="top-2"
             LeftShadow="left-[33px]"
-            href={"https://www.instagram.com/"}
+            href={"https://www.instagram.com/stories/didadump.0_0/3435543072674076975/"}
             target={"_blank"}
           >
             Whatsapp

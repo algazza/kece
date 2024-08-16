@@ -25,7 +25,6 @@ const ImageBanner = ({ images }) => {
     setCurrentIndex(index);
   };
 
-
   return (
     <Box className="relative w-full h-[500px]">
       <AnimatePresence initial={false}>
