@@ -9,7 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     @vite('resources/css/app.css')
 </head>
-<body >
+<body class="bg-gray-200 h-screen">
     <section class="fixed z-40 shadow flex flex-row font-poppins">
           <div class="bg-gray-50 w-screen z-50 h-[3.7rem] box-border border-black shadow-sm flex">
               <div class="pl-[0.5rem] box-border border-[0.5px] border-black w-[18rem] h-full flex">

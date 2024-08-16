@@ -15,10 +15,26 @@ class NewsController extends Controller
         return view ('admin.news.NewsAdd');
     }
 
-    function viewNews(){
-        $news = News::orderBy('created_at', 'DESC')->get();
-        return view ('admin.news.News', compact('news'));
+    public function viewNews(Request $request) {
+        $search = $request->input('search');
+        $filter = $request->input('filter');
+    
+        $query = News::query()->orderBy('created_at', 'DESC');
+        
+        if ($search) {
+            $query->where('judul', 'LIKE', "%{$search}%");
+        }
+        
+        if ($filter) {
+            $query->where('kategory', $filter);
+        }
+        
+        $news = $query->paginate(10);
+        
+        return view('admin.news.News', compact('news'));
     }
+    
+    
 
     function editNews($id){
         $news = News::find($id);
