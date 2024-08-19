@@ -95,6 +95,7 @@ const Header = () => {
                             <Link to={"/"}>Sejarah</Link>
                             <Link to={"/"}>Visi Misi</Link>
                             <Link to={"/"}>Struktur Organisasi</Link>
+                            <Link to={"/lokasi"}>Lokasi</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -137,7 +138,7 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Sosial Media</Link>
+                            <Link to={"/"}>Pick Up</Link>
                             <Link to={"/"}>Sponsor</Link>
                             <Link to={"/"}>Promo</Link>
                             <Link to={"/"}>Sponsor</Link>

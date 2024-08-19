@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
+import { Outlet } from "react-router-dom";
 import styles from "./data/style";
 import Footer from "./Layouts/Footer";
 import Header from "./Layouts/Header";
-import { Outlet } from "react-router-dom";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const App = () => {
@@ -12,8 +13,38 @@ const App = () => {
         className={`overflow-hidden font-jakarta ${styles.fontBody} py-[4.5rem]`}
       >
         <Outlet />
-        <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed z-[100]">
-          <a className="bg-[#25D366] rounded-full p-2 absolute bottom-8 right-8"><WhatsAppIcon className="" /></a>
+        <div className="fixed bottom-12 right-12">
+          <div className={`${styles.flexCenter}`}>
+            <a
+              href="https://www.instagram.com/stories/highlights/18006888113341028/"
+              target="_blank"
+              className={`bg-[#25D366] rounded-full w-[40px] h-[40px] ${styles.flexCenter} z-[1]`}
+            >
+              <WhatsAppIcon className="" />
+            </a>
+            <motion.div
+              initial={{ opacity: 1, scale: 1 }}
+              animate={{ opacity: [1, 0], scale: [1, 3.25] }}
+              transition={{
+                duration: 2,
+                ease: "easeOut",
+                repeat: Infinity,
+                repeatDelay: 0.2,
+              }}
+              className="bg-[#d3f6e0] px-4 py-4 rounded-full absolute"
+            ></motion.div>
+            <motion.div
+              initial={{ opacity: 1, scale: 1 }}
+              animate={{ opacity: [1, 0], scale: [1, 2.5] }}
+              transition={{
+                duration: 2,
+                ease: "easeOut",
+                repeat: Infinity,
+                repeatDelay: 0.2,
+              }}
+              className="bg-[#7ce5a3] px-4 py-4 rounded-full absolute"
+            ></motion.div>
+          </div>
         </div>
       </main>
       <Footer />
