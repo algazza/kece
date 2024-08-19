@@ -27,12 +27,16 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "Kreditpage",
-        element: <KreditPage />,
+        path: "kredit",
+        element: <SyaratKredit />,
       },
       {
-        path: "pickuppage",
-        element: <PickupPage />,
+        path: "deposito",
+        element: <SyaratDeposito />,
+      },
+      {
+        path: "tabungan",
+        element: <SyaratTabungan />,
       },
       {
         path: "news",
@@ -43,19 +47,11 @@ const router = createBrowserRouter([
         element: <IsiNews />,
       },
       {
-        path: "syarat/kredit",
-        element: <SyaratKredit />,
+        path: "pick-up-service",
+        element: <PickupPage />,
       },
       {
-        path: "syarat/deposito",
-        element: <SyaratDeposito />,
-      },
-      {
-        path: "syarat/tabungan",
-        element: <SyaratTabungan />,
-      },
-      {
-        path: "location",
+        path: "lokasi",
         element: <LocationPage />,
       },
       {
