@@ -28,11 +28,7 @@ Route::get('/home', function(){
     return redirect('/Dashboard');
 });
 
-// Route::get('/admin', function(){
-//     return redirect('/logout');
-// });
 
-// web.php
 Route::middleware(['guest'])->group(function(){
     Route::get('/', [AdminController::class, 'viewLogin'])->name('login');
     Route::get('/forget', [AdminController::class, 'forget'])->name('forget');
@@ -44,52 +40,56 @@ Route::middleware(['guest'])->group(function(){
 
 
 Route::middleware(['auth'])->group(function(){
-
-    // Login and Admin 
+    // Logout
     Route::get('/logout', [AdminController::class, 'logout']); 
 
-    Route::get('/Admin',[AdminController::class, 'viewUser'])->name('admin');
+    // Show Admin
     Route::get('Admin/{id}/show', [AdminController::class, 'showAdmin'])->name('admin.show');
-    Route::get('Admin/{id}/edit',[AdminController::class, 'editAdmin'])->name('admin.edit');
-    Route::put('Admin/{id}/update',[AdminController::class, 'updateAdmin'])->name('admin.update');
-    Route::delete('Admin/{id}/Delete', [AdminController::class, 'destroyAdmin'])->name('admin.delete');
-
-
-    Route::get('/Admin/Add', [AdminController::class, 'viewAddUser'])->name('admin.add');
-    Route::post('/Admin/Add/Post', [AdminController::class, 'store'])->name('admin.post');
 
     // Dashboard
     Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit');
     Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
     Route::get('/api/dashboard/kredit',   [DashboardController::class, 'data']);
     Route::post('/search', [DashboardController::class, 'search'])->name('dashboard.search');
+});
 
 
+Route::middleware(['auth', 'AdminAkses:admin'])->group(function () {
+    Route::get('/Admin',[AdminController::class, 'viewUser'])->name('admin');
+    Route::get('Admin/{id}/edit',[AdminController::class, 'editAdmin'])->name('admin.edit');
+    Route::put('Admin/{id}/update',[AdminController::class, 'updateAdmin'])->name('admin.update');
+    Route::delete('Admin/{id}/Delete', [AdminController::class, 'destroyAdmin'])->name('admin.delete');
+    Route::get('/Admin/Add', [AdminController::class, 'viewAddUser'])->name('admin.add');
+    Route::post('/Admin/Add/Post', [AdminController::class, 'store'])->name('admin.post');
+});
+
+Route::middleware(['auth', 'AdminAkses:kredit,admin'])->group(function(){
     // Kredit
     Route::get('/Kredit', [KreditController::class, 'index'])->middleware('kredit.access')->name('kredit.index');
     Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
     Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
     Route::get('/api/kredit', [KreditController::class, 'data']);
+});
 
 
+Route::middleware(['auth', 'AdminAkses:pickup,admin'])->group(function(){
     // Pickup
     Route::get('/Pickup', [PickupController::class, 'index'])->middleware('kredit.access')->name('pickup.index');
     Route::get('/pickup/{id}', [PickupController::class, 'show'])->name('pickup.show');
     Route::get('/api/check-token/pickup', [PickupController::class, 'checkToken']);
     Route::get('/api/pickup', [PickupController::class, 'data']);
+});
 
 
+Route::middleware(['auth', 'AdminAkses:news,admin'])->group(function(){
     // News
     Route::get('/News/Add', [NewsController::class, 'viewNewsAdd'])->name('news.form');
     Route::post('/News/Add/Post', [NewsController::class, 'store'])->name('news.post');
-
     Route::get('/News', [NewsController::class, 'viewNews'])->name('news');
     Route::get('/News/{id}/edit', [NewsController::class, 'editNews'])->name('news.edit');
     Route::put('/News/{id}', [NewsController::class, 'updateNews'])->name('news.update');
     Route::delete('/News/{id}/delete', [NewsController::class, 'destroyNews'])->name('news.delete');
 });
-
-
 
 
 

@@ -101,7 +101,7 @@ class AdminController extends Controller
     }
 
     function viewUser(){
-        $admin = Admin::orderBy('created_at', 'DESC')->get();
+        $admin = Admin::orderBy('created_at', 'DESC')->paginate('5');
         return view ('admin.user.User', compact('admin'));
     }
 

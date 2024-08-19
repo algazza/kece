@@ -11,7 +11,9 @@
                 </Button> 
             </a>
         </div>
-      
+        <div class="absolute right-[10rem]">
+            {{ $admin  ->links('vendor.pagination.simple') }}
+          </div>
     </div>
     <div class="flex-gap-[1.5rem] pt-[2rem] px-[8rem] bg-gray-200 justify-center flex">
         <table class="shadow-2xl border-2 border-white w-11/12 overflow-hidden">
