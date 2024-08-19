@@ -8,11 +8,13 @@ import KreditPage from "./Pages/KreditPage.jsx";
 import News from "./Pages/News.jsx";
 import IsiNews from "./Pages/IsiNews.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
-import SyaratForm from "./Components/SyaratForm.jsx";
+import SyaratKredit from "./Components/SyaratKredit.jsx";
 import LocationPage from "./Pages/LocationPage.jsx";
 import Success from "./Pages/Success.jsx";
 import KreditMenu from "./Pages/KreditMenu.jsx";
 import TabunganMenu from "./Pages/TabunganMenu.jsx";
+import SyaratTabungan from "./Components/SyaratTabungan.jsx";
+import SyaratDeposito from "./Components/SyaratDeposito.jsx";
 
 
 const router = createBrowserRouter([
@@ -41,8 +43,16 @@ const router = createBrowserRouter([
         element: <IsiNews />,
       },
       {
-        path: "syarat",
-        element: <SyaratForm />,
+        path: "syarat/kredit",
+        element: <SyaratKredit />,
+      },
+      {
+        path: "syarat/deposito",
+        element: <SyaratDeposito />,
+      },
+      {
+        path: "syarat/tabungan",
+        element: <SyaratTabungan />,
       },
       {
         path: "location",

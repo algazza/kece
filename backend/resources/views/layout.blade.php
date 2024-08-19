@@ -9,16 +9,16 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     @vite('resources/css/app.css')
 </head>
-<body >
+<body class="bg-gray-200 h-screen">
     <section class="fixed z-40 shadow flex flex-row font-poppins">
           <div class="bg-gray-50 w-screen z-50 h-[3.7rem] box-border border-black shadow-sm flex">
-              <div class="pl-[0.5rem] box-border border-[0.5px] border-black w-[18rem] h-full flex">
+              <div class="pl-[0.5rem] box-border border-r border-gray-500-[sm2:hidden] w-[18rem] h-full flex ">
                 <div class="p-2.5 mt-1 mb-1 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-200" onclick="Openbar()">
                   <i class='bx bxl-xing text-black'></i>
                 </div>
                 <div class="mt-[0.8rem]  flex gap-3 pl-[2.4rem]">
                   <img src="{{ asset('images/Arto-Moro.png') }}" alt="" class="h-[2rem]">
-                  <div class="text-[1rem] gap-1 flex mt-[0.2rem]">
+                  <div class="text-[1rem] gap-1 sm:flex mt-[0.2rem] hidden ">
                     <p class="font-semibold">Admin</p>
                     <p>Dashboard</p>
                   </div>
@@ -48,14 +48,16 @@
             
 
               <div class="flex right-6 absolute gap-8 pr-8">
-                <div class="sm:flex gap-2">
+                <div class="sm:flex gap-2 hidden">
                   <div class="bg-gray-100 w-[2.7rem] h-[2.7rem] justify-center text-center items-center relative  mt-[0.5rem] leading-[2.5rem] rounded-[5px] box-border border-[0.5px] border-black">
                     <img src="{{ asset('image/admin/' . (Auth::user()->image ?? 'profil.jpg'))  }}" class="h-full rounded-[4px]" id="userImage">
                   </div>
-                  <div class="mt-[0.6rem]">
-                    <p class="font-semibold">{{ Auth::user()->name }}</p>
-                    <p class="text-[0.8rem] mt-[-0.3rem]">{{ Auth::user()->role }}</p>
-                  </div>   
+                  <a href="{{ route('admin.show', Auth::user()->id) }}">
+                    <div class="mt-[0.6rem]">
+                      <p class="font-semibold">{{ Auth::user()->name }}</p>
+                      <p class="text-[0.8rem] mt-[-0.3rem]">{{ Auth::user()->role }}</p>
+                    </div>   
+                  </a>
                 </div>
               </div>
           </div>
@@ -98,11 +100,21 @@
                         Logout >>
                       </a>
                     </div>
-                
-                
+                  </div>
+                  
                 </div>
               </div>
-            </div>
+              <div class="sm2:hidden gap-2 text-black flex ">
+                <div class="bg-gray-100 w-[2.7rem] h-[2.7rem] justify-center text-center items-center relative  mt-[0.5rem] leading-[2.5rem] rounded-[5px] box-border border-[0.5px] border-black">
+                  <img src="{{ asset('image/admin/' . (Auth::user()->image ?? 'profil.jpg'))  }}" class="h-full rounded-[4px]" id="userImage">
+                </div>
+                <a href="{{ route('admin.show', Auth::user()->id) }}">
+                  <div class="mt-[0.6rem]">
+                    <p class="font-semibold">{{ Auth::user()->name }}</p>
+                    <p class="text-[0.8rem] mt-[-0.3rem]">{{ Auth::user()->role }}</p>
+                  </div>  
+                </a>                 
+              </div>
 
           </div>
           <script>

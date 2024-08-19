@@ -1,29 +1,26 @@
 @extends('layout')
 @section('content')
-<section class="py-10 my-auto dark:bg-gray-900">
-    <div class="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4">
+<section class="py-10 my-auto ">
+    <div class="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto my-28 flex gap-4">
         <div
-            class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center dark:bg-gray-800/40">
+            class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center bg-white">
             <!--  -->
             <div class="">
                 <h1
-                    class="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2 dark:text-white">
+                    class="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2 dark:text-black">
                     Profile
                 </h1>
-                <h2 class="text-grey text-sm mb-4 dark:text-gray-400">Create Profile</h2>
+                <h2 class="text-grey text-sm mb-4 dark:text-black">Create Profile</h2>
                 <form enctype="multipart/form-data" method="post" action="{{ route('admin.post') }}">
 
                     @csrf
                     <!-- Cover Image -->
                     <div
-                        class="w-full rounded-sm bg-[url('https://images.unsplash.com/photo-1449844908441-8829872d2607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw2fHxob21lfGVufDB8MHx8fDE3MTA0MDE1NDZ8MA&ixlib=rb-4.0.3&q=80&w=1080')] bg-cover bg-center bg-no-repeat items-center">
-                        <div
-                            class="mx-auto flex justify-center w-[141px] h-[141px] bg-blue-300/20 rounded-full  bg-cover bg-center bg-no-repeat"      style="background-image: url('{{ asset('image/admin/profil.jpg') }}');">>
-
+                        class="w-full rounded-sm bg-cover bg-center bg-no-repeat items-center">
+                        <div class="mx-auto flex justify-center">
+                            <img src="" id="previewImage" class="mr-[-9rem] rounded-full w-[141px] h-[141px] bg-blue-300/20 bg-cover bg-center bg-no-repeat" alt>
                             <div class="bg-white/90 rounded-full w-6 h-6 text-center ml-28 mt-4">
-
-                                <input type="file" name="image" id="upload_profile" hidden>
-
+                                <input type="file" name="image" id="upload_profile" hidden >
                                 <label for="upload_profile">
                                         <svg data-slot="icon" class="w-6 h-5 text-blue-700" fill="none"
                                             stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
@@ -40,28 +37,28 @@
                         </div>
 
                     </div>
-                    <h2 class="text-center mt-1 font-semibold dark:text-gray-300">Upload Profile and Cover Image
+                    <h2 class="text-center mt-1 font-semibold text-black">Upload Profile and Cover Image
                     </h2>
                     <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
                         <div class="w-full  mb-4 mt-6">
-                            <label for="" class="mb-2 dark:text-gray-300">Name</label>
+                            <label for="" class="mb-2 text-black">Name</label>
                             <input type="text"
-                                    class="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
+                                    class="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border dark:bg-gray-400"
                                     placeholder="First Name" name="name">
                         </div>
                         <div class="w-full  mb-4 lg:mt-6">
-                            <label for="" class=" dark:text-gray-300">Email</label>
-                            <input type="text"
-                                    class="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
+                            <label for="" class=" text-black">Email</label>
+                            <input type="email"
+                                    class="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border dark:bg-gray-400"
                                     placeholder="Email" name="email">
                         </div>
                     </div>
 
                     <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
                         <div class="w-full">
-                            <h3 class="dark:text-gray-300 mb-2">Role</h3>
+                            <h3 class="text-black mb-2">Role</h3>
                             <select
-                                    class="w-full text-grey border-2 rounded-lg p-4 pl-2 pr-2 dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800" name="role">
+                                    class="w-full text-grey border-2 rounded-lg p-4 pl-2 pr-2 dark:text-gray-200 dark:border dark:bg-gray-400" name="role">
                                     <option disabled value="">Role</option>
                                     <option value="admin">Admin</option>
                                     <option value="kredit">Kredit</option>
@@ -69,15 +66,15 @@
                                 </select>
                         </div>
                         <div class="w-full">
-                            <h3 class="dark:text-gray-300 mb-2">Password</h3>
-                            <input type="password" class="text-grey p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800" name="password">
+                            <h3 class="text-black mb-2">Password</h3>
+                            <input type="password" class="text-grey p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border dark:bg-gray-400" name="password">
                         </div>
                         <div class="w-full">
-                            <h3 class="dark:text-gray-300 mb-2">No Handphone</h3>
-                            <input type="text" class="text-grey p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800" name="no_handphone">
+                            <h3 class="text-black mb-2">No Handphone</h3>
+                            <input type="text" class="text-grey p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border dark:bg-gray-400" name="no_handphone">
                         </div>
                     </div>
-                    <div class="w-full rounded-lg bg-blue-500 mt-4 text-white text-lg font-semibold">
+                    <div class="w-full rounded-lg bg-blue-500 mt-4 text-white text-lg font-semibold cursor-pointer hover:bg-blue-600 hover:text-white duration-300">
                         <button type="submit" class="w-full p-4">Submit</button>
                     </div>
                 </form>
@@ -85,4 +82,30 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('upload_profile').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const previewImage = document.getElementById('previewImage');
+    
+    if (file) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            previewImage.src = e.target.result;
+            previewImage.style.display = 'block';
+        }
+        
+        reader.readAsDataURL(file);
+    } else {
+        previewImage.src = '';
+        previewImage.style.display = 'none'; 
+    }
+});
+
+
+document.getElementById('previewImage').addEventListener('click', function() {
+    document.getElementById('upload_profile').click();
+});
+</script>
 @endsection
