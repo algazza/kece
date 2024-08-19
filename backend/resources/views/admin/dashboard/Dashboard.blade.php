@@ -49,18 +49,20 @@
         </div>
         <div class="flex h-[53%] ml-[10rem] mt-[-1rem] gap-8">
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
-                <a href="{{ route('kredit.index') }}">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-credit-card' ></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold  pt-2">Kredit</h3>
+                @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
+                    <a href="{{ route('kredit.index') }}">
+                        <div class="w-[31rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                            <div class="flex">
+                                <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                    <i class='text-black bx bx-credit-card' ></i>
+                                </div>
+                                <div class="block mt-[0.8rem]">
+                                    <h3 class="text-[1.1rem] font-bold  pt-2">Kredit</h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                @endif
                 <a href="">
                     <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <div class="flex">
@@ -98,42 +100,48 @@
                         </div>
                     </div>
                 </a>
-                <a href="{{ route('pickup.index') }}">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bxs-truck'></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold pt-2">PickUp</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ route('news') }}">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-news' ></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold pt-2">News</h3>
+                @if (Auth::user()->role == 'pickup' || Auth::user()->role == 'admin')
+                    <a href="{{ route('pickup.index') }}">
+                        <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                            <div class="flex">
+                                <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                    <i class='text-black bx bxs-truck'></i>
+                                </div>
+                                <div class="block mt-[0.8rem]">
+                                    <h3 class="text-[1.1rem] font-bold pt-2">PickUp</h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href="{{ route('admin') }}">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-credit-card' ></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold pt-2">Admin</h3>
+                    </a>
+                @endif
+                @if (Auth::user()->role == 'news' || Auth::user()->role == 'admin')
+                    <a href="{{ route('news') }}">
+                        <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                            <div class="flex">
+                                <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                    <i class='text-black bx bx-news' ></i>
+                                </div>
+                                <div class="block mt-[0.8rem]">
+                                    <h3 class="text-[1.1rem] font-bold pt-2">News</h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                @endif
+                @if (Auth::user()->role == 'admin')
+                    <a href="{{ route('admin') }}">
+                        <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                            <div class="flex">
+                                <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                    <i class='text-black bx bx-credit-card' ></i>
+                                </div>
+                                <div class="block mt-[0.8rem]">
+                                    <h3 class="text-[1.1rem] font-bold pt-2">Admin</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                @endif
                 <a href="">
                     <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <div class="flex">

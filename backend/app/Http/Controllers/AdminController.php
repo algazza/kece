@@ -101,7 +101,7 @@ class AdminController extends Controller
     }
 
     function viewUser(){
-        $admin = Admin::orderBy('created_at', 'DESC')->get();
+        $admin = Admin::orderBy('created_at', 'DESC')->paginate('5');
         return view ('admin.user.User', compact('admin'));
     }
 
@@ -133,6 +133,17 @@ class AdminController extends Controller
     
         $admin->save();
         return redirect()->route('admin')->with('success', 'User Berhasil Ditambahkan');
+    }
+
+
+    function showAdmin($id){
+        $admin = Admin::find($id);
+
+        if(!$admin){
+            return redirect()->route('admin');
+        }
+
+        return view ('admin.user.Admin', compact('admin'));
     }
 
 

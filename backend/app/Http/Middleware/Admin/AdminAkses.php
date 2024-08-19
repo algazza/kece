@@ -19,6 +19,6 @@ class AdminAkses
             return $next($request);
         }
 
-        return redirect('admin');
+        return redirect()->route('dashboard');
     }
 }

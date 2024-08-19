@@ -56,6 +56,7 @@ export default {
             x2500: "620px 230px",
             x250: "250px",
             x550: "550px 550px",
+            x480: "480px 480px",
           },
           backgroundImage: {
             footerimg: "url('./src/img/Footer-img.svg')",

@@ -21,8 +21,6 @@ class DashboardController extends Controller
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
         $request->session()->put('last_dashboard_visit', Carbon::now());
     
-        $userIp = $request->ip();
-
         $totalData = Kredit::count() + Pickup::count();
         $kreditData = Kredit::orderBy('created_at', 'desc')->get();
         $pickupData = Pickup::orderBy('created_at', 'desc')->get();

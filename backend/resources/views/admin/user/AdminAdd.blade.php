@@ -16,14 +16,11 @@
                     @csrf
                     <!-- Cover Image -->
                     <div
-                        class="w-full rounded-sm bg-[url('https://images.unsplash.com/photo-1449844908441-8829872d2607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw2fHxob21lfGVufDB8MHx8fDE3MTA0MDE1NDZ8MA&ixlib=rb-4.0.3&q=80&w=1080')] bg-cover bg-center bg-no-repeat items-center">
-                        <div
-                            class="mx-auto flex justify-center w-[141px] h-[141px] bg-blue-300/20 rounded-full  bg-cover bg-center bg-no-repeat"      style="background-image: url('{{ asset('image/admin/profil.jpg') }}');">>
-
+                        class="w-full rounded-sm bg-cover bg-center bg-no-repeat items-center">
+                        <div class="mx-auto flex justify-center">
+                            <img src="" id="previewImage" class="mr-[-9rem] rounded-full w-[141px] h-[141px] bg-blue-300/20 bg-cover bg-center bg-no-repeat" alt>
                             <div class="bg-white/90 rounded-full w-6 h-6 text-center ml-28 mt-4">
-
-                                <input type="file" name="image" id="upload_profile" hidden>
-
+                                <input type="file" name="image" id="upload_profile" hidden >
                                 <label for="upload_profile">
                                         <svg data-slot="icon" class="w-6 h-5 text-blue-700" fill="none"
                                             stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
@@ -51,7 +48,7 @@
                         </div>
                         <div class="w-full  mb-4 lg:mt-6">
                             <label for="" class=" dark:text-gray-300">Email</label>
-                            <input type="text"
+                            <input type="email"
                                     class="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
                                     placeholder="Email" name="email">
                         </div>
@@ -85,4 +82,30 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('upload_profile').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const previewImage = document.getElementById('previewImage');
+    
+    if (file) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            previewImage.src = e.target.result;
+            previewImage.style.display = 'block';
+        }
+        
+        reader.readAsDataURL(file);
+    } else {
+        previewImage.src = '';
+        previewImage.style.display = 'none'; 
+    }
+});
+
+
+document.getElementById('previewImage').addEventListener('click', function() {
+    document.getElementById('upload_profile').click();
+});
+</script>
 @endsection
