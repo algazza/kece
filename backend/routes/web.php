@@ -105,7 +105,9 @@ Route::middleware(['auth', 'AdminAkses:news,admin'])->group(function(){
 
 
 
-
+Route::get('/test', function(){
+    return view ('admin.no_admin.NoAdmin');
+});
 
 Route::get('/Newse', function(){
     return view ('admin.news.NewsEdit');
