@@ -4,9 +4,11 @@
    
     <section class="pt-[5rem] px-[5rem]">
     <div class="bg-white my-20 mx-8 p-4 shadow border rounded w-full overflow-x-auto"> 
-        <img src="{{ asset('image/admin/' . $admin->image) }}" class="mx-auto text-center  rounded-full h-32 w-32 mb-4 object-cover" alt="profile-img" title="profile-img"/>
-        <h1 class="text-center text-gray-900 text-2xl">{{ $admin->name }}</h1>
-        <h1 class="text-center font-semibold text-xl">{{ $admin->role }}</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTugiIkfShiBZQjxJ7sgDqrECI9ed3CQbdj0A&s" class="mx-auto text-center  rounded-full h-32 w-32 mb-4 object-cover" alt="profile-img" title="profile-img"/>
+        <h1 class="text-center text-gray-900 text-2xl">Wahitukam</h1>
+        <div>
+            <h1 class="text-center  font-semibold text-xl pt-3">Admin</h1>
+        </div>
         <a href="#"
             class="flex my-4 border-gray-300 justify-center text-center py-[2rem] border rounded text-gray-400 hover:bg-gray-500 duration-75 hover:text-white hover:border-gray-500">
             <i class='bx bx-envelope pr-2 pt-1'></i>
