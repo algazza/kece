@@ -5,7 +5,13 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { motion } from "framer-motion";
 import styles from "../data/style";
 import ImageBanner from "../Layouts/ImageBanner";
-import { Banneremyu, BennerLiv, nunezimg, phoneimg, sampleBanner } from "../data";
+import {
+  Banneremyu,
+  BennerLiv,
+  nunezimg,
+  phoneimg,
+  sampleBanner,
+} from "../data";
 // ==================== ICON ===========================
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
@@ -24,11 +30,11 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import AddIcon from "@mui/icons-material/Add";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import CloseIcon from "@mui/icons-material/Close";
 
 const images = [
-  BennerLiv,
   Banneremyu,
-  sampleBanner,
+  // sampleBanner,
 ];
 
 const menuHome = [
@@ -116,6 +122,7 @@ const penghargaanHome = [
 
 const Home = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const [newsData, setNewsData] = useState([]);
   const [expanded, setExpanded] = React.useState(false);
   const navigate = useNavigate();
@@ -130,24 +137,28 @@ const Home = () => {
         toast.error("Gagal Memunculkan News!");
       });
   }, []);
-  
+
   const handleOpen = () => {
     setOpenMenu(!openMenu);
   };
 
+  const handleModal = () => {
+    setOpenModal(!openModal);
+  };
+
   const handleAccordion = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false)
-  }
+    setExpanded(isExpanded ? panel : false);
+  };
 
   return (
-    <main className={`${styles.paddingY}`}>
-      <section className="py-6">
+    <>
+      <section className="pb-6">
         <div className="rounded-br-[300px] overflow-hidden">
           <ImageBanner images={images} />
         </div>
-        <div className="flex justify-center items-start py-4 px-8 gap-8">
+        <div className="flex justify-center items-start py-4 sm:px-8 sm:gap-8 gap-2">
           <motion.div
-            className={`grid grid-cols-x5170 gap-8 justify-center`}
+            className={`grid sm:grid-cols-x5170 grid-cols-3 gap-x-2 gap-y-8 sm:gap-8 justify-center`}
             initial={{ height: "5.5rem", overflow: "hidden" }}
             animate={{ height: openMenu ? "auto" : "5.5rem" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -156,7 +167,7 @@ const Home = () => {
               <Link
                 to={menu.title}
                 key={menu.id}
-                className="group bg-abuTerang grid justify-items-center py-2 px-6 rounded-xl "
+                className="group bg-abuTerang grid justify-items-center py-2 sm:px-6 px-3 rounded-xl "
               >
                 {menu.icon(
                   "text-abuGelap group-hover:text-merahh transition-all duration-300 ease-in-out"
@@ -211,6 +222,45 @@ const Home = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className={`${styles.paddingY}`}>
+        <h2 className={`${styles.heading3} text-center mb-12`}>
+          Company Profile
+        </h2>
+        <div className={`${styles.flexCenter}`}>
+          <img
+            src={nunezimg}
+            alt=""
+            className="cursor-pointer"
+            onClick={handleModal}
+          />
+        </div>
+
+        {openModal && (
+          <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed">
+            <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed bg-gray-900/50">
+              <div className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/4 bg-primary p-12">
+                <div
+                  className="absolute right-2 top-2 cursor-pointer"
+                  onClick={handleModal}
+                >
+                  <CloseIcon />
+                </div>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/UPubaRIRWkA?si=Lt32z9nnSQ4RUFJV"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       <section className={`${styles.paddingY} px-12`}>
@@ -289,7 +339,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className={`${styles.paddingX} ${styles.paddingY} flex flex-col sm:flex-row sm:gap-40 gap-8`}>
+      <section
+        className={`${styles.paddingX} ${styles.paddingY} flex flex-col sm:flex-row sm:gap-40 gap-8`}
+      >
         <div className="">
           <h2 className={`${styles.heading3}`}>Frequently Asked Question</h2>
           <p className="mt-2">
@@ -301,13 +353,14 @@ const Home = () => {
         </div>
 
         <div className="">
-          <Accordion 
+          <Accordion
             className="px-4"
             sx={{
               boxShadow: "none",
               background: "#cdedfa",
             }}
-            expanded={expanded === 'panel1'} onChange={handleAccordion('panel1')}
+            expanded={expanded === "panel1"}
+            onChange={handleAccordion("panel1")}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -354,7 +407,8 @@ const Home = () => {
               boxShadow: "none",
               background: "#cdedfa",
             }}
-            expanded={expanded === 'panel2'} onChange={handleAccordion('panel2')}
+            expanded={expanded === "panel2"}
+            onChange={handleAccordion("panel2")}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -382,7 +436,8 @@ const Home = () => {
               boxShadow: "none",
               background: "#cdedfa",
             }}
-            expanded={expanded === 'panel3'} onChange={handleAccordion('panel3')}
+            expanded={expanded === "panel3"}
+            onChange={handleAccordion("panel3")}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -404,7 +459,7 @@ const Home = () => {
         </div>
       </section>
       <ToastContainer />
-    </main>
+    </>
   );
 };
 
