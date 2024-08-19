@@ -40,13 +40,13 @@ const Header = () => {
           className={`list-none sm:flex hidden justify-end items-center flex-1 gap-12 ${styles.fontBody} font-semibold`}
         >
           <li>
-            <Link to={"/"}>Home</Link>
+            <FlyoutLink href={"/"}>Home</FlyoutLink>
           </li>
           <li>
             <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink to={"/news"}>News</FlyoutLink>
+            <FlyoutLink href={"/news"}>News</FlyoutLink>
           </li>
           <li>
             <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>
@@ -156,14 +156,13 @@ const Header = () => {
   );
 };
 
-const FlyoutLink = ({ children, href, FlyoutContent, to }) => {
+const FlyoutLink = ({ children, href, FlyoutContent}) => {
   const [open, setOpen] = useState(false);
 
   const showFlyout = open && FlyoutContent;
 
   return (
-    <Link
-    to={to}
+    <div
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
       className="relative h-fit w-fit"
@@ -191,7 +190,7 @@ const FlyoutLink = ({ children, href, FlyoutContent, to }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </Link>
+    </div>
   );
 };
 

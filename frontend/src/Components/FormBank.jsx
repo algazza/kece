@@ -17,6 +17,7 @@ import { ButtonFull, ButtonOutline } from "./Button";
 import { DatePicker, TimePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
+import { toast } from "react-toastify";
 
 
 const FormBank = ({ isiPenting, value, endpoint }) => {
@@ -76,9 +77,8 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
       .then((response) => {
         navigate("/success");
       })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("gagal");
+      .catch((err) => {
+        toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
       });
 
   };

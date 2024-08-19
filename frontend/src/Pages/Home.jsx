@@ -1,9 +1,11 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { motion } from "framer-motion";
 import styles from "../data/style";
-import { phoneimg, sampleBanner } from "../data";
 import ImageBanner from "../Layouts/ImageBanner";
+import { Banneremyu, BennerLiv, nunezimg, phoneimg, sampleBanner } from "../data";
 // ==================== ICON ===========================
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
@@ -21,10 +23,11 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import GroupsIcon from "@mui/icons-material/Groups";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import AddIcon from "@mui/icons-material/Add";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const images = [
-  "https://bprartomoro.co.id/wp-content/uploads/2024/07/Dengan-ini-di-Umumkan-nama-perseroan-1920-x-1080-piksel-1878x874.png",
-  "https://bprartomoro.co.id/wp-content/uploads/2023/05/penilaian_ojk_bpr_kategori_sehat-800x323.jpg",
+  BennerLiv,
+  Banneremyu,
   sampleBanner,
 ];
 
@@ -113,11 +116,28 @@ const penghargaanHome = [
 
 const Home = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [newsData, setNewsData] = useState([]);
+  const [expanded, setExpanded] = React.useState(false);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    fetch("http://localhost:8000/api/news")
+      .then((response) => response.json())
+      .then((data) => {
+        setNewsData(data);
+      })
+      .catch((err) => {
+        toast.error("Gagal Memunculkan News!");
+      });
+  }, []);
+  
   const handleOpen = () => {
     setOpenMenu(!openMenu);
   };
-  
+
+  const handleAccordion = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false)
+  }
 
   return (
     <main className={`${styles.paddingY}`}>
@@ -155,8 +175,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className={`${styles.marginX} mb-20`}>
-        <div className="grid sm:grid-flow-col">
+      <section className={`${styles.marginX} ${styles.paddingY}`}>
+        <div className="grid md:grid-flow-col">
           <div className="sm:mb-16">
             <h4 className={`${styles.heading3}`}>
               Mengapa Memilih <span className="text-red-600">BPR ARTOMORO</span>
@@ -171,7 +191,7 @@ const Home = () => {
 
           <div className="grid justify-center">
             <img src={phoneimg} alt="" className="w-[260px]" />
-            <div className="absolute z-[-1] w-[30rem] h-[30rem] rounded-full right-[2rem] top-[42rem] blue__gradient"/>
+            <div className="absolute z-[-1] w-[30rem] h-[30rem] rounded-full right-[18rem] md:right-[2rem] top-[52rem] md:top-[42rem] blue__gradient" />
           </div>
         </div>
 
@@ -193,9 +213,197 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="">
-        
+      <section className={`${styles.paddingY} px-12`}>
+        <h2 className={`${styles.heading3} text-center mb-12`}>Updated News</h2>
+        <div className="grid md:grid-cols-3 ss:grid-cols-2 gap-8">
+          {/* iki ono 3 apus wae ngko */}
+          <div className="p-4 bg-abuTerang rounded-xl">
+            <img src={nunezimg} alt="" className="rounded-xl" />
+            <div className="mt-4">
+              <p className={`${styles.fontSmallBold} text-merahh`}>
+                Penghargaan
+              </p>
+              <h6 className={`${styles.heading6} my-2`}>
+                Serigala Uruguay Ngambek? Darwin Nunez Hapus Hampir Semua Foto
+                Terkait Liverpool di Akun Instagramnya
+              </h6>
+              <p className={`${styles.fontSmall} text-abuGelap`}>12/01/2024</p>
+            </div>
+          </div>
+          <div className="p-4 bg-abuTerang rounded-xl">
+            <img src={nunezimg} alt="" className="rounded-xl" />
+            <div className="mt-4">
+              <p className={`${styles.fontSmallBold} text-merahh`}>
+                Penghargaan
+              </p>
+              <h6 className={`${styles.heading6} my-2`}>
+                Serigala Uruguay Ngambek? Darwin Nunez Hapus Hampir Semua Foto
+                Terkait Liverpool di Akun Instagramnya
+              </h6>
+              <p className={`${styles.fontSmall} text-abuGelap`}>12/01/2024</p>
+            </div>
+          </div>
+          <div className="p-4 bg-abuTerang rounded-xl">
+            <img src={nunezimg} alt="" className="rounded-xl" />
+            <div className="mt-4">
+              <p className={`${styles.fontSmallBold} text-merahh`}>
+                Penghargaan
+              </p>
+              <h6 className={`${styles.heading6} my-2`}>
+                Serigala Uruguay Ngambek? Darwin Nunez Hapus Hampir Semua Foto
+                Terkait Liverpool di Akun Instagramnya
+              </h6>
+              <p className={`${styles.fontSmall} text-abuGelap`}>12/01/2024</p>
+            </div>
+          </div>
+
+          {/* taakanmu hid */}
+          {newsData.slice(0, 3).map((news) => (
+            <div
+              key={news.id}
+              className="p-4 bg-abuTerang rounded-xl"
+              onClick={() => navigate(`/news/${news.id}`)}
+            >
+              <img
+                src={`http://localhost:8000/image/public/news/${news.image}`}
+                alt={news.judul}
+                className="object-cover w-full h-full rounded-xl"
+              />
+              <div className="mt-4">
+                <p className={`${styles.fontSmallBold} text-merahh`}>
+                  {news.kategory}
+                </p>
+                <h6 className={`${styles.heading6} my-2`}>{news.judul}</h6>
+                <p className={`${styles.fontSmall} text-abuGelap`}>
+                  {news.created_at
+                    ? new Intl.DateTimeFormat("id-ID", {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                      }).format(new Date(news.created_at))
+                    : "Tanggal tidak tersedia"}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
+
+      <section className={`${styles.paddingX} ${styles.paddingY} flex flex-col sm:flex-row sm:gap-40 gap-8`}>
+        <div className="">
+          <h2 className={`${styles.heading3}`}>Frequently Asked Question</h2>
+          <p className="mt-2">
+            BPR Arto Moro adalah BPR kategori SEHAT dengan visi & misi menjadi
+            yang TERBESAR & TERBAIK di kota Semarang. Pada usia yang masih
+            relatif Muda, saat ini posisi BPR Arto Moro adalah 3 Besar di Kota
+            Semarang.
+          </p>
+        </div>
+
+        <div className="">
+          <Accordion 
+            className="px-4"
+            sx={{
+              boxShadow: "none",
+              background: "#cdedfa",
+            }}
+            expanded={expanded === 'panel1'} onChange={handleAccordion('panel1')}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+              sx={{ padding: "0px", border: "none" }}
+              className="font-semibold"
+            >
+              Tentang NPL
+            </AccordionSummary>
+            <AccordionDetails>
+              <p>
+                NPL (Non Performing Loan) atau prosentase kredit bermasalah di
+                BPR Arto Moro pada saat ini adalah di bawah 5%. Artinya masih di
+                bawah ketentuan yang ditetapkan oleh OJK yaitu 5%. Adapun NPL
+                pada bulan Juli 2022 adalah 3,51%.
+                <br />
+                <br />
+                Sebelumnya, berdasarkan hasil publikasi resmi dari Otoritas Jasa
+                Keuangan (OJK) pada bulan Desember 2021,{" "}
+                <span className="text-merahh">
+                  NPL BPR Arto Moro adalah yang terbaik diantara 5 (Lima) Besar
+                  BPR di Kota Semarang.
+                </span>{" "}
+                Tentu saja fakta ini menunjukkan bahwa kinerja BPR Arto Moro
+                tidak kalah dengan kinerja 4 BPR terbesar di kota Semarang.
+                {/* <br />
+                <br />
+                NPL adalah komponen vital bagi kesehatan bank, termasuk Bank
+                Umum dan BPR, serta Pihak Ketiga yang ingin bekerja sama atau
+                menempatkan dana. BPR Arto Moro sangat menjaga kualitas
+                kreditnya agar NPL tidak melebihi 5%, demi mempertahankan
+                kepercayaan masyarakat, pihak ketiga, dan stakeholders.
+                Kepercayaan masyarakat adalah prioritas utama karena BPR Arto
+                Moro berfungsi sebagai lembaga intermediasi yang resmi dan
+                dilindungi undang-undang. */}
+              </p>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion
+            className="px-4 mt-4"
+            sx={{
+              boxShadow: "none",
+              background: "#cdedfa",
+            }}
+            expanded={expanded === 'panel2'} onChange={handleAccordion('panel2')}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+              sx={{ padding: "0px", border: "none" }}
+              className="font-semibold"
+            >
+              Tentang Keamanan Simpanan
+            </AccordionSummary>
+            <AccordionDetails>
+              <p>
+                Dana Nasabah/Masyarakat yang dismpan di BPR Arto Moro dalam
+                bentuk Tabungan dan Deposito Aman karena dijamin oleh Lembaga
+                Penjamin Simpanan (LPS). Adapun maksimal simpanan yang dijamin
+                oleh LPS adalah 2 (dua) milyar rupiah per nomor rekening sesuai
+                dengan NIK.
+              </p>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion
+            className="px-4 mt-4"
+            sx={{
+              boxShadow: "none",
+              background: "#cdedfa",
+            }}
+            expanded={expanded === 'panel3'} onChange={handleAccordion('panel3')}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+              sx={{ padding: "0px", border: "none", borderRadius: "16px" }}
+              className="font-semibold"
+            >
+              Tentang Tingkat Kesehatan Bank
+            </AccordionSummary>
+            <AccordionDetails>
+              <p>
+                BPR Arto Moro adalah BPR yang Sehat sesuai Kriteria yang sudah
+                ditetapkan oleh Otoritas Jasa Keuangan (OJK) berdasarakan hasil
+                kinerja seluruh aspek yang dinilai.
+              </p>
+            </AccordionDetails>
+          </Accordion>
+        </div>
+      </section>
+      <ToastContainer />
     </main>
   );
 };

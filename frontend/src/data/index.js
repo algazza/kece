@@ -13,11 +13,15 @@ import nunezimg from "../img/668f755b3c2ba.jpg";
 import sampleNews from "../img/sample-news-684x385.jpg"
 import sampleBanner from "../img/samplebanner.svg"
 import phoneimg from "../img/phoneimg.svg"
+import BennerLiv from "../img/sampleliv.svg"
+import Banneremyu from "../img/Banner2.svg";
 
 export {
   logoArmor,
   BlueBanner,
   sampleBanner,
+  BennerLiv,
+  Banneremyu,
   phoneimg,
   sample,
   nunezimg,

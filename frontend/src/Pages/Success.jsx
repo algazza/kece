@@ -3,7 +3,6 @@ import styles from "../data/style";
 import CheckIcon from "@mui/icons-material/Check";
 import { ButtonOutline } from "../Components/Button";
 import { motion } from "framer-motion";
-import Header from "../Layouts/Header";
 
 const Success = () => {
   return (
