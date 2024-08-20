@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
-import FormBank from "./FormBank";
+import FormBank from "../Components/FormBank";
 import styles from "../data/style";
 import { PenempatanDana, BlueBanner } from "../data";
 import {
@@ -14,7 +14,7 @@ import {
   TableRow,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { Kredit } from "./Form";
+import { Kredit } from "../Components/Form";
 
 const calculateRowSpan = (data, key) => {
   const rowSpanData = [];
@@ -34,7 +34,7 @@ const calculateRowSpan = (data, key) => {
 
 const rowSpanAmount = calculateRowSpan(PenempatanDana, "amount");
 
-const SyaratForm = () => {
+const SyaratTabungan = () => {
   let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
 
@@ -51,7 +51,7 @@ const SyaratForm = () => {
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Kredit"}
+          TitleBanner={"Deposito"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -60,7 +60,7 @@ const SyaratForm = () => {
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={"Kredit"} />
+        <TitleBlueBanner title={"Deposito"} />
       </section>
 
       <section className="pt-10 flex justify-center">
@@ -111,47 +111,44 @@ const SyaratForm = () => {
             {" "}
             <ul className="text-abuGelap ml-5">
               <h3 className={`${styles.heading5} text-black my-5`}>
-                A. Keuntungan
+                A. Syarat Pembukuan rekening
               </h3>
               <ul className="list-inside list-disc pl-16">
                 <li>
-                Proses Cepat, 5 Hari Kerja {" "}
-                </li> <br />
+                  Perorangan <br /> - KTP/SIM/Passport asli yang masih berlaku{" "}
+                </li>
                 <li>
-                Syarat Mudah & Fleksibel
-                </li> <br />
-                <li>
-                Aman & Terpecaya
+                  Perusahaan <br /> - KTP/SIM/Passport asli pejabat yang
+                  berwenang <br /> - SIUP, NPWP, Akta Pendirian Perusahaan dan
+                  Perubahannya
                 </li>
               </ul>
 
               <h3 className={`${styles.heading5} text-black my-5`}>
-                B. Fitur
+                B. Keuntungan
               </h3>
               <ul className="list-inside list-disc pl-16">
                 <li>
-                  Suku bunga kredit kompetitif <b>dibanding </b>bank lainnya
+                  Berhak memilih jenis hadiah yang telah disediakan (Umroh,
+                  Mobil, Motor Sport, Gadget).
                 </li>
                 <li>
-                Jangka waktu kredit hingga <b> 1 tahun dan bisa diperpanjang</b>
+                  Jenis hadiah yang dipilih sesuai dengan jumlah dana dan lama
+                  dana ditempatkan.
                 </li>
-                <li>Pinjaman kredit 500 juta hingga 30 Milyar.</li>
-                <li>Presentase pembiayaan hingga <b>60% dari nilai jaminan</b>.</li>
-                <li>Jaminan: <br />
-                  - SHM (Sertifikat Hak Milik) <br />
-                  - SHGB (Sertifikat Hak Guna Bangunan) untuk rumah, ruko, rukan, atau tanah kosong untuk dibangun <br />
-                  - BPKB Kendaraan (sebagai agunan tambahan)</li>
+                <li>Hadiah dipilih, dibawa pulang, langsung, tanpa diundi.</li>
               </ul>
 
               <h3 className={`${styles.heading5} text-black my-5 `}>
-                C. Syarat
+                C. Fitur
               </h3>
-              <ul className="list-inside list-disc pl-16">
-                <li>Foto copy <b>identitas</b> calon debitur dan suami/istrinya serta identitas pemilik jaminan dan suami/istri yang masih berlaku, </li>
-                <li>Foto copy <b>kartu keluarga</b> calon debitur dan pemilik agunan, </li>
-                <li>Foto copy <b>surat nikah</b>,</li>
-                <li>Foto copy bukti kepemilikan agunan berupa <b>BPKB beserta STNK dan atau sertifikat tanah beserta PBB terakhir</b>.</li>
-                
+              <ul className="list-inside list-disc grid grid-cols-2 pl-16">
+                <li>Setoran Awal & Akhir </li>
+                <>: Sesuai nominal penempatan dana </>
+                <li>Biaya Administrasi Bulanan</li>
+                <>: Rp. 1.000,- </>
+                <li>Bunga tabungan</li>
+                <>: 2% pa </>
               </ul>
             </ul>
           </motion.div>
@@ -172,25 +169,28 @@ const SyaratForm = () => {
               </h3>
               <ul className="list-inside list-disc pl-16">
                 <li className="p-4">
-                Suku bunga 10.25% fix 1 tahun. Bunga floating: tahun berikutnya, Suku bunga LPS BPR + 7%
+                  Bunga dihitung dan dibayarkan pada akhir bulan dengan cara
+                  ditambahbukukan pada rekening tabungan.
                 </li>
                 <li className="p-4">
-                Jangka waktu kredit hingga 8 tahun hingga 20 tahun.
+                  Sebagai bukti transaksi tabungan, bank akan menerbitkan
+                  sertipikat tabungan berjangka dan menatausahakan rekening atas
+                  nama penabung.
                 </li>
                 <li className="p-4">
-                Pembiayaan : Tanah dan Bangunan 80%
+                  Jika terjadi penarikan tabungan sebelum jatuh tempo maka
+                  penabung akan dikenakan pinalti sebesar hadiah yang diterima
+                  di awal (nilai hadiah pada saat diterima).
                 </li>
                 <li className="p-4">
-                Usia debitur minimal 21 th dan pada saat jatuh tempo kredit / maksimal 1 tahun sebelum pensiun, khusus untuk wiraswasta dan profesional pada saat jatuh tempo kredit usia maksimal 70 th.
+                  Jika hadiah yang dikehendaki nasabah sudah tidak tersedia di
+                  pasaran, maka hadiah akan diganti dengan hadiah lain yang
+                  setara atas persetujuan nasabah.
                 </li>
                 <li className="p-4">
-                DP mulai 10%
-                </li>
-                <li className="p-4">
-                Bebas biaya provisi untuk take over kredit
-                </li>
-                <li className="p-4">
-                Pelunasan dalam masa fix rate berjalan, dikenakan pinalty
+                  Jika penabung meninggal dunia maka saldo tabungan akan
+                  dibayarkan kepada ahli warisnya sesuai ketentuan di BPR Arto
+                  Moro.
                 </li>
               </ul>
             </ul>
@@ -314,4 +314,4 @@ const SyaratForm = () => {
 };
 
 // mahes 7 agustus 2024
-export default SyaratForm;
+export default SyaratTabungan;
