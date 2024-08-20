@@ -3,50 +3,34 @@
 @extends('layout')
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen font-poppins">
-        <div class="flex gap-[1.5rem] pt-[5rem] pb-[2rem] px-[10rem] bg-gray-200 w-screen overflow-x-auto ">
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg">
-                <div>
-                    <h3 id="totalData" class="absolute ml-[0.7rem] mt-[-0.2rem] text-[1.3rem] font-semibold max-w-12 mx-auto">{{ $totalData }}</h3>
-                    <div class="mt-[0.5rem]">
-                        <div class="text-[6rem] ">
-                            <i class='text-black bx bx-bar-chart'></i>
-                        </div>
-                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem] max-w-">All incoming data</p>
-                    </div>
+        <div class="flex gap-4 pt-12 pb-8 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-200 w-screen overflow-x-auto">
+            <div class="bg-gray-50 w-full sm:w-64 md:w-72 lg:w-80 h-40 flex flex-col items-center justify-center rounded-sm border border-black shadow-lg">
+                <h3 id="totalData" class="text-xl font-semibold mb-2">{{ $totalData }}</h3>
+                <div class="text-4xl md:text-5xl lg:text-6xl">
+                    <i class='text-black bx bx-bar-chart'></i>
                 </div>
+                <p class="bg-black text-white px-4 py-1 rounded text-xs md:text-sm mt-2">All incoming data</p>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                <div>
-                    <div class="mt-[1.3rem]">
-                        <div class="text-[5rem]">
-                            <i class='text-black bx bx-news' ></i>
-                        </div>
-                        <p class="bg-black text-white mx-[4.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-1.5rem] ">News Edit</p>
-                    </div>
+            <div class="bg-gray-50 w-full sm:w-64 md:w-72 lg:w-80 h-40 flex flex-col items-center justify-center rounded-sm border border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                <div class="text-4xl md:text-5xl lg:text-6xl mt-4">
+                    <i class='text-black bx bx-news'></i>
                 </div>
+                <p class="bg-black text-white px-4 py-1 rounded text-xs md:text-sm mt-2">News Edit</p>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                <div>
-                    <div class="mt-[0.5rem]">
-                        <div class="text-[6rem] ">
-                            <i class='text-black bx bx-user'></i>
-                        </div>
-                        <p class="bg-black text-white mx-[3.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Sponsor</p>
-                    </div>
+            <div class="bg-gray-50 w-full sm:w-64 md:w-72 lg:w-80 h-40 flex flex-col items-center justify-center rounded-sm border border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                <div class="text-4xl md:text-5xl lg:text-6xl mt-4">
+                    <i class='text-black bx bx-user'></i>
                 </div>
+                <p class="bg-black text-white px-4 py-1 rounded text-xs md:text-sm mt-2">Sponsor</p>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                <div>
- 
-                    <div class="mt-[0.5rem]">
-                        <div class="text-[6rem] ">
-                            <i class='text-black bx bx-credit-card' ></i>
-                        </div>
-                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Edit Banner</p>
-                    </div>
+            <div class="bg-gray-50 w-full sm:w-64 md:w-72 lg:w-80 h-40 flex flex-col items-center justify-center rounded-sm border border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                <div class="text-4xl md:text-5xl lg:text-6xl mt-4">
+                    <i class='text-black bx bx-credit-card'></i>
                 </div>
+                <p class="bg-black text-white px-4 py-1 rounded text-xs md:text-sm mt-2">Edit Banner</p>
             </div>
         </div>
+        
         <div class="flex h-[53%] ml-[10rem] mt-[-1rem] gap-8">
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
                 @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
