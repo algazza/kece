@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
-import FormBank from "../Components/FormBank";
+import FormBank from "./FormBank";
 import styles from "../data/style";
 import { PenempatanDana, BlueBanner } from "../data";
 import {
@@ -14,7 +14,7 @@ import {
   TableRow,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { Kredit } from "../Components/Form";
+import { Kredit } from "./Form";
 
 const calculateRowSpan = (data, key) => {
   const rowSpanData = [];
@@ -34,7 +34,7 @@ const calculateRowSpan = (data, key) => {
 
 const rowSpanAmount = calculateRowSpan(PenempatanDana, "amount");
 
-const SyaratDeposito = () => {
+const SyaratForm = () => {
   let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
 
@@ -51,7 +51,7 @@ const SyaratDeposito = () => {
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Deposito"}
+          TitleBanner={"Kredit"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -60,7 +60,7 @@ const SyaratDeposito = () => {
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={"Deposito"} />
+        <TitleBlueBanner title={"Kredit"} />
       </section>
 
       <section className="pt-10 flex justify-center">
@@ -115,7 +115,7 @@ const SyaratDeposito = () => {
               </h3>
               <ul className="list-inside list-disc pl-16">
                 <li>
-                Proses Cepat, 5 Hari Kerja {" "}
+                Proses Cepat, 5 Hari Kerja
                 </li> <br />
                 <li>
                 Syarat Mudah & Fleksibel
@@ -314,4 +314,4 @@ const SyaratDeposito = () => {
 };
 
 // mahes 7 agustus 2024
-export default SyaratDeposito;
+export default SyaratForm;

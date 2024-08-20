@@ -23,49 +23,49 @@ const buttonMenuTabungan = [
   {
     id: 1,
     icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Tabungan Pro Active",
+    title: "Kredit Investasi",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
   },
   {
     id: 2,
     icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Tabungan Arisan Bulanan ARTOMORO",
+    title: "Kredit Modal",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 3,
     icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Tabungan Gemilang (TAGAR)",
+    title: "Kredit KPR",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 4,
     icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Tabungan Umroh (TABUR)",
+    title: "Kredit Multiguna",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 5,
     icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Simpanan Pelajar (SIMPEL)",
+    title: "Kredit Pensiun",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 6,
     icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Tabungan Berhadiah Suka - suka (TABSUS)",
+    title: "Kredit Konsumtif",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 7,
     icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Pembiayaan Ziarah (ZAMRUD)",
+    title: "Kredit Pembiayaan Umroh",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 8,
     icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Tabungan Berhadiah Suka - suka (TABSUS)",
+    title: "Kredit Pembiayaan Ziarah",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
 ];
@@ -211,6 +211,7 @@ const SyaratKredit = () => {
                   className="mx-6 sm:mx-10 sm:px-10 "
                 >
                   <ul className="text-abuGelap sm:ml-4">
+
                     <h3 className={`${styles.heading5} text-black my-5`}>
                       A. Keuntungan
                     </h3>
@@ -221,6 +222,7 @@ const SyaratKredit = () => {
                     </h3>
 
                     {kredit.Fitur}
+
                     <h3 className={`${styles.heading5} text-black my-5`}>
                       C. Syarat Pembukuan rekening
                     </h3>
@@ -285,7 +287,7 @@ const SyaratKredit = () => {
                       </TableHead>
 
                       <TableBody>
-                        {kredit.Tabel.map((row, index) => {
+                        {kredit.Tabel.map((row, index, idx) => {
                           let shouldRenderAmountCell = false;
 
                           if (
@@ -309,7 +311,7 @@ const SyaratKredit = () => {
                           }
 
                           return (
-                            <TableRow key={index}>
+                            <TableRow key={idx}>
                               <TableCell
                                 align="center"
                                 style={{ border: "1px solid black" }}
