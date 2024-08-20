@@ -212,19 +212,19 @@ const SyaratKredit = () => {
                 >
                   <ul className="text-abuGelap sm:ml-4">
                     <h3 className={`${styles.heading5} text-black my-5`}>
-                      A. Syarat Pembukuan rekening
-                    </h3>
-                    {kredit.Syarat}
-
-                    <h3 className={`${styles.heading5} text-black my-5`}>
-                      B. Keuntungan
+                      A. Keuntungan
                     </h3>
                     {kredit.Keuntungan}
 
                     <h3 className={`${styles.heading5} text-black my-5 `}>
-                      C. Fitur
+                      B. Fitur
                     </h3>
+
                     {kredit.Fitur}
+                    <h3 className={`${styles.heading5} text-black my-5`}>
+                      C. Syarat Pembukuan rekening
+                    </h3>
+                    {kredit.Syarat}
                   </ul>
                 </motion.div>
               ) : null}
@@ -285,7 +285,7 @@ const SyaratKredit = () => {
                       </TableHead>
 
                       <TableBody>
-                        {IsiKredit.Tabel.map((row, index) => {
+                        {kredit.Tabel.map((row, index) => {
                           let shouldRenderAmountCell = false;
 
                           if (
