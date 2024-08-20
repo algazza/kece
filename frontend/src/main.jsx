@@ -4,17 +4,16 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 import Home from "./Pages/Home.jsx";
-import KreditPage from "./Pages/KreditPage.jsx";
 import News from "./Pages/News.jsx";
 import IsiNews from "./Pages/IsiNews.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
-import SyaratKredit from "./Components/SyaratKredit.jsx";
+import SyaratKredit from "./Pages/SyaratKredit.jsx";
+// import SyaratTabungan from "./Pages/SyaratTabungan.jsx";
+import SyaratDeposito from "./Pages/SyaratDeposito.jsx";
 import LocationPage from "./Pages/LocationPage.jsx";
 import Success from "./Pages/Success.jsx";
 import KreditMenu from "./Pages/KreditMenu.jsx";
 import TabunganMenu from "./Pages/TabunganMenu.jsx";
-import SyaratTabungan from "./Components/SyaratTabungan.jsx";
-import SyaratDeposito from "./Components/SyaratDeposito.jsx";
 
 
 const router = createBrowserRouter([
@@ -33,10 +32,6 @@ const router = createBrowserRouter([
       {
         path: "deposito",
         element: <SyaratDeposito />,
-      },
-      {
-        path: "tabungan",
-        element: <SyaratTabungan />,
       },
       {
         path: "news",

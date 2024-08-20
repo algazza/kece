@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
-import FormBank from "./FormBank";
+import FormBank from "../Components/FormBank";
 import styles from "../data/style";
 import { PenempatanDana, BlueBanner } from "../data";
 import {
@@ -14,7 +14,7 @@ import {
   TableRow,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { Kredit } from "./Form";
+import { Kredit } from "../Components/Form";
 
 const calculateRowSpan = (data, key) => {
   const rowSpanData = [];
@@ -34,7 +34,7 @@ const calculateRowSpan = (data, key) => {
 
 const rowSpanAmount = calculateRowSpan(PenempatanDana, "amount");
 
-const SyaratForm = () => {
+const SyaratTabungan = () => {
   let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
 
@@ -51,7 +51,7 @@ const SyaratForm = () => {
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Kredit"}
+          TitleBanner={"Deposito"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -60,7 +60,7 @@ const SyaratForm = () => {
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={"Kredit"} />
+        <TitleBlueBanner title={"Deposito"} />
       </section>
 
       <section className="pt-10 flex justify-center">
@@ -314,4 +314,4 @@ const SyaratForm = () => {
 };
 
 // mahes 7 agustus 2024
-export default SyaratForm;
+export default SyaratTabungan;

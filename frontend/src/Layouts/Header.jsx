@@ -117,9 +117,9 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Kredit</Link>
-                            <Link to={"/"}>Deposit</Link>
-                            <Link to={"/"}>Tabungan</Link>
+                            <Link to={"/kredit"}>Kredit</Link>
+                            <Link to={"/deposito"}>Deposit</Link>
+                            <Link to={"/tabungan"}>Tabungan</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -138,10 +138,11 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Pick Up</Link>
+                            <Link to={"/pick-up-service"}>Pick Up</Link>
+                            <Link to={"/"}>Armor Properti</Link>
                             <Link to={"/"}>Sponsor</Link>
                             <Link to={"/"}>Promo</Link>
-                            <Link to={"/"}>Sponsor</Link>
+                            <Link to={"/"}>Laporan</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -201,6 +202,7 @@ const AboutUs = () => {
     { name: "Sejarah", link: "/" },
     { name: "Visi Misi", link: "/" },
     { name: "Struktur Organisasi", link: "/" },
+    { name: "Lokasi", link: "/lokasi" },
   ];
 
   return <MenuList items={items} />;
@@ -208,9 +210,9 @@ const AboutUs = () => {
 
 const Product = () => {
   const items = [
-    { name: "Kredit", link: "/syarat" },
-    { name: "Deposit", link: "/" },
-    { name: "Tabungan", link: "/" },
+    { name: "Kredit", link: "/kredit" },
+    { name: "Deposit", link: "/deposito" },
+    { name: "Tabungan", link: "/tabungan" },
   ];
 
   return <MenuList items={items} />;
@@ -218,7 +220,9 @@ const Product = () => {
 
 const Service = () => {
   const items = [
-    { name: "Sosial Media", link: "/" },
+    { name: "Pick Up", link: "/pick-up-service" },
+    { name: "Armor Properti", link: "/" },
+    { name: "Kalkulator", link: "/" },
     { name: "Promo", link: "/" },
     { name: "Sponsor", link: "/" },
     { name: "Laporan", link: "/" },
