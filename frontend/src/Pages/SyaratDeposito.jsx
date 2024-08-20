@@ -15,7 +15,44 @@ import {
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { Kredit } from "../Components/Form";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import { IsiKredit } from "../data/DataProduk";
 
+// ===================================================
+const buttonMenuTabungan = [
+  {
+    id: 1,
+    icon: (className) => <TrendingUpIcon className={className} />,
+    title: "Kredit Investasi",
+    deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
+  },
+  {
+    id: 2,
+    icon: (className) => <TrendingUpIcon className={className} />,
+    title: "Kredit Modal",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    id: 3,
+    icon: (className) => <TrendingUpIcon className={className} />,
+    title: "Kredit KPR",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    id: 4,
+    icon: (className) => <TrendingUpIcon className={className} />,
+    title: "Kredit Multiguna",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    id: 5,
+    icon: (className) => <TrendingUpIcon className={className} />,
+    title: "Kredit Pensiun",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+  },
+];
+
+// =================== Tabel ===========================
 const calculateRowSpan = (data, key) => {
   const rowSpanData = [];
   let count = 1;
@@ -37,13 +74,21 @@ const rowSpanAmount = calculateRowSpan(PenempatanDana, "amount");
 const SyaratDeposito = () => {
   let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
+  const [menu, setMenu] = useState(0);
 
   function updateTabs(id) {
     setTabs(id);
   }
 
+  function updateMenu(id) {
+    setMenu(id);
+  }
+
   function nextTab(id) {
     updateTabs(id + 1);
+  }
+  function prevTab(id) {
+    updateTabs(id - 1);
   }
 
   return (
@@ -51,7 +96,7 @@ const SyaratDeposito = () => {
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Deposito"}
+          TitleBanner={"Kredit"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -60,258 +105,264 @@ const SyaratDeposito = () => {
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={"Deposito"} />
+        <TitleBlueBanner title={"Kredit"} />
       </section>
 
-      <section className="pt-10 flex justify-center">
-        <div
-          onClick={() => updateTabs(1)}
-          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-            tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-          }`}
-        >
-          Syarat
-        </div>
-        <div
-          onClick={() => updateTabs(2)}
-          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-            tabs === 2 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-          }`}
-        >
-          Ketentuan
-        </div>
-        <div
-          onClick={() => updateTabs(3)}
-          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-            tabs === 3 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-          }`}
-        >
-          Tabel
-        </div>
-        <div
-          onClick={() => updateTabs(4)}
-          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-            tabs === 4 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-          }`}
-        >
-          Pengajuan
-        </div>
-      </section>
-
-      <section className="sm:pb-16 m-8 bg-abuTerang p-10 rounded-lg">
-        {/* Syarat */}
-        {tabs === 1 ? (
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-            className="mx-6 sm:mx-10 sm:px-10 "
-          >
-            {" "}
-            <ul className="text-abuGelap ml-5">
-              <h3 className={`${styles.heading5} text-black my-5`}>
-                A. Keuntungan
-              </h3>
-              <ul className="list-inside list-disc pl-16">
-                <li>
-                Proses Cepat, 5 Hari Kerja {" "}
-                </li> <br />
-                <li>
-                Syarat Mudah & Fleksibel
-                </li> <br />
-                <li>
-                Aman & Terpecaya
-                </li>
-              </ul>
-
-              <h3 className={`${styles.heading5} text-black my-5`}>
-                B. Fitur
-              </h3>
-              <ul className="list-inside list-disc pl-16">
-                <li>
-                  Suku bunga kredit kompetitif <b>dibanding </b>bank lainnya
-                </li>
-                <li>
-                Jangka waktu kredit hingga <b> 1 tahun dan bisa diperpanjang</b>
-                </li>
-                <li>Pinjaman kredit 500 juta hingga 30 Milyar.</li>
-                <li>Presentase pembiayaan hingga <b>60% dari nilai jaminan</b>.</li>
-                <li>Jaminan: <br />
-                  - SHM (Sertifikat Hak Milik) <br />
-                  - SHGB (Sertifikat Hak Guna Bangunan) untuk rumah, ruko, rukan, atau tanah kosong untuk dibangun <br />
-                  - BPKB Kendaraan (sebagai agunan tambahan)</li>
-              </ul>
-
-              <h3 className={`${styles.heading5} text-black my-5 `}>
-                C. Syarat
-              </h3>
-              <ul className="list-inside list-disc pl-16">
-                <li>Foto copy <b>identitas</b> calon debitur dan suami/istrinya serta identitas pemilik jaminan dan suami/istri yang masih berlaku, </li>
-                <li>Foto copy <b>kartu keluarga</b> calon debitur dan pemilik agunan, </li>
-                <li>Foto copy <b>surat nikah</b>,</li>
-                <li>Foto copy bukti kepemilikan agunan berupa <b>BPKB beserta STNK dan atau sertifikat tanah beserta PBB terakhir</b>.</li>
-                
-              </ul>
-            </ul>
-          </motion.div>
-        ) : null}
-
-        {/* Ketentuan */}
-        {tabs === 2 ? (
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-            className="mx-7 sm:mx-10 sm:px-10"
-          >
-            <ul className="text-abuGelap ml-5">
-              <h3 className={`${styles.heading5} text-black my-4`}>
-                D. Ketentuan
-              </h3>
-              <ul className="list-inside list-disc pl-16">
-                <li className="p-4">
-                Suku bunga 10.25% fix 1 tahun. Bunga floating: tahun berikutnya, Suku bunga LPS BPR + 7%
-                </li>
-                <li className="p-4">
-                Jangka waktu kredit hingga 8 tahun hingga 20 tahun.
-                </li>
-                <li className="p-4">
-                Pembiayaan : Tanah dan Bangunan 80%
-                </li>
-                <li className="p-4">
-                Usia debitur minimal 21 th dan pada saat jatuh tempo kredit / maksimal 1 tahun sebelum pensiun, khusus untuk wiraswasta dan profesional pada saat jatuh tempo kredit usia maksimal 70 th.
-                </li>
-                <li className="p-4">
-                DP mulai 10%
-                </li>
-                <li className="p-4">
-                Bebas biaya provisi untuk take over kredit
-                </li>
-                <li className="p-4">
-                Pelunasan dalam masa fix rate berjalan, dikenakan pinalty
-                </li>
-              </ul>
-            </ul>
-          </motion.div>
-        ) : null}
-
-        {/* Tabel */}
-        {tabs === 3 ? (
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-            className="mx-6 sm:mx-10 sm:px-10"
-          >
-            <h3 className={`${styles.heading5} text-black my-4 ml-5`}>
-              D. Tabel Penempatan Dana
-            </h3>
-
-            <TableContainer component={Paper}>
-              <Table>
-                <TableHead>
-                  <TableRow className="bg-biruMuda-400">
-                    <TableCell
-                      align="center"
-                      style={{ border: "1px solid black" }}
-                    >
-                      No
-                    </TableCell>
-                    <TableCell style={{ border: "1px solid black" }}>
-                      Nominal Tabungan
-                    </TableCell>
-                    <TableCell style={{ border: "1px solid black" }}>
-                      Jangka Waktu (Tahun)
-                    </TableCell>
-                    <TableCell style={{ border: "1px solid black" }}>
-                      Nominal Hadiah
-                    </TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {PenempatanDana.map((row, index) => {
-                    let shouldRenderAmountCell = false;
-
-                    if (
-                      index === 0 ||
-                      row.amount !== PenempatanDana[index - 1].amount
-                    ) {
-                      shouldRenderAmountCell = true;
-                    }
-
-                    const amountCell = shouldRenderAmountCell ? (
-                      <TableCell
-                        rowSpan={rowSpanAmount[amountIndex]}
-                        style={{ border: "1px solid black" }}
-                      >
-                        {row.amount.toLocaleString("id-ID")}
-                      </TableCell>
-                    ) : null;
-
-                    if (shouldRenderAmountCell) {
-                      amountIndex += 1;
-                    }
-
-                    return (
-                      <TableRow key={index}>
-                        <TableCell
-                          align="center"
-                          style={{ border: "1px solid black" }}
-                        >
-                          {index + 1}
-                        </TableCell>
-                        {amountCell}
-                        <TableCell style={{ border: "1px solid black" }}>
-                          {row.term}
-                        </TableCell>
-                        <TableCell style={{ border: "1px solid black" }}>
-                          {row.reward.toLocaleString("id-ID")}
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </motion.div>
-        ) : null}
-
-        {/* Form */}
-        {tabs === 4 ? (
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-            className="mx-6 sm:mx-10 sm:px-10"
-          >
-            <div className={`${styles.flexCenter}`}>
-              <FormBank
-                isiPenting={<Kredit />}
-                value={"Kredit"}
-                endpoint={"http://localhost:8000/api/kredit"}
-              />
+      {/* Menu utama */}
+      {menu === 0 ? (
+        <section className="">
+          {/* filter button  click */}
+          <div className=" flex gap-3 justify-center m-10">
+            <div
+              className={`${styles.fontBody} font-semibold bg-biruMuda-500 p-3 rounded-lg text-white`}
+            >
+              Datang Ke bank
             </div>
-          </motion.div>
-        ) : null}
-      </section>
+            <div
+              className={`${styles.fontBody} font-semibold border-2 border-biruMuda-500 p-3 rounded-lg text-biruMuda-500`}
+            >
+              Via online
+            </div>
+          </div>
 
-      <section className="flex ml-16">
-        <div
-          onClick={() => nextTab(tabs)}
-          className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-            tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-          }`}
-        >
-          next
-        </div>
-      </section>
+          {/* menu button */}
+          <div className="grid grid-cols-3 gap-8 justify-center justify-items-center">
+            {buttonMenuTabungan.map((menu, index) => (
+              <div
+                className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
+                key={index}
+                onClick={() => updateMenu(menu.id)}
+              >
+                {menu.icon("m-2 text-blue-400")}
+                <h6 className={`${styles.heading6}`}>{menu.title}</h6>
+                <p className="mt-4">{menu.deskripsi}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {IsiKredit.map((kredit) => {
+        return menu === kredit.id ? (
+          <section key={kredit.id}>
+            {/* Menu pilihan */}
+            <section className="pt-10 flex justify-center">
+              <div
+                onClick={() => updateTabs(1)}
+                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+                  tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""
+                }`}
+              >
+                Syarat
+              </div>
+              <div
+                onClick={() => updateTabs(2)}
+                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+                  tabs === 2 ? "bg-biruMuda-500 text-primary rounded-md" : ""
+                }`}
+              >
+                Ketentuan
+              </div>
+              <div
+                onClick={() => updateTabs(3)}
+                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+                  tabs === 3 ? "bg-biruMuda-500 text-primary rounded-md" : ""
+                }`}
+              >
+                Tabel
+              </div>
+              <div
+                onClick={() => updateTabs(4)}
+                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+                  tabs === 4 ? "bg-biruMuda-500 text-primary rounded-md" : ""
+                }`}
+              >
+                Pengajuan
+              </div>
+            </section>
+
+            {/* Isi dari Menu */}
+            <section className="sm:pb-16 m-8 bg-abuTerang md:p-10 p-4 rounded-lg">
+              {/* Syarat */}
+              {tabs === 1 ? (
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5 }}
+                  className="mx-6 sm:mx-10 sm:px-10 "
+                >
+                  <ul className="text-abuGelap sm:ml-4">
+                    <h3 className={`${styles.heading5} text-black my-5`}>
+                      A. Keuntungan
+                    </h3>
+                    {kredit.Keuntungan}
+
+                    <h3 className={`${styles.heading5} text-black my-5 `}>
+                      B. Fitur
+                    </h3>
+
+                    {kredit.Fitur}
+
+                    <h3 className={`${styles.heading5} text-black my-5`}>
+                      C. Syarat Pembukuan rekening
+                    </h3>
+                    {kredit.Syarat}
+                  </ul>
+                </motion.div>
+              ) : null}
+
+              {/* Ketentuan */}
+              {tabs === 2 ? (
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5 }}
+                  className="mx-7 md:mx-10 md:px-10"
+                >
+                  <ul className="text-abuGelap sm:ml-4">
+                    <h3 className={`${styles.heading5} text-black my-4`}>
+                      D. Ketentuan
+                    </h3>
+                    {kredit.Ketentuan}
+                  </ul>
+                </motion.div>
+              ) : null}
+
+              {/* Tabel */}
+              {tabs === 3 ? (
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5 }}
+                  className="md:mx-10 md:px-10"
+                >
+                  <h3
+                    className={`${styles.heading5} text-black my-4 ml-8 sm:ml-4`}
+                  >
+                    D. Tabel Penempatan Dana
+                  </h3>
+
+                  <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="data tabel">
+                      <TableHead>
+                        <TableRow className="bg-biruMuda-400">
+                          <TableCell
+                            align="center"
+                            style={{ border: "1px solid black" }}
+                          >
+                            No
+                          </TableCell>
+                          <TableCell style={{ border: "1px solid black" }}>
+                            Nominal Tabungan
+                          </TableCell>
+                          <TableCell style={{ border: "1px solid black" }}>
+                            Jangka Waktu (Tahun)
+                          </TableCell>
+                          <TableCell style={{ border: "1px solid black" }}>
+                            Nominal Hadiah
+                          </TableCell>
+                        </TableRow>
+                      </TableHead>
+
+                      <TableBody>
+                        {kredit.Tabel.map((row, index, idx) => {
+                          let shouldRenderAmountCell = false;
+
+                          if (
+                            index === 0 ||
+                            row.amount !== PenempatanDana[index - 1].amount
+                          ) {
+                            shouldRenderAmountCell = true;
+                          }
+
+                          const amountCell = shouldRenderAmountCell ? (
+                            <TableCell
+                              rowSpan={rowSpanAmount[amountIndex]}
+                              style={{ border: "1px solid black" }}
+                            >
+                              {row.amount.toLocaleString("id-ID")}
+                            </TableCell>
+                          ) : null;
+
+                          if (shouldRenderAmountCell) {
+                            amountIndex += 1;
+                          }
+
+                          return (
+                            <TableRow key={idx}>
+                              <TableCell
+                                align="center"
+                                style={{ border: "1px solid black" }}
+                              >
+                                {index + 1}
+                              </TableCell>
+                              {amountCell}
+                              <TableCell style={{ border: "1px solid black" }}>
+                                {row.term}
+                              </TableCell>
+                              <TableCell style={{ border: "1px solid black" }}>
+                                {row.reward.toLocaleString("id-ID")}
+                              </TableCell>
+                            </TableRow>
+                          );
+                        })}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </motion.div>
+              ) : null}
+
+              {/* Form */}
+              {tabs === 4 ? (
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5 }}
+                  className="mx-6 sm:mx-10 sm:px-10"
+                >
+                    <FormBank
+                      isiPenting={<Kredit />}
+                      value={"Kredit"}
+                      endpoint={"http://localhost:8000/api/kredit"}
+                    />
+                </motion.div>
+              ) : null}
+            </section>
+
+            {/* Button next prev */}
+            <section className="flex justify-center gap-4">
+              <div
+                onClick={() => updateMenu(0)}
+                className={`bg-biruMuda-200 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
+              >
+                Kembali Menu
+              </div>
+              <div
+                onClick={() => prevTab(tabs)}
+                className={`${
+                  tabs === 1 && "hidden"
+                } text-biruMuda-500 border-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-4 py-2 rounded-md font-bold cursor-pointer`}
+              >
+                prev
+              </div>
+              <div
+                onClick={() => nextTab(tabs)}
+                className={`${
+                  tabs === 4 && "hidden"
+                } bg-biruMuda-500 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
+              >
+                next
+              </div>
+            </section>
+          </section>
+        ) : null;
+      })}
     </>
   );
 };
 
-// mahes 7 agustus 2024
 export default SyaratDeposito;

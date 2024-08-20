@@ -146,6 +146,44 @@ export const formSelectTabungan = [
   },
 ];
 
+export const formUsahaSponsor = [
+  {
+    id: "Warung",
+    title: "Warung Makan",
+  },
+  {
+    id: "Restoran",
+    title: "Restoran",
+  },
+  {
+    id: "toko",
+    title: "Toko Kelontong",
+  },
+  {
+    id: "lainnya",
+    title: "Lainnya",
+  },
+];
+
+export const formJenisSponsor = [
+  {
+    id: "MMT",
+    title: "MMT",
+  },
+  {
+    id: "tissue",
+    title: "Tempat Tissue / Gelas",
+  },
+  {
+    id: "meja",
+    title: "Nomor Meja",
+  },
+  {
+    id: "lainnya",
+    title: "Lainnya",
+  },
+];
+
 // ===================== TABEL ======================
 export const PenempatanDana = [
   { amount: 100000000, term: "1 tahun", reward: 4000000 },

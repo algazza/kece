@@ -139,9 +139,10 @@ const Header = () => {
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
                             <Link to={"/pick-up-service"}>Pick Up</Link>
-                            <Link to={"/"}>Armor Properti</Link>
-                            <Link to={"/"}>Sponsor</Link>
+                            <Link to={"/armor-properti"}>Armor Properti</Link>
+                            <Link to={"/"}>Kalkulator</Link>
                             <Link to={"/"}>Promo</Link>
+                            <Link to={"/sponsor"}>Sponsor</Link>
                             <Link to={"/"}>Laporan</Link>
                           </li>
                         </ul>
@@ -221,10 +222,10 @@ const Product = () => {
 const Service = () => {
   const items = [
     { name: "Pick Up", link: "/pick-up-service" },
-    { name: "Armor Properti", link: "/" },
+    { name: "Armor Properti", link: "/armor-properti" },
     { name: "Kalkulator", link: "/" },
     { name: "Promo", link: "/" },
-    { name: "Sponsor", link: "/" },
+    { name: "Sponsor", link: "/sponsor" },
     { name: "Laporan", link: "/" },
   ];
 

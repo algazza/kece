@@ -3,7 +3,7 @@ import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import FormBank from "../Components/FormBank";
 import styles from "../data/style";
-import { PenempatanDana, BlueBanner} from "../data";
+import { PenempatanDana, BlueBanner } from "../data";
 import {
   Paper,
   Table,
@@ -126,7 +126,7 @@ const SyaratKredit = () => {
         <TitleBlueBanner title={"Kredit"} />
       </section>
 
-{/* Menu utama */}
+      {/* Menu utama */}
       {menu === 0 ? (
         <section className="">
           {/* filter button  click */}
@@ -144,7 +144,7 @@ const SyaratKredit = () => {
           </div>
 
           {/* menu button */}
-          <div className="grid grid-cols-3 gap-8 justify-center justify-items-center">
+          <div className="grid md:grid-cols-3 gap-8 justify-center justify-items-center">
             {buttonMenuTabungan.map((menu, index) => (
               <div
                 className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
@@ -211,7 +211,6 @@ const SyaratKredit = () => {
                   className="mx-6 sm:mx-10 sm:px-10 "
                 >
                   <ul className="text-abuGelap sm:ml-4">
-
                     <h3 className={`${styles.heading5} text-black my-5`}>
                       A. Keuntungan
                     </h3>
@@ -343,19 +342,17 @@ const SyaratKredit = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-6 sm:mx-10 sm:px-10"
                 >
-                  <div className={`${styles.flexCenter}`}>
                     <FormBank
                       isiPenting={<Kredit />}
                       value={"Kredit"}
                       endpoint={"http://localhost:8000/api/kredit"}
                     />
-                  </div>
                 </motion.div>
               ) : null}
             </section>
 
             {/* Button next prev */}
-            <section className="flex ml-16 gap-4">
+            <section className="flex justify-center gap-4">
               <div
                 onClick={() => updateMenu(0)}
                 className={`bg-biruMuda-200 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
