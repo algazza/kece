@@ -18,9 +18,9 @@ const App = () => {
             <a
               href="https://www.instagram.com/stories/highlights/18006888113341028/"
               target="_blank"
-              className={`bg-[#25D366] rounded-full w-[40px] h-[40px] ${styles.flexCenter} z-[1]`}
+              className={`bg-[#25D366] rounded-full w-[55px] h-[55px] ${styles.flexCenter} z-[1]`}
             >
-              <WhatsAppIcon className="" />
+              <WhatsAppIcon className="text-white" />
             </a>
             <motion.div
               initial={{ opacity: 1, scale: 1 }}
