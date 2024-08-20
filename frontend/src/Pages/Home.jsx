@@ -92,28 +92,28 @@ const menuHome = [
 
 const penghargaanHome = [
   {
-    icon: (className) => <MovingIcon className={className} />,
+    icon: (className, sx) => <MovingIcon sx={sx} className={className} />,
     title: "Terbesar Dikota Semarang",
     description: "BPR Terbesar Nomer 3 di Kota Semarang.",
   },
   {
-    icon: (className) => <EmojiEventsIcon className={className} />,
+    icon: (className, sx) => <EmojiEventsIcon sx={sx} className={className} />,
     title: "Memiliki 6 penghargaan",
     description: "Top 100 BPR 2023 versi majalah The Finance.",
   },
   {
-    icon: (className) => <AutoAwesomeIcon className={className} />,
+    icon: (className, sx) => <AutoAwesomeIcon sx={sx} className={className} />,
     title: "Berkomitmen Untuk Terus Berinovasi",
     description:
       "Terus berinovasi sesuai dengan perkembangan jaman untuk memenuhi kebutuhan nasabah.",
   },
   {
-    icon: (className) => <LocalAtmIcon className={className} />,
+    icon: (className, sx) => <LocalAtmIcon sx={sx} className={className} />,
     title: "Memiliki Bunga Yang Rendah",
     description: "Dengan bunga yang ringan dapat menunjang usaha anda.",
   },
   {
-    icon: (className) => <GroupsIcon className={className} />,
+    icon: (className, sx) => <GroupsIcon sx={sx} className={className} />,
     title: "Memberikan Layanan yang Terbaik",
     description:
       "BPR Arto Moro selalu memberikan pelayanan yang terbaik untuk nasasbah.",
@@ -214,7 +214,7 @@ const Home = () => {
                 index === 0 ? "md:col-span-2" : ""
               }`}
             >
-              {award.icon("m-4 text-purple-800")}
+              {award.icon("m-4 text-purple-800 text-5xl", {fontSize: "3.5rem"})}
               <div>
                 <h5 className={`${styles.heading5}`}>{award.title}</h5>
                 <p className={`${styles.fontBody}`}>{award.description}</p>
@@ -225,7 +225,7 @@ const Home = () => {
       </section>
 
       <section className={`${styles.paddingY}`}>
-        <h2 className={`${styles.heading3} text-center mb-12`}>
+        <h2 className={`${styles.heading3}  text-center mb-12`}>
           Company Profile
         </h2>
         <div className={`${styles.flexCenter}`}>
