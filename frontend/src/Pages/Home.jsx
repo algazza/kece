@@ -158,9 +158,9 @@ const Home = () => {
         </div>
         <div className="flex justify-center items-start py-4 sm:px-8 sm:gap-8 gap-2">
           <motion.div
-            className={`grid sm:grid-cols-x5170 grid-cols-3 gap-x-2 gap-y-8 sm:gap-8 justify-center`}
+            className={`grid sm:grid-cols-x5170 grid-cols-3 gap-x-2 gap-y-8 sm:gap-8 justify-center  p-4 rounded-lg border-b-4 border-abu `}
             initial={{ height: "5.5rem", overflow: "hidden" }}
-            animate={{ height: openMenu ? "auto" : "5.5rem" }}
+            animate={{ height: openMenu ? "auto" : "5.9rem" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             {menuHome.map((menu) => (
