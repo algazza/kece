@@ -25,8 +25,8 @@ const NewsTemplate = ({
       .then(data => {
         setNewsData(data);
       })
-      .catch(error => {
-        console.error("Error fetching news data:", error);
+      .catch((err) => {
+        toast.error("Gagal Memunculkan News!");
       });
   }, []);
 
@@ -88,8 +88,6 @@ const NewsTemplate = ({
             </div>
             <section className="grid sm:grid-cols-x550 justify-center gap-6 sm:gap-12">
               {newsData.slice(0, 2).map((news) => {
-                console.log('News Data:', news); 
-                console.log('Created At:', news.created_at); 
                 return (
                   <div
                     key={news.id}

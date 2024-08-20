@@ -11,7 +11,7 @@ const PickupPage = () => {
         <section>
           <IntroBanner
             ImageBanner={BlueBanner}
-            TitleBanner={"Deposito"}
+            TitleBanner={"Pick Up Service"}
             DescriptionBanner={`
                   Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                   memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -20,7 +20,7 @@ const PickupPage = () => {
                   keperluan Anda.
                 `}
           />
-          <TitleBlueBanner title={"Deposito"} />
+          <TitleBlueBanner title={"Pick Up Service"} />
         </section>
 
         <section className={`${styles.flexCenter}`}>

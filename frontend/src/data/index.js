@@ -1,7 +1,8 @@
+import React from 'react';
 // ======================== IMAGE ===========================
 import logoArmor from "../img/LOGO-AM-CORAL-BARU.svg";
 import BlueBanner from "../img/sampleimage.svg";
-import sample from "../img/sampleNews.svg"
+import sample from "../img/sampleNews.svg";
 import partnerImage1 from "../img/partnerImage1.svg";
 import partnerImage2 from "../img/partnerImage2.svg";
 import partnerImage3 from "../img/partnerImage3.svg";
@@ -10,14 +11,18 @@ import partnerImage5 from "../img/partnerImage5.svg";
 import partnerImage6 from "../img/partnerImage6.svg";
 import partnerImage7 from "../img/partnerImage7.svg";
 import nunezimg from "../img/668f755b3c2ba.jpg";
-import sampleNews from "../img/sample-news-684x385.jpg"
-import sampleBanner from "../img/samplebanner.svg"
-import phoneimg from "../img/phoneimg.svg"
+import sampleNews from "../img/sample-news-684x385.jpg";
+import sampleBanner from "../img/samplebanner.svg";
+import phoneimg from "../img/phoneimg.svg";
+import BennerLiv from "../img/sampleliv.svg";
+import Banneremyu from "../img/Banner2.svg";
 
 export {
   logoArmor,
   BlueBanner,
   sampleBanner,
+  BennerLiv,
+  Banneremyu,
   phoneimg,
   sample,
   nunezimg,
@@ -30,8 +35,6 @@ export {
   partnerImage6,
   partnerImage7,
 };
-
-
 
 // =========================== FORM ====================
 export const formIdentitas = [
@@ -140,6 +143,44 @@ export const formSelectTabungan = [
   {
     id: "lainnya",
     title: "Tabungan Lainnya",
+  },
+];
+
+export const formUsahaSponsor = [
+  {
+    id: "Warung",
+    title: "Warung Makan",
+  },
+  {
+    id: "Restoran",
+    title: "Restoran",
+  },
+  {
+    id: "toko",
+    title: "Toko Kelontong",
+  },
+  {
+    id: "lainnya",
+    title: "Lainnya",
+  },
+];
+
+export const formJenisSponsor = [
+  {
+    id: "MMT",
+    title: "MMT",
+  },
+  {
+    id: "tissue",
+    title: "Tempat Tissue / Gelas",
+  },
+  {
+    id: "meja",
+    title: "Nomor Meja",
+  },
+  {
+    id: "lainnya",
+    title: "Lainnya",
   },
 ];
 

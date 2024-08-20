@@ -40,13 +40,13 @@ const Header = () => {
           className={`list-none sm:flex hidden justify-end items-center flex-1 gap-12 ${styles.fontBody} font-semibold`}
         >
           <li>
-            <Link to={"/"}>Home</Link>
+            <FlyoutLink href={"/"}>Home</FlyoutLink>
           </li>
           <li>
             <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink to={"/news"}>News</FlyoutLink>
+            <FlyoutLink href={"/news"}>News</FlyoutLink>
           </li>
           <li>
             <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>
@@ -95,6 +95,7 @@ const Header = () => {
                             <Link to={"/"}>Sejarah</Link>
                             <Link to={"/"}>Visi Misi</Link>
                             <Link to={"/"}>Struktur Organisasi</Link>
+                            <Link to={"/lokasi"}>Lokasi</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -116,9 +117,9 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Kredit</Link>
-                            <Link to={"/"}>Deposit</Link>
-                            <Link to={"/"}>Tabungan</Link>
+                            <Link to={"/kredit"}>Kredit</Link>
+                            <Link to={"/deposito"}>Deposit</Link>
+                            <Link to={"/tabungan"}>Tabungan</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -137,10 +138,12 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Sosial Media</Link>
-                            <Link to={"/"}>Sponsor</Link>
+                            <Link to={"/pick-up-service"}>Pick Up</Link>
+                            <Link to={"/armor-properti"}>Armor Properti</Link>
+                            <Link to={"/"}>Kalkulator</Link>
                             <Link to={"/"}>Promo</Link>
-                            <Link to={"/"}>Sponsor</Link>
+                            <Link to={"/sponsor"}>Sponsor</Link>
+                            <Link to={"/"}>Laporan</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -156,14 +159,13 @@ const Header = () => {
   );
 };
 
-const FlyoutLink = ({ children, href, FlyoutContent, to }) => {
+const FlyoutLink = ({ children, href, FlyoutContent}) => {
   const [open, setOpen] = useState(false);
 
   const showFlyout = open && FlyoutContent;
 
   return (
-    <Link
-    to={to}
+    <div
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
       className="relative h-fit w-fit"
@@ -191,7 +193,7 @@ const FlyoutLink = ({ children, href, FlyoutContent, to }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </Link>
+    </div>
   );
 };
 
@@ -201,6 +203,7 @@ const AboutUs = () => {
     { name: "Sejarah", link: "/" },
     { name: "Visi Misi", link: "/" },
     { name: "Struktur Organisasi", link: "/" },
+    { name: "Lokasi", link: "/lokasi" },
   ];
 
   return <MenuList items={items} />;
@@ -208,9 +211,9 @@ const AboutUs = () => {
 
 const Product = () => {
   const items = [
-    { name: "Kredit", link: "/syarat" },
-    { name: "Deposit", link: "/" },
-    { name: "Tabungan", link: "/" },
+    { name: "Kredit", link: "/kredit" },
+    { name: "Deposit", link: "/deposito" },
+    { name: "Tabungan", link: "/tabungan" },
   ];
 
   return <MenuList items={items} />;
@@ -218,9 +221,11 @@ const Product = () => {
 
 const Service = () => {
   const items = [
-    { name: "Sosial Media", link: "/" },
+    { name: "Pick Up", link: "/pick-up-service" },
+    { name: "Armor Properti", link: "/armor-properti" },
+    { name: "Kalkulator", link: "/" },
     { name: "Promo", link: "/" },
-    { name: "Sponsor", link: "/" },
+    { name: "Sponsor", link: "/sponsor" },
     { name: "Laporan", link: "/" },
   ];
 

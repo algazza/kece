@@ -14,25 +14,30 @@ import {
   TextareaAutosize,
 } from "@mui/material";
 import { ButtonFull, ButtonOutline } from "./Button";
-import { DatePicker, TimePicker } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import dayjs from "dayjs";
+import { toast } from "react-toastify";
 
-
-const FormBank = ({ isiPenting, value, endpoint }) => {
+const FormBank = ({
+  isiPenting,
+  value,
+  endpoint,
+  namaRadio = "pekerjaan",
+  judulRadio = "Pekerjaan",
+  dummyprops = formPekerjaan,
+}) => {
   const [inputs, setInputs] = useState({});
-  const [ip, setIp] = useState('');
+  const [ip, setIp] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     setInputs((values) => ({ ...values, jenis: value }));
 
-    axios.get('https://api.ipify.org?format=json')
-      .then(response => {
+    axios
+      .get("https://api.ipify.org?format=json")
+      .then((response) => {
         setIp(response.data.ip);
       })
-      .catch(error => {
-        console.error('Error fetching IP address:', error);
+      .catch((error) => {
+        console.error("Error fetching IP address:", error);
       });
   }, [value]);
 
@@ -44,13 +49,15 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
   };
 
   const handleDateChange = (newValue) => {
-    setInputs((values) => ({ ...values, tanggal: newValue.format('DD/MM/YYYY') }));
+    setInputs((values) => ({
+      ...values,
+      tanggal: newValue.format("DD/MM/YYYY"),
+    }));
   };
 
   const handleTimeChange = (newValue) => {
-    setInputs((values) => ({ ...values, waktu: newValue.format('HH:mm') }));
+    setInputs((values) => ({ ...values, waktu: newValue.format("HH:mm") }));
   };
-
 
   const generateCode = () => {
     const now = new Date();
@@ -76,15 +83,13 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
       .then((response) => {
         navigate("/success");
       })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("gagal");
+      .catch((err) => {
+        toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
       });
-
   };
 
   return (
-    <section className={`${styles.fontBody} mx-14 md:mx-auto `}>
+    <section className={`${styles.fontBody} mx-14 md:mx-auto ${styles.paddingY} ${styles.flexCenter}`}>
       <FormGroup className="grid mb-12 gap-6 sm:gap-12">
         <div className="">
           <h2 className={`${styles.heading3} mb-4 `}>Identitas</h2>
@@ -107,10 +112,10 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
             </div>
 
             <div className="form-control bg-abuTerang p-6 border border-black rounded-md md:col-[2/3] md:row-[1/3]">
-              <h1 className="">Pekerjaan</h1>
+              <h1 className="">{judulRadio}</h1>
               <FormGroup className="">
-                <RadioGroup name="pekerjaan" onChange={handleChange}>
-                  {formPekerjaan.map((kerja) => (
+                <RadioGroup name={namaRadio} onChange={handleChange}>
+                  {dummyprops.map((kerja) => (
                     <FormControlLabel
                       key={kerja.id}
                       control={<Radio />}
@@ -157,7 +162,12 @@ const FormBank = ({ isiPenting, value, endpoint }) => {
           onChange={handleChange}
         />
 
-        {React.cloneElement(isiPenting, { inputs, handleChange, handleDateChange, handleTimeChange  })}
+        {React.cloneElement(isiPenting, {
+          inputs,
+          handleChange,
+          handleDateChange,
+          handleTimeChange,
+        })}
 
         <div>
           <div className="flex flex-col gap-2 ">

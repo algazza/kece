@@ -3,7 +3,6 @@ import styles from "../data/style";
 import CheckIcon from "@mui/icons-material/Check";
 import { ButtonOutline } from "../Components/Button";
 import { motion } from "framer-motion";
-import Header from "../Layouts/Header";
 
 const Success = () => {
   return (
@@ -48,6 +47,7 @@ const Success = () => {
             TopShadow="top-2"
             LeftShadow="left-[33px]"
             href={"https://www.instagram.com/stories/didadump.0_0/3435543072674076975/"}
+            // https://wa.me/+62882006969408?text=I'm%20interested%20in%20your%20car%20for%20sale
             target={"_blank"}
           >
             Whatsapp

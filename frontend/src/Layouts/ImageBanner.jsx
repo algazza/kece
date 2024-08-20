@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const ImageBanner = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [ImageHeight, setImageHeight] = useState("auto")
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -25,8 +26,13 @@ const ImageBanner = ({ images }) => {
     setCurrentIndex(index);
   };
 
+  const handleImageLoad = (event) => {
+    setImageHeight(`${event.target.offsetHeight}px`);
+  };
+
+
   return (
-    <Box className="relative w-full h-[500px]">
+    <Box className="relative w-full" style={{ height: ImageHeight }}>
       <AnimatePresence initial={false}>
         <motion.img
           key={currentIndex}
@@ -41,6 +47,7 @@ const ImageBanner = ({ images }) => {
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           onDragEnd={handleDragEnd}
+          onLoad={handleImageLoad}
         />
       </AnimatePresence>
       <Box className="absolute bottom-4 left-8 flex space-x-2">
