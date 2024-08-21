@@ -44,7 +44,7 @@ const FormBank = ({
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    
+
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
@@ -90,7 +90,7 @@ const FormBank = ({
 
   return (
     <section className={`${styles.fontBody} mx-14 md:mx-auto ${styles.paddingY} ${styles.flexCenter}`}>
-      <FormGroup className="grid mb-12 gap-6 sm:gap-12" >
+      <FormGroup className="grid mb-12 gap-6 sm:gap-12">
         <div className="">
           <h2 className={`${styles.heading3} mb-4 `}>Identitas</h2>
 
