@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Deposito;
 use Carbon\Carbon;
 use App\Models\Kredit;
 use App\Models\Pickup;
@@ -34,8 +35,9 @@ class DashboardController extends Controller
     {
         $kreditData = Kredit::orderBy('created_at', 'desc')->get();
         $pickupData = Pickup::orderBy('created_at', 'desc')->get();
+        $depositoData = Deposito::orderBy('created_at', 'desc')->get();
     
-        $dashboard = $kreditData->concat($pickupData)->sortByDesc('created_at')->values();
+        $dashboard = $kreditData->concat($pickupData)->concat($depositoData)->sortByDesc('created_at')->values();
     
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
 
@@ -64,7 +66,7 @@ class DashboardController extends Controller
 
     public function getTotalData()
     {
-        $totalData = Kredit::count() + Pickup::count();
+        $totalData = Kredit::count() + Pickup::count() + Deposito::count();
         return response()->json(['totalData' => $totalData]);
     }
 
