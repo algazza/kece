@@ -16,6 +16,7 @@ import KreditMenu from "./Pages/KreditMenu.jsx";
 import TabunganMenu from "./Pages/TabunganMenu.jsx";
 import ArmorProp from "./Pages/ArmorProp.jsx";
 import Sponsor from "./Pages/Sponsor.jsx";
+import Sejarah from "./Pages/Sejarah.jsx";
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "lokasi",
         element: <LocationPage />,
+      },
+      {
+        path: "sejarah",
+        element: <Sejarah />,
       },
       {
         path: "kredit",
