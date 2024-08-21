@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 
 const Success = () => {
   const location = useLocation();
-  const { nameInputs, code } = location.state || {};
+  const { nameInputs, code, value } = location.state || {};
 
   return (
     <>
@@ -56,8 +56,8 @@ const Success = () => {
                 ColorPrimary400="bg-[#41b73c] "
                 TopShadow="top-2"
                 LeftShadow="left-[33px]"
-                href={"https://www.instagram.com/didadump.0_0"}
-                // https://wa.me/+62882006969408?text=I'm%20interested%20in%20your%20car%20for%20sale
+                // href={"https://www.instagram.com/didadump.0_0"}
+                href={`https://wa.me/+6289670135228?text=I'm%20${nameInputs}%20dengan%20kode%20${code}%20pengajuan%20${value}`}
                 target={"_blank"}
               >
                 Whatsapp

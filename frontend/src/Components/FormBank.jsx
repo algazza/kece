@@ -83,7 +83,7 @@ const FormBank = ({
     axios
       .post(endpoint, updatedInputs)
       .then((response) => {
-        navigate("/success", {state: {nameInputs, code}});
+        navigate("/success", {state: {nameInputs, code, value}});
       })
       .catch((err) => {
         toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
