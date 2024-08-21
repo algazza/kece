@@ -16,7 +16,7 @@
                 <div class="p-2.5 mt-1 mb-1 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-200" onclick="Openbar()">
                   <i class='bx bxl-xing text-black'></i>
                 </div>
-                <div class="mt-[0.8rem]  flex gap-3 pl-[2.4rem]">
+                <div class="mt-[0.8rem] flex gap-3 pl-[2.4rem]">
                   <img src="{{ asset('images/Arto-Moro.png') }}" alt="" class="h-[2rem]">
                   <div class="text-[1rem] gap-1 sm:flex mt-[0.2rem] hidden ">
                     <p class="font-semibold">Admin</p>
@@ -25,8 +25,8 @@
                 </div>
               </div>
 
-              <div class="mt-[0.6rem] ml-[1rem] hidden sm:block">
-                <label class="input flex items-center gap-2 rounded-[10px] bg-gray-100 box-border border-[0.5px] border-black h-[2.5rem]">
+              <div class="mt-[0.6rem] ml-[1rem] hidden sm:block ">
+                <label class="input flex items-center gap-2 rounded-[10px] bg-gray-100 box-border border-[0.5px] border-black h-[2.5rem] ">
                   <form action="{{ route('dashboard.search') }}" method="post">
                     @csrf
                       <input type="text" class="rounded-[10px] h-[2rem] ml-[-0.8rem]" placeholder="Search" id="searchInput" name="query"/>

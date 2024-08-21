@@ -49,7 +49,7 @@
     @foreach($news as $item)
     <a href="{{ route('news.edit', ['id' => $item->id]) }}">
         <div
-            class="grid grid-flow-col bg-white shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer text-left"
+            class="grid grid-flow-col bg-white shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl text-left cursor-pointer hover:bg-gray-100 hover:scale-105 duration-300"
         >
             <div class="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
                 <img
