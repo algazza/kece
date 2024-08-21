@@ -8,6 +8,7 @@ use App\Http\Controllers\KreditController;
 use App\Http\Middleware\Admin\KreditAccess;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\NoAdminController;
 use App\Http\Controllers\PickupController;
@@ -76,6 +77,15 @@ Route::middleware(['auth', 'AdminAkses:kredit,admin'])->group(function(){
     Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
     Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
     Route::get('/api/kredit', [KreditController::class, 'data']);
+});
+
+
+Route::middleware(['auth', 'AdminAkses:deposito,admin'])->group(function(){
+    // Deposito
+    Route::get('/Deposito', [DepositoController::class, 'index'])->middleware('kredit.access')->name('deposito.index');
+    Route::get('/deposito/{id}', [DepositoController::class, 'show'])->name('deposito.show');
+    Route::get('/api/check-token/deposito', [DepositoController::class, 'checkToken']);
+    Route::get('/api/deposito', [DepositoController::class, 'data']);
 });
 
 
