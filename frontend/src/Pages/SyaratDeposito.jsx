@@ -14,7 +14,7 @@ import {
   TableRow,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { Kredit } from "../Components/Form";
+import { Deposito } from "../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../data/DataProduk";
 
@@ -96,7 +96,7 @@ const SyaratDeposito = () => {
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Kredit"}
+          TitleBanner={"Deposito"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -105,7 +105,7 @@ const SyaratDeposito = () => {
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={"Kredit"} />
+        <TitleBlueBanner title={"Deposito"} />
       </section>
 
       {/* Menu utama */}
@@ -325,9 +325,9 @@ const SyaratDeposito = () => {
                   className="mx-6 sm:mx-10 sm:px-10"
                 >
                     <FormBank
-                      isiPenting={<Kredit />}
-                      value={"Kredit"}
-                      endpoint={"http://localhost:8000/api/kredit"}
+                      isiPenting={<Deposito />}
+                      value={"Deposito"}
+                      endpoint={"http://localhost:8000/api/deposito"}
                     />
                 </motion.div>
               ) : null}
