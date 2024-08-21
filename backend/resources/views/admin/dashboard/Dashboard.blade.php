@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
+            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                 <div>
                     <div class="mt-[1.3rem]">
                         <div class="text-[5rem]">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
+            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                 <div>
                     <div class="mt-[0.5rem]">
                         <div class="text-[6rem] ">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
+            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                 <div>
  
                     <div class="mt-[0.5rem]">
