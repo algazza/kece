@@ -78,10 +78,12 @@ const FormBank = ({
   const submitForm = () => {
     const code = generateCode();
     const updatedInputs = { ...inputs, code, ip_user: ip };
+    const nameInputs = updatedInputs.nama
+
     axios
       .post(endpoint, updatedInputs)
       .then((response) => {
-        navigate("/success");
+        navigate("/success", {state: {nameInputs, code}});
       })
       .catch((err) => {
         toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");

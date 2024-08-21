@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 
 const Success = () => {
   const location = useLocation();
-  const { nameInputs } = location.state || {};
+  const { nameInputs, code } = location.state || {};
 
   return (
     <>
@@ -45,8 +45,9 @@ const Success = () => {
             <div className={`${styles.flexCenter} flex-col text-center`}>
               <h1 className={`${styles.heading1}`}>Berhasil!!</h1>
               <h2 className={`${styles.heading3} text-biruMuda-500`}>
-                {userName}
+                {nameInputs}
               </h2>
+                <p className="">code: {code}</p>
               <p className="mb-6">Silahkan Konfirmasi Dirimu Ke Nomor Ini</p>
               <ButtonOutline
                 ColorText="text-[#12a50b]"
