@@ -63,7 +63,7 @@
           </div>
 
 
-          <div class="sidebar fixed top-0 bottom-0 lg:left-0 left-[-300px] duration-1000 flex flex-col justify-between py-10
+          <div class="sidebar fixed top-0 bottom-0 duration-1000 flex flex-col justify-between py-10
             p-2 w-16 overflow-y-auto text-center bg-gray-50 shadow-2xl h-screen overflow-hidden font-semibold pt-[5rem] z-10">
             <div class="text-gray-100 text-xl">
               <div>

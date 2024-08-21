@@ -266,58 +266,16 @@ const Home = () => {
       <section className={`${styles.paddingY} px-12`}>
         <h2 className={`${styles.heading3} text-center mb-12`}>Updated News</h2>
         <div className="grid md:grid-cols-3 ss:grid-cols-2 gap-8">
-          {/* iki ono 3 apus wae ngko */}
-          <div className="p-4 bg-abuTerang rounded-xl">
-            <img src={nunezimg} alt="" className="rounded-xl" />
-            <div className="mt-4">
-              <p className={`${styles.fontSmallBold} text-merahh`}>
-                Penghargaan
-              </p>
-              <h6 className={`${styles.heading6} my-2`}>
-                Serigala Uruguay Ngambek? Darwin Nunez Hapus Hampir Semua Foto
-                Terkait Liverpool di Akun Instagramnya
-              </h6>
-              <p className={`${styles.fontSmall} text-abuGelap`}>12/01/2024</p>
-            </div>
-          </div>
-          <div className="p-4 bg-abuTerang rounded-xl">
-            <img src={nunezimg} alt="" className="rounded-xl" />
-            <div className="mt-4">
-              <p className={`${styles.fontSmallBold} text-merahh`}>
-                Penghargaan
-              </p>
-              <h6 className={`${styles.heading6} my-2`}>
-                Serigala Uruguay Ngambek? Darwin Nunez Hapus Hampir Semua Foto
-                Terkait Liverpool di Akun Instagramnya
-              </h6>
-              <p className={`${styles.fontSmall} text-abuGelap`}>12/01/2024</p>
-            </div>
-          </div>
-          <div className="p-4 bg-abuTerang rounded-xl">
-            <img src={nunezimg} alt="" className="rounded-xl" />
-            <div className="mt-4">
-              <p className={`${styles.fontSmallBold} text-merahh`}>
-                Penghargaan
-              </p>
-              <h6 className={`${styles.heading6} my-2`}>
-                Serigala Uruguay Ngambek? Darwin Nunez Hapus Hampir Semua Foto
-                Terkait Liverpool di Akun Instagramnya
-              </h6>
-              <p className={`${styles.fontSmall} text-abuGelap`}>12/01/2024</p>
-            </div>
-          </div>
-
-          {/* taakanmu hid */}
           {newsData.slice(0, 3).map((news) => (
             <div
               key={news.id}
-              className="p-4 bg-abuTerang rounded-xl"
+              className="p-4 bg-abuTerang rounded-xl cursor-pointer"
               onClick={() => navigate(`/news/${news.id}`)}
             >
               <img
                 src={`http://localhost:8000/image/public/news/${news.image}`}
                 alt={news.judul}
-                className="object-cover w-full h-full rounded-xl"
+                className="object-cover w-full h-full rounded-xl max-h-[230px]"
               />
               <div className="mt-4">
                 <p className={`${styles.fontSmallBold} text-merahh`}>

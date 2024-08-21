@@ -9,6 +9,7 @@ use App\Http\Middleware\Admin\KreditAccess;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\NoAdminController;
 use App\Http\Controllers\PickupController;
 use App\Models\Admin;
 use Illuminate\Routing\Route as RoutingRoute;
@@ -61,6 +62,12 @@ Route::middleware(['auth', 'AdminAkses:admin'])->group(function () {
     Route::delete('Admin/{id}/Delete', [AdminController::class, 'destroyAdmin'])->name('admin.delete');
     Route::get('/Admin/Add', [AdminController::class, 'viewAddUser'])->name('admin.add');
     Route::post('/Admin/Add/Post', [AdminController::class, 'store'])->name('admin.post');
+
+    // No Admin
+    Route::get('/No', [NoAdminController::class, 'viewNoAdmin'])->name('noAdmin');  
+    Route::get('/No/{id}/Edit', [NoAdminController::class, 'editData'])->name('noAdmin.edit');
+    Route::put('/No/{id}/Update', [NoAdminController::class, 'updateData'])->name('noAdmin.update');
+
 });
 
 Route::middleware(['auth', 'AdminAkses:kredit,admin'])->group(function(){
@@ -90,10 +97,6 @@ Route::middleware(['auth', 'AdminAkses:news,admin'])->group(function(){
     Route::put('/News/{id}', [NewsController::class, 'updateNews'])->name('news.update');
     Route::delete('/News/{id}/delete', [NewsController::class, 'destroyNews'])->name('news.delete');
 });
-
-
-
-
 
 
 
