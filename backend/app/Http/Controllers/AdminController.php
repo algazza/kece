@@ -106,33 +106,44 @@ class AdminController extends Controller
     }
 
     function store(Request $request){
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'no_handphone' => 'required',
-            'role' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
 
-        $admin = new Admin();
-        $admin->name = $request->name;
-        $admin->email = $request->email;
-        $admin->password = bcrypt($request->password);
-        $admin->no_handphone = $request->no_handphone;
-        $admin->role = $request->role;
-
-
-        if ($request->hasFile('image')) {
-            $imageName = time() . '.' . $request->image->extension();  
-            $request->image->move(public_path('image/admin'), $imageName);
-            $admin->image = $imageName;
-        } else {
-            $admin->image = 'profil.jpg';
-        }
+        try{
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required',
+                'password' => 'required',
+                'no_handphone' => 'required',
+                'role' => 'required',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
     
-        $admin->save();
-        return redirect()->route('admin')->with('success', 'User Berhasil Ditambahkan');
+            $admin = new Admin();
+            $admin->name = $request->name;
+            $admin->email = $request->email;
+            $admin->password = bcrypt($request->password);
+            $admin->no_handphone = $request->no_handphone;
+            $admin->role = $request->role;
+    
+    
+            if ($request->hasFile('image')) {
+                $imageName = time() . '.' . $request->image->extension();  
+                $request->image->move(public_path('image/admin'), $imageName);
+                $admin->image = $imageName;
+            } else {
+                $admin->image = 'profil.jpg';
+            }
+        
+            $admin->save();
+            return redirect()->route('admin')->with('success', 'User Berhasil Ditambahkan');
+        } catch(\Illuminate\Database\QueryException $e){
+            if($e->errorInfo[1] == 1062){
+                return redirect()->route('admin')->with('error', 'Email sudah digunakan, silakan gunakan email lain.');
+            } else {
+                return redirect()->route('admin')->with('error', 'Gagal Menambahkan User');
+            }
+        } catch(\Exception $e){
+            return redirect()->route('admin')->with('error', 'Gagal Menambahkan User');
+        }
     }
 
 

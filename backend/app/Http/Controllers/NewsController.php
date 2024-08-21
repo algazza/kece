@@ -128,10 +128,9 @@ class NewsController extends Controller
 
             $news->save();
 
-            return redirect()->route('news.form')->with('success', 'Berita berhasil ditambahkan.');
+            return redirect()->route('news')->with('success', 'Berita berhasil ditambahkan.');
         } catch (\Exception $e) {
-            Log::error('Error adding news: ' . $e->getMessage());
-            return redirect()->route('news.form')->with('error', 'Terjadi kesalahan saat menambahkan berita.');
+            return redirect()->route('news')->with('error', 'Terjadi kesalahan saat menambahkan berita.');
         }
     }
 

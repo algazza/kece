@@ -44,11 +44,11 @@ const Success = () => {
 
             <div className={`${styles.flexCenter} flex-col text-center`}>
               <h1 className={`${styles.heading1}`}>Berhasil!!</h1>
-              <h2 className={`${styles.heading3} text-biruMuda-500`}>
+              <h2 className={`${styles.heading4} text-biruMuda-500`}>
                 {nameInputs}
               </h2>
-                <p className="">code: {code}</p>
               <p className="mb-6">Silahkan Konfirmasi Dirimu Ke Nomor Ini</p>
+                <p className="">code: {code}</p>
               <ButtonOutline
                 ColorText="text-[#12a50b]"
                 ColorPrimary="border-[#12a50b]"
@@ -57,7 +57,7 @@ const Success = () => {
                 TopShadow="top-2"
                 LeftShadow="left-[33px]"
                 // href={"https://www.instagram.com/didadump.0_0"}
-                href={`https://wa.me/+6289670135228?text=I'm%20${nameInputs}%20dengan%20kode%20${code}%20pengajuan%20${value}`}
+                href={`https://wa.me/+62882006969408?text=I'm%20${nameInputs}%20dengan%20kode%20${code}%20pengajuan%20${value}`}
                 target={"_blank"}
               >
                 Whatsapp

@@ -70,9 +70,9 @@
       </a>
     @endforeach
 
+    
 </section>
 </section>
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('searchForm');

@@ -14,7 +14,6 @@
                 <form enctype="multipart/form-data" method="post" action="{{ route('admin.post') }}">
 
                     @csrf
-                    <!-- Cover Image -->
                     <div
                         class="w-full rounded-sm bg-cover bg-center bg-no-repeat items-center">
                         <div class="mx-auto flex justify-center">
