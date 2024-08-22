@@ -2,9 +2,15 @@
 
 @extends('layout')
 @section('content')
+<<<<<<< HEAD
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen font-poppins">
         <div class="flex gap-[1.5rem] pt-[5rem] pb-[2rem] px-[10rem] bg-gray-200 w-screen overflow-x-auto ">
             <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg">
+=======
+    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center font-poppins">
+        <div class="flex gap-[2rem] pt-[5rem] pb-[2rem] justify-center bg-gray-200 w-screen overflow-x-auto">
+            <div class="bg-gray-50 w-[16rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:max-w-full sm:px-6 lg:px-6">
+>>>>>>> 5959dd1 (user and resp)
                 <div>
                     <h3 id="totalData" class="absolute ml-[0.7rem] mt-[-0.2rem] text-[1.3rem] font-semibold max-w-12 mx-auto">{{ $totalData }}</h3>
                     <div class="mt-[0.5rem]">
@@ -15,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden ss:block">
                 <div>
                     <div class="mt-[1.3rem]">
                         <div class="text-[5rem]">
@@ -25,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden sm:block">
                 <div>
                     <div class="mt-[0.5rem]">
                         <div class="text-[6rem] ">
@@ -35,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden md2:block">
                 <div>
  
                     <div class="mt-[0.5rem]">
@@ -47,11 +53,19 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="flex h-[53%] ml-[10rem] mt-[-1rem] gap-8">
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
                 @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
                     <a href="{{ route('kredit.index') }}">
                         <div class="w-[31rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+=======
+        <div class="flex flex-col md:flex-row h-auto items-center md:items-start mt-[-1rem] gap-8 justify-center">
+            <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
+                @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
+                    <a href="{{ route('kredit.index') }}">
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between ">
+>>>>>>> 5959dd1 (user and resp)
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                     <i class='text-black bx bx-credit-card' ></i>
@@ -63,20 +77,26 @@
                         </div>
                     </a>
                 @endif
-                <a href="{{ route('deposito.index') }}">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-credit-card' ></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold pt-2">Deposito</h3>
+                @if (Auth::user()->role == 'deposito' || Auth::user()->role == 'admin')
+                    <a href="{{ route('deposito.index') }}">
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+                            <div class="flex">
+                                <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                    <i class='text-black bx bx-credit-card' ></i>
+                                </div>
+                                <div class="block mt-[0.8rem]">
+                                    <h3 class="text-[1.1rem] font-bold  pt-2">Deposito</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </a>
                 <a href="">
+<<<<<<< HEAD
                     <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+=======
+                    <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+>>>>>>> 5959dd1 (user and resp)
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-credit-card' ></i>
@@ -88,7 +108,11 @@
                     </div>
                 </a>
                 <a href="">
+<<<<<<< HEAD
                     <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+=======
+                    <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+>>>>>>> 5959dd1 (user and resp)
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-home' ></i>
@@ -102,7 +126,11 @@
                 </a>
                 @if (Auth::user()->role == 'pickup' || Auth::user()->role == 'admin')
                     <a href="{{ route('pickup.index') }}">
+<<<<<<< HEAD
                         <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+=======
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+>>>>>>> 5959dd1 (user and resp)
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                     <i class='text-black bx bxs-truck'></i>
@@ -116,7 +144,11 @@
                 @endif
                 @if (Auth::user()->role == 'news' || Auth::user()->role == 'admin')
                     <a href="{{ route('news') }}">
+<<<<<<< HEAD
                         <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+=======
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+>>>>>>> 5959dd1 (user and resp)
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                     <i class='text-black bx bx-news' ></i>
@@ -130,7 +162,11 @@
                 @endif
                 @if (Auth::user()->role == 'admin')
                     <a href="{{ route('admin') }}">
+<<<<<<< HEAD
                         <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+=======
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+>>>>>>> 5959dd1 (user and resp)
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                     <i class='text-black bx bx-credit-card' ></i>
@@ -143,7 +179,11 @@
                     </a>
                 @endif
                 <a href="">
+<<<<<<< HEAD
                     <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+=======
+                    <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+>>>>>>> 5959dd1 (user and resp)
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-credit-card' ></i>
@@ -156,10 +196,14 @@
                 </a>
             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div class="bg-gray-50 w-[26rem] my-[1rem] rounded-[5px] h-[100%] box-border border-[0.5px] border-black shadow-lg relative">
 =======
             <div class="bg-gray-50 w-[35rem] my-[1rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg relative">
 >>>>>>> 2e6ba57 (test)
+=======
+            <div class="bg-gray-50 w-23 sm:w-[35rem] my-[1rem] h-[39rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative">
+>>>>>>> 5959dd1 (user and resp)
                 
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
                     
