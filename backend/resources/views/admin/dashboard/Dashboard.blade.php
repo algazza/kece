@@ -155,7 +155,11 @@
                     </div>
                 </a>
             </div>
+<<<<<<< HEAD
             <div class="bg-gray-50 w-[26rem] my-[1rem] rounded-[5px] h-[100%] box-border border-[0.5px] border-black shadow-lg relative">
+=======
+            <div class="bg-gray-50 w-[35rem] my-[1rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg relative">
+>>>>>>> 2e6ba57 (test)
                 
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
                     
@@ -278,5 +282,11 @@
     });
 
     </script>
+<<<<<<< HEAD
 
 @endsection
+=======
+@endsection
+
+
+>>>>>>> 2e6ba57 (test)
