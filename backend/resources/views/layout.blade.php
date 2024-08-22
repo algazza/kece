@@ -16,7 +16,7 @@
                 <div class="p-2.5 mt-1 mb-1 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-200" onclick="Openbar()">
                   <i class='bx bxl-xing text-black'></i>
                 </div>
-                <div class="mt-[0.8rem] flex gap-3 pl-[2.4rem]">
+                <div class="mt-[0.8rem]  flex gap-3 pl-[2.4rem]">
                   <img src="{{ asset('images/Arto-Moro.png') }}" alt="" class="h-[2rem]">
                   <div class="text-[1rem] gap-1 sm:flex mt-[0.2rem] hidden ">
                     <p class="font-semibold">Admin</p>
@@ -25,8 +25,8 @@
                 </div>
               </div>
 
-              <div class="mt-[0.6rem] ml-[1rem] hidden sm:block ">
-                <label class="input flex items-center gap-2 rounded-[10px] bg-gray-100 box-border border-[0.5px] border-black h-[2.5rem] ">
+              <div class="mt-[0.6rem] ml-[1rem] hidden sm:block">
+                <label class="input flex items-center gap-2 rounded-[10px] bg-gray-100 box-border border-[0.5px] border-black h-[2.5rem]">
                   <form action="{{ route('dashboard.search') }}" method="post">
                     @csrf
                       <input type="text" class="rounded-[10px] h-[2rem] ml-[-0.8rem]" placeholder="Search" id="searchInput" name="query"/>
@@ -104,7 +104,7 @@
                   
                 </div>
               </div>
-              <div class="sm2:hidden gap-2 text-black flex ">
+              <div class="sm:hidden gap-2 text-black flex ">
                 <div class="bg-gray-100 w-[2.7rem] h-[2.7rem] justify-center text-center items-center relative  mt-[0.5rem] leading-[2.5rem] rounded-[5px] box-border border-[0.5px] border-black">
                   <img src="{{ asset('image/admin/' . (Auth::user()->image ?? 'profil.jpg'))  }}" class="h-full rounded-[4px]" id="userImage">
                 </div>
