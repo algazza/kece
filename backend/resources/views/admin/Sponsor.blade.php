@@ -7,7 +7,7 @@
           <div class="mx-auto max-w-2xl md:text-center ">
             <h2 class="font-display text-3xl tracking-tight text-center text-slate-900 sm:text-4xl bg-white py-4 px-8 rounded-md shadow-md ">Companies We Are Sponsor</h2>
           </div>
-          <div class="mx-auto flex my-8 max-w-2xl md:text-center">
+          <div class="mx-auto flex my-8 max-w-2xl md:text-cente" class="hidden sm2:block">
               <a href="#" aria-current="false"
                   class="w-full flex justify-center font-medium rounded-md px-5 py-2 border bg-white text-gray-800 border-gray-200 cursor-pointer hover:bg-gray-900 hover:scale-105 hover:text-white duration-300">
                   Warung Makan
@@ -35,300 +35,205 @@
           <ul role="list"  
             class="mx-auto mt-8 grid max-w-2xl   grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
 
-                <li>
-                  <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10 cursor-pointer hover:bg-gray-100 hover:scale-95 duration-300"><svg aria-hidden="true"
-                      width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
-                      <path
-                        d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z">
-                      </path>
-                    </svg>
-                    <blockquote class="relative">
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+              <div class="bg-white p-7 rounded-md">
+                      <div class="flex p">
+                        <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
+                        <div class="px-2 border-r-2 border-gray-200"></div>
+                        <div class="font-display font-semibold text-base text-slate-900 px-2">MMT</div>
+                      </div>
+                      <div class="py-2">
                         <div class="flex">
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nama Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
-                            </div>
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                            </div>
-                        </div>
-                    </blockquote>
-                    <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-                      <div>
-                        <div class="font-display text-base text-slate-900">Wahit mebel</div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Usaha</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
+                          </div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
+                              <div class="flex flex-col">
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                              </div>
+                          </div>
                       </div>
-                      <div>
-                        <div class="font-display font-semibold text-base text-slate-900">MMT</div>
                       </div>
-                      
-                    </figcaption>
-                    
-                  </figure>
-                </li>
-              </li>
-                <li>
-                  <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10 cursor-pointer hover:bg-gray-100 hover:scale-95 duration-300"><svg aria-hidden="true"
-                      width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
-                      <path
-                        d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z">
-                      </path>
-                    </svg>
-                    <blockquote class="relative">
+              </div>
+            </div>    
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+              <div class="bg-white p-7 rounded-md">
+                      <div class="flex p">
+                        <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
+                        <div class="px-2 border-r-2 border-gray-200"></div>
+                        <div class="font-display font-semibold text-base text-slate-900 px-2">MMT</div>
+                      </div>
+                      <div class="py-2">
                         <div class="flex">
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nama Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
-                            </div>
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                            </div>
-                        </div>
-                    </blockquote>
-                    <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-                      <div>
-                        <div class="font-display text-base text-slate-900">Wahit mebel</div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Usaha</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
+                          </div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
+                              <div class="flex flex-col">
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                              </div>
+                          </div>
                       </div>
-                      <div>
-                        <div class="font-display font-semibold text-base text-slate-900">MMT</div>
                       </div>
-                      
-                    </figcaption>
-                    
-                  </figure>
-                </li>
-              </li>
-                <li>
-                  <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10 cursor-pointer hover:bg-gray-100 hover:scale-95 duration-300"><svg aria-hidden="true"
-                      width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
-                      <path
-                        d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z">
-                      </path>
-                    </svg>
-                    <blockquote class="relative">
+              </div>
+            </div>    
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+              <div class="bg-white p-7 rounded-md">
+                      <div class="flex p">
+                        <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
+                        <div class="px-2 border-r-2 border-gray-200"></div>
+                        <div class="font-display font-semibold text-base text-slate-900 px-2">MMT</div>
+                      </div>
+                      <div class="py-2">
                         <div class="flex">
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nama Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
-                            </div>
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                            </div>
-                        </div>
-                    </blockquote>
-                    <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-                      <div>
-                        <div class="font-display text-base text-slate-900">Wahit mebel</div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Usaha</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
+                          </div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
+                              <div class="flex flex-col">
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                              </div>
+                          </div>
                       </div>
-                      <div>
-                        <div class="font-display font-semibold text-base text-slate-900">MMT</div>
                       </div>
-                      
-                    </figcaption>
-                    
-                  </figure>
-                </li>
-              </li>
-                <li>
-                  <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10 cursor-pointer hover:bg-gray-100 hover:scale-95 duration-300"><svg aria-hidden="true"
-                      width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
-                      <path
-                        d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z">
-                      </path>
-                    </svg>
-                    <blockquote class="relative">
+              </div>
+            </div>    
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+              <div class="bg-white p-7 rounded-md">
+                      <div class="flex p">
+                        <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
+                        <div class="px-2 border-r-2 border-gray-200"></div>
+                        <div class="font-display font-semibold text-base text-slate-900 px-2">MMT</div>
+                      </div>
+                      <div class="py-2">
                         <div class="flex">
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nama Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
-                            </div>
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                            </div>
-                        </div>
-                    </blockquote>
-                    <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-                      <div>
-                        <div class="font-display text-base text-slate-900">Wahit mebel</div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Usaha</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
+                          </div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
+                              <div class="flex flex-col">
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                              </div>
+                          </div>
                       </div>
-                      <div>
-                        <div class="font-display font-semibold text-base text-slate-900">MMT</div>
                       </div>
-                      
-                    </figcaption>
-                    
-                  </figure>
-                </li>
-              </li>
-                <li>
-                  <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10 cursor-pointer hover:bg-gray-100 hover:scale-95 duration-300"><svg aria-hidden="true"
-                      width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
-                      <path
-                        d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z">
-                      </path>
-                    </svg>
-                    <blockquote class="relative">
+              </div>
+            </div>    
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+              <div class="bg-white p-7 rounded-md">
+                      <div class="flex p">
+                        <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
+                        <div class="px-2 border-r-2 border-gray-200"></div>
+                        <div class="font-display font-semibold text-base text-slate-900 px-2">MMT</div>
+                      </div>
+                      <div class="py-2">
                         <div class="flex">
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nama Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
-                            </div>
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                            </div>
-                        </div>
-                    </blockquote>
-                    <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-                      <div>
-                        <div class="font-display text-base text-slate-900">Wahit mebel</div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Usaha</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
+                          </div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
+                              <div class="flex flex-col">
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                              </div>
+                          </div>
                       </div>
-                      <div>
-                        <div class="font-display font-semibold text-base text-slate-900">MMT</div>
                       </div>
-                      
-                    </figcaption>
-                    
-                  </figure>
-                </li>
-              </li>
-                <li>
-                  <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10 cursor-pointer hover:bg-gray-100 hover:scale-95 duration-300"><svg aria-hidden="true"
-                      width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
-                      <path
-                        d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z">
-                      </path>
-                    </svg>
-                    <blockquote class="relative">
+              </div>
+            </div>    
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+              <div class="bg-white p-7 rounded-md">
+                      <div class="flex p">
+                        <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
+                        <div class="px-2 border-r-2 border-gray-200"></div>
+                        <div class="font-display font-semibold text-base text-slate-900 px-2">MMT</div>
+                      </div>
+                      <div class="py-2">
                         <div class="flex">
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nama Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
-                            </div>
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                            </div>
-                        </div>
-                    </blockquote>
-                    <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-                      <div>
-                        <div class="font-display text-base text-slate-900">Wahit mebel</div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Usaha</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
+                          </div>
+                          <div>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
+                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
+                              <div class="flex flex-col">
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                              </div>
+                          </div>
                       </div>
-                      <div>
-                        <div class="font-display font-semibold text-base text-slate-900">MMT</div>
                       </div>
-                      
-                    </figcaption>
-                    
-                  </figure>
-                </li>
-              </li>
-                <li>
-                  <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10 cursor-pointer hover:bg-gray-100 hover:scale-95 duration-300"><svg aria-hidden="true"
-                      width="105" height="78" class="absolute left-6 top-6 fill-slate-100">
-                      <path
-                        d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z">
-                      </path>
-                    </svg>
-                    <blockquote class="relative">
-                        <div class="flex">
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nama Usaha</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
-                            </div>
-                            <div>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                            </div>
-                        </div>
-                    </blockquote>
-                    <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-                      <div>
-                        <div class="font-display text-base text-slate-900">Wahit mebel</div>
-                      </div>
-                      <div>
-                        <div class="font-display font-semibold text-base text-slate-900">MMT</div>
-                      </div>
-                      
-                    </figcaption>
-                    
-                  </figure>
-                </li>
-              </li>
+              </div>
+            </div>    
+
             </ul>
 
     </section>

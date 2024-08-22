@@ -16,7 +16,7 @@
                 <div class="p-2.5 mt-1 mb-1 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-200" onclick="Openbar()">
                   <i class='bx bxl-xing text-black'></i>
                 </div>
-                <div class="mt-[0.8rem]  flex gap-3 pl-[2.4rem]">
+                <div class="mt-[0.8rem] flex gap-3 pl-[2.4rem]">
                   <img src="{{ asset('images/Arto-Moro.png') }}" alt="" class="h-[2rem]">
                   <div class="text-[1rem] gap-1 sm:flex mt-[0.2rem] hidden ">
                     <p class="font-semibold">Admin</p>
@@ -25,8 +25,8 @@
                 </div>
               </div>
 
-              <div class="mt-[0.6rem] ml-[1rem] hidden sm:block">
-                <label class="input flex items-center gap-2 rounded-[10px] bg-gray-100 box-border border-[0.5px] border-black h-[2.5rem]">
+              <div class="mt-[0.6rem] ml-[1rem] hidden sm:block ">
+                <label class="input flex items-center gap-2 rounded-[10px] bg-gray-100 box-border border-[0.5px] border-black h-[2.5rem] ">
                   <form action="{{ route('dashboard.search') }}" method="post">
                     @csrf
                       <input type="text" class="rounded-[10px] h-[2rem] ml-[-0.8rem]" placeholder="Search" id="searchInput" name="query"/>
@@ -64,7 +64,7 @@
 
 
           <div class="sidebar fixed top-0 bottom-0 duration-1000 flex flex-col justify-between py-10
-            p-2 w-16 overflow-y-auto text-center bg-gray-50 shadow-2xl h-screen overflow-hidden font-semibold pt-[5rem] z-10">
+            p-2 w-16 overflow-y-auto text-center bg-gray-50 shadow-2xl h-screen overflow-hidden font-semibold pt-[5rem] z-10 sm2:">
             <div class="text-gray-100 text-xl">
               <div>
                 <a href="{{ route('dashboard')}}">
@@ -115,42 +115,131 @@
                   </div>  
                 </a>                 
               </div>
-
           </div>
-          <script>
-            function dropDown() {
-              document.querySelector('#submenu').classList.toggle('hidden')
-              document.querySelector('#arrow').classList.toggle('rotate-0')
+
+          @if(session('success'))
+            <div class="fixed z-10 inset-0 overflow-y-auto" id="my-modal">
+                <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                    <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                    </div>
+                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                    <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-[20rem] sm:w-full"
+                        role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                        <div>
+                            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                                <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="mt-3 text-center sm:mt-5">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+                                    Success
+                                </h3>
+                                <div class="mt-2">
+                                    <p class="text-sm text-gray-500">
+                                        {{ session('success') }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 sm:mt-6">
+                          <button
+                              class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:text-sm"
+                              onclick="closeModalSucces()">
+                              OK
+                          </button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          @elseif(session('error'))
+            <div class="fixed z-10 inset-0 overflow-y-auto" id="my-modal-error">
+              <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                  <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                      <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                  </div>
+                  <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                  <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-[20rem] sm:w-full"
+                      role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                      <div>
+                          <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
+                              <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                  stroke="currentColor" aria-hidden="true">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                          </div>
+                          <div class="mt-3 text-center sm:mt-5">
+                              <div class="mt-2">
+                                  <p class="text-sm text-gray-500">
+                                    {{ session('error') }}
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="mt-5 sm:mt-6">
+                          <button
+                              class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:text-sm"
+                              onclick="closeModalError()">
+                              OK
+                          </button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          @endif
+          
+        <script>
+                  function dropDown() {
+                    document.querySelector('#submenu').classList.toggle('hidden')
+                    document.querySelector('#arrow').classList.toggle('rotate-0')
+                  }
+                  dropDown()
+              
+                  function Openbar() {
+                    const sidebar = document.querySelector('.sidebar');
+                    if (sidebar.classList.contains('w-16')) {
+                      sidebar.classList.remove('w-16');
+                      sidebar.classList.add('w-72');
+                    } else if (sidebar.classList.contains('w-72')) {
+                      sidebar.classList.remove('w-72');
+                      sidebar.classList.add('w-16');
+                    } else {
+                      sidebar.classList.add('w-16');
+                    }
+                  }
+
+
+                  document.addEventListener('DOMContentLoaded', function() {
+
+              var userImage = document.getElementById('userImage');
+              
+                  // Mengecek apakah elemen gambar ada
+                  if (userImage) {
+                      // Mencetak URL gambar ke konsol
+                      console.log('Image URL:', userImage.src);
+                  }
+              });
+
+          function closeModalSucces() {
+              document.getElementById('my-modal').classList.add('hidden');
             }
-            dropDown()
-        
-            function Openbar() {
-              const sidebar = document.querySelector('.sidebar');
-              if (sidebar.classList.contains('w-16')) {
-                sidebar.classList.remove('w-16');
-                sidebar.classList.add('w-72');
-              } else if (sidebar.classList.contains('w-72')) {
-                sidebar.classList.remove('w-72');
-                sidebar.classList.add('w-16');
-              } else {
-                sidebar.classList.add('w-16');
-              }
+
+            function closeModalError() {
+              document.getElementById('my-modal-error').classList.add('hidden');
             }
 
+            setTimeout(closeModalSucces, 3000);
 
-            document.addEventListener('DOMContentLoaded', function() {
-        // Mengambil elemen gambar
-        var userImage = document.getElementById('userImage');
-        
-        // Mengecek apakah elemen gambar ada
-        if (userImage) {
-            // Mencetak URL gambar ke konsol
-            console.log('Image URL:', userImage.src);
-        }
-    });
 
-          </script>
+        </script>
     </section>
     @yield('content')
+
+    
+
 </body>
 </html>

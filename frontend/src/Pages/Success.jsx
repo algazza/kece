@@ -57,7 +57,7 @@ const Success = () => {
                 TopShadow="top-2"
                 LeftShadow="left-[33px]"
                 // href={"https://www.instagram.com/didadump.0_0"}
-                href={`https://wa.me/+628973179596?text=I'm%20${nameInputs}%20dengan%20kode%20${code}%20pengajuan%20${value}`}
+                href={`https://wa.me/+62882006969408?text=I'm%20${nameInputs}%20dengan%20kode%20${code}%20pengajuan%20${value}`}
                 target={"_blank"}
               >
                 Whatsapp
