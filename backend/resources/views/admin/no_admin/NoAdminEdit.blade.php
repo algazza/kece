@@ -11,15 +11,6 @@
 </head>
 <body>
     <div class="bg-gray-200">
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
         <div class="h-full min-h-screen w-ful md:p-[10rem] p-[2rem]">
             <form action="{{ route('noAdmin.update', $noAdmin->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -33,7 +24,7 @@
                             </svg>
                         </div>
         
-                        <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">KREDIT</h1>
+                        <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">Kredit</h1>
                         
                         <div class="flex items-center mt-[-0.1rem]">
                             <div id="dropdown-phone-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center box-border rounded-s-lg border-black border-[1px] bg-gray-100 shadow-inner shadow-gray-300" type="button">
@@ -58,7 +49,7 @@
                             </svg>
                         </div>
         
-                        <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">KREDIT</h1>
+                        <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">Deposito</h1>
                         
                         <div class="flex items-center mt-[-0.1rem]">
                             <div id="dropdown-phone-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center box-border rounded-s-lg border-black border-[1px] bg-gray-100 shadow-inner shadow-gray-300" type="button">
@@ -83,7 +74,7 @@
                             </svg>
                         </div>
         
-                        <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">KREDIT</h1>
+                        <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">Tabungan</h1>
                         
                         <div class="flex items-center mt-[-0.1rem]">
                             <div id="dropdown-phone-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center box-border rounded-s-lg border-black border-[1px] bg-gray-100 shadow-inner shadow-gray-300" type="button">
@@ -108,7 +99,7 @@
                             </svg>
                         </div>
         
-                        <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">KREDIT</h1>
+                        <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-10 font-bold">Armor Property</h1>
                         
                         <div class="flex items-center mt-[-0.1rem]">
                             <div id="dropdown-phone-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center box-border rounded-s-lg border-black border-[1px] bg-gray-100 shadow-inner shadow-gray-300" type="button">
