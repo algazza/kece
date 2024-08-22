@@ -100,7 +100,7 @@ class TabunganController extends Controller
             return redirect()->route('dashboard')->with('error', 'Data not found');
         }
     
-        return view('admin.tabungan.DepositoUser', compact('tabungan'));
+        return view('admin.tabungan.TabunganUser', compact('tabungan'));
     }
 
     public function edit(string $id)

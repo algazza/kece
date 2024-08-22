@@ -106,7 +106,7 @@
                     const date = createdAt.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
     
                     content += `
-                    <a href="/deposito/${item.id}">
+                    <a href="/tabungan/${item.id}">
                         <div class="border-b-[0.5px] border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
                             <p class="text-[1.3rem]">
                                 ${(currentPage - 1) * data.length + index + 1}
