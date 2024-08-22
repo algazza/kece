@@ -2,7 +2,7 @@
 
 @extends('layout')
 @section('content')
-    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center font-poppins">
+    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen overflow-hidden font-poppins">
         <div class="flex gap-[2rem] pt-[5rem] pb-[2rem] justify-center bg-gray-200 w-screen overflow-x-auto">
             <div class="bg-gray-50 w-[16rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:max-w-full sm:px-6 lg:px-6">
                 <div>
