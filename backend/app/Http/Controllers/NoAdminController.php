@@ -42,14 +42,14 @@ class NoAdminController extends Controller
             return redirect()->route('noAdmin')->with('success', 'Data updated successfully.');
 
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors('Nomer terlalu banyak');
+            return redirect()->route('noAdmin')->with('error','Nomer terlalu banyak');
         }
     }
 
 
     public function index(){
         $noAdmin = NoAdmin::orderBy('created_at', 'DESC')->first();
-        return response()->json();
+        return response()->json($noAdmin);
     }
     
 }
