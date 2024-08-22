@@ -3,7 +3,6 @@ import { ButtonOutline } from "../Components/Button";
 import { motion } from "framer-motion";
 import {
   Link,
-  useLocation,
   useNavigate,
   useRouteError,
 } from "react-router-dom";
