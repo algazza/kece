@@ -12,6 +12,7 @@ use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\NoAdminController;
 use App\Http\Controllers\PickupController;
+use App\Http\Controllers\TabunganController;
 use App\Models\Admin;
 use Illuminate\Routing\Route as RoutingRoute;
 
@@ -88,6 +89,14 @@ Route::middleware(['auth', 'AdminAkses:deposito,admin'])->group(function(){
     Route::get('/api/deposito', [DepositoController::class, 'data']);
 });
 
+Route::middleware(['auth', 'AdminAkses:tabungan,admin'])->group(function(){
+    // Tabungan
+    Route::get('/Tabungan', [TabunganController::class, 'index'])->middleware('kredit.access')->name('tabungan.index');
+    Route::get('/tabungan/{id}', [TabunganController::class, 'show'])->name('tabungan.show');
+    Route::get('/api/check-token/tabungan', [TabunganController::class, 'checkToken']);
+    Route::get('/api/tabungan', [TabunganController::class, 'data']);
+});
+
 
 Route::middleware(['auth', 'AdminAkses:pickup,admin'])->group(function(){
     // Pickup
@@ -122,9 +131,6 @@ Route::middleware(['auth', 'AdminAkses:news,admin'])->group(function(){
 
 Route::get('/Newse', function(){
     return view ('admin.news.NewsEdit');
-});
-Route::get('/Tabungan', function(){
-    return view ('admin.tabungan.Tabungan');
 });
 Route::get('/Banner', function(){
     return view ('admin.banner.Banner');

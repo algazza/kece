@@ -17,6 +17,7 @@ import { motion } from "framer-motion";
 import { Kredit } from "../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../helper/DataProduk";
+import { nomorTabungan } from "../helper/nomor";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -345,8 +346,9 @@ const SyaratTabungan = () => {
                   <div className={`${styles.flexCenter}`}>
                     <FormBank
                       isiPenting={<Kredit />}
-                      value={"Kredit"}
-                      endpoint={"http://localhost:8000/api/kredit"}
+                      value={"Tabungan"}
+                      nomer={nomorTabungan}
+                      endpoint={"http://localhost:8000/api/tabungan"}
                     />
                   </div>
                 </motion.div>
