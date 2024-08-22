@@ -21,8 +21,8 @@ const NewsTemplate = ({
 
   useEffect(() => {
     fetch("http://localhost:8000/api/news")
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         setNewsData(data);
       })
       .catch((err) => {
@@ -71,7 +71,10 @@ const NewsTemplate = ({
           </div>
 
           <div className={`${styles.fontBody} sm:mx-32`}>
-            <div className="pb-6" dangerouslySetInnerHTML={{ __html: NewsBeritaLengkap }} />
+            <div
+              className="pb-6"
+              dangerouslySetInnerHTML={{ __html: NewsBeritaLengkap }}
+            />
 
             <div className={`${styles.fontBodyBold}`}>
               <p>{NewsTanggal}</p>
@@ -82,7 +85,10 @@ const NewsTemplate = ({
           <div className="px-12">
             <div className="flex justify-between">
               <h6 className={`${styles.heading6} mb-4`}>Baca juga:</h6>
-              <Link to={"/news"} className={`${styles.heading6} mb-4 text-abuGelap`}>
+              <Link
+                to={"/news"}
+                className={`${styles.heading6} mb-4 text-abuGelap`}
+              >
                 Lainnya...
               </Link>
             </div>
@@ -103,16 +109,18 @@ const NewsTemplate = ({
                     </div>
 
                     <div className="p-4 flex flex-col justify-center">
-                      <p className={`${styles.fontSmallBold} text-merahh`}>{news.kategory}</p>
+                      <p className={`${styles.fontSmallBold} text-merahh-500`}>
+                        {news.kategory}
+                      </p>
                       <h6 className={`${styles.heading6}`}>{news.judul}</h6>
                       <p className={`${styles.fontSmall} text-abuGelap`}>
                         {news.created_at
-                          ? new Intl.DateTimeFormat('id-ID', {
-                              day: '2-digit',
-                              month: '2-digit',
-                              year: 'numeric',
+                          ? new Intl.DateTimeFormat("id-ID", {
+                              day: "2-digit",
+                              month: "2-digit",
+                              year: "numeric",
                             }).format(new Date(news.created_at))
-                          : 'Tanggal tidak tersedia'}
+                          : "Tanggal tidak tersedia"}
                       </p>
                     </div>
                   </div>

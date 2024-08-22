@@ -33,7 +33,7 @@ const News = () => {
     to: pageSize,
   });
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:8000/api/news")
@@ -170,7 +170,7 @@ const News = () => {
             </div>
 
             <div className="p-4 flex flex-col justify-center">
-              <p className={`${styles.fontSmallBold} text-merahh`}>
+              <p className={`${styles.fontSmallBold} text-merahh-500`}>
                 {news.kategory}
               </p>
               <h6 className={`${styles.heading6} `}>{news.judul}</h6>

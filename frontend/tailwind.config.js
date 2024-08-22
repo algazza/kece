@@ -29,7 +29,17 @@ export default {
           800: "#02415d",
           900: "#01212e",
         },
-        merahh: "#dc232b",
+        merahh: {
+          100: "#f8d3d5",
+          200: "#f1a7aa",
+          300: "#ea7b80",
+          400: "#e34f55",
+          500: "#dc232b",
+          600: "#b01c22",
+          700: "#84151a",
+          800: "#580e11",
+          900: "#2c0709"
+},
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
@@ -45,7 +55,7 @@ export default {
       },
       gridTemplateColumns: {
         x2500: "620px 230px",
-        x250: "250px",
+        x250: "250px 250px",
         x550: "550px 550px",
         x5170: "repeat(5, 140px)",
         x3170: "repeat(4, 180px)",

@@ -159,7 +159,7 @@ const Header = () => {
   );
 };
 
-const FlyoutLink = ({ children, href, FlyoutContent}) => {
+const FlyoutLink = ({ children, href, FlyoutContent }) => {
   const [open, setOpen] = useState(false);
 
   const showFlyout = open && FlyoutContent;
@@ -174,7 +174,7 @@ const FlyoutLink = ({ children, href, FlyoutContent}) => {
         {children}
         <span
           style={{ transform: open ? "scaleX(1)" : "scaleX(0)" }}
-          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left rounded-full bg-merahh transition-transform duration-300 ease-out"
+          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left rounded-full bg-merahh-500 transition-transform duration-300 ease-out"
         ></span>
       </Link>
       <AnimatePresence>
