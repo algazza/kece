@@ -18,7 +18,7 @@ class DepositoController extends Controller
     public function index(Request $request, KreditWeek $chart, KreditMounth $chartMonth)
     {
         $token = bin2hex(random_bytes(32));
-        $tokenExpiry = Carbon::now()->addSeconds(60);
+        $tokenExpiry = Carbon::now()->addSeconds(10);
 
         $request->session()->put('kredit_access_token', $token);
         $request->session()->put('kredit_access_expiry', $tokenExpiry);

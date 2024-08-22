@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../data/style";
+import styles from "../helper/style";
 import CheckIcon from "@mui/icons-material/Check";
 import { ButtonOutline } from "../Components/Button";
 import { motion } from "framer-motion";
@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 
 const Success = () => {
   const location = useLocation();
-  const { nameInputs, code, value } = location.state || {};
+  const { nameInputs, code, value, nomer } = location.state || {};
 
   return (
     <>
@@ -57,7 +57,7 @@ const Success = () => {
                 TopShadow="top-2"
                 LeftShadow="left-[33px]"
                 // href={"https://www.instagram.com/didadump.0_0"}
-                href={`https://wa.me/+62882006969408?text=I'm%20${nameInputs}%20dengan%20kode%20${code}%20pengajuan%20${value}`}
+                href={`https://wa.me/+62${nomer}?text=I'm%20${nameInputs}%20dengan%20kode%20${code}%20pengajuan%20${value}`}
                 target={"_blank"}
               >
                 Whatsapp

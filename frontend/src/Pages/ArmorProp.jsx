@@ -1,7 +1,7 @@
 import React from "react";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
-import { BlueBanner } from "../data";
+import { BlueBanner } from "../helper";
 
 const ArmorProp = () => {
   return (

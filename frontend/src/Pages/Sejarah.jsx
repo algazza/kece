@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import styles from "../data/style";
+import styles from "../helper/style";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import IntroBanner from "../Layouts/IntroBanner";
-import { BlueBanner } from "../data";
+import { BlueBanner } from "../helper";
 import { Form, useNavigate } from "react-router-dom";
 
 const image = [

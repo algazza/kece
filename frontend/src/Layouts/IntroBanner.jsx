@@ -1,5 +1,5 @@
 import {ButtonGetDown} from "../Components/Button";
-import styles from "../data/style";
+import styles from "../helper/style";
 
 const IntroBanner = ({TitleBanner, DescriptionBanner, ImageBanner}) => {
   return (

@@ -2,9 +2,9 @@ import React from 'react'
 import IntroBanner from '../Layouts/IntroBanner'
 import TitleBlueBanner from '../Layouts/TitleBlueBanner'
 import FormBank from '../Components/FormBank'
-import { BlueBanner, formUsahaSponsor } from '../data'
+import { BlueBanner, formUsahaSponsor } from '../helper'
 import { SponsorForm } from '../Components/Form'
-import styles from '../data/style'
+import styles from '../helper/style'
 
 const Sponsor = () => {
   return (

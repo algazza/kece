@@ -1,6 +1,6 @@
 // ----- Folder Data -----
-import { footer1, footer2, logoArmor, marqueeImage } from "../data/index";
-import styles from "../data/style";
+import { footer1, footer2, logoArmor, marqueeImage } from "../helper/index";
+import styles from "../helper/style";
 // ----- MUI -----
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import InstagramIcon from "@mui/icons-material/Instagram";

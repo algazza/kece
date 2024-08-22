@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { motion } from "framer-motion";
-import styles from "../data/style";
+import styles from "../helper/style";
 import ImageBanner from "../Layouts/ImageBanner";
 import {
   Banneremyu,
@@ -11,7 +11,7 @@ import {
   nunezimg,
   phoneimg,
   sampleBanner,
-} from "../data";
+} from "../helper";
 // ==================== ICON ===========================
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";

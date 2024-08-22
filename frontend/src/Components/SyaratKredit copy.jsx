@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import FormBank from "./FormBank";
-import styles from "../data/style";
-import { PenempatanDana, BlueBanner } from "../data";
+import styles from "../helper/style";
+import { PenempatanDana, BlueBanner } from "../helper";
 import {
   Paper,
   Table,

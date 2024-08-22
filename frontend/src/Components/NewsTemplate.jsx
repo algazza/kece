@@ -6,7 +6,7 @@ import LinkIcon from "@mui/icons-material/Link";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-import styles from "../data/style";
+import styles from "../helper/style";
 
 const NewsTemplate = ({
   NewsJudul,

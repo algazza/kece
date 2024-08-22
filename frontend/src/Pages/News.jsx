@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import IntroBanner from "../Layouts/IntroBanner";
-import { BlueBanner } from "../data";
-import styles from "../data/style";
+import { BlueBanner } from "../helper";
+import styles from "../helper/style";
 import { useNavigate } from "react-router-dom";
 
 const theme = createTheme({

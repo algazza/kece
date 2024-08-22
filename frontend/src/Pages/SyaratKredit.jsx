@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import FormBank from "../Components/FormBank";
-import styles from "../data/style";
-import { PenempatanDana, BlueBanner } from "../data";
+import styles from "../helper/style";
+import { PenempatanDana, BlueBanner } from "../helper";
 import {
   Paper,
   Table,
@@ -16,7 +16,8 @@ import {
 import { motion } from "framer-motion";
 import { Kredit } from "../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import { IsiKredit } from "../data/DataProduk";
+import { IsiKredit } from "../helper/DataProduk";
+import { nomorKredit } from "../helper/user";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -345,6 +346,7 @@ const SyaratKredit = () => {
                     <FormBank
                       isiPenting={<Kredit />}
                       value={"Kredit"}
+                      nomer={nomorKredit}
                       endpoint={"http://localhost:8000/api/kredit"}
                     />
                 </motion.div>

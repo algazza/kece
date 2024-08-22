@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { BlueBanner } from "../data";
-import styles from "../data/style";
+import { BlueBanner } from "../helper";
+import styles from "../helper/style";
 import Footer from "../Layouts/Footer";
 import Header from "../Layouts/Header";
 import IntroBanner from "../Layouts/IntroBanner";

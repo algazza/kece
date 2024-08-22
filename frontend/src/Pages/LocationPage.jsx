@@ -1,5 +1,5 @@
-import { BlueBanner } from "../data";
-import styles from "../data/style";
+import { BlueBanner } from "../helper";
+import styles from "../helper/style";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 

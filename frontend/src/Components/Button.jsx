@@ -1,5 +1,5 @@
 import { Component } from "react";
-import styles from "../data/style";
+import styles from "../helper/style";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { Link } from "react-router-dom";
 

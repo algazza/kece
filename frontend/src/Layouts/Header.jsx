@@ -1,6 +1,6 @@
-import styles from "../data/style";
+import styles from "../helper/style";
 import { useEffect, useState } from "react";
-import { logoArmor } from "../data";
+import { logoArmor } from "../helper";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
