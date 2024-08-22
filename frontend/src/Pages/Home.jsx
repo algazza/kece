@@ -170,7 +170,7 @@ const Home = () => {
                 className="group bg-abuTerang grid justify-items-center py-2 sm:px-6 px-3 rounded-xl "
               >
                 {menu.icon(
-                  "text-abuGelap group-hover:text-merahh transition-all duration-300 ease-in-out"
+                  "text-abuGelap group-hover:text-merahh-500 transition-all duration-300 ease-in-out"
                 )}
                 <h2 className={`${styles.fontBodyBold} flex-shrink-0 `}>
                   {menu.title}
@@ -214,7 +214,9 @@ const Home = () => {
                 index === 0 ? "md:col-span-2" : ""
               }`}
             >
-              {award.icon("m-4 text-purple-800 text-5xl", {fontSize: "3.5rem"})}
+              {award.icon("m-4 text-purple-800 text-5xl", {
+                fontSize: "3.5rem",
+              })}
               <div>
                 <h5 className={`${styles.heading5}`}>{award.title}</h5>
                 <p className={`${styles.fontBody}`}>{award.description}</p>
@@ -278,7 +280,7 @@ const Home = () => {
                 className="object-cover w-full h-full rounded-xl max-h-[230px]"
               />
               <div className="mt-4">
-                <p className={`${styles.fontSmallBold} text-merahh`}>
+                <p className={`${styles.fontSmallBold} text-merahh-500`}>
                   {news.kategory}
                 </p>
                 <h6 className={`${styles.heading6} my-2`}>{news.judul}</h6>
@@ -339,7 +341,7 @@ const Home = () => {
                 <br />
                 Sebelumnya, berdasarkan hasil publikasi resmi dari Otoritas Jasa
                 Keuangan (OJK) pada bulan Desember 2021,{" "}
-                <span className="text-merahh">
+                <span className="text-merahh-500">
                   NPL BPR Arto Moro adalah yang terbaik diantara 5 (Lima) Besar
                   BPR di Kota Semarang.
                 </span>{" "}

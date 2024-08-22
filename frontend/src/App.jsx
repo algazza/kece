@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Outlet } from "react-router-dom";
-import styles from "./data/style";
+import styles from "./helper/style";
 import Footer from "./Layouts/Footer";
 import Header from "./Layouts/Header";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";

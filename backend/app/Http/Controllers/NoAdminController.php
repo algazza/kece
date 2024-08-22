@@ -46,6 +46,10 @@ class NoAdminController extends Controller
         }
     }
 
-    
+
+    public function index(){
+        $noAdmin = NoAdmin::orderBy('created_at', 'DESC')->first();
+        return response()->json();
+    }
     
 }

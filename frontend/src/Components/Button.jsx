@@ -4,8 +4,8 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { Link } from "react-router-dom";
 
 export const ButtonGetDown = ({
-  TextColor = "text-merahh",
-  BorderColor = "border-merahh",
+  TextColor = "text-merahh-500",
+  BorderColor = "border-merahh-500",
 }) => {
   return (
     <button className={`border-2 ${BorderColor} py-2 px-4 rounded-xl mt-4`}>
@@ -28,14 +28,14 @@ export const ButtonFull = ({
   WidthButton = "w-28",
   to,
   children,
-  onClick
+  onClick,
 }) => {
-  const isLink = Component === Link
+  const isLink = Component === Link;
 
   return (
     <Component
       to={to}
-      onClick = {isLink ? undefined : onClick}
+      onClick={isLink ? undefined : onClick}
       className={`overflow-hidden relative grid justify-center ${WidthButton} p-2 h-12 ${ColorPrimary} text-primary border-none rounded-md ${styles.fontBody} font-semibold cursor-pointer z-10 group`}
     >
       {children}
@@ -68,10 +68,12 @@ export const ButtonOutline = ({
   LeftShadow = "left-[19px]",
   children,
   href,
-  target
+  target,
 }) => {
   return (
-    <a href={href} target={target}
+    <a
+      href={href}
+      target={target}
       className={`overflow-hidden relative grid justify-center ${WidthButton} p-2 h-12 ${ColorText} border-2 ${ColorPrimary} rounded-md ${styles.fontBody} font-semibold cursor-pointer z-10 group`}
     >
       {children}

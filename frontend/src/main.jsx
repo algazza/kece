@@ -17,12 +17,14 @@ import TabunganMenu from "./Pages/TabunganMenu.jsx";
 import ArmorProp from "./Pages/ArmorProp.jsx";
 import Sponsor from "./Pages/Sponsor.jsx";
 import Sejarah from "./Pages/Sejarah.jsx";
+import Error from "./Pages/Error.jsx";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error/>,
     children: [
       {
         index: true,

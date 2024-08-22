@@ -9,6 +9,7 @@ use App\Http\Controllers\KreditController;
 use App\Http\Controllers\PickupController;
 use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NoAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::resource('kredit',KreditController::class);
 Route::resource('Pickup',PickupController::class);
 Route::resource('deposito',DepositoController::class);
+Route::resource('noAdmin',NoAdminController::class);
 
 
 Route::get('/api/dashboard/kredit', [DashboardController::class, 'data']);
