@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 import { Kredit } from "../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../helper/DataProduk";
-import { nomorKredit } from "../helper/user";
+import { nomorKredit } from "../helper/nomor";
 
 // ===================================================
 const buttonMenuTabungan = [
