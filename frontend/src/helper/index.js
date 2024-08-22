@@ -1,4 +1,3 @@
-import React from 'react';
 // ======================== IMAGE ===========================
 import logoArmor from "../img/LOGO-AM-CORAL-BARU.svg";
 import BlueBanner from "../img/sampleimage.svg";
