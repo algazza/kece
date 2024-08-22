@@ -18,6 +18,13 @@ import { Kredit } from "../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../helper/DataProduk";
 import { nomorKredit } from "../helper/nomor";
+import LocalAtmIcon from '@mui/icons-material/LocalAtm';
+import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWorkRounded';
+import PlaylistAddCheckRoundedIcon from '@mui/icons-material/PlaylistAddCheckRounded';
+import ElderlyRoundedIcon from '@mui/icons-material/ElderlyRounded';
+import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
+import MosqueRoundedIcon from '@mui/icons-material/MosqueRounded';
+import FilterVintageRoundedIcon from '@mui/icons-material/FilterVintageRounded';
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -25,49 +32,49 @@ const buttonMenuTabungan = [
     id: 1,
     icon: (className) => <TrendingUpIcon className={className} />,
     title: "Kredit Investasi",
-    deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
+    deskripsi: "Raih keuntungan maksimal, masa depan gemilang",
   },
   {
     id: 2,
-    icon: (className) => <TrendingUpIcon className={className} />,
+    icon: (className) => <LocalAtmIcon className={className} />,
     title: "Kredit Modal",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    deskripsi: " Tambah modal usaha, sukses di tangan Anda",
   },
   {
     id: 3,
-    icon: (className) => <TrendingUpIcon className={className} />,
+    icon: (className) => <MapsHomeWorkIcon className={className} />,
     title: "Kredit KPR",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    deskripsi: "Miliki rumah idaman, proses mudah dan cepat.",
   },
   {
     id: 4,
-    icon: (className) => <TrendingUpIcon className={className} />,
+    icon: (className) => <PlaylistAddCheckRoundedIcon className={className} />,
     title: "Kredit Multiguna",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    deskripsi: "Solusi pinjaman untuk semua kebutuhan Anda",
   },
   {
     id: 5,
-    icon: (className) => <TrendingUpIcon className={className} />,
+    icon: (className) => <ElderlyRoundedIcon className={className} />,
     title: "Kredit Pensiun",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    deskripsi: "Nikmati hari tua nyaman dengan finansial aman",
   },
   {
     id: 6,
-    icon: (className) => <TrendingUpIcon className={className} />,
+    icon: (className) => <ShoppingCartRoundedIcon className={className} />,
     title: "Kredit Konsumtif",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    deskripsi: "Penuhi kebutuhan hidup Anda dengan pinjaman cepat dan mudah",
   },
   {
     id: 7,
-    icon: (className) => <TrendingUpIcon className={className} />,
+    icon: (className) => <MosqueRoundedIcon className={className} />,
     title: "Kredit Pembiayaan Umroh",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    deskripsi: "Rencanakan umroh, jalani ibadah dengan tenang",
   },
   {
     id: 8,
-    icon: (className) => <TrendingUpIcon className={className} />,
+    icon: (className) => <FilterVintageRoundedIcon className={className} />,
     title: "Kredit Pembiayaan Ziarah",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    deskripsi: "Nikmati ziarah penuh makna dengan biaya terjangkau dan mudah",
   },
 ];
 
