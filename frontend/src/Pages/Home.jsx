@@ -347,16 +347,6 @@ const Home = () => {
                 </span>{" "}
                 Tentu saja fakta ini menunjukkan bahwa kinerja BPR Arto Moro
                 tidak kalah dengan kinerja 4 BPR terbesar di kota Semarang.
-                {/* <br />
-                <br />
-                NPL adalah komponen vital bagi kesehatan bank, termasuk Bank
-                Umum dan BPR, serta Pihak Ketiga yang ingin bekerja sama atau
-                menempatkan dana. BPR Arto Moro sangat menjaga kualitas
-                kreditnya agar NPL tidak melebihi 5%, demi mempertahankan
-                kepercayaan masyarakat, pihak ketiga, dan stakeholders.
-                Kepercayaan masyarakat adalah prioritas utama karena BPR Arto
-                Moro berfungsi sebagai lembaga intermediasi yang resmi dan
-                dilindungi undang-undang. */}
               </p>
             </AccordionDetails>
           </Accordion>

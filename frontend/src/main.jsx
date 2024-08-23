@@ -18,6 +18,7 @@ import ArmorProp from "./Pages/ArmorProp.jsx";
 import Sponsor from "./Pages/Sponsor.jsx";
 import Sejarah from "./Pages/Sejarah.jsx";
 import Error from "./Pages/Error.jsx";
+import IsiArmorProp from "./Pages/IsiArmorProp.jsx";
 
 
 const router = createBrowserRouter([
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "armor-properti",
         element: <ArmorProp />,
+      },
+      {
+        path: "armor-properti/1",
+        element: <IsiArmorProp />,
       },
       {
         path: "sponsor",

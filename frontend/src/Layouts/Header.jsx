@@ -74,6 +74,11 @@ const Header = () => {
                 exit={{ y: "-100%" }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className="absolute -z-[100] top-0 right-0 w-full px-8 pt-20 pb-4 bg-primary shadow-[0px_0px_90px_9px_#00000024]"
+                onClick={(e) => {
+                  if (e.target.tagName === 'A') {
+                    setToggle(false);
+                  }
+                }}
               >
                 <ul className="font-semibold">
                   <li className="my-3">

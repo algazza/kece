@@ -54,6 +54,7 @@ export default {
         xl: "1700px",
       },
       gridTemplateColumns: {
+        x2440: "440px 525px",
         x2500: "620px 230px",
         x250: "250px 250px",
         x550: "550px 550px",
