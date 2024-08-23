@@ -151,4 +151,6 @@ Route::get('/Bannere', function(){
 Route::get('/Usere', function(){
     return view ('admin.user.UserAdd');
 });
-
+Route::get('/ap', function(){
+    return view ('admin.armorprop');
+});

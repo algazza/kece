@@ -2,7 +2,7 @@
 
 @extends('layout')
 @section('content')
-    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen overflow-hidden font-poppins">
+    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins">
         <div class="flex gap-[2rem] pt-[5rem] pb-[2rem] justify-center bg-gray-200 w-screen overflow-x-auto">
             <div class="bg-gray-50 w-[16rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:max-w-full sm:px-6 lg:px-6">
                 <div>
@@ -158,9 +158,16 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
                     </a>
                 @endif            </div>
             <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[22rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative">
+=======
+                    </div>
+                </a>
+            </div>
+            <div class="bg-gray-50 w-23 sm:w-[35rem] h-[39rem] my-[1rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative hidden xs:block">
+>>>>>>> ec48c45d4045042d0e5f4279a57b9d600b3b5460
                 
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
                     

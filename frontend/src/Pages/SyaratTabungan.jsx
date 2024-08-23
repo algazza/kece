@@ -17,56 +17,66 @@ import { motion } from "framer-motion";
 import { Kredit } from "../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../helper/DataProduk";
+<<<<<<< HEAD
 import { nomorTabungan } from "../helper/nomor";
 
+=======
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import SchoolIcon from '@mui/icons-material/School';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import MosqueIcon from '@mui/icons-material/Mosque';
+import ElderlyIcon from '@mui/icons-material/Elderly';
+import GroupsIcon from '@mui/icons-material/Groups';
+import DevicesOtherIcon from '@mui/icons-material/DevicesOther';
+>>>>>>> ec48c45d4045042d0e5f4279a57b9d600b3b5460
 // ===================================================
 const buttonMenuTabungan = [
   {
     id: 1,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Investasi",
+    icon: (className) => <AccountBalanceIcon className={className} />,
+    title: "Tabungan Umum",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
   },
   {
     id: 2,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Modal",
+    icon: (className) => <AccountBalanceWalletIcon className={className} />,
+    title: "Tabungan ProActive",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 3,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit KPR",
+    icon: (className) => <SchoolIcon className={className} />,
+    title: "Tabungan Simpel",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 4,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Multiguna",
+    icon: (className) => <MosqueIcon className={className} />,
+    title: "Tabungan Umroh (TABUM)",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 5,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Pensiun",
+    icon: (className) => <ElderlyIcon className={className} />,
+    title: "Tabungan Pensiun",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 6,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Konsumtif",
+    icon: (className) => <GroupsIcon className={className} />,
+    title: "Tabungan Arisan",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 7,
     icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Pembiayaan Umroh",
+    title: "SimpHaTi",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 8,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Pembiayaan Ziarah",
+    icon: (className) => <DevicesOtherIcon className={className} />,
+    title: "Tabungan Gemilang",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
 ];
@@ -115,7 +125,7 @@ const SyaratTabungan = () => {
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Kredit"}
+          TitleBanner={"Tabungan"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -124,7 +134,7 @@ const SyaratTabungan = () => {
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={"Kredit"} />
+        <TitleBlueBanner title={"Tabugan"} />
       </section>
 
       {/* Menu utama */}
