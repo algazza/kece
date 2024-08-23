@@ -27,10 +27,9 @@ class KreditFactory extends Factory
             'jangka_waktu' => $this->faker->numberBetween(1, 30) . ' tahun',
             'jenis_angunan' => $this->faker->word(),
             'perhitungan_bunga' => $this->faker->randomElement(['flat', 'efektif', 'anuitas']),
-            'bunga_pertahun' => $this->faker->randomFloat(2, 5, 20) . '%',
             'penghasilan_perbulan' => $this->faker->numberBetween(3000000, 50000000),
             'catatan' => $this->faker->sentence(),
-            'jenis' => $this->faker->randomElement(['Tabungan', 'Deposit', 'Kredit']),
+            'jenis' => $this->faker->randomElement(['Tabungan', 'Deposito', 'Kredit']),
             'code' => $this->faker->numerify('##########'),
         ];
     }

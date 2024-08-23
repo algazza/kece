@@ -14,7 +14,7 @@ class NoAdmin extends Model
 
     protected $fillable = [
         'no_kredit',
-        'no_deposit',
+        'no_deposito',
         'no_tabungan',
         'no_armor_property',
     ];

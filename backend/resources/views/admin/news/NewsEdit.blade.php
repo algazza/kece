@@ -4,15 +4,6 @@
 <div class="bg-gray-100 font-[sans-serif] min-h-screen flex items-center justify-center">
     <div class="w-full max-w-[50rem] p-6">
         <div class="p-8 rounded-2xl bg-transparent shadow-md w-full">
-            @if(session('success'))
-                <div class="bg-green-100 text-green-700 p-4 rounded-md mb-4">
-                    {{ session('success') }}
-                </div>
-            @elseif(session('error'))
-                <div class="bg-red-100 text-red-700 p-4 rounded-md mb-4">
-                    {{ session('error') }}
-                </div>
-            @endif
             <form action="{{ route('news.update', $news->id) }}" method="POST" class="mt-4 space-y-4" enctype="multipart/form-data">
                 @csrf
                 @method('PUT') 
@@ -46,7 +37,8 @@
                             <select class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" name="kategory" required>
                                 <option value="Penghargaan" {{ $news->kategory == 'Penghargaan' ? 'selected' : '' }}>Penghargaan</option>
                                 <option value="Pengumuman" {{ $news->kategory == 'Pengumuman' ? 'selected' : '' }}>Pengumuman</option>
-                                <option value="Deposit" {{ $news->kategory == 'Deposit' ? 'selected' : '' }}>Deposit</option>
+                                <option value="Promo" {{ $news->kategory == 'Promo' ? 'selected' : '' }}>Promo</option>
+                                <option value="Siaran Pers" {{ $news->kategory == 'Siaran Pers' ? 'selected' : '' }}>Siaran Pers</option>
                             </select>
                         </div>
                         

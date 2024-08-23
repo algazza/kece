@@ -61,7 +61,7 @@
                             </div>
                             <label for="phone-input" class="text-sm font-medium sr-only text-gray-900 dark:text-white">Phone number:</label>
                             <div class="relative w-full">
-                                <input type="text" name="no_deposit" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_deposit }}"/>
+                                <input type="text" name="no_deposito" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_deposito }}"/>
                             </div>
                         </div>
                     </div>

@@ -54,7 +54,10 @@
                                 <option disabled value="">Role</option>
                                 <option value="admin" {{ $admin->role == 'admin' ? 'selected' : '' }}>Admin</option>
                                 <option value="kredit" {{ $admin->role == 'kredit' ? 'selected' : '' }}>Kredit</option>
-                                <option value="deposit" {{ $admin->role == 'deposit' ? 'selected' : '' }}>Deposit</option>
+                                <option value="deposito" {{ $admin->role == 'deposito' ? 'selected' : '' }}>Deposit</option>
+                                <option value="pickup" {{ $admin->role == 'pickup' ? 'selected' : '' }}>Pick-up</option>
+                                <option value="tabungan" {{ $admin->role == 'tabungan' ? 'selected' : '' }}>Tabungan</option>
+                                <option value="news" {{ $admin->role == 'news' ? 'selected' : '' }}>News</option>
                             </select>
                         </div>
                         <div class="w-full">

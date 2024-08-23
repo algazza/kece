@@ -39,12 +39,18 @@ class AdminController extends Controller
                 return redirect()->route('dashboard');
             } elseif ($user->role == 'kredit') {
                 return redirect()->route('dashboard');
-            } elseif ($user->role == 'deposit') {
+            } elseif ($user->role == 'deposito') {
+                return redirect()->route('dashboard');
+            } elseif ($user->role == 'tabungan') {
+                return redirect()->route('dashboard');
+            } elseif ($user->role == 'news') {
+                return redirect()->route('dashboard');
+            } elseif ($user->role == 'pickup') {
                 return redirect()->route('dashboard');
             }
         } else {
             Log::warning('Failed login attempt', $infologin);
-            return redirect()->route('login')->withErrors('Email atau password tidak valid')->withInput();
+            return redirect()->route('login')->withErrors('Email atau password tidak valid');
         }
     }
 

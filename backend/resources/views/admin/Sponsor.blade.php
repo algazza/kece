@@ -35,39 +35,41 @@
           <ul role="list"  
             class="mx-auto mt-8 grid max-w-2xl   grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
 
-            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-              <div class="bg-white p-7 rounded-md">
-                      <div class="flex p">
-                        <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
-                        <div class="px-2 border-r-2 border-gray-200"></div>
-                        <div class="font-display font-semibold text-base text-slate-900 px-2">MMT</div>
-                      </div>
-                      <div class="py-2">
-                        <div class="flex">
-                          <div>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat</p>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Usaha</p>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
-                          </div>
-                          <div>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Jadon</p>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 092e409201</p>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Wahitukam@gmail.com</p>
-                              <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : Jl. Ghaza 12 no 2</p>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : 021452310546</p>
-                              <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Padang Ghaza</p>
-                              <div class="flex flex-col">
-                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                              </div>
-                          </div>
-                      </div>
-                      </div>
-              </div>
-            </div>    
+            @foreach ($sponsor as $item)
+              <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                <div class="bg-white p-7 rounded-md">
+                        <div class="flex p">
+                          <div class="font-display text-base text-slate-900 font-normal">{{ $item->bidang_usaha }}</div>
+                          <div class="px-2 border-r-2 border-gray-200"></div>
+                          <div class="font-display font-semibold text-base text-slate-900 px-2">{{ $item->jenis_sponsor }}</div>
+                        </div>
+                        <div class="py-2">
+                          <div class="flex">
+                            <div>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Usaha</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
+                            </div>
+                            <div>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->nama }}</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->nik }}</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->email }}</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->alamat }}</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->no_handphone }}</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : {{ $item->nama_usaha }}</p>
+                                <div class="flex flex-col">
+                                  <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->catatan }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+              </div>    
+            @endforeach
             <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
               <div class="bg-white p-7 rounded-md">
                       <div class="flex p">

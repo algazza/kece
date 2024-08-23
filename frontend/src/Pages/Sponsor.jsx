@@ -31,7 +31,7 @@ const Sponsor = () => {
         dummyprops={formUsahaSponsor}
         value={"Sponsor"}
         page={"/PickupPage"}
-        endpoint={"http://localhost:8000/api/Sponsor"}
+        endpoint={"http://localhost:8000/api/sponsor"}
       />
 </>
   )

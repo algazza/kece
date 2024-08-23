@@ -48,7 +48,7 @@
                     </div>
                     <label for="phone-input" class="text-sm font-medium sr-only text-gray-900 dark:text-white">Phone number:</label>
                     <div class="relative w-full">
-                        <input type="text" name="no_kredit" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_deposit }}" readonly/>
+                        <input type="text" name="no_deposito" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_deposito }}" readonly/>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                     </div>
                     <label for="phone-input" class="text-sm font-medium sr-only text-gray-900 dark:text-white">Phone number:</label>
                     <div class="relative w-full">
-                        <input type="text" name="no_kredit" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_tabungan }}" readonly/>
+                        <input type="text" name="no_tabungan" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_tabungan }}" readonly/>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                     </div>
                     <label for="phone-input" class="text-sm font-medium sr-only text-gray-900 dark:text-white">Phone number:</label>
                     <div class="relative w-full">
-                        <input type="text" name="no_kredit" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_armor_property }}" readonly/>
+                        <input type="text" name="no_armor_property" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_armor_property }}" readonly/>
                     </div>
                 </div>
             </div>

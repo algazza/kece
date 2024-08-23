@@ -1,19 +1,20 @@
 <?php
 
+use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KreditController;
-use App\Http\Middleware\Admin\KreditAccess;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DepositoController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\NoAdminController;
 use App\Http\Controllers\PickupController;
+use App\Http\Controllers\NoAdminController;
+use App\Http\Controllers\SponsorController;
+use App\Http\Middleware\Admin\KreditAccess;
+use App\Http\Controllers\DepositoController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TabunganController;
-use App\Models\Admin;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Route as RoutingRoute;
 
 /*
@@ -50,7 +51,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('Admin/{id}/show', [AdminController::class, 'showAdmin'])->name('admin.show');
 
     // Dashboard
-    Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit');
+    Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit,tabungan,pickup,news');
     Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
     Route::get('/api/dashboard/kredit',   [DashboardController::class, 'data']);
     Route::post('/search', [DashboardController::class, 'search'])->name('dashboard.search');
@@ -118,6 +119,15 @@ Route::middleware(['auth', 'AdminAkses:news,admin'])->group(function(){
 });
 
 
+Route::middleware(['auth', 'AdminAkses:admin'])->group(function(){
+    // sponsor
+    Route::get('/Sponsor', [SponsorController::class, 'index'])->name('sponsor.index');
+});
+
+
+
+
+
 
 
 
@@ -141,6 +151,4 @@ Route::get('/Bannere', function(){
 Route::get('/Usere', function(){
     return view ('admin.user.UserAdd');
 });
-Route::get('/sp', function(){
-    return view ('admin.Sponsor');
-});
+

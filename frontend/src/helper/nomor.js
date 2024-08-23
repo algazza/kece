@@ -8,8 +8,8 @@ fetch('http://localhost:8000/api/noAdmin')
     if (data && data.no_kredit) {
       nomorKredit.push(String(data.no_kredit));
     }
-    if (data && data.no_deposit) {
-      nomorDeposito.push(String(data.no_deposit)); 
+    if (data && data.no_deposito) {
+      nomorDeposito.push(String(data.no_deposito));
     }
     if (data && data.no_tabungan) {
       nomorTabungan.push(String(data.no_tabungan));

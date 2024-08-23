@@ -61,7 +61,10 @@
                                     <option disabled value="">Role</option>
                                     <option value="admin">Admin</option>
                                     <option value="kredit">Kredit</option>
-                                    <option value="deposit">Deposit</option>
+                                    <option value="deposito">Deposito</option>
+                                    <option value="tabungan">Tabungan</option>
+                                    <option value="pickup">Pick-up</option>
+                                    <option value="news">News</option>
                                 </select>
                         </div>
                         <div class="w-full">

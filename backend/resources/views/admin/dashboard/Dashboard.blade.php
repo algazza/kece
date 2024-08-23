@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center h-[60%]">/
+        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center h-[55%]">/
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
                 @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
                     <a href="{{ route('kredit.index') }}">
@@ -68,7 +68,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='text-black bx bx-credit-card' ></i>
+                                    <i class='bx bx-credit-card-front text-black'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold  pt-2">Deposito</h3>
@@ -82,7 +82,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='text-black bx bx-credit-card' ></i>
+                                    <i class='bx bx-wallet-alt text-black'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold  pt-2">Tabungan</h3>
@@ -146,20 +146,21 @@
                         </div>
                     </a>
                 @endif
-                <a href="">
-                    <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-credit-card' ></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
+                @if (Auth::user()->role == 'admin')
+                    <a href="{{ route('noAdmin') }}">
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+                            <div class="flex">
+                                <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                    <i class='bx bx-phone text-black'></i>
+                                </div>
+                                <div class="block mt-[0.8rem]">
+                                    <h3 class="text-[1.1rem] font-bold pt-2">Nomor</h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[39rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative">
+                    </a>
+                @endif            </div>
+            <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[22rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative">
                 
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
                     

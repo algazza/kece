@@ -36,7 +36,8 @@
                                 <option disabled value="">kategory</option>
                                 <option value="Penghargaan">Penghargaan</option>
                                 <option value="Pengumuman">Pengumuman</option>
-                                <option value="deposit">Deposit</option>
+                                <option value="Promo">Promo</option>
+                                <option value="Siaran Pers">Siaran Pers</option>
                             </select>
                         </div>
                     </div>
