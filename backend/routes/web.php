@@ -138,3 +138,6 @@ Route::get('/Usere', function(){
 Route::get('/sp', function(){
     return view ('admin.Sponsor');
 });
+Route::get('/ap', function(){
+    return view ('admin.armorprop');
+});

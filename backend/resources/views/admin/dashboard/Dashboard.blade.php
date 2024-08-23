@@ -157,7 +157,7 @@
                     </div>
                 </a>
             </div>
-            <div class="bg-gray-50 w-23 sm:w-[35rem] h-[39rem] my-[1rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative">
+            <div class="bg-gray-50 w-23 sm:w-[35rem] h-[39rem] my-[1rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative hidden xs:block">
                 
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
                     

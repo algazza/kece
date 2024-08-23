@@ -35,7 +35,7 @@
           <ul role="list"  
             class="mx-auto mt-8 grid max-w-2xl   grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
 
-            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-gray-300 to-gray-700 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
               <div class="bg-white p-7 rounded-md">
                       <div class="flex p">
                         <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
@@ -68,7 +68,7 @@
                       </div>
               </div>
             </div>    
-            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-gray-300 to-gray-700 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
               <div class="bg-white p-7 rounded-md">
                       <div class="flex p">
                         <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
@@ -101,7 +101,7 @@
                       </div>
               </div>
             </div>    
-            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-gray-300 to-gray-700 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
               <div class="bg-white p-7 rounded-md">
                       <div class="flex p">
                         <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
@@ -134,7 +134,7 @@
                       </div>
               </div>
             </div>    
-            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-gray-300 to-gray-700 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
               <div class="bg-white p-7 rounded-md">
                       <div class="flex p">
                         <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
@@ -167,7 +167,7 @@
                       </div>
               </div>
             </div>    
-            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-gray-300 to-gray-700 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
               <div class="bg-white p-7 rounded-md">
                       <div class="flex p">
                         <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
@@ -200,7 +200,7 @@
                       </div>
               </div>
             </div>    
-            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-gray-300 to-gray-700 p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
               <div class="bg-white p-7 rounded-md">
                       <div class="flex p">
                         <div class="font-display text-base text-slate-900 font-normal">Wahit mebel</div>
