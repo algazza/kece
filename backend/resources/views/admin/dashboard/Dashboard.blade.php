@@ -158,16 +158,10 @@
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
                     </a>
-                @endif            </div>
+                @endif
+           </div>
             <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[22rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative">
-=======
-                    </div>
-                </a>
-            </div>
-            <div class="bg-gray-50 w-23 sm:w-[35rem] h-[39rem] my-[1rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative hidden xs:block">
->>>>>>> ec48c45d4045042d0e5f4279a57b9d600b3b5460
                 
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
                     

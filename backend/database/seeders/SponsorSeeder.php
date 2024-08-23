@@ -20,7 +20,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 1',
                 'nama_usaha' => 111111,
                 'catatan' => 'Catatan 1',
-                'jenis_sponsor' => 'Jenis Sponsor 1',
+                'jenis_sponsor' => 'Nomor Meja',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                 Ternyata, di dunia kerja, kita juga bisa menemukan profesi liaison officer.'
             ],
@@ -33,7 +33,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 2',
                 'nama_usaha' => 222222,
                 'catatan' => 'Catatan 2',
-                'jenis_sponsor' => 'Jenis Sponsor 2',
+                'jenis_sponsor' => 'Tempat Tissue / Gelas',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                                 Ternyata, di dunia kerja, kita juga bisa menemukan profes'
             ],
@@ -46,7 +46,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 1',
                 'nama_usaha' => 111111,
                 'catatan' => 'Catatan 1',
-                'jenis_sponsor' => 'Jenis Sponsor 1',
+                'jenis_sponsor' => 'Nomor Meja',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                 Ternyata, di dunia kerja, kita juga bisa menemukan profesi liaison officer.'
             ],
@@ -59,7 +59,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 2',
                 'nama_usaha' => 222222,
                 'catatan' => 'Catatan 2',
-                'jenis_sponsor' => 'Jenis Sponsor 2',
+                'jenis_sponsor' => 'Tempat Tissue / Gelas',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                                 Ternyata, di dunia kerja, kita juga bisa menemukan profes'
             ],
@@ -72,7 +72,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 1',
                 'nama_usaha' => 111111,
                 'catatan' => 'Catatan 1',
-                'jenis_sponsor' => 'Jenis Sponsor 1',
+                'jenis_sponsor' => 'Nomor Meja',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                 Ternyata, di dunia kerja, kita juga bisa menemukan profesi liaison officer.'
             ],
@@ -85,7 +85,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 2',
                 'nama_usaha' => 222222,
                 'catatan' => 'Catatan 2',
-                'jenis_sponsor' => 'Jenis Sponsor 2',
+                'jenis_sponsor' => 'Tempat Tissue / Gelas',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                                 Ternyata, di dunia kerja, kita juga bisa menemukan profes'
             ],
@@ -98,7 +98,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 1',
                 'nama_usaha' => 111111,
                 'catatan' => 'Catatan 1',
-                'jenis_sponsor' => 'Jenis Sponsor 1',
+                'jenis_sponsor' => 'Nomor Meja',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                 Ternyata, di dunia kerja, kita juga bisa menemukan profesi liaison officer.'
             ],
@@ -111,7 +111,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 2',
                 'nama_usaha' => 222222,
                 'catatan' => 'Catatan 2',
-                'jenis_sponsor' => 'Jenis Sponsor 2',
+                'jenis_sponsor' => 'Tempat Tissue / Gelas',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                                 Ternyata, di dunia kerja, kita juga bisa menemukan profes'
             ],
@@ -124,7 +124,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 1',
                 'nama_usaha' => 111111,
                 'catatan' => 'Catatan 1',
-                'jenis_sponsor' => 'Jenis Sponsor 1',
+                'jenis_sponsor' => 'MMT',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                 Ternyata, di dunia kerja, kita juga bisa menemukan profesi liaison officer.'
             ],
@@ -137,7 +137,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 2',
                 'nama_usaha' => 222222,
                 'catatan' => 'Catatan 2',
-                'jenis_sponsor' => 'Jenis Sponsor 2',
+                'jenis_sponsor' => 'MMT',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                                 Ternyata, di dunia kerja, kita juga bisa menemukan profes'
             ],
@@ -150,7 +150,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 1',
                 'nama_usaha' => 111111,
                 'catatan' => 'Catatan 1',
-                'jenis_sponsor' => 'Jenis Sponsor 1',
+                'jenis_sponsor' => 'MMT',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                 Ternyata, di dunia kerja, kita juga bisa menemukan profesi liaison officer.'
             ],
@@ -163,7 +163,7 @@ class SponsorSeeder extends Seeder
                 'bidang_usaha' => 'Bidang Usaha 2',
                 'nama_usaha' => 222222,
                 'catatan' => 'Catatan 2',
-                'jenis_sponsor' => 'Jenis Sponsor 2',
+                'jenis_sponsor' => 'MMT',
                 'catatan' => 'Banyak acara kampus atau perlombaan yang membutuhkan peran seorang LO untuk mendukung kelancaran acara.
                                 Ternyata, di dunia kerja, kita juga bisa menemukan profes'
             ],

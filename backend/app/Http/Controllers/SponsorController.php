@@ -7,11 +7,19 @@ use Illuminate\Http\Request;
 
 class SponsorController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $sponsor = Sponsor::orderby('created_at', 'DESC')->paginate();
-        return view ('admin.Sponsor', compact('sponsor'));
+        $jenis_sponsor = $request->input('jenis_sponsor');
+    
+        $sponsor = Sponsor::when($jenis_sponsor, function ($query, $jenis_sponsor) {
+            return $query->where('jenis_sponsor', $jenis_sponsor);
+        })
+        ->orderby('created_at', 'DESC')
+        ->paginate();
+    
+        return view('admin.Sponsor', compact('sponsor'));
     }
+    
 
     /**
      * Show the form for creating a new resource.

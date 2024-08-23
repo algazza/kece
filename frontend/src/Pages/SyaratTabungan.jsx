@@ -17,10 +17,6 @@ import { motion } from "framer-motion";
 import { Kredit } from "../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../helper/DataProduk";
-<<<<<<< HEAD
-import { nomorTabungan } from "../helper/nomor";
-
-=======
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import SchoolIcon from '@mui/icons-material/School';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
@@ -28,7 +24,8 @@ import MosqueIcon from '@mui/icons-material/Mosque';
 import ElderlyIcon from '@mui/icons-material/Elderly';
 import GroupsIcon from '@mui/icons-material/Groups';
 import DevicesOtherIcon from '@mui/icons-material/DevicesOther';
->>>>>>> ec48c45d4045042d0e5f4279a57b9d600b3b5460
+import { nomorTabungan } from "../helper/nomor";
+
 // ===================================================
 const buttonMenuTabungan = [
   {
