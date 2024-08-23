@@ -84,7 +84,7 @@ const IsiNews = () => {
 
           <div>
             <img
-              className="max-w-[800px]"
+              className="max-w-[400px]"
               src={`http://localhost:8000/image/public/news/${news.image}`}
               alt=""
             />

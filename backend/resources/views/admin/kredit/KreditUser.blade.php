@@ -1,75 +1,33 @@
 @extends('layout')
 @section('content')
-<section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen font-poppins overflow-hidden">
-    <section class="bg-gray-50 h-[77%] w-[87%] mt-[8%] ml-[9%] rounded-[5px] py-[3rem] text-left justify-center flex flex-col">
-        <div class="inline-block mx-[3rem] mt-[1rem]">
-            <p class="bg-slate-400 inline-block rounded-[20px] text-[1.1rem] font-semibold text-gray-50 box-border border-[0.5px] border-white shadow-lg px-[2rem] py-[0.5rem]">
-                {{ $kredit->nama }}
-            </p>
-        </div>
-        <div class="grid grid-cols-2">
-            <div class="mx-[1rem] mt-[1.5rem]">
-                <div class="bg-gray-100 inline-b lock rounded-[15px] text-[1.1rem] box-border border-[0.5px] border-white shadow-lg mx-[3rem]">
-                    <p class="px-[3rem] py-[0.2rem]">Identify</p>
-                </div>
-                <div class="flex flex-col mx-[3.7rem] my-[1.3rem] gap-2">
-                    <div class="flex gap-5">
-                        <i class='bx bxs-envelope text-[1.4rem] mt-[0.2rem]'></i>
-                        <p class="leading-7">{{ $kredit->email }}</p>
-                    </div>
-                    <div class="flex gap-5">
-                        <i class='bx bxs-bell text-[1.4rem] mt-[0.2rem]'></i>
-                        <p class="leading-7">{{ $kredit->no_handphone }}</p>
-                    </div>
-                    <div class="flex gap-5">
-                        <i class='bx bxs-bell text-[1.4rem] mt-[0.2rem]'></i>
-                        <p class="leading-7">{{ $kredit->nik }}</p>
-                    </div>
-                    <div class="flex gap-5">
-                        <i class='bx bxs-bell text-[1.4rem] mt-[0.2rem]'></i>
-                        <p class="leading-7">{{ $kredit->pekerjaan }}</p>
-                    </div>
-                    <div class="flex gap-5">
-                        <i class='bx bxs-bell text-[1.4rem] mt-[0.2rem]'></i>
-                        <p class="leading-7">{{ $kredit->alamat }}</p>
-                    </div>
-                    <div class="bg-gray-100 rounded-[15px] text-[0.9rem] box-border border-[0.5px] border-white shadow-2xl h-[6.5rem] mt-[0.7rem] p-[0.5rem]">
-                        <p>{{ $kredit->catatan }}</p>
-                    </div>
-                </div>
-            </div>                       
-            <div class="mx-[1rem] mt-[2.5rem]">
-                <div class="bg-gray-100 inline-block rounded-[15px] text-[1.1rem] box-border border-[0.5px] border-white shadow-lg mx-[3rem]">
-                    <p class="px-[3rem] py-[0.2rem]">Submission</p>
-                </div>
-                <div class="flex flex-col mx-[3.7rem] my-[1.3rem] gap-3">
-                    <div class="flex gap-5">
-                        <i class='bx bxs-bell text-[1.5rem] mt-[0.2rem]'></i>
-                        <p class="leading-7 text-[1rem]">{{ $kredit->total_pinjaman }}</p>
-                    </div>
-                    <div class="flex gap-5">
-                        <i class='bx bxs-bell text-[1.5rem] mt-[0.2rem]'></i>
-                        <p class="leading-7 text-[1rem]">{{ $kredit->jangka_waktu }}</p>
-                    </div>
-                    <div class="flex gap-5">
-                        <i class='bx bxs-bell text-[1.5rem] mt-[0.2rem]'></i>
-                        <p class="leading-7 text-[1rem]">{{ $kredit->jenis_angunan }}</p>
-                    </div>
-                    <div class="flex gap-5">
-                        <i class='bx bxs-bell text-[1.5rem] mt-[0.2rem]'></i>
-                        <p class="leading-7 text-[1rem]">{{ $kredit->perhitungan_bunga }}</p>
-                    </div>
-                    <div class="flex gap-5">
-                        <i class='bx bxs-bell text-[1.5rem] mt-[0.2rem]'></i>
-                        <p class="leading-7 text-[1rem]">{{ $kredit->bunga_pertahun }}</p>
-                    </div>
-                    <div class="flex gap-5">
-                        <i class='bx bxs-bell text-[1.5rem] mt-[0.2rem]'></i>
-                        <p class="leading-7 text-[1rem]">{{ $kredit->penghasilan_perbulan }}</p>
-                    </div>
-                </div>
-            </div>  
-        </div>
+<section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen font-poppins overflow-hidden pt-[5rem]">
+    <section class=" h-[77%] w-[87%] mt-[5%] ml-[9%] rounded-[5px] py-[3rem] text-left justify-center flex flex-col">
+        <div class="mx-14 mt-10 border-2 bg-white border-gray-300 rounded-lg">
+  <div class=" text-center text-1xl text-gray-400 font-bold mt-[2rem]">{{ $kredit->jenis}}</div>
+  <div class="text-center text-3xl font-bold">{{ $kredit->nama }}</div>
+  <div class="p-8">
+    <div class="flex gap-4">
+      <input type="Name" id="readonlyinput" readonly name="name" class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="{{ $kredit->no_handphone }}" />
+      <input type="email" name="email" id="readonlyinput" readonly class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="{{ $kredit->email }}" />
+    </div>
+    <div class="my-6 flex gap-4">
+      <input name="select" id="select" class="block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 font-semibold text-gray-500 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm " id="readonlyinput" readonly  placeholder="{{ $kredit->nik }}">
+      <input name="select" id="select" class="block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 font-semibold text-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm " id="readonlyinput" readonly placeholder="{{ $kredit->pekerjaan }}">
+    </div>
+    <div class="my-6 flex gap-6">
+      <input name="select" id="select" class="block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 font-semibold text-gray-500 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm " id="readonlyinput" readonly  placeholder="{{ $kredit->total_pinjaman }}">
+      <input name="select" id="select" class="block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 font-semibold text-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm " id="readonlyinput" readonly placeholder="{{ $kredit->jangka_waktu }}">
+      <input name="select" id="select" class="block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 font-semibold text-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm " id="readonlyinput" readonly placeholder="{{ $kredit->jenis_angunan }}">
+      <input name="select" id="select" class="block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 font-semibold text-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm " id="readonlyinput" readonly placeholder="{{ $kredit->perhitungan_bunga }}">
+      <input name="select" id="select" class="block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 font-semibold text-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm " id="readonlyinput" readonly placeholder="bunga per tahun">
+      <input name="select" id="select" class="block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 font-semibold text-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm " id="readonlyinput" readonly placeholder="{{ $kredit->penghasilan_perbulan }}">
+    </div>
+
+    <div class="">
+      <textarea name="textarea" id="text" cols="30" rows="10" class="mb-10 h-40 w-full resize-none rounded-md border border-slate-300 p-5 font-semibold text-gray-500" id="readonlyinput" readonly>{{ $kredit->catatan }}</textarea>
+    </div>
+  </div>
+</div>
     </section>
 </section>
 @endsection

@@ -1,18 +1,20 @@
 <?php
 
+use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KreditController;
-use App\Http\Middleware\Admin\KreditAccess;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DepositoController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\NoAdminController;
 use App\Http\Controllers\PickupController;
-use App\Models\Admin;
+use App\Http\Controllers\NoAdminController;
+use App\Http\Controllers\SponsorController;
+use App\Http\Middleware\Admin\KreditAccess;
+use App\Http\Controllers\DepositoController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TabunganController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Route as RoutingRoute;
 
 /*
@@ -49,7 +51,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('Admin/{id}/show', [AdminController::class, 'showAdmin'])->name('admin.show');
 
     // Dashboard
-    Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit');
+    Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit,tabungan,pickup,news');
     Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
     Route::get('/api/dashboard/kredit',   [DashboardController::class, 'data']);
     Route::post('/search', [DashboardController::class, 'search'])->name('dashboard.search');
@@ -88,6 +90,14 @@ Route::middleware(['auth', 'AdminAkses:deposito,admin'])->group(function(){
     Route::get('/api/deposito', [DepositoController::class, 'data']);
 });
 
+Route::middleware(['auth', 'AdminAkses:tabungan,admin'])->group(function(){
+    // Tabungan
+    Route::get('/Tabungan', [TabunganController::class, 'index'])->middleware('kredit.access')->name('tabungan.index');
+    Route::get('/tabungan/{id}', [TabunganController::class, 'show'])->name('tabungan.show');
+    Route::get('/api/check-token/tabungan', [TabunganController::class, 'checkToken']);
+    Route::get('/api/tabungan', [TabunganController::class, 'data']);
+});
+
 
 Route::middleware(['auth', 'AdminAkses:pickup,admin'])->group(function(){
     // Pickup
@@ -109,6 +119,15 @@ Route::middleware(['auth', 'AdminAkses:news,admin'])->group(function(){
 });
 
 
+Route::middleware(['auth', 'AdminAkses:admin'])->group(function(){
+    // sponsor
+    Route::get('/Sponsor', [SponsorController::class, 'index'])->name('sponsor.index');
+});
+
+
+
+
+
 
 
 
@@ -123,9 +142,6 @@ Route::middleware(['auth', 'AdminAkses:news,admin'])->group(function(){
 Route::get('/Newse', function(){
     return view ('admin.news.NewsEdit');
 });
-Route::get('/Tabungan', function(){
-    return view ('admin.tabungan.Tabungan');
-});
 Route::get('/Banner', function(){
     return view ('admin.banner.Banner');
 });
@@ -135,6 +151,6 @@ Route::get('/Bannere', function(){
 Route::get('/Usere', function(){
     return view ('admin.user.UserAdd');
 });
-Route::get('/sp', function(){
-    return view ('admin.Sponsor');
+Route::get('/ap', function(){
+    return view ('admin.armorprop');
 });

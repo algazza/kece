@@ -11,7 +11,7 @@
                     </svg>
                 </div>
 
-                <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">KREDIT</h1>
+                <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">Kredit</h1>
                 
                 <div class="flex items-center mt-[-0.1rem]">
                     <div id="dropdown-phone-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center box-border rounded-s-lg border-black border-[1px] bg-gray-100 shadow-inner shadow-gray-300" type="button">
@@ -36,7 +36,7 @@
                     </svg>
                 </div>
 
-                <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">KREDIT</h1>
+                <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">Deposito</h1>
                 
                 <div class="flex items-center mt-[-0.1rem]">
                     <div id="dropdown-phone-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center box-border rounded-s-lg border-black border-[1px] bg-gray-100 shadow-inner shadow-gray-300" type="button">
@@ -48,7 +48,7 @@
                     </div>
                     <label for="phone-input" class="text-sm font-medium sr-only text-gray-900 dark:text-white">Phone number:</label>
                     <div class="relative w-full">
-                        <input type="text" name="no_kredit" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_deposit }}" readonly/>
+                        <input type="text" name="no_deposito" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_deposito }}" readonly/>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     </svg>
                 </div>
 
-                <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">KREDIT</h1>
+                <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">Tabungan</h1>
                 
                 <div class="flex items-center mt-[-0.1rem]">
                     <div id="dropdown-phone-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center box-border rounded-s-lg border-black border-[1px] bg-gray-100 shadow-inner shadow-gray-300" type="button">
@@ -73,7 +73,7 @@
                     </div>
                     <label for="phone-input" class="text-sm font-medium sr-only text-gray-900 dark:text-white">Phone number:</label>
                     <div class="relative w-full">
-                        <input type="text" name="no_kredit" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_tabungan }}" readonly/>
+                        <input type="text" name="no_tabungan" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_tabungan }}" readonly/>
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                     </svg>
                 </div>
 
-                <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-14 font-bold">KREDIT</h1>
+                <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-10 font-bold">Armor Property</h1>
                 
                 <div class="flex items-center mt-[-0.1rem]">
                     <div id="dropdown-phone-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center box-border rounded-s-lg border-black border-[1px] bg-gray-100 shadow-inner shadow-gray-300" type="button">
@@ -98,7 +98,7 @@
                     </div>
                     <label for="phone-input" class="text-sm font-medium sr-only text-gray-900 dark:text-white">Phone number:</label>
                     <div class="relative w-full">
-                        <input type="text" name="no_kredit" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_armor_property }}" readonly/>
+                        <input type="text" name="no_armor_property" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_armor_property }}" readonly/>
                     </div>
                 </div>
             </div>
@@ -112,6 +112,6 @@
               </button>
             </div>
           </a> 
-
     </div>
+  
 @endsection

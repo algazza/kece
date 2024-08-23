@@ -32,24 +32,24 @@ class NoAdminController extends Controller
     
             $validateData = $request->validate([
                 'no_kredit' => 'required|integer',
-                'no_deposit' => 'required|integer',
+                'no_deposito' => 'required|integer',
                 'no_tabungan' => 'required|integer',
                 'no_armor_property' => 'required|integer',
             ]);
     
             $noAdmin->update($validateData);
         
-            return redirect()->route('noAdmin')->with('success', 'Data updated successfully.');
+            return redirect()->route('noAdmin')->with('success', 'Data berhasil di perbarui');
 
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors('Nomer terlalu banyak');
+            return redirect()->route('noAdmin')->with('error','Nomer terlalu banyak');
         }
     }
 
 
     public function index(){
         $noAdmin = NoAdmin::orderBy('created_at', 'DESC')->first();
-        return response()->json();
+        return response()->json($noAdmin);
     }
     
 }

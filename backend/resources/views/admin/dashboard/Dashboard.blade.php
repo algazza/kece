@@ -2,20 +2,20 @@
 
 @extends('layout')
 @section('content')
-    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen font-poppins">
-        <div class="flex gap-[1.5rem] pt-[5rem] pb-[2rem] px-[10rem] bg-gray-200 w-screen overflow-x-auto ">
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg">
+    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins">
+        <div class="flex gap-[2rem] pt-[5rem] pb-[2rem] justify-center bg-gray-200 w-screen overflow-x-auto">
+            <div class="bg-gray-50 w-[16rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:max-w-full sm:px-6 lg:px-6">
                 <div>
                     <h3 id="totalData" class="absolute ml-[0.7rem] mt-[-0.2rem] text-[1.3rem] font-semibold max-w-12 mx-auto">{{ $totalData }}</h3>
                     <div class="mt-[0.5rem]">
                         <div class="text-[6rem] ">
                             <i class='text-black bx bx-bar-chart'></i>
                         </div>
-                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem] max-w-">All incoming data</p>
+                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">All incoming data</p>
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden ss:block">
                 <div>
                     <div class="mt-[1.3rem]">
                         <div class="text-[5rem]">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden sm:block">
                 <div>
                     <div class="mt-[0.5rem]">
                         <div class="text-[6rem] ">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-50 w-[14rem] h-[10rem] block justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden md2:block">
                 <div>
  
                     <div class="mt-[0.5rem]">
@@ -47,11 +47,11 @@
                 </div>
             </div>
         </div>
-        <div class="flex h-[53%] ml-[10rem] mt-[-1rem] gap-8">
+        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center h-[55%]">/
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
                 @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
                     <a href="{{ route('kredit.index') }}">
-                        <div class="w-[31rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between ">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                     <i class='text-black bx bx-credit-card' ></i>
@@ -63,32 +63,36 @@
                         </div>
                     </a>
                 @endif
-                <a href="{{ route('deposito.index') }}">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-credit-card' ></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold pt-2">Deposito</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-credit-card' ></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold pt-2">Tabungan</h3>
+                @if (Auth::user()->role == 'deposito' || Auth::user()->role == 'admin')
+                    <a href="{{ route('deposito.index') }}">
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+                            <div class="flex">
+                                <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                    <i class='bx bx-credit-card-front text-black'></i>
+                                </div>
+                                <div class="block mt-[0.8rem]">
+                                    <h3 class="text-[1.1rem] font-bold  pt-2">Deposito</h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                @endif
+                @if (Auth::user()->role == 'tabungan' || Auth::user()->role == 'admin')
+                    <a href="{{ route('tabungan.index') }}">
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+                            <div class="flex">
+                                <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                    <i class='bx bx-wallet-alt text-black'></i>
+                                </div>
+                                <div class="block mt-[0.8rem]">
+                                    <h3 class="text-[1.1rem] font-bold  pt-2">Tabungan</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                @endif
                 <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                    <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                 <i class='text-black bx bx-home' ></i>
@@ -102,7 +106,7 @@
                 </a>
                 @if (Auth::user()->role == 'pickup' || Auth::user()->role == 'admin')
                     <a href="{{ route('pickup.index') }}">
-                        <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                     <i class='text-black bx bxs-truck'></i>
@@ -116,7 +120,7 @@
                 @endif
                 @if (Auth::user()->role == 'news' || Auth::user()->role == 'admin')
                     <a href="{{ route('news') }}">
-                        <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                     <i class='text-black bx bx-news' ></i>
@@ -130,7 +134,7 @@
                 @endif
                 @if (Auth::user()->role == 'admin')
                     <a href="{{ route('admin') }}">
-                        <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
                                     <i class='text-black bx bx-credit-card' ></i>
@@ -142,20 +146,28 @@
                         </div>
                     </a>
                 @endif
-                <a href="">
-                    <div class="w-[31rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-credit-card' ></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold pt-2">Kredit</h3>
+                @if (Auth::user()->role == 'admin')
+                    <a href="{{ route('noAdmin') }}">
+                        <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+                            <div class="flex">
+                                <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                    <i class='bx bx-phone text-black'></i>
+                                </div>
+                                <div class="block mt-[0.8rem]">
+                                    <h3 class="text-[1.1rem] font-bold pt-2">Nomor</h3>
+                                </div>
                             </div>
                         </div>
+<<<<<<< HEAD
+                    </a>
+                @endif            </div>
+            <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[22rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative">
+=======
                     </div>
                 </a>
             </div>
-            <div class="bg-gray-50 w-[26rem] my-[1rem] rounded-[5px] h-[100%] box-border border-[0.5px] border-black shadow-lg relative">
+            <div class="bg-gray-50 w-23 sm:w-[35rem] h-[39rem] my-[1rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative hidden xs:block">
+>>>>>>> ec48c45d4045042d0e5f4279a57b9d600b3b5460
                 
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
                     
@@ -221,7 +233,6 @@
             const date = createdAt.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
 
             content += `
-                <a href="/dashboard/${item.id}">
                     <div class="border-b border-black border-dashed mx-8 flex items-center cursor-pointer py-2 my-2">
                         <p class="text-lg">${(currentPage - 1) * data.length + index + 1}</p>
                         <div class="px-4 text-left">
@@ -234,7 +245,6 @@
                         </div>
                         <p class="ml-auto py-1 px-3 bg-slate-200 text-xs rounded">${item.jenis}</p>
                     </div>
-                </a>
             `;
         });
         $('#content').html(content);
@@ -278,5 +288,4 @@
     });
 
     </script>
-
 @endsection
