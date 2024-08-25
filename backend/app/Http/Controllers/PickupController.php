@@ -18,7 +18,7 @@ class PickupController extends Controller
     public function index(Request $request, KreditWeek $chart, KreditMounth $chartMonth)
     {
         $token = bin2hex(random_bytes(32));
-        $tokenExpiry = Carbon::now()->addSeconds(10);
+        $tokenExpiry = Carbon::now()->addSeconds(1000);
 
         $request->session()->put('kredit_access_token', $token);
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
@@ -49,8 +49,15 @@ class PickupController extends Controller
 
     public function data(Request $request)
     {
-        $pickup = Pickup::orderBy('created_at', 'desc')->paginate(20);
-
+        $search = $request->input('search');
+    
+        $query = Pickup::orderBy('created_at', 'desc');
+        if ($search) {
+            $query->where('nama', 'like', "%{$search}%");
+        }
+    
+        $pickup = $query->paginate(20);
+    
         return response()->json([
             'data' => $pickup->items(),
             'pagination' => [

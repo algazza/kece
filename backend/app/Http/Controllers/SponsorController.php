@@ -13,9 +13,7 @@ class SponsorController extends Controller
     
         $sponsor = Sponsor::when($jenis_sponsor, function ($query, $jenis_sponsor) {
             return $query->where('jenis_sponsor', $jenis_sponsor);
-        })
-        ->orderby('created_at', 'DESC')
-        ->paginate();
+        })->orderby('created_at', 'DESC')->paginate();
     
         return view('admin.Sponsor', compact('sponsor'));
     }

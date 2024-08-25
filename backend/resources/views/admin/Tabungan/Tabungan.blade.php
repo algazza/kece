@@ -4,6 +4,11 @@
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen font-poppins overflow-hidden">
         <section class="grid grid-cols-2 grid-template-columns: repeat(2, minmax(0, 1fr)); pt-[3rem]">
+            <div class="w-full p-4 absolute mt-[4.2rem] ml-[-16rem] z-20">
+                <form id="search-form" class="flex justify-center">
+                    <input type="text" id="search-input" name="search" placeholder="Cari berdasarkan nama..." class="p-[6px] border border-gray-300 rounded-[15px]">
+                </form>
+            </div>
             <div class="bg-gray-50 w-[28rem] my-[4rem] right-[58%] rounded-[5px] absolute h-[80%] box-border border-[0.5px] border-black shadow-lg overflow-hidden">
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] py-[1.2rem] absolute w-screen bg-gray-50 box-border border-black">
                     <p>All Person Data</p>
@@ -82,9 +87,9 @@
                 });
             }
     
-            function fetchData(page = 1) {
+            function fetchData(page = 1, search = '') {
                 $.ajax({
-                    url: `/api/tabungan?page=${page}`,
+                    url: `/api/tabungan?page=${page}&search=${encodeURIComponent(search)}`,
                     method: 'GET',
                     success: function(response) {
                         currentPage = response.pagination.current_page;
@@ -157,9 +162,23 @@
                 }
             });
     
+            $(document).on('submit', '#search-form', function(e) {
+                e.preventDefault();
+                const search = $('#search-input').val();
+                fetchData(currentPage, search);
+            });
+    
+            $(document).on('click', '.pagination-link', function(e) {
+                e.preventDefault();
+                const page = $(this).data('page');
+                if (page) {
+                    fetchData(page, $('#search-input').val());
+                }
+            });
+    
             fetchData(currentPage);
             setInterval(() => {
-                fetchData(currentPage);
+                fetchData(currentPage, $('#search-input').val());
             }, pollingInterval);
     
             setInterval(checkToken, 1000);
