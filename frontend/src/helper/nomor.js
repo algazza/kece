@@ -2,6 +2,7 @@ export const nomorKredit = [];
 export const nomorDeposito = [];
 export const nomorTabungan = [];
 export const nomorSponsor = [];
+export const nomorPickup = [];
 
 fetch('http://localhost:8000/api/noAdmin')
   .then(response => response.json())
@@ -17,6 +18,9 @@ fetch('http://localhost:8000/api/noAdmin')
     }
     if (data && data.no_sponsor) {
       nomorSponsor.push(String(data.no_sponsor));
+    }
+    if (data && data.no_pickup) {
+      nomorPickup.push(String(data.no_pickup));
     }
   })
   .catch(error => console.error('Error fetching data:', error));

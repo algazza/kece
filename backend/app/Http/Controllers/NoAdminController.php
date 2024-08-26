@@ -36,6 +36,7 @@ class NoAdminController extends Controller
                 'no_tabungan' => 'required|integer',
                 'no_armor_property' => 'required|integer',
                 'no_sponsor' => 'required|integer',
+                'no_pickup' => 'required|integer'
             ]);
     
             $noAdmin->update($validateData);

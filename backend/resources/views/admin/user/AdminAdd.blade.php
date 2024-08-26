@@ -65,7 +65,7 @@
                                     <option value="deposito">Deposito</option>
                                     <option value="tabungan">Tabungan</option>
                                     <option value="pickup">Pick-up</option>
-                                    <option value="promosi">Promosi</option>
+                                    <option value="promosi">Promosi</option>  
                                 </select>
                         </div>
                         <div class="w-full">
