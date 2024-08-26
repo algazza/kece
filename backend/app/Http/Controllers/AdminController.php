@@ -43,7 +43,7 @@ class AdminController extends Controller
                 return redirect()->route('dashboard');
             } elseif ($user->role == 'tabungan') {
                 return redirect()->route('dashboard');
-            } elseif ($user->role == 'news') {
+            } elseif ($user->role == 'Promosi') {
                 return redirect()->route('dashboard');
             } elseif ($user->role == 'pickup') {
                 return redirect()->route('dashboard');

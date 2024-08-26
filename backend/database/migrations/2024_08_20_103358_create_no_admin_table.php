@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigInteger('no_deposito');
             $table->bigInteger('no_tabungan');
             $table->bigInteger('no_armor_property');
+            $table->bigInteger('no_sponsor');
             $table->timestamps();
         });
     }

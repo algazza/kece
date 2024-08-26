@@ -118,7 +118,7 @@
                         </div>
                     </a>
                 @endif
-                @if (Auth::user()->role == 'news' || Auth::user()->role == 'admin')
+                @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
                     <a href="{{ route('news') }}">
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
@@ -158,16 +158,24 @@
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
                     </a>
-                @endif            </div>
-            <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[22rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative">
-=======
+                @endif
+                @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
+                <a href="{{ route('sponsor.index') }}">
+                    <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+                        <div class="flex">
+                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                <i class='bx bx-phone text-black'></i>
+                            </div>
+                            <div class="block mt-[0.8rem]">
+                                <h3 class="text-[1.1rem] font-bold pt-2">Sponsor</h3>
+                            </div>
+                        </div>
                     </div>
                 </a>
-            </div>
-            <div class="bg-gray-50 w-23 sm:w-[35rem] h-[39rem] my-[1rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative hidden xs:block">
->>>>>>> ec48c45d4045042d0e5f4279a57b9d600b3b5460
+            @endif
+           </div>
+            <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[22rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative">
                 
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
                     

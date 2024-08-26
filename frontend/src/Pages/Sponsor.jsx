@@ -5,6 +5,7 @@ import FormBank from '../Components/FormBank'
 import { BlueBanner, formUsahaSponsor } from '../helper'
 import { SponsorForm } from '../Components/Form'
 import styles from '../helper/style'
+import { nomorSponsor } from '../helper/nomor'
 
 const Sponsor = () => {
   return (
@@ -12,7 +13,7 @@ const Sponsor = () => {
     <section>
       <IntroBanner
         ImageBanner={BlueBanner}
-        TitleBanner={"Pick Up Service"}
+        TitleBanner={"Sponsor"}
         DescriptionBanner={`
               Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
               memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -21,16 +22,17 @@ const Sponsor = () => {
               keperluan Anda.
             `}
       />
-      <TitleBlueBanner title={"Pick Up Service"} />
+      <TitleBlueBanner title={"Sponsor"} />
     </section>
 
       <FormBank
         isiPenting={<SponsorForm />}
         judulRadio='Bidang Usaha'
-        namaRadio='usaha'
+        namaRadio='bidang_usaha'
         dummyprops={formUsahaSponsor}
         value={"Sponsor"}
-        page={"/PickupPage"}
+        nomer={nomorSponsor}
+        page={"/Sponsor"}
         endpoint={"http://localhost:8000/api/sponsor"}
       />
 </>

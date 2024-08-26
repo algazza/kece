@@ -17,5 +17,6 @@ class NoAdmin extends Model
         'no_deposito',
         'no_tabungan',
         'no_armor_property',
+        'no_sponsor',
     ];
 }

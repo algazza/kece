@@ -19,6 +19,7 @@ class NoAdminSeeder extends Seeder
                 'no_deposito' => '0998998',
                 'no_tabungan' => '07998998',
                 'no_armor_property' => '97998998',
+                'no_sponsor' => '882006969408',
             ],
         ];
 

@@ -51,7 +51,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('Admin/{id}/show', [AdminController::class, 'showAdmin'])->name('admin.show');
 
     // Dashboard
-    Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit,tabungan,pickup,news');
+    Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit,tabungan,pickup,promosi');
     Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
     Route::get('/api/dashboard/kredit',   [DashboardController::class, 'data']);
     Route::post('/search', [DashboardController::class, 'search'])->name('dashboard.search');
@@ -108,7 +108,7 @@ Route::middleware(['auth', 'AdminAkses:pickup,admin'])->group(function(){
 });
 
 
-Route::middleware(['auth', 'AdminAkses:news,admin'])->group(function(){
+Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     // News
     Route::get('/News/Add', [NewsController::class, 'viewNewsAdd'])->name('news.form');
     Route::post('/News/Add/Post', [NewsController::class, 'store'])->name('news.post');
@@ -116,16 +116,8 @@ Route::middleware(['auth', 'AdminAkses:news,admin'])->group(function(){
     Route::get('/News/{id}/edit', [NewsController::class, 'editNews'])->name('news.edit');
     Route::put('/News/{id}', [NewsController::class, 'updateNews'])->name('news.update');
     Route::delete('/News/{id}/delete', [NewsController::class, 'destroyNews'])->name('news.delete');
-});
-
-
-Route::middleware(['auth', 'AdminAkses:admin'])->group(function(){
-    // sponsor
     Route::get('/Sponsor', [SponsorController::class, 'index'])->name('sponsor.index');
 });
-
-
-
 
 
 

@@ -420,9 +420,9 @@ export const SponsorForm = ({ inputs, handleChange }) => {
                   border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
             aria-label="Lokasi"
             minRows={3}
-            placeholder="Nama Lokasi Usaha"
-            name="lokasi"
-            value={inputs.lokasi || ""}
+            placeholder="Nama Usaha"
+            name="nama_usaha"
+            value={inputs.nama_usaha || ""}
             onChange={handleChange}
           />
         </div>
@@ -430,7 +430,7 @@ export const SponsorForm = ({ inputs, handleChange }) => {
         <div className="form-control bg-abuTerang p-6 border border-black rounded-md md:col-[2/3] md:row-[1/3]">
           <h1 className="">Jenis Sponsor</h1>
           <FormGroup className="">
-            <RadioGroup name="sponsor" onChange={handleChange}>
+            <RadioGroup name="jenis_sponsor" onChange={handleChange}>
               {formJenisSponsor.map((jenis) => (
                 <FormControlLabel
                   key={jenis.id}

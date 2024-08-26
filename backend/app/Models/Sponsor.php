@@ -12,7 +12,7 @@ class Sponsor extends Model
     protected $table = 'sponsor';
 
     protected $fillable = [
-        'name',
+        'nama',
         'nik',
         'email',
         'alamat',
@@ -21,5 +21,8 @@ class Sponsor extends Model
         'nama_usaha',
         'catatan',
         'jenis_sponsor',
+        'jenis',
+        'ip_user',
+        'code',
     ];
 }
