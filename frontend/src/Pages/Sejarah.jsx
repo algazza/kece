@@ -83,7 +83,7 @@ const Sejarah = () => {
           TitleBanner={"Sejarah"}
           DescriptionBanner={"Profesional, Unggul, Maju, Jaya"}
         />
-        <TitleBlueBanner title={"Pick Up Service"} />
+        <TitleBlueBanner title={"Sejarah"} />
       </section>
 
       <section className={`${styles.paddingY} w-full`}>

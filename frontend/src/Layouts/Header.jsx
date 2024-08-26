@@ -43,16 +43,16 @@ const Header = () => {
             <FlyoutLink href={"/"}>Home</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
+            <FlyoutLink href={"/sejarah"} FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
           </li>
           <li>
             <FlyoutLink href={"/news"}>News</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>
+            <FlyoutLink href={"/kredit"} FlyoutContent={Product}>Produk</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink FlyoutContent={Service}>Layanan</FlyoutLink>
+            <FlyoutLink href={"/pick-up-service"} FlyoutContent={Service}>Layanan</FlyoutLink>
           </li>
         </ul>
 
