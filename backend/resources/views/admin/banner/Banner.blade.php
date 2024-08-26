@@ -2,242 +2,77 @@
 
 @extends('layout')
 @section('content')
-<section class="box-border p-0 m-0 bg-gray-200 h-screen font-poppins overflow-x-hidden grid grid-cols-2">
-  <section class="relative ">
-    <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-      <div class="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
-        <div class="max-w-[720px] pl-10">
-          <p class="mb-6 max-w-[528px] text-xl font-extralight text-gray-400 md:mb-10">Last Update <span class="font-thin">20/20/002</span></p>
-          <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <div class="rounded-md shadow">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10">
-                  Pick a game
-              </a>
-          </div>
-          <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-300 md:py-4 md:text-lg md:px-10">
-                  Sign up
-              </a>
-          </div>
-          </div>
-        </div>
-        <div>
-          <img src="https://www.dexerto.com/cdn-cgi/image/width=3840,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/10/17/what-does-fanum-tax-mean.jpg "alt= "" class="mx-auto inline-block h-full w-full max-w-[640px] rounded-2xl object-cover" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="relative ">
-    <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-      <div class="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
-        <div class="max-w-[720px] pl-10">
-          <p class="mb-6 max-w-[528px] text-xl font-extralight text-gray-400 md:mb-10">Last Update <span class="font-thin">20/20/002</span></p>
-          <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <div class="rounded-md shadow">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10">
-                  Pick a game
-              </a>
-          </div>
-          <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-300 md:py-4 md:text-lg md:px-10">
-                  Sign up
-              </a>
-          </div>
-          </div>
-        </div>
-        <div>
-          <img src="https://www.dexerto.com/cdn-cgi/image/width=3840,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/10/17/what-does-fanum-tax-mean.jpg "alt= "" class="mx-auto inline-block h-full w-full max-w-[640px] rounded-2xl object-cover" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="relative ">
-    <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-      <div class="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
-        <div class="max-w-[720px] pl-10">
-          <p class="mb-6 max-w-[528px] text-xl font-extralight text-gray-400 md:mb-10">Last Update <span class="font-thin">20/20/002</span></p>
-          <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <div class="rounded-md shadow">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10">
-                  Pick a game
-              </a>
-          </div>
-          <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-300 md:py-4 md:text-lg md:px-10">
-                  Sign up
-              </a>
-          </div>
-          </div>
-        </div>
-        <div>
-          <img src="https://www.dexerto.com/cdn-cgi/image/width=3840,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/10/17/what-does-fanum-tax-mean.jpg "alt= "" class="mx-auto inline-block h-full w-full max-w-[640px] rounded-2xl object-cover" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="relative ">
-    <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-      <div class="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
-        <div class="max-w-[720px] pl-10">
-          <p class="mb-6 max-w-[528px] text-xl font-extralight text-gray-400 md:mb-10">Last Update <span class="font-thin">20/20/002</span></p>
-          <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <div class="rounded-md shadow">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10">
-                  Pick a game
-              </a>
-          </div>
-          <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-300 md:py-4 md:text-lg md:px-10">
-                  Sign up
-              </a>
-          </div>
-          </div>
-        </div>
-        <div>
-          <img src="https://www.dexerto.com/cdn-cgi/image/width=3840,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/10/17/what-does-fanum-tax-mean.jpg "alt= "" class="mx-auto inline-block h-full w-full max-w-[640px] rounded-2xl object-cover" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="relative ">
-    <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-      <div class="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
-        <div class="max-w-[720px] pl-10">
-          <p class="mb-6 max-w-[528px] text-xl font-extralight text-gray-400 md:mb-10">Last Update <span class="font-thin">20/20/002</span></p>
-          <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <div class="rounded-md shadow">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10">
-                  Pick a game
-              </a>
-          </div>
-          <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-300 md:py-4 md:text-lg md:px-10">
-                  Sign up
-              </a>
-          </div>
-          </div>
-        </div>
-        <div>
-          <img src="https://www.dexerto.com/cdn-cgi/image/width=3840,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/10/17/what-does-fanum-tax-mean.jpg "alt= "" class="mx-auto inline-block h-full w-full max-w-[640px] rounded-2xl object-cover" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="relative ">
-    <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-      <div class="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
-        <div class="max-w-[720px] pl-10">
-          <p class="mb-6 max-w-[528px] text-xl font-extralight text-gray-400 md:mb-10">Last Update <span class="font-thin">20/20/002</span></p>
-          <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <div class="rounded-md shadow">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10">
-                  Pick a game
-              </a>
-          </div>
-          <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-300 md:py-4 md:text-lg md:px-10">
-                  Sign up
-              </a>
-          </div>
-          </div>
-        </div>
-        <div>
-          <img src="https://www.dexerto.com/cdn-cgi/image/width=3840,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/10/17/what-does-fanum-tax-mean.jpg "alt= "" class="mx-auto inline-block h-full w-full max-w-[640px] rounded-2xl object-cover" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="relative ">
-    <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-      <div class="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
-        <div class="max-w-[720px] pl-10">
-          <p class="mb-6 max-w-[528px] text-xl font-extralight text-gray-400 md:mb-10">Last Update <span class="font-thin">20/20/002</span></p>
-          <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <div class="rounded-md shadow">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10">
-                  Pick a game
-              </a>
-          </div>
-          <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-300 md:py-4 md:text-lg md:px-10">
-                  Sign up
-              </a>
-          </div>
-          </div>
-        </div>
-        <div>
-          <img src="https://www.dexerto.com/cdn-cgi/image/width=3840,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/10/17/what-does-fanum-tax-mean.jpg "alt= "" class="mx-auto inline-block h-full w-full max-w-[640px] rounded-2xl object-cover" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="relative ">
-    <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-      <div class="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
-        <div class="max-w-[720px] pl-10">
-          <p class="mb-6 max-w-[528px] text-xl font-extralight text-gray-400 md:mb-10">Last Update <span class="font-thin">20/20/002</span></p>
-          <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <div class="rounded-md shadow">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10">
-                  Pick a game
-              </a>
-          </div>
-          <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-300 md:py-4 md:text-lg md:px-10">
-                  Sign up
-              </a>
-          </div>
-          </div>
-        </div>
-        <div>
-          <img src="https://www.dexerto.com/cdn-cgi/image/width=3840,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/10/17/what-does-fanum-tax-mean.jpg "alt= "" class="mx-auto inline-block h-full w-full max-w-[640px] rounded-2xl object-cover" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="relative ">
-    <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-      <div class="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
-        <div class="max-w-[720px] pl-10">
-          <p class="mb-6 max-w-[528px] text-xl font-extralight text-gray-400 md:mb-10">Last Update <span class="font-thin">20/20/002</span></p>
-          <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <div class="rounded-md shadow">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10">
-                  Pick a game
-              </a>
-          </div>
-          <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href=""
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-300 md:py-4 md:text-lg md:px-10">
-                  Sign up
-              </a>
-          </div>
-          </div>
-        </div>
-        <div>
-          <img src="https://www.dexerto.com/cdn-cgi/image/width=3840,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/10/17/what-does-fanum-tax-mean.jpg "alt= "" class="mx-auto inline-block h-full w-full max-w-[640px] rounded-2xl object-cover" />
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="box-border p-0 m-0 bg-gray-200 h-screen font-poppins overflow-x-hidden">
+<div class="grid gap-8 grid-cols-1 md:grid-cols-2 ml-[5rem] mr-[1rem] mt-10">
+  <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 w-full h-full mx-auto mt-24 cursor-pointer group hover:bg-gray-200 hover:scale-95 duration-300">
+    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+    <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+    <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
+    <button class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-4xl bg-opacity-80 text-red-600 font-semibold py-2 px-4 rounded-lg">
+      <i class='bx bx-trash'></i>
+    </button>
+  </article>
+  <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 w-full h-full mx-auto mt-24 cursor-pointer group hover:bg-gray-200 hover:scale-95 duration-300">
+    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+    <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+    <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
+    <button class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-4xl bg-opacity-80 text-red-600 font-semibold py-2 px-4 rounded-lg">
+      <i class='bx bx-trash'></i>
+    </button>
+  </article>
   
+</div>
+<div class="grid gap-8 grid-cols-1 md:grid-cols-2 ml-[5rem] mr-[1rem] mt-10">
+  <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 w-full h-full mx-auto mt-24 cursor-pointer group hover:bg-gray-200 hover:scale-95 duration-300">
+    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+    <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+    <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
+    <button class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-4xl bg-opacity-80 text-red-600 font-semibold py-2 px-4 rounded-lg">
+      <i class='bx bx-trash'></i>
+    </button>
+  </article>
+  <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 w-full h-full mx-auto mt-24 cursor-pointer group hover:bg-gray-200 hover:scale-95 duration-300">
+    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+    <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+    <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
+    <button class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-4xl bg-opacity-80 text-red-600 font-semibold py-2 px-4 rounded-lg">
+      <i class='bx bx-trash'></i>
+    </button>
+  </article>
+  
+</div>
+<div class="grid gap-8 grid-cols-1 md:grid-cols-2 ml-[5rem] mr-[1rem] mt-10">
+  <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 w-full h-full mx-auto mt-24 cursor-pointer group hover:bg-gray-200 hover:scale-95 duration-300">
+    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+    <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+    <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
+    <button class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-4xl bg-opacity-80 text-red-600 font-semibold py-2 px-4 rounded-lg">
+      <i class='bx bx-trash'></i>
+    </button>
+  </article>
+  <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 w-full h-full mx-auto mt-24 cursor-pointer group hover:bg-gray-200 hover:scale-95 duration-300">
+    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+    <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+    <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
+    <button class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-4xl bg-opacity-80 text-red-600 font-semibold py-2 px-4 rounded-lg">
+      <i class='bx bx-trash'></i>
+    </button>
+  </article>
+  
+</div>
+<div class="flex justify-end fixed bottom-10 right-10">
+  <button class="flex items-center justify-center w-12 h-12 cursor-pointer bg-white hover:bg-slate-200 hover:scale-105 duration-300 border-2 border-black text-black rounded-full shadow-md">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+    </svg>
+  </button>
+</div>
 </section>
       
 @endsection
