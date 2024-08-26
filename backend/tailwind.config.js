@@ -44,6 +44,7 @@ export default {
             jakarta: ["Plus Jakarta Sans", "sans-serif"],
           },
           screens: {
+            xss: "320px",
             xs: "480px",
             ss: "620px",
             sss: "560px",
