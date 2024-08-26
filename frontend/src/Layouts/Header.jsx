@@ -97,7 +97,7 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Sejarah</Link>
+                            <Link to={"/sejarah"}>Sejarah</Link>
                             <Link to={"/"}>Visi Misi</Link>
                             <Link to={"/"}>Struktur Organisasi</Link>
                             <Link to={"/lokasi"}>Lokasi</Link>
@@ -205,7 +205,7 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
 // function subMenu
 const AboutUs = () => {
   const items = [
-    { name: "Sejarah", link: "/" },
+    { name: "Sejarah", link: "/sejarah" },
     { name: "Visi Misi", link: "/" },
     { name: "Struktur Organisasi", link: "/" },
     { name: "Lokasi", link: "/lokasi" },
@@ -243,7 +243,7 @@ const MenuList = ({ items }) => {
     <div className="w-52 py-6 px-8 shadow-[0px_20px_20px_0px_#00000024]">
       <ul className="flex flex-col text-center flex-1 gap-2">
         {items.map((item, index) => (
-          <li key={index}>
+          <li key={index} className="hover:text-merahh-500 duration-300">
             <Link to={item.link}>{item.name}</Link>
           </li>
         ))}

@@ -127,7 +127,7 @@ const SyaratDeposito = () => {
           </div>
 
           {/* menu button */}
-          <div className="grid grid-cols-3 gap-8 justify-center justify-items-center">
+          <div className="grid md:grid-cols-3 gap-8 justify-center justify-items-center">
             {buttonMenuTabungan.map((menu, index) => (
               <div
                 className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
@@ -148,38 +148,21 @@ const SyaratDeposito = () => {
           <section key={kredit.id}>
             {/* Menu pilihan */}
             <section className="pt-10 flex justify-center">
-              <div
-                onClick={() => updateTabs(1)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Syarat
-              </div>
-              <div
-                onClick={() => updateTabs(2)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 2 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Ketentuan
-              </div>
-              <div
-                onClick={() => updateTabs(3)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 3 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Tabel
-              </div>
-              <div
-                onClick={() => updateTabs(4)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 4 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Pengajuan
-              </div>
+              {["Syarat", "Ketentuan", "Tabel", "Pengajuan"].map(
+                (menu, index) => (
+                  <div
+                    key={index}
+                    onClick={() => updateTabs(index + 1)}
+                    className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+                      tabs === index + 1
+                        ? "bg-biruMuda-500 text-primary rounded-md"
+                        : ""
+                    }`}
+                  >
+                    {menu}
+                  </div>
+                )
+              )}
             </section>
 
             {/* Isi dari Menu */}
@@ -325,12 +308,12 @@ const SyaratDeposito = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-6 sm:mx-10 sm:px-10"
                 >
-                    <FormBank
-                      isiPenting={<Deposito />}
-                      value={"Deposito"}
-                      nomer={nomorDeposito}
-                      endpoint={"http://localhost:8000/api/deposito"}
-                    />
+                  <FormBank
+                    isiPenting={<Deposito />}
+                    value={"Deposito"}
+                    nomer={nomorDeposito}
+                    endpoint={"http://localhost:8000/api/deposito"}
+                  />
                 </motion.div>
               ) : null}
             </section>

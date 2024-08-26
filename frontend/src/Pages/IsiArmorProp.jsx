@@ -12,7 +12,7 @@ const IsiArmorProp = () => {
   const [openModal, setOpenModal] = useState(false);
 
   const location = useLocation();
-  const { nameInputs, code, nomer } = location.state || {};
+  const { nomer } = location.state || {};
 
   const handleModal = () => {
     setOpenModal(!openModal);
@@ -122,6 +122,7 @@ const IsiArmorProp = () => {
                     name="nama"
                     variant="outlined"
                     className="rounded-md outline-none"
+                    value={nameInputs}
                   />
                   <TextField
                     id="outlined-basic"
@@ -133,7 +134,7 @@ const IsiArmorProp = () => {
                   />
                 </FormControl>
                 <a
-                  href={`https://wa.me/+62${nomer}?text=I'm%20${nameInputs}%20dengan%20kode%20${code}`}
+                  href={`https://wa.me/+62${nomer}?text=Saya%20${nameInputs}%20dengan%20`}
                   className="text-center py-2 bg-biruMuda-500 text-primary rounded-xl"
                 >
                   Ajukan!

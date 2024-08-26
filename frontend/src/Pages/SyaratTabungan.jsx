@@ -17,18 +17,14 @@ import { motion } from "framer-motion";
 import { Kredit } from "../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../helper/DataProduk";
-<<<<<<< HEAD
 import { nomorTabungan } from "../helper/nomor";
-
-=======
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import SchoolIcon from '@mui/icons-material/School';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import MosqueIcon from '@mui/icons-material/Mosque';
-import ElderlyIcon from '@mui/icons-material/Elderly';
-import GroupsIcon from '@mui/icons-material/Groups';
-import DevicesOtherIcon from '@mui/icons-material/DevicesOther';
->>>>>>> ec48c45d4045042d0e5f4279a57b9d600b3b5460
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import SchoolIcon from "@mui/icons-material/School";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import MosqueIcon from "@mui/icons-material/Mosque";
+import ElderlyIcon from "@mui/icons-material/Elderly";
+import GroupsIcon from "@mui/icons-material/Groups";
+import DevicesOtherIcon from "@mui/icons-material/DevicesOther";
 // ===================================================
 const buttonMenuTabungan = [
   {
@@ -176,38 +172,21 @@ const SyaratTabungan = () => {
           <section key={kredit.id}>
             {/* Menu pilihan */}
             <section className="pt-10 flex justify-center">
-              <div
-                onClick={() => updateTabs(1)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Syarat
-              </div>
-              <div
-                onClick={() => updateTabs(2)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 2 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Ketentuan
-              </div>
-              <div
-                onClick={() => updateTabs(3)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 3 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Tabel
-              </div>
-              <div
-                onClick={() => updateTabs(4)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 4 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Pengajuan
-              </div>
+              {["Syarat", "Ketentuan", "Tabel", "Pengajuan"].map(
+                (menu, index) => (
+                  <div
+                    key={index}
+                    onClick={() => updateTabs(index + 1)}
+                    className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+                      tabs === index + 1
+                        ? "bg-biruMuda-500 text-primary rounded-md"
+                        : ""
+                    }`}
+                  >
+                    {menu}
+                  </div>
+                )
+              )}
             </section>
 
             {/* Isi dari Menu */}

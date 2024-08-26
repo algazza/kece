@@ -13,12 +13,12 @@ const App = () => {
         className={`overflow-hidden font-jakarta ${styles.fontBody} py-[4.5rem]`}
       >
         <Outlet />
-        <div className="fixed bottom-12 right-12">
+        <div className="fixed bottom-12 right-4">
           <div className={`${styles.flexCenter}`}>
             <a
               href="https://www.instagram.com/stories/highlights/18006888113341028/"
               target="_blank"
-              className={`bg-[#25D366] rounded-full w-[55px] h-[55px] ${styles.flexCenter} z-[1]`}
+              className={`bg-[#25D366] rounded-full w-[55px] h-[55px] ${styles.flexCenter} z-[100]`}
             >
               <WhatsAppIcon className="text-white" />
             </a>

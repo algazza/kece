@@ -35,6 +35,133 @@ export {
   partnerImage7,
 };
 
+// ====================== PROFILE ======================
+export const profileTimeline = [
+  {
+    id: 2008,
+    era: "Pembangunan",
+    image: nunezimg,
+    title: "Pembangunan Kantor BPR Arto Moro",
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+              fugit, harum adipisci minus impedit quis culpa, soluta tenetur
+              nesciunt tempora esse quidem quisquam assumenda incidunt quo
+              repellendus. Nobis, minima adipisci.
+              
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+              non dolore adipisci voluptatibus quibusdam a nemo deserunt officia
+              maxime nobis? Delectus, eveniet alias. Illum placeat reprehenderit
+              blanditiis reiciendis velit molestiae. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Eum consectetur ut reiciendis, ipsam
+              rerum provident quas natus iusto! Eveniet ut doloremque nihil quas
+              ad ab numquam tempora laboriosam perferendis quo.`,
+  },
+  {
+    id: 2019,
+    era: "Peresmian",
+    image: BennerLiv,
+    title: "Peresmian Kantor BPR Arto Moro",
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+              fugit, harum adipisci minus impedit quis culpa, soluta tenetur
+              nesciunt tempora esse quidem quisquam assumenda incidunt quo
+              repellendus. Nobis, minima adipisci.
+              
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+              non dolore adipisci voluptatibus quibusdam a nemo deserunt officia
+              maxime nobis? Delectus, eveniet alias. Illum placeat reprehenderit
+              blanditiis reiciendis velit molestiae. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Eum consectetur ut reiciendis, ipsam
+              rerum provident quas natus iusto! Eveniet ut doloremque nihil quas
+              ad ab numquam tempora laboriosam perferendis quo.`,
+  },
+  {
+    id: 2020,
+    era: "Launching",
+    image: nunezimg,
+    title: "Peresmian Kantor BPR Arto Moro",
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+              fugit, harum adipisci minus impedit quis culpa, soluta tenetur
+              nesciunt tempora esse quidem quisquam assumenda incidunt quo
+              repellendus. Nobis, minima adipisci.
+              
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+              non dolore adipisci voluptatibus quibusdam a nemo deserunt officia
+              maxime nobis? Delectus, eveniet alias. Illum placeat reprehenderit
+              blanditiis reiciendis velit molestiae. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Eum consectetur ut reiciendis, ipsam
+              rerum provident quas natus iusto! Eveniet ut doloremque nihil quas
+              ad ab numquam tempora laboriosam perferendis quo.`,
+  },
+  {
+    id: 2023,
+    era: "Pembukaan",
+    image: BennerLiv,
+    title: "Peresmian Kantor BPR Arto Moro",
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+              fugit, harum adipisci minus impedit quis culpa, soluta tenetur
+              nesciunt tempora esse quidem quisquam assumenda incidunt quo
+              repellendus. Nobis, minima adipisci.
+              
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+              non dolore adipisci voluptatibus quibusdam a nemo deserunt officia
+              maxime nobis? Delectus, eveniet alias. Illum placeat reprehenderit
+              blanditiis reiciendis velit molestiae. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Eum consectetur ut reiciendis, ipsam
+              rerum provident quas natus iusto! Eveniet ut doloremque nihil quas
+              ad ab numquam tempora laboriosam perferendis quo.`,
+  },
+];
+
+export const profileDewanKomisaris = [
+  {
+    id: 1,
+    image: "https://biboeternal.vercel.app/image/El-BG.png",
+    name: "El Rakkai, S.Sos, S.Pd",
+    position: "Murid Absen 8",
+    speech:
+      "“Kita ingin mewujudkan kota cerdas dan modern berstandar internasional, menjadikan ikon urban desain sebagai representasi kemajuan bangsa yang unggul.”",
+  },
+  {
+    id: 2,
+    image: "https://biboeternal.vercel.app/image/Ahmed-BG.png",
+    name: "Ahmad Farrel, S.Sos, S.Pd",
+    position: "Preman Pasar",
+    speech:
+      "“Kita ingin mewujudkan kota cerdas dan modern berstandar internasional, menjadikan ikon urban desain sebagai representasi kemajuan bangsa yang unggul.”",
+  },
+  {
+    id: 3,
+    image: "https://biboeternal.vercel.app/image/Jeki-BG.png",
+    name: "Zaki Reza, S.Kom, S.Pd",
+    position: "Bek Terbaik",
+    speech:
+      "“Kita ingin mewujudkan kota cerdas dan modern berstandar internasional, menjadikan ikon urban desain sebagai representasi kemajuan bangsa yang unggul.”",
+  },
+  {
+    id: 4,
+    image: "https://biboeternal.vercel.app/image/Raka-BG.png",
+    name: "Raka Isyrafi, S.Ag",
+    position: "Member SotganApi",
+    speech:
+      "“Kita ingin mewujudkan kota cerdas dan modern berstandar internasional, menjadikan ikon urban desain sebagai representasi kemajuan bangsa yang unggul.”",
+  },
+  {
+    id: 5,
+    image: "https://biboeternal.vercel.app/image/Amara-BG.png",
+    name: "Amara Silvia, S.Ant, S.Psi",
+    position: "Ketua 3 Periode",
+    speech:
+      "“Kita ingin mewujudkan kota cerdas dan modern berstandar internasional, menjadikan ikon urban desain sebagai representasi kemajuan bangsa yang unggul.”",
+  },
+  {
+    id: 6,
+    image: "https://biboeternal.vercel.app/image/Ofi-BG.png",
+    name: "Shofiyah Auliya, S.Ak",
+    position: "Member Sixteen Palsu",
+    speech:
+      "“Kita ingin mewujudkan kota cerdas dan modern berstandar internasional, menjadikan ikon urban desain sebagai representasi kemajuan bangsa yang unggul.”",
+  },
+];
+
 // =========================== FORM ====================
 export const formIdentitas = [
   {
