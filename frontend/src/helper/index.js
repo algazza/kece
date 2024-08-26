@@ -169,6 +169,7 @@ export const formJenisSponsor = [
   {
     id: "MMT",
     title: "MMT",
+    name: "",
   },
   {
     id: "tissue",

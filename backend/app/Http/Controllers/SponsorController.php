@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Sponsor;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,25 @@ class SponsorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sponsor = Sponsor::create([
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'no_handphone' => $request->no_handphone,
+            'nik' => $request->nik,
+            'alamat' => $request->alamat,
+            'bidang_usaha' => $request->bidang_usaha,
+            'nama_usaha' => $request->nama_usaha,
+            'catatan' => $request->catatan,
+            'jenis_sponsor' => $request->jenis_sponsor,
+            'jenis' => $request->jenis,
+            'code' => $request->code,
+            'ip_user' => $request->ip_user,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        return response()->json('succes');
+        
     }
 
     /**

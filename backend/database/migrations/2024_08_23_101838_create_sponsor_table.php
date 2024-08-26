@@ -17,11 +17,14 @@ return new class extends Migration
             $table->string('email');
             $table->bigInteger('no_handphone');
             $table->bigInteger('nik');
-            $table->string('alamat');
+            $table->text('alamat');
             $table->string('bidang_usaha');
-            $table->bigInteger('nama_usaha');
-            $table->string('catatan');
-            $table->text('jenis_sponsor');
+            $table->text('nama_usaha');
+            $table->text('catatan');
+            $table->string('jenis_sponsor');
+            $table->bigInteger('code');
+            $table->string('jenis');
+            $table->string('ip_user');
             $table->timestamps();
         });
     }

@@ -57,7 +57,7 @@
                                 <option value="deposito" {{ $admin->role == 'deposito' ? 'selected' : '' }}>Deposit</option>
                                 <option value="pickup" {{ $admin->role == 'pickup' ? 'selected' : '' }}>Pick-up</option>
                                 <option value="tabungan" {{ $admin->role == 'tabungan' ? 'selected' : '' }}>Tabungan</option>
-                                <option value="news" {{ $admin->role == 'news' ? 'selected' : '' }}>News</option>
+                                <option value="promosi" {{ $admin->role == 'promosi' ? 'selected' : '' }}>Promosi</option>
                             </select>
                         </div>
                         <div class="w-full">

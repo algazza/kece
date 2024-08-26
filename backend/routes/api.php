@@ -10,6 +10,7 @@ use App\Http\Controllers\PickupController;
 use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NoAdminController;
+use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\TabunganController;
 
 /*
@@ -33,6 +34,8 @@ Route::resource('Pickup',PickupController::class);
 Route::resource('deposito',DepositoController::class);
 Route::resource('tabungan',TabunganController::class);
 Route::resource('noAdmin',NoAdminController::class);
+Route::resource('sponsor',SponsorController::class);
+
 
 
 Route::get('/api/dashboard/kredit', [DashboardController::class, 'data']);
