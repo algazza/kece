@@ -29,7 +29,7 @@ class KreditFactory extends Factory
             'perhitungan_bunga' => $this->faker->randomElement(['flat', 'efektif', 'anuitas']),
             'penghasilan_perbulan' => $this->faker->numberBetween(3000000, 50000000),
             'catatan' => $this->faker->sentence(),
-            'jenis' => $this->faker->randomElement(['Tabungan', 'Deposito', 'Kredit']),
+            'jenis' => $this->faker->randomElement(['Kredit']),
             'code' => $this->faker->numerify('##########'),
             'ip_user' => $this->faker->ipv4(), // Menambahkan IP User
         ];
