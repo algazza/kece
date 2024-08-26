@@ -79,12 +79,12 @@ const FormBank = ({
   const submitForm = () => {
     const code = generateCode();
     const updatedInputs = { ...inputs, code, ip_user: ip };
-    const nameInputs = updatedInputs.nama
+    const nameInputs = updatedInputs.nama;
 
     axios
       .post(endpoint, updatedInputs)
       .then((response) => {
-        navigate("/success", {state: {nameInputs, code, value, nomer}});
+        navigate("/success", { state: { nameInputs, code, value, nomer } });
       })
       .catch((err) => {
         toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
@@ -92,7 +92,9 @@ const FormBank = ({
   };
 
   return (
-    <section className={`${styles.fontBody} mx-14 md:mx-auto ${styles.paddingY} ${styles.flexCenter}`}>
+    <section
+      className={`${styles.fontBody} mx-14 md:mx-auto ${styles.paddingY} ${styles.flexCenter}`}
+    >
       <FormGroup className="grid mb-12 gap-6 sm:gap-12">
         <div className="">
           <h2 className={`${styles.heading3} mb-4 `}>Identitas</h2>
@@ -171,8 +173,6 @@ const FormBank = ({
           value={inputs.nomer}
           onChange={handleChange}
         />
-
-
 
         {React.cloneElement(isiPenting, {
           inputs,

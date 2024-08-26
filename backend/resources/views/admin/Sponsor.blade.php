@@ -35,10 +35,7 @@
             @foreach ($sponsor as $item)
               <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                 <div class="bg-white p-7 rounded-md">
-                        <div class="flex p mt-[-1rem] mb-[1rem]">
-                          <div class="font-display text-base text-slate-400 font-normal">{{ $item->code }}</div>
-                        </div>
-                        <div class="flex p">
+                        <div class="flex">
                           <div class="font-display text-base text-slate-900 font-normal">{{ $item->bidang_usaha }}</div>
                           <div class="px-2 border-r-2 border-gray-200"></div>
                           <div class="font-display font-semibold text-base text-slate-900 px-2">{{ $item->jenis_sponsor }}</div>

@@ -1,7 +1,8 @@
 @extends('layout')
 @section('content')
+<section class="box-border p-0 m-0 bg-gray-200 h-screen font-poppins overflow-auto">
 <section class="py-10 my-auto">
-    <div class="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto my-28 flex gap-4">
+    <div class="mt-[5rem] rounded-[5px] py-8 ml-[5rem] mr-[1rem] text-left justify-center sm:px-6 lg:px-8 my-28 flex gap-4">
         <div
             class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center dark:bg-white">
             <div class="">
@@ -15,7 +16,7 @@
                     <div
                     class="w-full rounded-sm bg-cover bg-center bg-no-repeat items-center">
                     <div class="mx-auto flex justify-center">
-                        <img src="{{ asset('image/admin/' . $admin->image) }}" id="previewImage" class="mr-[-9rem] rounded-full w-[141px] h-[141px] bg-blue-300/20 bg-cover bg-center bg-no-repeat" alt>
+                        <img src="{{ asset('image/admin/' . $admin->image) }}" id="previewImage" class="mr-[-9rem] rounded-full w-[141px] h-[141px] bg-transparent border-black border-[1px] bg-cover bg-center bg-no-repeat" alt>
                         <div class="bg-white/90 rounded-full w-6 h-6 text-center ml-28 mt-4">
                             <input type="file" name="image" id="upload_profile" hidden >
                                 <label for="upload_profile">
@@ -28,28 +29,28 @@
                         </div>
                     </div>
                     <h2 class="text-center mt-1 font-semibold dark:text-black">Upload Profile and Cover Image</h2>
-                    <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
+                    <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col xss:flex-col gap-2 justify-center w-full">
                         <div class="w-full mb-4 mt-6">
                             <label for="name" class="mb-2 dark:text-black">Name</label>
                             <input type="text"
                                    id="name"
-                                   class="mt-2 p-4 w-full border-2 rounded-lg dark:text-white dark:border dark:bg-gray-400"
+                                   class="mt-2 p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white "
                                    placeholder="First Name" name="name" value="{{ old('name', $admin->name) }}">
                         </div>
                         <div class="w-full mb-4 lg:mt-6">
                             <label for="email" class="dark:text-black">Email</label>
                             <input type="text"
                                    id="email"
-                                   class="mt-2 p-4 w-full border-2 rounded-lg dark:text-white dark:border dark:bg-gray-400"
+                                   class="mt-2 p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white "
                                    placeholder="Email" name="email" value="{{ old('email', $admin->email) }}">
                         </div>
                     </div>
 
-                    <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
+                    <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col xss:flex-col gap-2 justify-center w-full">
                         <div class="w-full">
                             <h3 class="dark:text-black mb-2">Role</h3>
                             <select
-                                    class="w-full text-grey border-2 rounded-lg p-4 pl-2 pr-2 dark:text-white dark:border dark:bg-gray-400"
+                                    class="w-full text-grey border-2 rounded-lg p-4 pl-2 pr-2 dark:text-black dark:border-gray-200 dark:bg-white "
                                     name="role">
                                 <option disabled value="">Role</option>
                                 <option value="admin" {{ $admin->role == 'admin' ? 'selected' : '' }}>Admin</option>
@@ -62,11 +63,11 @@
                         </div>
                         <div class="w-full">
                             <h3 class="dark:text-black mb-2">Password</h3>
-                            <input type="password" class="text-grey p-4 w-full border-2 rounded-lg dark:text-white dark:border dark:bg-gray-400" name="password">
+                            <input type="password" class="text-grey p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white " name="password">
                         </div>
                         <div class="w-full">
                             <h3 class="dark:text-black mb-2">No Handphone</h3>
-                            <input type="text" class="text-grey p-4 w-full border-2 rounded-lg dark:text-white dark:border dark:bg-gray-400" name="no_handphone" value="{{ old('no_handphone', $admin->no_handphone) }}">
+                            <input type="text" class="text-grey p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white " name="no_handphone" value="{{ old('no_handphone', $admin->no_handphone) }}">
                         </div>
                     </div>
                     <div class="w-full rounded-lg bg-blue-500 mt-4 text-white text-lg font-semibold cursor-pointer hover:bg-blue-600 hover:text-white duration-300">
@@ -77,7 +78,7 @@
         </div>
     </div>
 </section>
-
+</section>
 <script>
     document.getElementById('upload_profile').addEventListener('change', function(event) {
     const file = event.target.files[0];

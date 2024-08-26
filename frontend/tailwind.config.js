@@ -38,8 +38,8 @@ export default {
           600: "#b01c22",
           700: "#84151a",
           800: "#580e11",
-          900: "#2c0709"
-},
+          900: "#2c0709",
+        },
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
@@ -54,6 +54,7 @@ export default {
         xl: "1700px",
       },
       gridTemplateColumns: {
+        x2440: "440px 525px",
         x2500: "620px 230px",
         x250: "250px 250px",
         x550: "550px 550px",
@@ -62,10 +63,13 @@ export default {
         x3300: "repeat(3, 300px)",
       },
       backgroundImage: {
-        footerimg: "url('./src/img/Footer-img.svg')",
         footerimage: "url('./src/img/footerimg.svg')",
         footerimagexs: "url('./src/img/footerimg-xs.svg')",
         imagebgWithTitle: "url('./src/img/imageWithTitle.svg')",
+        checkmark: 'url("./src/img/CheckIcon.svg")',
+      },
+      listStyleImage: {
+        checkmark: 'url("./src/img/CheckIcon.svg")',
       },
     },
   },

@@ -48,7 +48,7 @@ const Success = () => {
                 {nameInputs}
               </h2>
               <p className="mb-6">Silahkan Konfirmasi Dirimu Ke Nomor Ini</p>
-                <p className="">code: {code}</p>
+              <p className="">code: {code}</p>
               <ButtonOutline
                 ColorText="text-[#12a50b]"
                 ColorPrimary="border-[#12a50b]"

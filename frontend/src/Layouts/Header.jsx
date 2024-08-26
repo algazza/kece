@@ -43,16 +43,16 @@ const Header = () => {
             <FlyoutLink href={"/"}>Home</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
+            <FlyoutLink href={"/sejarah"} FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
           </li>
           <li>
             <FlyoutLink href={"/news"}>News</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>
+            <FlyoutLink href={"/kredit"} FlyoutContent={Product}>Produk</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink FlyoutContent={Service}>Layanan</FlyoutLink>
+            <FlyoutLink href={"/pick-up-service"} FlyoutContent={Service}>Layanan</FlyoutLink>
           </li>
         </ul>
 
@@ -74,6 +74,11 @@ const Header = () => {
                 exit={{ y: "-100%" }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className="absolute -z-[100] top-0 right-0 w-full px-8 pt-20 pb-4 bg-primary shadow-[0px_0px_90px_9px_#00000024]"
+                onClick={(e) => {
+                  if (e.target.tagName === 'A') {
+                    setToggle(false);
+                  }
+                }}
               >
                 <ul className="font-semibold">
                   <li className="my-3">
@@ -92,7 +97,7 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Sejarah</Link>
+                            <Link to={"/sejarah"}>Sejarah</Link>
                             <Link to={"/"}>Visi Misi</Link>
                             <Link to={"/"}>Struktur Organisasi</Link>
                             <Link to={"/lokasi"}>Lokasi</Link>
@@ -200,7 +205,7 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
 // function subMenu
 const AboutUs = () => {
   const items = [
-    { name: "Sejarah", link: "/" },
+    { name: "Sejarah", link: "/sejarah" },
     { name: "Visi Misi", link: "/" },
     { name: "Struktur Organisasi", link: "/" },
     { name: "Lokasi", link: "/lokasi" },
@@ -238,7 +243,7 @@ const MenuList = ({ items }) => {
     <div className="w-52 py-6 px-8 shadow-[0px_20px_20px_0px_#00000024]">
       <ul className="flex flex-col text-center flex-1 gap-2">
         {items.map((item, index) => (
-          <li key={index}>
+          <li key={index} className="hover:text-merahh-500 duration-300">
             <Link to={item.link}>{item.name}</Link>
           </li>
         ))}

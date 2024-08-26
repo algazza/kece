@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import FormBank from "../Components/FormBank";
@@ -26,6 +26,7 @@ const buttonMenuTabungan = [
     icon: (className) => <TrendingUpIcon className={className} />,
     title: "Kredit Investasi",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
+    jenis: "Via online",
   },
   {
     id: 2,
@@ -38,12 +39,14 @@ const buttonMenuTabungan = [
     icon: (className) => <TrendingUpIcon className={className} />,
     title: "Kredit KPR",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    jenis: "Via online",
   },
   {
     id: 4,
     icon: (className) => <TrendingUpIcon className={className} />,
     title: "Kredit Multiguna",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    jenis: "Via online",
   },
   {
     id: 5,
@@ -76,20 +79,33 @@ const SyaratDeposito = () => {
   let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
   const [menu, setMenu] = useState(0);
+  const [viaOnline, setViaOnline] = useState("Datang ke Bank");
+  const [menuProduk, setMenuProduk] = useState([]);
 
+  // online
+  useEffect(() => {
+    let selctedMenu = buttonMenuTabungan;
+
+    if (viaOnline !== "Datang ke Bank") {
+      selctedMenu = selctedMenu.filter((item) => item.jenis === viaOnline);
+    }
+    setMenuProduk(selctedMenu);
+  }, [viaOnline, buttonMenuTabungan]);
+
+  // tab
   function updateTabs(id) {
     setTabs(id);
   }
-
-  function updateMenu(id) {
-    setMenu(id);
-  }
-
   function nextTab(id) {
     updateTabs(id + 1);
   }
   function prevTab(id) {
     updateTabs(id - 1);
+  }
+
+  // menu
+  function updateMenu(id) {
+    setMenu(id);
   }
 
   return (
@@ -114,21 +130,22 @@ const SyaratDeposito = () => {
         <section className="">
           {/* filter button  click */}
           <div className=" flex gap-3 justify-center m-10">
-            <div
-              className={`${styles.fontBody} font-semibold bg-biruMuda-500 p-3 rounded-lg text-white`}
-            >
-              Datang Ke bank
-            </div>
-            <div
-              className={`${styles.fontBody} font-semibold border-2 border-biruMuda-500 p-3 rounded-lg text-biruMuda-500`}
-            >
-              Via online
-            </div>
+            {["Datang ke Bank", "Via online"].map((online) => (
+              <div
+                key={online}
+                onClick={() => setViaOnline(online)}
+                className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
+                  viaOnline === online ? "bg-biruMuda-500 text-primary" : ""
+                }`}
+              >
+                {online}
+              </div>
+            ))}
           </div>
 
           {/* menu button */}
-          <div className="grid grid-cols-3 gap-8 justify-center justify-items-center">
-            {buttonMenuTabungan.map((menu, index) => (
+          <div className="grid md:grid-cols-3 gap-8 justify-center justify-items-center">
+            {menuProduk.map((menu, index) => (
               <div
                 className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
                 key={index}
@@ -148,38 +165,21 @@ const SyaratDeposito = () => {
           <section key={kredit.id}>
             {/* Menu pilihan */}
             <section className="pt-10 flex justify-center">
-              <div
-                onClick={() => updateTabs(1)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 1 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Syarat
-              </div>
-              <div
-                onClick={() => updateTabs(2)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 2 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Ketentuan
-              </div>
-              <div
-                onClick={() => updateTabs(3)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 3 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Tabel
-              </div>
-              <div
-                onClick={() => updateTabs(4)}
-                className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                  tabs === 4 ? "bg-biruMuda-500 text-primary rounded-md" : ""
-                }`}
-              >
-                Pengajuan
-              </div>
+              {["Syarat", "Ketentuan", "Tabel", "Pengajuan"].map(
+                (menu, index) => (
+                  <div
+                    key={index}
+                    onClick={() => updateTabs(index + 1)}
+                    className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+                      tabs === index + 1
+                        ? "bg-biruMuda-500 text-primary rounded-md"
+                        : ""
+                    }`}
+                  >
+                    {menu}
+                  </div>
+                )
+              )}
             </section>
 
             {/* Isi dari Menu */}
@@ -325,12 +325,12 @@ const SyaratDeposito = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-6 sm:mx-10 sm:px-10"
                 >
-                    <FormBank
-                      isiPenting={<Deposito />}
-                      value={"Deposito"}
-                      nomer={nomorDeposito}
-                      endpoint={"http://localhost:8000/api/deposito"}
-                    />
+                  <FormBank
+                    isiPenting={<Deposito />}
+                    value={"Deposito"}
+                    nomer={nomorDeposito}
+                    endpoint={"http://localhost:8000/api/deposito"}
+                  />
                 </motion.div>
               ) : null}
             </section>
