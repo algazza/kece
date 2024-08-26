@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import FormBank from "../Components/FormBank";
@@ -33,6 +33,7 @@ const buttonMenuTabungan = [
     icon: (className) => <TrendingUpIcon className={className} />,
     title: "Kredit Investasi",
     deskripsi: "Raih keuntungan maksimal, masa depan gemilang",
+    jenis: "Via online",
   },
   {
     id: 2,
@@ -45,12 +46,14 @@ const buttonMenuTabungan = [
     icon: (className) => <MapsHomeWorkIcon className={className} />,
     title: "Kredit KPR",
     deskripsi: "Miliki rumah idaman, proses mudah dan cepat.",
+    jenis: "Via online",
   },
   {
     id: 4,
     icon: (className) => <PlaylistAddCheckRoundedIcon className={className} />,
     title: "Kredit Multiguna",
     deskripsi: "Solusi pinjaman untuk semua kebutuhan Anda",
+    jenis: "Via online",
   },
   {
     id: 5,
@@ -75,6 +78,7 @@ const buttonMenuTabungan = [
     icon: (className) => <FilterVintageRoundedIcon className={className} />,
     title: "Kredit Pembiayaan Ziarah",
     deskripsi: "Nikmati ziarah penuh makna dengan biaya terjangkau dan mudah",
+    jenis: "Via online",
   },
 ];
 
@@ -101,20 +105,33 @@ const SyaratKredit = () => {
   let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
   const [menu, setMenu] = useState(0);
+  const [viaOnline, setViaOnline] = useState("Datang ke Bank");
+  const [menuProduk, setMenuProduk] = useState([]);
 
+  // online
+  useEffect(() => {
+    let selctedMenu = buttonMenuTabungan;
+
+    if (viaOnline !== "Datang ke Bank") {
+      selctedMenu = selctedMenu.filter((item) => item.jenis === viaOnline);
+    }
+    setMenuProduk(selctedMenu);
+  }, [viaOnline, buttonMenuTabungan]);
+
+  // tab
   function updateTabs(id) {
     setTabs(id);
   }
-
-  function updateMenu(id) {
-    setMenu(id);
-  }
-
   function nextTab(id) {
     updateTabs(id + 1);
   }
   function prevTab(id) {
     updateTabs(id - 1);
+  }
+
+  // menu
+  function updateMenu(id) {
+    setMenu(id);
   }
 
   return (
@@ -139,21 +156,22 @@ const SyaratKredit = () => {
         <section className="">
           {/* filter button  click */}
           <div className=" flex gap-3 justify-center m-10">
-            <div
-              className={`${styles.fontBody} font-semibold bg-biruMuda-500 p-3 rounded-lg text-white`}
-            >
-              Datang Ke bank
-            </div>
-            <div
-              className={`${styles.fontBody} font-semibold border-2 border-biruMuda-500 p-3 rounded-lg text-biruMuda-500`}
-            >
-              Via online
-            </div>
+          {["Datang ke Bank", "Via online"].map((online) => (
+              <div
+                key={online}
+                onClick={() => setViaOnline(online)}
+                className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
+                  viaOnline === online ? "bg-biruMuda-500 text-primary" : ""
+                }`}
+              >
+                {online}
+              </div>
+            ))}
           </div>
 
           {/* menu button */}
           <div className="grid md:grid-cols-3 gap-8 justify-center justify-items-center">
-            {buttonMenuTabungan.map((menu, index) => (
+            {menuProduk.map((menu, index) => (
               <div
                 className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
                 key={index}

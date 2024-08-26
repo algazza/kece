@@ -34,6 +34,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const images = [
   Banneremyu,
+  Banneremyu,
   // sampleBanner,
 ];
 
@@ -42,51 +43,61 @@ const menuHome = [
     id: 1,
     icon: (className) => <AccountBalanceIcon className={className} />,
     title: "Kredit",
+    link: "kredit"
   },
   {
     id: 2,
     icon: (className) => <MonetizationOnIcon className={className} />,
     title: "Deposito",
+    link: "deposito"
   },
   {
     id: 3,
     icon: (className) => <AccountBalanceWalletIcon className={className} />,
     title: "Tabungan",
+    link: "tabungan"
   },
   {
     id: 4,
     icon: (className) => <LocationOnIcon className={className} />,
     title: "Location",
+    link: "lokasi"
   },
   {
     id: 5,
     icon: (className) => <LocalShippingIcon className={className} />,
     title: "Mobil Kas",
+    link: ""
   },
   {
     id: 6,
     icon: (className) => <DirectionsCarIcon className={className} />,
     title: "Pickup",
+    link: "pick-up-service"
   },
   {
     id: 7,
     icon: (className) => <HomeIcon className={className} />,
     title: "Properti",
+    link: "armor-prop"
   },
   {
     id: 8,
     icon: (className) => <DiscountIcon className={className} />,
     title: "Promo",
+    link: ""
   },
   {
     id: 9,
     icon: (className) => <CalculateIcon className={className} />,
     title: "Simulasi",
+    link: ""
   },
   {
     id: 10,
     icon: (className) => <PercentIcon className={className} />,
     title: "Rate Bunga",
+    link: ""
   },
 ];
 
@@ -165,12 +176,12 @@ const Home = () => {
           >
             {menuHome.map((menu) => (
               <Link
-                to={menu.title}
+                to={menu.link}
                 key={menu.id}
-                className="group bg-abuTerang grid justify-items-center py-2 sm:px-6 px-3 rounded-xl "
+                className="group bg-abuTerang grid justify-items-center py-2 sm:px-6 px-3 rounded-xl transition-all duration-300 ease-in-out"
               >
                 {menu.icon(
-                  "text-abuGelap group-hover:text-merahh-500 transition-all duration-300 ease-in-out"
+                  "text-abuGelap group-hover:text-merahh-500 "
                 )}
                 <h2 className={`${styles.fontBodyBold} flex-shrink-0 `}>
                   {menu.title}
