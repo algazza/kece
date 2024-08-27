@@ -137,7 +137,7 @@
                     </svg>
                 </div>
 
-                <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-10 font-bold">Sponsor</h1>
+                <h1 class="text-darken mb-3 mt-[-2.5rem] text-xl lg:h-14 lg:px-10 font-bold">Pick Up</h1>
                 
                 <div class="flex items-center mt-[-0.1rem]">
                     <div id="dropdown-phone-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-2 text-sm font-medium text-center box-border rounded-s-lg border-black border-[1px] bg-gray-100 shadow-inner shadow-gray-300" type="button">
@@ -149,7 +149,7 @@
                     </div>
                     <label for="phone-input" class="text-sm font-medium sr-only text-gray-900 dark:text-white">Phone number:</label>
                     <div class="relative w-full">
-                        <input type="text" name="no_sponsor" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_sponsor }}" readonly/>
+                        <input type="text" name="no_pickup" class="rounded-e-lg block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner shadow-gray-400"  value="{{ $noAdmin->no_pickup }}" readonly/>
                     </div>
                 </div>
             </div>

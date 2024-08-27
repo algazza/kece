@@ -109,6 +109,6 @@
 
 document.getElementById('previewImage').addEventListener('click', function() {
     document.getElementById('upload_profile').click();
-});
+}); 
 </script>
 @endsection
