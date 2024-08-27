@@ -168,12 +168,12 @@ const Sejarah = () => {
         </div>
       </section>
 
-      <section className="px-8 sm:px-24 py-8 bg-biruMuda-100">
+      <section className="px-9 sm:px-24 py-9 bg-biruMuda-100">
         <h2 className={`${styles.heading4} mb-4`}>Visi</h2>
         <ol className="list-none pl-4">
           <li className="flex items-center mb-2">
             <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain mr-2 bg-checkmark"></span>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
+            Menjadi Lembaga Keuangan yang Terpercaya, Profesional, Melayani, Memberi Solusi dan Progresif.
           </li>
           <li className="flex items-center mb-2">
             <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain mr-2 bg-checkmark"></span>
@@ -190,24 +190,32 @@ const Sejarah = () => {
         </ol>
       </section>
 
-      <section className="px-8 sm:px-24 py-8 text-end">
+      <section className="px-9 sm:px-24 py-9 text-end">
         <h2 className={`${styles.heading4} mb-4`}>Misi</h2>
         <ol className="list-none pr-4 ">
           <li className="flex flex-row-reverse items-center mb-2">
             <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
+            Peningkatan aset sehingga menjadi Lembaga Keuangan beraset 1 triliun di tahun 2023.
           </li>
           <li className="flex flex-row-reverse items-center mb-2">
             <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
+            Pengembangan Sumber Daya Manusia yang Profesional, Berintegritas, Memiliki Rasa Memiliki dan Kepedulian Tinggi terhadap Perusahaan.
           </li>
           <li className="flex flex-row-reverse items-center mb-2">
             <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Mengembangkan Aplikasi Teknologi yang Berorientasi kepada Pemenuhan Kebutuhan Pasar.
           </li>
           <li className="flex flex-row-reverse items-center mb-2">
             <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et numquam,
+            Melaksanakan Prinsip-Prinsip Tata Kelola Perusahaan yang Baik (Good Corporate Governance).
+          </li>
+          <li className="flex flex-row-reverse items-center mb-2">
+            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
+            Memberikan Keuntungan Maksimal kepada Stakeholder.  
+          </li>
+          <li className="flex flex-row-reverse items-center mb-2">
+            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
+            Berkontribusi Positif terhadap Kepentingan Lingkungan dan Masyarakat.
           </li>
         </ol>
       </section>
@@ -215,13 +223,7 @@ const Sejarah = () => {
       <section className={`${styles.paddingX} py-8 bg-biruMuda-100`}>
         <h2 className={`${styles.heading4} mb-4`}>Nilai-Nilai Perusahaan</h2>
         <p className="mb-4">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero odit
-          possimus deleniti hic dicta blanditiis eum cupiditate facere, commodi
-          exercitationem, nihil ratione, excepturi pariatur suscipit ex dolores
-          adipisci mollitia rem. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Vitae reiciendis cupiditate sunt hic dignissimos
-          tenetur quidem repellendus non temporibus dolorem! Earum amet
-          necessitatibus id aliquid eum aliquam esse eveniet vero?
+        Berpedoman kepada nilai-nilai pendirian perusahaan dan seiring dengan perkembangan dan perubahan bisnis yang sangat dinamis, BPR Arto Moro melakukan penyempurnaan nilai-nilai perusahaan untuk mencapai tujuan sesuai dengan visi dan misi Perusahaan.
         </p>
 
         <div className="grid sm:grid-cols-2 justify-between gap-20">
@@ -235,9 +237,7 @@ const Sejarah = () => {
               Terpercaya
             </h2>
             <p className="col-[2/3] row-[2/3]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-              natus rerum repellat facilis fugiat accusamus, aliquid non minus
-              atque exercitationem ipsa,
+            Memberikan pelayanan dengan menempatkan kepentingan dan kenyamanan, dan keamanan nasabah sebagai prioritas yang utama.
             </p>
           </div>
 
@@ -248,12 +248,10 @@ const Sejarah = () => {
               2
             </h1>
             <h2 className={`${styles.heading4} col-[2/3] row-[1/2]`}>
-              Terpercaya
+              Profesional
             </h2>
             <p className="col-[2/3] row-[2/3]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-              natus rerum repellat facilis fugiat accusamus, aliquid non minus
-              atque exercitationem ipsa,
+            Melayani dengan cara terbaik berdasarkan prinsip dan tata kerja yang unggul, modern, maju, dan terpercaya.
             </p>
           </div>
 
@@ -264,12 +262,10 @@ const Sejarah = () => {
               3
             </h1>
             <h2 className={`${styles.heading4} col-[2/3] row-[1/2]`}>
-              Terpercaya
+              Melayani
             </h2>
             <p className="col-[2/3] row-[2/3]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-              natus rerum repellat facilis fugiat accusamus, aliquid non minus
-              atque exercitationem ipsa,
+            Memberikan layanan terbaik dengan cepat, sigap dan akurat
             </p>
           </div>
 
@@ -280,12 +276,10 @@ const Sejarah = () => {
               4
             </h1>
             <h2 className={`${styles.heading4} col-[2/3] row-[1/2]`}>
-              Terpercaya
+              Memberikan Solusi
             </h2>
             <p className="col-[2/3] row-[2/3]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-              natus rerum repellat facilis fugiat accusamus, aliquid non minus
-              atque exercitationem ipsa,
+            Senantiasa mendengarkan dan menyediakan jalan keluar untuk permasalahan yang dihadapi nasabah.
             </p>
           </div>
         </div>
@@ -298,14 +292,7 @@ const Sejarah = () => {
               Good Corporate Governance (GCG)
             </h1>
             <p className="text-abuGelap">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-              libero dolorem voluptate ipsam molestiae sit tempore cupiditate,
-              m12odi sint laborum amet necessitatibus similique id assumenda
-              suscipit iure, harum architecto alias? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. A possimus, odit dolorum tempore
-              suscipit, illum deleniti qui veritatis, recusandae perspiciatis
-              ratione? Blanditiis amet magnam saepe est quaerat voluptas placeat
-              provident.
+            Good Corporate Governance (GCG) adalah Tatakelola perusahaan yang baik dengan tetap memperhatikan kepentingan pemilik, kreditor, pemasok, asosiasi usaha, karyawan, pelanggan, pemerintah dan masyarakat luas, berlandaskan peraturan dan nilai etika.
             </p>
           </div>
           <img
