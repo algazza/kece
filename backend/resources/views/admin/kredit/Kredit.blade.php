@@ -6,7 +6,7 @@
         <section class="grid grid-cols-1 sm:grid-cols-2 repeat(2, minmax(0, 1fr)); pt-[3rem] justify-center">
             <div class="w-full p-4 absolute mt-[4.2rem] ml-[-17rem] z-20">
                 <form id="search-form" class="flex justify-center">
-                    <input type="text" id="search-input" name="search" placeholder="Cari berdasarkan nama" class="p-[6px] border border-gray-300 rounded-[15px] hidden lg:block">
+                    <input type="text" id="search-input" name="search" placeholder="search by name" class="p-[6px] border border-gray-300 rounded-[15px] hidden lg:block">
                 </form>
             </div>
             <div class="bg-gray-50 w-[28rem] my-[4rem] rounded-[5px] absolute ml-[5rem] lg:right-[58%] h-[80%] box-border border-[0.5px] border-black shadow-lg xss:w-[70%] sm2:w-[80%] sm:w-1/2 md:w-1/3 lg:w-1/4  overflow-hidden">

@@ -3,13 +3,13 @@
 @extends('layout')
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen font-poppins overflow-hidden">
-        <section class="grid grid-cols-2 grid-template-columns: repeat(2, minmax(0, 1fr)); pt-[3rem]">
-            <div class="w-full p-4 absolute mt-[4.2rem] ml-[-16rem] z-20">
+        <section class="grid grid-cols-1 sm:grid-cols-2 repeat(2, minmax(0, 1fr)); pt-[3rem] justify-center">
+            <div class="w-full p-4 absolute mt-[4.2rem] ml-[-17rem] z-20">
                 <form id="search-form" class="flex justify-center">
-                    <input type="text" id="search-input" name="search" placeholder="Cari berdasarkan nama..." class="p-[6px] border border-gray-300 rounded-[15px]">
+                    <input type="text" id="search-input" name="search" placeholder="search by name" class="p-[6px] border border-gray-300 rounded-[15px] hidden sm:block">
                 </form>
             </div>
-            <div class="bg-gray-50 w-[28rem] my-[4rem]  ml-[5rem] lg:right-[58%] rounded-[5px] absolute h-[80%] box-border border-[0.5px] border-black shadow-lg overflow-hidden">
+            <div class="bg-gray-50 w-[28rem] my-[4rem] rounded-[5px] absolute ml-[5rem] lg:right-[58%] h-[80%] box-border border-[0.5px] border-black shadow-lg xss:w-[70%] sm2:w-[80%] sm:w-1/2 md:w-1/3 lg:w-1/4  overflow-hidden">
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] py-[1.2rem] absolute w-screen bg-gray-50 box-border border-black">
                     <p>All Person Data</p>
                 </div>
