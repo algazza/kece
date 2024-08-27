@@ -168,7 +168,7 @@ const Sejarah = () => {
         </div>
       </section>
 
-      <section className="px-8 sm:px-24 py-8 bg-biruMuda-100">
+      <section className="px-9 sm:px-24 py-9 bg-biruMuda-100">
         <h2 className={`${styles.heading4} mb-4`}>Visi</h2>
         <ol className="list-none pl-4">
           <li className="flex items-center mb-2">
@@ -190,7 +190,7 @@ const Sejarah = () => {
         </ol>
       </section>
 
-      <section className="px-8 sm:px-24 py-8 text-end">
+      <section className="px-9 sm:px-24 py-9 text-end">
         <h2 className={`${styles.heading4} mb-4`}>Misi</h2>
         <ol className="list-none pr-4 ">
           <li className="flex flex-row-reverse items-center mb-2">
@@ -208,6 +208,14 @@ const Sejarah = () => {
           <li className="flex flex-row-reverse items-center mb-2">
             <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
             Melaksanakan Prinsip-Prinsip Tata Kelola Perusahaan yang Baik (Good Corporate Governance).
+          </li>
+          <li className="flex flex-row-reverse items-center mb-2">
+            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
+            Memberikan Keuntungan Maksimal kepada Stakeholder.  
+          </li>
+          <li className="flex flex-row-reverse items-center mb-2">
+            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
+            Berkontribusi Positif terhadap Kepentingan Lingkungan dan Masyarakat.
           </li>
         </ol>
       </section>
