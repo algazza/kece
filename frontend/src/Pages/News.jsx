@@ -92,12 +92,6 @@ const News = () => {
       <section className={`${styles.flexCenter} flex-col gap-6`}>
         <h1 className={`${styles.heading1} text-center`}>Berita</h1>
 
-        <div className="flex gap-4">
-          <div className="">Suara Merdeka</div>
-          <div className="">Tribun Jateng</div>
-          <div className="">JawaPos</div>
-        </div>
-
         <div className="flex gap-4 sm:max-w-full max-w-80 overflow-auto">
           {["All", "Penghargaan", "Promo", "Pengumuman", "Siaran Pers"].map(
             (category) => (

@@ -84,7 +84,6 @@ const KreditMenu = () => {
 
           {/* menu button */}
           <div className="grid gap-8 justify-center justify-items-center grid-cols-x3300">
-            {/* sdsdf */}
             {buttonMenuKredit.map((menu, index) => (
               <Link
                 to={"/news"}

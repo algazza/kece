@@ -12,6 +12,7 @@ const Header = () => {
   const [hasShadow, setHasShadow] = useState(false);
   const [toggle, setToggle] = useState(false);
 
+  // shadow
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 50) {
@@ -206,8 +207,8 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
 const AboutUs = () => {
   const items = [
     { name: "Sejarah", link: "/sejarah" },
-    { name: "Visi Misi", link: "/" },
-    { name: "Struktur Organisasi", link: "/" },
+    { name: "Visi Misi", link: "/sejarah#visi-misi" },
+    { name: "Struktur Organisasi", link: "/sejarah#organisasi" },
     { name: "Lokasi", link: "/lokasi" },
   ];
 
