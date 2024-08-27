@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center h-[55%]">/
+        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center h-[55%]">
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
                 @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
                     <a href="{{ route('kredit.index') }}">
@@ -175,7 +175,7 @@
                 </a>
             @endif
            </div>
-            <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[22rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative">
+            <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[22rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative hidden lg:block">
                 
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
                     

@@ -4,12 +4,12 @@
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen font-poppins overflow-hidden">
         <section class="grid grid-cols-2 grid-template-columns: repeat(2, minmax(0, 1fr)); pt-[3rem]">
-            <div class="w-full p-4 absolute mt-[4.2rem] ml-[-16rem] z-20">
+            <div class="w-full p-4 absolute mt-[4.2rem] ml-[-17rem] z-20">
                 <form id="search-form" class="flex justify-center">
-                    <input type="text" id="search-input" name="search" placeholder="Cari berdasarkan nama..." class="p-[6px] border border-gray-300 rounded-[15px]">
+                    <input type="text" id="search-input" name="search" placeholder="Cari berdasarkan nama..." class="p-[6px] border border-gray-300 rounded-[15px] hidden lg:block">
                 </form>
             </div>
-            <div class="bg-gray-50 w-[28rem] my-[4rem] right-[58%] rounded-[5px] absolute h-[80%] box-border border-[0.5px] border-black shadow-lg overflow-hidden">
+            <div class="bg-gray-50 w-[28rem] my-[4rem]  ml-[5rem] lg:right-[58%] rounded-[5px] absolute h-[80%] box-border border-[0.5px] border-black shadow-lg overflow-hidden">
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] py-[1.2rem] absolute w-screen bg-gray-50 box-border border-black">
                     <p>All Person Data</p>
                 </div>
@@ -44,15 +44,15 @@
                 </div>
             </div>
 
-            <div class=" mt-[1.5rem] absolute left-[45%] fle">
-                <div class="w-[13rem] py-[0.3rem] mb-[1rem] rounded-[7px] text-[1.1rem] font-semibold bg-gray-50 box-border border-black shadow-lg">
+            <div class=" mt-[1.5rem] absolute left-[45%] sm:w-1/2">
+                <div class="w-[13rem] py-[0.3rem] mb-[1rem] rounded-[7px] hidden md2:block  text-[1.1rem] font-semibold bg-gray-50 box-border border-black shadow-lg">
                     <p>Pickup</p>
                 </div>
-                <div class="grid grid-cols-1 gap-3">
+                <div class=" grid-cols-1 gap-3 hidden lg:block">
                     <div class="w-[40rem] h-[15rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg">
                         {!! $chartWeek->container() !!}
                     </div>    
-                    <div class="w-[40rem] h-[15rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg">
+                    <div class="w-[40rem] h-[15rem] bg-gray-50 rounded mt-5 p-4 box-border border-[0.5px] border-black shadow-lg">
                         {!! $chartMonth->container() !!}
                     </div>    
                 </div>
