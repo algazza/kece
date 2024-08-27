@@ -7,9 +7,9 @@
                 <div class="md:flex-1 px-4">
                     <div class="h-[460px] rounded-lg bg-gray-300 dark:bg-white mb-4">
                         <div class="flex justify-center items-center">
-                            <div class="overflow-hidden box-border flex justify-center items-center mr-[2rem] border-black border-[2px] h-[28rem] w-[30rem]">
+                            <div class="overflow-hidden box-border flex justify-center md:justify-center sm:justify-center ss:justify-center xs:justify-center xss:justify-center items-center mr-[2rem] border-black border-[2px] h-[28rem] w-[30rem]">
                                 <img id="previewImage" src="" alt="" class="w-full h-full object-cover z-10" style="cursor: pointer; display: none;">
-                                <div class="bg-white/90 rounded-full w-6 h-6 text-center absolute">
+                                <div class="bg-white/90 rounded-full w-6 h-6 text-center sticky">
                                     <input type="file" name="image" id="upload_profile" hidden>
                                     <label for="upload_profile">
                                         <svg data-slot="icon" class="w-6 h-5 text-black" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -25,7 +25,6 @@
                         <span class="font-bold text-black dark:text-black">Deskripsi singkat :</span>
                         <div class=" py-2 rounded-lg">
                             <div class="mt-2">
-                                <label for="name" class="block mb-2 font-bold text-black">Name</label>
                                 <textarea type="text" id="name" name="name" placeholder="Tulis Deskripsi" class="border border-gray-300 shadow p-3 h-[13.3rem] w-full rounded inline-block"></textarea>
                             </div>  
                     </div>
