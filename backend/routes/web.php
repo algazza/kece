@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KreditController;
 use App\Http\Controllers\PickupController;
@@ -120,6 +121,10 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 });
 
 
+Route::get('/Banner', [BannerController::class, 'viewBanner'])->name('banner');
+Route::post('/Banner/Post', [BannerController::class, 'store'])->name('banner.add');
+Route::delete('/Banner/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+
 
 
 
@@ -133,9 +138,6 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
 Route::get('/Newse', function(){
     return view ('admin.news.NewsEdit');
-});
-Route::get('/Banner', function(){
-    return view ('admin.banner.Banner');
 });
 Route::get('/Bannere', function(){
     return view ('admin.banner.BannerEdit');
