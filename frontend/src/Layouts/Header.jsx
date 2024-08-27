@@ -226,6 +226,7 @@ const Product = () => {
 
 const Service = () => {
   const items = [
+    { name: "Login", link: "https://etna.scxserver.com:2096" },
     { name: "Pick Up", link: "/pick-up-service" },
     { name: "Armor Properti", link: "/armor-properti" },
     { name: "Kalkulator", link: "/" },
@@ -244,7 +245,7 @@ const MenuList = ({ items }) => {
       <ul className="flex flex-col text-center flex-1 gap-2">
         {items.map((item, index) => (
           <li key={index} className="hover:text-merahh-500 duration-300">
-            <Link to={item.link}>{item.name}</Link>
+            <Link to={item.link} >{item.name}</Link>
           </li>
         ))}
       </ul>

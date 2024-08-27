@@ -134,7 +134,7 @@ const IsiArmorProp = () => {
                   />
                 </FormControl>
                 <a
-                  href={`https://wa.me/+62${nomer}?text=Saya%20${nameInputs}%20dengan%20`}
+                  href={`https://wa.me/+62${nomer}?text=Saya%20${nameInputs}%20dengan%20url%20${url}`}
                   className="text-center py-2 bg-biruMuda-500 text-primary rounded-xl"
                 >
                   Ajukan!
