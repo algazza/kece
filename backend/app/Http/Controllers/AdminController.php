@@ -60,7 +60,6 @@ class AdminController extends Controller
     }
 
 
-    // Forget
     function forget(){
         return view('admin.login.Forget');
     }
