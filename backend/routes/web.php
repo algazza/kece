@@ -156,5 +156,5 @@ Route::get('/lp', function(){
     return view ('admin.laporan.dasar');
 });
 Route::get('/tri', function(){
-    return view ('admin.laporan.triwulan');
+    return view ('admin.laporan.TRIWULAN.triwulan');
 });
