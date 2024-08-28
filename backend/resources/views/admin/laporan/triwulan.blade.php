@@ -6,7 +6,7 @@
         <div class="pt-[5rem] justify-start">
             <h1 class="text-3xl mb-2 font-bold">Laporan Triwulan</h1>
         </div>
-        <ul role="list" class=" mt-8 grid max-w-lg justify-center  grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3 mx-auto px-[9rem]">
+        <ul role="list" class=" mt-8 grid max-w-2xl justify-center  grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3 mx-auto px-[9rem]">
             <a class="p-8 w-auto border border-indigo-300 rounded-2xl hover:shadow-xl bg-white hover:shadow-indigo-50 flex flex-col items-center"href="#">
     <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQOF3qatBalC_iqwxk412bsLvNka5vRer5BAWU1XNvmhcA2elB4" class="shadow rounded-lg overflow-hidden border" >
     <div class="mt-8">

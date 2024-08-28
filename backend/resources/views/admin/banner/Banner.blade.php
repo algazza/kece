@@ -7,7 +7,7 @@
   @foreach ($banner as $item)
   <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl w-full mx-auto mt-1 cursor-pointer group hover:bg-gray-200 hover:scale-95 duration-300" style="padding-top: 37.5%;">
     <img src="{{ asset('image/public/banner/' . $item->image) }}" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
-    <div class="z-10 gap-y-1 overflow-hidden leading-6 absolute bottom-4 left-4 text-gray-100">{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</div>
+    <div class="z-10 gap-y-1 bg-gray-100 border-2 border-black shadow-lg rounded-md overflow-hidden leading-6 absolute bottom-4 left-4 text-black px-3">{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</div>
     <form action="{{ route('banner.delete', $item->id) }}" method="POST" onsubmit="return confirmDelete()">
       @csrf
       @method('DELETE')
