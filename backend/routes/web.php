@@ -151,3 +151,6 @@ Route::get('/ap', function(){
 Route::get('/lp', function(){
     return view ('admin.laporan.dasar');
 });
+Route::get('/tri', function(){
+    return view ('admin.laporan.triwulan');
+});

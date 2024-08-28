@@ -3,91 +3,53 @@
 @extends('layout')
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins">
-        <div class="flex-gap-[1.5rem] pt-[5rem] pl-[12rem] bg-gray-200  flex flex-col justify-start">
-            <h1 class="text-xl mb-2 font-bold">Admin Page</h1>
+        <div class="pt-[5rem] justify-center">
+            <h1 class="text-3xl mb-2 font-bold">Laporan</h1>
         </div>
-<div class="grid grid-cols-1 lg:grid-cols-3">
-    <div class="flex-gap-[1.5rem] pt-[2rem] px-[8rem] bg-gray-200 justify-center flex">
-        <div class="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 sm:py-12">
-            <div
-                class="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10">
-                <span class="absolute top-10 z-0 h-20 w-20 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[10]"></span>
-                <div class="relative z-10 mx-auto max-w-md">
-                    <span class="grid h-20 w-20 place-items-center rounded-full bg-sky-500 transition-all duration-300 group-hover:bg-sky-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-10 w-10 text-white transition-all">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-                        </svg>
-                    </span>
-                    <div
-                        class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                        <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share
-                            online.</p>
+        <ul role="list" class="mx-auto mt-8 grid max-w-2xl   grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
+          <div class="relative mx-[7rem] max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="bg-white p-7 rounded-md">
+                    <div class="flex">
                     </div>
-                    <div class="pt-5 text-base font-semibold leading-7">
-                        <p>
-                            <a href="#" class="text-sky-500 transition-all duration-300 group-hover:text-white">Read the docs
-                                &rarr;
-                            </a>
-                        </p>
+                    <div class="py-2">
+                        <div>
+                            <p class="text-lg tracking-tight font-semibold text-black py-[6px]"><i class='bx bx-calendar text-7xl'></i></p>
+                            <p class="text-lg tracking-tight font-semibold text-slate-900 py-[6px]">Laporan triwulan</p>
+                            <p class="text-lg tracking-tight text-slate-900 py-[6px]">laporan yang dibuat secara rutin setiap tiga bulan dan berisi informasi tentang pelaksanaan program kerja dan kinerja instansi atau satuan kerja.</p>
+                
+                        </div>  
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="flex-gap-[1.5rem] pt-[2rem] px-[8rem] bg-gray-200 justify-center flex">
-        <div class="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 sm:py-12">
-            <div
-                class="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10">
-                <span class="absolute top-10 z-0 h-20 w-20 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[10]"></span>
-                <div class="relative z-10 mx-auto max-w-md">
-                    <span class="grid h-20 w-20 place-items-center rounded-full bg-sky-500 transition-all duration-300 group-hover:bg-sky-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-10 w-10 text-white transition-all">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-                        </svg>
-                    </span>
-                    <div
-                        class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                        <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share
-                            online.</p>
+          <div class="relative mx-[7rem] max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="bg-white p-7 rounded-md">
+                    <div class="flex">
                     </div>
-                    <div class="pt-5 text-base font-semibold leading-7">
-                        <p>
-                            <a href="#" class="text-sky-500 transition-all duration-300 group-hover:text-white">Read the docs
-                                &rarr;
-                            </a>
-                        </p>
+                    <div class="py-2">
+                        <div>
+                            <p class="text-lg tracking-tight font-semibold text-black py-[6px]"><i class='bx bx-wink-smile text-7xl'></i></p>
+                            <p class="text-lg tracking-tight font-semibold text-slate-900 py-[6px]">Laporan GCG</p>
+                            <p class="text-lg tracking-tight text-slate-900 py-[6px]">laporan pelaksanaan tata kelola perusahaan yang baik (Good Corporate Governance)</p>
+                
+                        </div>  
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="flex-gap-[1.5rem] pt-[2rem] px-[8rem] bg-gray-200 justify-center flex">
-        <div class="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 sm:py-12">
-            <div
-                class="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10">
-                <span class="absolute top-10 z-0 h-20 w-20 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[10]"></span>
-                <div class="relative z-10 mx-auto max-w-md">
-                    <span class="grid h-20 w-20 place-items-center rounded-full bg-sky-500 transition-all duration-300 group-hover:bg-sky-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-10 w-10 text-white transition-all">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-                        </svg>
-                    </span>
-                    <div
-                        class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                        <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share
-                            online.</p>
+          <div class="relative mx-[7rem] max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="bg-white p-7 rounded-md">
+                    <div class="flex">
                     </div>
-                    <div class="pt-5 text-base font-semibold leading-7">
-                        <p>
-                            <a href="#" class="text-sky-500 transition-all duration-300 group-hover:text-white">Read the docs
-                                &rarr;
-                            </a>
-                        </p>
+                    <div class="py-2">
+                        <div>
+                            <p class="text-lg tracking-tight font-semibold text-black py-[6px]"><i class='bx bx-calendar-week text-7xl'></i></p>
+                            <p class="text-lg tracking-tight font-semibold text-slate-900 py-[6px]">Laporan tahunan</p>
+                            <p class="text-lg tracking-tight text-slate-900 py-[6px]"> dokumen resmi yang menggambarkan keadaan keuangan dan operasional suatu perusahaan selama satu tahun</p>
+                
+                        </div>  
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+    
+        </ul>
     </section>
 @endsection

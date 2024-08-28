@@ -4,7 +4,7 @@
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center font-poppins overflow-hidden">
         <section class="grid grid-cols-1 sm:grid-cols-2 repeat(2, minmax(0, 1fr)); pt-[3rem] justify-center">
-            <div class="w-full p-4 absolute mt-[4.2rem] ml-[-17rem] z-20">
+            <div class="w-full  p-4 absolute mt-[4.2rem] xxl:ml-[-20rem] xl:ml-[-18rem] lg:ml-[-16rem] z-20">
                 <form id="search-form" class="flex justify-center">
                     <input type="text" id="search-input" name="search" placeholder="search by name" class="p-[6px] border border-gray-300 rounded-[15px] hidden lg:block">
                 </form>
