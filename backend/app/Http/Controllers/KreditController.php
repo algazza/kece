@@ -3,9 +3,11 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Kredit;
+use App\Exports\KreditExport;
 use Illuminate\Http\Request;
 use App\Charts\kredit\KreditWeek;
 use App\Charts\kredit\KreditMounth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class KreditController extends Controller
 {
@@ -49,7 +51,7 @@ class KreditController extends Controller
     {
         $search = $request->input('search');
     
-        $query = Kredit::orderBy('created_at', 'desc')->paginate('20');
+        $query = Kredit::orderBy('created_at', 'desc');
         if ($search) {
             $query->where('nama', 'like', "%{$search}%");
         }
@@ -105,6 +107,11 @@ class KreditController extends Controller
         }
     
         return view('admin.kredit.KreditUser', compact('kredit'));
+    }
+
+    public function export()
+    {
+        return Excel::download(new KreditExport, 'kredits.xlsx');
     }
 
     public function edit(string $id)

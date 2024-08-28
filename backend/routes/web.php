@@ -80,6 +80,7 @@ Route::middleware(['auth', 'AdminAkses:kredit,admin'])->group(function(){
     Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
     Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
     Route::get('/api/kredit', [KreditController::class, 'data']);
+    Route::get('/export/kredit', [KreditController::class, 'export'])->name('export.kredit');
 });
 
 
@@ -89,6 +90,7 @@ Route::middleware(['auth', 'AdminAkses:deposito,admin'])->group(function(){
     Route::get('/deposito/{id}', [DepositoController::class, 'show'])->name('deposito.show');
     Route::get('/api/check-token/deposito', [DepositoController::class, 'checkToken']);
     Route::get('/api/deposito', [DepositoController::class, 'data']);
+    Route::get('/export/deposito', [DepositoController::class, 'export'])->name('export.deposito');
 });
 
 Route::middleware(['auth', 'AdminAkses:tabungan,admin'])->group(function(){
@@ -97,6 +99,7 @@ Route::middleware(['auth', 'AdminAkses:tabungan,admin'])->group(function(){
     Route::get('/tabungan/{id}', [TabunganController::class, 'show'])->name('tabungan.show');
     Route::get('/api/check-token/tabungan', [TabunganController::class, 'checkToken']);
     Route::get('/api/tabungan', [TabunganController::class, 'data']);
+    Route::get('/export/tabungan', [TabunganController::class, 'export'])->name('export.tabungan');
 });
 
 
@@ -106,6 +109,7 @@ Route::middleware(['auth', 'AdminAkses:pickup,admin'])->group(function(){
     Route::get('/pickup/{id}', [PickupController::class, 'show'])->name('pickup.show');
     Route::get('/api/check-token/pickup', [PickupController::class, 'checkToken']);
     Route::get('/api/pickup', [PickupController::class, 'data']);
+    Route::get('/export/pickup', [TabunganController::class, 'export'])->name('export.pickup');
 });
 
 
@@ -118,12 +122,12 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::put('/News/{id}', [NewsController::class, 'updateNews'])->name('news.update');
     Route::delete('/News/{id}/delete', [NewsController::class, 'destroyNews'])->name('news.delete');
     Route::get('/Sponsor', [SponsorController::class, 'index'])->name('sponsor.index');
+    Route::get('/Banner', [BannerController::class, 'viewBanner'])->name('banner');
+    Route::post('/Banner/Post', [BannerController::class, 'store'])->name('banner.add');
+    Route::delete('/Banner/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 });
 
 
-Route::get('/Banner', [BannerController::class, 'viewBanner'])->name('banner');
-Route::post('/Banner/Post', [BannerController::class, 'store'])->name('banner.add');
-Route::delete('/Banner/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 
 
 

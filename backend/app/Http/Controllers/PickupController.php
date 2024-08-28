@@ -7,6 +7,8 @@ use App\Models\Pickup;
 use Illuminate\Http\Request;
 use App\Charts\pickup\KreditWeek;
 use App\Charts\pickup\KreditMounth;
+use App\Exports\PickupExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PickupController extends Controller
 {
@@ -116,6 +118,11 @@ class PickupController extends Controller
         }
     
         return view('admin.pickup.PickupUser', compact('pickup'));
+    }
+
+    public function export()
+    {
+        return Excel::download(new PickupExport, 'Pick-Up.xlsx');
     }
 
     /**

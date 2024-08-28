@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use App\Models\Deposito;
 use Illuminate\Http\Request;
 use App\Charts\deposito\KreditWeek;
+use App\Exports\DepositoExport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Charts\deposito\KreditMounth;
 
 class DepositoController extends Controller
@@ -109,6 +111,12 @@ class DepositoController extends Controller
     
         return view('admin.deposito.DepositoUser', compact('deposito'));
     }
+
+    public function export()
+    {
+        return Excel::download(new DepositoExport, 'deposito.xlsx');
+    }
+
 
     public function edit(string $id)
     {
