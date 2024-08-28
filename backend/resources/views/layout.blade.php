@@ -69,19 +69,19 @@
               <div>
                 <a href="{{ route('dashboard')}}">
                     <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200">
-                      <i class='bx bxl-xing text-black'></i>
+                      <i class='bx bxs-dashboard text-black text-xl' ></i>
                     <span class="text-[18px] ml-6 text-black ">Dashboard</span>
                   </div>
                 </a>  
                 <a href="">
                     <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200">
-                      <i class='bx bxl-xing text-black'></i>
+                      <i class='bx bxs-bell-ring text-black' ></i>
                     <span class="text-[18px] ml-6 text-black ">Laporan</span>
                   </div>
                 </a>  
         
                 <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-gray-200" onclick="dropDown()">
-                    <i class='bx bxl-xing text-black' ></i>
+                  <i class='bx bxs-package text-black text-xl' ></i>
                   <div class="flex justify-between w-full items-center">
                     <span class="text-[18px] ml-6 text-black">Storage</span>
                     <span class="text-sm rotate-180" id="arrow">
@@ -94,16 +94,22 @@
                   <a href="{{ route('kredit.index') }}">
                     <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Kredit</h1>
                   </a>
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Personal</h1>
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Friends</h1>
+                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Deposito</h1>
+                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Pickup</h1>
+                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Tabungan</h1>
+                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">News</h1>
+                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Banner</h1>
+                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Nomer</h1>
+                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Sponsor</h1>
+                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Admin</h1>
                 </div>
 
-                <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600 bottom-0 w-screen mr-[1rem]">
-                    <i class='bx bxl-xing' ></i>
+                <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-red-400 bottom-0 w-screen mr-[1rem]">
+                  <i class='bx bx-log-out text-black' ></i>
                 
                     <div>
-                      <a href="/logout" class="text-[15px] ml-6 text-gray-200">
-                        Logout >>
+                      <a href="/logout" class="text-[15px] ml-6 text-black">
+                        Logout
                       </a>
                     </div>
                   </div>
