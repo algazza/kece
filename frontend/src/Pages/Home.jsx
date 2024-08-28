@@ -148,6 +148,16 @@ const Home = () => {
       .catch((error) => {
         console.error("Error fetching banner images:", error);
       });
+
+    fetch("http://localhost:8000/api/news")
+      .then((response) => response.json())
+      .then((data) => {
+        setNewsData(data);
+      })
+      .catch((err) => {
+        toast.error("Gagal Memunculkan News!");
+      });
+
   }, []);
 
   const handleOpen = () => {
