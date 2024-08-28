@@ -153,8 +153,8 @@ Route::get('/ap', function(){
     return view ('admin.arprop.armorprop');
 });
 Route::get('/lp', function(){
-    return view ('admin.laporan.dasar');
+    return view ('admin.laporan.laporan');
 });
 Route::get('/tri', function(){
-    return view ('admin.laporan.TRIWULAN.triwulan');
+    return view ('admin.laporan.trimulan.triwulan');
 });
