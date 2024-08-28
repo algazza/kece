@@ -15,13 +15,11 @@
                 </div>
                 <div class="text-right pl-[18rem] text-[1.2rem] text-black bottom-0 py-[0.8rem] absolute w-screen bg-gray-50 box-border border-black border-t-[0.2px] h-[3.5rem]">
                     <div class="pagination-links flex">
-                        <button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-300 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page + 1}">
-                            Next
-                        </button>
+                        {{-- Pagination --}}
                     </div>
                 </div>
                 <a href="{{ route('export.tabungan') }}">
-                    <div class="rounded-md border border-indigo-500 bg-gray-50 shadow-md px-[0.5rem] py-[0.2rem] absolute bottom-[0.65rem] left-3">
+                    <div class="rounded-md border border-gray-400 bg-gray-50 shadow-gray-400 shadow-inner px-[0.5rem] py-[0.2rem] absolute bottom-[0.5rem] left-3">
                         <label for="upload" class="flex flex-wrap items-center cursor-pointer gap-1">
                             <i class='bx bxs-file-export text-[1.8rem]'></i>
                             <span class="text-gray-600 font-medium text-[0.9rem]">Excel</span>
@@ -147,13 +145,13 @@
                 let paginationHtml = '';
     
                 if (pagination.current_page > 1) {
-                    paginationHtml += `<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 rounded-s hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page - 1}">
+                    paginationHtml += `<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-black bg-gray-50 rounded-s hover:bg-gray-100 box-border border-[0.5px] border-gray-400 shadow-inner shadow-gray-400" data-page="${pagination.current_page - 1}">
                                         Prev
                                       </button>`;
                 }
     
                 if (pagination.current_page < pagination.last_page) {
-                    paginationHtml += `<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page + 1}">
+                    paginationHtml += `<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-black bg-gray-50 rounded-e hover:bg-gray-100 box-border border-[0.5px] border-gray-400 shadow-inner shadow-gray-400" data-page="${pagination.current_page + 1}">
                                         Next
                                        </button>`;
                 }
