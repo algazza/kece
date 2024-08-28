@@ -2,12 +2,12 @@
 
 @extends('layout')
 @section('content')
-    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins">
+    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins md:m-auto">
         <div class="pt-[5rem] justify-center">
             <h1 class="text-3xl mb-2 font-bold">Laporan</h1>
         </div>
-        <ul role="list" class="mx-auto mt-8 grid max-w-2xl   grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
-          <div class="relative mx-[7rem] max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+        <ul role="list" class="mt-8 flex flex-wrap justify-center grid-cols-1 gap-6 m-[1.5rem] sm:gap-8 lg:mt-20 lg:max-w-none lg:flex">
+          <div class="relative max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
             <div class="bg-white p-7 rounded-md">
                     <div class="flex">
                     </div>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-          <div class="relative mx-[7rem] max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+          <div class="relative max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
             <div class="bg-white p-7 rounded-md">
                     <div class="flex">
                     </div>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-          <div class="relative mx-[7rem] max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+          <div class="relative max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
             <div class="bg-white p-7 rounded-md">
                     <div class="flex">
                     </div>
