@@ -156,9 +156,5 @@ Route::get('/lp', function(){
     return view ('admin.laporan.laporan');
 });
 Route::get('/tri', function(){
-<<<<<<< HEAD
-    return view ('admin.laporan.trimulan.triwulan');
-=======
     return view ('admin.laporan.triwulan.triwulan');
->>>>>>> 4092b10 (responsive layout)
 });
