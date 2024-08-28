@@ -73,6 +73,12 @@
                     <span class="text-[18px] ml-6 text-black ">Dashboard</span>
                   </div>
                 </a>  
+                <a href="">
+                    <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200">
+                      <i class='bx bxl-xing text-black'></i>
+                    <span class="text-[18px] ml-6 text-black ">Laporan</span>
+                  </div>
+                </a>  
         
                 <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-gray-200" onclick="dropDown()">
                     <i class='bx bxl-xing text-black' ></i>

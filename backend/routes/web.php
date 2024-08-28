@@ -148,3 +148,6 @@ Route::get('/Usere', function(){
 Route::get('/ap', function(){
     return view ('admin.arprop.armorprop');
 });
+Route::get('/lp', function(){
+    return view ('admin.laporan.dasar');
+});
