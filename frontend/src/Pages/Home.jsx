@@ -33,9 +33,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
 
 const images = [
-  Banneremyu,
-  Banneremyu,
-  // sampleBanner,
+
 ];
 
 const menuHome = [
@@ -134,18 +132,21 @@ const penghargaanHome = [
 const Home = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [images, setImages] = useState([]);
   const [newsData, setNewsData] = useState([]);
   const [expanded, setExpanded] = React.useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/news")
+    fetch("http://localhost:8000/api/banner")
       .then((response) => response.json())
       .then((data) => {
-        setNewsData(data);
+        // Asumsikan data yang diterima adalah array objek dengan properti 'filename' untuk nama file gambar
+        const imageUrls = data.map((item) => `http://localhost:8000/image/public/banner/${item.image}`);
+        setImages(imageUrls);
       })
-      .catch((err) => {
-        toast.error("Gagal Memunculkan News!");
+      .catch((error) => {
+        console.error("Error fetching banner images:", error);
       });
   }, []);
 

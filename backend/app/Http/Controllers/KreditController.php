@@ -49,7 +49,7 @@ class KreditController extends Controller
     {
         $search = $request->input('search');
     
-        $query = Kredit::orderBy('created_at', 'desc');
+        $query = Kredit::orderBy('created_at', 'desc')->paginate('20');
         if ($search) {
             $query->where('nama', 'like', "%{$search}%");
         }
