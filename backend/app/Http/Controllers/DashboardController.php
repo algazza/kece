@@ -43,7 +43,7 @@ class DashboardController extends Controller
     
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
 
-        $perPage = 20;
+        $perPage = 10;
     
         $currentPageItems = $dashboard->slice(($currentPage - 1) * $perPage, $perPage)->values();
     

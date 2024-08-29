@@ -87,7 +87,7 @@ class NewsController extends Controller
 
         $news->delete();
 
-        return redirect()->route('news')->with('success', 'News deleted successfully');
+        return redirect()->route('news')->with('success', 'News Di Hapus');
     }
 
 
