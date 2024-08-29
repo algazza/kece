@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <a href="{{ route('export.deposito') }}">
-                    <div class="rounded-md border border-gray-400 bg-gray-50 shadow-gray-400 shadow-inner px-[0.5rem] py-[0.2rem] absolute bottom-[0.5rem] left-3">
+                    <div class="rounded-md border border-gray-300 bg-gray-50  shadow-md px-[0.5rem] py-[0.2rem] absolute bottom-[0.5rem] left-3 cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <label for="upload" class="flex flex-wrap items-center cursor-pointer gap-1">
                             <i class='bx bxs-file-export text-[1.8rem]'></i>
                             <span class="text-gray-600 font-medium text-[0.9rem]">Excel</span>

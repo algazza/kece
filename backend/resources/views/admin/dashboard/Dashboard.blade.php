@@ -29,7 +29,7 @@
                 <div>
                     <div class="mt-[0.5rem]">
                         <div class="text-[6rem] ">
-                            <i class='text-black bx bx-user'></i>
+                            <i class='text-black bx bx-objects-horizontal-right'></i>
                         </div>
                         <p class="bg-black text-white mx-[3.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Sponsor</p>
                     </div>
@@ -54,7 +54,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between ">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='text-black bx bx-credit-card' ></i>
+                                    <i class='bx bxs-bank text-black text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold  pt-2">Kredit</h3>
@@ -68,7 +68,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='bx bx-credit-card-front text-black'></i>
+                                    <i class='bx bx-money-withdraw text-black text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold  pt-2">Deposito</h3>
@@ -82,7 +82,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='bx bx-wallet-alt text-black'></i>
+                                    <i class='bx bx-wallet-alt text-black text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold  pt-2">Tabungan</h3>
@@ -96,7 +96,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='text-black bx bxs-truck'></i>
+                                    <i class='text-black bx bxs-truck text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold pt-2">PickUp</h3>
@@ -110,7 +110,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='text-black bx bx-news' ></i>
+                                    <i class='text-black bx bx-news text-5xl' ></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold pt-2">News</h3>
@@ -124,7 +124,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='text-black bx bx-credit-card' ></i>
+                                    <i class='bx bx-user-circle text-black text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold pt-2">Admin</h3>
@@ -138,7 +138,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='bx bx-phone text-black'></i>
+                                    <i class='bx bx-phone text-black text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold pt-2">Nomor</h3>
@@ -152,7 +152,7 @@
                     <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='bx bx-phone text-black'></i>
+                                <i class='bx bx-objects-horizontal-right text-black text-5xl'></i>
                             </div>
                             <div class="block mt-[0.8rem]">
                                 <h3 class="text-[1.1rem] font-bold pt-2">Sponsor</h3>
@@ -180,7 +180,7 @@
                     <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='bx bx-phone text-black'></i>
+                                <i class='bx bx-bell text-black text-5xl'></i>
                             </div>
                             <div class="block mt-[0.8rem]">
                                 <h3 class="text-[1.1rem] font-bold pt-2">Laporan</h3>

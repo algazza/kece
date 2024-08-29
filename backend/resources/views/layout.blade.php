@@ -142,15 +142,16 @@
               </div>
 
               <a href="/logout">
-                <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-red-400 bottom-0 w-screen mr-[1rem]">
-                  <i class='bx bx-log-out text-black' ></i>
+                <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer text-black hover:text-white hover:bg-red-500 bottom-0 w-screen mr-[1rem]">
+                  <i class='bx bx-log-out' ></i>
                     <div>
-                      <a href="/logout" class="text-[15px] ml-6 text-black">
+                      <a href="/logout" class="text-[15px] ml-6">
                         Logout
                       </a>
                     </div>
                   </div>          
                 </div>
+              </a>
               </a>
               </div>
               <div class="sm:hidden flex gap-2 text-black ml-[1rem]">
