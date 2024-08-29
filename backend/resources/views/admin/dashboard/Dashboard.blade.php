@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center xxl:h-[50rem] h-[38rem] xl:h-[30rem] lg:h-[30rem] md:h-[30rem] sm:h-[25rem] xss:h-[30rem]">
+        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center mb-[5rem] xxl:h-[50rem] h-[38rem] xl:h-[30rem] lg:h-[30rem] md:h-[30rem] sm:h-[25rem] xss:h-[30rem]">
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
                 @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
                     <a href="{{ route('kredit.index') }}">
@@ -161,6 +161,20 @@
                     </div>
                 </a>
                 @endif
+                @if (Auth::user()->role == 'admin' || Auth::user()->role == 'promosi' )
+                <a href="{{ route('banner') }}">
+                    <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+                        <div class="flex">
+                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                <i class='bx bx-phone text-black'></i>
+                            </div>
+                            <div class="block mt-[0.8rem]">
+                                <h3 class="text-[1.1rem] font-bold pt-2">Bannner</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                @endif
                 @if (Auth::user()->role == 'admin')
                 <a href="{{ route('laporan.index') }}">
                     <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
@@ -175,6 +189,7 @@
                     </div>
                 </a>
                 @endif
+
            </div>
             <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[28rem] xxl:h-[39rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative hidden lg:block">
                 

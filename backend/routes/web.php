@@ -70,7 +70,7 @@ Route::middleware(['auth', 'AdminAkses:admin'])->group(function () {
     Route::post('/Admin/Add/Post', [AdminController::class, 'store'])->name('admin.post');
 
     // No Admin
-    Route::get('/No', [NoAdminController::class, 'viewNoAdmin'])->name('noAdmin');  
+    Route::get('/Nomor/Admin', [NoAdminController::class, 'viewNoAdmin'])->name('noAdmin');  
     Route::get('/No/{id}/Edit', [NoAdminController::class, 'editData'])->name('noAdmin.edit');
     Route::put('/No/{id}/Update', [NoAdminController::class, 'updateData'])->name('noAdmin.update');
 

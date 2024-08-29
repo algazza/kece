@@ -134,11 +134,16 @@
                           <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Sponsor</h1>
                       </a>
                   @endif
+                  @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
+                  <a href="{{ route('banner') }}">
+                      <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Banner</h1>
+                  </a>
+              @endif
               </div>
 
+              <a href="/logout">
                 <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-red-400 bottom-0 w-screen mr-[1rem]">
                   <i class='bx bx-log-out text-black' ></i>
-                
                     <div>
                       <a href="/logout" class="text-[15px] ml-6 text-black">
                         Logout
@@ -146,6 +151,7 @@
                     </div>
                   </div>          
                 </div>
+              </a>
               </div>
               <div class="sm:hidden flex gap-2 text-black ml-[1rem]">
                 <div class="relative mt-1">
