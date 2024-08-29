@@ -111,16 +111,19 @@
     
             function updateContent(data) {
                 let content = '';
+                const perPage = 20;
                 data.forEach((item, index) => {
                     const createdAt = new Date(item.created_at);
                     const time = createdAt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
                     const date = createdAt.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
     
+                    const nomor = (currentPage - 1) * perPage + index + 1;
+
                     content += `
                     <a href="/pickup/${item.id}">
                         <div class="border-b-[0.5px] border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
                             <p class="text-[1.3rem]">
-                                ${(currentPage - 1) * data.length + index + 1}
+                                ${nomor}
                             </p>
                             <div class="block px-[1rem] text-left">
                                 <h3 class="text-[0.9rem] font-medium">${item.nama}</h3>
