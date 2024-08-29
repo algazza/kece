@@ -9,7 +9,7 @@
                     <input type="text" id="search-input" name="search" placeholder="search by name" class="p-[6px] border border-gray-300 rounded-[15px] hidden xl:block">
                 </form>
             </div>
-            <div class="bg-gray-50 w-[28rem] my-[4rem] rounded-[5px] absolute ml-[5rem] lg:right-[58%] h-[80%] box-border border-[0.5px] border-black shadow-lg xss:w-[70%] sm2:w-[80%] sm:w-1/2 md:w-1/3 lg:w-1/4  overflow-hidden">
+            <div class="bg-gray-50 w-[28rem] my-[4rem] rounded-[5px] absolute ml-[3rem] lg:right-[58%] h-[80%] box-border border-[0.5px] border-black shadow-lg xss:w-[70%] sm2:w-[80%] sm:w-1/2 md:w-[30rem] lg:w-[30rem]  overflow-hidden">
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] py-[1.2rem] absolute w-screen bg-gray-50 box-border border-black">
                     <p>All Person Data</p>
                 </div>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <a href="{{ route('export.kredit') }}">
-                    <div class="rounded-md border border-gray-400 bg-gray-50 shadow-gray-400 shadow-inner px-[0.5rem] py-[0.2rem] absolute bottom-[0.5rem] left-3">
+                    <div class="rounded-md border border-gray-300 bg-gray-50  shadow-md px-[0.5rem] py-[0.2rem] absolute bottom-[0.5rem] left-3 cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <label for="upload" class="flex flex-wrap items-center cursor-pointer gap-1">
                             <i class='bx bxs-file-export text-[1.8rem]'></i>
                             <span class="text-gray-600 font-medium text-[0.9rem]">Excel</span>
@@ -31,7 +31,7 @@
                     
                     @foreach ($kredit as $no => $data)
                     <a href="{{ route('kredit.show', $data->id) }}">
-                        <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
+                        <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem] overflow-x-scroll">
                             <p class="text-[1.3rem]">
                                 {{ $kredit->firstItem() + $loop->index }}
                             </p>                            
@@ -148,13 +148,13 @@
                 let paginationHtml = '';
     
                 if (pagination.current_page > 1) {
-                    paginationHtml += `<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-black bg-gray-50 rounded-s hover:bg-gray-100 box-border border-[0.5px] border-gray-400 shadow-inner shadow-gray-400" data-page="${pagination.current_page - 1}">
+                    paginationHtml += `<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-black bg-gray-50 rounded-s hover:bg-gray-100 box-border border-[0.5px] border-gray-400 shadow-md shadow-gray-400" data-page="${pagination.current_page - 1}">
                                         Prev
                                       </button>`;
                 }
     
                 if (pagination.current_page < pagination.last_page) {
-                    paginationHtml += `<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-black bg-gray-50 rounded-e hover:bg-gray-100 box-border border-[0.5px] border-gray-400 shadow-inner shadow-gray-400" data-page="${pagination.current_page + 1}">
+                    paginationHtml += `<button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-black bg-gray-50 rounded-e hover:bg-gray-100 box-border border-[0.5px] border-gray-400 shadow-md shadow-gray-400" data-page="${pagination.current_page + 1}">
                                         Next
                                        </button>`;
                 }
