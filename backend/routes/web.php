@@ -1,14 +1,16 @@
 <?php
 
 use App\Models\Admin;
+use App\Models\Laporan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\BannerController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\KreditController;
 use App\Http\Controllers\PickupController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\NoAdminController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Middleware\Admin\KreditAccess;
@@ -72,6 +74,13 @@ Route::middleware(['auth', 'AdminAkses:admin'])->group(function () {
     Route::get('/No/{id}/Edit', [NoAdminController::class, 'editData'])->name('noAdmin.edit');
     Route::put('/No/{id}/Update', [NoAdminController::class, 'updateData'])->name('noAdmin.update');
 
+    // Laporan
+    Route::get('/Laporan', [LaporanController::class, 'viewLaporan'])->name('laporan.index');
+    Route::delete('/Laporan/delete/{id}', [LaporanController::class, 'destroy'])->name('laporan.delete');
+    Route::get('/Triwulan', [LaporanController::class, 'viewTriwulan'])->name('laporan.triwulan');
+    Route::get('/Gcg', [LaporanController::class, 'viewGcg'])->name('laporan.gcg');
+    Route::get('/Tahunan', [LaporanController::class, 'viewTahunan'])->name('laporan.tahunan');
+    Route::post('/Laporan/post', [LaporanController::class, 'store'])->name('laporan.post');
 });
 
 Route::middleware(['auth', 'AdminAkses:kredit,admin'])->group(function(){
@@ -137,24 +146,7 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
 
 
-
-
-
-Route::get('/Newse', function(){
-    return view ('admin.news.NewsEdit');
-});
-Route::get('/Bannere', function(){
-    return view ('admin.banner.BannerEdit');
-});
 Route::get('/Usere', function(){
     return view ('admin.user.UserAdd');
 });
-Route::get('/ap', function(){
-    return view ('admin.arprop.armorprop');
-});
-Route::get('/lp', function(){
-    return view ('admin.laporan.laporan');
-});
-Route::get('/tri', function(){
-    return view ('admin.laporan.triwulan.triwulan');
-});
+

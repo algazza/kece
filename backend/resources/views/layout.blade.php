@@ -73,12 +73,15 @@
                     <span class="text-[18px] ml-6 text-black ">Dashboard</span>
                   </div>
                 </a>  
-                <a href="">
-                    <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200">
-                      <i class='bx bxs-bell-ring text-black' ></i>
-                    <span class="text-[18px] ml-6 text-black ">Laporan</span>
-                  </div>
-                </a>  
+
+                @if (Auth::user()->role == 'admin')
+                  <a href="{{ route('laporan.index') }}">
+                      <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-200">
+                        <i class='bx bxs-bell-ring text-black' ></i>
+                      <span class="text-[18px] ml-6 text-black ">Laporan</span>
+                    </div>
+                  </a>  
+                @endif
         
                 <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-gray-200" onclick="dropDown()">
                   <i class='bx bxs-package text-black text-xl' ></i>
@@ -90,19 +93,48 @@
                   </div>
                 </div>
 
-                <div class=" leading-7 text-left text-sm font-thin mt-2 w-4/5 mx-auto pl-[3rem] " id="submenu">
-                  <a href="{{ route('kredit.index') }}">
-                    <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Kredit</h1>
-                  </a>
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Deposito</h1>
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Pickup</h1>
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Tabungan</h1>
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">News</h1>
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Banner</h1>
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Nomer</h1>
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Sponsor</h1>
-                  <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Admin</h1>
-                </div>
+                <div class="leading-7 text-left text-sm font-thin mt-2 w-4/5 mx-auto pl-[3rem]" id="submenu">
+                  @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
+                      <a href="{{ route('kredit.index') }}">
+                          <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Kredit</h1>
+                      </a>
+                  @endif
+                  @if (Auth::user()->role == 'deposito' || Auth::user()->role == 'admin')
+                      <a href="{{ route('deposito.index') }}">
+                          <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Deposito</h1>
+                      </a>
+                  @endif
+                  @if (Auth::user()->role == 'pickup' || Auth::user()->role == 'admin')
+                      <a href="{{ route('pickup.index') }}">
+                          <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">PickUp</h1>
+                      </a>
+                  @endif
+                  @if (Auth::user()->role == 'tabungan' || Auth::user()->role == 'admin')
+                      <a href="{{ route('tabungan.index') }}">
+                          <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Tabungan</h1>
+                      </a>
+                  @endif
+                  @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
+                      <a href="{{ route('news') }}">
+                          <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">News</h1>
+                      </a>
+                  @endif
+                  @if (Auth::user()->role == 'admin')
+                      <a href="{{ route('admin') }}">
+                          <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Admin</h1>
+                      </a>
+                  @endif
+                  @if (Auth::user()->role == 'admin')
+                      <a href="{{ route('noAdmin') }}">
+                          <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Nomor</h1>
+                      </a>
+                  @endif
+                  @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
+                      <a href="{{ route('sponsor.index') }}">
+                          <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Sponsor</h1>
+                      </a>
+                  @endif
+              </div>
 
                 <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-red-400 bottom-0 w-screen mr-[1rem]">
                   <i class='bx bx-log-out text-black' ></i>
