@@ -40,23 +40,23 @@
                 <form action="{{ route('laporan.post') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="flex flex-col items-center justify-center text-center cursor-pointer gap-1 p-[1rem]">
-                        <div class="rounded-md border border-indigo-500 bg-gray-50 shadow-md w-36 p-4 mt-[2rem]">
-                            <div class="flex flex-col items-center gap-2 cursor-pointer" onclick="document.getElementById('upload').click();">
+                        <div class="rounded-md border border-indigo-500 bg-gray-50 shadow-md w-36 p-4 mt-[2rem] cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300">
+                            <div class="flex flex-col items-center gap-2 cursor-pointer">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 fill-white stroke-indigo-500" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
                                 <span class="text-gray-600 font-medium">Upload file</span>
                             </div>
-                            <input id="upload" type="file" class="hidden" name="file_laporan" />
-                        </div>                        
+                            <input id="upload" type="file" class="hidden" name="file_laporan"/>
+                        </div>
                         <div class="mt-4 px-[2rem] w-full">
-                            <input type="text" name="tanggal" class="rounded-[5px] block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner text-center shadow-gray-400" placeholder="Tanggal"/>
+                            <input type="text" name="tanggal" class="rounded-md block p-2.5 w-full z-20 text-sm text-gray-900 shadow-md text-center shadow-gray-200" placeholder="Tanggal"/>
                             <input type="hidden" name="jenis_laporan" value="triwulan">
                         </div>
                         <div class="mt-4 mb-2">
                             <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-red-600 px-10 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-red-700 hover:scale-95 duration-300"
                                     onclick="closeModal('modelConfirm')">Close</button>
-                           <button type="submit" class="inline-flex items-center rounded-md border-[1px] bg-white border-red-600 px-10 py-2 text-sm leading-4 text-red-600 shadow-red-500 font-semibold hover:text-white shadow-sm hover:bg-blue-500 hover:scale-95 duration-300">Upload</button>
+                           <button type="button" class="inline-flex items-center rounded-md border-[1px] bg-white border-red-600 px-10 py-2 text-sm leading-4 text-red-600 shadow-red-500 font-semibold hover:text-white shadow-sm hover:bg-red-600 hover:scale-95 duration-300">Upload</button>
                        </div>
                     </div>            
                 </form>

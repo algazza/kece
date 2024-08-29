@@ -6,14 +6,14 @@
         <section class="grid grid-cols-1 sm:grid-cols-2 repeat(2, minmax(0, 1fr)); pt-[3rem] justify-center">
             <div class="w-full  p-4 absolute mt-[4.2rem] xxl:ml-[-20rem] xl:ml-[-18rem] lg:ml-[-16rem] z-20">
                 <form id="search-form" class="flex justify-center">
-                    <input type="text" id="search-input" name="search" placeholder="..." class="p-[6px] border border-gray-300 rounded-[15px] hidden lg:block">
+                    <input type="text" id="search-input" name="search" placeholder="..." class="p-[6px] border border-gray-300 rounded-[15px] hidden xl:block">
                 </form>
             </div>
             <div class="bg-gray-50 w-[28rem] my-[4rem] rounded-[5px] absolute ml-[5rem] lg:right-[58%] h-[80%] box-border border-[0.5px] border-black shadow-lg xss:w-[70%] sm2:w-[80%] sm:w-1/2 md:w-1/3 lg:w-1/4  overflow-hidden">
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] py-[1.2rem] absolute w-screen bg-gray-50 box-border border-black">
                     <p>All Person Data</p>
                 </div>
-                <div class="text-right pl-[18rem] text-[1.2rem] text-black bottom-0 py-[0.8rem] absolute w-screen bg-gray-50 box-border border-black border-t-[0.2px] h-[3.5rem]">
+                <div class="text-right pl-[8rem] text-[1.2rem] text-black bottom-0 py-[0.8rem] absolute w-screen bg-gray-50 box-border border-black border-t-[0.2px] h-[3.5rem]">
                     <div class="pagination-links flex">
                         {{--Pagination  --}}
                     </div>
