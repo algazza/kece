@@ -142,8 +142,13 @@
               </div>
 
               <a href="/logout">
+<<<<<<< HEAD
                 <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer text-black hover:text-white hover:bg-red-500 bottom-0 w-screen mr-[1rem]">
                   <i class='bx bx-log-out' ></i>
+=======
+                <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 text-black hover:text-white cursor-pointer hover:bg-red-500 bottom-0 w-screen mr-[1rem]">
+                  <i class='bx bx-log-out ' ></i>
+>>>>>>> 7c02abe (responsive layout)
                     <div>
                       <a href="/logout" class="text-[15px] ml-6">
                         Logout

@@ -9,7 +9,7 @@
                     <input type="text" id="search-input" name="search" placeholder="search by name" class="p-[6px] border border-gray-300 rounded-[15px] hidden xl:block">
                 </form>
             </div>
-            <div class="bg-gray-50 w-[28rem] my-[4rem] rounded-[5px] absolute ml-[5rem] lg:right-[58%] h-[80%] box-border border-[0.5px] border-black shadow-lg xss:w-[70%] sm2:w-[80%] sm:w-1/2 md:w-1/3 lg:w-1/4  overflow-hidden">
+            <div class="bg-gray-50 w-[28rem] my-[4rem] rounded-[5px] absolute ml-[3rem] lg:right-[58%] h-[80%] box-border border-[0.5px] border-black shadow-lg xss:w-[70%] sm2:w-[80%] sm:w-1/2 md:w-[30rem] lg:w-[30rem]  overflow-hidden">
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] py-[1.2rem] absolute w-screen bg-gray-50 box-border border-black">
                     <p>All Person Data</p>
                 </div>
