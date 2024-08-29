@@ -14,7 +14,8 @@ import sampleNews from "../img/sample-news-684x385.jpg";
 import sampleBanner from "../img/samplebanner.svg";
 import phoneimg from "../img/phoneimg.svg";
 import BennerLiv from "../img/sampleliv.svg";
-import Banneremyu from "../img/Banner2.svg";
+import loaderIcon from "../img/loadingIconArmor.svg"
+import Banneremyu from "../img/Banner2.svg"; //1250 x 477 || 21 : 8
 
 export {
   logoArmor,
@@ -22,6 +23,7 @@ export {
   sampleBanner,
   BennerLiv,
   Banneremyu,
+  loaderIcon,
   phoneimg,
   sample,
   nunezimg,
@@ -123,6 +125,8 @@ export const profileMisi = [
   "Pengembangan Sumber Daya Manusia yang Profesional, Berintegritas, Memiliki Rasa Memiliki dan Kepedulian Tinggi terhadap Perusahaan.",
   "Mengembangkan Aplikasi Teknologi yang Berorientasi kepada Pemenuhan Kebutuhan Pasar.",
   "Melaksanakan Prinsip-Prinsip Tata Kelola Perusahaan yang Baik (Good Corporate Governance).",
+  "Memberikan Keuntungan Maksimal kepada Stakeholder.",
+  "Berkontribusi Positif terhadap Kepentingan Lingkungan dan Masyarakat.",
 ]
 
 export const profileNilai = [

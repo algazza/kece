@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import styles from "../helper/style";
+import { motion } from "framer-motion";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LinkIcon from "@mui/icons-material/Link";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import { loaderIcon } from "../helper";
 
 const IsiNews = () => {
   const { id } = useParams(); // Ambil id dari URL
@@ -58,7 +60,26 @@ const IsiNews = () => {
 
   if (error) return <p>{error}</p>; // Tampilkan pesan kesalahan jika ada
 
-  if (!news) return <p>Loading...</p>;
+  if (!news)
+    return (
+      <div className="w-screen h-dvh flex justify-center items-center">
+        <div className="">
+          <motion.img
+            initial={{ rotate: 0 }}
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              repeatType: "loop"
+            }}
+            src={loaderIcon}
+            alt=""
+          />
+
+          <h1 className={`${styles.heading1}`}>Loading...</h1>
+        </div>
+      </div>
+    );
 
   const handleCopyLink = () => {
     const currentUrl = window.location.origin + location.pathname;
@@ -74,102 +95,100 @@ const IsiNews = () => {
 
   return (
     <>
-      <main className={`${styles.paddingY}`}>
-        <section
-          className={`${styles.paddingY} ${styles.marginX} ${styles.flexCenter} flex-col gap-12 pt-12`}
-        >
-          <h5 className={`${styles.heading4} ${styles.marginX} text-center `}>
-            {news.judul}
-          </h5>
+      <section
+        className={`${styles.paddingY} ${styles.marginX} ${styles.flexCenter} flex-col gap-12 pt-12`}
+      >
+        <h5 className={`${styles.heading4} ${styles.marginX} text-center `}>
+          {news.judul}
+        </h5>
 
-          <div>
-            <img
-              className="max-w-[400px]"
-              src={`http://localhost:8000/image/public/news/${news.image}`}
-              alt=""
-            />
-            <div className="flex justify-end pt-2 gap-4">
-              <button onClick={handleCopyLink}>
-                <LinkIcon className="text-[#646464]" />
-              </button>
-              <button>
-                <WhatsAppIcon className="text-[#25D366]" />
-              </button>
-              <button>
-                <XIcon className="text-[#000]" />
-              </button>
-              <button>
-                <FacebookRoundedIcon className="text-[#4267B2]" />
-              </button>
-            </div>
+        <div>
+          <img
+            className="max-w-[400px]"
+            src={`http://localhost:8000/image/public/news/${news.image}`}
+            alt=""
+          />
+          <div className="flex justify-end pt-2 gap-4">
+            <button onClick={handleCopyLink}>
+              <LinkIcon className="text-[#646464]" />
+            </button>
+            <button>
+              <WhatsAppIcon className="text-[#25D366]" />
+            </button>
+            <button>
+              <XIcon className="text-[#000]" />
+            </button>
+            <button>
+              <FacebookRoundedIcon className="text-[#4267B2]" />
+            </button>
           </div>
+        </div>
 
-          <div className={`${styles.fontBody} sm:mx-32`}>
-            <div
-              className="pb-6"
-              dangerouslySetInnerHTML={{ __html: news.keterangan }}
-            />
+        <div className={`${styles.fontBody} sm:mx-32`}>
+          <div
+            className="pb-6"
+            dangerouslySetInnerHTML={{ __html: news.keterangan }}
+          />
 
-            <div className={`${styles.fontBodyBold}`}>
-              <p>
-                {new Intl.DateTimeFormat("id-ID", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
-                }).format(new Date(news.created_at))}
-              </p>
-              <p>{news.penulis}</p>
-            </div>
+          <div className={`${styles.fontBodyBold}`}>
+            <p>
+              {new Intl.DateTimeFormat("id-ID", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+              }).format(new Date(news.created_at))}
+            </p>
+            <p>{news.penulis}</p>
           </div>
+        </div>
 
-          <div className="px-12">
-            <div className="flex justify-between">
-              <h6 className={`${styles.heading6} mb-4`}>Baca juga:</h6>
-              <Link
-                to={"/news"}
-                className={`${styles.heading6} mb-4 text-abuGelap`}
-              >
-                Lainnya...
-              </Link>
-            </div>
-            <section className="grid sm:grid-cols-x550 justify-center gap-6 sm:gap-12">
-              {newsData.slice(0, 2).map((news) => {
-                return (
-                  <div
-                    key={news.id}
-                    className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
-                    onClick={() => navigate(`/news/${news.id}`)}
-                  >
-                    <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
-                      <img
-                        src={`http://localhost:8000/image/public/news/${news.image}`}
-                        alt={news.judul}
-                        className="object-cover w-full h-full"
-                      />
-                    </div>
-
-                    <div className="p-4 flex flex-col justify-center">
-                      <p className={`${styles.fontSmallBold} text-merahh-500`}>
-                        {news.kategory}
-                      </p>
-                      <h6 className={`${styles.heading6}`}>{news.judul}</h6>
-                      <p className={`${styles.fontSmall} text-abuGelap`}>
-                        {news.created_at
-                          ? new Intl.DateTimeFormat("id-ID", {
-                              day: "2-digit",
-                              month: "2-digit",
-                              year: "numeric",
-                            }).format(new Date(news.created_at))
-                          : "Tanggal tidak tersedia"}
-                      </p>
-                    </div>
+        <div className="px-12">
+          <div className="flex justify-between">
+            <h6 className={`${styles.heading6} mb-4`}>Baca juga:</h6>
+            <Link
+              to={"/news"}
+              className={`${styles.heading6} mb-4 text-abuGelap`}
+            >
+              Lainnya...
+            </Link>
+          </div>
+          <section className="grid sm:grid-cols-x550 justify-center gap-6 sm:gap-12">
+            {newsData.slice(0, 2).map((news) => {
+              return (
+                <div
+                  key={news.id}
+                  className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
+                  onClick={() => navigate(`/news/${news.id}`)}
+                >
+                  <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
+                    <img
+                      src={`http://localhost:8000/image/public/news/${news.image}`}
+                      alt={news.judul}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
-                );
-              })}
-            </section>
-          </div>
-        </section>
-      </main>
+
+                  <div className="p-4 flex flex-col justify-center">
+                    <p className={`${styles.fontSmallBold} text-merahh-500`}>
+                      {news.kategory}
+                    </p>
+                    <h6 className={`${styles.heading6}`}>{news.judul}</h6>
+                    <p className={`${styles.fontSmall} text-abuGelap`}>
+                      {news.created_at
+                        ? new Intl.DateTimeFormat("id-ID", {
+                            day: "2-digit",
+                            month: "2-digit",
+                            year: "numeric",
+                          }).format(new Date(news.created_at))
+                        : "Tanggal tidak tersedia"}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </section>
+        </div>
+      </section>
       <ToastContainer />
     </>
   );

@@ -169,7 +169,7 @@ const Sejarah = () => {
         </ol>
       </section>
 
-      <section className="px-8 sm:px-24 py-8 text-end">
+      <section className="px-9 sm:px-24 py-9 text-end">
         <h2 className={`${styles.heading4} mb-4`}>Misi</h2>
         <ol className="list-none pr-4 ">
           {profileMisi.map((misi, index) => (

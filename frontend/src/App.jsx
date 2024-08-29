@@ -12,11 +12,21 @@ const App = () => {
       <main
         className={`overflow-hidden font-jakarta ${styles.fontBody} py-[4.5rem]`}
       >
-        <Outlet />
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+          onAnimationStart={() => console.log("Animation Start")}
+          onAnimationComplete={() => console.log("Animation Complete")}
+        >
+          <Outlet />
+        </motion.div>
         <div className="fixed bottom-12 right-4">
           <div className={`${styles.flexCenter}`}>
             <a
-              href="https://www.instagram.com/stories/highlights/18006888113341028/"
+              href="https://www.instagram.com/stories/highlights/18024047231357759/"
               target="_blank"
               className={`bg-[#25D366] rounded-full w-[55px] h-[55px] ${styles.flexCenter} z-[100]`}
             >

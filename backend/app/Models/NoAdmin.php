@@ -18,5 +18,6 @@ class NoAdmin extends Model
         'no_tabungan',
         'no_armor_property',
         'no_sponsor',
+        'no_pickup',
     ];
 }

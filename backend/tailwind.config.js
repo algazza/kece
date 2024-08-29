@@ -50,6 +50,7 @@ export default {
             sss: "560px",
             sm: "768px",
             sm2: "425px",
+            mdd: "860px",
             md: "1060px",
             md2: "1024px",
             lg: "1200px",

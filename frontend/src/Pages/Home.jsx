@@ -164,7 +164,7 @@ const Home = () => {
   return (
     <>
       <section className="pb-6">
-        <div className="rounded-br-[300px] overflow-hidden">
+        <div className="rounded-br-[100px] sm:rounded-br-[200px] md:rounded-br-[300px] overflow-hidden">
           <ImageBanner images={images} />
         </div>
         <div className="flex justify-center items-start py-4 sm:px-8 sm:gap-8 gap-2">
