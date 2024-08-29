@@ -7,6 +7,8 @@ use App\Models\Tabungan;
 use Illuminate\Http\Request;
 use App\Charts\tabungan\KreditWeek;
 use App\Charts\tabungan\KreditMounth;
+use App\Exports\TabunganExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TabunganController extends Controller
 {
@@ -108,6 +110,11 @@ class TabunganController extends Controller
         }
     
         return view('admin.tabungan.TabunganUser', compact('tabungan'));
+    }
+
+    public function export()
+    {
+        return Excel::download(new TabunganExport, 'Tabungan.xlsx');
     }
 
     public function edit(string $id)

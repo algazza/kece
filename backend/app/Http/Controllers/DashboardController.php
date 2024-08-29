@@ -43,7 +43,7 @@ class DashboardController extends Controller
     
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
 
-        $perPage = 20;
+        $perPage = 10;
     
         $currentPageItems = $dashboard->slice(($currentPage - 1) * $perPage, $perPage)->values();
     
@@ -94,10 +94,32 @@ class DashboardController extends Controller
 
         if ($query === 'kredit') {
             return redirect()->route('kredit.index');
+        } elseif ($query === 'deposito') {
+            return redirect()->route('deposito.index');
+        } elseif ($query === 'tabungan') {
+            return redirect()->route('tabungan.index');
         } elseif ($query === 'pickup') {
             return redirect()->route('pickup.index');
         } elseif ($query === 'admin') {
             return redirect()->route('admin');
+        } elseif ($query === 'news') {
+            return redirect()->route('news');
+        }elseif ($query === 'sponsor') {
+            return redirect()->route('sponsor.index');
+        }elseif ($query === 'banner') {
+            return redirect()->route('banner');
+        } elseif ($query === 'nomor' || $query === 'nomer') {
+            return redirect()->route('noAdmin');
+        } elseif ($query === 'laporan') {
+            return redirect()->route('laporan.index');
+        } elseif ($query === 'triwulan') {
+            return redirect()->route('laporan.triwulan');
+        } elseif ($query === 'tahunan') {
+            return redirect()->route('laporan.tahunan');
+        } elseif ($query === 'gcg') {
+            return redirect()->route('laporan.gcg');
+        } elseif ($query === 'banner') {
+            return redirect()->route('banner');
         }
 
         return redirect()->route('dashboard')->with('error', 'Pencarian tidak ditemukan');

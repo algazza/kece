@@ -1,13 +1,16 @@
 <?php
 
 use App\Models\Admin;
+use App\Models\Laporan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\KreditController;
 use App\Http\Controllers\PickupController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\NoAdminController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Middleware\Admin\KreditAccess;
@@ -67,10 +70,17 @@ Route::middleware(['auth', 'AdminAkses:admin'])->group(function () {
     Route::post('/Admin/Add/Post', [AdminController::class, 'store'])->name('admin.post');
 
     // No Admin
-    Route::get('/No', [NoAdminController::class, 'viewNoAdmin'])->name('noAdmin');  
+    Route::get('/Nomor/Admin', [NoAdminController::class, 'viewNoAdmin'])->name('noAdmin');  
     Route::get('/No/{id}/Edit', [NoAdminController::class, 'editData'])->name('noAdmin.edit');
     Route::put('/No/{id}/Update', [NoAdminController::class, 'updateData'])->name('noAdmin.update');
 
+    // Laporan
+    Route::get('/Laporan', [LaporanController::class, 'viewLaporan'])->name('laporan.index');
+    Route::delete('/Laporan/delete/{id}', [LaporanController::class, 'destroy'])->name('laporan.delete');
+    Route::get('/Triwulan', [LaporanController::class, 'viewTriwulan'])->name('laporan.triwulan');
+    Route::get('/Gcg', [LaporanController::class, 'viewGcg'])->name('laporan.gcg');
+    Route::get('/Tahunan', [LaporanController::class, 'viewTahunan'])->name('laporan.tahunan');
+    Route::post('/Laporan/post', [LaporanController::class, 'store'])->name('laporan.post');
 });
 
 Route::middleware(['auth', 'AdminAkses:kredit,admin'])->group(function(){
@@ -79,6 +89,7 @@ Route::middleware(['auth', 'AdminAkses:kredit,admin'])->group(function(){
     Route::get('/kredit/{id}', [KreditController::class, 'show'])->name('kredit.show');
     Route::get('/api/check-token/kredit', [KreditController::class, 'checkToken']);
     Route::get('/api/kredit', [KreditController::class, 'data']);
+    Route::get('/export/kredit', [KreditController::class, 'export'])->name('export.kredit');
 });
 
 
@@ -88,6 +99,7 @@ Route::middleware(['auth', 'AdminAkses:deposito,admin'])->group(function(){
     Route::get('/deposito/{id}', [DepositoController::class, 'show'])->name('deposito.show');
     Route::get('/api/check-token/deposito', [DepositoController::class, 'checkToken']);
     Route::get('/api/deposito', [DepositoController::class, 'data']);
+    Route::get('/export/deposito', [DepositoController::class, 'export'])->name('export.deposito');
 });
 
 Route::middleware(['auth', 'AdminAkses:tabungan,admin'])->group(function(){
@@ -96,6 +108,7 @@ Route::middleware(['auth', 'AdminAkses:tabungan,admin'])->group(function(){
     Route::get('/tabungan/{id}', [TabunganController::class, 'show'])->name('tabungan.show');
     Route::get('/api/check-token/tabungan', [TabunganController::class, 'checkToken']);
     Route::get('/api/tabungan', [TabunganController::class, 'data']);
+    Route::get('/export/tabungan', [TabunganController::class, 'export'])->name('export.tabungan');
 });
 
 
@@ -105,6 +118,7 @@ Route::middleware(['auth', 'AdminAkses:pickup,admin'])->group(function(){
     Route::get('/pickup/{id}', [PickupController::class, 'show'])->name('pickup.show');
     Route::get('/api/check-token/pickup', [PickupController::class, 'checkToken']);
     Route::get('/api/pickup', [PickupController::class, 'data']);
+    Route::get('/export/pickup', [TabunganController::class, 'export'])->name('export.pickup');
 });
 
 
@@ -117,6 +131,9 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::put('/News/{id}', [NewsController::class, 'updateNews'])->name('news.update');
     Route::delete('/News/{id}/delete', [NewsController::class, 'destroyNews'])->name('news.delete');
     Route::get('/Sponsor', [SponsorController::class, 'index'])->name('sponsor.index');
+    Route::get('/Banner', [BannerController::class, 'viewBanner'])->name('banner');
+    Route::post('/Banner/Post', [BannerController::class, 'store'])->name('banner.add');
+    Route::delete('/Banner/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 });
 
 
@@ -129,20 +146,7 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
 
 
-
-
-Route::get('/Newse', function(){
-    return view ('admin.news.NewsEdit');
-});
-Route::get('/Banner', function(){
-    return view ('admin.banner.Banner');
-});
-Route::get('/Bannere', function(){
-    return view ('admin.banner.BannerEdit');
-});
 Route::get('/Usere', function(){
     return view ('admin.user.UserAdd');
 });
-Route::get('/ap', function(){
-    return view ('admin.arprop.armorprop');
-});
+

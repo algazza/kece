@@ -2,7 +2,7 @@
 @section('content')
 <section class="box-border p-0 m-0 bg-gray-200 h-screen font-poppins overflow-auto">
 <section class="py-10 my-auto">
-    <div class="mt-[5rem] rounded-[5px] py-8 ml-[5rem] mr-[1rem] text-left justify-center sm:px-6 lg:px-8 my-28 flex gap-4">
+    <div class="mt-[5rem] rounded-[5px] py-8 ml-[2rem] mr-[1rem] text-left justify-center sm:px-6 lg:px-8 my-28 flex gap-4">
         <div
             class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center dark:bg-white">
             <div class="">

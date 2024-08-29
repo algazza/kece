@@ -162,7 +162,7 @@
                 <i class='bx bx-edit-alt text-[1.5rem]' ></i>
               </button>
             </div>
-          </a> 
+        </a> 
     </div>
   
 @endsection

@@ -43,7 +43,7 @@ class AdminController extends Controller
                 return redirect()->route('dashboard');
             } elseif ($user->role == 'tabungan') {
                 return redirect()->route('dashboard');
-            } elseif ($user->role == 'Promosi') {
+            } elseif ($user->role == 'promosi') {
                 return redirect()->route('dashboard');
             } elseif ($user->role == 'pickup') {
                 return redirect()->route('dashboard');
@@ -60,7 +60,6 @@ class AdminController extends Controller
     }
 
 
-    // Forget
     function forget(){
         return view('admin.login.Forget');
     }

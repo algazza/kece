@@ -3,7 +3,7 @@
 @extends('layout')
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins">
-        <div class="flex gap-[2rem] pt-[5rem] pb-[2rem] justify-center bg-gray-200 w-screen overflow-x-auto">
+        <div class="flex gap-[2rem] pt-[5rem] pb-[2rem] justify-center bg-gray-200 w-screen overflow-hidden">
             <div class="bg-gray-50 w-[16rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:max-w-full sm:px-6 lg:px-6">
                 <div>
                     <h3 id="totalData" class="absolute ml-[0.7rem] mt-[-0.2rem] text-[1.3rem] font-semibold max-w-12 mx-auto">{{ $totalData }}</h3>
@@ -15,6 +15,8 @@
                     </div>
                 </div>
             </div>
+            @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
+            <a href="{{ route('news') }}">
             <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden ss:block">
                 <div>
                     <div class="mt-[1.3rem]">
@@ -25,16 +27,24 @@
                     </div>
                 </div>
             </div>
+            </a>
+            @endif
+            @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
+            <a href="{{ route('sponsor.index') }}">
             <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden sm:block">
                 <div>
                     <div class="mt-[0.5rem]">
                         <div class="text-[6rem] ">
-                            <i class='text-black bx bx-user'></i>
+                            <i class='text-black bx bx-objects-horizontal-right'></i>
                         </div>
                         <p class="bg-black text-white mx-[3.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Sponsor</p>
                     </div>
                 </div>
             </div>
+            </a>
+            @endif
+            @if (Auth::user()->role == 'admin' || Auth::user()->role == 'promosi' )
+            <a href="{{ route('banner') }}">
             <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden md2:block">
                 <div>
  
@@ -42,19 +52,21 @@
                         <div class="text-[6rem] ">
                             <i class='text-black bx bx-credit-card' ></i>
                         </div>
-                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Edit Banner</p>
+                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Banner</p>
                     </div>
                 </div>
             </div>
+            <a>
+            @endif
         </div>
-        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center h-[55%]">
+        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center mb-[5rem] xxl:h-[50rem] h-[38rem] xl:h-[30rem] lg:h-[30rem] md:h-[30rem] sm:h-[25rem] xss:h-[25rem]">
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
                 @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
                     <a href="{{ route('kredit.index') }}">
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between ">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='text-black bx bx-credit-card' ></i>
+                                    <i class='bx bxs-bank text-black text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold  pt-2">Kredit</h3>
@@ -68,7 +80,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='bx bx-credit-card-front text-black'></i>
+                                    <i class='bx bx-money-withdraw text-black text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold  pt-2">Deposito</h3>
@@ -82,7 +94,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-100 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='bx bx-wallet-alt text-black'></i>
+                                    <i class='bx bx-wallet-alt text-black text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold  pt-2">Tabungan</h3>
@@ -91,25 +103,12 @@
                         </div>
                     </a>
                 @endif
-                <a href="">
-                    <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
-                        <div class="flex">
-                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='text-black bx bx-home' ></i>
-                            </div>
-                            <div class="block mt-[0.8rem]">
-                                <h3 class="text-[1.1rem] font-bold pt-2">Armor Property</h3>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </a>
                 @if (Auth::user()->role == 'pickup' || Auth::user()->role == 'admin')
                     <a href="{{ route('pickup.index') }}">
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='text-black bx bxs-truck'></i>
+                                    <i class='text-black bx bxs-truck text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold pt-2">PickUp</h3>
@@ -123,7 +122,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='text-black bx bx-news' ></i>
+                                    <i class='text-black bx bx-news text-5xl' ></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold pt-2">News</h3>
@@ -137,7 +136,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='text-black bx bx-credit-card' ></i>
+                                    <i class='bx bx-user-circle text-black text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold pt-2">Admin</h3>
@@ -151,7 +150,7 @@
                         <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                             <div class="flex">
                                 <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                    <i class='bx bx-phone text-black'></i>
+                                    <i class='bx bx-phone text-black text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
                                     <h3 class="text-[1.1rem] font-bold pt-2">Nomor</h3>
@@ -165,7 +164,7 @@
                     <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
                         <div class="flex">
                             <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
-                                <i class='bx bx-phone text-black'></i>
+                                <i class='bx bx-objects-horizontal-right text-black text-5xl'></i>
                             </div>
                             <div class="block mt-[0.8rem]">
                                 <h3 class="text-[1.1rem] font-bold pt-2">Sponsor</h3>
@@ -173,9 +172,38 @@
                         </div>
                     </div>
                 </a>
-            @endif
+                @endif
+                @if (Auth::user()->role == 'admin' || Auth::user()->role == 'promosi' )
+                <a href="{{ route('banner') }}">
+                    <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+                        <div class="flex">
+                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                <i class='bx bx-credit-card text-black'></i>
+                            </div>
+                            <div class="block mt-[0.8rem]">
+                                <h3 class="text-[1.1rem] font-bold pt-2">Bannner</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                @endif
+                @if (Auth::user()->role == 'admin')
+                <a href="{{ route('laporan.index') }}">
+                    <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+                        <div class="flex">
+                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                <i class='bx bx-bell text-black text-5xl'></i>
+                            </div>
+                            <div class="block mt-[0.8rem]">
+                                <h3 class="text-[1.1rem] font-bold pt-2">Laporan</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                @endif
+
            </div>
-            <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[22rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative hidden lg:block">
+            <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[28rem] xxl:h-[39rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative hidden lg:block">
                 
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
                     
@@ -190,7 +218,7 @@
                         {{-- data user form --}}
                     @endforeach
                 </div>
-                <div class="pagination-links flex pl-[18rem] text-[1.2rem] text-black bottom-0 py-[0.5rem] absolute w-full bg-gray-50 box-border border-black border-t-[0.1px]">
+                <div class="pagination-links flex pl-[25rem] text-[1.2rem] text-black bottom-0 py-[0.5rem] absolute w-full bg-gray-50 box-border border-black border-t-[0.1px]">
                     {{-- {{ $dashboard->links() }} --}}
                 </div>
             </div>
@@ -262,7 +290,7 @@
         let paginationHtml = '';
 
         if (pagination.current_page > 1) {
-            paginationHtml += `  <button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 rounded-s hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page - 1}">
+            paginationHtml += `  <button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-black bg-gray-50 rounded-s hover:bg-gray-100 box-border border-[0.5px] border-gray-400 shadow-smz shadow-gray-400" data-page="${pagination.current_page - 1}">
                                         Prev
                                       </button> 
 `;
@@ -270,7 +298,7 @@
 
 
         if (pagination.current_page < pagination.last_page) {
-            paginationHtml += `  <button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="${pagination.current_page + 1}">
+            paginationHtml += `  <button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-black bg-gray-50 rounded-e hover:bg-gray-100 box-border border-[0.5px] border-gray-400 shadow-smz shadow-gray-400" data-page="${pagination.current_page + 1}">
                                         Next
                                        </button>`;
         }

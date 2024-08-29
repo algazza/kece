@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BannerController;
 use App\Models\Kredit;
 use App\Models\Deposito;
 use Illuminate\Http\Request;
@@ -48,5 +49,7 @@ Route::get('/api/deposito', [DepositoController::class, 'data']);
 Route::get('/api/tabungan', [DepositoController::class, 'data']);
 
 
+
+Route::get('/banner', [BannerController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
 Route::get('/news/{id}', [NewsController::class, 'show']);

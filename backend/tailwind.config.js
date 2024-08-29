@@ -55,6 +55,7 @@ export default {
             md2: "1024px",
             lg: "1200px",
             xl: "1700px",
+            xxl: "2560px",
           },
           gridTemplateColumns: {
             x2500: "620px 230px",
