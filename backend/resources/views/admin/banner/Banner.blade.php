@@ -16,7 +16,6 @@
       <div class="z-10 gap-y-1 bg-gray-100 border-2 border-gray-400 shadow-lg rounded-md overflow-hidden leading-6 absolute bottom-4 left-4 font-poppins text-sm px-3 block max-ss:hidden  opacity-0 group-hover:opacity-100 transition-opacity duration-300">{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</div>
     </form>
   </article>
-  
   @endforeach
 </div>
 

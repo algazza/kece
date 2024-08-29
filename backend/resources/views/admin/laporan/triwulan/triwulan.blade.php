@@ -10,11 +10,11 @@
         <ul role="list" class=" mt-8 grid max-w-2xl justify-center  grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3 mx-auto px-[9rem] mb-[2rem]">
             @foreach ($laporan as $item)
                 <div class="p-8 w-auto border border-indigo-300 rounded-2xl hover:shadow-xl bg-white hover:shadow-indigo-50 flex flex-col items-center"href="#">
-                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQOF3qatBalC_iqwxk412bsLvNka5vRer5BAWU1XNvmhcA2elB4" class="shadow rounded-lg overflow-hidden border" >
+                    <img src="{{asset('image/admin/laporan.jpeg')}}" class="shadow rounded-lg overflow-hidden border" >
                     <div class="mt-8">
                         <h4 class="font-bold text-xl">{{ $item->tanggal }}</h4>
                         <div class="mt-5 flex gap-[1rem]">
-                            <form action="{{ route('laporan.delete', $item->id) }}" method="POST">
+                            <form action="{{ route('laporan.delete', $item->id) }}" method="POST" onsubmit="return confirmDelete()">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-red-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-red-700 hover:scale-95 duration-300">Hapus</button>
@@ -40,7 +40,7 @@
                 <form action="{{ route('laporan.post') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="flex flex-col items-center justify-center text-center cursor-pointer gap-1 p-[1rem]">
-                        <div class="rounded-md border border-indigo-500 bg-gray-50 shadow-md w-36 p-4 mt-[2rem] cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300">
+                        <div class="rounded-md border border-indigo-500 bg-gray-50 shadow-md w-36 p-4 mt-[2rem] cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300" onclick="document.getElementById('upload').click();">
                             <div class="flex flex-col items-center gap-2 cursor-pointer">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 fill-white stroke-indigo-500" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -83,6 +83,12 @@
             }
         };
         
+    </script>
+
+    <script>  
+        function confirmDelete() {
+            return confirm('Apakah Anda yakin ingin menghapus Laporan ini?');
+        }
     </script>
     
 @endsection

@@ -10,11 +10,11 @@
         <ul role="list" class=" mt-8 grid max-w-2xl justify-center  grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3 mx-auto px-[9rem] mb-[2rem]">
             @foreach ($laporan as $item)
                 <div class="p-8 w-auto border border-indigo-300 rounded-2xl hover:shadow-xl bg-white hover:shadow-indigo-50 flex flex-col items-center"href="#">
-                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQOF3qatBalC_iqwxk412bsLvNka5vRer5BAWU1XNvmhcA2elB4" class="shadow rounded-lg overflow-hidden border" >
+                    <img src="{{asset('image/admin/laporan.jpeg')}}" class="shadow rounded-lg overflow-hidden border" >
                     <div class="mt-8">
                         <h4 class="font-bold text-xl">{{ $item->tanggal }}</h4>
                         <div class="mt-5 flex gap-[1rem]">
-                            <form action="{{ route('laporan.delete', $item->id) }}" method="POST">
+                            <form action="{{ route('laporan.delete', $item->id) }}" method="POST" onsubmit="return confirmDelete()">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-red-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-red-700 hover:scale-95 duration-300">Hapus</button>
@@ -81,8 +81,13 @@
                     i.style.display = 'none';
                 });
             }
-        };
-        
+        };        
+    </script>
+
+    <script>  
+        function confirmDelete() {
+            return confirm('Apakah Anda yakin ingin menghapus Laporan ini?');
+        }
     </script>
     
 @endsection
