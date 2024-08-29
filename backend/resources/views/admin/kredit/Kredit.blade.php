@@ -14,7 +14,7 @@
                     <p>All Person Data</p>
                 </div>
                 
-                <div class="text-right pl-[14rem] text-[1.2rem] text-black bottom-0 py-[0.8rem] absolute w-screen bg-gray-50 box-border border-black border-t-[0.2px] h-[3.5rem]">
+                <div class="text-right pl-[13rem] text-[1.2rem] text-black bottom-0 py-[0.8rem] absolute w-screen bg-gray-50 box-border border-black border-t-[0.2px] h-[3.5rem]">
                     <div class="pagination-links flex">
                         {{-- Pagination --}}
                     </div>
