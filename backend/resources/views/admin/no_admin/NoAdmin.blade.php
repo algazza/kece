@@ -1,8 +1,8 @@
 @extends('layout')
 @section('content')
 <div class="bg-gray-200">
-    <div class="h-full min-h-screen w-full md:p-[10rem] pl-[5rem] pr-[1rem]">
-        <div class="grid gap-14 md:grid-cols-3 md:gap-5">
+    <div class="h-full min-h-screen w-full md:p-[10rem] pl-[2rem] pr-[1rem]">
+        <div class="grid gap-14 md2:pt-[8rem] xss:pt-[8rem] md:grid-cols-3 md:gap-5">
             <div data-aos-delay="150" class="rounded-xl bg-white p-6 text-center shadow-xl mb-[1.5rem]">
                 <div class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-gray-50 shadow-inner shadow-gray-500 box-border border-black">
                     <i class='bx bxs-bank text-black text-4xl'></i>
