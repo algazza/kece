@@ -34,7 +34,7 @@ class NoAdminController extends Controller
                 'no_kredit' => 'required|integer',
                 'no_deposito' => 'required|integer',
                 'no_tabungan' => 'required|integer',
-                'no_armor_property' => 'required|integer',
+                'no_induk' => 'required|integer',
                 'no_sponsor' => 'required|integer',
                 'no_pickup' => 'required|integer'
             ]);
