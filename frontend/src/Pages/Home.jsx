@@ -222,9 +222,9 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid justify-center">
+          <div className="grid justify-center relative">
             <img src={phoneimg} alt="" className="w-[260px]" />
-            <div className="absolute z-[-1] w-[30rem] h-[30rem] rounded-full right-[18rem] md:right-[2rem] top-[52rem] md:top-[42rem] blue__gradient" />
+            <div className="absolute z-[-1] w-[30rem] h-[30rem] rounded-full blue__gradient" />
           </div>
         </div>
 

@@ -16,6 +16,7 @@ import phoneimg from "../img/phoneimg.svg";
 import BennerLiv from "../img/sampleliv.svg";
 import loaderIcon from "../img/loadingIconArmor.svg"
 import Banneremyu from "../img/Banner2.svg"; //1250 x 477 || 21 : 8
+import pdfexample from "../img/Pembagian Kelompok MPLS PPLG.pdf"
 
 export {
   logoArmor,
@@ -28,6 +29,7 @@ export {
   sample,
   nunezimg,
   sampleNews,
+  pdfexample,
   partnerImage1,
   partnerImage2,
   partnerImage3,

@@ -26,7 +26,7 @@ const App = () => {
         <div className="fixed bottom-12 right-4">
           <div className={`${styles.flexCenter}`}>
             <a
-              href="https://www.instagram.com/stories/highlights/18024047231357759/"
+              href="https://www.instagram.com/stories/highlights/18012355847552920/"
               target="_blank"
               className={`bg-[#25D366] rounded-full w-[55px] h-[55px] ${styles.flexCenter} z-[100]`}
             >

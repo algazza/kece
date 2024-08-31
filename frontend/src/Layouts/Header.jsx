@@ -99,8 +99,8 @@ const Header = () => {
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
                             <Link to={"/sejarah"}>Sejarah</Link>
-                            <Link to={"/"}>Visi Misi</Link>
-                            <Link to={"/"}>Struktur Organisasi</Link>
+                            <Link to={"/sejarah#visi-misi"}>Visi Misi</Link>
+                            <Link to={"/sejarah#organisasi"}>Struktur Organisasi</Link>
                             <Link to={"/lokasi"}>Lokasi</Link>
                           </li>
                         </ul>
@@ -146,10 +146,10 @@ const Header = () => {
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
                             <Link to={"/pick-up-service"}>Pick Up</Link>
                             <Link to={"/armor-properti"}>Armor Properti</Link>
-                            <Link to={"/"}>Kalkulator</Link>
-                            <Link to={"/"}>Promo</Link>
+                            <Link to={"/"}>Simulasi</Link>
+                            <Link to={"/promo"}>Promo</Link>
                             <Link to={"/sponsor"}>Sponsor</Link>
-                            <Link to={"/"}>Laporan</Link>
+                            <Link to={"/laporan"}>Laporan</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -227,13 +227,13 @@ const Product = () => {
 
 const Service = () => {
   const items = [
-    { name: "Login", link: "https://etna.scxserver.com:2096" },
     { name: "Pick Up", link: "/pick-up-service" },
     { name: "Armor Properti", link: "/armor-properti" },
-    { name: "Kalkulator", link: "/" },
-    { name: "Promo", link: "/" },
+    { name: "Simulasi", link: "/" },
+    { name: "Promo", link: "/promo" },
     { name: "Sponsor", link: "/sponsor" },
-    { name: "Laporan", link: "/" },
+    { name: "Laporan", link: "/laporan" },
+    { name: "Login", link: "https://etna.scxserver.com:2096" },
   ];
 
   return <MenuList items={items} />;
