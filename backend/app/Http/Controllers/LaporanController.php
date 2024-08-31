@@ -41,7 +41,10 @@ class LaporanController extends Controller
             $laporan->jenis_laporan = $request->jenis_laporan;
             
             if ($request->hasFile('file_laporan')) {
-                $pdfName = time() . '.' . $request->file_laporan->extension();  
+                $pdfName = $request->file_laporan->getClientOriginalName();
+                $pdfName = pathinfo($pdfName, PATHINFO_FILENAME);
+                $pdfName = $pdfName . '.' . $request->file_laporan->extension();
+    
                 $request->file_laporan->move(public_path('image/public/laporan'), $pdfName);
                 $laporan->file_laporan = $pdfName;
             }   

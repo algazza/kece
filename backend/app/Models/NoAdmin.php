@@ -16,7 +16,7 @@ class NoAdmin extends Model
         'no_kredit',
         'no_deposito',
         'no_tabungan',
-        'no_armor_property',
+        'no_induk',
         'no_sponsor',
         'no_pickup',
     ];

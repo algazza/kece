@@ -104,7 +104,7 @@ class BannerController extends Controller
 
 
     public function index(){
-        $banner = Banner::all();
+        $banner = Banner::OrderBy('created_at', 'DESC')->get();
         return response()->json($banner);
     }
 }
