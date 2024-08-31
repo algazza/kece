@@ -12,13 +12,10 @@ import IsiNews from "./Pages/IsiNews.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
 import LocationPage from "./Pages/LocationPage.jsx";
 import Success from "./Pages/Success.jsx";
-import KreditMenu from "./Pages/KreditMenu.jsx";
-import TabunganMenu from "./Pages/TabunganMenu.jsx";
-import ArmorProp from "./Pages/ArmorProp.jsx";
 import Sponsor from "./Pages/Sponsor.jsx";
 import Sejarah from "./Pages/Sejarah.jsx";
 import Error from "./Pages/Error.jsx";
-import IsiArmorProp from "./Pages/IsiArmorProp.jsx";
+import Laporan from "./Pages/Laporan.jsx";
 
 
 const router = createBrowserRouter([
@@ -64,24 +61,12 @@ const router = createBrowserRouter([
         element: <PickupPage />,
       },
       {
-        path: "armor-properti",
-        element: <ArmorProp />,
-      },
-      {
-        path: "armor-properti/1",
-        element: <IsiArmorProp />,
+        path: "laporan",
+        element: <Laporan />,
       },
       {
         path: "sponsor",
         element: <Sponsor />,
-      },
-      {
-        path: "menu",
-        element: <KreditMenu />,
-      },
-      {
-        path: "menuT",
-        element: <TabunganMenu />,
       },
     ],
   },

@@ -14,7 +14,9 @@ import sampleNews from "../img/sample-news-684x385.jpg";
 import sampleBanner from "../img/samplebanner.svg";
 import phoneimg from "../img/phoneimg.svg";
 import BennerLiv from "../img/sampleliv.svg";
-import Banneremyu from "../img/Banner2.svg";
+import loaderIcon from "../img/loadingIconArmor.svg"
+import Banneremyu from "../img/Banner2.svg"; //1250 x 477 || 21 : 8
+import pdfexample from "../img/Pembagian Kelompok MPLS PPLG.pdf"
 
 export {
   logoArmor,
@@ -22,10 +24,12 @@ export {
   sampleBanner,
   BennerLiv,
   Banneremyu,
+  loaderIcon,
   phoneimg,
   sample,
   nunezimg,
   sampleNews,
+  pdfexample,
   partnerImage1,
   partnerImage2,
   partnerImage3,
@@ -108,6 +112,48 @@ export const profileTimeline = [
               consectetur adipisicing elit. Eum consectetur ut reiciendis, ipsam
               rerum provident quas natus iusto! Eveniet ut doloremque nihil quas
               ad ab numquam tempora laboriosam perferendis quo.`,
+  },
+];
+
+export const profileVisi = [
+  "Menjadi Lembaga Keuangan yang Terpercaya, Profesional, Melayani, Memberi Solusi dan Progresif.",
+  "Pengembangan Sumber Daya Manusia yang Profesional, Berintegritas, Memiliki Rasa Memiliki dan Kepedulian Tinggi terhadap Perusahaan.",
+  "Mengembangkan Aplikasi Teknologi yang Berorientasi kepada Pemenuhan Kebutuhan Pasar.",
+  "Melaksanakan Prinsip-Prinsip Tata Kelola Perusahaan yang Baik (Good Corporate Governance).",
+]
+
+export const profileMisi = [
+  "Peningkatan aset sehingga menjadi Lembaga Keuangan beraset 1 triliun di tahun 2023.",
+  "Pengembangan Sumber Daya Manusia yang Profesional, Berintegritas, Memiliki Rasa Memiliki dan Kepedulian Tinggi terhadap Perusahaan.",
+  "Mengembangkan Aplikasi Teknologi yang Berorientasi kepada Pemenuhan Kebutuhan Pasar.",
+  "Melaksanakan Prinsip-Prinsip Tata Kelola Perusahaan yang Baik (Good Corporate Governance).",
+  "Memberikan Keuntungan Maksimal kepada Stakeholder.",
+  "Berkontribusi Positif terhadap Kepentingan Lingkungan dan Masyarakat.",
+]
+
+export const profileNilai = [
+  {
+    id: 1,
+    title: "Terpercaya",
+    deskripsi:
+      "Memberikan pelayanan dengan menempatkan kepentingan dan kenyamanan, dan keamanan nasabah sebagai prioritas yang utama.",
+  },
+  {
+    id: 2,
+    title: "Profesional",
+    deskripsi:
+      "Melayani dengan cara terbaik berdasarkan prinsip dan tata kerja yang unggul, modern, maju, dan terpercaya.",
+  },
+  {
+    id: 3,
+    title: "Melayani",
+    deskripsi: "Memberikan layanan terbaik dengan cepat, sigap dan akurat",
+  },
+  {
+    id: 4,
+    title: "Memberikan Solusi",
+    deskripsi:
+      "Senantiasa mendengarkan dan menyediakan jalan keluar untuk permasalahan yang dihadapi nasabah.",
   },
 ];
 

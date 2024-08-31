@@ -18,13 +18,13 @@ import { Kredit } from "../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../helper/DataProduk";
 import { nomorKredit } from "../helper/nomor";
-import LocalAtmIcon from '@mui/icons-material/LocalAtm';
-import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWorkRounded';
-import PlaylistAddCheckRoundedIcon from '@mui/icons-material/PlaylistAddCheckRounded';
-import ElderlyRoundedIcon from '@mui/icons-material/ElderlyRounded';
-import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
-import MosqueRoundedIcon from '@mui/icons-material/MosqueRounded';
-import FilterVintageRoundedIcon from '@mui/icons-material/FilterVintageRounded';
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
+import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWorkRounded";
+import PlaylistAddCheckRoundedIcon from "@mui/icons-material/PlaylistAddCheckRounded";
+import ElderlyRoundedIcon from "@mui/icons-material/ElderlyRounded";
+import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import MosqueRoundedIcon from "@mui/icons-material/MosqueRounded";
+import FilterVintageRoundedIcon from "@mui/icons-material/FilterVintageRounded";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -105,18 +105,6 @@ const SyaratKredit = () => {
   let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
   const [menu, setMenu] = useState(0);
-  const [viaOnline, setViaOnline] = useState("Datang ke Bank");
-  const [menuProduk, setMenuProduk] = useState([]);
-
-  // online
-  useEffect(() => {
-    let selctedMenu = buttonMenuTabungan;
-
-    if (viaOnline !== "Datang ke Bank") {
-      selctedMenu = selctedMenu.filter((item) => item.jenis === viaOnline);
-    }
-    setMenuProduk(selctedMenu);
-  }, [viaOnline, buttonMenuTabungan]);
 
   // tab
   function updateTabs(id) {
@@ -153,36 +141,19 @@ const SyaratKredit = () => {
 
       {/* Menu utama */}
       {menu === 0 ? (
-        <section className="">
-          {/* filter button  click */}
-          <div className=" flex gap-3 justify-center m-10">
-          {["Datang ke Bank", "Via online"].map((online) => (
-              <div
-                key={online}
-                onClick={() => setViaOnline(online)}
-                className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
-                  viaOnline === online ? "bg-biruMuda-500 text-primary" : ""
-                }`}
-              >
-                {online}
-              </div>
-            ))}
-          </div>
-
+        <section className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}>
           {/* menu button */}
-          <div className="grid md:grid-cols-3 gap-8 justify-center justify-items-center">
-            {menuProduk.map((menu, index) => (
-              <div
-                className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
-                key={index}
-                onClick={() => updateMenu(menu.id)}
-              >
-                {menu.icon("m-2 text-blue-400")}
-                <h6 className={`${styles.heading6}`}>{menu.title}</h6>
-                <p className="mt-4">{menu.deskripsi}</p>
-              </div>
-            ))}
-          </div>
+          {buttonMenuTabungan.map((menu, index) => (
+            <div
+              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
+              key={index}
+              onClick={() => updateMenu(menu.id)}
+            >
+              {menu.icon("m-2 text-blue-400")}
+              <h6 className={`${styles.heading6}`}>{menu.title}</h6>
+              <p className="mt-4">{menu.deskripsi}</p>
+            </div>
+          ))}
         </section>
       ) : null}
 
@@ -191,7 +162,7 @@ const SyaratKredit = () => {
           <section key={kredit.id}>
             {/* Menu pilihan */}
             <section className="pt-10 flex justify-center">
-            {["Syarat", "Ketentuan", "Tabel", "Pengajuan"].map(
+              {["Syarat", "Ketentuan", "Tabel", "Pengajuan"].map(
                 (menu, index) => (
                   <div
                     key={index}
@@ -351,12 +322,12 @@ const SyaratKredit = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-6 sm:mx-10 sm:px-10"
                 >
-                    <FormBank
-                      isiPenting={<Kredit />}
-                      value={"Kredit"}
-                      nomer={nomorKredit}
-                      endpoint={"http://localhost:8000/api/kredit"}
-                    />
+                  <FormBank
+                    isiPenting={<Kredit />}
+                    value={"Kredit"}
+                    nomer={nomorKredit}
+                    endpoint={"http://localhost:8000/api/kredit"}
+                  />
                 </motion.div>
               ) : null}
             </section>

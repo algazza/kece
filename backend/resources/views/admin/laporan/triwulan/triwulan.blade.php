@@ -49,6 +49,7 @@
                             </div>
                             <input id="upload" type="file" class="hidden" name="file_laporan"/>
                         </div>
+                        <p class="text-black pt-1 text-sm ">Max File 2MB</p>
                         <div class="mt-4 px-[2rem] w-full">
                             <input type="text" name="tanggal" class="rounded-md block p-2.5 w-full z-20 text-sm text-gray-900 shadow-md text-center shadow-gray-200" placeholder="Tanggal"/>
                             <input type="hidden" name="jenis_laporan" value="triwulan">

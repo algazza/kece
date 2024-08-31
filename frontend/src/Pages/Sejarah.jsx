@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../helper/style";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import IntroBanner from "../Layouts/IntroBanner";
@@ -6,10 +6,14 @@ import {
   BlueBanner,
   logoArmor,
   profileDewanKomisaris,
+  profileMisi,
+  profileNilai,
   profileTimeline,
+  profileVisi,
 } from "../helper";
 import { motion } from "framer-motion";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import { useLocation } from "react-router-dom";
 
 // ===================================================
 const buttonMenuProfile = [
@@ -51,23 +55,25 @@ const buttonMenuProfile = [
   },
 ];
 
-const steps = ["2008", "2019", "2020", "2023"];
-
 const Sejarah = () => {
+  const { hash } = useLocation()
   const [currentStep, setCurrentStep] = useState(0);
   const [profile, setProfile] = useState(1);
+
+  // id header
+  useEffect(() => {
+    if (hash){
+      const element = document.getElementById(hash.replace("#", ""))
+      if (element){
+        element.scrollIntoView({behavior: "smooth"})
+      }
+    }
+  }, [hash])
+  
 
   // timeline
   const handleStepClick = (index) => {
     setCurrentStep(index);
-  };
-
-  const handleNext = () => {
-    setCurrentStep(currentStep + 1);
-  };
-
-  const handlePrev = () => {
-    setCurrentStep(currentStep - 1);
   };
 
   // profile
@@ -109,7 +115,7 @@ const Sejarah = () => {
               className="h-full bg-biruMuda-500 rounded-full"
               initial={{ width: "0%" }}
               animate={{
-                width: `${(currentStep / (steps.length - 1)) * 100}%`,
+                width: `${(currentStep / (profileTimeline.length - 1)) * 100}%`,
               }}
             />
           </div>
@@ -149,139 +155,53 @@ const Sejarah = () => {
             )
           );
         })}
-
-        <div className="flex justify-between m-auto max-w-2xl">
-          <button
-            onClick={handlePrev}
-            disabled={currentStep === 0}
-            className="px-4 py-2 bg-biruMuda-500 text-white rounded disabled:bg-gray-300"
-          >
-            Previous
-          </button>
-          <button
-            onClick={handleNext}
-            disabled={currentStep === steps.length - 1}
-            className="px-4 py-2 bg-biruMuda-500 text-white rounded disabled:bg-gray-300"
-          >
-            Next
-          </button>
-        </div>
       </section>
 
-      <section className="px-9 sm:px-24 py-9 bg-biruMuda-100">
+      <section className="px-8 sm:px-24 py-8 bg-biruMuda-100" id="visi-misi">
         <h2 className={`${styles.heading4} mb-4`}>Visi</h2>
         <ol className="list-none pl-4">
-          <li className="flex items-center mb-2">
-            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain mr-2 bg-checkmark"></span>
-            Menjadi Lembaga Keuangan yang Terpercaya, Profesional, Melayani, Memberi Solusi dan Progresif.
-          </li>
-          <li className="flex items-center mb-2">
-            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain mr-2 bg-checkmark"></span>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
-          </li>
-          <li className="flex items-center mb-2">
-            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain mr-2 bg-checkmark"></span>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          </li>
-          <li className="flex items-center mb-2">
-            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain mr-2 bg-checkmark"></span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et numquam,
-          </li>
+          {profileVisi.map((visi, index) => (
+            <li key={index} className="flex items-center mb-2">
+              <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain mr-2 bg-checkmark"></span>
+              {visi}
+            </li>
+          ))}
         </ol>
       </section>
 
       <section className="px-9 sm:px-24 py-9 text-end">
         <h2 className={`${styles.heading4} mb-4`}>Misi</h2>
         <ol className="list-none pr-4 ">
-          <li className="flex flex-row-reverse items-center mb-2">
-            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
-            Peningkatan aset sehingga menjadi Lembaga Keuangan beraset 1 triliun di tahun 2023.
-          </li>
-          <li className="flex flex-row-reverse items-center mb-2">
-            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
-            Pengembangan Sumber Daya Manusia yang Profesional, Berintegritas, Memiliki Rasa Memiliki dan Kepedulian Tinggi terhadap Perusahaan.
-          </li>
-          <li className="flex flex-row-reverse items-center mb-2">
-            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
-            Mengembangkan Aplikasi Teknologi yang Berorientasi kepada Pemenuhan Kebutuhan Pasar.
-          </li>
-          <li className="flex flex-row-reverse items-center mb-2">
-            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
-            Melaksanakan Prinsip-Prinsip Tata Kelola Perusahaan yang Baik (Good Corporate Governance).
-          </li>
-          <li className="flex flex-row-reverse items-center mb-2">
-            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
-            Memberikan Keuntungan Maksimal kepada Stakeholder.  
-          </li>
-          <li className="flex flex-row-reverse items-center mb-2">
-            <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
-            Berkontribusi Positif terhadap Kepentingan Lingkungan dan Masyarakat.
-          </li>
+          {profileMisi.map((misi, index) => (
+            <li key={index} className="flex flex-row-reverse items-center mb-2">
+              <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
+              {misi}
+            </li>
+          ))}
         </ol>
       </section>
 
       <section className={`${styles.paddingX} py-8 bg-biruMuda-100`}>
         <h2 className={`${styles.heading4} mb-4`}>Nilai-Nilai Perusahaan</h2>
         <p className="mb-4">
-        Berpedoman kepada nilai-nilai pendirian perusahaan dan seiring dengan perkembangan dan perubahan bisnis yang sangat dinamis, BPR Arto Moro melakukan penyempurnaan nilai-nilai perusahaan untuk mencapai tujuan sesuai dengan visi dan misi Perusahaan.
+          Berpedoman kepada nilai-nilai pendirian perusahaan dan seiring dengan
+          perkembangan dan perubahan bisnis yang sangat dinamis, BPR Arto Moro
+          melakukan penyempurnaan nilai-nilai perusahaan untuk mencapai tujuan
+          sesuai dengan visi dan misi Perusahaan.
         </p>
 
-        <div className="grid sm:grid-cols-2 justify-between gap-20">
-          <div className="grid">
-            <h1
-              className={`${styles.heading1} text-biruMuda-500 col-[1/2] row-[1/3] mr-6`}
-            >
-              1
-            </h1>
-            <h2 className={`${styles.heading4} col-[2/3] row-[1/2]`}>
-              Terpercaya
-            </h2>
-            <p className="col-[2/3] row-[2/3]">
-            Memberikan pelayanan dengan menempatkan kepentingan dan kenyamanan, dan keamanan nasabah sebagai prioritas yang utama.
-            </p>
-          </div>
-
-          <div className="grid">
-            <h1
-              className={`${styles.heading1} text-biruMuda-500 col-[1/2] row-[1/3] mr-6`}
-            >
-              2
-            </h1>
-            <h2 className={`${styles.heading4} col-[2/3] row-[1/2]`}>
-              Profesional
-            </h2>
-            <p className="col-[2/3] row-[2/3]">
-            Melayani dengan cara terbaik berdasarkan prinsip dan tata kerja yang unggul, modern, maju, dan terpercaya.
-            </p>
-          </div>
-
-          <div className="grid">
-            <h1
-              className={`${styles.heading1} text-biruMuda-500 col-[1/2] row-[1/3] mr-6`}
-            >
-              3
-            </h1>
-            <h2 className={`${styles.heading4} col-[2/3] row-[1/2]`}>
-              Melayani
-            </h2>
-            <p className="col-[2/3] row-[2/3]">
-            Memberikan layanan terbaik dengan cepat, sigap dan akurat
-            </p>
-          </div>
-
-          <div className="grid">
-            <h1
-              className={`${styles.heading1} text-biruMuda-500 col-[1/2] row-[1/3] mr-6`}
-            >
-              4
-            </h1>
-            <h2 className={`${styles.heading4} col-[2/3] row-[1/2]`}>
-              Memberikan Solusi
-            </h2>
-            <p className="col-[2/3] row-[2/3]">
-            Senantiasa mendengarkan dan menyediakan jalan keluar untuk permasalahan yang dihadapi nasabah.
-            </p>
-          </div>
+        <div className="grid sm:grid-cols-2 justify-between gap-6 sm:gap-16">
+          {profileNilai.map((nilai) => (
+            <div className="flex" key={nilai.id}>
+              <h1 className={`${styles.heading1} text-biruMuda-500 mr-8`}>
+                {nilai.id}
+              </h1>
+              <div>
+                <h2 className={`${styles.heading4}`}>{nilai.title}</h2>
+                <p className="">{nilai.deskripsi}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -292,7 +212,10 @@ const Sejarah = () => {
               Good Corporate Governance (GCG)
             </h1>
             <p className="text-abuGelap">
-            Good Corporate Governance (GCG) adalah Tatakelola perusahaan yang baik dengan tetap memperhatikan kepentingan pemilik, kreditor, pemasok, asosiasi usaha, karyawan, pelanggan, pemerintah dan masyarakat luas, berlandaskan peraturan dan nilai etika.
+              Good Corporate Governance (GCG) adalah Tatakelola perusahaan yang
+              baik dengan tetap memperhatikan kepentingan pemilik, kreditor,
+              pemasok, asosiasi usaha, karyawan, pelanggan, pemerintah dan
+              masyarakat luas, berlandaskan peraturan dan nilai etika.
             </p>
           </div>
           <img
@@ -302,7 +225,7 @@ const Sejarah = () => {
           />
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-x3300 justify-center justify-items-center gap-8">
           {buttonMenuProfile.map((menu, index) => (
             <div
               className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
@@ -316,7 +239,7 @@ const Sejarah = () => {
         </div>
       </section>
 
-      <section className={`${styles.paddingX} ${styles.paddingY} bg-abuTerang`}>
+      <section className={`${styles.paddingX} ${styles.paddingY} bg-abuTerang`} id="organisasi">
         <h2 className={`${styles.heading4} text-center text-biruMuda-500`}>
           PROFILE
         </h2>

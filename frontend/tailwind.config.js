@@ -59,7 +59,7 @@ export default {
         x250: "250px 250px",
         x550: "550px 550px",
         x5170: "repeat(5, 140px)",
-        x3170: "repeat(4, 180px)",
+        x4180: "repeat(4, 180px)",
         x3300: "repeat(3, 300px)",
       },
       backgroundImage: {
