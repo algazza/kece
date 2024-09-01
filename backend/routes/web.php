@@ -73,7 +73,7 @@ Route::middleware(['auth', 'AdminAkses:admin'])->group(function () {
     Route::get('/Nomor/Admin', [NoAdminController::class, 'viewNoAdmin'])->name('noAdmin');  
     Route::get('/No/{id}/Edit', [NoAdminController::class, 'editData'])->name('noAdmin.edit');
     Route::put('/No/{id}/Update', [NoAdminController::class, 'updateData'])->name('noAdmin.update');
-
+    
     // Laporan
     Route::get('/Laporan', [LaporanController::class, 'viewLaporan'])->name('laporan.index');
     Route::delete('/Laporan/delete/{id}', [LaporanController::class, 'destroy'])->name('laporan.delete');
@@ -81,6 +81,7 @@ Route::middleware(['auth', 'AdminAkses:admin'])->group(function () {
     Route::get('/Gcg', [LaporanController::class, 'viewGcg'])->name('laporan.gcg');
     Route::get('/Tahunan', [LaporanController::class, 'viewTahunan'])->name('laporan.tahunan');
     Route::post('/Laporan/post', [LaporanController::class, 'store'])->name('laporan.post');
+    Route::get('/laporan/download/{filename}', [LaporanController::class, 'download']);
 });
 
 Route::middleware(['auth', 'AdminAkses:kredit,admin'])->group(function(){
@@ -135,7 +136,6 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::post('/Banner/Post', [BannerController::class, 'store'])->name('banner.add');
     Route::delete('/Banner/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 });
-
 
 
 

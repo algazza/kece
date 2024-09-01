@@ -36,22 +36,25 @@ const laporandata = [
     file: "/src/img/Pembagian Kelompok MPLS PPLG.pdf",
   },
 ];
-
 const Laporan = () => {
   const [dataLaporan, setDataLaporan] = useState([]);
   const [filterLaporan, setFilterLaporan] = useState("Triwulan");
 
-  // filter
+  // Ambil data dari API
   useEffect(() => {
-    let filteredData = laporandata;
-
-    filteredData = filteredData.filter(
-      (lapor) => lapor.jenis === filterLaporan
-    );
-
-    filteredData = filteredData.reverse();
-    setDataLaporan(filteredData);
-  });
+    fetch("http://localhost:8000/api/laporan")
+      .then((response) => response.json())
+      .then((data) => {
+        // Filter data berdasarkan jenis laporan
+        const filteredData = data.filter(
+          (lapor) => lapor.jenis_laporan.toLowerCase() === filterLaporan.toLowerCase()
+        ).reverse();
+        setDataLaporan(filteredData);
+      })
+      .catch((error) => {
+        console.error("Error fetching laporan data:", error);
+      });
+  }, [filterLaporan]);
 
   return (
     <>
@@ -60,12 +63,12 @@ const Laporan = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Laporan"}
           DescriptionBanner={`
-                  Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
-                  memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
-                  dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-                  menawarkan berbagai produk kredit yang dapat disesuaikan dengan
-                  keperluan Anda.
-                `}
+            Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
+            memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
+            dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
+            menawarkan berbagai produk kredit yang dapat disesuaikan dengan
+            keperluan Anda.
+          `}
         />
         <TitleBlueBanner title={"Laporan"} />
       </section>
@@ -96,13 +99,21 @@ const Laporan = () => {
           >
             <img src={loaderIcon} alt="" />
             <h2 className={`${styles.heading5} text-center`}>
-              {laporan.judul}
+              {laporan.tanggal}
             </h2>
             <div className="grid grid-cols-2 gap-4 font-semibold">
-              <a href={laporan.file} target="_blank" className={`${styles.flexCenter} border-2 border-merahh-500 text-merahh-500 px-2 py-2 rounded-md`}>
+              <a
+                href={`http://localhost:8000/image/public/laporan/${laporan.file_laporan}`}
+                target="_blank"
+                className={`${styles.flexCenter} border-2 border-merahh-500 text-merahh-500 px-2 py-2 rounded-md`}
+              >
                 Lihat
               </a>
-              <a href={laporan.file} download className={`${styles.flexCenter} bg-merahh-500 text-primary px-4 py-2 rounded-md `}>
+              <a
+                href={`http://localhost:8000/laporan/download/${laporan.file_laporan}`}
+                download
+                className={`${styles.flexCenter} bg-merahh-500 text-primary px-4 py-2 rounded-md `}
+              >
                 Download
               </a>
             </div>
@@ -112,5 +123,7 @@ const Laporan = () => {
     </>
   );
 };
+
+
 
 export default Laporan;

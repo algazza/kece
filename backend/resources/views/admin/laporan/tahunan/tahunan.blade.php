@@ -52,7 +52,7 @@
                         <p class="text-black pt-1 text-sm ">Max File 2MB</p>                  
                         <div class="mt-4 px-[2rem] w-full">
                             <input type="text" name="tanggal" class="rounded-[5px] block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner text-center shadow-gray-400" placeholder="Tanggal"/>
-                            <input type="hidden" name="jenis_laporan" value="tahunan">
+                            <input type="hidden" name="jenis_laporan" value="Tahunan">
                         </div>
                         <div class="mt-4 mb-2">
                             <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-red-600 px-10 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-red-700 hover:scale-95 duration-300"

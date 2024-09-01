@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Laporan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\File;
 
 class LaporanController extends Controller
 {
@@ -12,17 +14,17 @@ class LaporanController extends Controller
     }
 
     public function viewTriwulan(){
-        $laporan = Laporan::where('jenis_laporan', 'triwulan')->get();
+        $laporan = Laporan::where('jenis_laporan', 'Triwulan')->get();
         return view ('admin.laporan.triwulan.triwulan', compact('laporan'));
     }
 
     public function viewGcg(){
-        $laporan = Laporan::where('jenis_laporan', 'gcg')->get();
+        $laporan = Laporan::where('jenis_laporan', 'GCG')->get();
         return view ('admin.laporan.gcg.gcg', compact('laporan'));
     }
 
     public function viewTahunan(){
-        $laporan = Laporan::where('jenis_laporan', 'tahunan')->get();
+        $laporan = Laporan::where('jenis_laporan', 'Tahunan')->get();
         return view ('admin.laporan.tahunan.tahunan', compact('laporan'));
     }
 
@@ -64,5 +66,21 @@ class LaporanController extends Controller
         $laporan->delete();
 
         return back()->with('success', 'Laporan Berhasil DI Hapus');
+    }
+
+    public function index(){
+        $laporan = Laporan::get();
+        return response()->json($laporan);
+    }
+
+    public function download($filename)
+    {
+        $filePath = public_path('image/public/laporan/' . $filename);
+
+        if (!file_exists($filePath)) {
+            return back()->with('error', 'File tidak ditemukan.');
+        }
+
+        return Response::download($filePath, $filename);
     }
 }
