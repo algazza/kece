@@ -18,30 +18,38 @@ class KreditMounth
     public function build(): \ArielMejiaDev\LarapexCharts\LineChart
     {
         $now = Carbon::now();
-        $startTime = $now->copy()->subHours(8)->startOfHour();
+        $startTime = $now->copy()->subMonth()->startOfMonth();
 
-        $Tabungan = Tabungan::whereBetween('created_at', [$startTime, $now])
+        // Mengelompokkan data setiap 4 hari
+        $tabungan = Tabungan::whereBetween('created_at', [$startTime, $now])
                          ->select('created_at')
                          ->orderBy('created_at')
                          ->get()
-                         ->groupBy(function($date) {
+                         ->groupBy(function($date) use ($startTime) {
                              $date = Carbon::parse($date->created_at);
-                             return $date->format('Y-m-d H:00');
+                             $intervalIndex = (int)($date->diffInDays($startTime) / 4);
+                             return $intervalIndex;
                          });
 
         $intervals = [];
         $counts = [];
         $current = $startTime->copy();
+        $end = $now->copy();
 
-        while ($current->lessThanOrEqualTo($now)) {
-            $interval = $current->format('Y-m-d H:00');
-            $intervals[] = $current->format('H:00');
-            $counts[] = isset($Tabungan[$interval]) ? $Tabungan[$interval]->count() : 0;
-            $current->addHour();
+        while ($current->lessThanOrEqualTo($end)) {
+            $intervalStart = $current->copy();
+            $intervalEnd = $intervalStart->copy()->addDays(3); // Interval 4 hari
+            $intervalLabel = $intervalEnd->format('d M');
+            $intervalIndex = (int)($intervalStart->diffInDays($startTime) / 4);
+
+            $intervals[] = $intervalLabel;
+            $counts[] = isset($tabungan[$intervalIndex]) ? count($tabungan[$intervalIndex]) : 0;
+
+            $current->addDays(4);
         }
 
         return $this->chart->lineChart()
-            ->setTitle('Jumlah Entri per Jam (8 Jam Terakhir)')
+            ->setTitle('Jumlah Data Yang masuk 1 Bulan Terakhir')
             ->addData('Jumlah Entri', $counts)
             ->setHeight(210)
             ->setXAxis($intervals);

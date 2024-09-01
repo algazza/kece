@@ -40,12 +40,10 @@ const Laporan = () => {
   const [dataLaporan, setDataLaporan] = useState([]);
   const [filterLaporan, setFilterLaporan] = useState("Triwulan");
 
-  // Ambil data dari API
   useEffect(() => {
     fetch("http://localhost:8000/api/laporan")
       .then((response) => response.json())
       .then((data) => {
-        // Filter data berdasarkan jenis laporan
         const filteredData = data.filter(
           (lapor) => lapor.jenis_laporan.toLowerCase() === filterLaporan.toLowerCase()
         ).reverse();
