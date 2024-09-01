@@ -11,7 +11,9 @@
                 </Button> 
             </a>
         </div>
-      
+        <div class="absolute right-[10rem]">
+            {{ $admin  ->links('vendor.pagination.simple') }}
+          </div>
     </div>
     <div class="flex-gap-[1.5rem] pt-[2rem] px-[8rem] bg-gray-200 justify-center flex">
         <table class="shadow-2xl border-2 border-white w-11/12 overflow-hidden">
@@ -28,25 +30,25 @@
             </thead>
             <tbody class="text-black text-center overflow-hidden">
                 @foreach ($admin as $no => $item)
-                    <tr class="bg-slate-100 cursor-pointer hover:bg-slate-200 hover:scale-[1.01] duration-300">
-                        <td class="py-6 px-3">{{ $no + 1 }}</td>
-                        <td class="py-6 px-3">{{ $item->name }}</td>
-                        <td class="py-6 px-3">{{   $item->no_handphone }}</td>
-                        <td class="py-6 px-3">{{ $item->email }}</td>
-                        <td class="py-6 px-3">{{ $item->role }}</td>
-                        <td class="py-6 px-3">
-                            <a href="{{ route('admin.edit', $item->id) }}">
-                                <i class='bx bx-edit text-blue-500'></i>
-                            </a>
-                        </td>
-                        <td class="py-6 px-3">
-                            <form action="{{ route('admin.delete', $item->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit"><i class='bx bx-trash text-red-500'></i></button>
-                            </form>                                              
-                        </td>
-                    </tr>
+                        <tr class="bg-slate-100 cursor-pointer hover:bg-slate-200 hover:scale-[1.01] duration-300"  onclick="window.location='{{ route('admin.show', ['id' => $item->id]) }}'">
+                            <td class="py-6 px-3">{{ $no + 1 }}</td>
+                            <td class="py-6 px-3">{{ $item->name }}</td>
+                            <td class="py-6 px-3">{{   $item->no_handphone }}</td>
+                            <td class="py-6 px-3">{{ $item->email }}</td>
+                            <td class="py-6 px-3">{{ $item->role }}</td>
+                            <td class="py-6 px-3">
+                                <a href="{{ route('admin.edit', $item->id) }}">
+                                    <i class='bx bx-edit text-blue-500'></i>
+                                </a>
+                            </td>
+                            <td class="py-6 px-3">
+                                <form action="{{ route('admin.delete', $item->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"><i class='bx bx-trash text-red-500'></i></button>
+                                </form>                                              
+                            </td>
+                        </tr>
                 @endforeach
             </tbody>
         </table>

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Deposito;
 use Carbon\Carbon;
 use App\Models\Kredit;
 use App\Models\Pickup;
+use App\Models\Tabungan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
@@ -21,8 +23,6 @@ class DashboardController extends Controller
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
         $request->session()->put('last_dashboard_visit', Carbon::now());
     
-        $userIp = $request->ip();
-
         $totalData = Kredit::count() + Pickup::count();
         $kreditData = Kredit::orderBy('created_at', 'desc')->get();
         $pickupData = Pickup::orderBy('created_at', 'desc')->get();
@@ -36,12 +36,14 @@ class DashboardController extends Controller
     {
         $kreditData = Kredit::orderBy('created_at', 'desc')->get();
         $pickupData = Pickup::orderBy('created_at', 'desc')->get();
+        $depositoData = Deposito::orderBy('created_at', 'desc')->get();
+        $tabunganData = Tabungan::orderBy('created_at', 'desc')->get();
     
-        $dashboard = $kreditData->concat($pickupData)->sortByDesc('created_at')->values();
+        $dashboard = $kreditData->concat($pickupData)->concat($tabunganData)->concat($depositoData)->sortByDesc('created_at')->values();
     
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
 
-        $perPage = 20;
+        $perPage = 10;
     
         $currentPageItems = $dashboard->slice(($currentPage - 1) * $perPage, $perPage)->values();
     
@@ -66,7 +68,7 @@ class DashboardController extends Controller
 
     public function getTotalData()
     {
-        $totalData = Kredit::count() + Pickup::count();
+        $totalData = Kredit::count() + Pickup::count() + Deposito::count() +Tabungan::count();
         return response()->json(['totalData' => $totalData]);
     }
 
@@ -92,10 +94,32 @@ class DashboardController extends Controller
 
         if ($query === 'kredit') {
             return redirect()->route('kredit.index');
+        } elseif ($query === 'deposito') {
+            return redirect()->route('deposito.index');
+        } elseif ($query === 'tabungan') {
+            return redirect()->route('tabungan.index');
         } elseif ($query === 'pickup') {
             return redirect()->route('pickup.index');
         } elseif ($query === 'admin') {
             return redirect()->route('admin');
+        } elseif ($query === 'news') {
+            return redirect()->route('news');
+        }elseif ($query === 'sponsor') {
+            return redirect()->route('sponsor.index');
+        }elseif ($query === 'banner') {
+            return redirect()->route('banner');
+        } elseif ($query === 'nomor' || $query === 'nomer') {
+            return redirect()->route('noAdmin');
+        } elseif ($query === 'laporan') {
+            return redirect()->route('laporan.index');
+        } elseif ($query === 'triwulan') {
+            return redirect()->route('laporan.triwulan');
+        } elseif ($query === 'tahunan') {
+            return redirect()->route('laporan.tahunan');
+        } elseif ($query === 'gcg') {
+            return redirect()->route('laporan.gcg');
+        } elseif ($query === 'banner') {
+            return redirect()->route('banner');
         }
 
         return redirect()->route('dashboard')->with('error', 'Pencarian tidak ditemukan');

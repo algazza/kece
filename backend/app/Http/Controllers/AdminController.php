@@ -39,12 +39,18 @@ class AdminController extends Controller
                 return redirect()->route('dashboard');
             } elseif ($user->role == 'kredit') {
                 return redirect()->route('dashboard');
-            } elseif ($user->role == 'deposit') {
+            } elseif ($user->role == 'deposito') {
+                return redirect()->route('dashboard');
+            } elseif ($user->role == 'tabungan') {
+                return redirect()->route('dashboard');
+            } elseif ($user->role == 'promosi') {
+                return redirect()->route('dashboard');
+            } elseif ($user->role == 'pickup') {
                 return redirect()->route('dashboard');
             }
         } else {
             Log::warning('Failed login attempt', $infologin);
-            return redirect()->route('login')->withErrors('Email atau password tidak valid')->withInput();
+            return redirect()->route('login')->withErrors('Email atau password tidak valid');
         }
     }
 
@@ -54,7 +60,6 @@ class AdminController extends Controller
     }
 
 
-    // Forget
     function forget(){
         return view('admin.login.Forget');
     }
@@ -101,38 +106,60 @@ class AdminController extends Controller
     }
 
     function viewUser(){
-        $admin = Admin::orderBy('created_at', 'DESC')->get();
+        $admin = Admin::orderBy('created_at', 'DESC')->paginate('5');
         return view ('admin.user.User', compact('admin'));
     }
 
     function store(Request $request){
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'no_handphone' => 'required',
-            'role' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
 
-        $admin = new Admin();
-        $admin->name = $request->name;
-        $admin->email = $request->email;
-        $admin->password = bcrypt($request->password);
-        $admin->no_handphone = $request->no_handphone;
-        $admin->role = $request->role;
-
-
-        if ($request->hasFile('image')) {
-            $imageName = time() . '.' . $request->image->extension();  
-            $request->image->move(public_path('image/admin'), $imageName);
-            $admin->image = $imageName;
-        } else {
-            $admin->image = 'profil.jpg';
-        }
+        try{
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required',
+                'password' => 'required',
+                'no_handphone' => 'required',
+                'role' => 'required',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
     
-        $admin->save();
-        return redirect()->route('admin')->with('success', 'User Berhasil Ditambahkan');
+            $admin = new Admin();
+            $admin->name = $request->name;
+            $admin->email = $request->email;
+            $admin->password = bcrypt($request->password);
+            $admin->no_handphone = $request->no_handphone;
+            $admin->role = $request->role;
+    
+    
+            if ($request->hasFile('image')) {
+                $imageName = time() . '.' . $request->image->extension();  
+                $request->image->move(public_path('image/admin'), $imageName);
+                $admin->image = $imageName;
+            } else {
+                $admin->image = 'profil.jpg';
+            }
+        
+            $admin->save();
+            return redirect()->route('admin')->with('success', 'User Berhasil Ditambahkan');
+        } catch(\Illuminate\Database\QueryException $e){
+            if($e->errorInfo[1] == 1062){
+                return redirect()->route('admin')->with('error', 'Email sudah digunakan, silakan gunakan email lain.');
+            } else {
+                return redirect()->route('admin')->with('error', 'Gagal Menambahkan User');
+            }
+        } catch(\Exception $e){
+            return redirect()->route('admin')->with('error', 'Gagal Menambahkan User');
+        }
+    }
+
+
+    function showAdmin($id){
+        $admin = Admin::find($id);
+
+        if(!$admin){
+            return redirect()->route('admin');
+        }
+
+        return view ('admin.user.Admin', compact('admin'));
     }
 
 

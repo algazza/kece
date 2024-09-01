@@ -1,5 +1,5 @@
 
-import styles from "../data/style";
+import styles from "../helper/style";
 
 const TitleBlueBanner = ({title}) => {
   return (

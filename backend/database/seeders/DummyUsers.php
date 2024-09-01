@@ -24,7 +24,7 @@ class DummyUsers extends Seeder
             [
                 'name' => 'Iatsa Villainku',
                 'email' => 'deposit@gmail.com',
-                'role' => 'deposit',
+                'role' => 'deposito',
                 'no_handphone' => '088997998998',
                 'password' => bcrypt('123456')
             ],

@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -21,8 +25,7 @@ body::-webkit-scrollbar {
   border-radius: 10px;
 }
 
-@layer utilities {
-  .clip-custom-shape {
-    clip-path: path("M0 0H100%Vcalc(100% - 50px)Q100% 100% calc(100% - 50px) 100%H0V0Z");
-  }
+.blue__gradient {
+  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #06A3E8 100%);
+  filter: blur(200px);
 }

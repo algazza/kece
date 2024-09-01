@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import IntroBanner from "../Layouts/IntroBanner";
-import { BlueBanner } from "../data";
-import styles from "../data/style";
+import { BlueBanner } from "../helper";
+import styles from "../helper/style";
 import { useNavigate } from "react-router-dom";
 
 const theme = createTheme({
@@ -33,7 +33,7 @@ const News = () => {
     to: pageSize,
   });
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:8000/api/news")
@@ -91,12 +91,6 @@ const News = () => {
 
       <section className={`${styles.flexCenter} flex-col gap-6`}>
         <h1 className={`${styles.heading1} text-center`}>Berita</h1>
-
-        <div className="flex gap-4">
-          <div className="">Suara Merdeka</div>
-          <div className="">Tribun Jateng</div>
-          <div className="">JawaPos</div>
-        </div>
 
         <div className="flex gap-4 sm:max-w-full max-w-80 overflow-auto">
           {["All", "Penghargaan", "Promo", "Pengumuman", "Siaran Pers"].map(
@@ -170,7 +164,7 @@ const News = () => {
             </div>
 
             <div className="p-4 flex flex-col justify-center">
-              <p className={`${styles.fontSmallBold} text-merahh`}>
+              <p className={`${styles.fontSmallBold} text-merahh-500`}>
                 {news.kategory}
               </p>
               <h6 className={`${styles.heading6} `}>{news.judul}</h6>

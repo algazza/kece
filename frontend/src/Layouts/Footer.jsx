@@ -1,6 +1,6 @@
 // ----- Folder Data -----
-import { footer1, footer2, logoArmor, marqueeImage } from "../data/index";
-import styles from "../data/style";
+import { footer1, footer2, logoArmor, marqueeImage } from "../helper/index";
+import styles from "../helper/style";
 // ----- MUI -----
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -42,9 +42,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between bg-footerimagexs xs:bg-footerimage bg-no-repeat">
-        <div className="flex flex-col py-4 pl-8 pr-12 xs:p-7 gap-2 xs:gap-5 text-white">
-          <a href="/" className=" flex items-center gap-3">
+      <div className="flex flex-col md:flex-row justify-between bg-footerimage bg-no-repeat">
+        <div className="flex flex-col py-4 pl-8 pr-12 xs:py-2 xs:px-8 gap-2 xs:gap-2 text-white">
+          <a href="/" className="flex items-center gap-3">
             <img src={logoArmor} alt="logo" className=" xs:w-16" />
             <span
               className={`${styles.heading5} xs:leading-[24px] leading-[20px]`}
@@ -55,6 +55,11 @@ const Footer = () => {
           <p className={`${styles.fontSmall} pr-4`}>
             Office : Jl. Elang Raya No. 99 Mangunharjo, Tembalang, Semarang
           </p>
+          <ul className={`${styles.fontSmall} pr-4 list-disc list-inside`}> Kantor Kas:
+            <li> Jl Gajah Raya No. 155 Sambirejo</li>
+            <li>Jl. Untung Suropati No. 18 Kav 5</li>
+            <li> Jl. H. Imam Suprapto No. 1 Bulusan</li>
+          </ul>
         </div>
 
         <div className="grid grid-cols-2 gap-2 mt-4 xs:mt-12 md:mt-0 px-5 md:px-0">

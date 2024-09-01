@@ -18,13 +18,13 @@ return new class extends Migration
             $table->bigInteger('no_handphone');
             $table->bigInteger('nik');
             $table->string('pekerjaan');
-            $table->string('alamat');
+            $table->text('alamat');
             $table->string('jenis');
             $table->string('produk_tabungan');
             $table->string('tanggal');
             $table->string('waktu');
-            $table->string('lokasi');
-            $table->string('catatan');
+            $table->text('lokasi');
+            $table->text('catatan');
             $table->bigInteger('code');
             $table->string('ip_user');
             $table->timestamps();

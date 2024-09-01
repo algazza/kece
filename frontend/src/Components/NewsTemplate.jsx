@@ -6,7 +6,7 @@ import LinkIcon from "@mui/icons-material/Link";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-import styles from "../data/style";
+import styles from "../helper/style";
 
 const NewsTemplate = ({
   NewsJudul,
@@ -20,14 +20,13 @@ const NewsTemplate = ({
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Ganti URL dengan endpoint API Anda
     fetch("http://localhost:8000/api/news")
       .then(response => response.json())
       .then(data => {
         setNewsData(data);
       })
-      .catch(error => {
-        console.error("Error fetching news data:", error);
+      .catch((err) => {
+        toast.error("Gagal Memunculkan News!");
       });
   }, []);
 
@@ -89,8 +88,6 @@ const NewsTemplate = ({
             </div>
             <section className="grid sm:grid-cols-x550 justify-center gap-6 sm:gap-12">
               {newsData.slice(0, 2).map((news) => {
-                console.log('News Data:', news); 
-                console.log('Created At:', news.created_at); 
                 return (
                   <div
                     key={news.id}

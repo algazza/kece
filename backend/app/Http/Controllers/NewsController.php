@@ -15,10 +15,26 @@ class NewsController extends Controller
         return view ('admin.news.NewsAdd');
     }
 
-    function viewNews(){
-        $news = News::orderBy('created_at', 'DESC')->get();
-        return view ('admin.news.News', compact('news'));
+    public function viewNews(Request $request) {
+        $search = $request->input('search');
+        $filter = $request->input('filter');
+    
+        $query = News::query()->orderBy('created_at', 'DESC');
+        
+        if ($search) {
+            $query->where('judul', 'LIKE', "%{$search}%");
+        }
+        
+        if ($filter) {
+            $query->where('kategory', $filter);
+        }
+        
+        $news = $query->paginate(10);
+        
+        return view('admin.news.News', compact('news'));
     }
+    
+    
 
     function editNews($id){
         $news = News::find($id);
@@ -71,7 +87,7 @@ class NewsController extends Controller
 
         $news->delete();
 
-        return redirect()->route('news')->with('success', 'News deleted successfully');
+        return redirect()->route('news')->with('success', 'News Di Hapus');
     }
 
 
@@ -112,10 +128,9 @@ class NewsController extends Controller
 
             $news->save();
 
-            return redirect()->route('news.form')->with('success', 'Berita berhasil ditambahkan.');
+            return redirect()->route('news')->with('success', 'Berita berhasil ditambahkan.');
         } catch (\Exception $e) {
-            Log::error('Error adding news: ' . $e->getMessage());
-            return redirect()->route('news.form')->with('error', 'Terjadi kesalahan saat menambahkan berita.');
+            return redirect()->route('news')->with('error', 'Terjadi kesalahan saat menambahkan berita.');
         }
     }
 

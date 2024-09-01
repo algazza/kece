@@ -1,6 +1,6 @@
-import styles from "../data/style";
+import styles from "../helper/style";
 import { useEffect, useState } from "react";
-import { logoArmor } from "../data";
+import { logoArmor } from "../helper";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
@@ -12,6 +12,7 @@ const Header = () => {
   const [hasShadow, setHasShadow] = useState(false);
   const [toggle, setToggle] = useState(false);
 
+  // shadow
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 50) {
@@ -40,19 +41,19 @@ const Header = () => {
           className={`list-none sm:flex hidden justify-end items-center flex-1 gap-12 ${styles.fontBody} font-semibold`}
         >
           <li>
-            <Link to={"/"}>Home</Link>
+            <FlyoutLink href={"/"}>Home</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
+            <FlyoutLink href={"/sejarah"} FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink to={"/news"}>News</FlyoutLink>
+            <FlyoutLink href={"/news"}>News</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>
+            <FlyoutLink href={"/kredit"} FlyoutContent={Product}>Produk</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink FlyoutContent={Service}>Layanan</FlyoutLink>
+            <FlyoutLink href={"/pick-up-service"} FlyoutContent={Service}>Layanan</FlyoutLink>
           </li>
         </ul>
 
@@ -74,6 +75,11 @@ const Header = () => {
                 exit={{ y: "-100%" }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className="absolute -z-[100] top-0 right-0 w-full px-8 pt-20 pb-4 bg-primary shadow-[0px_0px_90px_9px_#00000024]"
+                onClick={(e) => {
+                  if (e.target.tagName === 'A') {
+                    setToggle(false);
+                  }
+                }}
               >
                 <ul className="font-semibold">
                   <li className="my-3">
@@ -92,9 +98,10 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Sejarah</Link>
-                            <Link to={"/"}>Visi Misi</Link>
-                            <Link to={"/"}>Struktur Organisasi</Link>
+                            <Link to={"/sejarah"}>Sejarah</Link>
+                            <Link to={"/sejarah#visi-misi"}>Visi Misi</Link>
+                            <Link to={"/sejarah#organisasi"}>Struktur Organisasi</Link>
+                            <Link to={"/lokasi"}>Lokasi</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -116,9 +123,9 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Kredit</Link>
-                            <Link to={"/"}>Deposit</Link>
-                            <Link to={"/"}>Tabungan</Link>
+                            <Link to={"/kredit"}>Kredit</Link>
+                            <Link to={"/deposito"}>Deposit</Link>
+                            <Link to={"/tabungan"}>Tabungan</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -137,10 +144,12 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/"}>Sosial Media</Link>
-                            <Link to={"/"}>Sponsor</Link>
-                            <Link to={"/"}>Promo</Link>
-                            <Link to={"/"}>Sponsor</Link>
+                            <Link to={"/pick-up-service"}>Pick Up</Link>
+                            <Link to={"/armor-properti"}>Armor Properti</Link>
+                            <Link to={"/"}>Simulasi</Link>
+                            <Link to={"/promo"}>Promo</Link>
+                            <Link to={"/sponsor"}>Sponsor</Link>
+                            <Link to={"/laporan"}>Laporan</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -156,14 +165,13 @@ const Header = () => {
   );
 };
 
-const FlyoutLink = ({ children, href, FlyoutContent, to }) => {
+const FlyoutLink = ({ children, href, FlyoutContent }) => {
   const [open, setOpen] = useState(false);
 
   const showFlyout = open && FlyoutContent;
 
   return (
-    <Link
-    to={to}
+    <div
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
       className="relative h-fit w-fit"
@@ -172,7 +180,7 @@ const FlyoutLink = ({ children, href, FlyoutContent, to }) => {
         {children}
         <span
           style={{ transform: open ? "scaleX(1)" : "scaleX(0)" }}
-          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left rounded-full bg-merahh transition-transform duration-300 ease-out"
+          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left rounded-full bg-merahh-500 transition-transform duration-300 ease-out"
         ></span>
       </Link>
       <AnimatePresence>
@@ -191,16 +199,17 @@ const FlyoutLink = ({ children, href, FlyoutContent, to }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </Link>
+    </div>
   );
 };
 
 // function subMenu
 const AboutUs = () => {
   const items = [
-    { name: "Sejarah", link: "/" },
-    { name: "Visi Misi", link: "/" },
-    { name: "Struktur Organisasi", link: "/" },
+    { name: "Sejarah", link: "/sejarah" },
+    { name: "Visi Misi", link: "/sejarah#visi-misi" },
+    { name: "Struktur Organisasi", link: "/sejarah#organisasi" },
+    { name: "Lokasi", link: "/lokasi" },
   ];
 
   return <MenuList items={items} />;
@@ -208,9 +217,9 @@ const AboutUs = () => {
 
 const Product = () => {
   const items = [
-    { name: "Kredit", link: "/syarat" },
-    { name: "Deposit", link: "/" },
-    { name: "Tabungan", link: "/" },
+    { name: "Kredit", link: "/kredit" },
+    { name: "Deposit", link: "/deposito" },
+    { name: "Tabungan", link: "/tabungan" },
   ];
 
   return <MenuList items={items} />;
@@ -218,10 +227,13 @@ const Product = () => {
 
 const Service = () => {
   const items = [
-    { name: "Sosial Media", link: "/" },
-    { name: "Promo", link: "/" },
-    { name: "Sponsor", link: "/" },
-    { name: "Laporan", link: "/" },
+    { name: "Pick Up", link: "/pick-up-service" },
+    { name: "Armor Properti", link: "/armor-properti" },
+    { name: "Simulasi", link: "/" },
+    { name: "Promo", link: "/promo" },
+    { name: "Sponsor", link: "/sponsor" },
+    { name: "Laporan", link: "/laporan" },
+    { name: "Login", link: "https://etna.scxserver.com:2096" },
   ];
 
   return <MenuList items={items} />;
@@ -233,8 +245,8 @@ const MenuList = ({ items }) => {
     <div className="w-52 py-6 px-8 shadow-[0px_20px_20px_0px_#00000024]">
       <ul className="flex flex-col text-center flex-1 gap-2">
         {items.map((item, index) => (
-          <li key={index}>
-            <Link to={item.link}>{item.name}</Link>
+          <li key={index} className="hover:text-merahh-500 duration-300">
+            <Link to={item.link} >{item.name}</Link>
           </li>
         ))}
       </ul>
