@@ -33,7 +33,7 @@ class TabunganFactory extends Factory
             'code' => $this->faker->numerify('##########'),
             'ip_user' => $this->faker->ipv4(),
             'created_at' => $this->faker->dateTimeBetween('-1 month', 'now'),
-            'updated_at' => $this->faker->dateTimeBetween('-1 month', 'now'), // Mengatur updated_at untuk konsistensi
+            'updated_at' => $this->faker->dateTimeBetween('-1 month', 'now'),
         ];
     }
 }
