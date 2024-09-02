@@ -24,10 +24,8 @@
   <div class="flex justify-end fixed bottom-10 right-10">
     <form id="image-upload-form" action="{{ route('banner.add') }}" method="POST" enctype="multipart/form-data">
       @csrf  
-      <label for="upload-image" class="flex items-center justify-center w-12 h-12 cursor-pointer bg-white hover:bg-slate-200 hover:scale-105 duration-300 border-2 border-black text-black rounded-full shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-        </svg>
+      <label for="upload-image" class="flex items-center justify-center w-19 h-12 cursor-pointer bg-white hover:bg-slate-200 hover:scale-105 duration-300 border-2 border-gray-400 text-black rounded-full shadow-md">
+       <p class="px-3">+ Add Banner</p>
         <input id="upload-image" type="file" class="hidden" name="image">
       </label>
     </form>
