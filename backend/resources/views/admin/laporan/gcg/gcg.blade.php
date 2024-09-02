@@ -29,7 +29,7 @@
         </ul>
 
     <div class="flex justify-end fixed bottom-10 right-10 bg-gray-50 rounded-full box-borde">
-        <button class="flex items-center justify-center w-12 h-12 cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300 border-[1px] border-black shadow-gray-400 shadow-inner text-black rounded-full" onclick="openModal('modelConfirm')">
+        <button class="flex items-center justify-center w-20 h-20 text-gray-600  hover:text-black cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300 border-[1px] border-gray-500 shadow-gray-400 shadow-sm rounded-full" onclick="openModal('modelConfirm')">
             <i class='bx bxs-file-plus text-[1.5rem]'></i>
         </button>
     </div>

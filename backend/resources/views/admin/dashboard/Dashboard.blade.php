@@ -23,8 +23,8 @@
                         <div class="text-[5rem]">
                             <i class='text-black bx bx-news' ></i>
                         </div>
-                        <p class="bg-black text-white mx-[4.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-1.5rem] ">News Edit</p>
                     </div>
+                    <p class="bg-black text-white mx-[4.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-1.5rem] ">News Edit</p>
                 </div>
             </div>
             </a>
