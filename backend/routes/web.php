@@ -149,7 +149,7 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 Route::get('/Usere', function(){
     return view ('admin.user.UserAdd');
 });
-Route::get('/Jab', function(){
+Route::get('/peng', function(){
     return view ('admin.Penghargaan.penghargaan');
 });
 
