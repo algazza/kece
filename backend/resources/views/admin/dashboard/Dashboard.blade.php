@@ -214,9 +214,7 @@
                     
                 </div>
                 <div class="h-[calc(100%-4.7rem)] pb-[2rem] overflow-auto" id="content">
-                    @foreach ($dashboard as $no => $data)
                         {{-- data user form --}}
-                    @endforeach
                 </div>
                 <div class="pagination-links flex pl-[25rem] text-[1.2rem] text-black bottom-0 py-[0.5rem] absolute w-full bg-gray-50 box-border border-black border-t-[0.1px]">
                     {{-- {{ $dashboard->links() }} --}}

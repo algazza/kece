@@ -13,12 +13,7 @@ return new class extends Migration
     {
         Schema::create('no_admin', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('no_kredit');
-            $table->bigInteger('no_deposito');
-            $table->bigInteger('no_tabungan');
             $table->bigInteger('no_induk');
-            $table->bigInteger('no_sponsor');
-            $table->bigInteger('no_pickup');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ import FormBank from "../Components/FormBank";
 import { PickupService } from "../Components/Form";
 import styles from "../helper/style";
 import { BlueBanner } from "../helper";
-import { nomorPickup } from "../helper/nomor";
+import { nomorInduk } from "../helper/nomor";
 
 const PickupPage = () => {
   return (
@@ -28,7 +28,7 @@ const PickupPage = () => {
           <FormBank
             isiPenting={<PickupService />}
             value={"Pickup"}
-            nomer={nomorPickup}
+            nomer={nomorInduk}
             page={"/PickupPage"}
             endpoint={"http://localhost:8000/api/Pickup"}
           />

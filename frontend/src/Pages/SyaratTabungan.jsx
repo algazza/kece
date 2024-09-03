@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 import { Kredit } from "../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../helper/DataProduk";
-import { nomorTabungan } from "../helper/nomor";
+import { nomorInduk } from "../helper/nomor";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import SchoolIcon from "@mui/icons-material/School";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
@@ -325,7 +325,7 @@ const SyaratTabungan = () => {
                     <FormBank
                       isiPenting={<Kredit />}
                       value={"Tabungan"}
-                      nomer={nomorTabungan}
+                      nomer={nomorInduk}
                       endpoint={"http://localhost:8000/api/tabungan"}
                     />
                   </div>

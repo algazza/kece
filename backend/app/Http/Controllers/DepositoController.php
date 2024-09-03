@@ -71,11 +71,7 @@ class DepositoController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        
-    }
-
+    
     public function store(Request $request)
     {
         $deposito = Deposito::create([
@@ -106,7 +102,7 @@ class DepositoController extends Controller
         $deposito = Deposito::find($id);
     
         if (!$deposito) {
-            return redirect()->route('dashboard')->with('error', 'Data not found');
+            return redirect()->route('dashboard')->with('error', 'Data Deposito tidak ditemukan');
         }
     
         return view('admin.deposito.DepositoUser', compact('deposito'));

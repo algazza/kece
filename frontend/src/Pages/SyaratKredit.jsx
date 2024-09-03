@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 import { Kredit } from "../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../helper/DataProduk";
-import { nomorKredit } from "../helper/nomor";
+import { nomorInduk } from "../helper/nomor";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWorkRounded";
 import PlaylistAddCheckRoundedIcon from "@mui/icons-material/PlaylistAddCheckRounded";
@@ -325,7 +325,7 @@ const SyaratKredit = () => {
                   <FormBank
                     isiPenting={<Kredit />}
                     value={"Kredit"}
-                    nomer={nomorKredit}
+                    nomer={nomorInduk}
                     endpoint={"http://localhost:8000/api/kredit"}
                   />
                 </motion.div>

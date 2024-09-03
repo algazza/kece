@@ -65,7 +65,7 @@
               </div>         
                 <div class="grid gap-2 grid-cols-1 sm:grid-cols-1">
                   <div class="mt-2">
-                      <label for="name" class="block mb-2 font-bold text-black pr-2">Penghasilan</label>
+                      <label for="name" class="block mb-2 font-bold text-black pr-2">Catatan</label>
                       <textarea type="text" id="name" name="name" class="border border-gray-300 shadow p-3 w-full rounded " readonly>{{ $kredit->catatan }}</textarea>
                   </div>
               </div>         

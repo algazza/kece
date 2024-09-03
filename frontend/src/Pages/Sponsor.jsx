@@ -5,7 +5,7 @@ import FormBank from '../Components/FormBank'
 import { BlueBanner, formUsahaSponsor } from '../helper'
 import { SponsorForm } from '../Components/Form'
 import styles from '../helper/style'
-import { nomorSponsor } from '../helper/nomor'
+import { nomorInduk } from '../helper/nomor'
 
 const Sponsor = () => {
   return (
@@ -31,7 +31,7 @@ const Sponsor = () => {
         namaRadio='bidang_usaha'
         dummyprops={formUsahaSponsor}
         value={"Sponsor"}
-        nomer={nomorSponsor}
+        nomer={nomorInduk}
         page={"/Sponsor"}
         endpoint={"http://localhost:8000/api/sponsor"}
       />
