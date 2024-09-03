@@ -18,6 +18,7 @@ use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TabunganController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PenghargaanController;
 use Illuminate\Routing\Route as RoutingRoute;
 
 /*
@@ -135,21 +136,15 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::get('/Banner', [BannerController::class, 'viewBanner'])->name('banner');
     Route::post('/Banner/Post', [BannerController::class, 'store'])->name('banner.add');
     Route::delete('/Banner/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+    
+    Route::get('/Penghargaan', [PenghargaanController::class, 'viewPenghargaan'])->name('penghargaan.index');
+    Route::get('/Penghargaan/Page/{id}', [PenghargaanController::class, 'viewPenghargaanUpdate'])->name('penghargaan.update.page');
+    Route::put('/Penghargaan/Update/{id}', [PenghargaanController::class, 'update'])->name('penghargaan.update');
+    Route::post('/Penghargaan/Post', [PenghargaanController::class, 'store'])->name('penghargaan.post');
+    Route::delete('/Penghargaan/{id}', [PenghargaanController::class, 'destroy'])->name('penghargaan.delete');
 });
 
 
 
 
-
-
-
-
-
-
-Route::get('/Usere', function(){
-    return view ('admin.user.UserAdd');
-});
-Route::get('/peng', function(){
-    return view ('admin.Penghargaan.penghargaan');
-});
 
