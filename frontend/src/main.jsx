@@ -21,6 +21,7 @@ import VisiMisi from "./Pages/VisiMisi.jsx";
 import LaporanGCG from "./Pages/Laporan/LaporanGCG.jsx";
 import LaporanTahunan from "./Pages/Laporan/LaporanTahunan.jsx";
 import LaporanTriwulan from "./Pages/Laporan/LaporanTriwulan.jsx";
+import Penghargaan from "./Pages/Penghargaan.jsx";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,26 @@ const router = createBrowserRouter([
         element: <Manajemen />,
       },
       {
+        path: "penghargaan",
+        element: <Penghargaan/>,
+      },
+      {
+        path: "laporan",
+        element: <Laporan />,
+      },
+      {
+        path: "laporan-triwulan",
+        element: <LaporanTriwulan />,
+      },
+      {
+        path: "laporan-gcg",
+        element: <LaporanGCG />,
+      },
+      {
+        path: "laporan-tahunan",
+        element: <LaporanTahunan />,
+      },
+      {
         path: "kredit",
         element: <SyaratKredit />,
       },
@@ -71,22 +92,6 @@ const router = createBrowserRouter([
       {
         path: "pick-up-service",
         element: <PickupPage />,
-      },
-      {
-        path: "laporan",
-        element: <Laporan />,
-      },
-      {
-        path: "laporan-triwulan",
-        element: <LaporanTriwulan />,
-      },
-      {
-        path: "laporan-gcg",
-        element: <LaporanGCG />,
-      },
-      {
-        path: "laporan-tahunan",
-        element: <LaporanTahunan />,
       },
       {
         path: "sponsor",

@@ -6,7 +6,7 @@ import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 const LocationPage = () => {
   return (
     <>
-      <div className="">
+      <section className="">
         <IntroBanner
           ImageBanner={BlueBanner}
           TitleBanner={"Location"}
@@ -21,7 +21,7 @@ const LocationPage = () => {
           paragraf
         />
         <TitleBlueBanner title={"Lokasi"} />
-      </div>
+      </section>
 
       <div className="bg-abuTerang p-10 w-auto m-5 ">
         <div>

@@ -100,6 +100,7 @@ const Header = () => {
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
                             <Link to={"/sejarah"}>Sejarah</Link>
                             <Link to={"/visi-misi"}>Visi Misi</Link>
+                            <Link to={"/penghargaan"}>Penghargaan</Link>
                             <Link to={"/manajemen"}>Manajemen</Link>
                             <Link to={"/lokasi"}>Lokasi</Link>
                             <li>
@@ -229,6 +230,7 @@ const AboutUs = () => {
   const items = [
     { name: "Sejarah", link: "/sejarah" },
     { name: "Visi Misi", link: "/visi-misi" },
+    { name: "Penghargaan", link: "/penghargaan" },
     { name: "Manajemen", link: "/manajemen" },
     { name: "Lokasi", link: "/lokasi" },
     { name: "Laporan", link: "/laporan" },
