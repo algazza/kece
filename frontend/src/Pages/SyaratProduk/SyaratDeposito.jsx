@@ -16,8 +16,8 @@ import {
 import { motion } from "framer-motion";
 import { Deposito } from "../../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import { IsiKredit } from "../helper/DataProduk";
-import { nomorInduk } from "../helper/nomor";
+import { IsiKredit } from "../../helper/DataProduk";
+import { nomorInduk } from "../../helper/nomor";
 
 // ===================================================
 const buttonMenuTabungan = [

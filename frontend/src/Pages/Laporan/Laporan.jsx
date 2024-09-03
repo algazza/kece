@@ -31,26 +31,6 @@ const buttonMenuProfile = [
 ];
 
 const Laporan = () => {
-  const [dataLaporan, setDataLaporan] = useState([]);
-  const [filterLaporan, setFilterLaporan] = useState("Triwulan");
-
-  useEffect(() => {
-    fetch("http://localhost:8000/api/laporan")
-      .then((response) => response.json())
-      .then((data) => {
-        const filteredData = data
-          .filter(
-            (lapor) =>
-              lapor.jenis_laporan.toLowerCase() === filterLaporan.toLowerCase()
-          )
-          .reverse();
-        setDataLaporan(filteredData);
-      })
-      .catch((error) => {
-        console.error("Error fetching laporan data:", error);
-      });
-  }, [filterLaporan]);
-
   return (
     <>
       <section>

@@ -16,8 +16,8 @@ import {
 import { motion } from "framer-motion";
 import { Kredit } from "../../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import { IsiKredit } from "../helper/DataProduk";
-import { nomorInduk } from "../helper/nomor";
+import { IsiKredit } from "../../helper/DataProduk";
+import { nomorInduk } from "../../helper/nomor";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import SchoolIcon from "@mui/icons-material/School";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";

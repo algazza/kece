@@ -16,8 +16,8 @@ import {
 import { motion } from "framer-motion";
 import { Kredit } from "../../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import { IsiKredit } from "../helper/DataProduk";
-import { nomorInduk } from "../helper/nomor";
+import { IsiKredit } from "../../helper/DataProduk";
+import { nomorInduk } from "../../helper/nomor";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWorkRounded";
 import PlaylistAddCheckRoundedIcon from "@mui/icons-material/PlaylistAddCheckRounded";
