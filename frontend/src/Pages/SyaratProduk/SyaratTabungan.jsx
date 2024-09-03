@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import IntroBanner from "../Layouts/IntroBanner";
-import TitleBlueBanner from "../Layouts/TitleBlueBanner";
-import FormBank from "../Components/FormBank";
-import styles from "../helper/style";
-import { PenempatanDana, BlueBanner } from "../helper";
+import IntroBanner from "../../Layouts/IntroBanner";
+import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
+import FormBank from "../../Components/FormBank";
+import styles from "../../helper/style";
+import { PenempatanDana, BlueBanner } from "../../helper";
 import {
   Paper,
   Table,
@@ -14,71 +14,89 @@ import {
   TableRow,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { Kredit } from "../Components/Form";
+import { Kredit } from "../../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import { IsiKredit } from "../helper/DataProduk";
-import { nomorKredit } from "../helper/nomor";
-import LocalAtmIcon from "@mui/icons-material/LocalAtm";
-import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWorkRounded";
-import PlaylistAddCheckRoundedIcon from "@mui/icons-material/PlaylistAddCheckRounded";
-import ElderlyRoundedIcon from "@mui/icons-material/ElderlyRounded";
-import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-import MosqueRoundedIcon from "@mui/icons-material/MosqueRounded";
-import FilterVintageRoundedIcon from "@mui/icons-material/FilterVintageRounded";
-
+import { IsiKredit } from "../../helper/DataProduk";
+import { nomorTabungan } from "../../helper/nomor";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import SchoolIcon from "@mui/icons-material/School";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import MosqueIcon from "@mui/icons-material/Mosque";
+import ElderlyIcon from "@mui/icons-material/Elderly";
+import GroupsIcon from "@mui/icons-material/Groups";
+import DevicesOtherIcon from "@mui/icons-material/DevicesOther";
 // ===================================================
 const buttonMenuTabungan = [
   {
     id: 1,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Investasi",
-    deskripsi: "Raih keuntungan maksimal, masa depan gemilang",
-    jenis: "Via online",
+    icon: (className) => (
+      <AccountBalanceIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Umum",
+    deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
   },
   {
     id: 2,
-    icon: (className) => <LocalAtmIcon className={className} />,
-    title: "Kredit Modal",
-    deskripsi: " Tambah modal usaha, sukses di tangan Anda",
+    icon: (className) => (
+      <AccountBalanceWalletIcon
+        className={className}
+        sx={{ fontSize: "40px" }}
+      />
+    ),
+    title: "Tabungan ProActive",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    jenis: "Via online",
   },
   {
     id: 3,
-    icon: (className) => <MapsHomeWorkIcon className={className} />,
-    title: "Kredit KPR",
-    deskripsi: "Miliki rumah idaman, proses mudah dan cepat.",
+    icon: (className) => (
+      <SchoolIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Simpel",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
     jenis: "Via online",
   },
   {
     id: 4,
-    icon: (className) => <PlaylistAddCheckRoundedIcon className={className} />,
-    title: "Kredit Multiguna",
-    deskripsi: "Solusi pinjaman untuk semua kebutuhan Anda",
-    jenis: "Via online",
+    icon: (className) => (
+      <MosqueIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Umroh (TABUM)",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 5,
-    icon: (className) => <ElderlyRoundedIcon className={className} />,
-    title: "Kredit Pensiun",
-    deskripsi: "Nikmati hari tua nyaman dengan finansial aman",
+    icon: (className) => (
+      <ElderlyIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Pensiun",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    jenis: "Via online",
   },
   {
     id: 6,
-    icon: (className) => <ShoppingCartRoundedIcon className={className} />,
-    title: "Kredit Konsumtif",
-    deskripsi: "Penuhi kebutuhan hidup Anda dengan pinjaman cepat dan mudah",
+    icon: (className) => (
+      <GroupsIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Arisan",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 7,
-    icon: (className) => <MosqueRoundedIcon className={className} />,
-    title: "Kredit Pembiayaan Umroh",
-    deskripsi: "Rencanakan umroh, jalani ibadah dengan tenang",
+    icon: (className) => (
+      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "SimpHaTi",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    jenis: "Via online",
   },
   {
     id: 8,
-    icon: (className) => <FilterVintageRoundedIcon className={className} />,
-    title: "Kredit Pembiayaan Ziarah",
-    deskripsi: "Nikmati ziarah penuh makna dengan biaya terjangkau dan mudah",
-    jenis: "Via online",
+    icon: (className) => (
+      <DevicesOtherIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Gemilang",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
 ];
 
@@ -101,7 +119,7 @@ const calculateRowSpan = (data, key) => {
 
 const rowSpanAmount = calculateRowSpan(PenempatanDana, "amount");
 
-const SyaratKredit = () => {
+const SyaratTabungan = () => {
   let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
   const [menu, setMenu] = useState(0);
@@ -127,7 +145,7 @@ const SyaratKredit = () => {
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Kredit"}
+          TitleBanner={"Tabungan"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -136,12 +154,14 @@ const SyaratKredit = () => {
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={"Kredit"} />
+        <TitleBlueBanner title={"Tabugan"} />
       </section>
 
       {/* Menu utama */}
       {menu === 0 ? (
-        <section className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}>
+        <section
+          className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}
+        >
           {/* menu button */}
           {buttonMenuTabungan.map((menu, index) => (
             <div
@@ -322,12 +342,14 @@ const SyaratKredit = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-6 sm:mx-10 sm:px-10"
                 >
-                  <FormBank
-                    isiPenting={<Kredit />}
-                    value={"Kredit"}
-                    nomer={nomorKredit}
-                    endpoint={"http://localhost:8000/api/kredit"}
-                  />
+                  <div className={`${styles.flexCenter}`}>
+                    <FormBank
+                      isiPenting={<Kredit />}
+                      value={"Tabungan"}
+                      nomer={nomorTabungan}
+                      endpoint={"http://localhost:8000/api/tabungan"}
+                    />
+                  </div>
                 </motion.div>
               ) : null}
             </section>
@@ -346,7 +368,7 @@ const SyaratKredit = () => {
                   tabs === 1 && "hidden"
                 } text-biruMuda-500 border-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
-                prev
+                Sebelumnya
               </div>
               <div
                 onClick={() => nextTab(tabs)}
@@ -354,7 +376,7 @@ const SyaratKredit = () => {
                   tabs === 4 && "hidden"
                 } bg-biruMuda-500 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
-                next
+                Lanjut
               </div>
             </section>
           </section>
@@ -364,5 +386,5 @@ const SyaratKredit = () => {
   );
 };
 
-export default SyaratKredit;
+export default SyaratTabungan;
 // mahes 7 agustus 2024

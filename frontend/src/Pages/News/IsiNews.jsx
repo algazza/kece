@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "../helper/style";
+import styles from "../../helper/style";
 import { motion } from "framer-motion";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
@@ -8,7 +8,7 @@ import LinkIcon from "@mui/icons-material/Link";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-import { loaderIcon } from "../helper";
+import { loaderIcon } from "../../helper";
 
 const IsiNews = () => {
   const { id } = useParams(); // Ambil id dari URL

@@ -44,16 +44,16 @@ const Header = () => {
             <FlyoutLink href={"/"}>Home</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink href={"/sejarah"} FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
+            <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink href={"/news"}>News</FlyoutLink>
+            <FlyoutLink href={"/berita"}>Berita</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink href={"/kredit"} FlyoutContent={Product}>Produk</FlyoutLink>
+            <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink href={"/pick-up-service"} FlyoutContent={Service}>Layanan</FlyoutLink>
+            <FlyoutLink FlyoutContent={Service}>Layanan</FlyoutLink>
           </li>
         </ul>
 
@@ -76,7 +76,7 @@ const Header = () => {
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className="absolute -z-[100] top-0 right-0 w-full px-8 pt-20 pb-4 bg-primary shadow-[0px_0px_90px_9px_#00000024]"
                 onClick={(e) => {
-                  if (e.target.tagName === 'A') {
+                  if (e.target.tagName === "A") {
                     setToggle(false);
                   }
                 }}
@@ -99,16 +99,38 @@ const Header = () => {
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
                             <Link to={"/sejarah"}>Sejarah</Link>
-                            <Link to={"/sejarah#visi-misi"}>Visi Misi</Link>
-                            <Link to={"/sejarah#organisasi"}>Struktur Organisasi</Link>
+                            <Link to={"/visi-misi"}>Visi Misi</Link>
+                            <Link to={"/manajemen"}>Manajemen</Link>
                             <Link to={"/lokasi"}>Lokasi</Link>
+                            <li>
+                              {" "}
+                              <Accordion sx={{ boxShadow: "none" }}>
+                                <AccordionSummary
+                                  expandIcon={<ExpandMoreIcon />}
+                                  aria-controls="panel1-content"
+                                  id="panel1-header"
+                                  sx={{ padding: "0px", border: "none" }}
+                                >
+                                  Laporan
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                  <ul>
+                                    <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
+                                      <Link to={"/sejarah"}>Laporan Triwulan</Link>
+                                      <Link to={"/visi-misi"}>Laporan GCG</Link>
+                                      <Link to={"/laporan"}>Laporan Tahunan</Link>
+                                    </li>
+                                  </ul>
+                                </AccordionDetails>
+                              </Accordion>
+                            </li>
                           </li>
                         </ul>
                       </AccordionDetails>
                     </Accordion>
                   </li>
                   <li className="my-3">
-                    <Link to={"/news"}>News</Link>
+                    <Link to={"/berita"}>Berita</Link>
                   </li>
                   <li>
                     <Accordion sx={{ boxShadow: "none" }}>
@@ -149,7 +171,6 @@ const Header = () => {
                             <Link to={"/"}>Simulasi</Link>
                             <Link to={"/promo"}>Promo</Link>
                             <Link to={"/sponsor"}>Sponsor</Link>
-                            <Link to={"/laporan"}>Laporan</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -207,9 +228,10 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
 const AboutUs = () => {
   const items = [
     { name: "Sejarah", link: "/sejarah" },
-    { name: "Visi Misi", link: "/sejarah#visi-misi" },
-    { name: "Struktur Organisasi", link: "/sejarah#organisasi" },
+    { name: "Visi Misi", link: "/visi-misi" },
+    { name: "Manajemen", link: "/manajemen" },
     { name: "Lokasi", link: "/lokasi" },
+    { name: "Laporan", link: "/laporan" },
   ];
 
   return <MenuList items={items} />;
@@ -232,7 +254,6 @@ const Service = () => {
     { name: "Simulasi", link: "/" },
     { name: "Promo", link: "/promo" },
     { name: "Sponsor", link: "/sponsor" },
-    { name: "Laporan", link: "/laporan" },
     { name: "Login", link: "https://etna.scxserver.com:2096" },
   ];
 
@@ -246,7 +267,7 @@ const MenuList = ({ items }) => {
       <ul className="flex flex-col text-center flex-1 gap-2">
         {items.map((item, index) => (
           <li key={index} className="hover:text-merahh-500 duration-300">
-            <Link to={item.link} >{item.name}</Link>
+            <Link to={item.link}>{item.name}</Link>
           </li>
         ))}
       </ul>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import IntroBanner from "../Layouts/IntroBanner";
-import { BlueBanner, loaderIcon } from "../helper";
-import TitleBlueBanner from "../Layouts/TitleBlueBanner";
-import styles from "../helper/style";
+import IntroBanner from "../../Layouts/IntroBanner";
+import { BlueBanner, loaderIcon } from "../../helper";
+import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
+import styles from "../../helper/style";
 
 const laporandata = [
   {
@@ -36,30 +36,25 @@ const laporandata = [
     file: "/src/img/Pembagian Kelompok MPLS PPLG.pdf",
   },
 ];
-const Laporan = () => {
+
+const LaporanTriwulan = () => {
   const [dataLaporan, setDataLaporan] = useState([]);
   const [filterLaporan, setFilterLaporan] = useState("Triwulan");
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/laporan")
-      .then((response) => response.json())
-      .then((data) => {
-        const filteredData = data.filter(
-          (lapor) => lapor.jenis_laporan.toLowerCase() === filterLaporan.toLowerCase()
-        ).reverse();
-        setDataLaporan(filteredData);
-      })
-      .catch((error) => {
-        console.error("Error fetching laporan data:", error);
-      });
-  }, [filterLaporan]);
+    let filteredData = laporandata;
+
+    filteredData = filteredData.filter((news) => news.jenis === filterLaporan);
+
+    setDataLaporan(filteredData);
+  }, []);
 
   return (
     <>
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Laporan"}
+          TitleBanner={"Laporan GCG"}
           DescriptionBanner={`
             Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
             memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -68,27 +63,11 @@ const Laporan = () => {
             keperluan Anda.
           `}
         />
-        <TitleBlueBanner title={"Laporan"} />
-      </section>
-
-      <section className="pt-10 flex justify-center">
-        <div className="flex gap-4 sm:max-w-full max-w-80 overflow-auto">
-          {["Triwulan", "Tahunan", "GCG"].map((category) => (
-            <div
-              key={category}
-              onClick={() => setFilterLaporan(category)}
-              className={`border-merahh-500 text-merahh-500 hover:bg-merahh-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
-                filterLaporan === category ? "bg-merahh-500 text-primary" : ""
-              }`}
-            >
-              {category}
-            </div>
-          ))}
-        </div>
+        <TitleBlueBanner title={"Laporan GCG"} />
       </section>
 
       <section
-        className={`${styles.paddingY} grid md:grid-cols-x3300 justify-center gap-8`}
+        className={`${styles.paddingY} ${styles.paddingX} grid md:grid-cols-x3300 justify-center gap-8`}
       >
         {dataLaporan.map((laporan, index) => (
           <div
@@ -97,18 +76,19 @@ const Laporan = () => {
           >
             <img src={loaderIcon} alt="" />
             <h2 className={`${styles.heading5} text-center`}>
-              {laporan.tanggal}
+              {/* {laporan.tanggal} */}
+              {laporan.judul}
             </h2>
             <div className="grid grid-cols-2 gap-4 font-semibold">
               <a
-                href={`http://localhost:8000/image/public/laporan/${laporan.file_laporan}`}
+                // href={`http://localhost:8000/image/public/laporan/${laporan.file_laporan}`}
                 target="_blank"
                 className={`${styles.flexCenter} border-2 border-merahh-500 text-merahh-500 px-2 py-2 rounded-md`}
               >
                 Lihat
               </a>
               <a
-                href={`http://localhost:8000/laporan/download/${laporan.file_laporan}`}
+                // href={`http://localhost:8000/laporan/download/${laporan.file_laporan}`}
                 download
                 className={`${styles.flexCenter} bg-merahh-500 text-primary px-4 py-2 rounded-md `}
               >
@@ -122,6 +102,4 @@ const Laporan = () => {
   );
 };
 
-
-
-export default Laporan;
+export default LaporanTriwulan;
