@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import IntroBanner from "../Layouts/IntroBanner";
-import TitleBlueBanner from "../Layouts/TitleBlueBanner";
-import FormBank from "../Components/FormBank";
-import styles from "../helper/style";
-import { PenempatanDana, BlueBanner } from "../helper";
+import IntroBanner from "../../Layouts/IntroBanner";
+import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
+import FormBank from "../../Components/FormBank";
+import styles from "../../helper/style";
+import { PenempatanDana, BlueBanner } from "../../helper";
 import {
   Paper,
   Table,
@@ -14,71 +14,55 @@ import {
   TableRow,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { Kredit } from "../Components/Form";
+import { Deposito } from "../../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../helper/DataProduk";
 import { nomorInduk } from "../helper/nomor";
-import LocalAtmIcon from "@mui/icons-material/LocalAtm";
-import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWorkRounded";
-import PlaylistAddCheckRoundedIcon from "@mui/icons-material/PlaylistAddCheckRounded";
-import ElderlyRoundedIcon from "@mui/icons-material/ElderlyRounded";
-import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-import MosqueRoundedIcon from "@mui/icons-material/MosqueRounded";
-import FilterVintageRoundedIcon from "@mui/icons-material/FilterVintageRounded";
 
 // ===================================================
 const buttonMenuTabungan = [
   {
     id: 1,
-    icon: (className) => <TrendingUpIcon className={className} />,
+    icon: (className) => (
+      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "Kredit Investasi",
-    deskripsi: "Raih keuntungan maksimal, masa depan gemilang",
+    deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
     jenis: "Via online",
   },
   {
     id: 2,
-    icon: (className) => <LocalAtmIcon className={className} />,
+    icon: (className) => (
+      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "Kredit Modal",
-    deskripsi: " Tambah modal usaha, sukses di tangan Anda",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 3,
-    icon: (className) => <MapsHomeWorkIcon className={className} />,
+    icon: (className) => (
+      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "Kredit KPR",
-    deskripsi: "Miliki rumah idaman, proses mudah dan cepat.",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
     jenis: "Via online",
   },
   {
     id: 4,
-    icon: (className) => <PlaylistAddCheckRoundedIcon className={className} />,
+    icon: (className) => (
+      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "Kredit Multiguna",
-    deskripsi: "Solusi pinjaman untuk semua kebutuhan Anda",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
     jenis: "Via online",
   },
   {
     id: 5,
-    icon: (className) => <ElderlyRoundedIcon className={className} />,
+    icon: (className) => (
+      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "Kredit Pensiun",
-    deskripsi: "Nikmati hari tua nyaman dengan finansial aman",
-  },
-  {
-    id: 6,
-    icon: (className) => <ShoppingCartRoundedIcon className={className} />,
-    title: "Kredit Konsumtif",
-    deskripsi: "Penuhi kebutuhan hidup Anda dengan pinjaman cepat dan mudah",
-  },
-  {
-    id: 7,
-    icon: (className) => <MosqueRoundedIcon className={className} />,
-    title: "Kredit Pembiayaan Umroh",
-    deskripsi: "Rencanakan umroh, jalani ibadah dengan tenang",
-  },
-  {
-    id: 8,
-    icon: (className) => <FilterVintageRoundedIcon className={className} />,
-    title: "Kredit Pembiayaan Ziarah",
-    deskripsi: "Nikmati ziarah penuh makna dengan biaya terjangkau dan mudah",
-    jenis: "Via online",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
 ];
 
@@ -101,7 +85,7 @@ const calculateRowSpan = (data, key) => {
 
 const rowSpanAmount = calculateRowSpan(PenempatanDana, "amount");
 
-const SyaratKredit = () => {
+const SyaratDeposito = () => {
   let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
   const [menu, setMenu] = useState(0);
@@ -127,7 +111,7 @@ const SyaratKredit = () => {
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Kredit"}
+          TitleBanner={"Deposito"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -136,12 +120,14 @@ const SyaratKredit = () => {
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={"Kredit"} />
+        <TitleBlueBanner title={"Deposito"} />
       </section>
 
       {/* Menu utama */}
       {menu === 0 ? (
-        <section className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}>
+        <section
+          className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}
+        >
           {/* menu button */}
           {buttonMenuTabungan.map((menu, index) => (
             <div
@@ -323,10 +309,10 @@ const SyaratKredit = () => {
                   className="mx-6 sm:mx-10 sm:px-10"
                 >
                   <FormBank
-                    isiPenting={<Kredit />}
-                    value={"Kredit"}
+                    isiPenting={<Deposito />}
+                    value={"Deposito"}
                     nomer={nomorInduk}
-                    endpoint={"http://localhost:8000/api/kredit"}
+                    endpoint={"http://localhost:8000/api/deposito"}
                   />
                 </motion.div>
               ) : null}
@@ -346,7 +332,7 @@ const SyaratKredit = () => {
                   tabs === 1 && "hidden"
                 } text-biruMuda-500 border-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
-                prev
+                Sebelumnya
               </div>
               <div
                 onClick={() => nextTab(tabs)}
@@ -354,7 +340,7 @@ const SyaratKredit = () => {
                   tabs === 4 && "hidden"
                 } bg-biruMuda-500 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
-                next
+                Lanjut
               </div>
             </section>
           </section>
@@ -364,5 +350,4 @@ const SyaratKredit = () => {
   );
 };
 
-export default SyaratKredit;
-// mahes 7 agustus 2024
+export default SyaratDeposito;

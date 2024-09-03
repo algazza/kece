@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import IntroBanner from "../Layouts/IntroBanner";
-import TitleBlueBanner from "../Layouts/TitleBlueBanner";
-import FormBank from "../Components/FormBank";
-import styles from "../helper/style";
-import { PenempatanDana, BlueBanner } from "../helper";
+import IntroBanner from "../../Layouts/IntroBanner";
+import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
+import FormBank from "../../Components/FormBank";
+import styles from "../../helper/style";
+import { PenempatanDana, BlueBanner } from "../../helper";
 import {
   Paper,
   Table,
@@ -14,44 +14,88 @@ import {
   TableRow,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { Deposito } from "../Components/Form";
+import { Kredit } from "../../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../helper/DataProduk";
 import { nomorInduk } from "../helper/nomor";
-
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import SchoolIcon from "@mui/icons-material/School";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import MosqueIcon from "@mui/icons-material/Mosque";
+import ElderlyIcon from "@mui/icons-material/Elderly";
+import GroupsIcon from "@mui/icons-material/Groups";
+import DevicesOtherIcon from "@mui/icons-material/DevicesOther";
 // ===================================================
 const buttonMenuTabungan = [
   {
     id: 1,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Investasi",
+    icon: (className) => (
+      <AccountBalanceIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Umum",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
-    jenis: "Via online",
   },
   {
     id: 2,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Modal",
+    icon: (className) => (
+      <AccountBalanceWalletIcon
+        className={className}
+        sx={{ fontSize: "40px" }}
+      />
+    ),
+    title: "Tabungan ProActive",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    jenis: "Via online",
   },
   {
     id: 3,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit KPR",
+    icon: (className) => (
+      <SchoolIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Simpel",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
     jenis: "Via online",
   },
   {
     id: 4,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Multiguna",
+    icon: (className) => (
+      <MosqueIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Umroh (TABUM)",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    id: 5,
+    icon: (className) => (
+      <ElderlyIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Pensiun",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
     jenis: "Via online",
   },
   {
-    id: 5,
-    icon: (className) => <TrendingUpIcon className={className} />,
-    title: "Kredit Pensiun",
+    id: 6,
+    icon: (className) => (
+      <GroupsIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Arisan",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    id: 7,
+    icon: (className) => (
+      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "SimpHaTi",
+    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    jenis: "Via online",
+  },
+  {
+    id: 8,
+    icon: (className) => (
+      <DevicesOtherIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Tabungan Gemilang",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
 ];
@@ -75,7 +119,7 @@ const calculateRowSpan = (data, key) => {
 
 const rowSpanAmount = calculateRowSpan(PenempatanDana, "amount");
 
-const SyaratDeposito = () => {
+const SyaratTabungan = () => {
   let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
   const [menu, setMenu] = useState(0);
@@ -101,7 +145,7 @@ const SyaratDeposito = () => {
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Deposito"}
+          TitleBanner={"Tabungan"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
@@ -110,25 +154,27 @@ const SyaratDeposito = () => {
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={"Deposito"} />
+        <TitleBlueBanner title={"Tabugan"} />
       </section>
 
       {/* Menu utama */}
       {menu === 0 ? (
-        <section className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}>
-        {/* menu button */}
-        {buttonMenuTabungan.map((menu, index) => (
-          <div
-            className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
-            key={index}
-            onClick={() => updateMenu(menu.id)}
-          >
-            {menu.icon("m-2 text-blue-400")}
-            <h6 className={`${styles.heading6}`}>{menu.title}</h6>
-            <p className="mt-4">{menu.deskripsi}</p>
-          </div>
-        ))}
-      </section>
+        <section
+          className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}
+        >
+          {/* menu button */}
+          {buttonMenuTabungan.map((menu, index) => (
+            <div
+              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
+              key={index}
+              onClick={() => updateMenu(menu.id)}
+            >
+              {menu.icon("m-2 text-blue-400")}
+              <h6 className={`${styles.heading6}`}>{menu.title}</h6>
+              <p className="mt-4">{menu.deskripsi}</p>
+            </div>
+          ))}
+        </section>
       ) : null}
 
       {IsiKredit.map((kredit) => {
@@ -296,12 +342,14 @@ const SyaratDeposito = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-6 sm:mx-10 sm:px-10"
                 >
-                  <FormBank
-                    isiPenting={<Deposito />}
-                    value={"Deposito"}
-                    nomer={nomorInduk}
-                    endpoint={"http://localhost:8000/api/deposito"}
-                  />
+                  <div className={`${styles.flexCenter}`}>
+                    <FormBank
+                      isiPenting={<Kredit />}
+                      value={"Tabungan"}
+                      nomer={nomorInduk}
+                      endpoint={"http://localhost:8000/api/tabungan"}
+                    />
+                  </div>
                 </motion.div>
               ) : null}
             </section>
@@ -320,7 +368,7 @@ const SyaratDeposito = () => {
                   tabs === 1 && "hidden"
                 } text-biruMuda-500 border-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
-                prev
+                Sebelumnya
               </div>
               <div
                 onClick={() => nextTab(tabs)}
@@ -328,7 +376,7 @@ const SyaratDeposito = () => {
                   tabs === 4 && "hidden"
                 } bg-biruMuda-500 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
-                next
+                Lanjut
               </div>
             </section>
           </section>
@@ -338,4 +386,5 @@ const SyaratDeposito = () => {
   );
 };
 
-export default SyaratDeposito;
+export default SyaratTabungan;
+// mahes 7 agustus 2024
