@@ -135,6 +135,11 @@
                       </a>
                   @endif
                   @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
+                  <a href="{{ route('penghargaan.index') }}">
+                      <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Penghargaan</h1>
+                  </a>
+              @endif
+                  @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
                   <a href="{{ route('banner') }}">
                       <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Banner</h1>
                   </a>

@@ -42,32 +42,46 @@ class PenghargaanController extends Controller
 
 
     public function update(Request $request, $id){
-        $penghargaan = Penghargaan::find($id);
-
-        $validateData = $request->validate([
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'nama_penghargaan' => 'required',
-        ]);
-
-        if($request->hasFile('image')){
-            $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('image/public/penghargaan'),$imageName);
-            $validateData['image'] = $imageName;
-        } else{
-            if(!isset($validateData['image'])){
-                $validateData['image'] = $penghargaan->image;
+        try{
+            $penghargaan = Penghargaan::find($id);
+    
+            $validateData = $request->validate([
+                'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'nama_penghargaan' => 'required',
+            ]);
+    
+            if($request->hasFile('image')){
+                $imageName = time() . '.' . $request->image->extension();
+                $request->image->move(public_path('image/public/penghargaan'),$imageName);
+                $validateData['image'] = $imageName;
+            } else{
+                if(!isset($validateData['image'])){
+                    $validateData['image'] = $penghargaan->image;
+                }
             }
+    
+            $penghargaan->update($validateData);
+    
+            return redirect()->route('penghargaan.index')->with('success', 'Data Penghargaan Behasil Di Perbarui');
+        }catch(\Exception $e){
+            return redirect()->route('penghargaan.index')->with('error', 'Data Penghargaan Gagal Di Perbarui');
         }
-
-        $penghargaan->update($validateData);
-
-        return redirect()->route('penghargaan.index')->with('success', 'Data Penghargaan Behasil Di Perbarui');
     }
 
     public function destroy($id){
-        $penghargaan = Penghargaan::find($id);
-        $penghargaan->delete();
-        return redirect()->route('penghargaan.index')->with('success', 'Data Penghargaan Behasil Di Hapus');
+        try{
+            $penghargaan = Penghargaan::find($id);
+            $penghargaan->delete();
+            return redirect()->route('penghargaan.index')->with('success', 'Data Penghargaan Behasil Di Hapus');
+        } catch(\Exception $e){
+            return redirect()->route('penghargaan.index')->with('error', 'Data Penghargaan Gagal Di Hapus');
+        }
 
+    }
+
+
+    public function index(){
+        $penghargaan = Penghargaan::orderBy('created_at', 'DESC')->get();
+        return response()->json($penghargaan);
     }
 }

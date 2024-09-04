@@ -14,6 +14,7 @@ use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\TabunganController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PenghargaanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,7 @@ Route::resource('tabungan',TabunganController::class);
 Route::resource('noAdmin',NoAdminController::class);
 Route::resource('sponsor',SponsorController::class);
 Route::resource('laporan',LaporanController::class);
+Route::resource('penghargaan',PenghargaanController::class);
 
 
 Route::get('/api/dashboard/kredit', [DashboardController::class, 'data']);
