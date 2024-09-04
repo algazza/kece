@@ -153,7 +153,7 @@ const News = () => {
           <div
             key={news.id}
             className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
-            onClick={() => navigate(`/news/${news.id}`)}
+            onClick={() => navigate(`/berita/${news.id}`)}
           >
             <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
               <img

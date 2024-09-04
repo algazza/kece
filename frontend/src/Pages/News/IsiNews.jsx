@@ -11,7 +11,7 @@ import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import { loaderIcon } from "../../helper";
 
 const IsiNews = () => {
-  const { id } = useParams(); // Ambil id dari URL
+  const { id } = useParams();
   const [news, setNews] = useState(null);
   const [error, setError] = useState(null);
   const [newsData, setNewsData] = useState([]);
