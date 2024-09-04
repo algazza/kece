@@ -3,7 +3,7 @@
 @section('content')
 <div class="bg-gray-100 font-[sans-serif] min-h-screen flex items-center justify-center">
     <div class="w-full max-w-[50rem] p-6">
-        <div class="p-8 rounded-2xl bg-transparent shadow-md w-full">
+        <div class="p-8 rounded-2xl bg-white border border-gray-300 shadow-md w-full">
             <form action="{{ route('news.update', $news->id) }}" method="POST" class="mt-4 space-y-4" enctype="multipart/form-data">
                 @csrf
                 @method('PUT') 
