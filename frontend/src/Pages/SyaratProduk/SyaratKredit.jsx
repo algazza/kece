@@ -3,16 +3,7 @@ import IntroBanner from "../../Layouts/IntroBanner";
 import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
 import FormBank from "../../Components/FormBank";
 import styles from "../../helper/style";
-import { PenempatanDana, BlueBanner } from "../../helper";
-import {
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-} from "@mui/material";
+import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
 import { Kredit } from "../../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
@@ -25,6 +16,7 @@ import ElderlyRoundedIcon from "@mui/icons-material/ElderlyRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import MosqueRoundedIcon from "@mui/icons-material/MosqueRounded";
 import FilterVintageRoundedIcon from "@mui/icons-material/FilterVintageRounded";
+import TabelComp from "../../Components/TabelComp";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -107,27 +99,7 @@ const buttonMenuTabungan = [
   },
 ];
 
-// =================== Tabel ===========================
-const calculateRowSpan = (data, key) => {
-  const rowSpanData = [];
-  let count = 1;
-
-  for (let i = 0; i < data.length; i++) {
-    if (i === data.length - 1 || data[i][key] !== data[i + 1][key]) {
-      rowSpanData.push(count);
-      count = 1;
-    } else {
-      count++;
-    }
-  }
-
-  return rowSpanData;
-};
-
-const rowSpanAmount = calculateRowSpan(PenempatanDana, "amount");
-
 const SyaratKredit = () => {
-  let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
   const [menu, setMenu] = useState(0);
 
@@ -270,73 +242,7 @@ const SyaratKredit = () => {
                     D. Tabel Penempatan Dana
                   </h3>
 
-                  <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} aria-label="data tabel">
-                      <TableHead>
-                        <TableRow className="bg-biruMuda-400">
-                          <TableCell
-                            align="center"
-                            style={{ border: "1px solid black" }}
-                          >
-                            No
-                          </TableCell>
-                          <TableCell style={{ border: "1px solid black" }}>
-                            Nominal Tabungan
-                          </TableCell>
-                          <TableCell style={{ border: "1px solid black" }}>
-                            Jangka Waktu (Tahun)
-                          </TableCell>
-                          <TableCell style={{ border: "1px solid black" }}>
-                            Nominal Hadiah
-                          </TableCell>
-                        </TableRow>
-                      </TableHead>
-
-                      <TableBody>
-                        {kredit.Tabel.map((row, index, idx) => {
-                          let shouldRenderAmountCell = false;
-
-                          if (
-                            index === 0 ||
-                            row.amount !== PenempatanDana[index - 1].amount
-                          ) {
-                            shouldRenderAmountCell = true;
-                          }
-
-                          const amountCell = shouldRenderAmountCell ? (
-                            <TableCell
-                              rowSpan={rowSpanAmount[amountIndex]}
-                              style={{ border: "1px solid black" }}
-                            >
-                              {row.amount.toLocaleString("id-ID")}
-                            </TableCell>
-                          ) : null;
-
-                          if (shouldRenderAmountCell) {
-                            amountIndex += 1;
-                          }
-
-                          return (
-                            <TableRow key={idx}>
-                              <TableCell
-                                align="center"
-                                style={{ border: "1px solid black" }}
-                              >
-                                {index + 1}
-                              </TableCell>
-                              {amountCell}
-                              <TableCell style={{ border: "1px solid black" }}>
-                                {row.term}
-                              </TableCell>
-                              <TableCell style={{ border: "1px solid black" }}>
-                                {row.reward.toLocaleString("id-ID")}
-                              </TableCell>
-                            </TableRow>
-                          );
-                        })}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
+                  <TabelComp kredit={kredit.Tabel} />
                 </motion.div>
               ) : null}
 

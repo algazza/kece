@@ -205,7 +205,7 @@ const FormBank = ({
         </div>
 
         <div className="flex gap-10">
-          <ButtonFull onClick={submitForm}>Hubungi Kami</ButtonFull>
+          <ButtonFull WidthButton="w-36" WidthShadow = "w-40" onClick={submitForm}>Hubungi Kami</ButtonFull>
         </div>
       </FormGroup>
     </section>

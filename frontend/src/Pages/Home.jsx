@@ -31,6 +31,7 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import AddIcon from "@mui/icons-material/Add";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
+import SimulasiCalc from "../Components/SimulasiCalc";
 
 const images = [
 
@@ -248,9 +249,13 @@ const Home = () => {
         </div>
       </section>
 
+      <section className={`${styles.paddingY} ${styles.paddingX}`}>
+        <SimulasiCalc/>
+      </section>
+
       <section className={`${styles.paddingY}`}>
         <h2 className={`${styles.heading3}  text-center mb-12`}>
-          Company Profile
+          Moment Arto Moro
         </h2>
         <div className={`${styles.flexCenter}`}>
           <img
@@ -272,8 +277,6 @@ const Home = () => {
                   <CloseIcon />
                 </div>
                 <iframe
-                  width="560"
-                  height="315"
                   src="https://www.youtube.com/embed/UPubaRIRWkA?si=Lt32z9nnSQ4RUFJV"
                   title="YouTube video player"
                   frameborder="0"

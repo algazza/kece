@@ -214,22 +214,22 @@ export const profileDewanKomisaris = [
 export const formIdentitas = [
   {
     id: "nama",
-    title: "Name",
+    title: "Name*",
     type: "text",
   },
   {
     id: "email",
-    title: "Email",
+    title: "Email*",
     type: "email",
   },
   {
     id: "no_handphone",
-    title: "No. Handphone",
+    title: "No. Handphone*",
     type: "number",
   },
   {
     id: "nik",
-    title: "NIK",
+    title: "NIK*",
     type: "number",
   },
 ];
