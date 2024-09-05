@@ -129,7 +129,7 @@
                       <a href="{{ route('noAdmin') }}">
                           <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Nomor</h1>
                       </a>
-                  @endif
+                  @endif   
                   @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
                       <a href="{{ route('sponsor.index') }}">
                           <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Sponsor</h1>
