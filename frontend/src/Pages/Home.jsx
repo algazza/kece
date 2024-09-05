@@ -8,9 +8,14 @@ import ImageBanner from "../Layouts/ImageBanner";
 import {
   Banneremyu,
   BennerLiv,
+  ImageSimulasi,
   nunezimg,
   phoneimg,
   sampleBanner,
+  SimulasiPercil1,
+  SimulasiPercil2,
+  SimulasiPercil3,
+  SimulasiPercil4,
 } from "../helper";
 // ==================== ICON ===========================
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
@@ -33,70 +38,68 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
 import SimulasiCalc from "../Components/SimulasiCalc";
 
-const images = [
-
-];
+const images = [];
 
 const menuHome = [
   {
     id: 1,
     icon: (className) => <AccountBalanceIcon className={className} />,
     title: "Kredit",
-    link: "kredit"
+    link: "kredit",
   },
   {
     id: 2,
     icon: (className) => <MonetizationOnIcon className={className} />,
     title: "Deposito",
-    link: "deposito"
+    link: "deposito",
   },
   {
     id: 3,
     icon: (className) => <AccountBalanceWalletIcon className={className} />,
     title: "Tabungan",
-    link: "tabungan"
+    link: "tabungan",
   },
   {
     id: 4,
     icon: (className) => <LocationOnIcon className={className} />,
     title: "Location",
-    link: "lokasi"
+    link: "lokasi",
   },
   {
     id: 5,
     icon: (className) => <LocalShippingIcon className={className} />,
     title: "Mobil Kas",
-    link: ""
+    link: "",
   },
   {
     id: 6,
     icon: (className) => <DirectionsCarIcon className={className} />,
     title: "Pickup",
-    link: "pick-up-service"
+    link: "pick-up-service",
   },
   {
     id: 7,
     icon: (className) => <HomeIcon className={className} />,
     title: "Properti",
-    link: "armor-prop"
+    link: "armor-prop",
   },
   {
     id: 8,
     icon: (className) => <DiscountIcon className={className} />,
     title: "Promo",
-    link: ""
+    link: "",
   },
   {
     id: 9,
     icon: (className) => <CalculateIcon className={className} />,
     title: "Simulasi",
-    link: ""
+    link: "",
   },
   {
     id: 10,
     icon: (className) => <PercentIcon className={className} />,
     title: "Rate Bunga",
-    link: ""
+    link: "",
   },
 ];
 
@@ -143,7 +146,9 @@ const Home = () => {
       .then((response) => response.json())
       .then((data) => {
         // Asumsikan data yang diterima adalah array objek dengan properti 'filename' untuk nama file gambar
-        const imageUrls = data.map((item) => `http://localhost:8000/image/public/banner/${item.image}`);
+        const imageUrls = data.map(
+          (item) => `http://localhost:8000/image/public/banner/${item.image}`
+        );
         setImages(imageUrls);
       })
       .catch((error) => {
@@ -158,7 +163,6 @@ const Home = () => {
       .catch((err) => {
         toast.error("Gagal Memunculkan News!");
       });
-
   }, []);
 
   const handleOpen = () => {
@@ -192,9 +196,7 @@ const Home = () => {
                 key={menu.id}
                 className="group bg-abuTerang grid justify-items-center py-2 sm:px-6 px-3 rounded-xl transition-all duration-300 ease-in-out"
               >
-                {menu.icon(
-                  "text-abuGelap group-hover:text-merahh-500 "
-                )}
+                {menu.icon("text-abuGelap group-hover:text-merahh-500 ")}
                 <h2 className={`${styles.fontBodyBold} flex-shrink-0 `}>
                   {menu.title}
                 </h2>
@@ -249,8 +251,24 @@ const Home = () => {
         </div>
       </section>
 
-      <section className={`${styles.paddingY} ${styles.paddingX}`}>
-        <SimulasiCalc/>
+      <section className={`${styles.paddingY} ${styles.paddingX} md:grid md:grid-cols-2 bg-biruMuda-100 relative`}>
+        <div className="hidden md:block">
+          <img src={ImageSimulasi} alt="" />
+        </div>
+
+        <img src={SimulasiPercil1} alt="" className="absolute md:top-[160px] md:left-[100px] max-md:bottom-[70px] max-md:right-[70px] w-[100px]" />
+        <img src={SimulasiPercil2} alt="" className="absolute md:top-[32px] md:left-[250px] top-[32px] max-md:right-[30px] w-[80px]" />
+        <img src={SimulasiPercil3} alt="" className="absolute md:top-[80px] md:left-[480px] top-[120px] -left-[20px]" />
+        <img src={SimulasiPercil4} alt="" className="absolute md:top-[260px] md:left-[500px] max-md:hidden" />
+
+        <div>
+          <h2 className={`${styles.heading4} mb-4`}>
+            <span className="text-biruMuda-500">Simulasi Hitung</span> Tabungan,
+            Kredit, dan Deposito
+          </h2>
+          <SimulasiCalc />
+
+        </div>
       </section>
 
       <section className={`${styles.paddingY}`}>

@@ -112,6 +112,7 @@ const FormBank = ({
                   className="rounded-md outline-none"
                   value={inputs[iden.id]}
                   onChange={handleChange}
+                  required
                 />
               ))}
             </div>
@@ -126,6 +127,7 @@ const FormBank = ({
                       control={<Radio />}
                       label={kerja.title}
                       value={kerja.id}
+                      required
                     />
                   ))}
                 </RadioGroup>
@@ -143,6 +145,7 @@ const FormBank = ({
                 name="alamat"
                 value={inputs.alamat}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
