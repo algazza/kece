@@ -187,6 +187,20 @@
                     </div>
                 </a>
                 @endif
+                @if (Auth::user()->role == 'admin' || Auth::user()->role == 'promosi' )
+                <a href="{{ route('penghargaan.index') }}">
+                    <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
+                        <div class="flex">
+                            <div class="text-[3.5rem] mt-[-0.1rem] mx-[1.5rem]">
+                                <i class='bx bx-award text-black'></i>
+                            </div>
+                            <div class="block mt-[0.8rem]">
+                                <h3 class="text-[1.1rem] font-bold pt-2">Penghargaan</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                @endif
                 @if (Auth::user()->role == 'admin')
                 <a href="{{ route('laporan.index') }}">
                     <div class="w-[23rem] sm:w-[35rem] h-[4.4rem] bg-gray-50 rounded-[5px] my-[0.6rem] box-border border-[0.5px] border-black shadow-md cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 sm:flex-row lg:flex-wrap lg:justify-between">
@@ -214,9 +228,7 @@
                     
                 </div>
                 <div class="h-[calc(100%-4.7rem)] pb-[2rem] overflow-auto" id="content">
-                    @foreach ($dashboard as $no => $data)
                         {{-- data user form --}}
-                    @endforeach
                 </div>
                 <div class="pagination-links flex pl-[25rem] text-[1.2rem] text-black bottom-0 py-[0.5rem] absolute w-full bg-gray-50 box-border border-black border-t-[0.1px]">
                     {{-- {{ $dashboard->links() }} --}}

@@ -45,7 +45,7 @@ class KreditWeek
         return $this->chart->lineChart()
             ->setTitle('Jumlah Data Yang Masuk 1 Minggu Terakhir')
             ->addData('Jumlah Entri', $counts)
-            ->setHeight(210)
+            ->setHeight(260)
             ->setXAxis($dates);
     }
 }

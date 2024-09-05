@@ -4,7 +4,6 @@ namespace App\Charts\deposito;
 
 use ArielMejiaDev\LarapexCharts\LarapexChart;
 use App\Models\Deposito;
-use App\Models\Tabungan;
 use Carbon\Carbon;
 
 class KreditWeek
@@ -21,7 +20,7 @@ class KreditWeek
         $now = Carbon::now();
         $startTime = $now->copy()->subWeek()->startOfDay();
 
-        $tabungan = Tabungan::whereBetween('created_at', [$startTime, $now])
+        $deposito = Deposito::whereBetween('created_at', [$startTime, $now])
                          ->select('created_at')
                          ->orderBy('created_at')
                          ->get()
@@ -38,7 +37,7 @@ class KreditWeek
         while ($current->lessThanOrEqualTo($end)) {
             $dateLabel = $current->format('d M');
             $dates[] = $dateLabel;
-            $counts[] = isset($tabungan[$current->format('Y-m-d')]) ? count($tabungan[$current->format('Y-m-d')]) : 0;
+            $counts[] = isset($deposito[$current->format('Y-m-d')]) ? count($deposito[$current->format('Y-m-d')]) : 0;
 
             $current->addDay();
         }
@@ -46,7 +45,7 @@ class KreditWeek
         return $this->chart->lineChart()
             ->setTitle('Jumlah Data Yang Masuk 1 Minggu Terakhir')
             ->addData('Jumlah Entri', $counts)
-            ->setHeight(210)
+            ->setHeight(260)
             ->setXAxis($dates);
     }
 }

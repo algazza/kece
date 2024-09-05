@@ -19,6 +19,7 @@ class DummyUsers extends Seeder
                 'email' => 'admin@gmail.com',
                 'role' => 'admin',
                 'no_handphone' => '088997998998',
+                'image' => 'profil.jpg',
                 'password' => bcrypt('123456')
             ],
             [
@@ -26,6 +27,7 @@ class DummyUsers extends Seeder
                 'email' => 'deposit@gmail.com',
                 'role' => 'deposito',
                 'no_handphone' => '088997998998',
+                'image' => 'profil.jpg',
                 'password' => bcrypt('123456')
             ],
         ];

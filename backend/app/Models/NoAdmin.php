@@ -13,11 +13,6 @@ class NoAdmin extends Model
 
 
     protected $fillable = [
-        'no_kredit',
-        'no_deposito',
-        'no_tabungan',
         'no_induk',
-        'no_sponsor',
-        'no_pickup',
     ];
 }

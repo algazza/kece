@@ -45,7 +45,7 @@
 
   </div>
 
-  <section class="py-8 grid md:grid-cols-x480 justify-center gap-6 sm:gap-12">
+  <section class="py-8 grid md:grid-cols-x480 ml-[2rem] mr-[2rem] justify-center gap-6 sm:gap-12">
     @foreach($news as $item)
     <a href="{{ route('news.edit', ['id' => $item->id]) }}">
         <div
@@ -61,7 +61,7 @@
 
             <div class="p-4 flex flex-col justify-center">
                 <p class="text-sm font-bold text-merahh">{{ $item->kategory }}</p>
-                <h6 class="text-lg font-semibold">{{ $item->judul }}</h6>
+                <h6 class="text-base font-semibold">{{ $item->judul }}</h6>
                 <p class="text-sm text-gray-600 mt-2">
                     {{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}
                 </p>

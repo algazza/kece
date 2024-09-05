@@ -4,50 +4,28 @@ import { BlueBanner, loaderIcon } from "../../helper";
 import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
 import styles from "../../helper/style";
 
-const laporandata = [
-  {
-    judul: "Maret 2024",
-    jenis: "Triwulan",
-    file: "/src/img/Pembagian Kelompok MPLS PPLG.pdf",
-  },
-  {
-    judul: "Juni 2024",
-    jenis: "Triwulan",
-    file: "/src/img/Pembagian Kelompok MPLS PPLG.pdf",
-  },
-  {
-    judul: "Deseber 2024",
-    jenis: "Triwulan",
-    file: "/src/img/Pembagian Kelompok MPLS PPLG.pdf",
-  },
-  {
-    judul: "Tahun 2024",
-    jenis: "Tahunan",
-    file: "/src/img/Pembagian Kelompok MPLS PPLG.pdf",
-  },
-  {
-    judul: "GCG 2023",
-    jenis: "GCG",
-    file: "/src/img/Pembagian Kelompok MPLS PPLG.pdf",
-  },
-  {
-    judul: "GCG 2024",
-    jenis: "GCG",
-    file: "/src/img/Pembagian Kelompok MPLS PPLG.pdf",
-  },
-];
-
 const LaporanGCG = () => {
   const [dataLaporan, setDataLaporan] = useState([]);
   const [filterLaporan, setFilterLaporan] = useState("GCG");
 
   useEffect(() => {
-    let filteredData = laporandata;
-
-    filteredData = filteredData.filter((news) => news.jenis === filterLaporan);
-
-    setDataLaporan(filteredData);
-  }, []);
+    // Fetch data from API and filter based on the current filter
+    fetch("http://localhost:8000/api/laporan")
+      .then((response) => response.json())
+      .then((data) => {
+        // Filter data based on the filterLaporan state
+        const filteredData = data
+          .filter(
+            (lapor) =>
+              lapor.jenis_laporan.toLowerCase() === filterLaporan.toLowerCase()
+          )
+          .reverse();
+        setDataLaporan(filteredData);
+      })
+      .catch((error) => {
+        console.error("Error fetching laporan data:", error);
+      });
+  }, [filterLaporan]);
 
   return (
     <>
@@ -74,23 +52,23 @@ const LaporanGCG = () => {
             key={index}
             className="p-4 border-2 rounded-md grid gap-2 justify-center"
           >
-            <img src={loaderIcon} alt="" />
+            <img src={loaderIcon} alt="Loading" />
             <h2 className={`${styles.heading5} text-center`}>
-              {/* {laporan.tanggal} */}
-              {laporan.judul}
+              {laporan.tanggal}
             </h2>
             <div className="grid grid-cols-2 gap-4 font-semibold">
               <a
-                // href={`http://localhost:8000/image/public/laporan/${laporan.file_laporan}`}
+                href={`http://localhost:8000/image/public/laporan/${laporan.file_laporan}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className={`${styles.flexCenter} border-2 border-merahh-500 text-merahh-500 px-2 py-2 rounded-md`}
               >
                 Lihat
               </a>
               <a
-                // href={`http://localhost:8000/laporan/download/${laporan.file_laporan}`}
+                href={`http://localhost:8000/laporan/download/${laporan.file_laporan}`}
                 download
-                className={`${styles.flexCenter} bg-merahh-500 text-primary px-4 py-2 rounded-md `}
+                className={`${styles.flexCenter} bg-merahh-500 text-primary px-4 py-2 rounded-md`}
               >
                 Download
               </a>

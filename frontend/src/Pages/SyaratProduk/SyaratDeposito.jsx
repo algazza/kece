@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 import { Deposito } from "../../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../../helper/DataProduk";
-import { nomorDeposito } from "../../helper/nomor";
 import TabelComp from "../../Components/TabelComp";
+import { nomorInduk } from "../../helper/nomor";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -217,7 +217,7 @@ const SyaratDeposito = () => {
                   <FormBank
                     isiPenting={<Deposito />}
                     value={"Deposito"}
-                    nomer={nomorDeposito}
+                    nomer={nomorInduk}
                     endpoint={"http://localhost:8000/api/deposito"}
                   />
                 </motion.div>

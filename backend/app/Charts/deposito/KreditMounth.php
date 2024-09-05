@@ -51,7 +51,7 @@ class KreditMounth
         return $this->chart->lineChart()
             ->setTitle('Jumlah Data Yang masuk 1 Bulan Terakhir')
             ->addData('Jumlah Entri', $counts)
-            ->setHeight(210)
+            ->setHeight(260)
             ->setXAxis($intervals);
     }
 }

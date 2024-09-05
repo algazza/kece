@@ -15,12 +15,7 @@ class NoAdminSeeder extends Seeder
     {
         $userData = [
             [
-                'no_kredit' => '088998998',
-                'no_deposito' => '0998998',
-                'no_tabungan' => '07998998',
-                'no_induk' => '97998998',
-                'no_sponsor' => '882006969408',
-                'no_pickup' => '8158319123',
+                'no_induk' => '81327890199',
             ],
         ];
 

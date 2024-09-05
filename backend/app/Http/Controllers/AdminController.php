@@ -49,7 +49,6 @@ class AdminController extends Controller
                 return redirect()->route('dashboard');
             }
         } else {
-            Log::warning('Failed login attempt', $infologin);
             return redirect()->route('login')->withErrors('Email atau password tidak valid');
         }
     }
