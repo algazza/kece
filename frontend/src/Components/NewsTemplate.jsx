@@ -26,7 +26,7 @@ const NewsTemplate = ({
         setNewsData(data);
       })
       .catch((err) => {
-        toast.error("Gagal Memunculkan News!");
+        toast.error("Gagal Memunculkan Berita!");
       });
   }, []);
 
