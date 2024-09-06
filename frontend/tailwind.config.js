@@ -58,6 +58,7 @@ export default {
         x2500: "620px 230px",
         x250: "250px 250px",
         x550: "550px 550px",
+        x170: "150px 220px",
         x5170: "repeat(5, 140px)",
         x4180: "repeat(4, 180px)",
         x3300: "repeat(3, 300px)",

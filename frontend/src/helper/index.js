@@ -23,6 +23,7 @@ import Banneremyu from "../img/Banner2.svg"; //1250 x 477 || 21 : 8
 import awardimg from "../img/awardimage.png"
 import pdfexample from "../img/Pembagian Kelompok MPLS PPLG.pdf"
 import ImageSimulasi from "../img/BankImageSimulasi.svg"
+import ThumbnailYoutube from "../img/thumbnailYoutube.png"
 
 export {
   logoArmor,
@@ -38,6 +39,7 @@ export {
   nunezimg,
   sampleNews,
   pdfexample,
+  ThumbnailYoutube,
   SimulasiPercil1,
   SimulasiPercil2,
   SimulasiPercil3,
@@ -224,22 +226,22 @@ export const profileDewanKomisaris = [
 export const formIdentitas = [
   {
     id: "nama",
-    title: "Name*",
+    title: "Name",
     type: "text",
   },
   {
     id: "email",
-    title: "Email*",
+    title: "Email",
     type: "email",
   },
   {
     id: "no_handphone",
-    title: "No. Handphone*",
+    title: "No. Handphone",
     type: "number",
   },
   {
     id: "nik",
-    title: "NIK*",
+    title: "NIK",
     type: "number",
   },
 ];
