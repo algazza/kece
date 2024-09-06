@@ -315,7 +315,7 @@ const Home = () => {
             <div
               key={news.id}
               className="p-4 bg-abuTerang rounded-xl cursor-pointer"
-              onClick={() => navigate(`/news/${news.id}`)}
+              onClick={() => navigate(`/berita/${news.id}`)}
             >
               <img
                 src={`http://localhost:8000/image/public/news/${news.image}`}
