@@ -132,11 +132,7 @@ const IsiNews = () => {
 
           <div className={`${styles.fontBodyBold}`}>
             <p>
-              {new Intl.DateTimeFormat("id-ID", {
-                day: "2-digit",
-                month: "2-digit",
-                year: "numeric",
-              }).format(new Date(news.created_at))}
+              {news.tanggal}
             </p>
             <p>{news.penulis}</p>
           </div>

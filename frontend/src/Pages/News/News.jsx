@@ -169,11 +169,7 @@ const News = () => {
               </p>
               <h6 className={`${styles.heading6} `}>{news.judul}</h6>
               <p className={`${styles.fontSmall} text-abuGelap`}>
-                {new Intl.DateTimeFormat("id-ID", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
-                }).format(new Date(news.created_at))}
+                  {news.tanggal}
               </p>
             </div>
           </div>

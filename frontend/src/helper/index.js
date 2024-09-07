@@ -358,11 +358,11 @@ export const formJenisSponsor = [
     name: "",
   },
   {
-    id: "tissue",
+    id: "Tempat Tissue / Gelas",
     title: "Tempat Tissue / Gelas",
   },
   {
-    id: "meja",
+    id: "Nomor Meja",
     title: "Nomor Meja",
   },
   {

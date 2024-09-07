@@ -347,13 +347,7 @@ const Home = () => {
                 </p>
                 <h6 className={`${styles.heading6} my-2`}>{news.judul}</h6>
                 <p className={`${styles.fontSmall} text-abuGelap`}>
-                  {news.created_at
-                    ? new Intl.DateTimeFormat("id-ID", {
-                        day: "2-digit",
-                        month: "2-digit",
-                        year: "numeric",
-                      }).format(new Date(news.created_at))
-                    : "Tanggal tidak tersedia"}
+                  {news.tanggal}
                 </p>
               </div>
             </div>
