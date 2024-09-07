@@ -63,7 +63,7 @@
                 <p class="text-sm font-bold text-merahh">{{ $item->kategory }}</p>
                 <h6 class="text-base font-semibold">{{ $item->judul }}</h6>
                 <p class="text-sm text-gray-600 mt-2">
-                    {{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}
+                    {{ $item->tanggal }}
                 </p>
             </div>
         </div>

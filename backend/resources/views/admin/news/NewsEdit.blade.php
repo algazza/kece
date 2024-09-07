@@ -33,13 +33,22 @@
                             </div>
                         </div>
                         <div class="mb-2 w-full">
-                            <label class="text-slate-500 text-sm mt-2 block">Kategori</label>
+                            <label class="text-gray-800 text-sm mt-2 block">Kategori</label>
                             <select class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" name="kategory" required>
                                 <option value="Penghargaan" {{ $news->kategory == 'Penghargaan' ? 'selected' : '' }}>Penghargaan</option>
                                 <option value="Pengumuman" {{ $news->kategory == 'Pengumuman' ? 'selected' : '' }}>Pengumuman</option>
                                 <option value="Promo" {{ $news->kategory == 'Promo' ? 'selected' : '' }}>Promo</option>
                                 <option value="Siaran Pers" {{ $news->kategory == 'Siaran Pers' ? 'selected' : '' }}>Siaran Pers</option>
                             </select>
+                        </div>
+                        <div class="mb-2">
+                            <label class="text-gray-800 text-sm mt-2 block">Tanggal</label>
+                            <div class="relative flex items-center">
+                                <input id="datepicker" name="tanggal" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" type="text"
+                                placeholder="Pilih Tanggal" value="{{ $news->tanggal }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-4 h-4 absolute right-4" viewBox="0 0 24 24">
+                                </svg>
+                            </div>
                         </div>
                         
                     </div>
@@ -74,8 +83,13 @@
 </div>
 
 <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
 CKEDITOR.replace('editor');
+
+flatpickr("#datepicker", {
+
+});
 
 document.getElementById('upload_profile').addEventListener('change', function(event) {
     const file = event.target.files[0];

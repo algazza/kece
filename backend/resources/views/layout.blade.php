@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body class="bg-gray-200 h-screen">
     <section class="fixed z-40 shadow flex flex-row font-poppins">
