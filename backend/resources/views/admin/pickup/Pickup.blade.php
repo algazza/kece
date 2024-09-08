@@ -50,15 +50,15 @@
                 </div>
             </div>
 
-            <div class=" mt-[1.5rem] absolute left-[45%] sm:w-1/2 ">
+            <div class=" mt-[2.5rem] absolute left-[45%] sm:w-1/2 ">
                 <div class="w-[13rem] py-[0.3rem] mb-[1rem] rounded-[7px] hidden md2:block  text-[1.1rem] font-semibold bg-gray-50 box-border border-black shadow-lg">
                     <p>Pickup</p>
                 </div>
                 <div class=" grid-cols-1 gap-3 hidden lg:block">
-                    <div class="w-[40rem] h-[15rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg hidden lg:block">
+                    <div class="w-[45rem] h-[18rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg hidden lg:block">
                         {!! $chartWeek->container() !!}
                     </div>    
-                    <div class="w-[40rem] h-[15rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg hidden lg:block">
+                    <div class="w-[45rem] h-[18rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg hidden lg:block">
                         {!! $chartMonth->container() !!}
                     </div>    
                 </div>

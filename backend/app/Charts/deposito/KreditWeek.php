@@ -18,7 +18,7 @@ class KreditWeek
     public function build(): \ArielMejiaDev\LarapexCharts\LineChart
     {
         $now = Carbon::now();
-        $startTime = $now->copy()->subMinutes(7)->startOfMinute();
+        $startTime = $now->copy()->subWeek()->startOfDay();
 
         $deposito = Deposito::whereBetween('created_at', [$startTime, $now])
                          ->select('created_at')
@@ -26,21 +26,26 @@ class KreditWeek
                          ->get()
                          ->groupBy(function($date) {
                              $date = Carbon::parse($date->created_at);
-                             return $date->format('H:i');
+                             return $date->format('Y-m-d'); 
                          });
 
-        $intervals = [];
+        $dates = [];
         $counts = [];
-        for ($i = 0; $i < 8; $i++) {
-            $time = $startTime->copy()->addMinutes($i)->format('H:i');
-            $intervals[] = $time;
-            $counts[] = isset($deposito[$time]) ? $deposito[$time]->count() : 0;
+        $current = $startTime->copy();
+        $end = $now->copy();
+
+        while ($current->lessThanOrEqualTo($end)) {
+            $dateLabel = $current->format('d M');
+            $dates[] = $dateLabel;
+            $counts[] = isset($deposito[$current->format('Y-m-d')]) ? count($deposito[$current->format('Y-m-d')]) : 0;
+
+            $current->addDay();
         }
 
         return $this->chart->lineChart()
-            ->setTitle('Jumlah Entri per Minggu (7 Menit Terakhir)')
+            ->setTitle('Jumlah Data Yang Masuk 1 Minggu Terakhir')
             ->addData('Jumlah Entri', $counts)
-            ->setHeight(210)
-            ->setXAxis($intervals);
+            ->setHeight(260)
+            ->setXAxis($dates);
     }
 }

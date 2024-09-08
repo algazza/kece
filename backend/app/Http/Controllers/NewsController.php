@@ -55,6 +55,7 @@ class NewsController extends Controller
             'penulis' => 'required|string|max:255',
             'kategory' => 'required|string|max:255',
             'keterangan' => 'required|string',
+            'tanggal' => 'required|string|max:255',
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -109,6 +110,7 @@ class NewsController extends Controller
                 'penulis' => 'required|string|max:10000',
                 'keterangan' => 'required|string|max:100000',
                 'kategory' => 'required|string|max:255',
+                'tanggal' => 'required|string|max:255',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
@@ -117,6 +119,7 @@ class NewsController extends Controller
             $news->penulis = $request->penulis;
             $news->keterangan = $request->keterangan;
             $news->kategory = $request->kategory;
+            $news->tanggal = $request->tanggal;
             
             if ($request->hasFile('image')) {
                 $imageName = time() . '.' . $request->image->extension();  

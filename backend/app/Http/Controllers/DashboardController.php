@@ -23,12 +23,8 @@ class DashboardController extends Controller
         $request->session()->put('kredit_access_expiry', $tokenExpiry);
         $request->session()->put('last_dashboard_visit', Carbon::now());
     
-        $totalData = Kredit::count() + Pickup::count();
-        $kreditData = Kredit::orderBy('created_at', 'desc')->get();
-        $pickupData = Pickup::orderBy('created_at', 'desc')->get();
-        $dashboard = $kreditData->concat($pickupData)->sortByDesc('created_at')->values();
-    
-        return view('admin.dashboard.Dashboard', compact('dashboard', 'totalData'));
+        $totalData = Kredit::count() + Pickup::count() + Deposito::count() + Tabungan::count();
+        return view('admin.dashboard.Dashboard', compact('totalData'));
     }
     
     

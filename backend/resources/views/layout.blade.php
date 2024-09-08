@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body class="bg-gray-200 h-screen">
     <section class="fixed z-40 shadow flex flex-row font-poppins">
@@ -134,6 +135,11 @@
                           <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Sponsor</h1>
                       </a>
                   @endif
+                  @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
+                  <a href="{{ route('penghargaan.index') }}">
+                      <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Penghargaan</h1>
+                  </a>
+              @endif
                   @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
                   <a href="{{ route('banner') }}">
                       <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Banner</h1>

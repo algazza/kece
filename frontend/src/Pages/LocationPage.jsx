@@ -6,7 +6,7 @@ import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 const LocationPage = () => {
   return (
     <>
-      <div className="">
+      <section className="">
         <IntroBanner
           ImageBanner={BlueBanner}
           TitleBanner={"Location"}
@@ -20,14 +20,18 @@ const LocationPage = () => {
           hook
           paragraf
         />
-        <TitleBlueBanner title={"Our Location"} />
-      </div>
+        <TitleBlueBanner title={"Lokasi"} />
+      </section>
 
       <div className="bg-abuTerang p-10 w-auto m-5 ">
         <div>
-          <h3 className="text-6xl text-center ">Get In Touch</h3>
-          <p className="mt-5 text-center text-xl">
-          Kami selalu siap mendengar dan membantu Anda! Jika Anda memiliki pertanyaan, butuh bantuan, atau ingin tahu lebih lanjut tentang produk dan layanan kami, jangan ragu untuk menghubungi kami. Tim kami yang ramah dan profesional akan dengan senang hati menjawab semua kebutuhan Anda secepat mungkin
+          <h3 className={`${styles.heading2} text-center`}>Mari Kita Lihat</h3>
+          <p className={`${styles.fontBody} font-normal mt-5 text-center `}>
+            Kami selalu siap mendengar dan membantu Anda! Jika Anda memiliki
+            pertanyaan, butuh bantuan, atau ingin tahu lebih lanjut tentang
+            produk dan layanan kami, jangan ragu untuk menghubungi kami. Tim
+            kami yang ramah dan profesional akan dengan senang hati menjawab
+            semua kebutuhan Anda secepat mungkin
           </p>
         </div>
 
@@ -35,22 +39,10 @@ const LocationPage = () => {
           <div className="  flex-none p-10 ">
             <h6 className={`${styles.heading4} mb-10`}>Find our Office</h6>
 
-            <div className="flex align-middle w-1/4 mt-5 mb-5">
-              <h4
-                className={`${styles.heading6} flex-auto border-2 rounded-md p-1`}
-              >
-                Office
-              </h4>
-              <div className="bg-abuGelap p-0.5 h1 m-1"></div>
-              <h4
-                className={`${styles.heading6} flex-auto border-2 rounded-md p-1 text-gray-500 flex-shrink-0`}
-              >
-                Kantor Kas
-              </h4>
-            </div>
-
             <div className="">
-              <h2 className={`${styles.heading5}`}>Bank BPR Arto Moro</h2>
+              <h2 className={`${styles.heading5}`}>
+                Office Bank BPR Arto Moro
+              </h2>
               <p className={`${styles.fontBody} flex-auto`}>
                 Jl. Elang Raya No. 99 Mangunharjo, Tembalang, Semarang
               </p>

@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import { ButtonFull, ButtonOutline } from "./Button";
 import { toast } from "react-toastify";
+import PopUp from "./PopUp";
 
 const FormBank = ({
   isiPenting,
@@ -27,7 +28,12 @@ const FormBank = ({
 }) => {
   const [inputs, setInputs] = useState({});
   const [ip, setIp] = useState("");
-  const navigate = useNavigate();
+  const [openModal, setOpenModal] = useState(false);
+  const [nameInputs, setNameInputs] = useState("");
+  const [code, setCode] = useState("");
+  const [email, setEmail] = useState("");
+  const [nomor, setNomor] = useState("");
+  const [nik, setNik] = useState("");
 
   useEffect(() => {
     setInputs((values) => ({ ...values, jenis: value, nomer: nomer }));
@@ -77,14 +83,22 @@ const FormBank = ({
   };
 
   const submitForm = () => {
-    const code = generateCode();
-    const updatedInputs = { ...inputs, code, ip_user: ip };
-    const nameInputs = updatedInputs.nama;
+    const codeGenerated = generateCode();
+    const updatedInputs = { ...inputs, code: codeGenerated, ip_user: ip };
+    const nameGenerated = updatedInputs.nama;
+    const emailGenerated = updatedInputs.email;
+    const nomorGenerated = updatedInputs.no_handphone;
+    const nikGenerated = updatedInputs.nik;
 
     axios
       .post(endpoint, updatedInputs)
       .then((response) => {
-        navigate("/success", { state: { nameInputs, code, value, nomer } });
+        setNameInputs(nameGenerated);
+        setCode(codeGenerated);
+        setEmail(emailGenerated);
+        setNomor(nomorGenerated);
+        setNik(nikGenerated);
+        setOpenModal(true);
       })
       .catch((err) => {
         toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
@@ -112,6 +126,7 @@ const FormBank = ({
                   className="rounded-md outline-none"
                   value={inputs[iden.id]}
                   onChange={handleChange}
+                  required
                 />
               ))}
             </div>
@@ -126,6 +141,7 @@ const FormBank = ({
                       control={<Radio />}
                       label={kerja.title}
                       value={kerja.id}
+                      required
                     />
                   ))}
                 </RadioGroup>
@@ -143,6 +159,7 @@ const FormBank = ({
                 name="alamat"
                 value={inputs.alamat}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -205,10 +222,28 @@ const FormBank = ({
         </div>
 
         <div className="flex gap-10">
-          <ButtonFull onClick={submitForm}>Ajukan!</ButtonFull>
-
-          <ButtonOutline href="/">Hubungi Kami</ButtonOutline>
+          <ButtonFull
+            WidthButton="w-36"
+            WidthShadow="w-40"
+            onClick={submitForm}
+          >
+            Hubungi Kami
+          </ButtonFull>
         </div>
+
+        {openModal && (
+          <PopUp
+            nama={nameInputs}
+            email={email}
+            nomor={nomor}
+            nik={nik}
+            code={code}
+            nomer={nomer}
+            jenis={value}
+            setOpenModal={setOpenModal}
+            openModal={openModal}
+          />
+        )}
       </FormGroup>
     </section>
   );

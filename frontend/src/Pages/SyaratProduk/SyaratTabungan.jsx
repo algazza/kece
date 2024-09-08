@@ -1,23 +1,14 @@
 import React, { useEffect, useState } from "react";
-import IntroBanner from "../Layouts/IntroBanner";
-import TitleBlueBanner from "../Layouts/TitleBlueBanner";
-import FormBank from "../Components/FormBank";
-import styles from "../helper/style";
-import { PenempatanDana, BlueBanner } from "../helper";
-import {
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-} from "@mui/material";
+import IntroBanner from "../../Layouts/IntroBanner";
+import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
+import FormBank from "../../Components/FormBank";
+import styles from "../../helper/style";
+import {  BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
-import { Kredit } from "../Components/Form";
+import { Kredit } from "../../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import { IsiKredit } from "../helper/DataProduk";
-import { nomorTabungan } from "../helper/nomor";
+import { IsiKredit } from "../../helper/DataProduk";
+import { nomorInduk } from "../../helper/nomor";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import SchoolIcon from "@mui/icons-material/School";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
@@ -25,83 +16,83 @@ import MosqueIcon from "@mui/icons-material/Mosque";
 import ElderlyIcon from "@mui/icons-material/Elderly";
 import GroupsIcon from "@mui/icons-material/Groups";
 import DevicesOtherIcon from "@mui/icons-material/DevicesOther";
+import TabelComp from "../../Components/TabelComp";
 // ===================================================
 const buttonMenuTabungan = [
   {
     id: 1,
-    icon: (className) => <AccountBalanceIcon className={className} />,
+    icon: (className) => (
+      <AccountBalanceIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "Tabungan Umum",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
   },
   {
     id: 2,
-    icon: (className) => <AccountBalanceWalletIcon className={className} />,
+    icon: (className) => (
+      <AccountBalanceWalletIcon
+        className={className}
+        sx={{ fontSize: "40px" }}
+      />
+    ),
     title: "Tabungan ProActive",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
     jenis: "Via online",
   },
   {
     id: 3,
-    icon: (className) => <SchoolIcon className={className} />,
+    icon: (className) => (
+      <SchoolIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "Tabungan Simpel",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
     jenis: "Via online",
   },
   {
     id: 4,
-    icon: (className) => <MosqueIcon className={className} />,
+    icon: (className) => (
+      <MosqueIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "Tabungan Umroh (TABUM)",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 5,
-    icon: (className) => <ElderlyIcon className={className} />,
+    icon: (className) => (
+      <ElderlyIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "Tabungan Pensiun",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
     jenis: "Via online",
   },
   {
     id: 6,
-    icon: (className) => <GroupsIcon className={className} />,
+    icon: (className) => (
+      <GroupsIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "Tabungan Arisan",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
   {
     id: 7,
-    icon: (className) => <TrendingUpIcon className={className} />,
+    icon: (className) => (
+      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "SimpHaTi",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
     jenis: "Via online",
   },
   {
     id: 8,
-    icon: (className) => <DevicesOtherIcon className={className} />,
+    icon: (className) => (
+      <DevicesOtherIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
     title: "Tabungan Gemilang",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
 ];
 
-// =================== Tabel ===========================
-const calculateRowSpan = (data, key) => {
-  const rowSpanData = [];
-  let count = 1;
-
-  for (let i = 0; i < data.length; i++) {
-    if (i === data.length - 1 || data[i][key] !== data[i + 1][key]) {
-      rowSpanData.push(count);
-      count = 1;
-    } else {
-      count++;
-    }
-  }
-
-  return rowSpanData;
-};
-
-const rowSpanAmount = calculateRowSpan(PenempatanDana, "amount");
-
 const SyaratTabungan = () => {
-  let amountIndex = 0;
   const [tabs, setTabs] = useState(1);
   const [menu, setMenu] = useState(0);
 
@@ -140,20 +131,22 @@ const SyaratTabungan = () => {
 
       {/* Menu utama */}
       {menu === 0 ? (
-        <section className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}>
-        {/* menu button */}
-        {buttonMenuTabungan.map((menu, index) => (
-          <div
-            className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
-            key={index}
-            onClick={() => updateMenu(menu.id)}
-          >
-            {menu.icon("m-2 text-blue-400")}
-            <h6 className={`${styles.heading6}`}>{menu.title}</h6>
-            <p className="mt-4">{menu.deskripsi}</p>
-          </div>
-        ))}
-      </section>
+        <section
+          className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}
+        >
+          {/* menu button */}
+          {buttonMenuTabungan.map((menu, index) => (
+            <div
+              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
+              key={index}
+              onClick={() => updateMenu(menu.id)}
+            >
+              {menu.icon("m-2 text-blue-400")}
+              <h6 className={`${styles.heading6}`}>{menu.title}</h6>
+              <p className="mt-4">{menu.deskripsi}</p>
+            </div>
+          ))}
+        </section>
       ) : null}
 
       {IsiKredit.map((kredit) => {
@@ -242,73 +235,7 @@ const SyaratTabungan = () => {
                     D. Tabel Penempatan Dana
                   </h3>
 
-                  <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} aria-label="data tabel">
-                      <TableHead>
-                        <TableRow className="bg-biruMuda-400">
-                          <TableCell
-                            align="center"
-                            style={{ border: "1px solid black" }}
-                          >
-                            No
-                          </TableCell>
-                          <TableCell style={{ border: "1px solid black" }}>
-                            Nominal Tabungan
-                          </TableCell>
-                          <TableCell style={{ border: "1px solid black" }}>
-                            Jangka Waktu (Tahun)
-                          </TableCell>
-                          <TableCell style={{ border: "1px solid black" }}>
-                            Nominal Hadiah
-                          </TableCell>
-                        </TableRow>
-                      </TableHead>
-
-                      <TableBody>
-                        {kredit.Tabel.map((row, index, idx) => {
-                          let shouldRenderAmountCell = false;
-
-                          if (
-                            index === 0 ||
-                            row.amount !== PenempatanDana[index - 1].amount
-                          ) {
-                            shouldRenderAmountCell = true;
-                          }
-
-                          const amountCell = shouldRenderAmountCell ? (
-                            <TableCell
-                              rowSpan={rowSpanAmount[amountIndex]}
-                              style={{ border: "1px solid black" }}
-                            >
-                              {row.amount.toLocaleString("id-ID")}
-                            </TableCell>
-                          ) : null;
-
-                          if (shouldRenderAmountCell) {
-                            amountIndex += 1;
-                          }
-
-                          return (
-                            <TableRow key={idx}>
-                              <TableCell
-                                align="center"
-                                style={{ border: "1px solid black" }}
-                              >
-                                {index + 1}
-                              </TableCell>
-                              {amountCell}
-                              <TableCell style={{ border: "1px solid black" }}>
-                                {row.term}
-                              </TableCell>
-                              <TableCell style={{ border: "1px solid black" }}>
-                                {row.reward.toLocaleString("id-ID")}
-                              </TableCell>
-                            </TableRow>
-                          );
-                        })}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
+                  <TabelComp kredit={kredit.Tabel} />
                 </motion.div>
               ) : null}
 
@@ -325,7 +252,7 @@ const SyaratTabungan = () => {
                     <FormBank
                       isiPenting={<Kredit />}
                       value={"Tabungan"}
-                      nomer={nomorTabungan}
+                      nomer={nomorInduk}
                       endpoint={"http://localhost:8000/api/tabungan"}
                     />
                   </div>
@@ -347,7 +274,7 @@ const SyaratTabungan = () => {
                   tabs === 1 && "hidden"
                 } text-biruMuda-500 border-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
-                prev
+                Sebelumnya
               </div>
               <div
                 onClick={() => nextTab(tabs)}
@@ -355,7 +282,7 @@ const SyaratTabungan = () => {
                   tabs === 4 && "hidden"
                 } bg-biruMuda-500 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
-                next
+                Lanjut
               </div>
             </section>
           </section>

@@ -7,9 +7,9 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import IntroBanner from "../Layouts/IntroBanner";
-import { BlueBanner } from "../helper";
-import styles from "../helper/style";
+import IntroBanner from "../../Layouts/IntroBanner";
+import { BlueBanner } from "../../helper";
+import styles from "../../helper/style";
 import { useNavigate } from "react-router-dom";
 
 const theme = createTheme({
@@ -153,7 +153,7 @@ const News = () => {
           <div
             key={news.id}
             className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
-            onClick={() => navigate(`/news/${news.id}`)}
+            onClick={() => navigate(`/berita/${news.id}`)}
           >
             <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
               <img
@@ -169,11 +169,7 @@ const News = () => {
               </p>
               <h6 className={`${styles.heading6} `}>{news.judul}</h6>
               <p className={`${styles.fontSmall} text-abuGelap`}>
-                {new Intl.DateTimeFormat("id-ID", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
-                }).format(new Date(news.created_at))}
+                  {news.tanggal}
               </p>
             </div>
           </div>

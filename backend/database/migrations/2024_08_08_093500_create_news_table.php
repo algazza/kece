@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('keterangan');
             $table->string('kategory');
             $table->text('penulis');
+            $table->text('tanggal');
             $table->string('image')->nullable();
             $table->timestamps();
         });

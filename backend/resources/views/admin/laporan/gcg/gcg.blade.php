@@ -29,12 +29,10 @@
         </ul>
 
     <div class="flex justify-end fixed bottom-10 right-10 bg-gray-50 rounded-full box-borde">
-        <button class="flex items-center justify-center w-12 h-12 cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300 border-[1px] border-black shadow-gray-400 shadow-inner text-black rounded-full" onclick="openModal('modelConfirm')">
+        <button class="flex items-center justify-center w-20 h-20 text-gray-600  hover:text-black cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300 border-[1px] border-gray-500 shadow-gray-400 shadow-sm rounded-full" onclick="openModal('modelConfirm')">
             <i class='bx bxs-file-plus text-[1.5rem]'></i>
         </button>
     </div>
-
-
         <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
             <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
                 <form action="{{ route('laporan.post') }}" method="post" enctype="multipart/form-data">
@@ -53,7 +51,7 @@
                         <div class="mt-4 px-[2rem] w-full">
                             <input type="text" name="tanggal" class="rounded-[5px] block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner text-center shadow-gray-400" placeholder="Tanggal"/>
                             <input type="hidden" name="jenis_laporan" value="GCG">
-                        </div>
+                           </div>
                         <div class="mt-4 mb-2">
                             <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-red-600 px-10 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-red-700 hover:scale-95 duration-300"
                                     onclick="closeModal('modelConfirm')">Close</button>

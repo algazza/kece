@@ -2,7 +2,7 @@
 @section('content')
 <div class="bg-gray-100 font-[sans-serif] min-h-screen flex items-center justify-center">
     <div class="w-full max-w-[50rem] p-6">
-        <div class="p-8 rounded-2xl bg-transparent shadow-md w-full">
+        <div class="p-8 rounded-2xl bg-white border border-gray-300 shadow-md w-full">
             <form action="{{ route('news.post') }}" method="POST" class="mt-4 space-y-4" enctype="multipart/form-data">
                 @csrf
                 <div class="sm:flex">
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="mb-2 w-full">
-                            <label class="text-slate-500 text-sm mt-2 block">Kategori</label>
+                            <label class="text-gray-800 text-sm mt-2 block">Kategori</label>
                             <select class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" name="kategory" required>
                                 <option disabled value="">kategory</option>
                                 <option value="Penghargaan">Penghargaan</option>
@@ -39,6 +39,15 @@
                                 <option value="Promo">Promo</option>
                                 <option value="Siaran Pers">Siaran Pers</option>
                             </select>
+                        </div>
+                        <div class="mb-2">
+                            <label class="text-gray-800 text-sm mt-2 block">Tanggal</label>
+                            <div class="relative flex items-center">
+                                <input id="datepicker" name="tanggal" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" type="text"
+                                placeholder="Pilih Tanggal">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-4 h-4 absolute right-4" viewBox="0 0 24 24">
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -66,9 +75,13 @@
 
 
 <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
 
 CKEDITOR.replace('editor');
+    flatpickr("#datepicker", {
+
+    });
 
 document.getElementById('upload_profile').addEventListener('change', function(event) {
     const file = event.target.files[0];

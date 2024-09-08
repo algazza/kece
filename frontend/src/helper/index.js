@@ -9,6 +9,10 @@ import partnerImage4 from "../img/partnerImage4.svg";
 import partnerImage5 from "../img/partnerImage5.svg";
 import partnerImage6 from "../img/partnerImage6.svg";
 import partnerImage7 from "../img/partnerImage7.svg";
+import SimulasiPercil1 from "../img/simulasiPercil1.svg"
+import SimulasiPercil2 from "../img/simulasiPercil2.svg"
+import SimulasiPercil3 from "../img/simulasiPercil3.svg"
+import SimulasiPercil4 from "../img/simulasiPercil4.svg"
 import nunezimg from "../img/668f755b3c2ba.jpg";
 import sampleNews from "../img/sample-news-684x385.jpg";
 import sampleBanner from "../img/samplebanner.svg";
@@ -16,13 +20,18 @@ import phoneimg from "../img/phoneimg.svg";
 import BennerLiv from "../img/sampleliv.svg";
 import loaderIcon from "../img/loadingIconArmor.svg"
 import Banneremyu from "../img/Banner2.svg"; //1250 x 477 || 21 : 8
+import awardimg from "../img/awardimage.png"
 import pdfexample from "../img/Pembagian Kelompok MPLS PPLG.pdf"
+import ImageSimulasi from "../img/BankImageSimulasi.svg"
+import ThumbnailYoutube from "../img/thumbnailYoutube.png"
 
 export {
   logoArmor,
   BlueBanner,
   sampleBanner,
   BennerLiv,
+  ImageSimulasi,
+  awardimg,
   Banneremyu,
   loaderIcon,
   phoneimg,
@@ -30,6 +39,11 @@ export {
   nunezimg,
   sampleNews,
   pdfexample,
+  ThumbnailYoutube,
+  SimulasiPercil1,
+  SimulasiPercil2,
+  SimulasiPercil3,
+  SimulasiPercil4,
   partnerImage1,
   partnerImage2,
   partnerImage3,
@@ -344,11 +358,11 @@ export const formJenisSponsor = [
     name: "",
   },
   {
-    id: "tissue",
+    id: "Tempat Tissue / Gelas",
     title: "Tempat Tissue / Gelas",
   },
   {
-    id: "meja",
+    id: "Nomor Meja",
     title: "Nomor Meja",
   },
   {

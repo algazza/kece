@@ -31,12 +31,7 @@ class NoAdminController extends Controller
             $noAdmin = NoAdmin::findOrFail($id);
     
             $validateData = $request->validate([
-                'no_kredit' => 'required|integer',
-                'no_deposito' => 'required|integer',
-                'no_tabungan' => 'required|integer',
                 'no_induk' => 'required|integer',
-                'no_sponsor' => 'required|integer',
-                'no_pickup' => 'required|integer'
             ]);
     
             $noAdmin->update($validateData);

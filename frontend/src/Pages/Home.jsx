@@ -8,9 +8,15 @@ import ImageBanner from "../Layouts/ImageBanner";
 import {
   Banneremyu,
   BennerLiv,
+  ImageSimulasi,
   nunezimg,
   phoneimg,
   sampleBanner,
+  SimulasiPercil1,
+  SimulasiPercil2,
+  SimulasiPercil3,
+  SimulasiPercil4,
+  ThumbnailYoutube,
 } from "../helper";
 // ==================== ICON ===========================
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
@@ -31,71 +37,68 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import AddIcon from "@mui/icons-material/Add";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
-
-const images = [
-
-];
+import SimulasiCalc from "../Components/SimulasiCalc";
 
 const menuHome = [
   {
     id: 1,
     icon: (className) => <AccountBalanceIcon className={className} />,
     title: "Kredit",
-    link: "kredit"
+    link: "kredit",
   },
   {
     id: 2,
     icon: (className) => <MonetizationOnIcon className={className} />,
     title: "Deposito",
-    link: "deposito"
+    link: "deposito",
   },
   {
     id: 3,
     icon: (className) => <AccountBalanceWalletIcon className={className} />,
     title: "Tabungan",
-    link: "tabungan"
+    link: "tabungan",
   },
   {
     id: 4,
     icon: (className) => <LocationOnIcon className={className} />,
     title: "Location",
-    link: "lokasi"
+    link: "lokasi",
   },
   {
     id: 5,
     icon: (className) => <LocalShippingIcon className={className} />,
     title: "Mobil Kas",
-    link: ""
+    link: "",
   },
   {
     id: 6,
     icon: (className) => <DirectionsCarIcon className={className} />,
     title: "Pickup",
-    link: "pick-up-service"
+    link: "pick-up-service",
   },
   {
     id: 7,
     icon: (className) => <HomeIcon className={className} />,
     title: "Properti",
-    link: "armor-prop"
+    link: "armor-prop",
   },
   {
     id: 8,
     icon: (className) => <DiscountIcon className={className} />,
     title: "Promo",
-    link: ""
+    link: "",
   },
   {
     id: 9,
     icon: (className) => <CalculateIcon className={className} />,
     title: "Simulasi",
-    link: ""
+    link: "",
   },
   {
     id: 10,
     icon: (className) => <PercentIcon className={className} />,
     title: "Rate Bunga",
-    link: ""
+    link: "",
   },
 ];
 
@@ -142,7 +145,9 @@ const Home = () => {
       .then((response) => response.json())
       .then((data) => {
         // Asumsikan data yang diterima adalah array objek dengan properti 'filename' untuk nama file gambar
-        const imageUrls = data.map((item) => `http://localhost:8000/image/public/banner/${item.image}`);
+        const imageUrls = data.map(
+          (item) => `http://localhost:8000/image/public/banner/${item.image}`
+        );
         setImages(imageUrls);
       })
       .catch((error) => {
@@ -155,9 +160,8 @@ const Home = () => {
         setNewsData(data);
       })
       .catch((err) => {
-        toast.error("Gagal Memunculkan News!");
+        toast.error("Gagal Memunculkan Berita!");
       });
-
   }, []);
 
   const handleOpen = () => {
@@ -191,9 +195,7 @@ const Home = () => {
                 key={menu.id}
                 className="group bg-abuTerang grid justify-items-center py-2 sm:px-6 px-3 rounded-xl transition-all duration-300 ease-in-out"
               >
-                {menu.icon(
-                  "text-abuGelap group-hover:text-merahh-500 "
-                )}
+                {menu.icon("text-abuGelap group-hover:text-merahh-500 ")}
                 <h2 className={`${styles.fontBodyBold} flex-shrink-0 `}>
                   {menu.title}
                 </h2>
@@ -248,22 +250,59 @@ const Home = () => {
         </div>
       </section>
 
-      <section className={`${styles.paddingY}`}>
+      <section
+        className={`${styles.paddingY} ${styles.paddingX} md:grid md:grid-cols-2 bg-biruMuda-100 relative`}
+      >
+        <div className="hidden md:block">
+          <img src={ImageSimulasi} alt="" />
+        </div>
+
+        <img
+          src={SimulasiPercil1}
+          alt=""
+          className="absolute md:top-[160px] md:left-[100px] max-md:bottom-[70px] max-md:right-[70px] w-[100px]"
+        />
+        <img
+          src={SimulasiPercil2}
+          alt=""
+          className="absolute md:top-[32px] md:left-[250px] top-[32px] max-md:right-[30px] w-[80px]"
+        />
+        <img
+          src={SimulasiPercil3}
+          alt=""
+          className="absolute md:top-[80px] md:left-[480px] top-[120px] -left-[20px]"
+        />
+        <img
+          src={SimulasiPercil4}
+          alt=""
+          className="absolute md:top-[260px] md:left-[500px] max-md:hidden"
+        />
+
+        <div>
+          <h2 className={`${styles.heading4} mb-4`}>
+            <span className="text-biruMuda-500">Simulasi Hitung</span> Tabungan,
+            Kredit, dan Deposito
+          </h2>
+          <SimulasiCalc />
+        </div>
+      </section>
+
+      <section className={`${styles.paddingY} ${styles.paddingX}`}>
         <h2 className={`${styles.heading3}  text-center mb-12`}>
-          Company Profile
+          Moment Arto Moro
         </h2>
         <div className={`${styles.flexCenter}`}>
           <img
-            src={nunezimg}
+            src={ThumbnailYoutube}
             alt=""
-            className="cursor-pointer"
+            className="cursor-pointer "
             onClick={handleModal}
           />
         </div>
 
         {openModal && (
-          <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed">
-            <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed bg-gray-900/50">
+          <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed z-40">
+            <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed bg-gray-900/50 backdrop-blur-sm">
               <div className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/4 bg-primary p-12">
                 <div
                   className="absolute right-2 top-2 cursor-pointer"
@@ -274,12 +313,13 @@ const Home = () => {
                 <iframe
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/UPubaRIRWkA?si=Lt32z9nnSQ4RUFJV"
+                  src="https://www.youtube.com/embed/QfhNO1_GSEM?si=XYAIDIf6xs0zuBg6"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
                   allowfullscreen
+                  className="w-[18rem] h-[11rem] sm:w-[40rem] sm:h-[22rem]"
                 ></iframe>
               </div>
             </div>
@@ -294,7 +334,7 @@ const Home = () => {
             <div
               key={news.id}
               className="p-4 bg-abuTerang rounded-xl cursor-pointer"
-              onClick={() => navigate(`/news/${news.id}`)}
+              onClick={() => navigate(`/berita/${news.id}`)}
             >
               <img
                 src={`http://localhost:8000/image/public/news/${news.image}`}
@@ -307,13 +347,7 @@ const Home = () => {
                 </p>
                 <h6 className={`${styles.heading6} my-2`}>{news.judul}</h6>
                 <p className={`${styles.fontSmall} text-abuGelap`}>
-                  {news.created_at
-                    ? new Intl.DateTimeFormat("id-ID", {
-                        day: "2-digit",
-                        month: "2-digit",
-                        year: "numeric",
-                      }).format(new Date(news.created_at))
-                    : "Tanggal tidak tersedia"}
+                  {news.tanggal}
                 </p>
               </div>
             </div>

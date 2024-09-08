@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "../helper/style";
+import styles from "../../helper/style";
 import { motion } from "framer-motion";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
@@ -8,10 +8,10 @@ import LinkIcon from "@mui/icons-material/Link";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-import { loaderIcon } from "../helper";
+import { loaderIcon } from "../../helper";
 
 const IsiNews = () => {
-  const { id } = useParams(); // Ambil id dari URL
+  const { id } = useParams();
   const [news, setNews] = useState(null);
   const [error, setError] = useState(null);
   const [newsData, setNewsData] = useState([]);
@@ -132,11 +132,7 @@ const IsiNews = () => {
 
           <div className={`${styles.fontBodyBold}`}>
             <p>
-              {new Intl.DateTimeFormat("id-ID", {
-                day: "2-digit",
-                month: "2-digit",
-                year: "numeric",
-              }).format(new Date(news.created_at))}
+              {news.tanggal}
             </p>
             <p>{news.penulis}</p>
           </div>
@@ -158,7 +154,7 @@ const IsiNews = () => {
                 <div
                   key={news.id}
                   className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
-                  onClick={() => navigate(`/news/${news.id}`)}
+                  onClick={() => navigate(`/berita/${news.id}`)}
                 >
                   <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
                     <img
