@@ -27,6 +27,7 @@
                             </div>
                         </div>
                         <h2 class="text-center mt-1 font-semibold dark:text-black">Upload Profile and Cover Image</h2>
+                        <h2 class="text-center mt-1 font-base dark:text-black">Max File 2MB</h2>
                         <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col xss:flex-col gap-2 justify-center w-full">
                             <div class="w-full mb-4 mt-6">
                                 <label for="name" class="mb-2 dark:text-black">Name</label>
