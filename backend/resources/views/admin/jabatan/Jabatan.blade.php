@@ -4,8 +4,108 @@
     <div class="text-center pt-[5rem]">
         <h1 class="text-3xl text-gray-700 border border-gray-300 shadow-md shadow-gray-400 font-semibold bg-white mx-auto max-w-xs rounded-md py-2">Jabatan</h1>
     </div>
-    <section class="mx-[5rem] grid grid-cols-1 lg:grid-cols-3 mt-[5rem]">
-        <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md">
+    <section class="mx-[5rem] grid grid-cols-1 md2:grid-cols-2 lg:grid-cols-4 mt-[5rem] mb-6">
+        <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md my-6 xl:mx-6 md2:mx-6">
+            <div class="relative">
+                <img class="w-full h-64 object-cover" src="https://i.scdn.co/image/ab67616d0000b27393d5c21554e1462bceb2e91b" alt="Image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-semibold mb-1">Wahitukam</h3>
+                <p class="text-gray-800 text-base font-semibold pb-2">
+                   Exekutif
+                </p>
+                <p class="text-gray-700 text-base">
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, sint?
+                </p>
+            </div>
+        </div>
+        <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md my-6 xl:mx-6 md2:mx-6">
+            <div class="relative">
+                <img class="w-full h-64 object-cover" src="https://i.scdn.co/image/ab67616d0000b27393d5c21554e1462bceb2e91b" alt="Image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-semibold mb-1">Wahitukam</h3>
+                <p class="text-gray-800 text-base font-semibold pb-2">
+                   Exekutif
+                </p>
+                <p class="text-gray-700 text-base">
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, sint?
+                </p>
+            </div>
+        </div>
+        <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md my-6 xl:mx-6 md2:mx-6">
+            <div class="relative">
+                <img class="w-full h-64 object-cover" src="https://i.scdn.co/image/ab67616d0000b27393d5c21554e1462bceb2e91b" alt="Image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-semibold mb-1">Wahitukam</h3>
+                <p class="text-gray-800 text-base font-semibold pb-2">
+                   Exekutif
+                </p>
+                <p class="text-gray-700 text-base">
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, sint?
+                </p>
+            </div>
+        </div>
+        <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md my-6 xl:mx-6 md2:mx-6">
+            <div class="relative">
+                <img class="w-full h-64 object-cover" src="https://i.scdn.co/image/ab67616d0000b27393d5c21554e1462bceb2e91b" alt="Image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-semibold mb-1">Wahitukam</h3>
+                <p class="text-gray-800 text-base font-semibold pb-2">
+                   Exekutif
+                </p>
+                <p class="text-gray-700 text-base">
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, sint?
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="mx-[5rem] grid grid-cols-1 md2:grid-cols-2 lg:grid-cols-4 mt-[5rem] mb-6">
+        <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md my-6 xl:mx-6 md2:mx-6">
+            <div class="relative">
+                <img class="w-full h-64 object-cover" src="https://i.scdn.co/image/ab67616d0000b27393d5c21554e1462bceb2e91b" alt="Image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-semibold mb-1">Wahitukam</h3>
+                <p class="text-gray-800 text-base font-semibold pb-2">
+                   Exekutif
+                </p>
+                <p class="text-gray-700 text-base">
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, sint?
+                </p>
+            </div>
+        </div>
+        <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md my-6 xl:mx-6 md2:mx-6">
+            <div class="relative">
+                <img class="w-full h-64 object-cover" src="https://i.scdn.co/image/ab67616d0000b27393d5c21554e1462bceb2e91b" alt="Image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-semibold mb-1">Wahitukam</h3>
+                <p class="text-gray-800 text-base font-semibold pb-2">
+                   Exekutif
+                </p>
+                <p class="text-gray-700 text-base">
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, sint?
+                </p>
+            </div>
+        </div>
+        <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md my-6 xl:mx-6 md2:mx-6">
+            <div class="relative">
+                <img class="w-full h-64 object-cover" src="https://i.scdn.co/image/ab67616d0000b27393d5c21554e1462bceb2e91b" alt="Image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-semibold mb-1">Wahitukam</h3>
+                <p class="text-gray-800 text-base font-semibold pb-2">
+                   Exekutif
+                </p>
+                <p class="text-gray-700 text-base">
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, sint?
+                </p>
+            </div>
+        </div>
+        <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md my-6 xl:mx-6 md2:mx-6">
             <div class="relative">
                 <img class="w-full h-64 object-cover" src="https://i.scdn.co/image/ab67616d0000b27393d5c21554e1462bceb2e91b" alt="Image">
             </div>
