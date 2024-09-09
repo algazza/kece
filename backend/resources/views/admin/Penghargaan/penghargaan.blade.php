@@ -22,7 +22,7 @@
                                         <button type="submit" class="inline-flex items-center rounded-md border border-gray-400 bg-red-600 px-3 py-2 text-sm font-medium leading-4 text-white hover:text-white shadow-sm duration-300 hover:bg-red-700">Delete</button>
                                     </form>
                                 </div>
-                                <a href="{{ route('penghargaan.update.page', $item->id) }}" class="inline-flex items-center rounded-md bg-white border-gray-500 border px-3 py-2 text-sm font-medium leading-4 text-black shadow-sm duration-300 hover:bg-red-600">Edit</a>
+                                <a href="{{ route('penghargaan.update.page', $item->id) }}" class="inline-flex items-center rounded-md bg-white border-gray-500 border px-3 py-2 text-sm font-medium leading-4 text-black hover:text-white shadow-sm duration-300 hover:bg-red-600">Edit</a>
                             </div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                         <form action="{{ route('penghargaan.post') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="flex flex-col items-center justify-center text-center cursor-pointer gap-1 p-[1rem]">
-                                <div class="rounded-md border border-indigo-500 bg-gray-50 shadow-md w-36 p-4 mt-[2rem] cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300" onclick="document.getElementById('upload').click();">
+                                <div class="rounded-md border border-gray-300 bg-gray-50 shadow-md w-36 p-4 mt-[2rem] cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300" onclick="document.getElementById('upload').click();">
                                     <div class="flex flex-col items-center gap-2 cursor-pointer">
                                         <i class='bx bx-image-add text-6xl' ></i>
                                         <span class="text-gray-600 font-medium">Upload Image</span>

@@ -14,18 +14,24 @@ class NewsSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create('id_ID');
-        $userData = [];
-
-        for ($i = 1; $i <= 20; $i++) {
-            $userData[] = [
-                'judul' => $faker->sentence(5, true) . ' ' . $faker->word,
-                'penulis' => $faker->name,
-                'keterangan' => $faker->paragraphs(rand(3, 6), true),
-                'kategory' => $faker->randomElement(['Siaran Pers', 'Penghargaan', 'Promo', 'Pengumuman']),
+        $userData = [
+            [
+                'judul' => 'El Rakkai',
+                'email' => 'admin@gmail.com',
+                'role' => 'admin',
+                'no_handphone' => '088997998998',
                 'image' => 'profil.jpg',
-            ];
-        }
+                'password' => bcrypt('123456')
+            ],
+            [
+                'name' => 'Iatsa Villainku',
+                'email' => 'deposit@gmail.com',
+                'role' => 'deposito',
+                'no_handphone' => '088997998998',
+                'image' => 'profil.jpg',
+                'password' => bcrypt('123456')
+            ],
+        ];
 
         foreach($userData as $key => $val){
             News::create($val);
