@@ -17,12 +17,13 @@ const LocationPage = () => {
                 menawarkan berbagai produk kredit yang dapat disesuaikan dengan
                 keperluan Anda.
             `}
-          hook
-          paragraf
         />
         <TitleBlueBanner title={"Lokasi"} />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
       <div className="bg-abuTerang p-10 w-auto m-5 ">
         <div>
           <h3 className={`${styles.heading2} text-center`}>Mari Kita Lihat</h3>

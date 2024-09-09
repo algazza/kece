@@ -1,7 +1,7 @@
 import {ButtonGetDown} from "../Components/Button";
 import styles from "../helper/style";
 
-const IntroBanner = ({TitleBanner, DescriptionBanner, ImageBanner}) => {
+const IntroBanner = ({TitleBanner, DescriptionBanner, ImageBanner, href}) => {
   return (
     <section className={`flex flex-col md:flex-row pb-6 sm:pb-16`}>
       <div
@@ -9,7 +9,7 @@ const IntroBanner = ({TitleBanner, DescriptionBanner, ImageBanner}) => {
       >
         <h2 className={`${styles.heading2}`}>{TitleBanner}</h2>
         <p className="text-abuGelap">{DescriptionBanner}</p>
-        <ButtonGetDown />
+        <ButtonGetDown/>
       </div>
 
       <div className="flex-1">

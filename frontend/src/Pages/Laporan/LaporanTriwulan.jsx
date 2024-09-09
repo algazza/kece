@@ -4,7 +4,6 @@ import { BlueBanner, loaderIcon } from "../../helper";
 import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
 import styles from "../../helper/style";
 
-
 const LaporanTriwulan = () => {
   const [dataLaporan, setDataLaporan] = useState([]);
   const [filterLaporan, setFilterLaporan] = useState("Triwulan");
@@ -16,7 +15,11 @@ const LaporanTriwulan = () => {
       .then((data) => {
         // Filter data based on the filterLaporan state
         const filteredData = data
-          .filter((laporan) => laporan.jenis_laporan.toLowerCase() === filterLaporan.toLowerCase())
+          .filter(
+            (laporan) =>
+              laporan.jenis_laporan.toLowerCase() ===
+              filterLaporan.toLowerCase()
+          )
           .reverse();
         setDataLaporan(filteredData);
       })
@@ -42,6 +45,9 @@ const LaporanTriwulan = () => {
         <TitleBlueBanner title={"Laporan Triwulan"} />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
       <section
         className={`${styles.paddingY} ${styles.paddingX} grid md:grid-cols-x3300 justify-center gap-8`}
       >
@@ -77,6 +83,5 @@ const LaporanTriwulan = () => {
     </>
   );
 };
-
 
 export default LaporanTriwulan;

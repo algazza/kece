@@ -95,6 +95,9 @@ const SyaratDeposito = () => {
         <TitleBlueBanner title={"Deposito"} />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
       {/* Menu utama */}
       {menu === 0 ? (
         <section

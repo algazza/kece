@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
 const Sejarah = () => {
-    const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
   // timeline
   const handleStepClick = (index) => {
     setCurrentStep(index);
@@ -32,6 +32,9 @@ const Sejarah = () => {
         <TitleBlueBanner title={"Sejarah"} />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
       <section className={`${styles.paddingY} w-full`}>
         <div className="relative flex justify-between mx-auto max-w-2xl">
           {profileTimeline.map((step, index) => (
@@ -96,7 +99,6 @@ const Sejarah = () => {
           );
         })}
       </section>
-
     </>
   );
 };

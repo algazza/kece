@@ -48,6 +48,9 @@ const Laporan = () => {
         <TitleBlueBanner title={"Laporan"} />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
       <section className={`${styles.paddingX} ${styles.paddingY} w-full`}>
         <div className="md:flex gap-40 px-4 md:px-12 sm:pb-12 relative">
           <div className="">

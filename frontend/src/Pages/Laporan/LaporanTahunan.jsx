@@ -15,7 +15,11 @@ const LaporanTahunan = () => {
       .then((data) => {
         // Filter data based on the filterLaporan state
         const filteredData = data
-          .filter((laporan) => laporan.jenis_laporan.toLowerCase() === filterLaporan.toLowerCase())
+          .filter(
+            (laporan) =>
+              laporan.jenis_laporan.toLowerCase() ===
+              filterLaporan.toLowerCase()
+          )
           .reverse();
         setDataLaporan(filteredData);
       })
@@ -41,6 +45,9 @@ const LaporanTahunan = () => {
         <TitleBlueBanner title={"Laporan Tahunan"} />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
       <section
         className={`${styles.paddingY} ${styles.paddingX} grid md:grid-cols-x3300 justify-center gap-8`}
       >

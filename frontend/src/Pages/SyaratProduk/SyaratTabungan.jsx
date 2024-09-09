@@ -3,7 +3,7 @@ import IntroBanner from "../../Layouts/IntroBanner";
 import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
 import FormBank from "../../Components/FormBank";
 import styles from "../../helper/style";
-import {  BlueBanner } from "../../helper";
+import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
 import { Kredit } from "../../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
@@ -129,6 +129,9 @@ const SyaratTabungan = () => {
         <TitleBlueBanner title={"Tabugan"} />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
       {/* Menu utama */}
       {menu === 0 ? (
         <section

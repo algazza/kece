@@ -24,15 +24,18 @@ const PickupPage = () => {
         <TitleBlueBanner title={"Pick Up Service"} />
       </section>
 
-        <section className={`${styles.flexCenter}`}>
-          <FormBank
-            isiPenting={<PickupService />}
-            value={"Pickup"}
-            nomer={nomorInduk}
-            page={"/PickupPage"}
-            endpoint={"http://localhost:8000/api/Pickup"}
-          />
-        </section>
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
+      <section className={`${styles.flexCenter}`}>
+        <FormBank
+          isiPenting={<PickupService />}
+          value={"Pickup"}
+          nomer={nomorInduk}
+          page={"/PickupPage"}
+          endpoint={"http://localhost:8000/api/Pickup"}
+        />
+      </section>
     </>
   );
 };

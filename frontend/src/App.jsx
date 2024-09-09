@@ -4,10 +4,12 @@ import styles from "./helper/style";
 import Footer from "./Layouts/Footer";
 import Header from "./Layouts/Header";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import ScrollToTop from "./Layouts/ScrollToTop";
 
 const App = () => {
   return (
     <>
+    <ScrollToTop/>
       <Header />
       <main
         className={`overflow-hidden font-jakarta ${styles.fontBody} py-[4.5rem]`}

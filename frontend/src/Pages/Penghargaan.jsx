@@ -36,6 +36,9 @@ const Penghargaan = () => {
         <TitleBlueBanner title={"Penghargaan"} />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
       <section
         className={`${styles.paddingY} ${styles.paddingX} grid md:grid-cols-x3300 justify-center gap-8`}
       >
@@ -44,7 +47,10 @@ const Penghargaan = () => {
             key={index}
             className="p-4 border-2 rounded-md grid gap-2 justify-center"
           >
-            <img src={`http://localhost:8000/image/public/penghargaan/${award.image}`} alt={award.nama_penghargaan} />
+            <img
+              src={`http://localhost:8000/image/public/penghargaan/${award.image}`}
+              alt={award.nama_penghargaan}
+            />
             <h2 className={`${styles.heading6} text-center`}>
               {award.nama_penghargaan}
             </h2>

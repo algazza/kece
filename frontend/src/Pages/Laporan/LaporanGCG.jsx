@@ -44,6 +44,9 @@ const LaporanGCG = () => {
         <TitleBlueBanner title={"Laporan GCG"} />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
       <section
         className={`${styles.paddingY} ${styles.paddingX} grid md:grid-cols-x3300 justify-center gap-8`}
       >

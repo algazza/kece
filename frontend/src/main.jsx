@@ -22,11 +22,17 @@ import LaporanGCG from "./Pages/Laporan/LaporanGCG.jsx";
 import LaporanTahunan from "./Pages/Laporan/LaporanTahunan.jsx";
 import LaporanTriwulan from "./Pages/Laporan/LaporanTriwulan.jsx";
 import Penghargaan from "./Pages/Penghargaan.jsx";
+import Login from "./Layouts/Login.jsx";
+import ProtectedRoute from "./Layouts/ProtectedRoute.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <ProtectedRoute>
+        <App />
+      </ProtectedRoute>
+    ),
     errorElement: <Error />,
     children: [
       {
@@ -51,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: "penghargaan",
-        element: <Penghargaan/>,
+        element: <Penghargaan />,
       },
       {
         path: "laporan",
@@ -102,6 +108,10 @@ const router = createBrowserRouter([
   {
     path: "/success",
     element: <Success />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 

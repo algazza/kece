@@ -23,6 +23,9 @@ const Manajemen = () => {
         <TitleBlueBanner title={"Struktur Organisasi"} />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
       <section className={`${styles.paddingX} ${styles.paddingY} bg-abuTerang`}>
         <h2 className={`${styles.heading4} text-center text-biruMuda-500`}>
           PROFILE

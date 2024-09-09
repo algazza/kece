@@ -89,6 +89,7 @@ const News = () => {
         />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">&nbsp;</span>
       <section className={`${styles.flexCenter} flex-col gap-6`}>
         <h1 className={`${styles.heading1} text-center`}>Berita</h1>
 

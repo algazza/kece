@@ -16,6 +16,9 @@ const VisiMisi = () => {
         <TitleBlueBanner title={"Visi Misi"} />
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
       <section className="px-8 sm:px-24 py-8 bg-biruMuda-100" id="visi-misi">
         <h2 className={`${styles.heading4} mb-4`}>Visi</h2>
         <ol className="list-none pl-4">
@@ -39,7 +42,7 @@ const VisiMisi = () => {
           ))}
         </ol>
       </section>
-      
+
       <section className={`${styles.paddingX} py-8 bg-biruMuda-100`}>
         <h2 className={`${styles.heading4} mb-4`}>Nilai-Nilai Perusahaan</h2>
         <p className="mb-4">
