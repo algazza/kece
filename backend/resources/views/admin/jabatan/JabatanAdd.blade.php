@@ -33,14 +33,14 @@
                                 <input type="text"
                                        id="name"
                                        class="mt-2 p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white "
-                                       placeholder="First Name" name="name">
+                                       placeholder="Nama Anda" name="name">
                             </div>
                             <div class="w-full mb-4 lg:mt-6">
                                 <label for="email" class="dark:text-black">Jabatan</label>
                                 <input type="text"
                                        id="email"
                                        class="mt-2 p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white "
-                                       placeholder="Email" name="email">
+                                       placeholder="Jabatan" name="email">
                             </div>
                         </div>
     
