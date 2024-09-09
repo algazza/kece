@@ -87,4 +87,11 @@ class ManajemenController extends Controller
             return redirect()->back()->with('error', 'Data Manajemen gagal Di Update');
         }
     }
+
+
+    public function index(){
+        $manajemen = Manajemen::get();
+        return response()->json($manajemen);
+    }
+
 }
