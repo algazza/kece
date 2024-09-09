@@ -149,3 +149,9 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
 
 
+Route::get('/Jab', function () {
+    return view('admin.jabatan.Jabatan');
+});
+Route::get('/Jaba', function () {
+    return view('admin.jabatan.JabatanAdd');
+});
