@@ -44,7 +44,6 @@ class ManajemenController extends Controller
             return redirect()->back()->with('error', 'Data Manajemen Gagal Di Hapus');
         }
     }
-    
 
     public function update(Request $request,$id){
         try{
