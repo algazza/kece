@@ -334,7 +334,7 @@ const Home = () => {
             <div
               key={news.id}
               className="p-4 bg-abuTerang rounded-xl cursor-pointer"
-              onClick={() => navigate(`/news/${news.id}`)}
+              onClick={() => navigate(`/berita/${news.id}`)}
             >
               <img
                 src={`http://localhost:8000/image/public/news/${news.image}`}
@@ -347,13 +347,7 @@ const Home = () => {
                 </p>
                 <h6 className={`${styles.heading6} my-2`}>{news.judul}</h6>
                 <p className={`${styles.fontSmall} text-abuGelap`}>
-                  {news.created_at
-                    ? new Intl.DateTimeFormat("id-ID", {
-                        day: "2-digit",
-                        month: "2-digit",
-                        year: "numeric",
-                      }).format(new Date(news.created_at))
-                    : "Tanggal tidak tersedia"}
+                  {news.tanggal}
                 </p>
               </div>
             </div>

@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model
+class Manajemen extends Model
 {
     use HasFactory;
-
-    protected $table = 'news';
-
+    protected $table = 'manajemen';
     protected $fillable = [
-        'judul',
-        'penulis',
-        'keterangan',
+        'nama',
+        'jabatan',
+        'deskripsi',
         'image',
-        'kategory',
-        'tanggal'
     ];
 }

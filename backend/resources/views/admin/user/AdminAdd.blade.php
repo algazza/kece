@@ -13,7 +13,6 @@
                 </h1>
                 <h2 class="text-grey text-sm mb-4 dark:text-black">Create Profile</h2>
                 <form enctype="multipart/form-data" method="post" action="{{ route('admin.post') }}">
-
                     @csrf
                     <div
                         class="w-full rounded-sm bg-cover bg-center bg-no-repeat items-center">

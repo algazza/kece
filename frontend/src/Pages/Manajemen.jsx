@@ -1,16 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import IntroBanner from "../Layouts/IntroBanner";
-import { BlueBanner, profileDewanKomisaris } from "../helper";
+import { BlueBanner } from "../helper";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import styles from "../helper/style";
 
 const Manajemen = () => {
   const [profile, setProfile] = useState(1);
-  // profile
-  function updateProfile(id) {
-    setProfile(id);
+  const [profileDewanKomisaris, setProfileDewanKomisaris] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/api/manajemen')
+      .then(response => response.json())
+      .then(data => {
+        setProfileDewanKomisaris(data);
+        // Jika ID default tidak ditemukan, cari ID berikutnya
+        if (!data.some(profile => profile.id === 1)) {
+          findNextProfileId(1, data);
+        }
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
+  function findNextProfileId(startId, profiles) {
+    // Cari ID berikutnya yang ada di data
+    const validProfiles = profiles.map(profile => profile.id);
+    const nextId = validProfiles.find(id => id > startId);
+
+    if (nextId) {
+      setProfile(nextId);
+    } else if (validProfiles.length > 0) {
+      setProfile(validProfiles[0]); // Set ke ID pertama yang ada jika tidak ada ID yang lebih besar
+    }
   }
+
+  function updateProfile(id) {
+    // Periksa apakah ID yang diinginkan ada dalam array
+    const profileExists = profileDewanKomisaris.some(profile => profile.id === id);
+
+    if (profileExists) {
+      setProfile(id);
+    } else {
+      findNextProfileId(id, profileDewanKomisaris);
+    }
+  }
+  
 
   return (
     <>
@@ -55,12 +89,12 @@ const Manajemen = () => {
                   transition={{ duration: 0.5 }}
                   className=""
                 >
-                  <h2 className={`${styles.heading4}`}>{speech.name}</h2>
+                  <h2 className={`${styles.heading4}`}>{speech.nama}</h2>
                   <h3 className={`${styles.heading6} font-semibold mb-4`}>
-                    {speech.position}
+                    {speech.jabatan}
                   </h3>
 
-                  <p className="">{speech.speech}</p>
+                  <p className="">{speech.deskripsi}</p>
                 </motion.div>
               )
             );
@@ -74,7 +108,7 @@ const Manajemen = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -50 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  src={img.image}
+                  src={`http://localhost:8000/image/public/manajemen/${img.image}`}
                   alt=""
                 />
               )
@@ -91,7 +125,7 @@ const Manajemen = () => {
                 >
                   <div className="w-[96px] h-[96px] rounded-full bg-abuGelap overflow-hidden">
                     <img
-                      src={menu.image}
+                      src={`http://localhost:8000/image/public/manajemen/${menu.image}`}
                       alt=""
                       className={`${
                         profile === menu.id &&
@@ -100,8 +134,8 @@ const Manajemen = () => {
                     />
                   </div>
                   <div className="pt-2 text-center">
-                    <h3 className={`${styles.fontBodyBold}`}>{menu.name}</h3>
-                    <p className={`${styles.fontCaption}`}>{menu.position}</p>
+                    <h3 className={`${styles.fontBodyBold}`}>{menu.nama}</h3>
+                    <p className={`${styles.fontCaption}`}>{menu.jabatan}</p>
                   </div>
                 </motion.div>
               ))}
