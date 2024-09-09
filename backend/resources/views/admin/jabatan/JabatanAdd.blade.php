@@ -9,8 +9,8 @@
                     <h1 class="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2 dark:text-black">
                      Add Person
                     </h1>
-                    <form enctype="multipart/form-data" method="post">
-                       
+                    <form enctype="multipart/form-data" method="post" action="{{ route('manajemen.post') }}">
+                        @csrf
                         <div
                         class="w-full rounded-sm bg-cover bg-center bg-no-repeat items-center">
                         <div class="mx-auto flex justify-center">
@@ -33,21 +33,20 @@
                                 <input type="text"
                                        id="name"
                                        class="mt-2 p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white "
-                                       placeholder="Nama Anda" name="name">
+                                       placeholder="Nama Anda" name="nama">
                             </div>
                             <div class="w-full mb-4 lg:mt-6">
-                                <label for="email" class="dark:text-black">Jabatan</label>
+                                <label class="dark:text-black">Jabatan</label>
                                 <input type="text"
-                                       id="email"
                                        class="mt-2 p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white "
-                                       placeholder="Jabatan" name="email">
+                                       placeholder="Jabatan" name="jabatan">
                             </div>
                         </div>
     
                         <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col xss:flex-col gap-2 justify-center w-full">
                             <div class="w-full">
                                 <h3 class="dark:text-black mb-2">Deskripsi</h3>
-                                <textarea type="text" class="text-grey p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white " name="no_handphone"></textarea>
+                                <textarea type="text" class="text-grey p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white " name="deskripsi"></textarea>
                             </div>
                         </div>
                         <div class="w-full rounded-lg bg-blue-500 mt-4 text-white text-lg font-semibold cursor-pointer hover:bg-blue-600 hover:text-white duration-300">
@@ -59,4 +58,31 @@
         </div>
     </section>
 </section>
+
+
+<script>
+    document.getElementById('upload_profile').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const previewImage = document.getElementById('previewImage');
+    
+    if (file) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            previewImage.src = e.target.result;
+            previewImage.style.display = 'block';
+        }
+        
+        reader.readAsDataURL(file);
+    } else {
+        previewImage.src = '';
+        previewImage.style.display = 'none'; 
+    }
+});
+
+
+document.getElementById('previewImage').addEventListener('click', function() {
+    document.getElementById('upload_profile').click();
+}); 
+</script>
 @endsection

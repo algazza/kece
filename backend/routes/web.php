@@ -18,6 +18,7 @@ use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TabunganController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ManajemenController;
 use App\Http\Controllers\PenghargaanController;
 use Illuminate\Routing\Route as RoutingRoute;
 
@@ -146,12 +147,8 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
 
 
-
-
-
-Route::get('/Jab', function () {
-    return view('admin.jabatan.Jabatan');
-});
-Route::get('/Jaba', function () {
-    return view('admin.jabatan.JabatanAdd');
-});
+Route::get('/Manajemen', [ManajemenController::class, 'viewManajemen'])->name('manajemen.index');
+Route::get('/Manajemen/add', [ManajemenController::class, 'viewManajemenAdd'])->name('manajemen.add');
+Route::put('/Manajemen/Update/{id}', [ManajemenController::class, 'update'])->name('manajemen.update');
+Route::post('/Manajemen/Post', [ManajemenController::class, 'store'])->name('manajemen.post');
+Route::delete('/Manajemen/{id}', [ManajemenController::class, 'destroy'])->name('manajemen.delete');

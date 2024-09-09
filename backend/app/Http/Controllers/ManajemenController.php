@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class ManajemenController extends Controller
 {
+    public function viewManajemen(){
+        $manajemen = Manajemen::get();
+        return view('admin.jabatan.Jabatan', compact('manajemen'));
+    }
+
+    public function viewManajemenAdd(){
+        return view('admin.jabatan.JabatanAdd');
+    }
+
     public function store(Request $request){
         try{
             $request->validate([
@@ -29,7 +38,7 @@ class ManajemenController extends Controller
     
             $manajemen->save();
     
-            return redirect()->route('')->with('success', 'Data Manajemen Berhasil DI Tambah');
+            return redirect()->route('manajemen.index')->with('success', 'Data Manajemen Berhasil DI Tambah');
         } catch(\Exception $e){
             return redirect()->back()->with('error', 'Data Manajemen Gagal Di Tambah');
         }
