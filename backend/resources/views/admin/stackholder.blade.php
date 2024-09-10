@@ -2,13 +2,13 @@
 @section('content')
 <section class="box-border p-0 m-0 bg-gray-200 font-poppins overflow-x-hidden">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 pt-[5rem] ml-[3rem] mr-[1rem]">
-        <div>
-            <button id="openContactForm" class="absolute flex items-center justify-center text-2xl text-red-600 font-semibold py-2 px-4 rounded-lg">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 pt-[5rem] lg:ml-[4rem] md:ml-[4rem] sm:ml-[4rem] xss:ml-[1rem] xs:ml-[1rem]  mr-[1rem]">
+        <div class="bg-gray-100 px-[1rem] py-2 border border-gray-500 rounded">
+            <button id="openContactForm" class="absolute flex text-2xl text-red-600 font-semibold py-2 rounded-lg">
               <i class='bx bx-trash bg-white py-2 px-3 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md '></i>
           </button>
-          <img src="https://cdn0-production-images-kly.akamaized.net/050q8aEL_dUc38Ayt5k-4857gys=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4582121/original/030715200_1695192188-skibidi_toilet__dafuq_boom_.jpg" 
-          class="max-w-sm h-full rounded-md " alt="">
+          <img src="https://bprartomoro.co.id/wp-content/uploads/2020/05/bank-bjb-seeklogo.png" 
+          class="w-full h-full rounded-md " alt="">
         </div>
         </div>
       
@@ -42,7 +42,7 @@
                 </div>
                 <h2 class="text-2xl font-bold mb-4">Are u sure wanna delete this?</h2>
 
-            <form action="https://fabform.io/f/{form-id}" method="post">
+            <form action="" method="post">
                     <button type="submit"
                             class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 duration-300">
                         nah
