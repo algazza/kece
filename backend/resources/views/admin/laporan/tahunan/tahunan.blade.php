@@ -2,10 +2,13 @@
 
 @extends('layout')
 @section('content')
-    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins">
-        <div class="pt-[5rem] justify-start">
-            <h1 class="text-3xl mb-2 font-bold">Laporan Tahunan</h1>
-        </div>
+<section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins">
+    <div class="text-center flex pt-[5rem] xss:mx-[3rem] xs:[3rem]">
+        <a href="{{ route ('laporan.index') }}" class="hidden md:block xl:block">
+        <i class='bx bx-arrow-back text-4xl rounded-lg font-semibold bg-white ml-[5rem] text-red-600 px-2 hover:bg-gray-300 shadow-sm duration-300 ' ></i>
+    </a>
+        <h1 class="text-3xl text-gray-700 border border-gray-300 shadow-md shadow-gray-400 font-semibold bg-white mx-auto max-w-xs py-3 px-5 rounded-md">Laporan Tahunan</h1>
+    </div>
 
         <ul role="list" class=" mt-8 grid max-w-2xl justify-center  grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3 mx-auto px-[9rem] mb-[2rem]">
             @foreach ($laporan as $item)
@@ -27,12 +30,11 @@
                 </div>
             @endforeach
         </ul>
-
-    <div class="flex justify-end fixed bottom-10 right-10 bg-gray-50 rounded-full box-borde">
-        <button class="flex items-center justify-center w-12 h-12 text-gray-600  hover:text-black cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300 border-[1px] border-gray-500 shadow-gray-400 shadow-sm rounded-full" onclick="openModal('modelConfirm')">
-            <i class='bx bxs-file-plus text-[1.5rem]'></i>
-        </button>
-    </div>
+            <div class="flex justify-end fixed bottom-10 right-10 bg-gray-50 rounded-full box-borde">
+                <button class="flex items-center justify-center w-12 h-12 text-gray-600  hover:text-black cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300 border-[1px] border-gray-500 shadow-gray-400 shadow-sm rounded-full" onclick="openModal('modelConfirm')">
+                    <i class='bx bxs-file-plus text-[1.5rem]'></i>
+                </button>
+            </div>
 
 
         <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
