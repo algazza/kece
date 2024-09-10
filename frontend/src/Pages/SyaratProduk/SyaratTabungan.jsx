@@ -267,7 +267,7 @@ const SyaratTabungan = () => {
             <section className="flex justify-center gap-4">
               <div
                 onClick={() => updateMenu(0)}
-                className={`bg-biruMuda-200 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
+                className={`bg-biruMuda-700 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Kembali Menu
               </div>

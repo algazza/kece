@@ -6,21 +6,19 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import React, { useState } from "react";
-import styles from "../helper/style";
+import styles from "../../helper/style";
 
-const SimulasiCalc = () => {
-  const [nominal, setNominal] = useState('');
+const SimulasiCalcKredit = () => {
+  const [nominal, setNominal] = useState("");
   const [waktu, setWaktu] = useState();
   const [bunga, setBunga] = useState();
   const [hasilTotal, setHasilTotal] = useState();
   const [hasilBunga, setHasilBunga] = useState();
   const [showResult, setShowResult] = useState(false);
-const [rawNominal, setRawNominal] = useState('')
+  const [rawNominal, setRawNominal] = useState("");
 
-
-  // Fungsi untuk memformat angka menjadi format uang Indonesia
   const formatRupiah = (value) => {
-    const numberString = value.replace(/[^,\d]/g, ""); // Menghapus semua karakter kecuali angka
+    const numberString = value.replace(/[^,\d]/g, ""); 
     const split = numberString.split(",");
     const sisa = split[0].length % 3;
     let rupiah = split[0].substr(0, sisa);
@@ -35,10 +33,9 @@ const [rawNominal, setRawNominal] = useState('')
     return rupiah;
   };
 
-  // Fungsi untuk menangani perubahan input dan langsung memformat inputan menjadi Rupiah
   const handleNominalChange = (e) => {
-    const rawValue = e.target.value.replace(/\./g, ""); // Hapus titik dari input untuk raw value
-    setRawNominal(rawValue); // Set raw value untuk perhitungan
+    const rawValue = e.target.value.replace(/\./g, "");
+    setRawNominal(rawValue); 
 
     setNominal(formatRupiah(rawValue));
   };
@@ -93,9 +90,7 @@ const [rawNominal, setRawNominal] = useState('')
                 className="bg-primary"
                 required
                 value={nominal}
-                onChange={
-                  handleNominalChange
-                }
+                onChange={handleNominalChange}
                 inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
               />
             </FormControl>
@@ -149,17 +144,23 @@ const [rawNominal, setRawNominal] = useState('')
       {showResult && (
         <div className="">
           <h2 className={`${styles.heading3} text-center`}>Hasil Hitung</h2>
-
-          <ul>
-            <li>
-              Setoran Awal Rp. {parseInt(rawNominal).toLocaleString("id-ID")}
-            </li>
-            <li>Angka Bunga {bunga}%</li>
-            <li>Nilai Bunga {hasilBunga}</li>
-            <li>
-              {parseInt(rawNominal).toLocaleString("id-ID")} + {hasilBunga}
-            </li>
-          </ul>
+          <div className="grid md:grid-cols-2 grid-cols-2">
+            <div className="">
+              <h3 className={`${styles.fontBodyBold}`}>Setoran Awal</h3>
+              <h3 className={`${styles.fontBodyBold}`}>Angka Bunga</h3>
+              <h3 className={`${styles.fontBodyBold}`}>Nilai Bunga</h3>
+            </div>
+            <div>
+              <h3 className={`${styles.fontBodyBold}`}>
+                :Rp. {parseInt(rawNominal).toLocaleString("id-ID")}
+              </h3>
+              <h3 className={`${styles.fontBodyBold}`}>:{bunga}%</h3>
+              <h3 className={`${styles.fontBodyBold}`}>:{hasilBunga}</h3>
+            </div>
+          </div>
+          <h3 className={`${styles.fontBodyBold} text-center mt-4 mb-2`}>
+            {parseInt(rawNominal).toLocaleString("id-ID")} + {hasilBunga}
+          </h3>
 
           <h2 className={`${styles.heading5} text-center`}>Estimasi Akhir</h2>
           <h2 className={`${styles.heading3} text-center text-biruMuda-500`}>
@@ -181,4 +182,4 @@ const [rawNominal, setRawNominal] = useState('')
   );
 };
 
-export default SimulasiCalc;
+export default SimulasiCalcKredit;

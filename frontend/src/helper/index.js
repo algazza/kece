@@ -23,6 +23,7 @@ import Banneremyu from "../img/Banner2.svg"; //1250 x 477 || 21 : 8
 import awardimg from "../img/awardimage.png"
 import pdfexample from "../img/Pembagian Kelompok MPLS PPLG.pdf"
 import ImageSimulasi from "../img/BankImageSimulasi.svg"
+import TiktokIcon from "../img/tiktok-fill.svg"
 import ThumbnailYoutube from "../img/thumbnailYoutube.png"
 
 export {
@@ -39,6 +40,7 @@ export {
   nunezimg,
   sampleNews,
   pdfexample,
+  TiktokIcon,
   ThumbnailYoutube,
   SimulasiPercil1,
   SimulasiPercil2,
@@ -392,30 +394,30 @@ export const PenempatanDana = [
 
 // ===================== FOOTER ========================
 export const marqueeImage = [
-  { id: "1", image: partnerImage1 },
-  { id: "2", image: partnerImage2 },
-  { id: "3", image: partnerImage3 },
-  { id: "4", image: partnerImage4 },
-  { id: "5", image: partnerImage5 },
-  { id: "6", image: partnerImage6 },
-  { id: "7", image: partnerImage7 },
+  { id: 1, image: partnerImage1 },
+  { id: 2, image: partnerImage2 },
+  { id: 3, image: partnerImage3 },
+  { id: 4, image: partnerImage4 },
+  { id: 5, image: partnerImage5 },
+  { id: 6, image: partnerImage6 },
+  { id: 7, image: partnerImage7 },
 ];
 
 export const footer1 = [
   {
     id: "1",
-    title: "Tentang Kami",
-    link: "/tentangkami",
+    title: "Sejarah",
+    link: "/sejarah",
   },
   {
     id: "2",
-    title: "Kebijakan Privasi",
-    link: "/kebijakanprivasi",
+    title: "Manajemen",
+    link: "/manajemen",
   },
   {
     id: "3",
-    title: "GCG",
-    link: "/gcg",
+    title: "Laporan",
+    link: "/laporan",
   },
 ];
 

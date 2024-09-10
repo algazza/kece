@@ -148,15 +148,15 @@ const News = () => {
       </section>
 
       <section
-        className={`${styles.paddingY} grid md:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
+        className={`${styles.paddingY} grid grid-cols-x150 sm:grid-cols-x250 md:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
       >
         {filteredBerita.slice(pagination.from, pagination.to).map((news) => (
           <div
             key={news.id}
-            className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
+            className="md:grid md:grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
             onClick={() => navigate(`/berita/${news.id}`)}
           >
-            <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
+            <div className="rounded-t-xl md:rounded-l-xl md:w-40 md:h-40 overflow-hidden">
               <img
                 src={`http://localhost:8000/image/public/news/${news.image}`}
                 alt={news.judul}
