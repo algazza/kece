@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </a>
-          <a href="" class="relative max-w-md rounded-lg bg-gradient-to-tr w-auto from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 md:w-[20rem]">
+          <a href="{{ route('direksi.index') }}" class="relative max-w-md rounded-lg bg-gradient-to-tr w-auto from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 md:w-[20rem]">
             <div class="bg-white p-7 rounded-md">
                     <div class="flex">
                     </div>

@@ -57,7 +57,7 @@ class ManajemenController extends Controller
 
     public function viewManajemenFind($id){
         $manajemen = Manajemen::find($id);
-        return view('admin.jabatan.JabatanEdit', compact('manajemen'));
+        return view('admin.jabatan.komisaris.KomisarisEdit', compact('manajemen'));
     }
 
     public function update(Request $request,$id){

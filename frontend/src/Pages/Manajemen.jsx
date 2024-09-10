@@ -6,43 +6,57 @@ import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import styles from "../helper/style";
 
 const Manajemen = () => {
-  const [profile, setProfile] = useState(1);
+  const [komisaris, setKomisaris] = useState(1);
+  const [direksi, setDireksi] = useState(1)
   const [manajemenMenu, setManajemenMenu] = useState(0);
   const [profileDewanKomisaris, setProfileDewanKomisaris] = useState([]);
+  const [profileDewanDireksi, setProfileDewanDireksi] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:8000/api/manajemen")
       .then((response) => response.json())
       .then((data) => {
         setProfileDewanKomisaris(data);
+        if (!data.some((profile) => profile.id === 1) ) {
+          findNextProfileId(1, data, setKomisaris);
+          findNextProfileId(1, data, setDireksi);
+        }
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  
+      fetch("http://localhost:8000/api/direksi")
+      .then((response) => response.json())
+      .then((data) => {
+        setProfileDewanDireksi(data);
         // Jika ID default tidak ditemukan, cari ID berikutnya
         if (!data.some((profile) => profile.id === 1)) {
-          findNextProfileId(1, data);
+          findNextProfileId(1, data, setKomisaris);
+          findNextProfileId(1, data, setDireksi);
         }
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  function findNextProfileId(startId, profiles) {
-    // Cari ID berikutnya yang ada di data
+  
+  function findNextProfileId(startId, profiles, setProfileImage) {
     const validProfiles = profiles.map((profile) => profile.id);
     const nextId = validProfiles.find((id) => id > startId);
 
     if (nextId) {
-      setProfile(nextId);
+      setProfileImage(nextId);
     } else if (validProfiles.length > 0) {
-      setProfile(validProfiles[0]); // Set ke ID pertama yang ada jika tidak ada ID yang lebih besar
+      setProfileImage(validProfiles[0])
     }
   }
 
   function updateProfile(id) {
-    // Periksa apakah ID yang diinginkan ada dalam array
     const profileExists = profileDewanKomisaris.some(
       (profile) => profile.id === id
     );
 
     if (profileExists) {
-      setProfile(id);
+      setKomisaris(id);
+      setDireksi(id);
     } else {
       findNextProfileId(id, profileDewanKomisaris);
     }
@@ -95,7 +109,7 @@ const Manajemen = () => {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {profileDewanKomisaris.map((speech) => {
               return (
-                profile === speech.id && (
+                komisaris === speech.id && (
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -116,7 +130,7 @@ const Manajemen = () => {
 
             {profileDewanKomisaris.map((img) => {
               return (
-                profile === img.id && (
+                komisaris === img.id && (
                   <motion.img
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -142,7 +156,7 @@ const Manajemen = () => {
                         src={`http://localhost:8000/image/public/manajemen/${menu.image}`}
                         alt=""
                         className={`${
-                          profile === menu.id &&
+                          komisaris === menu.id &&
                           "bg-blue-300 transition-all duration-500"
                         }`}
                       />
@@ -162,7 +176,7 @@ const Manajemen = () => {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {profileDewanKomisaris.map((speech) => {
               return (
-                profile === speech.id && (
+                direksi === speech.id && (
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -183,7 +197,7 @@ const Manajemen = () => {
 
             {profileDewanKomisaris.map((img) => {
               return (
-                profile === img.id && (
+                direksi === img.id && (
                   <motion.img
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -198,7 +212,7 @@ const Manajemen = () => {
 
             <div className="sm:col-span-2 md:col-span-1">
               <div className="grid grid-cols-3 gap-4">
-                {profileDewanKomisaris.map((menu) => (
+                {profileDewanDireksi.map((menu) => (
                   <motion.div
                     key={menu.id}
                     className="grid justify-items-center cursor-pointer"
@@ -209,7 +223,7 @@ const Manajemen = () => {
                         src={`http://localhost:8000/image/public/manajemen/${menu.image}`}
                         alt=""
                         className={`${
-                          profile === menu.id &&
+                          direksi === menu.id &&
                           "bg-blue-300 transition-all duration-500"
                         }`}
                       />

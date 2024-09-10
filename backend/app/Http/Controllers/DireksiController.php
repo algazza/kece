@@ -9,11 +9,11 @@ class DireksiController extends Controller
 {
     public function viewManajemen(){
         $direksi = Direksi::get();
-        return view('admin.jabatan.Jabatan', compact('direksi'));
+        return view('admin.jabatan.direksi.Direksi', compact('direksi'));
     }
 
     public function viewManajemenAdd(){
-        return view('admin.jabatan.JabatanAdd');
+        return view('admin.jabatan.direksi.DireksiAdd');
     }
 
     public function store(Request $request){

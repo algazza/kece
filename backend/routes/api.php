@@ -14,6 +14,7 @@ use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\TabunganController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DireksiController;
 use App\Http\Controllers\ManajemenController;
 use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\StackholderController;
@@ -43,6 +44,7 @@ Route::resource('sponsor',SponsorController::class);
 Route::resource('laporan',LaporanController::class);
 Route::resource('penghargaan',PenghargaanController::class);
 Route::resource('manajemen',ManajemenController::class);
+Route::resource('direksi',DireksiController::class);
 Route::resource('stackholder',StackholderController::class);
 
 

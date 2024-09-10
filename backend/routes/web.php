@@ -18,6 +18,7 @@ use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TabunganController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DireksiController;
 use App\Http\Controllers\ManajemenController;
 use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\StackholderController;
@@ -147,12 +148,20 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::delete('/Penghargaan/{id}', [PenghargaanController::class, 'destroy'])->name('penghargaan.delete');
     
     Route::get('/Jabatan', function () {return view('admin.jabatan.JabatanOpt'); })->name('jabatan');
+
     Route::get('/Manajemen', [ManajemenController::class, 'viewManajemen'])->name('manajemen.index');
     Route::get('/Manajemen/add', [ManajemenController::class, 'viewManajemenAdd'])->name('manajemen.add');
     Route::get('/Manajemen/find/{id}', [ManajemenController::class, 'viewManajemenFind'])->name('manajemen.find');
     Route::put('/Manajemen/Update/{id}', [ManajemenController::class, 'update'])->name('manajemen.update');
     Route::post('/Manajemen/Post', [ManajemenController::class, 'store'])->name('manajemen.post');
     Route::delete('/Manajemen/{id}', [ManajemenController::class, 'destroy'])->name('manajemen.delete');
+
+    Route::get('/Direksi', [DireksiController::class, 'viewManajemen'])->name('direksi.index');
+    Route::get('/Direksi/add', [DireksiController::class, 'viewManajemenAdd'])->name('direksi.add');
+    Route::get('/Direksi/find/{id}', [DireksiController::class, 'viewManajemenFind'])->name('direksi.find');
+    Route::put('/Direksi/Update/{id}', [DireksiController::class, 'update'])->name('direksi.update');
+    Route::post('/Direksi/Post', [DireksiController::class, 'store'])->name('direksi.post');
+    Route::delete('/Direksi/{id}', [DireksiController::class, 'destroy'])->name('direksi.delete');
 
     Route::get('/Stackholder', [StackholderController::class, 'viewStackholder'])->name('stackholder.index');
     Route::post('/Stackholder/post', [StackholderController::class, 'store'])->name('stackholder.post');
