@@ -9,11 +9,11 @@ class ManajemenController extends Controller
 {
     public function viewManajemen(){
         $manajemen = Manajemen::get();
-        return view('admin.jabatan.Jabatan', compact('manajemen'));
+        return view('admin.jabatan.komisaris.Komisaris', compact('manajemen'));
     }
 
     public function viewManajemenAdd(){
-        return view('admin.jabatan.JabatanAdd');
+        return view('admin.jabatan.komisaris.KomisarisAdd');
     }
 
     public function store(Request $request){

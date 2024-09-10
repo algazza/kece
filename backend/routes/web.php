@@ -138,6 +138,7 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::get('/Banner', [BannerController::class, 'viewBanner'])->name('banner');
     Route::post('/Banner/Post', [BannerController::class, 'store'])->name('banner.add');
     Route::delete('/Banner/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+    Route::put('/Banner/update/{id}', [BannerController::class, 'update'])->name('banner.update');
     
     Route::get('/Penghargaan', [PenghargaanController::class, 'viewPenghargaan'])->name('penghargaan.index');
     Route::get('/Penghargaan/Page/{id}', [PenghargaanController::class, 'viewPenghargaanUpdate'])->name('penghargaan.update.page');
@@ -145,6 +146,7 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::post('/Penghargaan/Post', [PenghargaanController::class, 'store'])->name('penghargaan.post');
     Route::delete('/Penghargaan/{id}', [PenghargaanController::class, 'destroy'])->name('penghargaan.delete');
     
+    Route::get('/Jabatan', function () {return view('admin.jabatan.JabatanOpt'); })->name('jabatan');
     Route::get('/Manajemen', [ManajemenController::class, 'viewManajemen'])->name('manajemen.index');
     Route::get('/Manajemen/add', [ManajemenController::class, 'viewManajemenAdd'])->name('manajemen.add');
     Route::get('/Manajemen/find/{id}', [ManajemenController::class, 'viewManajemenFind'])->name('manajemen.find');
@@ -155,11 +157,4 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::get('/Stackholder', [StackholderController::class, 'viewStackholder'])->name('stackholder.index');
     Route::post('/Stackholder/post', [StackholderController::class, 'store'])->name('stackholder.post');
     Route::delete('/Stackholder/post/{id}', [StackholderController::class, 'destroy'])->name('stackholder.delete');
-});
-
-
-
-
-Route::get('/op', function () {
-    return view('admin.jabatan.JabatanOpt');
 });

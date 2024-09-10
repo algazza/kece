@@ -8,25 +8,28 @@
       <article class=" relative flex flex-col justify-end overflow-hidden rounded-2xl w-full mx-auto mt-1 cursor-pointer group hover:bg-gray-200 duration-300" style="padding-top: 37.5%;">
         <img src="{{ asset('image/public/banner/' . $item->image) }}" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
         <div class="z-10 gap-y-1 bg-white border shadow-md rounded-md text-gray-500 overflow-hidden leading-6 absolute bottom-4 right-4 font-poppins text-sm px-3 block">{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</div>
-        <div class="absolute">
+        <div class="absolute z-20">
           <form action="{{ route('banner.delete', $item->id) }}" method="POST" onsubmit="return confirmDelete()">
               @csrf
               @method('DELETE')
               <button type="submit" class="flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-red-600 font-semibold py-2 px-4 rounded-lg">
                   <i class='bx bx-trash bg-white py-2 lg:px-3 md:px-3 sm:px-3 xss:px-5 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md'></i>
               </button>
-            </form>
+          </form>
           </div>
-          <div class="absolute">
-          <form action="{{ route('banner.delete', $item->id) }}" method="POST" onsubmit="return confirmDelete()">
+          
+          <div class="absolute z-10">
+            <form id="image-update-form" action="{{ route('banner.update', $item->id) }}" method="POST" enctype="multipart/form-data">
               @csrf
-              @method('DELETE')
-              <button type="submit" class="flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-blue-600 font-semibold py-2 px-20 rounded-lg">
+              @method('PUT')
+              <label for="update-image" class="flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-blue-600 font-semibold py-2 px-20 rounded-lg">
                   <i class='bx bx-pencil bg-white py-2 lg:px-3 md:px-3 sm:px-3 xss:px-5 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md'></i>
-              </button>
+                  <input id="update-image" type="file" class="hidden" name="image">
+              </label>
           </form>
         </div>
         </article>
+        
     @endforeach
 </div>
 
@@ -42,11 +45,18 @@
 </section>
 
 <script>
-  const imageInput = document.getElementById('upload-image');
-  imageInput.addEventListener('change', function() {
-    const form = document.getElementById('image-upload-form');
-    form.submit();
-  });
+const uploadImageInput = document.getElementById('upload-image');
+uploadImageInput.addEventListener('change', function() {
+  const form = document.getElementById('image-upload-form');
+  form.submit();
+});
+
+const updateImageInput = document.getElementById('update-image');
+updateImageInput.addEventListener('change', function() {
+  const form = document.getElementById('image-update-form');
+  form.submit();
+});
+
 
   function confirmDelete() {
     return confirm('Apakah Anda yakin ingin menghapus banner ini?');
