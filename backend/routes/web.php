@@ -20,6 +20,7 @@ use App\Http\Controllers\TabunganController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManajemenController;
 use App\Http\Controllers\PenghargaanController;
+use App\Http\Controllers\StackholderController;
 use Illuminate\Routing\Route as RoutingRoute;
 
 /*
@@ -143,22 +144,15 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::put('/Penghargaan/Update/{id}', [PenghargaanController::class, 'update'])->name('penghargaan.update');
     Route::post('/Penghargaan/Post', [PenghargaanController::class, 'store'])->name('penghargaan.post');
     Route::delete('/Penghargaan/{id}', [PenghargaanController::class, 'destroy'])->name('penghargaan.delete');
-});
+    
+    Route::get('/Manajemen', [ManajemenController::class, 'viewManajemen'])->name('manajemen.index');
+    Route::get('/Manajemen/add', [ManajemenController::class, 'viewManajemenAdd'])->name('manajemen.add');
+    Route::get('/Manajemen/find/{id}', [ManajemenController::class, 'viewManajemenFind'])->name('manajemen.find');
+    Route::put('/Manajemen/Update/{id}', [ManajemenController::class, 'update'])->name('manajemen.update');
+    Route::post('/Manajemen/Post', [ManajemenController::class, 'store'])->name('manajemen.post');
+    Route::delete('/Manajemen/{id}', [ManajemenController::class, 'destroy'])->name('manajemen.delete');
 
-
-
-Route::get('/Manajemen', [ManajemenController::class, 'viewManajemen'])->name('manajemen.index');
-Route::get('/Manajemen/add', [ManajemenController::class, 'viewManajemenAdd'])->name('manajemen.add');
-Route::get('/Manajemen/find/{id}', [ManajemenController::class, 'viewManajemenFind'])->name('manajemen.find');
-Route::put('/Manajemen/Update/{id}', [ManajemenController::class, 'update'])->name('manajemen.update');
-Route::post('/Manajemen/Post', [ManajemenController::class, 'store'])->name('manajemen.post');
-Route::delete('/Manajemen/{id}', [ManajemenController::class, 'destroy'])->name('manajemen.delete');
-
-
-
-
-
-
-Route::get('/sh', function () {
-    return view('admin.stackholder');
+    Route::get('/Stackholder', [StackholderController::class, 'viewStackholder'])->name('stackholder.index');
+    Route::post('/Stackholder/post', [StackholderController::class, 'store'])->name('stackholder.post');
+    Route::delete('/Stackholder/post/{id}', [StackholderController::class, 'destroy'])->name('stackholder.delete');
 });

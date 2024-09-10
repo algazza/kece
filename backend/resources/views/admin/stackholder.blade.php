@@ -2,18 +2,24 @@
 @section('content')
 <section class="box-border p-0 m-0 bg-gray-200 font-poppins overflow-x-hidden">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 pt-[5rem] lg:ml-[4rem] md:ml-[4rem] sm:ml-[4rem] xss:ml-[1rem] xs:ml-[1rem]  mr-[1rem]">
-        <div class="bg-gray-100 px-[1rem] py-2 border border-gray-500 rounded">
-            <button id="openContactForm" class="absolute flex text-2xl text-red-600 font-semibold py-2 rounded-lg">
-              <i class='bx bx-trash bg-white py-2 px-3 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md '></i>
-          </button>
-          <img src="https://bprartomoro.co.id/wp-content/uploads/2020/05/bank-bjb-seeklogo.png" 
-          class="w-full h-full rounded-md " alt="">
-        </div>
-        </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 pt-[5rem] lg:ml-[4rem] md:ml-[4rem] sm:ml-[4rem] xss:ml-[1rem] xs:ml-[1rem]  mr-[1rem]">
+    @foreach ($stackholder as $item)
+      <div class="bg-gray-100 px-[1rem] py-2 border border-gray-500 rounded">
+        <form action="{{ route('stackholder.delete', $item->id) }}" method="POST" enctype="multipart/form-data">
+          @csrf
+          @method('DELETE')
+          <button id="openContactForm" class="absolute flex text-2xl text-red-600 font-semibold py-2 rounded-lg" type="submit">
+            <i class='bx bx-trash bg-white py-2 px-3 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md '></i>
+        </button>
+        </form>
+        <img src="{{ asset('image/public/stackholder/' . $item->image) }}" 
+        class="w-full h-full rounded-md " alt="">
+      </div>
+    @endforeach
+  </div>
       
   <div class="flex justify-end fixed bottom-10 right-10">
-    <form id="image-upload-form">
+    <form id="image-upload-form" enctype="multipart/form-data" method="post" action="{{ route('stackholder.post') }}">
       @csrf  
       <label for="upload-image" class="flex items-center justify-center w-19 h-12 cursor-pointer bg-white hover:bg-slate-200 hover:scale-105 duration-300 border-2 border-gray-400 text-black rounded-full shadow-md">
        <p class="px-3">+ Stackholder img</p>
@@ -22,41 +28,6 @@
     </form>
   </div>
  
-  <div class="flex justify-center items-center h-screen">
-    <!-- Trigger Button -->
-    
-
-    <!-- Modal -->
-    <div id="contactFormModal" class="fixed z-10 inset-0 overflow-y-auto hidden backdrop-blur-md duration-200">
-        <div class="flex items-center justify-center min-h-screen">
-            <div class="bg-white w-auto p-6 rounded shadow-md">
-                <div class="flex justify-end">
-                    <!-- Close Button -->
-                    <button id="closeContactForm" class="text-gray-700 hover:text-red-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <h2 class="text-2xl font-bold mb-4">Are u sure wanna delete this?</h2>
-
-            <form action="" method="post">
-                    <button type="submit"
-                            class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 duration-300">
-                        nah
-                    </button>
-                    <button type="submit"
-                            class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-700 duration-300">
-                        Yea sure
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-  
 </section>
 
 <script>
