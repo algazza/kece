@@ -3,13 +3,7 @@
 <section class="box-border p-0 m-0 bg-gray-200 font-poppins overflow-x-hidden">
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 pt-[5rem] lg:ml-[4rem] md:ml-[4rem] sm:ml-[4rem] xss:ml-[1rem] xs:ml-[1rem]  mr-[1rem]">
-        <div class="bg-gray-100 px-[1rem] py-2 border border-gray-500 rounded">
-            <button id="openContactForm" class="absolute flex text-2xl text-red-600 font-semibold py-2 rounded-lg">
-              <i class='bx bx-trash bg-white py-2 px-3 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md '></i>
-          </button>
-          <img src="https://bprartomoro.co.id/wp-content/uploads/2020/05/bank-bjb-seeklogo.png" 
-          class="w-full h-full rounded-md " alt="">
-        </div>
+          
         </div>
       
   <div class="flex justify-end fixed bottom-10 right-10">

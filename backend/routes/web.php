@@ -162,3 +162,6 @@ Route::delete('/Manajemen/{id}', [ManajemenController::class, 'destroy'])->name(
 Route::get('/sh', function () {
     return view('admin.stackholder');
 });
+Route::get('/Jab', function () {
+    return view('admin.jabatan.manajemen');
+});
