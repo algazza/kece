@@ -29,7 +29,7 @@
         </ul>
 
     <div class="flex justify-end fixed bottom-10 right-10 bg-gray-50 rounded-full box-borde">
-        <button class="flex items-center justify-center w-12 h-12 text-gray-600  hover:text-black cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300 border-[1px] border-gray-500 shadow-gray-400 shadow-sm rounded-full" onclick="openModal('modelConfirm')">
+        <button class="flex items-center justify-center w-12 h-12 text-gray-600  hover:text-black cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300 border-[1px] border-gray-500 shadow-gray-400 shadow-sm rounded-full"  onclick="openModal('modelConfirm')">
             <i class='bx bxs-file-plus text-[1.5rem]'></i>
         </button>
     </div>
@@ -57,7 +57,7 @@
                         <div class="mt-4 mb-2">
                             <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-red-600 px-10 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-red-700 hover:scale-95 duration-300"
                                     onclick="closeModal('modelConfirm')">Close</button>
-                           <button type="button" class="inline-flex items-center rounded-md border-[1px] bg-white border-red-600 px-10 py-2 text-sm leading-4 text-red-600 shadow-red-500 font-semibold hover:text-white shadow-sm hover:bg-red-600 hover:scale-95 duration-300">Upload</button>
+                           <button type="submit" class="inline-flex items-center rounded-md border-[1px] bg-white border-red-600 px-10 py-2 text-sm leading-4 text-red-600 shadow-red-500 font-semibold hover:text-white shadow-sm hover:bg-red-600 hover:scale-95 duration-300">Upload</button>
                        </div>
                     </div>            
                 </form>

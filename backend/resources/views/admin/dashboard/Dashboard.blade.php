@@ -4,14 +4,14 @@
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins">
         <div class="flex gap-[2rem] pt-[5rem] pb-[2rem] justify-center bg-gray-200 w-screen overflow-hidden">
-            <div class="bg-gray-50 w-[16rem] h-[10rem] block justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:max-w-full sm:px-6 lg:px-6">
+            <div class="bg-gray-50 w-[16rem] h-[10rem] block ml-12 justify-center rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:max-w-full sm:px-6 lg:px-6">
                 <div>
                     <h3 id="totalData" class="absolute ml-[0.7rem] mt-[-0.2rem] text-[1.3rem] font-semibold max-w-12 mx-auto">{{ $totalData }}</h3>
                     <div class="mt-[0.5rem]">
                         <div class="text-[6rem] ">
                             <i class='text-black bx bx-bar-chart'></i>
                         </div>
-                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">All incoming data</p>
+                        <p class=" text-black mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">All data</p>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                             <i class='text-black bx bx-news' ></i>
                         </div>
                     </div>
-                    <p class="bg-black text-white mx-[4.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-1.5rem] ">News Edit</p>
+                    <p class="text-black mx-[4.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-1.5rem] ">News Edit</p>
                 </div>
             </div>
             </a>
@@ -37,7 +37,7 @@
                         <div class="text-[6rem] ">
                             <i class='text-black bx bx-objects-horizontal-right'></i>
                         </div>
-                        <p class="bg-black text-white mx-[3.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Sponsor</p>
+                        <p class="text-black mx-[3.8rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Sponsor</p>
                     </div>
                 </div>
             </div>
@@ -52,14 +52,14 @@
                         <div class="text-[6rem] ">
                             <i class='text-black bx bx-credit-card' ></i>
                         </div>
-                        <p class="bg-black text-white mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Banner</p>
+                        <p class="text-black mx-[2.9rem] pb-[1px] rounded-[7px] text-[0.8rem] mt-[-2.2rem]">Banner</p>
                     </div>
                 </div>
             </div>
             <a>
             @endif
-        </div>
-        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center mb-[5rem] xxl:h-[50rem] h-[38rem] xl:h-[30rem] lg:h-[30rem] md:h-[30rem] sm:h-[25rem] xss:h-[25rem]">
+            </div>
+        <div class="flex flex-col xss:ml-[2rem] xs:ml-[2rem]  xss:mr-[2rem] xs:mr-[2rem]  md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center mb-[5rem] xxl:h-[50rem] h-[38rem] xl:h-[30rem] lg:h-[30rem] md:h-[30rem] sm:h-[25rem] xss:h-[25rem]">
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
                 @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
                     <a href="{{ route('kredit.index') }}">

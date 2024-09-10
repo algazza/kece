@@ -5,9 +5,9 @@
     <section id="testimonials" aria-label="What our customers are saying" class=" py-20 sm:py-32">
         <div class=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-6">
           <div class="mx-auto max-w-2xl md:text-center ">
-            <h2 class="font-display text-3xl tracking-tight text-center text-slate-900 sm:text-4xl bg-white py-4 px-8 rounded-md shadow-md ">Companies We Are Sponsor</h2>
+            <h2 class="font-display text-3xl tracking-tight text-center text-slate-900 sm:text-4xl bg-white py-4 px-8 rounded-md shadow-md  xss:ml-[1rem] xs:ml-[1rem]">Companies We Are Sponsor</h2>
           </div>
-          <div class="mx-auto flex my-8 max-w-2xl md:text-cente" class="hidden sm2:block">
+          <div class="mx-auto flex my-8 max-w-2xl md:text-center xss:ml-[1rem] xs:ml-[1rem]" class="hidden sm2:block">
 
             <a href="{{ route('sponsor.index') }}"
               class="w-full flex justify-center font-medium rounded-md px-5 py-2 border bg-white text-gray-800 border-gray-200 cursor-pointer hover:bg-gray-900 hover:scale-105 hover:text-white duration-300">
@@ -30,7 +30,7 @@
          </a>
             </div>
           <ul role="list"  
-            class="mx-auto mt-8 grid max-w-2xl   grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
+            class="mx-auto mt-8 grid max-w-2xl xss:ml-[1rem] xs:ml-[1rem] ml-[5rem]  grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
 
             @foreach ($sponsor as $item)
               <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
