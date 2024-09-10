@@ -25,8 +25,10 @@ import {
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
+import { useState } from "react";
 
-export const Kredit = ({ inputs, handleChange }) => {
+export const Kredit = ({ inputs, handleChange, error }) => {
+
   return (
     <div className="">
       <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
@@ -46,10 +48,11 @@ export const Kredit = ({ inputs, handleChange }) => {
                 <InputAdornment position="start">Rp.</InputAdornment>
               }
               label="Total Pinjaman"
-              type="number"
               name="total_pinjaman"
               value={inputs.total_pinjaman}
               onChange={handleChange}
+              error={!!error}
+              inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
             />
           </FormControl>
 
@@ -65,6 +68,7 @@ export const Kredit = ({ inputs, handleChange }) => {
                 name={selek.name}
                 value={inputs[selek.name]}
                 onChange={handleChange}
+                error={!!error}
               >
                 <MenuItem value={selek.option1}>{selek.option1}</MenuItem>
                 <MenuItem value={selek.option2}>{selek.option2}</MenuItem>
@@ -84,6 +88,7 @@ export const Kredit = ({ inputs, handleChange }) => {
                 value={inputs.penghasilan_perbulan}
                 name="penghasilan_perbulan"
                 onChange={handleChange}
+                error={!!error}
               >
                 {formPenghasilan.map((gaji) => (
                   <FormControlLabel
@@ -108,6 +113,7 @@ export const Kredit = ({ inputs, handleChange }) => {
             placeholder="Catatan"
             name="catatan"
             value={inputs.catatan}
+            error={!!error}
             onChange={handleChange}
           />
           <p className={`${styles.fontCaption} mt-2 text-abuGelap`}>
@@ -142,10 +148,10 @@ export const Deposito = ({ inputs, handleChange }) => {
                 <InputAdornment position="start">Rp.</InputAdornment>
               }
               label="Total Pinjaman"
-              type="number"
               name="total_pinjaman"
               value={inputs.total_pinjaman}
               onChange={handleChange}
+              inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
             />
           </FormControl>
 

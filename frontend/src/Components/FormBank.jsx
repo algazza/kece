@@ -21,7 +21,6 @@ const FormBank = ({
   isiPenting,
   value,
   endpoint,
-  nomer,
   namaRadio = "pekerjaan",
   judulRadio = "Pekerjaan",
   dummyprops = formPekerjaan,
@@ -34,9 +33,10 @@ const FormBank = ({
   const [email, setEmail] = useState("");
   const [nomor, setNomor] = useState("");
   const [nik, setNik] = useState("");
+  const [error, setError] = useState("")
 
   useEffect(() => {
-    setInputs((values) => ({ ...values, jenis: value, nomer: nomer }));
+    setInputs((values) => ({ ...values, jenis: value, }));
 
     axios
       .get("https://api.ipify.org?format=json")
@@ -46,13 +46,26 @@ const FormBank = ({
       .catch((error) => {
         console.error("Error fetching IP address:", error);
       });
-  }, [value, nomer]);
+  }, [value]);
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
+  const formatRupiah = (value) => {
+    const numberString = value.replace(/[^,\d]/g, ""); 
+    const split = numberString.split(",");
+    const sisa = split[0].length % 3;
+    let rupiah = split[0].substr(0, sisa);
+    const ribuan = split[0].substr(sisa).match(/\d{3}/g);
 
-    setInputs((values) => ({ ...values, [name]: value }));
+    if (ribuan) {
+      const separator = sisa ? "." : "";
+      rupiah += separator + ribuan.join(".");
+    }
+
+    rupiah = split[1] !== undefined ? rupiah + "," + split[1] : rupiah;
+    return rupiah;
+  };
+
+  const removeFormatRupiah = (angka) => {
+    return angka.replace(/[^\d]/g, "");
   };
 
   const handleDateChange = (newValue) => {
@@ -64,6 +77,17 @@ const FormBank = ({
 
   const handleTimeChange = (newValue) => {
     setInputs((values) => ({ ...values, waktu: newValue.format("HH:mm") }));
+  };
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    let value = event.target.value;
+  
+    if (name === "total_pinjaman") {
+      value = formatRupiah(value);
+    }
+  
+    setInputs((values) => ({ ...values, [name]: value }));
   };
 
   const generateCode = () => {
@@ -84,7 +108,7 @@ const FormBank = ({
 
   const submitForm = () => {
     const codeGenerated = generateCode();
-    const updatedInputs = { ...inputs, code: codeGenerated, ip_user: ip };
+    const updatedInputs = { ...inputs, code: codeGenerated, ip_user: ip, total_pinjaman: removeFormatRupiah(inputs.total_pinjaman) };
     const nameGenerated = updatedInputs.nama;
     const emailGenerated = updatedInputs.email;
     const nomorGenerated = updatedInputs.no_handphone;
@@ -101,6 +125,7 @@ const FormBank = ({
         setOpenModal(true);
       })
       .catch((err) => {
+        setError("Gagal Memasukkan Data, Mohon Perhatikan Lagi!")
         toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
       });
   };
@@ -127,6 +152,7 @@ const FormBank = ({
                   value={inputs[iden.id]}
                   onChange={handleChange}
                   required
+                  error={!!error}
                 />
               ))}
             </div>
@@ -141,7 +167,7 @@ const FormBank = ({
                       control={<Radio />}
                       label={kerja.title}
                       value={kerja.id}
-                      required
+                      error={!!error}
                     />
                   ))}
                 </RadioGroup>
@@ -160,6 +186,7 @@ const FormBank = ({
                 value={inputs.alamat}
                 onChange={handleChange}
                 required
+                error={!!error}
               />
             </div>
           </div>
@@ -193,6 +220,7 @@ const FormBank = ({
 
         {React.cloneElement(isiPenting, {
           inputs,
+          error,
           handleChange,
           handleDateChange,
           handleTimeChange,
@@ -221,7 +249,7 @@ const FormBank = ({
           </div>
         </div>
 
-        <div className="flex gap-10">
+        <div className="flex items-center gap-4">
           <ButtonFull
             WidthButton="w-36"
             WidthShadow="w-40"
@@ -229,6 +257,7 @@ const FormBank = ({
           >
             Hubungi Kami
           </ButtonFull>
+          {error && <p className="text-red-500">{error}</p>}
         </div>
 
         {openModal && (
@@ -238,7 +267,6 @@ const FormBank = ({
             nomor={nomor}
             nik={nik}
             code={code}
-            nomer={nomer}
             jenis={value}
             setOpenModal={setOpenModal}
             openModal={openModal}

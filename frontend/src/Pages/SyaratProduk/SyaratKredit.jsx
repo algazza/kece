@@ -182,7 +182,11 @@ const SyaratKredit = () => {
             </section>
 
             {/* Isi dari Menu */}
-            <section className="sm:pb-16 m-8 bg-abuTerang md:p-10 p-4 rounded-lg">
+            <section
+              className={`${
+                tabs === 4 ? "" : "m-8 p-4 bg-abuTerang"
+              } sm:pb-16 md:p-10 rounded-lg`}
+            >
               {/* Syarat */}
               {tabs === 1 ? (
                 <motion.div
@@ -256,7 +260,7 @@ const SyaratKredit = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.5 }}
-                  className="mx-6 sm:mx-10 sm:px-10"
+                  className="sm:mx-10 sm:px-10"
                 >
                   <FormBank
                     isiPenting={<Kredit />}
@@ -270,28 +274,31 @@ const SyaratKredit = () => {
 
             {/* Button next prev */}
             <section className="flex justify-center gap-4">
-              <div
+              <a
+                href="#section2"
                 onClick={() => updateMenu(0)}
                 className={`bg-biruMuda-700 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Kembali Menu
-              </div>
-              <div
+              </a>
+              <a
+                href="#section2"
                 onClick={() => prevTab(tabs)}
                 className={`${
                   tabs === 1 && "hidden"
                 } text-biruMuda-500 border-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Sebelumnya
-              </div>
-              <div
+              </a>
+              <a
+                href="#section2"
                 onClick={() => nextTab(tabs)}
                 className={`${
                   tabs === 4 && "hidden"
                 } bg-biruMuda-500 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Lanjut
-              </div>
+              </a>
             </section>
           </section>
         ) : null;

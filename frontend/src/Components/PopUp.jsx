@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../helper/style";
 import CloseIcon from "@mui/icons-material/Close";
 import { ButtonOutline } from "./Button";
+import { nomorInduk } from "../helper/nomor";
 
 const PopUp = ({
   nama,
@@ -12,7 +13,6 @@ const PopUp = ({
   jenis,
   setOpenModal,
   openModal,
-  nomer,
 }) => {
   return (
     <div className="w-screen h-dvh top-0 left-0 bottom-0 fixed z-40">
@@ -55,7 +55,7 @@ const PopUp = ({
               WidthButton="w-32"
               TopShadow="top-2"
               LeftShadow="left-[33px]"
-              href={`https://wa.me/+62${nomer}?text=I'm%20${nama}%20dengan%20kode%20${code}%20pengajuan%20${jenis}`}
+              href={`https://wa.me/+62${nomorInduk}?text=Saya%20${nama}%20dengan%20kode%20${code}%20pengajuan%20${jenis}`}
               target={"_blank"}
             >
               Lanjutkan

@@ -50,27 +50,27 @@ const LocationPage = () => {
 
               <div className="flex justify-between mt-5">
                 <p className="flex-auto text-xl">Senin</p>
-                <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
+                <p className="flex-auto text-xl">09:00 - 18:00</p>
               </div>
               <div className="flex mt-5">
                 <p className="flex-auto text-xl">Selasa</p>
-                <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
+                <p className="flex-auto text-xl">09:00 - 18:00</p>
               </div>
               <div className="flex mt-5">
                 <p className="flex-auto text-xl">Rabu</p>
-                <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
+                <p className="flex-auto text-xl">09:00 - 18:00</p>
               </div>
               <div className="flex mt-5">
                 <p className="flex-auto text-xl">Kamis</p>
-                <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
+                <p className="flex-auto text-xl">09:00 - 18:00</p>
               </div>
               <div className="flex mt-5">
                 <p className="flex-auto text-xl">Jumat</p>
-                <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
+                <p className="flex-auto text-xl">09:00 - 18:00</p>
               </div>
               <div className="flex mt-5">
                 <p className="flex-auto text-xl">Sabtu</p>
-                <p className="flex-auto text-xl">9.00 pagi - 6 .00 Malam</p>
+                <p className="flex-auto text-xl">09:00 - 18:00</p>
               </div>
             </div>
           </div>
