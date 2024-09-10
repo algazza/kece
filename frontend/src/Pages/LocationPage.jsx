@@ -9,7 +9,7 @@ const LocationPage = () => {
       <section className="">
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Location"}
+          TitleBanner={"Lokasi"}
           DescriptionBanner={`
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu

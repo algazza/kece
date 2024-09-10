@@ -35,7 +35,9 @@ const Header = () => {
       }`}
     >
       <nav className={`flex justify-between ${styles.paddingX} py-2`}>
-        <img src={logoArmor} alt="logo" className="h-14 sm:h-16" />
+        <a href="/">
+          <img src={logoArmor} alt="logo" className="h-14 sm:h-16" />
+        </a>
 
         <ul
           className={`list-none sm:flex hidden justify-end items-center flex-1 gap-12 ${styles.fontBody} font-semibold`}
@@ -103,7 +105,8 @@ const Header = () => {
                             <Link to={"/penghargaan"}>Penghargaan</Link>
                             <Link to={"/manajemen"}>Manajemen</Link>
                             <Link to={"/lokasi"}>Lokasi</Link>
-                            <li>
+                            <Link to={"/laporan"}>Laporan</Link>
+                            {/* <li>
                               {" "}
                               <Accordion sx={{ boxShadow: "none" }}>
                                 <AccordionSummary
@@ -124,7 +127,7 @@ const Header = () => {
                                   </ul>
                                 </AccordionDetails>
                               </Accordion>
-                            </li>
+                            </li> */}
                           </li>
                         </ul>
                       </AccordionDetails>

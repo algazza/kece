@@ -11,6 +11,7 @@ import styles from "../helper/style";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Navigate, useNavigate } from "react-router-dom";
+import { loaderIcon, logoArmor } from "../helper";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -32,7 +33,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const correctUsername = "admin123";
-    const correctPassword = "dedekbiba";
+    const correctPassword = "bibagumush";
 
     if (username === correctUsername && password === correctPassword) {
       // save to localstorage
@@ -52,7 +53,8 @@ const Login = () => {
   }
 
   return (
-    <section className="flex justify-center items-center h-dvh">
+    <section className="flex flex-col gap-4 justify-center items-center h-dvh">
+        <img src={logoArmor} alt="icon-artomoro" className="w-40"/>
       <form
         className="p-4 border-2 border-abuGelap rounded-md"
         onSubmit={handleSubmit}

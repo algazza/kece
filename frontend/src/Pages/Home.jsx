@@ -37,7 +37,7 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import AddIcon from "@mui/icons-material/Add";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
-import SimulasiCalc from "../Components/SimulasiCalc";
+import SimulasiCalcKredit from "../Components/Simulasi/SimulasiCalc";
 
 const menuHome = [
   {
@@ -260,22 +260,22 @@ const Home = () => {
         <img
           src={SimulasiPercil1}
           alt=""
-          className="absolute md:top-[160px] md:left-[100px] max-md:bottom-[70px] max-md:right-[70px] w-[100px]"
+          className="absolute md:top-[240px] md:left-[130px] max-md:bottom-[70px] max-md:right-[-30px] w-[100px]"
         />
         <img
           src={SimulasiPercil2}
           alt=""
-          className="absolute md:top-[32px] md:left-[250px] top-[32px] max-md:right-[30px] w-[80px]"
+          className="absolute md:top-[100px] md:left-[200px] top-[32px] max-md:right-[0px] w-[80px]"
         />
         <img
           src={SimulasiPercil3}
           alt=""
-          className="absolute md:top-[80px] md:left-[480px] top-[120px] -left-[20px]"
+          className="absolute md:top-[50px] md:left-[480px] top-[120px] -left-[20px]"
         />
         <img
           src={SimulasiPercil4}
           alt=""
-          className="absolute md:top-[260px] md:left-[500px] max-md:hidden"
+          className="absolute md:top-[260px] md:left-[520px] max-md:hidden"
         />
 
         <div>
@@ -283,7 +283,7 @@ const Home = () => {
             <span className="text-biruMuda-500">Simulasi Hitung</span> Tabungan,
             Kredit, dan Deposito
           </h2>
-          <SimulasiCalc />
+          <SimulasiCalcKredit />
         </div>
       </section>
 

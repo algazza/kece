@@ -153,3 +153,12 @@ Route::get('/Manajemen/find/{id}', [ManajemenController::class, 'viewManajemenFi
 Route::put('/Manajemen/Update/{id}', [ManajemenController::class, 'update'])->name('manajemen.update');
 Route::post('/Manajemen/Post', [ManajemenController::class, 'store'])->name('manajemen.post');
 Route::delete('/Manajemen/{id}', [ManajemenController::class, 'destroy'])->name('manajemen.delete');
+
+
+
+
+
+
+Route::get('/sh', function () {
+    return view('admin.stackholder');
+});

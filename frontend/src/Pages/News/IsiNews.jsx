@@ -70,7 +70,7 @@ const IsiNews = () => {
             transition={{
               duration: 1,
               repeat: Infinity,
-              repeatType: "loop"
+              repeatType: "loop",
             }}
             src={loaderIcon}
             alt=""
@@ -131,9 +131,7 @@ const IsiNews = () => {
           />
 
           <div className={`${styles.fontBodyBold}`}>
-            <p>
-              {news.tanggal}
-            </p>
+            <p>{news.tanggal}</p>
             <p>{news.penulis}</p>
           </div>
         </div>
@@ -142,21 +140,21 @@ const IsiNews = () => {
           <div className="flex justify-between">
             <h6 className={`${styles.heading6} mb-4`}>Baca juga:</h6>
             <Link
-              to={"/news"}
+              to={"/berita"}
               className={`${styles.heading6} mb-4 text-abuGelap`}
             >
               Lainnya...
             </Link>
           </div>
-          <section className="grid sm:grid-cols-x550 justify-center gap-6 sm:gap-12">
+          <section className="grid grid-cols-x150 sm:grid-cols-x250 md:grid-cols-x550 justify-center gap-6 sm:gap-12">
             {newsData.slice(0, 2).map((news) => {
               return (
                 <div
                   key={news.id}
-                  className="grid grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
+                  className="md:grid md:grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
                   onClick={() => navigate(`/berita/${news.id}`)}
                 >
-                  <div className="rounded-l-xl w-32 h-32 sm:w-40 sm:h-40 overflow-hidden">
+                  <div className="rounded-t-xl md:rounded-l-xl md:w-40 md:h-40 overflow-hidden">
                     <img
                       src={`http://localhost:8000/image/public/news/${news.image}`}
                       alt={news.judul}
@@ -168,15 +166,9 @@ const IsiNews = () => {
                     <p className={`${styles.fontSmallBold} text-merahh-500`}>
                       {news.kategory}
                     </p>
-                    <h6 className={`${styles.heading6}`}>{news.judul}</h6>
+                    <h6 className={`${styles.heading6} `}>{news.judul}</h6>
                     <p className={`${styles.fontSmall} text-abuGelap`}>
-                      {news.created_at
-                        ? new Intl.DateTimeFormat("id-ID", {
-                            day: "2-digit",
-                            month: "2-digit",
-                            year: "numeric",
-                          }).format(new Date(news.created_at))
-                        : "Tanggal tidak tersedia"}
+                      {news.tanggal}
                     </p>
                   </div>
                 </div>
