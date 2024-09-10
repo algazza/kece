@@ -7,15 +7,15 @@
   @foreach ($banner as $item)
   <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl w-full mx-auto mt-1 cursor-pointer group hover:bg-gray-200 hover:scale-95 duration-300" style="padding-top: 37.5%;">
     <img src="{{ asset('image/public/banner/' . $item->image) }}" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
+    <button type="submit" class="absolute flex items-center justify-center text-4xl text-red-600 font-semibold py-2 px-4 rounded-lg">
+      <i class='bx bx-trash bg-white py-2 px-3 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md '></i>
+    </button>
     <form action="{{ route('banner.delete', $item->id) }}" method="POST" onsubmit="return confirmDelete()">
       @csrf
       @method('DELETE')
       <div class="">
-      <button type="submit" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-4xl bg-opacity-80 text-red-600 font-semibold py-2 px-4 rounded-lg">
-        <i class='bx bx-trash'></i>
-      </button>
-    </div>
-      <div class="z-10 gap-y-1 bg-gray-100 border-2 border-gray-400 shadow-lg rounded-md overflow-hidden leading-6 absolute bottom-4 left-4 font-poppins text-sm px-3 block max-ss:hidden  opacity-0 group-hover:opacity-100 transition-opacity duration-300">{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</div>
+      </div>
+      <div class="z-10 gap-y-1 bg-white border shadow-md rounded-md text-gray-500 overflow-hidden leading-6 absolute bottom-4 right-4 font-poppins text-sm px-3 block">{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</div>
     </form>
   </article>
   @endforeach
