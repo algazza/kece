@@ -4,11 +4,16 @@
     <section class="py-10 my-auto">
         <div class="mt-[5rem] rounded-[5px] py-8 ml-[2rem] mr-[1rem] text-left justify-center sm:px-6 lg:px-8 my-28 flex gap-4">
             <div
-                class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center dark:bg-white">
-                <div class="">
-                    <h1 class="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2 dark:text-black">
-                     Add Person
-                    </h1>
+            class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center dark:bg-white">
+            <div class="">
+                <div class="flex">
+                <a href="{{ route ('manajemen.index') }}" class=" mr-[1rem] hidden md:block xl:block">
+                    <i class='bx bx-arrow-back text-4xl rounded-lg font-semibold bg-white border border-gray-300 text-red-600 px-2 hover:bg-gray-300 shadow-sm duration-300 ' ></i>
+                </a>
+                <h1 class="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2 dark:text-black">
+                    Add Person
+                </h1>
+            </div>
                     <form enctype="multipart/form-data" method="post" action="{{ route('manajemen.post') }}">
                         @csrf
                         <div

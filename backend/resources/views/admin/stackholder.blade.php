@@ -22,7 +22,7 @@
     <form id="image-upload-form" enctype="multipart/form-data" method="post" action="{{ route('stackholder.post') }}">
       @csrf  
       <label for="upload-image" class="flex items-center justify-center w-19 h-12 cursor-pointer bg-white hover:bg-slate-200 hover:scale-105 duration-300 border-2 border-gray-400 text-black rounded-full shadow-md">
-       <p class="px-3">+ Stackholder img</p>
+        <p class="px-3"><i class='bx bx-plus' ></i> max 16:9</p>
         <input id="upload-image" type="file" class="hidden" name="image">
       </label>
     </form>

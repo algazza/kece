@@ -7,6 +7,9 @@
             class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center bg-white">
             <!--  -->
             <div>
+                <a href="{{ route ('admin') }}" class="hidden md:block xl:block">
+                    <i class='bx bx-arrow-back text-4xl rounded-lg font-semibold bg-white border border-gray-300  text-red-600 px-2 hover:bg-gray-300 shadow-sm duration-300 mb-2' ></i>
+                </a>
                 <h1
                     class="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2 dark:text-black">
                     Profile
