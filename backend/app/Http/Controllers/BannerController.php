@@ -86,6 +86,10 @@ class BannerController extends Controller
             return redirect()->route('banner')->with('error', 'Banner gagal di tambahkan');
         }
     }
+
+    public function update(){
+        
+    }
     
     
 
