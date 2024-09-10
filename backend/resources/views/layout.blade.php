@@ -84,7 +84,7 @@
                     </div>
                   </a>  
                 @endif
-        
+
                 <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-gray-200" onclick="dropDown()">
                   <i class='bx bxs-package text-black text-xl' ></i>
                   <div class="flex justify-between w-full items-center">
@@ -101,6 +101,9 @@
                           <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Kredit</h1>
                       </a>
                   @endif
+                  <a href="">
+                    <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">stackholder</h1>
+                </a>
                   @if (Auth::user()->role == 'deposito' || Auth::user()->role == 'admin')
                       <a href="{{ route('deposito.index') }}">
                           <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Deposito</h1>
