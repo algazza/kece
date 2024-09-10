@@ -3,12 +3,15 @@
 @extends('layout')
 @section('content')
 <section class="box-border p-0 m-0 bg-gray-200 h-screen font-poppins overflow-x-hidden">
-<div class="grid gap-8 grid-cols-1 md:grid-cols-2 ml-[5rem] mr-[1rem] mt-20 mb-10">
+<div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:ml-[5rem] md:ml-[5rem] sm:ml-[5rem] xss:ml-[2rem] mr-[1rem] mt-20 mb-10">
   @foreach ($banner as $item)
   <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl w-full mx-auto mt-1 cursor-pointer group hover:bg-gray-200 hover:scale-95 duration-300" style="padding-top: 37.5%;">
     <img src="{{ asset('image/public/banner/' . $item->image) }}" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
-    <button type="submit" class="absolute flex items-center justify-center text-4xl text-red-600 font-semibold py-2 px-4 rounded-lg">
-      <i class='bx bx-trash bg-white py-2 px-3 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md '></i>
+    <button type="submit" class="absolute flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-blue-600 font-semibold py-2 px-20 rounded-lg">
+      <i class='bx bx-pencil bg-white py-2 lg:px-3 md:px-3 sm:px-3 xss:px-5 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md '></i>
+    </button>
+    <button type="submit" class="absolute flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-red-600 font-semibold py-2 px-4 rounded-lg">
+      <i class='bx bx-trash bg-white py-2 lg:px-3 md:px-3 sm:px-3 xss:px-5 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md '></i>
     </button>
     <form action="{{ route('banner.delete', $item->id) }}" method="POST" onsubmit="return confirmDelete()">
       @csrf
