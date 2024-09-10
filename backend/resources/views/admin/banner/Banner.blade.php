@@ -34,7 +34,7 @@
       </div>
       
     </section>
-    <div class="flex justify-end fixed bottom-10 right-10 z-10">
+    <div class="flex justify-end fixed bottom-10 right-8 z-10">
       <form id="image-upload-form" action="{{ route('banner.add') }}" method="POST" enctype="multipart/form-data">
         @csrf  
         <label for="upload-image" class="flex items-center justify-center w-19 h-12 cursor-pointer bg-white hover:bg-slate-200 hover:scale-105 duration-300 border-2 border-gray-400 text-black rounded-full shadow-md">
