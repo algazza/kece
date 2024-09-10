@@ -156,3 +156,10 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::post('/Stackholder/post', [StackholderController::class, 'store'])->name('stackholder.post');
     Route::delete('/Stackholder/post/{id}', [StackholderController::class, 'destroy'])->name('stackholder.delete');
 });
+
+
+
+
+Route::get('/op', function () {
+    return view('admin.jabatan.JabatanOpt');
+});

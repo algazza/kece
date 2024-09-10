@@ -4,7 +4,7 @@
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins md:m-auto">
         <div class="pt-[5rem] justify-center">
-            <h1 class="text-3xl mb-2 font-bold">Laporan</h1>
+            <h1 class="text-3xl mb-2 font-bold">Jenis Jabatan</h1>
         </div>
         <ul role="list" class="mt-8 flex flex-wrap justify-center grid-cols-1 gap-6 m-[1.5rem] sm:gap-8 lg:mt-20 lg:max-w-none lg:flex">
           <a href="" class="relative max-w-md rounded-lg bg-gradient-to-tr w-auto from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 md:w-[20rem]">
