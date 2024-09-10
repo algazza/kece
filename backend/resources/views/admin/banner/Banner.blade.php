@@ -8,20 +8,24 @@
       <article class=" relative flex flex-col justify-end overflow-hidden rounded-2xl w-full mx-auto mt-1 cursor-pointer group hover:bg-gray-200 duration-300" style="padding-top: 37.5%;">
         <img src="{{ asset('image/public/banner/' . $item->image) }}" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
         <div class="z-10 gap-y-1 bg-white border shadow-md rounded-md text-gray-500 overflow-hidden leading-6 absolute bottom-4 right-4 font-poppins text-sm px-3 block">{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</div>
-          <form action="{{ route('banner.delete', $item->id) }}" method="POST" onsubmit="return confirmDelete()" class="absolute z-50 ">
-            @csrf
-            @method('DELETE')
-              <button type="submit" class="absolute flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-red-600 font-semibold py-2 px-4 rounded-lg">
-                <i class='bx bx-trash bg-white py-2 lg:px-3 md:px-3 sm:px-3 xss:px-5 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md '></i>
+        <div class="absolute">
+          <form action="{{ route('banner.delete', $item->id) }}" method="POST" onsubmit="return confirmDelete()">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-red-600 font-semibold py-2 px-4 rounded-lg">
+                  <i class='bx bx-trash bg-white py-2 lg:px-3 md:px-3 sm:px-3 xss:px-5 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md'></i>
+              </button>
+            </form>
+          </div>
+          <div class="absolute">
+          <form action="{{ route('banner.delete', $item->id) }}" method="POST" onsubmit="return confirmDelete()">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-blue-600 font-semibold py-2 px-20 rounded-lg">
+                  <i class='bx bx-pencil bg-white py-2 lg:px-3 md:px-3 sm:px-3 xss:px-5 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md'></i>
               </button>
           </form>
-          <form action="{{ route('banner.delete', $item->id) }}" method="POST" onsubmit="return confirmDelete()" class="absolute z-50 ">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="absolute flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-blue-600 font-semibold py-2 px-20 rounded-lg">
-              <i class='bx bx-pencil bg-white py-2 lg:px-3 md:px-3 sm:px-3 xss:px-5 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md '></i>
-            </button>
-          </form>
+        </div>
         </article>
     @endforeach
 </div>
