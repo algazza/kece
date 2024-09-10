@@ -16,6 +16,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Link } from "react-router-dom";
 // ----- Framer Motion -----
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const sosmedIcon = [
   { icon: <YouTubeIcon />, link: "https://www.youtube.com/c/BPRARTOMORO" },
@@ -32,6 +33,15 @@ const sosmedIcon = [
 ];
 
 const Footer = () => {
+  const [marqueeImage, setMarqueeImage] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/api/stackholder")
+      .then((response) => response.json())
+      .then((data) => setMarqueeImage(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
   return (
     <footer className="mt-8 bg-biruMuda-100 shadow-[inset_0px_0px_164px_116px_#fcfffe]">
       <div className={`${styles.paddingY} border-t-2 border-abuGelap`}>
@@ -45,7 +55,7 @@ const Footer = () => {
             className="flex flex-shrink-0"
           >
             {marqueeImage.map((img) => (
-              <img src={img.image} key={img.id} className="pr-20" />
+              <img src={`http://localhost:8000/image/public/stackholder/${img.image}`} key={img.id} className="pr-20" />
             ))}
           </motion.div>
 
@@ -56,7 +66,7 @@ const Footer = () => {
             className="flex flex-shrink-0"
           >
             {marqueeImage.map((img) => (
-              <img src={img.image} key={img.id} className="pr-20" />
+              <img src={`http://localhost:8000/image/public/stackholder/${img.image}`} key={img.id} className="pr-20" />
             ))}
           </motion.div>
         </div>

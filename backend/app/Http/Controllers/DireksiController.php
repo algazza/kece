@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Manajemen;
+use App\Models\Direksi;
 use Illuminate\Http\Request;
 
-class ManajemenController extends Controller
+class DireksiController extends Controller
 {
     public function viewManajemen(){
-        $manajemen = Manajemen::get();
-        return view('admin.jabatan.komisaris.Komisaris', compact('manajemen'));
+        $direksi = Direksi::get();
+        return view('admin.jabatan.direksi.Direksi', compact('direksi'));
     }
 
     public function viewManajemenAdd(){
-        return view('admin.jabatan.komisaris.KomisarisAdd');
+        return view('admin.jabatan.direksi.DireksiAdd');
     }
 
     public function store(Request $request){
@@ -25,44 +25,44 @@ class ManajemenController extends Controller
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
     
-            $manajemen = new Manajemen();
-            $manajemen->nama = $request->nama;
-            $manajemen->jabatan = $request->jabatan;
-            $manajemen->deskripsi = $request->deskripsi;
+            $direksi = new Direksi();
+            $direksi->nama = $request->nama;
+            $direksi->jabatan = $request->jabatan;
+            $direksi->deskripsi = $request->deskripsi;
     
             if($request->hasFile('image')){
                 $manajemenImage = time() . '.' . $request->image->extension();
                 $request->image->move(public_path('image/public/manajemen'), $manajemenImage);
-                $manajemen->image = $manajemenImage;
+                $direksi->image = $manajemenImage;
             }
     
-            $manajemen->save();
+            $direksi->save();
     
-            return redirect()->route('manajemen.index')->with('success', 'Data Manajemen Berhasil DI Tambah');
+            return redirect()->route('direksi.index')->with('success', 'Data direksi Berhasil DI Tambah');
         } catch(\Exception $e){
-            return redirect()->back()->with('error', 'Data Manajemen Gagal Ditambah');
+            return redirect()->back()->with('error', 'Data direksi Gagal Ditambah');
         }
         
     }
 
     public function destroy($id){
         try{
-            $manajemen = Manajemen::find($id);
-            $manajemen->delete();
-            return redirect()->route('manajemen.index')->with('success', 'Data Manajemen berhasil di hapus');
+            $direksi = direksi::find($id);
+            $direksi->delete();
+            return redirect()->route('direksi.index')->with('success', 'Data direksi berhasil di hapus');
         } catch (\Exception $e){
-            return redirect()->back()->with('error', 'Data Manajemen Gagal Di Hapus');
+            return redirect()->back()->with('error', 'Data direksi Gagal Di Hapus');
         }
     }
 
     public function viewManajemenFind($id){
-        $manajemen = Manajemen::find($id);
-        return view('admin.jabatan.komisaris.KomisarisEdit', compact('manajemen'));
+        $direksi = direksi::find($id);
+        return view('admin.jabatan.JabatanEdit', compact('direksi'));
     }
 
     public function update(Request $request,$id){
         try{
-            $manajemen = Manajemen::find($id);
+            $direksi = direksi::find($id);
             $manajemenValidateData = $request->validate([
                 'nama' => 'required|string',
                 'jabatan' => 'required|string',
@@ -72,26 +72,25 @@ class ManajemenController extends Controller
 
             if($request->hasFile('image')){
                 $manajemenImage = time() . '.' . $request->image->extension();
-                $request->image->move(public_path('image/public/manajemen'), $manajemenImage);
+                $request->image->move(public_path('image/public/direksi'), $manajemenImage);
                 $manajemenValidateData['image'] = $manajemenImage;
             } else {
                 if(!isset($manajemenValidateData['image'])){                    
-                    $manajemenValidateData['image'] = $manajemen->image;
+                    $manajemenValidateData['image'] = $direksi->image;
                 }
             }
 
-            $manajemen->update($manajemenValidateData);
+            $direksi->update($manajemenValidateData);
 
-            return redirect()->route('manajemen.index')->with('success', 'Data Manajemen Berhasil Di Update');
+            return redirect()->route('direksi.index')->with('success', 'Data direksi Berhasil Di Update');
         }catch(\Exception $e){
-            return redirect()->back()->with('error', 'Data Manajemen gagal Di Update');
+            return redirect()->back()->with('error', 'Data direksi gagal Di Update');
         }
     }
 
 
     public function index(){
-        $manajemen = Manajemen::get();
-        return response()->json($manajemen);
+        $direksi = Direksi::get();
+        return response()->json($direksi);
     }
-
 }

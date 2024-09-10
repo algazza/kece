@@ -2,7 +2,7 @@
 @section('content')
 <section class="box-border p-0 m-0 bg-gray-200  w-screen h-screen font-poppins">
 
-    <div class="flex-gap-[1.5rem] pt-[5rem] ml-[5rem] xs:ml-[3rem] xss:ml-[3rem] bg-gray-200  flex flex-col justify-start">
+    <div class="flex-gap-[1.5rem] pt-[5rem] pl-[5rem] xs:ml-[3rem] xss:ml-[3rem] bg-gray-200  flex flex-col justify-start">
         <h1 class="text-xl mb-2 font-bold">Admin Page</h1>
         <div class="pb-[1rem]">
             <a href="{{ route('admin.add') }}">
@@ -15,7 +15,7 @@
             {{ $admin  ->links('vendor.pagination.simple') }}
           </div>
     </div>
-    <div class="overflow-auto pl-[5rem] xss:pl-[2rem] xs:pl-[2rem]">
+    <div class="overflow-auto lg:ml-[5rem] md:ml-[5rem] sm:ml-[5rem] xss:ml-[2rem] xs:ml-[2rem]">
         <table class="shadow-2xl border-2 border-white w-11/12">
             <thead class="text-white">
                 <tr>
