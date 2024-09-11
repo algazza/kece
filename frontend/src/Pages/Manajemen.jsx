@@ -17,26 +17,22 @@ const Manajemen = () => {
       .then((response) => response.json())
       .then((data) => {
         setProfileDewanKomisaris(data);
-        if (!data.some((profile) => profile.id === 1) ) {
+        if (!data.some((profile) => profile.id === 1)) {
           findNextProfileId(1, data, setKomisaris);
-          findNextProfileId(1, data, setDireksi);
         }
       })
       .catch((error) => console.error("Error fetching data:", error));
   
-      fetch("http://localhost:8000/api/direksi")
+    fetch("http://localhost:8000/api/direksi")
       .then((response) => response.json())
       .then((data) => {
         setProfileDewanDireksi(data);
-        // Jika ID default tidak ditemukan, cari ID berikutnya
         if (!data.some((profile) => profile.id === 1)) {
-          findNextProfileId(1, data, setKomisaris);
           findNextProfileId(1, data, setDireksi);
         }
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
-
   
   function findNextProfileId(startId, profiles, setProfileImage) {
     const validProfiles = profiles.map((profile) => profile.id);
@@ -49,21 +45,27 @@ const Manajemen = () => {
     }
   }
 
-  function updateProfile(id) {
-    const profileExists = profileDewanKomisaris.some(
-      (profile) => profile.id === id
-    );
+  function updateProfile(id, type) {
+    if (type === 'komisaris') {
+      const profileExists = profileDewanKomisaris.some((profile) => profile.id === id);
+      if (profileExists) {
+        setKomisaris(id);
+      } else {
+        findNextProfileId(id, profileDewanKomisaris, setKomisaris);
+      }
 
-    if (profileExists) {
-      setKomisaris(id);
-      setDireksi(id);
-    } else {
-      findNextProfileId(id, profileDewanKomisaris);
+    } else if (type === 'direksi') {
+      const profileExists = profileDewanDireksi.some((profile) => profile.id === id);
+      if (profileExists) {
+        setDireksi(id);
+      } else {
+        findNextProfileId(id, profileDewanDireksi, setDireksi);
+      }
     }
   }
 
   function updateManajemenMenu(id) {
-    setManajemenMenu(id);
+    setManajemenMenu(id);  
   }
 
   return (
@@ -149,7 +151,7 @@ const Manajemen = () => {
                   <motion.div
                     key={menu.id}
                     className="grid justify-items-center cursor-pointer"
-                    onClick={() => updateProfile(menu.id)}
+                    onClick={() => updateProfile(menu.id, 'komisaris')}
                   >
                     <div className="w-[96px] h-[96px] rounded-full bg-abuGelap overflow-hidden">
                       <img
@@ -174,7 +176,7 @@ const Manajemen = () => {
 
         {manajemenMenu === 1 && (
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {profileDewanKomisaris.map((speech) => {
+            {profileDewanDireksi.map((speech) => {
               return (
                 direksi === speech.id && (
                   <motion.div
@@ -195,7 +197,7 @@ const Manajemen = () => {
               );
             })}
 
-            {profileDewanKomisaris.map((img) => {
+            {profileDewanDireksi.map((img) => {
               return (
                 direksi === img.id && (
                   <motion.img
@@ -216,7 +218,7 @@ const Manajemen = () => {
                   <motion.div
                     key={menu.id}
                     className="grid justify-items-center cursor-pointer"
-                    onClick={() => updateProfile(menu.id)}
+                    onClick={() => updateProfile(menu.id, 'direksi')}
                   >
                     <div className="w-[96px] h-[96px] rounded-full bg-abuGelap overflow-hidden">
                       <img

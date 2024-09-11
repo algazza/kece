@@ -27,11 +27,33 @@ class StackholderController extends Controller
                 $stackholder->image = $imageStackholder;
             }
         
-            $stackholder->save();
+            $stackholder->update();
         
             return redirect()->route('stackholder.index')->with('success', 'Stackholder berhasil di tambahkan');
         } catch (\Exception $e){
             return redirect()->back()->with('error', 'Gagal menambahkan stackholder');
+        }
+    }
+
+    public function update(Request $request, $id){
+        try{
+            $stackholder = Stackholer::find($id);
+
+            $request->validate([
+                'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg'
+            ]);
+
+
+            if($request->hasFile('image')){
+                $imageStackholder = time() . '.' . $request->image->extension();
+                $request->image->move(public_path('image/public/stackholder'), $imageStackholder);
+                $stackholder->image = $imageStackholder;
+            }
+
+            $stackholder->save();
+            return redirect()->route('stackholder.index')->with('success', 'Stackholder berhasil di update');
+        } catch(\Exception $e){
+            return redirect()->back()->with('error', 'Gagal mengupdate stackholder');
         }
     }
 

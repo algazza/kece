@@ -165,5 +165,6 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
     Route::get('/Stackholder', [StackholderController::class, 'viewStackholder'])->name('stackholder.index');
     Route::post('/Stackholder/post', [StackholderController::class, 'store'])->name('stackholder.post');
+    Route::put('/Stackholder/{id}/edit', [StackholderController::class, 'update'])->name('stackholder.update');
     Route::delete('/Stackholder/post/{id}', [StackholderController::class, 'destroy'])->name('stackholder.delete');
 });
