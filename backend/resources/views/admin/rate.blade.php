@@ -7,7 +7,12 @@
     <section class="lg:ml-[5rem] xss:ml-[1rem] xs:ml-[1rem] mr-[1rem] grid grid-cols-1 gap-4 lg:grid-cols-2 my-[5rem]">
         <div class="shadow-lg rounded-lg h-[41rem] overflow-auto mx-4 md:mx-10">
             <table class="w-auto table-fixed">
-                <h2 class="bg-gray-100 drop-shadow-md text-pretty py-2 text-base font-semibold">Kredit</h2>
+                <div>
+                <h2 class="bg-gray-100 drop-shadow-md text-pretty py-2 text-base font-semibold">Kredit </h2>
+                <input type="text"
+                    class= "p-4 lg:w-[50rem] xxl:w-[70rem] md:w-[40rem] md2:w-[38rem] xss:w-[15rem]  my-1 border-2 rounded-lg dark:text-black text-base dark:border-gray-200 dark:bg-white"
+                    placeholder="add disc">
+                </div>
                 <thead>
                     <tr class="bg-gray-100">
                         <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">NO</th>
@@ -141,6 +146,9 @@
         <div class="shadow-lg rounded-lg h-[41rem] overflow-auto mx-4 md:mx-10 mb-[1rem]">
             <table class="w-auto table-fixed">
                 <h2 class="bg-gray-100 drop-shadow-md text-pretty py-2 text-base font-semibold">Deposit</h2>
+                <input type="text"
+                class= "p-4 lg:w-[50rem] xxl:w-[70rem] md:w-[40rem] md2:w-[38rem] xss:w-[15rem]  my-1 border-2 rounded-lg dark:text-black text-base dark:border-gray-200 dark:bg-white"
+                placeholder="add disc">
                 <thead>
                     <tr class="bg-gray-100">
                         <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">NO</th>
