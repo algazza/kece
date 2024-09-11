@@ -284,7 +284,7 @@ const Home = () => {
           </h2>
 
           <div className="flex justify-between bg-primary">
-            {["Kredit", "Tabungan", "Deposito"].map((simulasi, index))}
+            {/* {["Kredit", "Tabungan", "Deposito"].map((simulasi, index))} */}
           </div>
 
           <SimulasiCalcKredit />
