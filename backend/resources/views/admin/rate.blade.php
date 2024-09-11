@@ -8,9 +8,9 @@
         <div class="shadow-lg rounded-lg h-[41rem] overflow-auto mx-4 md:mx-10">
             <table class="w-auto table-fixed">
                 <div>
-                <h2 class="bg-gray-100 drop-shadow-md text-pretty py-2 text-base font-semibold">Kredit </h2>
+                <h2 class="bg-gray-100 w-auto drop-shadow-md text-pretty py-2 text-base font-semibold">Kredit </h2>
                 <input type="text"
-                    class= "p-4 lg:w-[50rem] xxl:w-[70rem] md:w-[40rem] md2:w-[38rem] xss:w-[15rem]  my-1 border-2 rounded-lg dark:text-black text-base dark:border-gray-200 dark:bg-white"
+                    class= "p-4 w-auto  my-1 border-2 rounded-lg dark:text-black text-base dark:border-gray-200 dark:bg-white"
                     placeholder="add disc">
                 </div>
                 <thead>
@@ -147,7 +147,7 @@
             <table class="w-auto table-fixed">
                 <h2 class="bg-gray-100 drop-shadow-md text-pretty py-2 text-base font-semibold">Deposit</h2>
                 <input type="text"
-                class= "p-4 lg:w-[50rem] xxl:w-[70rem] md:w-[40rem] md2:w-[38rem] xss:w-[15rem]  my-1 border-2 rounded-lg dark:text-black text-base dark:border-gray-200 dark:bg-white"
+                class= "p-4 w-auto  my-1 border-2 rounded-lg dark:text-black text-base dark:border-gray-200 dark:bg-white"
                 placeholder="add disc">
                 <thead>
                     <tr class="bg-gray-100">
