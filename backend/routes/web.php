@@ -176,3 +176,6 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 Route::get('/promo', function () {
     return view('admin.promo');
 });
+Route::get('/rate', function () {
+    return view('admin.rate');
+});

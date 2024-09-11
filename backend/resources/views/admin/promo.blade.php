@@ -4,64 +4,63 @@
     <div class="text-center flex pt-[5rem] xss:mx-[3rem] xs:[3rem]">
         <h1 class="text-3xl text-black border border-gray-300 shadow-md shadow-gray-400 font-semibold bg-white mx-auto max-w-xs py-3 px-5 rounded-md">Promo</h1>
     </div>
-    <section class="lg:ml-[5rem] xss:ml-[2rem] xs:ml-[2rem] mr-[1rem] grid grid-cols-1 md2:grid-cols-2 gap-4 lg:grid-cols-4 mt-[5rem] mb-6">
-            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+    <section class="lg:ml-[5rem] xss:ml-[2rem] xs:ml-[2rem] mr-[1rem] grid grid-cols-1 md2:grid-cols-2 gap-4 lg:grid-cols-4 my-[5rem]">
+            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 mb-[1rem]">
               <img src="https://www.cyberpunk.net/build/images/social-thumbnail-en-ddcf4d23.jpg" alt="Hanging Planters" class="w-auto">
               <p
                 class="cursor-pointer absolute inset-0 px-5 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-20 transition ">
                 Discount Until 100000% nigga go buy it!
               </p>
             </div>
-            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 mb-[1rem]">
               <img src="https://www.cyberpunk.net/build/images/social-thumbnail-en-ddcf4d23.jpg" alt="Planter Stand with Pots" class="w-auto">
               <p
                 class="cursor-pointer absolute inset-0 px-5 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-20 transition">
                 Discount Until 100000% nigga go buy it!
               </p>
             </div>
-            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 mb-[1rem]">
               <img src="https://www.cyberpunk.net/build/images/social-thumbnail-en-ddcf4d23.jpg" alt="Watering Cans" class="w-auto">
               <p
                 class="cursor-pointer absolute inset-0 px-5 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-20 transition">
                 Discount Until 100000% nigga go buy it!
               </p>
             </div>
-            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 mb-[1rem]">
               <img src="https://www.cyberpunk.net/build/images/social-thumbnail-en-ddcf4d23.jpg" alt="Metal Planters" class="w-auto">
               <p
                 class="cursor-pointer absolute inset-0 px-5 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-20 transition">
                 Discount Until 100000% nigga go buy it!
               </p>
             </div>
-            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 mb-[1rem]">
               <img src="https://www.cyberpunk.net/build/images/social-thumbnail-en-ddcf4d23.jpg" alt="Metal Planters" class="w-auto">
               <p
                 class="cursor-pointer absolute inset-0 px-5 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-20 transition">
                 Discount Until 100000% nigga go buy it!
               </p>
             </div>
-            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 mb-[1rem]">
               <img src="https://www.cyberpunk.net/build/images/social-thumbnail-en-ddcf4d23.jpg" alt="Metal Planters" class="w-auto">
               <p
                 class="cursor-pointer absolute inset-0 px-5 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-20 transition">
                 Discount Until 100000% nigga go buy it!
               </p>
             </div>
-            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 mb-[1rem]">
               <img src="https://www.cyberpunk.net/build/images/social-thumbnail-en-ddcf4d23.jpg" alt="Metal Planters" class="w-auto">
               <p
                 class="cursor-pointer absolute inset-0 px-5 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-20 transition">
                 Discount Until 100000% nigga go buy it!
               </p>
             </div>
-            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+            <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 mb-[1rem]">
               <img src="https://www.cyberpunk.net/build/images/social-thumbnail-en-ddcf4d23.jpg" alt="Metal Planters" class="w-auto">
               <p
                 class="cursor-pointer absolute inset-0 px-5 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-20 transition">
                 Discount Until 100000% nigga go buy it!
               </p>
             </div>
-       
     </section>
     <div class="flex justify-end fixed bottom-10 right-10 bg-gray-50 rounded-full box-border">
         <button class="flex items-center justify-center w-16 h-16 text-gray-600  hover:text-black cursor-pointer hover:bg-slate-200 hover:scale-105 duration-300 border-[1px] border-gray-500 shadow-gray-400 shadow-sm rounded-full" onclick="openModal('modelConfirm')">
