@@ -98,7 +98,7 @@ class DashboardController extends Controller
             return redirect()->route('pickup.index');
         } elseif ($query === 'admin') {
             return redirect()->route('admin');
-        } elseif ($query === 'news') {
+        } elseif ($query === 'berita') {
             return redirect()->route('news');
         }elseif ($query === 'sponsor') {
             return redirect()->route('sponsor.index');
@@ -116,6 +116,16 @@ class DashboardController extends Controller
             return redirect()->route('laporan.gcg');
         } elseif ($query === 'banner') {
             return redirect()->route('banner');
+        }elseif ($query === 'jabatan') {
+            return redirect()->route('jabatan');
+        } elseif ($query === 'direksi') {
+            return redirect()->route('direksi.index');
+        } elseif ($query === 'komisaris') {
+            return redirect()->route('manajemen.index');
+        } elseif ($query === 'penghargaan') {
+            return redirect()->route('penghargaan.index');
+        } elseif ($query === 'stackholder') {
+            return redirect()->route('stackholder.index');
         }
 
         return redirect()->route('dashboard')->with('error', 'Pencarian tidak ditemukan');

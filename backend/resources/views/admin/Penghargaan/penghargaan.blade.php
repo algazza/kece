@@ -50,9 +50,9 @@
                                     <textarea type="text" name="nama_penghargaan" class="rounded-md block p-2.5 w-full z-20 text-sm text-gray-900 shadow-md text-center shadow-gray-200" placeholder="Keterangan"></textarea>
                                 </div>
                                 <div class="mt-4 mb-2">
+                                    <button type="submit" class="inline-flex items-center rounded-md border-[1px] bg-white border-gray-300 hover:border-gray-400 px-10 py-2 text-sm leading-4 text-black font-semibold hover:text-white shadow-sm hover:bg-gray-300 hover:scale-95 duration-300">Upload</button>
                                     <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-red-600 px-10 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-red-700 hover:scale-95 duration-300"
                                             onclick="closeModal('modelConfirm')">Close</button>
-                                   <button type="submit" class="inline-flex items-center rounded-md border-[1px] bg-white border-gray-300 hover:border-gray-400 px-10 py-2 text-sm leading-4 text-black font-semibold hover:text-white shadow-sm hover:bg-gray-300 hover:scale-95 duration-300">Upload</button>
                                </div>
                             </div>            
                         </form>

@@ -5,6 +5,9 @@
     <div class="w-full max-w-[50rem] p-6">
         <div class="p-8 rounded-2xl bg-white border border-gray-300 shadow-md w-full">
             <form action="{{ route('news.update', $news->id) }}" method="POST" class="mt-4 space-y-4" enctype="multipart/form-data">
+                <a href="{{ route ('news') }}" class="hidden md:block xl:block">
+                    <i class='bx bx-arrow-back text-4xl rounded-lg font-semibold bg-white border border-gray-300  text-red-600 px-2 hover:bg-gray-300 shadow-sm duration-300 ' ></i>
+                </a>
                 @csrf
                 @method('PUT') 
                 <div class="sm:flex">

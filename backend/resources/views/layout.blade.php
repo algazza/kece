@@ -151,9 +151,11 @@
                       <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Banner</h1>
                   </a>
               @endif
-              <a href="{{ route('banner') }}">
+              @if (Auth::user()->role == 'admin' || Auth::user()->role == 'promosi')
+              <a href="{{ route('jabatan') }}">
                 <h1 class="cursor-pointer p-2 hover:bg-gray-300 rounded-md mt-1 text-black font-semibold">Jabatan</h1>
             </a>
+            @endif
               </div>
 
               <a href="/logout">

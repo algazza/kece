@@ -3,10 +3,13 @@
 @extends('layout')
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center overflow-hidden font-poppins">
-        <div class="pt-[5rem] justify-start">
-            <h1 class="text-3xl mb-2 font-bold">Laporan GCG</h1>
+        <div class="text-center flex pt-[5rem] xss:mx-[3rem] xs:[3rem]">
+            <a href="{{ route ('laporan.index') }}" class="hidden md:block xl:block">
+            <i class='bx bx-arrow-back text-4xl rounded-lg font-semibold bg-white ml-[5rem] text-red-600 px-2 hover:bg-gray-300 shadow-sm duration-300 ' ></i>
+        </a>
+            <h1 class="text-3xl text-gray-700 border border-gray-300 shadow-md shadow-gray-400 font-semibold bg-white mx-auto max-w-xs py-3 px-5 rounded-md">Laporan Gcg</h1>
         </div>
-
+    
         <ul role="list" class=" mt-8 grid max-w-2xl justify-center  grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3 mx-auto px-[9rem] mb-[2rem]">
             @foreach ($laporan as $item)
                 <div class="p-8 w-auto border border-indigo-300 rounded-2xl hover:shadow-xl bg-white hover:shadow-indigo-50 flex flex-col items-center"href="#">

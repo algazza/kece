@@ -1,8 +1,11 @@
 @extends('layout')
 @section('content')
 <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center font-poppins overflow-hidden">
-    <div class="text-center pt-[5rem] xss:mx-[3rem] xs:[3rem]">
-        <h1 class="text-3xl text-gray-700 border border-gray-300 shadow-md shadow-gray-400 font-semibold bg-white mx-auto max-w-xs rounded-md py-2">Jabatan</h1>
+    <div class="text-center flex pt-[5rem] xss:mx-[3rem] xs:[3rem]">
+        <a href="{{ route ('jabatan') }}" class="hidden md:block xl:block">
+        <i class='bx bx-arrow-back text-4xl rounded-lg font-semibold bg-white ml-[5rem] text-red-600 px-2 hover:bg-gray-300 shadow-sm duration-300 ' ></i>
+    </a>
+        <h1 class="text-3xl text-gray-700 border border-gray-300 shadow-md shadow-gray-400 font-semibold bg-white mx-auto max-w-xs py-3 px-5 rounded-md">Direksi</h1>
     </div>
     <section class="mx-[5rem] grid grid-cols-1 md2:grid-cols-2 lg:grid-cols-4 mt-[5rem] mb-6">
         @foreach ($direksi as $item)
