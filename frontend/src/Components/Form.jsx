@@ -45,26 +45,23 @@ export const Kredit = ({
         className="grid justify-center gap-4 mx-auto md:grid-cols-x2500"
       >
         <div className="grid w-full sm:grid-cols-2 gap-4">
-          <FormControl fullWidth>
-            <InputLabel htmlFor="outlined-adornment-amount">
-              Total Pinjaman
-            </InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-amount"
-              startAdornment={
-                <InputAdornment position="start">Rp.</InputAdornment>
-              }
-              label="Total Pinjaman"
-              name="total_pinjaman"
-              value={inputs.total_pinjaman}
-              onChange={handleChange}
-              error={error && !inputs.total_pinjaman}
-              inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
-            />
-            {error && !inputs.total_pinjaman && (
-              <FormHelperText error>pinjaman perlu diisi</FormHelperText>
-            )}
-          </FormControl>
+        {inputs.jenis === "Kredit" && (
+  <FormControl fullWidth>
+    <InputLabel htmlFor="outlined-adornment-amount">Total Pinjaman</InputLabel>
+    <OutlinedInput
+      id="outlined-adornment-amount"
+      startAdornment={<InputAdornment position="start">Rp.</InputAdornment>}
+      label="Total Pinjaman"
+      name="total_pinjaman"
+      value={inputs.total_pinjaman}
+      onChange={handleChange}
+      error={error && !inputs.total_pinjaman}
+    />
+    {error && !inputs.total_pinjaman && (
+      <FormHelperText error>pinjaman perlu diisi</FormHelperText>
+    )}
+  </FormControl>
+)}
 
           {formSelectKredit.map((selek) => (
             <FormControl fullWidth key={selek.id}>
