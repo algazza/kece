@@ -135,6 +135,7 @@ const SyaratTabungan = () => {
       {/* Menu utama */}
       {menu === 0 ? (
         <section
+          href="#section2"
           className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}
         >
           {/* menu button */}

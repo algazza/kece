@@ -37,7 +37,7 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import AddIcon from "@mui/icons-material/Add";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
-import SimulasiCalcKredit from "../Components/Simulasi/SimulasiCalc";
+import SimulasiCalcKredit from "../Components/Simulasi/SimulasiCalcKredit";
 
 const menuHome = [
   {
@@ -144,7 +144,6 @@ const Home = () => {
     fetch("http://localhost:8000/api/banner")
       .then((response) => response.json())
       .then((data) => {
-        // Asumsikan data yang diterima adalah array objek dengan properti 'filename' untuk nama file gambar
         const imageUrls = data.map(
           (item) => `http://localhost:8000/image/public/banner/${item.image}`
         );
@@ -283,6 +282,11 @@ const Home = () => {
             <span className="text-biruMuda-500">Simulasi Hitung</span> Tabungan,
             Kredit, dan Deposito
           </h2>
+
+          <div className="flex justify-between bg-primary">
+            {["Kredit", "Tabungan", "Deposito"].map((simulasi, index))}
+          </div>
+
           <SimulasiCalcKredit />
         </div>
       </section>

@@ -8,6 +8,7 @@ import {
   Checkbox,
   FormControlLabel,
   FormGroup,
+  FormHelperText,
   Radio,
   RadioGroup,
   TextField,
@@ -33,10 +34,14 @@ const FormBank = ({
   const [email, setEmail] = useState("");
   const [nomor, setNomor] = useState("");
   const [nik, setNik] = useState("");
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
+  const [textareaError, setTextareaError] = useState(false);
+  const [catetanError, setCatetanError] = useState(false);
+  const [radioError, setRadioError] = useState(false);
+  const [checkboxError, setCheckboxError] = useState(false);
 
   useEffect(() => {
-    setInputs((values) => ({ ...values, jenis: value, }));
+    setInputs((values) => ({ ...values, jenis: value }));
 
     axios
       .get("https://api.ipify.org?format=json")
@@ -49,7 +54,7 @@ const FormBank = ({
   }, [value]);
 
   const formatRupiah = (value) => {
-    const numberString = value.replace(/[^,\d]/g, ""); 
+    const numberString = value.replace(/[^,\d]/g, "");
     const split = numberString.split(",");
     const sisa = split[0].length % 3;
     let rupiah = split[0].substr(0, sisa);
@@ -82,11 +87,11 @@ const FormBank = ({
   const handleChange = (event) => {
     const name = event.target.name;
     let value = event.target.value;
-  
+
     if (name === "total_pinjaman") {
       value = formatRupiah(value);
     }
-  
+
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
@@ -108,11 +113,39 @@ const FormBank = ({
 
   const submitForm = () => {
     const codeGenerated = generateCode();
-    const updatedInputs = { ...inputs, code: codeGenerated, ip_user: ip, total_pinjaman: removeFormatRupiah(inputs.total_pinjaman) };
+    const updatedInputs = {
+      ...inputs,
+      code: codeGenerated,
+      ip_user: ip,
+      total_pinjaman: removeFormatRupiah(inputs.total_pinjaman),
+    };
     const nameGenerated = updatedInputs.nama;
     const emailGenerated = updatedInputs.email;
     const nomorGenerated = updatedInputs.no_handphone;
     const nikGenerated = updatedInputs.nik;
+
+    if (!inputs.alamat) {
+      setTextareaError(true);
+    } else {
+      setTextareaError(false);
+    }
+
+    if (!inputs.penghasilan_perbulan) {
+      setRadioError(true);
+    } else {
+      setRadioError(false);
+    }
+    if (!inputs.catatan) {
+      setCatetanError(true);
+    } else {
+      setCatetanError(false);
+    }
+
+    if (!inputs.checkbox) {
+      setCheckboxError(true);
+    } else {
+      setCheckboxError(false);
+    }
 
     axios
       .post(endpoint, updatedInputs)
@@ -125,7 +158,7 @@ const FormBank = ({
         setOpenModal(true);
       })
       .catch((err) => {
-        setError("Gagal Memasukkan Data, Mohon Perhatikan Lagi!")
+        setError("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
         toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
       });
   };
@@ -152,7 +185,10 @@ const FormBank = ({
                   value={inputs[iden.id]}
                   onChange={handleChange}
                   required
-                  error={!!error}
+                  error={error && !inputs[iden.id]}
+                  helperText={
+                    error && !inputs[iden.id] ? `${iden.title} perlu diisi` : ""
+                  }
                 />
               ))}
             </div>
@@ -160,34 +196,51 @@ const FormBank = ({
             <div className="form-control bg-abuTerang p-6 border border-black rounded-md md:col-[2/3] md:row-[1/3]">
               <h1 className="">{judulRadio}</h1>
               <FormGroup className="">
-                <RadioGroup name={namaRadio} onChange={handleChange}>
+                <RadioGroup
+                  name={namaRadio}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setRadioError(false);
+                  }}
+                >
                   {dummyprops.map((kerja) => (
                     <FormControlLabel
                       key={kerja.id}
                       control={<Radio />}
                       label={kerja.title}
                       value={kerja.id}
-                      error={!!error}
+                      error={radioError}
                     />
                   ))}
                 </RadioGroup>
+                {radioError && (
+                  <FormHelperText error>pekerjaan perlu diisi</FormHelperText>
+                )}
               </FormGroup>
             </div>
 
             <div className={`${styles.inputSpan}`}>
               <span>Alamat</span>
               <TextareaAutosize
-                className="resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
-                          border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
+                className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                  border ${
+                    textareaError ? "border-red-500" : "border-slate-300"
+                  } hover:border 
+                  focus:border-black focus-visible:outline-0 box-border`}
                 aria-label="Alamat"
                 minRows={3}
                 placeholder="Alamat"
                 name="alamat"
                 value={inputs.alamat}
-                onChange={handleChange}
+                onChange={(e) => {
+                  handleChange(e);
+                  setTextareaError(false);
+                }}
                 required
-                error={!!error}
               />
+              {textareaError && (
+                <FormHelperText error>alamat perlu diisi</FormHelperText>
+              )}
             </div>
           </div>
         </div>
@@ -221,6 +274,10 @@ const FormBank = ({
         {React.cloneElement(isiPenting, {
           inputs,
           error,
+          catetanError,
+          setCatetanError,
+          radioError,
+          setRadioError,
           handleChange,
           handleDateChange,
           handleTimeChange,
@@ -231,12 +288,24 @@ const FormBank = ({
             <FormGroup>
               <FormControlLabel
                 required
-                control={<Checkbox />}
+                control={
+                  <Checkbox
+                    onChange={(e) => {
+                      handleChange(e);
+                      setCheckboxError(false); // Reset error ketika dicentang
+                    }}
+                  />
+                }
                 label="Dengan ini saya menyetujui penggunaan data
                                 diatas untuk pengajuan kredit melalui BPR Arto
                                 Moro."
                 className={`${styles.fontCaption}`}
               />
+              {checkboxError && (
+                <FormHelperText error>
+                  Anda harus menyetujui penggunaan data
+                </FormHelperText>
+              )}
             </FormGroup>
             <span>* Pengajuan melalui website ini gratis</span>
             <span>

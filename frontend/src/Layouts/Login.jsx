@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {
   FormControl,
+  FormHelperText,
   IconButton,
   InputAdornment,
   InputLabel,
@@ -18,7 +19,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // visibility password
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -40,13 +41,13 @@ const Login = () => {
       localStorage.setItem("username", username);
       localStorage.setItem("isAuthenticated", "true");
       setError("");
-      navigate("/")
+      navigate("/");
     } else {
       setError("Invalid Username or Password");
     }
   };
 
-//   mengecek setelah jika seseorang berhasil login
+  //   mengecek setelah jika seseorang berhasil login
   const isAuthenticated = localStorage.getItem("username");
   if (isAuthenticated) {
     return <Navigate to="/" />;
@@ -54,7 +55,7 @@ const Login = () => {
 
   return (
     <section className="flex flex-col gap-4 justify-center items-center h-dvh">
-        <img src={logoArmor} alt="icon-artomoro" className="w-40"/>
+      <img src={logoArmor} alt="icon-artomoro" className="w-40" />
       <form
         className="p-4 border-2 border-abuGelap rounded-md"
         onSubmit={handleSubmit}
@@ -67,7 +68,8 @@ const Login = () => {
             variant="outlined"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            error={!!error}
+            error={error && !username}
+            helperText={error && !username ? `username is required` : ""}
           />
         </FormControl>
         <FormControl fullWidth sx={{ marginY: 2 }} variant="outlined">
@@ -79,7 +81,7 @@ const Login = () => {
             type={showPassword ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            error={!!error}
+            error={error && !password}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -95,6 +97,9 @@ const Login = () => {
             }
             label="Password"
           />
+          {error && !password && (
+            <FormHelperText error>Password is required</FormHelperText>
+          )}
         </FormControl>
 
         <div className="flex justify-center flex-col">
