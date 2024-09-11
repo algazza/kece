@@ -138,7 +138,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="shadow-lg rounded-lg overflow-auto mx-4 md:mx-10 mb-[1rem]">
+        <div class="shadow-lg rounded-lg h-[41rem] overflow-auto mx-4 md:mx-10 mb-[1rem]">
             <table class="w-auto table-fixed">
                 <h2 class="bg-gray-100 drop-shadow-md text-pretty py-2 text-base font-semibold">Deposit</h2>
                 <thead>
