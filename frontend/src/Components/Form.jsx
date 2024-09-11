@@ -9,6 +9,7 @@ import {
   FormControl,
   FormControlLabel,
   FormGroup,
+  FormHelperText,
   InputAdornment,
   InputLabel,
   MenuItem,
@@ -26,7 +27,15 @@ import {
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 
-export const Kredit = ({ inputs, handleChange }) => {
+export const Kredit = ({
+  inputs,
+  handleChange,
+  error,
+  catetanError,
+  setCatetanError,
+  radioError,
+  setRadioError,
+}) => {
   return (
     <div className="">
       <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
@@ -46,11 +55,15 @@ export const Kredit = ({ inputs, handleChange }) => {
                 <InputAdornment position="start">Rp.</InputAdornment>
               }
               label="Total Pinjaman"
-              type="number"
               name="total_pinjaman"
               value={inputs.total_pinjaman}
               onChange={handleChange}
+              error={error && !inputs.total_pinjaman}
+              inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
             />
+            {error && !inputs.total_pinjaman && (
+              <FormHelperText error>pinjaman perlu diisi</FormHelperText>
+            )}
           </FormControl>
 
           {formSelectKredit.map((selek) => (
@@ -65,6 +78,13 @@ export const Kredit = ({ inputs, handleChange }) => {
                 name={selek.name}
                 value={inputs[selek.name]}
                 onChange={handleChange}
+                required
+                error={error && !inputs[selek.name]}
+                helperText={
+                  error && !inputs[selek.name]
+                    ? `${selek.title} perlu diisi`
+                    : ""
+                }
               >
                 <MenuItem value={selek.option1}>{selek.option1}</MenuItem>
                 <MenuItem value={selek.option2}>{selek.option2}</MenuItem>
@@ -83,7 +103,10 @@ export const Kredit = ({ inputs, handleChange }) => {
               <RadioGroup
                 value={inputs.penghasilan_perbulan}
                 name="penghasilan_perbulan"
-                onChange={handleChange}
+                onChange={(e) => {
+                  handleChange(e);
+                  setRadioError(false);
+                }}
               >
                 {formPenghasilan.map((gaji) => (
                   <FormControlLabel
@@ -91,9 +114,13 @@ export const Kredit = ({ inputs, handleChange }) => {
                     control={<Radio />}
                     label={gaji.title}
                     value={gaji.id}
+                    error={radioError}
                   />
                 ))}
               </RadioGroup>
+              {radioError && (
+                <FormHelperText error>gaji perlu diisi</FormHelperText>
+              )}
             </FormGroup>
           </div>
         </div>
@@ -101,15 +128,25 @@ export const Kredit = ({ inputs, handleChange }) => {
         <div className={`${styles.inputSpan}`}>
           <span>Catatan</span>
           <TextareaAutosize
-            className="resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
-                border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
+            className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+              border ${
+                catetanError ? "border-red-500" : "border-slate-300"
+              } hover:border 
+              focus:border-black focus-visible:outline-0 box-border`}
             aria-label="Catatan"
             minRows={3}
             placeholder="Catatan"
             name="catatan"
             value={inputs.catatan}
-            onChange={handleChange}
+            error={!!error}
+            onChange={(e) => {
+              handleChange(e);
+              setCatetanError(false);
+            }}
           />
+          {catetanError && (
+            <FormHelperText error>catatan perlu diisi</FormHelperText>
+          )}
           <p className={`${styles.fontCaption} mt-2 text-abuGelap`}>
             Mohon mengisi di CATATAN kalo memang ada Informasi Awal yang perlu
             disampaikan kepada kami. Terima kasih telah memberikan kepercayaan
@@ -142,10 +179,10 @@ export const Deposito = ({ inputs, handleChange }) => {
                 <InputAdornment position="start">Rp.</InputAdornment>
               }
               label="Total Pinjaman"
-              type="number"
               name="total_pinjaman"
               value={inputs.total_pinjaman}
               onChange={handleChange}
+              inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
             />
           </FormControl>
 

@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "../helper/style";
-import CloseIcon from "@mui/icons-material/Close";
-import { ButtonOutline } from "./Button";
+import { nomorInduk } from "../helper/nomor";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const PopUp = ({
   nama,
@@ -12,55 +11,51 @@ const PopUp = ({
   jenis,
   setOpenModal,
   openModal,
-  nomer,
 }) => {
+  const dataFields = [
+    { label: "Nama Lengkap", value: nama },
+    { label: "Email", value: email },
+    { label: "Nomor Handphone", value: nomor },
+    { label: "NIK", value: nik },
+    { label: "Kode Unik", value: code },
+    { label: "Jenis", value: jenis },
+  ];
+
   return (
-    <div className="w-screen h-dvh top-0 left-0 bottom-0 fixed z-40">
-      <div className="w-screen h-dvh top-0 left-0 bottom-0 fixed bg-gray-900/50 backdrop-blur-sm">
-        <div className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/4 bg-primary p-12">
-          <h1 className={`${styles.heading3} mb-4`}>Data Identitas</h1>
-          <div className="grid md:grid-cols-2 grid-cols-x170">
-            <div className="">
-              <h3 className={`${styles.fontBodyBold}`}>Nama Lengkap</h3>
-              <h3 className={`${styles.fontBodyBold}`}>Email</h3>
-              <h3 className={`${styles.fontBodyBold}`}>Nomor Handphone</h3>
-              <h3 className={`${styles.fontBodyBold}`}>NIK</h3>
-              <h3 className={`${styles.fontBodyBold}`}>Kode Unik</h3>
-              <h3 className={`${styles.fontBodyBold}`}>Jenis</h3>
-            </div>
-            <div>
-              <h3 className={`${styles.fontBodyBold}`}>: {nama}</h3>
-              <h3 className={`${styles.fontBodyBold}`}>: {email}</h3>
-              <h3 className={`${styles.fontBodyBold}`}>: {nomor}</h3>
-              <h3 className={`${styles.fontBodyBold}`}>: {nik}</h3>
-              <h3 className={`${styles.fontBodyBold}`}>: {code}</h3>
-              <h3 className={`${styles.fontBodyBold}`}>: {jenis}</h3>
-            </div>
-          </div>
-          <p className="mt-4">Silahkan lanjut jika berminat</p>
-          <div className="flex gap-4 mt-4">
-            <button
-              className="border-2 border-abuGelap px-4 py-2 rounded-md text-abuGelap font-semibold"
-              onClick={() => {
-                setOpenModal(!openModal);
-              }}
+    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-sm">
+      <div className="bg-primary p-6 md:p-8 rounded-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
+        <h1 className="text-xl md:text-2xl font-bold mb-4">Data Identitas</h1>
+        <div className="space-y-2">
+          {dataFields.map((field, index) => (
+            <div
+              key={index}
+              className="flex flex-col sm:flex-row sm:items-center"
             >
-              Kembali
-            </button>
-            <ButtonOutline
-              ColorText="text-[#12a50b]"
-              ColorPrimary="border-[#12a50b]"
-              ColorPrimary200="bg-[#a0db9d] "
-              ColorPrimary400="bg-[#41b73c] "
-              WidthButton="w-32"
-              TopShadow="top-2"
-              LeftShadow="left-[33px]"
-              href={`https://wa.me/+62${nomer}?text=I'm%20${nama}%20dengan%20kode%20${code}%20pengajuan%20${jenis}`}
-              target={"_blank"}
-            >
-              Lanjutkan
-            </ButtonOutline>
-          </div>
+              <span className="font-bold text-sm sm:text-base sm:w-1/3">
+                {field.label}:
+              </span>
+              <span className="text-sm sm:text-base sm:w-2/3 break-words">
+                {field.value}
+              </span>
+            </div>
+          ))}
+        </div>
+        <p className="mt-4 text-sm">Silahkan lanjut jika berminat</p>
+        <div className="flex flex-col sm:flex-row gap-4 mt-4">
+          <button
+            className="border-2 border-gray-600 px-4 py-2 rounded-md text-gray-600 font-semibold text-center"
+            onClick={() => setOpenModal(!openModal)}
+          >
+            Kembali
+          </button>
+          <a
+            className="border-2 border-[#12a50b] px-4 py-2 rounded-md text-[#12a50b] font-semibold text-center"
+            href={`https://wa.me/+62${nomorInduk}?text=Saya%20${nama}%20dengan%20kode%20${code}%20pengajuan%20${jenis}`}
+            target="_blank"
+          >
+            <WhatsAppIcon className="text-[#12a50b] mr-2" />
+            Lanjutkan
+          </a>
         </div>
       </div>
     </div>

@@ -17,6 +17,7 @@ const IsiNews = () => {
   const [newsData, setNewsData] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
+  const currentUrl = window.location.origin + location.pathname;
 
   useEffect(() => {
     fetch("http://localhost:8000/api/news")
@@ -82,7 +83,6 @@ const IsiNews = () => {
     );
 
   const handleCopyLink = () => {
-    const currentUrl = window.location.origin + location.pathname;
     navigator.clipboard
       .writeText(currentUrl)
       .then(() => {
@@ -96,43 +96,53 @@ const IsiNews = () => {
   return (
     <>
       <section
-        className={`${styles.paddingY} ${styles.marginX} ${styles.flexCenter} flex-col gap-12 pt-12`}
+        className={`${styles.paddingY} ${styles.marginX} grid grid-cols-x650 pt-12`}
       >
-        <h5 className={`${styles.heading4} ${styles.marginX} text-center `}>
-          {news.judul}
-        </h5>
+        <div className={`${styles.flexCenter} flex-col gap-12`}>
+          <h5 className={`${styles.heading4} text-center `}>
+            {news.judul}
+          </h5>
 
-        <div>
-          <img
-            className="max-w-[400px]"
-            src={`http://localhost:8000/image/public/news/${news.image}`}
-            alt=""
-          />
-          <div className="flex justify-end pt-2 gap-4">
-            <button onClick={handleCopyLink}>
-              <LinkIcon className="text-[#646464]" />
-            </button>
-            <button>
-              <WhatsAppIcon className="text-[#25D366]" />
-            </button>
-            <button>
-              <XIcon className="text-[#000]" />
-            </button>
-            <button>
-              <FacebookRoundedIcon className="text-[#4267B2]" />
-            </button>
+          <div>
+            <img
+              className="max-w-[400px]"
+              src={`http://localhost:8000/image/public/news/${news.image}`}
+              alt=""
+            />
+            <div className="flex justify-end pt-2 gap-4">
+              <a onClick={handleCopyLink}>
+                <LinkIcon className="text-[#646464]" />
+              </a>
+              <a
+                href={`whatsapp://send?text=${news.judul}. Lihatlah selengkapnya di ${currentUrl}`}
+              >
+                <WhatsAppIcon className="text-[#25D366]" />
+              </a>
+              <a
+                href={`https://twitter.com/intent/tweet?text=${currentUrl}`}
+                target="_blank"
+              >
+                <XIcon className="text-[#000]" />
+              </a>
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`}
+                target="_blank"
+              >
+                <FacebookRoundedIcon className="text-[#4267B2]" />
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div className={`${styles.fontBody} sm:mx-32`}>
-          <div
-            className="pb-6"
-            dangerouslySetInnerHTML={{ __html: news.keterangan }}
-          />
+          <div className={`${styles.fontBody} `}>
+            <div
+              className="pb-6"
+              dangerouslySetInnerHTML={{ __html: news.keterangan }}
+            />
 
-          <div className={`${styles.fontBodyBold}`}>
-            <p>{news.tanggal}</p>
-            <p>{news.penulis}</p>
+            <div className={`${styles.fontBodyBold}`}>
+              <p>{news.tanggal}</p>
+              <p>{news.penulis}</p>
+            </div>
           </div>
         </div>
 
@@ -146,8 +156,8 @@ const IsiNews = () => {
               Lainnya...
             </Link>
           </div>
-          <section className="grid grid-cols-x150 sm:grid-cols-x250 md:grid-cols-x550 justify-center gap-6 sm:gap-12">
-            {newsData.slice(0, 2).map((news) => {
+          <section className="grid grid-cols-x150 sm:grid-cols-x250 md:grid-cols-1 justify-center gap-6 sm:gap-12">
+            {newsData.slice(0, 3).map((news) => {
               return (
                 <div
                   key={news.id}

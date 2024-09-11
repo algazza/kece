@@ -5,6 +5,7 @@ import Footer from "./Layouts/Footer";
 import Header from "./Layouts/Header";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import ScrollToTop from "./Layouts/ScrollToTop";
+import { nomorInduk } from "./helper/nomor";
 
 const App = () => {
   return (
@@ -25,12 +26,13 @@ const App = () => {
         >
           <Outlet />
         </motion.div>
-        <div className="fixed bottom-12 right-4">
-          <div className={`${styles.flexCenter}`}>
+
+        <div className="fixed bottom-8 right-4">
+          <div className={styles.flexCenter}>
             <a
-              href="https://www.instagram.com/stories/highlights/18012355847552920/"
+              href={`https://wa.me/+62${nomorInduk}`}
               target="_blank"
-              className={`bg-[#25D366] rounded-full w-[55px] h-[55px] ${styles.flexCenter} z-[100]`}
+              className={`bg-[#25D366] rounded-full w-[45px] h-[45px] ${styles.flexCenter} z-[100]`}
             >
               <WhatsAppIcon className="text-white" />
             </a>

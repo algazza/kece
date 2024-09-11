@@ -105,7 +105,8 @@ const SyaratDeposito = () => {
         >
           {/* menu button */}
           {buttonMenuTabungan.map((menu, index) => (
-            <div
+            <a
+              href="#section2"
               className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
               key={index}
               onClick={() => updateMenu(menu.id)}
@@ -113,7 +114,7 @@ const SyaratDeposito = () => {
               {menu.icon("m-2 text-blue-400")}
               <h6 className={`${styles.heading6}`}>{menu.title}</h6>
               <p className="mt-4">{menu.deskripsi}</p>
-            </div>
+            </a>
           ))}
         </section>
       ) : null}

@@ -37,7 +37,6 @@ Darmawan juga menekankan pentingnya kegiatan literasi keuangan seperti ini untuk
 ',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
-                'tanggal' => '15/02/2024',
                 'image' => 'profil.jpg',
             ],
             [
@@ -63,7 +62,6 @@ Direktur Utama Bank Eka Lampung, Eko Budiyono, menyatakan bahwa kolaborasi dalam
 Lebih jauh, Eko Budiyono berharap bahwa inisiatif kerja sama ini dapat menjadi contoh dan menginspirasi lembaga perbankan lainnya di masa depan. “Kami berharap kerja sama ini tidak hanya memberikan manfaat langsung kepada masyarakat dan UMKM, tetapi juga dapat memotivasi lembaga-lembaga keuangan lain untuk berkolaborasi dalam upaya pemberdayaan UMKM di tanah air,” tutup Eko di akhir kegiatan.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
-                'tanggal' => '28/08/2024',
                 'image' => 'profil.jpg',
             ],
             [
@@ -89,7 +87,7 @@ Selama kunjungannya ke Semarang, tim dari BPR Lingga Sejahtera berkesempatan unt
 Kegiatan ini tidak hanya memperkuat hubungan antara kedua lembaga tetapi juga membuka peluang untuk kolaborasi lebih lanjut di masa depan, demi kemajuan sektor perbankan dan UMKM di Indonesia. Darmawan berharap bahwa melalui pertukaran pengetahuan, pengalaman, dan sumber daya, kedua BPR dapat meningkatkan kualitas layanan dan memberikan dampak yang lebih signifikan bagi masyarakat di wilayah masing-masing. “Melalui kegiatan ini, kami berharap semua pihak dapat mengimplementasikan strategi yang lebih inovatif dan efektif dalam menghadapi tantangan industri perbankan yang terus berkembang,” tutup Darmawan.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
-                'tanggal' => ' 22/08/2024 ',
+ 
                 'image' => 'profil.jpg',
             ],
             [
@@ -103,7 +101,6 @@ Lebih lanjut, Prof Dr Subyakto yang juga Komisaris Utama sekaligus Pemegang Saha
 Pertemuan ketiga sosok tersebut menjadi platform dalam merencanakan langkah strategis agar bisa mengoptimalkan potensi UMKM lokal dalam menghadapi tantangan ekonomi global. Sinergi antarelemen masyarakat, baik sektor publik maupun swasta, penting untuk mencapai tujuan tersebut. Kafe Kopi Tembalang dipilih sebagai lokasi pertemuan, karena merupakan usaha keluarga yang didirikan oleh Ganang Ismail. Subyakto berharap agar silaturahmi dan diskusi lintas sektoral dapat berlangsung lebih sering. Sehingga perekonomian Jawa Tengah bsa terus berkembang dan menjadi contoh bagi daerah lain.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
-                'tanggal' => '02/08/2024',
                 'image' => 'profil.jpg',
             ],
             [
@@ -131,7 +128,6 @@ Pertemuan ini juga menyoroti pentingnya branding yang efektif. Branding yang kua
 Darmawan berharap dengan saling berbagi pengetahuan, pengalaman, dan sumber daya, kedua BPR mampu meningkatkan kualitas layanan dan memberikan dampak yang lebih besar bagi masyarakat di wilayah masing-masing. “Dengan kegiatan ini, diharapkan kita semua dapat mengimplementasikan strategi yang lebih inovatif dan efektif dalam menghadapi tantangan industri perbankan yang terus berkembang,” pungkas Darmawan.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
-                'tanggal' => '04/09/2024',
                 'image' => 'profil.jpg',
             ],
             [
@@ -149,7 +145,6 @@ Di kesempatan yang sama, Chairman Infobank Media Group, Eko B. Supriyanto, mengu
 Eko menerangkan penilaian yang dilakukan oleh The Finance berdasarkan beberapa aspek, termasuk pertumbuhan, permodalan, kualitas aset, rentabilitas, likuiditas, dan efisiensi. Laporan ini sebagai gambaran perkembangan BPR-BPR selama tiga tahun terakhir (2021-2023). “Bagi mereka yang masuk dalam TOP 100, pastinya bukan BPR-BPR sembarangan. Para pemenang penghargaan tentu memiliki likuiditas memadai, rentabilitas yang oke, kualitas aset yang luar biasa, dan juga cuan (efisiensi) yang bagus,” jelas pria yang akrab disapa EBS ini.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
-                'tanggal' => '02/07/2024',
                 'image' => 'profil.jpg',
             ],
             [
@@ -180,7 +175,6 @@ Darmawan menargetkan bahwa bus perusahaan tersebut sudah akan dapat dioperasiona
 “Bus ini kami desain khusus, baik dari segi interior maupun eksteriornya sehingga akan lebih memberikan pengalaman tidak terlupakan kepada karyawan ataupun nasabah yang menggunakannya,” pungkas Darmawan.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
-                'tanggal' => '05/04/2024',
                 'image' => 'profil.jpg',
             ],
             [
@@ -204,7 +198,6 @@ Kasi SDM Bank Arto Moro, Tedy Ariyanto, bersama dengan timnya melakukan kunjunga
 Tedy Ariyanto juga menyoroti pentingnya kerjasama antara pemerintah, sektor swasta, dan masyarakat dalam mengatasi masalah ini. Beliau menilai banjir yang secara berulang melanda Kota Semarang merupakan cerminan dari infrastruktur dan manajemen lingkungan yang buruk. “Perlu respons yang lebih efektif dari pemerintah dan pihak terkait untuk menangani masalah ini. Kondisi banjir tidak hanya mengganggu aktivitas masyarakat, tetapi juga berdampak signifikan terhadap ekonomi dan kesejahteraan umum. Normalisasi sungai dan kontrol drainase harus rutin dilakukan demi meminimalkan kejadian serupa terulang,” jelas Kasi SDM Bank Arto Moro tersebut.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
-                'tanggal' => '22/03/2024',
                 'image' => 'profil.jpg',
             ],
             [
@@ -224,7 +217,6 @@ Branch Manager CIMBNiaga Syariah Semarang, Betty Sumirat menyambut baik hadirnya
 Dengan terselenggaranya program ini, diharapkan jumlah masyarakat yang dapat merealisasikan impian mereka melaksanakan ibadah di Tanah Suci akan semakin meningkat. Kegiatan ini juga memperkuat komitmen BPR Arto Moro dalam meningkatkan aksesibilitas terhadap layanan keuangan bagi masyarakat Indonesia. Langkah BPR Arto Moro dalam menyediakan program kredit haji menjadi bukti BPR Arto Moro dalam mendukung aspirasi keagamaan yang memungkinkan lebih banyak individu mewujudkan impian mereka dalam melaksanakan kewajiban.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
-                'tanggal' => '17/02/2024',
                 'image' => 'profil.jpg',
             ],
             [
@@ -250,7 +242,6 @@ Kepala Cabang YKAKI Semarang, Vita Mahaswari, menyampaikan bahwa kegiatan ini me
 Acara ini diharapkan menjadi wadah untuk mengedukasi masyarakat tentang pentingnya deteksi dini, perawatan yang tepat, dan dukungan yang diperlukan bagi anak-anak yang terkena kanker. Selain itu, acara ini juga bertujuan untuk menyampaikan pesan bahwa kanker bukanlah penyakit menular, sehingga individu yang terkena kanker tidak perlu diisolasi, justru mereka harus mendapat dukungan dan kasih sayang untuk meningkatkan semangat mereka dalam proses pemulihan.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
-                'tanggal' => '15/02/2024',
                 'image' => 'profil.jpg',
             ],
         ];
