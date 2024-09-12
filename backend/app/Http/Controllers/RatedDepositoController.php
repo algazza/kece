@@ -36,4 +36,9 @@ class RatedDepositoController extends Controller
             'ratedDeposito' => $ratedDeposito
         ]);
     }
+
+    public function index(){
+        $ratedDeposito = RatedDeposito::get();
+        return response()->json($ratedDeposito);
+    }
 }

@@ -17,7 +17,10 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DireksiController;
 use App\Http\Controllers\ManajemenController;
 use App\Http\Controllers\PenghargaanController;
+use App\Http\Controllers\PromosiController;
+use App\Http\Controllers\RatedDepositoController;
 use App\Http\Controllers\StackholderController;
+use Database\Seeders\RatedDepositoSeeder;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +49,8 @@ Route::resource('penghargaan',PenghargaanController::class);
 Route::resource('manajemen',ManajemenController::class);
 Route::resource('direksi',DireksiController::class);
 Route::resource('stackholder',StackholderController::class);
+Route::resource('ratedDeposito',RatedDepositoController::class);
+Route::resource('promosi',PromosiController::class);
 
 
 Route::get('/api/dashboard/kredit', [DashboardController::class, 'data']);

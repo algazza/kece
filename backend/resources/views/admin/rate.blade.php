@@ -17,7 +17,6 @@
                 </form>
                 <thead>
                     <tr class="bg-gray-100">
-                        <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">NO</th>
                         <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">Plafon</th>
                         <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">12 bulan</th>
                         <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">24 bulan</th>
