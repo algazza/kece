@@ -13,7 +13,7 @@ class RatedDepositoController extends Controller
         return view('admin.RateDisc.rate', compact('ratedDeposito'));
     }
 
-    public function calculate(Request $request)
+    public function update(Request $request)
     {
         $validatedData = $request->validate([
             'discount' => 'required|numeric',

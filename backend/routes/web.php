@@ -179,7 +179,7 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
 
     Route::get('/rate',[RatedDepositoController::class, 'viewDepositoRated'])->name('rated.view');
-    Route::put('/calculate', [RatedDepositoController::class, 'calculate'])->name('rated.deposito.update');
+    Route::put('/rate/update', [RatedDepositoController::class, 'update'])->name('rated.deposito.update');
 });
 
 
