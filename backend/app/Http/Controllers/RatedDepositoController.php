@@ -32,7 +32,7 @@ class RatedDepositoController extends Controller
             ]);
         }
 
-        return view('admin.rate', [
+        return view('admin.RateDisc.rate', [
             'ratedDeposito' => $ratedDeposito
         ]);
     }
