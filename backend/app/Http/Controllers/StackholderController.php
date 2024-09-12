@@ -27,7 +27,7 @@ class StackholderController extends Controller
                 $stackholder->image = $imageStackholder;
             }
         
-            $stackholder->update();
+            $stackholder->save();
         
             return redirect()->route('stackholder.index')->with('success', 'Stackholder berhasil di tambahkan');
         } catch (\Exception $e){
@@ -50,7 +50,7 @@ class StackholderController extends Controller
                 $stackholder->image = $imageStackholder;
             }
 
-            $stackholder->save();
+            $stackholder->update();
             return redirect()->route('stackholder.index')->with('success', 'Stackholder berhasil di update');
         } catch(\Exception $e){
             return redirect()->back()->with('error', 'Gagal mengupdate stackholder');

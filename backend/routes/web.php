@@ -22,6 +22,7 @@ use App\Http\Controllers\DireksiController;
 use App\Http\Controllers\ManajemenController;
 use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\PromosiController;
+use App\Http\Controllers\RatedDepositoController;
 use App\Http\Controllers\RatedKreditController;
 use App\Http\Controllers\StackholderController;
 use Illuminate\Routing\Route as RoutingRoute;
@@ -169,12 +170,24 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::post('/Stackholder/post', [StackholderController::class, 'store'])->name('stackholder.post');
     Route::put('/Stackholder/{id}/edit', [StackholderController::class, 'update'])->name('stackholder.update');
     Route::delete('/Stackholder/post/{id}', [StackholderController::class, 'destroy'])->name('stackholder.delete');
+
+    Route::get('/promo', [PromosiController::class, 'viewPromosi'])->name('promosi.index');
+    Route::post('/promo/add', [PromosiController::class, 'store'])->name('promosi.post');
+    Route::get('/Promosi/Find/{id}', [PromosiController::class, 'find'])->name('promosi.find');
+    Route::put('/Promosi/{id}/edit', [PromosiController::class, 'update'])->name('promosi.update');
+    Route::delete('/Promosi/post/{id}', [PromosiController::class, 'destroy'])->name('promosi.delete');
+
+
+    Route::get('/rate',[RatedDepositoController::class, 'viewDepositoRated'])->name('rated.view');
+    Route::put('/rate/update', [RatedDepositoController::class, 'update'])->name('rated.deposito.update');
 });
 
 
 
 
 
-Route::get('/promo', [PromosiController::class, 'viewPromosi'])->name('promosi.index');
-Route::post('/promo/add', [PromosiController::class, 'store'])->name('promosi.post');
-Route::get('/rate',[RatedKreditController::class, 'viewKreditRated'])->name('rated.kredit.view');
+Route::get('/mboh', function(){
+    return view('admin.RateDisc.rateEdit');
+});
+
+
