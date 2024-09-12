@@ -34,7 +34,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const correctUsername = "admin123";
-    const correctPassword = "bibagumush";
+    const correctPassword = "artomorogemesh";
 
     if (username === correctUsername && password === correctPassword) {
       // save to localstorage

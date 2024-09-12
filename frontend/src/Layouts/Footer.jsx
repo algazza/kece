@@ -129,7 +129,7 @@ const Footer = () => {
               {sosmedIcon.map((sosmed, index) => (
                 <li
                   key={index}
-                  className="w-12 h-12 rounded-full bg-abuGelap text-center text-primary flex justify-center items-center pb-[0.2rem]"
+                  className="w-12 h-12 rounded-full bg-merahh-500 text-center text-primary flex justify-center items-center pb-[0.2rem]"
                 >
                   <a href={sosmed.link} className="">
                     {sosmed.icon}

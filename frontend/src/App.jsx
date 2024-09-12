@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import styles from "./helper/style";
 import Footer from "./Layouts/Footer";
 import Header from "./Layouts/Header";
@@ -8,6 +9,17 @@ import ScrollToTop from "./Layouts/ScrollToTop";
 import { nomorInduk } from "./helper/nomor";
 
 const App = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
     <>
     <ScrollToTop/>

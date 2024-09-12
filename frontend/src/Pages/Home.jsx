@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import styles from "../helper/style";
 import ImageBanner from "../Layouts/ImageBanner";
 import {
@@ -35,9 +35,13 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import GroupsIcon from "@mui/icons-material/Groups";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
 import SimulasiCalcKredit from "../Components/Simulasi/SimulasiCalcKredit";
+import SimulasiCalcDeposito from "../Components/Simulasi/SimulasiCalcDeposito";
+import SimulasiCalcTabungan from "../Components/Simulasi/SimulasiCalcTabungan";
+import RateBunga from "../Components/RateBunga";
 
 const menuHome = [
   {
@@ -60,9 +64,9 @@ const menuHome = [
   },
   {
     id: 4,
-    icon: (className) => <LocationOnIcon className={className} />,
-    title: "Location",
-    link: "lokasi",
+    icon: (className) => <PercentIcon className={className} />,
+    title: "Rate Bunga",
+    link: "",
   },
   {
     id: 5,
@@ -92,13 +96,13 @@ const menuHome = [
     id: 9,
     icon: (className) => <CalculateIcon className={className} />,
     title: "Simulasi",
-    link: "",
+    link: "#simulasi",
   },
   {
     id: 10,
-    icon: (className) => <PercentIcon className={className} />,
-    title: "Rate Bunga",
-    link: "",
+    icon: (className) => <LocationOnIcon className={className} />,
+    title: "Location",
+    link: "lokasi",
   },
 ];
 
@@ -135,9 +139,11 @@ const penghargaanHome = [
 const Home = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [openRateBunga, setOpenRateBunga] = useState(false);
   const [images, setImages] = useState([]);
   const [newsData, setNewsData] = useState([]);
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const [menuCalc, setMenuCalc] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -163,12 +169,32 @@ const Home = () => {
       });
   }, []);
 
+  useEffect(() => {
+    if (openModal || openRateBunga) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [openModal, openRateBunga]);
+  
   const handleOpen = () => {
     setOpenMenu(!openMenu);
   };
 
   const handleModal = () => {
     setOpenModal(!openModal);
+  };
+
+  const handleOpenRateBunga = () => {
+    setOpenRateBunga(!openRateBunga);
+  };
+
+  const handlemenuCalc = (id) => {
+    setMenuCalc(id);
   };
 
   const handleAccordion = (panel) => (event, isExpanded) => {
@@ -181,9 +207,10 @@ const Home = () => {
         <div className="rounded-br-[100px] sm:rounded-br-[200px] md:rounded-br-[300px] overflow-hidden">
           <ImageBanner images={images} />
         </div>
-        <div className="flex justify-center items-start py-4 sm:px-8 sm:gap-8 gap-2">
+
+        <div className={`${styles.flexStart} py-4 sm:px-8 sm:gap-8 gap-2`}>
           <motion.div
-            className={`grid sm:grid-cols-x5170 grid-cols-3 gap-x-2 gap-y-8 sm:gap-8 justify-center  p-4 rounded-lg border-b-4 border-abu `}
+            className={`grid md:grid-cols-x5170 grid-cols-3 gap-x-2 gap-y-8 sm:gap-8 justify-center p-4 rounded-lg border-b-4 border-abu `}
             initial={{ height: "5.5rem", overflow: "hidden" }}
             animate={{ height: openMenu ? "auto" : "5.9rem" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -191,6 +218,9 @@ const Home = () => {
             {menuHome.map((menu) => (
               <Link
                 to={menu.link}
+                onClick={
+                  menu.title === "Rate Bunga" && (() => handleOpenRateBunga())
+                }
                 key={menu.id}
                 className="group bg-abuTerang grid justify-items-center py-2 sm:px-6 px-3 rounded-xl transition-all duration-300 ease-in-out"
               >
@@ -201,12 +231,19 @@ const Home = () => {
               </Link>
             ))}
           </motion.div>
+
           <div className="w-10 cursor-pointer" onClick={handleOpen}>
             <div className="bg-abuTerang rounded-xl p-2">
-              <AddIcon />
+              {openMenu ? <RemoveIcon /> : <AddIcon />}
             </div>
           </div>
         </div>
+
+        <AnimatePresence>
+          {openRateBunga && (
+            <RateBunga handleOpenRateBunga={handleOpenRateBunga} />
+          )}
+        </AnimatePresence>
       </section>
 
       <section className={`${styles.marginX} ${styles.paddingY}`}>
@@ -249,6 +286,10 @@ const Home = () => {
         </div>
       </section>
 
+      <span className="-mt-[100px] pb-[100px] block" id="simulasi">
+        &nbsp;
+      </span>
+
       <section
         className={`${styles.paddingY} ${styles.paddingX} md:grid md:grid-cols-2 bg-biruMuda-100 relative`}
       >
@@ -259,7 +300,7 @@ const Home = () => {
         <img
           src={SimulasiPercil1}
           alt=""
-          className="absolute md:top-[240px] md:left-[130px] max-md:bottom-[70px] max-md:right-[-30px] w-[100px]"
+          className="absolute md:top-[240px] md:left-[130px] max-md:bottom-[70px] max-md:-right-[57px] w-[100px]"
         />
         <img
           src={SimulasiPercil2}
@@ -269,7 +310,7 @@ const Home = () => {
         <img
           src={SimulasiPercil3}
           alt=""
-          className="absolute md:top-[50px] md:left-[480px] top-[120px] -left-[20px]"
+          className="absolute md:top-[50px] md:left-[480px] top-[120px] -left-[51px]"
         />
         <img
           src={SimulasiPercil4}
@@ -283,11 +324,23 @@ const Home = () => {
             Kredit, dan Deposito
           </h2>
 
-          <div className="flex justify-between bg-primary">
-            {/* {["Kredit", "Tabungan", "Deposito"].map((simulasi, index))} */}
+          <div className="flex justify-between bg-primary mb-8 rounded-xl p-2 overflow-x-auto">
+            {["Deposito", "Tabungan", "Kredit"].map((simulasi, index) => (
+              <div
+                key={index}
+                className={`${
+                  menuCalc == index && "bg-biruMuda-200"
+                } px-6 sm:px-12 py-2 font-semibold rounded-xl cursor-pointer`}
+                onClick={() => handlemenuCalc(index)}
+              >
+                {simulasi}
+              </div>
+            ))}
           </div>
 
-          <SimulasiCalcKredit />
+          {menuCalc === 0 && <SimulasiCalcDeposito />}
+          {menuCalc === 1 && <SimulasiCalcTabungan />}
+          {menuCalc === 2 && <SimulasiCalcKredit />}
         </div>
       </section>
 
@@ -306,8 +359,14 @@ const Home = () => {
 
         {openModal && (
           <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed z-40">
-            <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed bg-gray-900/50 backdrop-blur-sm">
-              <div className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/4 bg-primary p-12">
+          <div
+            className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed bg-gray-900/50 backdrop-blur-sm"
+            onClick={handleModal}
+          >
+            <div
+              className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/4 bg-primary p-12"
+              onClick={(e) => e.stopPropagation()}
+            >
                 <div
                   className="absolute right-2 top-2 cursor-pointer"
                   onClick={handleModal}

@@ -35,8 +35,9 @@ const Sejarah = () => {
       <span className="-mt-[100px] pb-[100px] block" id="section2">
         &nbsp;
       </span>
+
       <section className={`${styles.paddingY} w-full`}>
-        <div className="relative flex justify-between mx-auto max-w-2xl">
+        <div className="relative flex justify-between mx-auto max-w-xs sm:max-w-2xl">
           {profileTimeline.map((step, index) => (
             <div key={index} className="flex flex-col items-center">
               <motion.div
@@ -53,6 +54,7 @@ const Sejarah = () => {
               <span className="mt-2 text-sm">{step.id}</span>
             </div>
           ))}
+
           <div className="absolute top-4 left-0 right-0 h-1 bg-gray-300 -z-[1] rounded-full mx-2">
             <motion.div
               className="h-full bg-biruMuda-500 rounded-full"

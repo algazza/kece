@@ -36,7 +36,6 @@ const FormBank = ({
   const [nik, setNik] = useState("");
   const [error, setError] = useState("");
   const [textareaError, setTextareaError] = useState(false);
-  const [catetanError, setCatetanError] = useState(false);
   const [radioError, setRadioError] = useState(false);
   const [checkboxError, setCheckboxError] = useState(false);
 
@@ -134,11 +133,6 @@ const FormBank = ({
       setRadioError(true);
     } else {
       setRadioError(false);
-    }
-    if (!inputs.catatan) {
-      setCatetanError(true);
-    } else {
-      setCatetanError(false);
     }
 
     if (!inputs.checkbox) {
@@ -273,11 +267,6 @@ const FormBank = ({
 
         {React.cloneElement(isiPenting, {
           inputs,
-          error,
-          catetanError,
-          setCatetanError,
-          radioError,
-          setRadioError,
           handleChange,
           handleDateChange,
           handleTimeChange,

@@ -110,7 +110,7 @@ const IsiNews = () => {
               alt=""
             />
             <div className="flex justify-end pt-2 gap-4">
-              <a onClick={handleCopyLink}>
+              <a onClick={handleCopyLink} className="cursor-pointer">
                 <LinkIcon className="text-[#646464]" />
               </a>
               <a
