@@ -177,7 +177,7 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::put('/Promosi/{id}/edit', [PromosiController::class, 'update'])->name('promosi.update');
     Route::delete('/Promosi/post/{id}', [PromosiController::class, 'destroy'])->name('promosi.delete');
 
-    
+
     Route::get('/rate',[RatedDepositoController::class, 'viewDepositoRated'])->name('rated.view');
     Route::put('/calculate', [RatedDepositoController::class, 'calculate'])->name('rated.deposito.update');
 });
