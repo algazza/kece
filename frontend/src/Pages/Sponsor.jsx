@@ -6,6 +6,7 @@ import { BlueBanner, formUsahaSponsor } from "../helper";
 import { SponsorForm } from "../Components/Form";
 import styles from "../helper/style";
 import { nomorInduk } from "../helper/nomor";
+import { localhostLink } from "../helper/localhost";
 
 const Sponsor = () => {
   return (
@@ -28,6 +29,7 @@ const Sponsor = () => {
       <span className="-mt-[100px] pb-[100px] block" id="section2">
         &nbsp;
       </span>
+
       <FormBank
         isiPenting={<SponsorForm />}
         judulRadio="Bidang Usaha"
@@ -36,7 +38,7 @@ const Sponsor = () => {
         value={"Sponsor"}
         nomer={nomorInduk}
         page={"/Sponsor"}
-        endpoint={"http://localhost:8000/api/sponsor"}
+        endpoint={`${localhostLink}/api/sponsor`}
       />
     </>
   );

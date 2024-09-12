@@ -5,6 +5,7 @@ import { PickupService } from "../Components/Form";
 import styles from "../helper/style";
 import { BlueBanner } from "../helper";
 import { nomorInduk } from "../helper/nomor";
+import { localhostLink } from "../helper/localhost";
 
 const PickupPage = () => {
   return (
@@ -27,13 +28,14 @@ const PickupPage = () => {
       <span className="-mt-[100px] pb-[100px] block" id="section2">
         &nbsp;
       </span>
+
       <section className={`${styles.flexCenter}`}>
         <FormBank
           isiPenting={<PickupService />}
           value={"Pickup"}
           nomer={nomorInduk}
           page={"/PickupPage"}
-          endpoint={"http://localhost:8000/api/Pickup"}
+          endpoint={`${localhostLink}/api/Pickup`}
         />
       </section>
     </>

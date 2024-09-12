@@ -11,6 +11,7 @@ import IntroBanner from "../../Layouts/IntroBanner";
 import { BlueBanner } from "../../helper";
 import styles from "../../helper/style";
 import { useNavigate } from "react-router-dom";
+import { localhostLink } from "../../helper/localhost";
 
 const theme = createTheme({
   palette: {
@@ -36,7 +37,7 @@ const News = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/news")
+    fetch(`${localhostLink}/api/news`)
       .then((response) => response.json())
       .then((data) => {
         const reversedData = data.reverse();
@@ -89,7 +90,10 @@ const News = () => {
         />
       </section>
 
-      <span className="-mt-[100px] pb-[100px] block" id="section2">&nbsp;</span>
+      <span className="-mt-[100px] pb-[100px] block" id="section2">
+        &nbsp;
+      </span>
+      
       <section className={`${styles.flexCenter} flex-col gap-6`}>
         <h1 className={`${styles.heading1} text-center`}>Berita</h1>
 
@@ -148,17 +152,17 @@ const News = () => {
       </section>
 
       <section
-        className={`${styles.paddingY} grid grid-cols-x150 sm:grid-cols-x250 md:grid-cols-x550 justify-center px-12 gap-6 sm:gap-12`}
+        className={`${styles.paddingY} flex flex-wrap justify-center px-4 gap-x-4 gap-y-6 sm:gap-12`}
       >
         {filteredBerita.slice(pagination.from, pagination.to).map((news) => (
           <div
             key={news.id}
-            className="md:grid md:grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
+            className="w-[180px] sm:w-[250px] md:w-[550px] md:grid md:grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
             onClick={() => navigate(`/berita/${news.id}`)}
           >
             <div className="rounded-t-xl md:rounded-l-xl md:w-40 md:h-40 overflow-hidden">
               <img
-                src={`http://localhost:8000/image/public/news/${news.image}`}
+                src={`${localhostLink}/image/public/news/${news.image}`}
                 alt={news.judul}
                 className="object-cover w-full h-full"
               />
@@ -170,7 +174,7 @@ const News = () => {
               </p>
               <h6 className={`${styles.heading6} `}>{news.judul}</h6>
               <p className={`${styles.fontSmall} text-abuGelap`}>
-                  {news.tanggal}
+                {news.tanggal}
               </p>
             </div>
           </div>

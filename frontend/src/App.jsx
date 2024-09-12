@@ -5,24 +5,27 @@ import styles from "./helper/style";
 import Footer from "./Layouts/Footer";
 import Header from "./Layouts/Header";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import ScrollToTop from "./Layouts/ScrollToTop";
 import { nomorInduk } from "./helper/nomor";
 
 const App = () => {
   const location = useLocation();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (location.hash) {
       const element = document.getElementById(location.hash.substring(1));
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
   }, [location]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <>
-    <ScrollToTop/>
       <Header />
       <main
         className={`overflow-hidden font-jakarta ${styles.fontBody} py-[4.5rem]`}

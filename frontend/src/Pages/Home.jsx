@@ -42,6 +42,7 @@ import SimulasiCalcKredit from "../Components/Simulasi/SimulasiCalcKredit";
 import SimulasiCalcDeposito from "../Components/Simulasi/SimulasiCalcDeposito";
 import SimulasiCalcTabungan from "../Components/Simulasi/SimulasiCalcTabungan";
 import RateBunga from "../Components/RateBunga";
+import { localhostLink } from "../helper/localhost";
 
 const menuHome = [
   {
@@ -147,11 +148,11 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/banner")
+    fetch(`${localhostLink}/api/banner`)
       .then((response) => response.json())
       .then((data) => {
         const imageUrls = data.map(
-          (item) => `http://localhost:8000/image/public/banner/${item.image}`
+          (item) => `${localhostLink}/image/public/banner/${item.image}`
         );
         setImages(imageUrls);
       })
@@ -159,7 +160,7 @@ const Home = () => {
         console.error("Error fetching banner images:", error);
       });
 
-    fetch("http://localhost:8000/api/news")
+    fetch(`${localhostLink}/api/news`)
       .then((response) => response.json())
       .then((data) => {
         setNewsData(data);
@@ -180,7 +181,7 @@ const Home = () => {
       document.body.classList.remove("overflow-hidden");
     };
   }, [openModal, openRateBunga]);
-  
+
   const handleOpen = () => {
     setOpenMenu(!openMenu);
   };
@@ -359,14 +360,14 @@ const Home = () => {
 
         {openModal && (
           <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed z-40">
-          <div
-            className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed bg-gray-900/50 backdrop-blur-sm"
-            onClick={handleModal}
-          >
             <div
-              className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/4 bg-primary p-12"
-              onClick={(e) => e.stopPropagation()}
+              className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed bg-gray-900/50 backdrop-blur-sm"
+              onClick={handleModal}
             >
+              <div
+                className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/4 bg-primary p-12"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <div
                   className="absolute right-2 top-2 cursor-pointer"
                   onClick={handleModal}
@@ -400,7 +401,7 @@ const Home = () => {
               onClick={() => navigate(`/berita/${news.id}`)}
             >
               <img
-                src={`http://localhost:8000/image/public/news/${news.image}`}
+                src={`${localhostLink}/image/public/news/${news.image}`}
                 alt={news.judul}
                 className="object-cover w-full h-full rounded-xl max-h-[230px]"
               />

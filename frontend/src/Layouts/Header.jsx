@@ -201,7 +201,11 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
       onMouseLeave={() => setOpen(false)}
       className="relative h-fit w-fit"
     >
-      <Link to={href} className={`relative ${!href && "cursor-default"}`}>
+      <Link
+        to={href}
+        onClick={FlyoutContent && ((e) => e.preventDefault())}
+        className={`relative ${!href && "cursor-default"}`}
+      >
         {children}
         <span
           style={{ transform: open ? "scaleX(1)" : "scaleX(0)" }}

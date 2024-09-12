@@ -17,6 +17,7 @@ import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import MosqueRoundedIcon from "@mui/icons-material/MosqueRounded";
 import FilterVintageRoundedIcon from "@mui/icons-material/FilterVintageRounded";
 import TabelComp from "../../Components/TabelComp";
+import { localhostLink } from "../../helper/localhost";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -267,7 +268,7 @@ const SyaratKredit = () => {
                     isiPenting={<Kredit />}
                     value={"Kredit"}
                     nomer={nomorInduk}
-                    endpoint={"http://localhost:8000/api/kredit"}
+                    endpoint={`${localhostLink}/api/kredit`}
                   />
                 </motion.div>
               ) : null}

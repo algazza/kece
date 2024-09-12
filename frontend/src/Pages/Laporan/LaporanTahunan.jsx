@@ -3,17 +3,16 @@ import IntroBanner from "../../Layouts/IntroBanner";
 import { BlueBanner, loaderIcon } from "../../helper";
 import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
 import styles from "../../helper/style";
+import { localhostLink } from "../../helper/localhost";
 
 const LaporanTahunan = () => {
   const [dataLaporan, setDataLaporan] = useState([]);
   const [filterLaporan, setFilterLaporan] = useState("Tahunan");
 
   useEffect(() => {
-    // Fetch data from API
-    fetch("http://localhost:8000/api/laporan")
+    fetch(`${localhostLink}/api/laporan`)
       .then((response) => response.json())
       .then((data) => {
-        // Filter data based on the filterLaporan state
         const filteredData = data
           .filter(
             (laporan) =>
@@ -62,7 +61,7 @@ const LaporanTahunan = () => {
             </h2>
             <div className="grid grid-cols-2 gap-4 font-semibold">
               <a
-                href={`http://localhost:8000/image/public/laporan/${laporan.file_laporan}`}
+                href={`${localhostLink}/image/public/laporan/${laporan.file_laporan}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.flexCenter} border-2 border-merahh-500 text-merahh-500 px-2 py-2 rounded-md`}
@@ -70,7 +69,7 @@ const LaporanTahunan = () => {
                 Lihat
               </a>
               <a
-                href={`http://localhost:8000/laporan/download/${laporan.file_laporan}`}
+                href={`${localhostLink}/laporan/download/${laporan.file_laporan}`}
                 download
                 className={`${styles.flexCenter} bg-merahh-500 text-primary px-4 py-2 rounded-md`}
               >

@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 // ----- Framer Motion -----
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { localhostLink } from "../helper/localhost";
 
 const sosmedIcon = [
   { icon: <YouTubeIcon />, link: "https://www.youtube.com/c/BPRARTOMORO" },
@@ -36,7 +37,7 @@ const Footer = () => {
   const [marqueeImage, setMarqueeImage] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/stackholder")
+    fetch(`${localhostLink}/api/stackholder`)
       .then((response) => response.json())
       .then((data) => setMarqueeImage(data))
       .catch((error) => console.error("Error fetching data:", error));
@@ -55,7 +56,11 @@ const Footer = () => {
             className="flex flex-shrink-0"
           >
             {marqueeImage.map((img) => (
-              <img src={`http://localhost:8000/image/public/stackholder/${img.image}`} key={img.id} className="pr-20" />
+              <img
+                src={`${localhostLink}/image/public/stackholder/${img.image}`}
+                key={img.id}
+                className="pr-20"
+              />
             ))}
           </motion.div>
 
@@ -66,7 +71,11 @@ const Footer = () => {
             className="flex flex-shrink-0"
           >
             {marqueeImage.map((img) => (
-              <img src={`http://localhost:8000/image/public/stackholder/${img.image}`} key={img.id} className="pr-20" />
+              <img
+                src={`${localhostLink}/image/public/stackholder/${img.image}`}
+                key={img.id}
+                className="pr-20"
+              />
             ))}
           </motion.div>
         </div>

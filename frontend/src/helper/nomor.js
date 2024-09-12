@@ -1,6 +1,8 @@
+import { localhostLink } from "./localhost";
+
 export const nomorInduk = [];
 
-fetch('http://localhost:8000/api/noAdmin')
+fetch(`${localhostLink}/api/noAdmin`)
   .then(response => response.json())
   .then(data => {
     if (data && data.no_induk) {
@@ -8,6 +10,3 @@ fetch('http://localhost:8000/api/noAdmin')
     }
   })
   .catch(error => console.error('Error fetching data:', error));
-
-
-  

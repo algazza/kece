@@ -24,6 +24,7 @@ import LaporanTriwulan from "./Pages/Laporan/LaporanTriwulan.jsx";
 import Penghargaan from "./Pages/Penghargaan.jsx";
 import Login from "./Layouts/Login.jsx";
 import ProtectedRoute from "./Layouts/ProtectedRoute.jsx";
+import Promo from "./Pages/Promo/Promo.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,10 +41,6 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "lokasi",
-        element: <LocationPage />,
-      },
-      {
         path: "sejarah",
         element: <Sejarah />,
       },
@@ -58,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "penghargaan",
         element: <Penghargaan />,
+      },
+      {
+        path: "lokasi",
+        element: <LocationPage />,
       },
       {
         path: "laporan",
@@ -98,6 +99,14 @@ const router = createBrowserRouter([
       {
         path: "pick-up-service",
         element: <PickupPage />,
+      },
+      {
+        path: "promo",
+        element: <Promo />,
+      },
+      {
+        path: "promo/:id",
+        element: <Promo />,
       },
       {
         path: "sponsor",

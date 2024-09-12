@@ -17,6 +17,7 @@ import ElderlyIcon from "@mui/icons-material/Elderly";
 import GroupsIcon from "@mui/icons-material/Groups";
 import DevicesOtherIcon from "@mui/icons-material/DevicesOther";
 import TabelComp from "../../Components/TabelComp";
+import { localhostLink } from "../../helper/localhost";
 // ===================================================
 const buttonMenuTabungan = [
   {
@@ -257,7 +258,7 @@ const SyaratTabungan = () => {
                       isiPenting={<Kredit />}
                       value={"Tabungan"}
                       nomer={nomorInduk}
-                      endpoint={"http://localhost:8000/api/tabungan"}
+                      endpoint={`${localhostLink}/api/tabungan`}
                     />
                   </div>
                 </motion.div>

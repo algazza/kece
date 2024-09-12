@@ -1,0 +1,1 @@
+export const localhostLink = "http://localhost:8000";

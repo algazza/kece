@@ -9,6 +9,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import { loaderIcon } from "../../helper";
+import { localhostLink } from "../../helper/localhost";
 
 const IsiNews = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const IsiNews = () => {
   const currentUrl = window.location.origin + location.pathname;
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/news")
+    fetch(`${localhostLink}/api/news`)
       .then((response) => response.json())
       .then((data) => {
         setNewsData(data);
@@ -32,7 +33,7 @@ const IsiNews = () => {
 
   useEffect(() => {
     console.log("Fetching news for ID:", id);
-    fetch(`http://localhost:8000/api/news/${id}`)
+    fetch(`${localhostLink}/api/news/${id}`)
       .then((response) => {
         console.log("Response status:", response.status);
         if (response.status === 404) {
@@ -96,17 +97,15 @@ const IsiNews = () => {
   return (
     <>
       <section
-        className={`${styles.paddingY} ${styles.marginX} grid grid-cols-x650 pt-12`}
+        className={`${styles.paddingY} ${styles.marginX} grid md:grid-cols-x650 pt-12`}
       >
         <div className={`${styles.flexCenter} flex-col gap-12`}>
-          <h5 className={`${styles.heading4} text-center `}>
-            {news.judul}
-          </h5>
+          <h5 className={`${styles.heading4} text-center `}>{news.judul}</h5>
 
           <div>
             <img
               className="max-w-[400px]"
-              src={`http://localhost:8000/image/public/news/${news.image}`}
+              src={`${localhostLink}/image/public/news/${news.image}`}
               alt=""
             />
             <div className="flex justify-end pt-2 gap-4">
@@ -157,7 +156,7 @@ const IsiNews = () => {
             </Link>
           </div>
           <section className="grid grid-cols-x150 sm:grid-cols-x250 md:grid-cols-1 justify-center gap-6 sm:gap-12">
-            {newsData.slice(0, 3).map((news) => {
+            {newsData.slice(0, 4).map((news) => {
               return (
                 <div
                   key={news.id}
@@ -166,7 +165,7 @@ const IsiNews = () => {
                 >
                   <div className="rounded-t-xl md:rounded-l-xl md:w-40 md:h-40 overflow-hidden">
                     <img
-                      src={`http://localhost:8000/image/public/news/${news.image}`}
+                      src={`${localhostLink}/image/public/news/${news.image}`}
                       alt={news.judul}
                       className="object-cover w-full h-full"
                     />

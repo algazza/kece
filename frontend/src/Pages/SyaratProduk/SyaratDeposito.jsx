@@ -10,6 +10,7 @@ import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../../helper/DataProduk";
 import TabelComp from "../../Components/TabelComp";
 import { nomorInduk } from "../../helper/nomor";
+import { localhostLink } from "../../helper/localhost";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -222,7 +223,7 @@ const SyaratDeposito = () => {
                     isiPenting={<Deposito />}
                     value={"Deposito"}
                     nomer={nomorInduk}
-                    endpoint={"http://localhost:8000/api/deposito"}
+                    endpoint={`${localhostLink}/api/deposito`}
                   />
                 </motion.div>
               ) : null}
