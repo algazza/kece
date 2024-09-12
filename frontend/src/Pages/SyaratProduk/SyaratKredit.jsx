@@ -142,13 +142,13 @@ const SyaratKredit = () => {
       {/* Menu utama */}
       {menu === 0 ? (
         <section
-          className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}
+          className={`${styles.paddingY} px-16 flex flex-wrap gap-8 justify-center justify-items-center`}
         >
           {/* menu button */}
           {buttonMenuTabungan.map((menu, index) => (
             <a
               href="#section2"
-              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
+              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-[300px] flex flex-col items-center align-middle text-center cursor-pointer`}
               key={index}
               onClick={() => updateMenu(menu.id)}
             >

@@ -17,6 +17,7 @@
                 </form>
                 <thead>
                     <tr class="bg-gray-100">
+                        <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">NO</th>
                         <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">Plafon</th>
                         <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">12 bulan</th>
                         <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">24 bulan</th>
@@ -37,7 +38,7 @@
                 </tbody>
             </table>
         </div> 
-           
+
         <div class="shadow-lg rounded-lg h-[41rem] overflow-auto mx-4 md:mx-10 mb-[1rem]">
             <table class="w-auto table-fixed">
                 <h2 class="bg-gray-100 drop-shadow-md text-pretty py-2 text-base font-semibold">Deposit</h2>

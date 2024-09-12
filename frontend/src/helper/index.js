@@ -392,6 +392,21 @@ export const PenempatanDana = [
   { amount: 500000000, term: "3 tahun", reward: 60000000 },
 ];
 
+export const rateBungaData = [
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+  { plafon: 100000000, satutahun: 900000000, duatahun: 80000000, tigatahun: 70000000},
+]
+
 // ===================== FOOTER ========================
 export const marqueeImage = [
   { id: 1, image: partnerImage1 },

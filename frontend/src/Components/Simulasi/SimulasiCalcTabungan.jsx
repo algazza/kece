@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import styles from "../../helper/style";
+import { motion } from "framer-motion";
 
 const SimulasiCalcTabungan = () => {
   const [nominal, setNominal] = useState("");
@@ -17,8 +18,15 @@ const SimulasiCalcTabungan = () => {
   const [showResult, setShowResult] = useState(false);
   const [rawNominal, setRawNominal] = useState("");
 
+  const CalcDataFields = [
+    { label: "Setoran Awal", value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")}` },
+    { label: "Angka Bunga", value: `${bunga}%` },
+    { label: "Nilai Bunga", value: hasilBunga },
+    { label: "Total", value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")} + ${hasilBunga}` },
+  ];
+
   const formatRupiah = (value) => {
-    const numberString = value.replace(/[^,\d]/g, ""); 
+    const numberString = value.replace(/[^,\d]/g, "");
     const split = numberString.split(",");
     const sisa = split[0].length % 3;
     let rupiah = split[0].substr(0, sisa);
@@ -35,7 +43,7 @@ const SimulasiCalcTabungan = () => {
 
   const handleNominalChange = (e) => {
     const rawValue = e.target.value.replace(/\./g, "");
-    setRawNominal(rawValue); 
+    setRawNominal(rawValue);
 
     setNominal(formatRupiah(rawValue));
   };
@@ -57,7 +65,7 @@ const SimulasiCalcTabungan = () => {
       setHasilTotal("Mohon isi semua field");
       setShowResult(false);
     } else {
-      let hasilBungaTotal = (nominalNumber * bungaNumber) / waktuNumber;
+      let hasilBungaTotal = nominalNumber / waktuNumber * bungaNumber / 100;
       let hasilPerkalianTotal = nominalNumber + hasilBungaTotal;
 
       setHasilTotal(`Rp. ${hasilPerkalianTotal.toLocaleString("id-ID")}`);
@@ -75,7 +83,13 @@ const SimulasiCalcTabungan = () => {
   };
 
   return (
-    <div className="bg-biruMuda-200 rounded-xl p-4">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5 }}
+      className="bg-biruMuda-200 rounded-xl p-4"
+    >
       {!showResult && (
         <form onSubmit={handleCalculations}>
           <div className="grid gap-2 pt-6">
@@ -144,23 +158,21 @@ const SimulasiCalcTabungan = () => {
       {showResult && (
         <div className="">
           <h2 className={`${styles.heading3} text-center`}>Hasil Hitung</h2>
-          <div className="grid md:grid-cols-2 grid-cols-2">
-            <div className="">
-              <h3 className={`${styles.fontBodyBold}`}>Setoran Awal</h3>
-              <h3 className={`${styles.fontBodyBold}`}>Angka Bunga</h3>
-              <h3 className={`${styles.fontBodyBold}`}>Nilai Bunga</h3>
+          <div className="space-y-2 my-8">
+          {CalcDataFields.map((field, index) => (
+            <div
+              key={index}
+              className="flex sm:items-center"
+            >
+              <span className="font-bold w-1/3">
+                {field.label}
+              </span>
+              <span className="text-base w-2/3 break-words">
+                : {field.value}
+              </span>
             </div>
-            <div>
-              <h3 className={`${styles.fontBodyBold}`}>
-                :Rp. {parseInt(rawNominal).toLocaleString("id-ID")}
-              </h3>
-              <h3 className={`${styles.fontBodyBold}`}>:{bunga}%</h3>
-              <h3 className={`${styles.fontBodyBold}`}>:{hasilBunga}</h3>
-            </div>
-          </div>
-          <h3 className={`${styles.fontBodyBold} text-center mt-4 mb-2`}>
-            {parseInt(rawNominal).toLocaleString("id-ID")} + {hasilBunga}
-          </h3>
+          ))}
+        </div>
 
           <h2 className={`${styles.heading5} text-center`}>Estimasi Akhir</h2>
           <h2 className={`${styles.heading3} text-center text-biruMuda-500`}>
@@ -178,7 +190,7 @@ const SimulasiCalcTabungan = () => {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

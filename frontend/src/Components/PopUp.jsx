@@ -1,6 +1,7 @@
 import React from "react";
 import { nomorInduk } from "../helper/nomor";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import styles from "../helper/style";
 
 const PopUp = ({
   nama,
@@ -12,7 +13,7 @@ const PopUp = ({
   setOpenModal,
   openModal,
 }) => {
-  const dataFields = [
+  const popupDataFields = [
     { label: "Nama Lengkap", value: nama },
     { label: "Email", value: email },
     { label: "Nomor Handphone", value: nomor },
@@ -22,11 +23,11 @@ const PopUp = ({
   ];
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-sm">
+    <div className={`${styles.flexCenter} fixed inset-0 z-[999] bg-gray-900/50 backdrop-blur-sm`}>
       <div className="bg-primary p-6 md:p-8 rounded-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
         <h1 className="text-xl md:text-2xl font-bold mb-4">Data Identitas</h1>
         <div className="space-y-2">
-          {dataFields.map((field, index) => (
+          {popupDataFields.map((field, index) => (
             <div
               key={index}
               className="flex flex-col sm:flex-row sm:items-center"

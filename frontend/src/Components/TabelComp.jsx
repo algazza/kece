@@ -28,7 +28,7 @@ const calculateRowSpan = (data, key) => {
 
 const rowSpanAmount = calculateRowSpan(PenempatanDana, "amount");
 
-const TabelComp = ({kredit}) => {
+const TabelComp = ({ kredit }) => {
   let amountIndex = 0;
 
   return (
@@ -36,18 +36,11 @@ const TabelComp = ({kredit}) => {
       <Table sx={{ minWidth: 650 }} aria-label="data tabel">
         <TableHead>
           <TableRow className="bg-biruMuda-400">
-            <TableCell align="center" style={{ border: "1px solid black" }}>
-              No
+            {["No", "Nominal Tabungan", "Jangka Waktu (Tahun)", "Nominal Hadiah"].map((row, index) => (
+            <TableCell key={index} align={index == 0 ? "center" : "left"} style={{ border: "1px solid black" }}>
+              {row}
             </TableCell>
-            <TableCell style={{ border: "1px solid black" }}>
-              Nominal Tabungan
-            </TableCell>
-            <TableCell style={{ border: "1px solid black" }}>
-              Jangka Waktu (Tahun)
-            </TableCell>
-            <TableCell style={{ border: "1px solid black" }}>
-              Nominal Hadiah
-            </TableCell>
+            ))}
           </TableRow>
         </TableHead>
 

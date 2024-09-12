@@ -150,7 +150,7 @@ const Header = () => {
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
                             <Link to={"/kredit"}>Kredit</Link>
-                            <Link to={"/deposito"}>Deposit</Link>
+                            <Link to={"/deposito"}>Deposito</Link>
                             <Link to={"/tabungan"}>Tabungan</Link>
                           </li>
                         </ul>
@@ -172,7 +172,7 @@ const Header = () => {
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
                             <Link to={"/pick-up-service"}>Pick Up</Link>
                             <Link to={"/armor-properti"}>Armor Properti</Link>
-                            <Link to={"/"}>Simulasi</Link>
+                            <Link to={"/#simulasi"}>Simulasi</Link>
                             <Link to={"/promo"}>Promo</Link>
                             <Link to={"/sponsor"}>Sponsor</Link>
                           </li>
@@ -201,7 +201,7 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
       onMouseLeave={() => setOpen(false)}
       className="relative h-fit w-fit"
     >
-      <Link to={href} className="relative">
+      <Link to={href} className={`relative ${!href && "cursor-default"}`}>
         {children}
         <span
           style={{ transform: open ? "scaleX(1)" : "scaleX(0)" }}
@@ -245,7 +245,7 @@ const AboutUs = () => {
 const Product = () => {
   const items = [
     { name: "Kredit", link: "/kredit" },
-    { name: "Deposit", link: "/deposito" },
+    { name: "Deposito", link: "/deposito" },
     { name: "Tabungan", link: "/tabungan" },
   ];
 
@@ -256,7 +256,7 @@ const Service = () => {
   const items = [
     { name: "Pick Up", link: "/pick-up-service" },
     { name: "Armor Properti", link: "/armor-properti" },
-    { name: "Simulasi", link: "/" },
+    { name: "Simulasi", link: "/#simulasi" },
     { name: "Promo", link: "/promo" },
     { name: "Sponsor", link: "/sponsor" },
     { name: "Login", link: "https://etna.scxserver.com:2096" },
