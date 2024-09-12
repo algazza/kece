@@ -10,7 +10,7 @@ class RatedDepositoController extends Controller
 
     public function viewDepositoRated(){
         $ratedDeposito = RatedDeposito::get();
-        return view('admin.rate', compact('ratedDeposito'));
+        return view('admin.RateDisc.rate', compact('ratedDeposito'));
     }
 
     public function calculate(Request $request)

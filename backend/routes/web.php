@@ -186,6 +186,8 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
 
 
-
+Route::get('/mboh', function(){
+    return view('admin.RateDisc.rateEdit');
+});
 
 
