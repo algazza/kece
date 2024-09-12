@@ -3,7 +3,7 @@
 <section class="box-border p-0 m-0 bg-gray-200 font-poppins">
 
     <section id="testimonials" aria-label="What our customers are saying" class=" py-20 sm:py-32">
-        <div class=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-6">
+        <div class=" mx-auto max-w-7xl px-5 sm:px-6 lg:px-6">
           <div class="mx-auto max-w-2xl md:text-center ">
             <h2 class="font-display text-3xl tracking-tight text-center text-slate-900 sm:text-4xl bg-white py-4 px-8 rounded-md shadow-md  xss:ml-[1rem] xs:ml-[1rem]">Companies We Are Sponsor</h2>
           </div>
@@ -31,7 +31,7 @@
             class="mx-auto mt-8 grid max-w-2xl xss:ml-[1rem] xs:ml-[1rem] ml-[5rem]  grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
 
             @foreach ($sponsor as $item)
-              <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
+              <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg">
                 <div class="bg-white p-7 rounded-md">
                         <div class="flex">
                           <div class="font-display text-base text-slate-900 font-normal">{{ $item->bidang_usaha }}</div>
@@ -48,6 +48,7 @@
                                 <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
                                 <p class="text-lg tracking-tight text-slate-900 py-[6px]">Usaha</p>
                                 <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
+                                <p class="text-lg tracking-tight text-slate-900 py-[6px]">Proposal :</p>
                             </div>
                             <div>
                                 <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->nama }}</p>
@@ -58,6 +59,10 @@
                                 <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : {{ $item->nama_usaha }}</p>
                                 <div class="flex flex-col">
                                   <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->catatan }}</p>
+                                  <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3">  <a href="your-file.pdf" download class="flex items-center px-3 py-1 bg-white text-black hover:text-white rounded-lg shadow-lg hover:bg-red-600 transition">
+                                    <i class='bx bxs-file-pdf'></i>
+                                    <span>Download PDF</span>
+                                  </a></p>
                                 </div>
                             </div>
                         </div>

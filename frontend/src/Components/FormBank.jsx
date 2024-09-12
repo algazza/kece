@@ -69,7 +69,10 @@ const FormBank = ({
   };
 
   const removeFormatRupiah = (angka) => {
-    return angka.replace(/[^\d]/g, "");
+    if (typeof angka === 'string') {
+      return angka.replace(/[^,\d]/g, '');
+    }
+    return angka;
   };
 
   const handleDateChange = (newValue) => {
@@ -87,7 +90,7 @@ const FormBank = ({
     const name = event.target.name;
     let value = event.target.value;
 
-    if (name === "total_pinjaman") {
+    if (name === "total_pinjaman" && value) {
       value = formatRupiah(value);
     }
 
@@ -140,6 +143,8 @@ const FormBank = ({
     } else {
       setCheckboxError(false);
     }
+
+    console.log(updatedInputs);
 
     axios
       .post(endpoint, updatedInputs)
@@ -269,7 +274,7 @@ const FormBank = ({
           inputs,
           handleChange,
           handleDateChange,
-          handleTimeChange,
+          handleTimeChange
         })}
 
         <div>
