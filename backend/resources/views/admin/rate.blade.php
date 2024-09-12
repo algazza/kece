@@ -22,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white">
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.100.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -30,7 +30,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.200.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -38,7 +38,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.300.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -46,7 +46,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.400.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -54,7 +54,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.500.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -62,7 +62,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -70,7 +70,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -78,7 +78,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -86,7 +86,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -94,7 +94,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>>
+                    <tr> >
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -102,7 +102,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>>
+                    <tr> >
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -110,7 +110,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>>
+                    <tr> >
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -118,7 +118,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>>
+                    <tr> >
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -144,7 +144,7 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white">
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.100.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -152,7 +152,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.200.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -160,7 +160,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.300.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -168,7 +168,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.400.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -176,7 +176,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.500.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -184,7 +184,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -192,7 +192,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -200,7 +200,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -208,7 +208,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
@@ -216,7 +216,7 @@
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
-                    <tr>>
+                    <tr> >
                         <td class="py-4 px-6 border-b border-gray-200">Rp.600.000.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.5.234.000</td>
