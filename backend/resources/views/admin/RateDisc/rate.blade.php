@@ -24,109 +24,109 @@
                 <tbody class="bg-white">
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">1</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.100.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td  class="py-4 px-6 border border-gray-200">Rp.100.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">2</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.200.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td  class="py-4 px-6 border border-gray-200">Rp.200.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">3</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.300.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td  class="py-4 px-6 border border-gray-200">Rp.300.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">4</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.400.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td  class="py-4 px-6 border border-gray-200">Rp.400.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">5</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.500.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td  class="py-4 px-6 border border-gray-200">Rp.500.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">6</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.600.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td  class="py-4 px-6 border border-gray-200">Rp.600.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">7</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.700.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td  class="py-4 px-6 border border-gray-200">Rp.700.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">8</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.800.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td  class="py-4 px-6 border border-gray-200">Rp.800.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">9</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.900.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td  class="py-4 px-6 border border-gray-200">Rp.900.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">10</td>
-                        <td contenteditable="true"td class="py-4 px-6 border border-gray-200">Rp.1.000.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td  class="py-4 px-6 border border-gray-200">Rp.1.000.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">11</td>
-                        <td contenteditable="true"lass="py-4 px-6 border border-gray-200">Rp.1.500.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td class="py-4 px-6 border border-gray-200">Rp.1.500.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200 truncate">12</td>
-                        <td contenteditable="true"td class="py-4 px-6 border border-gray-200">Rp.2.000.000.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
-                        <td contenteditable="true" class="py-4 px-6 border border-gray-200 ">
+                        <td  class="py-4 px-6 border border-gray-200">Rp.2.000.000.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200">Rp.5.234.000</td>
+                        <td  class="py-4 px-6 border border-gray-200 ">
                             <span class=" text-black py-1 px-2 rounded-full text-base">Rp.2.243.534</span>
                         </td>
                     </tr>
