@@ -178,3 +178,11 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 Route::get('/promo', [PromosiController::class, 'viewPromosi'])->name('promosi.index');
 Route::post('/promo/add', [PromosiController::class, 'store'])->name('promosi.post');
 Route::get('/rate',[RatedKreditController::class, 'viewKreditRated'])->name('rated.kredit.view');
+
+
+Route::get('/rate', function () {
+    return view('admin.RateDisc.rate');
+});
+Route::get('/rateE', function () {
+    return view('admin.RateDisc.rateEdit');
+});

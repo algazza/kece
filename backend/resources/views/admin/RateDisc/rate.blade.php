@@ -4,15 +4,17 @@
     <div class="justify-center flex pt-[5rem] xss:mx-[3rem] xs:[3rem]">
         <h1 class="text-3xl text-black border border-gray-300 shadow-md shadow-gray-400 font-semibold bg-white py-3 px-5 rounded-md">Rate Discount</h1>
     </div>
-    <section class="lg:ml-[5rem] xss:ml-[1rem] xs:ml-[1rem] mr-[1rem] grid grid-cols-1 gap-4 lg:grid-cols-2 my-[5rem]">
-        <div class="shadow-lg rounded-lg h-[41rem] xxl:h-full overflow-auto mx-4 md:mx-10">
+    <section class="lg:ml-[5rem] xss:ml-[1rem] xs:ml-[1rem] mr-[1rem] grid grid-cols-1 lg:grid-cols-2 gap-4 my-[5rem]">
+        <div class="shadow-lg rounded-lg h-[41rem] xxl:h-full overflow-auto mx-4 md:mx-10 mb-[1rem]">
             <table class="w-auto table-fixed">
-                <div>
-                <h2 class="bg-gray-100 w-auto drop-shadow-md text-pretty py-2 text-base font-semibold">Kredit </h2>
+                <h2 class="bg-gray-100 drop-shadow-md text-pretty py-2 text-base font-semibold">kredit</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 mx-2">
                 <input type="text"
-                    class= "p-4 w-auto  my-1 border-2 rounded-lg dark:text-black text-base dark:border-gray-200 dark:bg-white"
-                    placeholder="add disc">
-                </div>
+                class= "p-4 w-auto  my-1 border-2 rounded-lg dark:text-black text-base dark:border-gray-200 dark:bg-white"
+                placeholder="add disc">
+                <a type="text"
+                class= "p-4 w-auto  my-1 rounded-lg text-gray-500 text-base dark:border-gray-200 dark:bg-white cursor-pointer hover:bg-gray-300 border-2 hover:border-blue-400 duration-300 "><i class='bx bx-edit-alt' ></i> Edit</a>
+            </div>
                 <thead>
                     <tr class="bg-gray-100">
                         <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">NO</th>
@@ -137,9 +139,11 @@
         <div class="shadow-lg rounded-lg h-[41rem] xxl:h-full overflow-auto mx-4 md:mx-10 mb-[1rem]">
             <table class="w-auto table-fixed">
                 <h2 class="bg-gray-100 drop-shadow-md text-pretty py-2 text-base font-semibold">Deposit</h2>
+                <div class="grid mx-2">
                 <input type="text"
                 class= "p-4 w-auto  my-1 border-2 rounded-lg dark:text-black text-base dark:border-gray-200 dark:bg-white"
                 placeholder="add disc">
+            </div>
                 <thead>
                     <tr class="bg-gray-100">
                         <th class="w-1/4 py-4 px-6 text-center text-gray-600 font-bold uppercase">NO</th>
