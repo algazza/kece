@@ -21,6 +21,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DireksiController;
 use App\Http\Controllers\ManajemenController;
 use App\Http\Controllers\PenghargaanController;
+use App\Http\Controllers\PromosiController;
+use App\Http\Controllers\RatedKreditController;
 use App\Http\Controllers\StackholderController;
 use Illuminate\Routing\Route as RoutingRoute;
 
@@ -173,9 +175,6 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
 
 
-Route::get('/promo', function () {
-    return view('admin.promo');
-});
-Route::get('/rate', function () {
-    return view('admin.rate');
-});
+Route::get('/promo', [PromosiController::class, 'viewPromosi'])->name('promosi.index');
+Route::post('/promo/add', [PromosiController::class, 'store'])->name('promosi.post');
+Route::get('/rate',[RatedKreditController::class, 'viewKreditRated'])->name('rated.kredit.view');

@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rated_kredit', function (Blueprint $table) {
+        Schema::create('promosi', function (Blueprint $table) {
             $table->id();
-            $table->integer('plafon');
-            $table->integer('12_bulan');
-            $table->integer('24_bulan');
-            $table->integer('36_bulan');
+            $table->string('image');
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rated_kredit');
+        Schema::dropIfExists('promosi');
     }
 };

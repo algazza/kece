@@ -11,7 +11,7 @@
                 <h2 class="bg-gray-100 w-auto drop-shadow-md text-pretty py-2 text-base font-semibold">Kredit </h2>
                 <input type="text"
                     class= "p-4 w-auto  my-1 border-2 rounded-lg dark:text-black text-base dark:border-gray-200 dark:bg-white"
-                    placeholder="add disc">
+                    placeholder="add disc" name="discount">>
                 </div>
                 <thead>
                     <tr class="bg-gray-100">
