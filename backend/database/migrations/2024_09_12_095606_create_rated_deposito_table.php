@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rated_kredit', function (Blueprint $table) {
+        Schema::create('rated_deposito', function (Blueprint $table) {
             $table->id();
             $table->integer('plafon');
             $table->integer('12_bulan');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rated_kredit');
+        Schema::dropIfExists('rated_deposito');
     }
 };
