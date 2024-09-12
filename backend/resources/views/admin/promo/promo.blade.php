@@ -7,7 +7,6 @@
     <section class="lg:ml-[5rem] xss:ml-[2rem] xs:ml-[2rem] mr-[1rem] grid grid-cols-1 md2:grid-cols-2 gap-4 lg:grid-cols-4 my-[5rem]">
       @foreach ($promosi as $item)          
       <div class="relative rounded-md overflow-hidden cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 mb-[1rem]">
-<<<<<<< HEAD:backend/resources/views/admin/promo/promo.blade.php
         <div class="bg-gray-100 px-[1rem] py-2 border border-gray-500 rounded ">
           <div class="absolute z-20">
               <form action="{{ route('promosi.delete', $item->id) }}" method="POST" enctype="multipart/form-data" onsubmit="return confirmDelete()">
@@ -26,26 +25,6 @@
           </div>
         
           <img src="{{ asset('image/public/promo/' . $item->image) }}" alt="Promo Image" class="w-full h-full object-cover">
-=======
-        <div class="absolute z-10">
-          <form>
-            <button type="submit" class="flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-red-600 font-semibold py-2 px-4 rounded-lg">
-              <i class='bx bx-trash bg-white py-2 lg:px-3 md:px-3 sm:px-3 xss:px-5 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md'></i>
-            </button>
-          </form>
-        </div>
-        <div class="absolute z-10">
-          <form >
-            <label  class="flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-blue-600 font-semibold py-2 px-20 rounded-lg">
-              <i class='bx bx-pencil bg-white py-2 lg:px-3 md:px-3 sm:px-3 xss:px-5 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md'></i>
-              <input type="file" class="hidden" >
-            </label>
-          </form>
-        </div>
-       <div class="w-64 h-64 overflow-hidden">
-          <img src="{{ asset('image/public/promo/' . $item->image) }}" alt="Hanging Planters" class="w-full h-full object-cover">
-        </div>
->>>>>>> 572508b8 (rate):backend/resources/views/admin/promo.blade.php
           <p
             class="cursor-pointer absolute inset-0 px-5 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-20 transition ">{{ $item->deskripsi }}</p>
         </div>
