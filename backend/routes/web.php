@@ -180,15 +180,11 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
     Route::get('/rate',[RatedDepositoController::class, 'viewDepositoRated'])->name('rated.view');
     Route::put('/rate/update', [RatedDepositoController::class, 'update'])->name('rated.deposito.update');
+    Route::put('/ratedkredit/updateAll', [RatedKreditController::class, 'updateAll'])->name('ratedkredit.updateAll');
 });
 
 
 
-
-
-Route::get('/mboh', function(){
-    return view('admin.RateDisc.rateEdit');
-});
 Route::get('/Update', function(){
     return view('admin.promo.promoUpdate');
 });

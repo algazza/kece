@@ -19,6 +19,7 @@ use App\Http\Controllers\ManajemenController;
 use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\PromosiController;
 use App\Http\Controllers\RatedDepositoController;
+use App\Http\Controllers\RatedKreditController;
 use App\Http\Controllers\StackholderController;
 use Database\Seeders\RatedDepositoSeeder;
 
@@ -50,6 +51,7 @@ Route::resource('manajemen',ManajemenController::class);
 Route::resource('direksi',DireksiController::class);
 Route::resource('stackholder',StackholderController::class);
 Route::resource('ratedDeposito',RatedDepositoController::class);
+Route::resource('ratedKredit',RatedKreditController::class);
 Route::resource('promosi',PromosiController::class);
 
 
