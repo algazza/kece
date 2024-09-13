@@ -19,14 +19,14 @@ return new class extends Migration
             $table->bigInteger('nik');
             $table->string('pekerjaan');
             $table->text('alamat');
-            $table->string('jenis');
-            $table->string('produk_tabungan');
-            $table->string('tanggal');
-            $table->string('waktu');
-            $table->text('lokasi');
-            $table->text('catatan');
-            $table->bigInteger('code');
-            $table->string('ip_user');
+            $table->string('jenis')->nullable();
+            $table->string('produk_tabungan')->nullable();
+            $table->string('tanggal')->nullable();
+            $table->string('waktu')->nullable();
+            $table->text('lokasi')->nullable();
+            $table->text('catatan')->nullable();
+            $table->bigInteger('code')->nullable();
+            $table->string('ip_user')->nullable();
             $table->timestamps();
         });
     }

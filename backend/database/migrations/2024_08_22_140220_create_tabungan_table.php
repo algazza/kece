@@ -19,15 +19,15 @@ return new class extends Migration
             $table->bigInteger('nik');
             $table->string('pekerjaan');
             $table->text('alamat');
-            $table->bigInteger('total_pinjaman'); 
-            $table->string('jangka_waktu');
-            $table->string('jenis_angunan');
-            $table->string('perhitungan_bunga');
-            $table->string('penghasilan_perbulan');
-            $table->text('catatan');
-            $table->string('jenis');
-            $table->bigInteger('code');
-            $table->string('ip_user');
+            $table->bigInteger('total_pinjaman')->nullable(); 
+            $table->string('jangka_waktu')->nullable();
+            $table->string('jenis_angunan')->nullable();
+            $table->string('perhitungan_bunga')->nullable();
+            $table->string('penghasilan_perbulan')->nullable();
+            $table->text('catatan')->nullable();
+            $table->string('jenis')->nullable();
+            $table->bigInteger('code')->nullable();
+            $table->string('ip_user')->nullable();
             $table->timestamps();
         });
     }
