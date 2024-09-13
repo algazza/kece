@@ -29,9 +29,9 @@ class RatedDepositoController extends Controller
             
             foreach ($ratedDeposito as &$item) {
                 $item->update([
-                    '12_bulan' => $item->plafon * $discount / 100 / 12 * 0.8,
-                    '24_bulan' => $item->plafon * $discount / 100 / 24 * 0.8,
-                    '36_bulan' => $item->plafon * $discount / 100 / 36 * 0.8,
+                    'bulan_12' => $item->plafon * $discount / 100 / 12 * 0.8,
+                    'bulan_24' => $item->plafon * $discount / 100 / 24 * 0.8,
+                    'bulan_36' => $item->plafon * $discount / 100 / 36 * 0.8,
                 ]);
             }
             

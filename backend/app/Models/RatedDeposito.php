@@ -12,8 +12,8 @@ class RatedDeposito extends Model
     protected $table = 'rated_deposito';
     protected $fillable = [
         'plafon',
-        '12_bulan',
-        '24_bulan',
-        '36_bulan',
+        'bulan_12',
+        'bulan_24',
+        'bulan_36',
     ];
 }
