@@ -9,9 +9,12 @@ import HomeIcon from "@mui/icons-material/Home";
 import UndoIcon from "@mui/icons-material/Undo";
 import styles from "../helper/style";
 
-const Error = () => {
+const Error = ({message, status}) => {
   const error = useRouteError();
   const navigate = useNavigate();
+
+  const displayMessage = message || error?.message || error?.statusText;
+  const displayStatus = status || error?.status;
 
   return (
     <section className={`${styles.flexCenter} h-screen bg-primary`}>
@@ -46,7 +49,7 @@ const Error = () => {
 
         <div className={`${styles.flexCenter} flex-col text-center`}>
           <h1 className={`${styles.heading1}`}>Oops, Something Happened</h1>
-          <p className="mb-6">{error.message || error.statusText}</p>
+          <p className="mb-6">{displayStatus === 404 ? "Halaman tidak ditemukan" : displayMessage || "Terjadi kesalahan."}</p>
 
           <div className="flex gap-6">
             <button
