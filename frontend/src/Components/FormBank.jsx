@@ -144,8 +144,6 @@ const FormBank = ({
       setCheckboxError(false);
     }
 
-    console.log(updatedInputs);
-
     axios
       .post(endpoint, updatedInputs)
       .then((response) => {

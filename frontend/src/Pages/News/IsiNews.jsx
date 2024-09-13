@@ -10,12 +10,14 @@ import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import { loaderIcon } from "../../helper";
 import { localhostLink } from "../../helper/localhost";
+import Error from "../Error";
 
 const IsiNews = () => {
   const { id } = useParams();
   const [news, setNews] = useState(null);
   const [error, setError] = useState(null);
   const [newsData, setNewsData] = useState([]);
+  const [notFound, setNotFound] = useState(false)
   const location = useLocation();
   const navigate = useNavigate();
   const currentUrl = window.location.origin + location.pathname;
@@ -23,21 +25,18 @@ const IsiNews = () => {
   useEffect(() => {
     fetch(`${localhostLink}/api/news`)
       .then((response) => response.json())
-      .then((data) => {
-        setNewsData(data);
-      })
+      .then((data) => setNewsData(data))
       .catch((err) => {
-        toast.error("Gagal Memunculkan News!");
+        toast.error("Gagal Memunculkan berita!");
       });
   }, []);
 
   useEffect(() => {
-    console.log("Fetching news for ID:", id);
     fetch(`${localhostLink}/api/news/${id}`)
       .then((response) => {
-        console.log("Response status:", response.status);
         if (response.status === 404) {
-          throw new Error("Berita tidak ditemukan.");
+          setNotFound(true)
+          throw new Response("Halaman tidak ditemukan.", { status: 404 });
         }
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -47,7 +46,6 @@ const IsiNews = () => {
       .then((text) => {
         try {
           const data = JSON.parse(text);
-          console.log("Fetched news data:", data);
           setNews(data);
         } catch (error) {
           setError("Data tidak dalam format JSON.");
@@ -60,7 +58,14 @@ const IsiNews = () => {
       });
   }, [id]);
 
-  if (error) return <p>{error}</p>; // Tampilkan pesan kesalahan jika ada
+  if (notFound) {
+    return <Error message="Halaman tidak ditemukan" status={404} />;
+  }
+
+  if (error) {
+    return <Error message={error} />;
+  }
+
 
   if (!news)
     return (
@@ -89,7 +94,7 @@ const IsiNews = () => {
       .then(() => {
         toast.success("Link berhasil disalin!");
       })
-      .catch((err) => {
+      .catch(() => {
         toast.error("Gagal menyalin link!");
       });
   };
@@ -175,7 +180,7 @@ const IsiNews = () => {
                     <p className={`${styles.fontSmallBold} text-merahh-500`}>
                       {news.kategory}
                     </p>
-                    <h6 className={`${styles.heading6} `}>{news.judul}</h6>
+                    <h6 className={`${styles.fontBodyBold} `}>{news.judul}</h6>
                     <p className={`${styles.fontSmall} text-abuGelap`}>
                       {news.tanggal}
                     </p>

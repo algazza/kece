@@ -25,6 +25,7 @@ import Penghargaan from "./Pages/Penghargaan.jsx";
 import Login from "./Layouts/Login.jsx";
 import ProtectedRoute from "./Layouts/ProtectedRoute.jsx";
 import Promo from "./Pages/Promo/Promo.jsx";
+import IsiPromo from "./Pages/Promo/IsiPromo.jsx";
 
 const router = createBrowserRouter([
   {
@@ -106,7 +107,7 @@ const router = createBrowserRouter([
       },
       {
         path: "promo/:id",
-        element: <Promo />,
+        element: <IsiPromo />,
       },
       {
         path: "sponsor",
