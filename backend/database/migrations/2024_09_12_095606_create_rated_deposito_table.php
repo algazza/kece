@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('rated_deposito', function (Blueprint $table) {
             $table->id();
             $table->integer('plafon');
-            $table->integer('12_bulan');
-            $table->integer('24_bulan');
-            $table->integer('36_bulan');
+            $table->integer('bulan_12');
+            $table->integer('bulan_24');
+            $table->integer('bulan_36');
             $table->timestamps();
         });
     }

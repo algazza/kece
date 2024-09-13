@@ -70,10 +70,10 @@
                     <tr>
                         <td class="py-4 px-6 border-b border-gray-200">{{ $no + 1 }}</td>
                         <td class="py-4 px-6 border-b border-gray-200">Rp.{{ number_format($item['plafon'], 0, ',', '.') }}</td>
-                        <td class="py-4 px-6 border-b border-gray-200">Rp.{{ number_format($item['12_bulan'], 0, ',', '.') }}</td>
-                        <td class="py-4 px-6 border-b border-gray-200">Rp.{{ number_format($item['24_bulan'], 0, ',', '.') }}</td>
+                        <td class="py-4 px-6 border-b border-gray-200">Rp.{{ number_format($item->bulan_12, 0, ',', '.') }}</td>
+                        <td class="py-4 px-6 border-b border-gray-200">Rp.{{ number_format($item->bulan_24, 0, ',', '.') }}</td>
                         <td class="py-4 px-6 border-b border-gray-200">
-                            <span class=" text-black py-1 px-2 rounded-full text-base">Rp.{{ number_format($item['36_bulan'], 0, ',', '.') }}</span>
+                            <span class=" text-black py-1 px-2 rounded-full text-base">Rp.{{ number_format($item->bulan_36, 0, ',', '.') }}</span>
                         </td>
                     </tr>
                     @endforeach
