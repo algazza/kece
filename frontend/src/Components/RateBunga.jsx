@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../helper/style";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import {
@@ -10,11 +10,23 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { rateBungaData } from "../helper";
 import { motion } from "framer-motion";
+import { localhostLink } from "../helper/localhost";
 
 const RateBunga = ({ handleOpenRateBunga }) => {
   const [menuTabel, setMenuTabel] = useState(0);
+  const [rateBungaData, setRateBungaData] = useState([])
+
+  useEffect(() => {
+    fetch(`${localhostLink}/api/ratedKredit`)
+      .then((response) => response.json())
+      .then((data) => setRateBungaData(data))
+      .catch((error)=> {
+        console.error("error fetching rate bunga:", error)
+      })
+
+  }, [])
+  
 
   const handleMenuTabel = (id) => {
     setMenuTabel(id);
@@ -103,9 +115,9 @@ const RateBunga = ({ handleOpenRateBunga }) => {
                     <TableRow key={index}>
                       {[
                         cell.plafon,
-                        cell.satutahun,
-                        cell.duatahun,
-                        cell.tigatahun,
+                        cell.bulan_12,
+                        cell.bulan_24,
+                        cell.bulan_36,
                       ].map((cellmap, index) => (
                         <TableCell
                           key={index}

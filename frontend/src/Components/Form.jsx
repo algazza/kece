@@ -69,7 +69,6 @@ export const Kredit = ({
                 name={selek.name}
                 value={inputs[selek.name]}
                 onChange={handleChange}
-                required
               >
                 <MenuItem value={selek.option1}>{selek.option1}</MenuItem>
                 <MenuItem value={selek.option2}>{selek.option2}</MenuItem>
