@@ -190,6 +190,13 @@ const News = () => {
               <p className={`${styles.fontSmall} text-abuGelap`}>
                 {news.tanggal}
               </p>
+              <p className={`${styles.fontSmall} text-biruTuwa-600 font-bold`}>
+                {new Intl.DateTimeFormat("id-ID", {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+                }).format(new Date(news.updated_at))}
+              </p>
             </div>
           </div>
         ))}

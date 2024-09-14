@@ -422,13 +422,18 @@ export const PickupService = ({ inputs, handleChange }) => {
   );
 };
 
-export const SponsorForm = ({ inputs, handleChange }) => {
-
+export const SponsorForm = ({
+  inputs,
+  handleChange,
+  usahaError,
+  setUsahaError,
+  sponsorError,
+  setSponsorError,
+}) => {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      console.log('Selected file:', file.name);
-      // You can perform additional actions with the selected file here
+      console.log("Selected file:", file.name);
     }
   };
 
@@ -437,36 +442,62 @@ export const SponsorForm = ({ inputs, handleChange }) => {
       <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
       <div className="grid justify-center gap-4 mx-auto md:w-[850px] md:grid-cols-x2500">
         <div className={`${styles.inputSpan}`}>
-          <span>Nama Usaha</span>
+          <span className={usahaError ? "text-red-500" : ""}>Nama Usaha</span>
           <TextareaAutosize
-            className="resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
-                  border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
-            aria-label="Lokasi"
+            className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                  border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
+                  box-border ${
+                    usahaError
+                      ? "border-red-500 hover:border-red-500 text-red-500 focus:border-red-600"
+                      : "border-slate-300"
+                  }`}
+            aria-label="nama usaha"
             minRows={3}
             placeholder="Nama Usaha"
             name="nama_usaha"
             value={inputs.nama_usaha || ""}
-            onChange={handleChange}
+            onChange={(e) => {
+              handleChange(e);
+              setUsahaError(false);
+            }}
+            required
           />
+          {usahaError && (
+            <FormHelperText error>Nama usaha perlu diisi</FormHelperText>
+          )}
         </div>
 
-        <div className="form-control bg-abuTerang p-6 border border-black rounded-md md:col-[2/3] md:row-[1/3]">
+        <div
+          className={`form-control p-6 border rounded-md md:col-[2/3] md:row-[1/3] ${
+            sponsorError ? "border-red-500 text-red-500" : "border-black"
+          }`}
+        >
           <h1 className="">Jenis Sponsor</h1>
           <FormGroup className="">
-            <RadioGroup name="jenis_sponsor" onChange={handleChange}>
+            <RadioGroup
+              name="jenis_sponsor"
+              onChange={(e) => {
+                handleChange(e);
+                setSponsorError(false);
+              }}
+            >
               {formJenisSponsor.map((jenis) => (
                 <FormControlLabel
                   key={jenis.id}
                   control={<Radio />}
                   label={jenis.title}
                   value={jenis.id}
+                  error={sponsorError}
                 />
               ))}
             </RadioGroup>
+            {sponsorError && (
+              <FormHelperText error>pekerjaan perlu diisi</FormHelperText>
+            )}
           </FormGroup>
         </div>
 
-            <TextField type="file" onChange={handleFileChange} fullWidth/>
+        <TextField type="file" onChange={handleFileChange} fullWidth />
 
         <div className={`${styles.inputSpan}`}>
           <span>Catatan</span>

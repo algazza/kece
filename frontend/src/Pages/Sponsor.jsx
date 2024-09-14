@@ -32,7 +32,7 @@ const Sponsor = () => {
 
       <FormBank
         isiPenting={<SponsorForm />}
-        judulRadio="Bidang Usaha"
+        judulRadio="Bidang Usaha *"
         namaRadio="bidang_usaha"
         dummyprops={formUsahaSponsor}
         value={"Sponsor"}

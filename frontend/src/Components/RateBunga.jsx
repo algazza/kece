@@ -15,7 +15,7 @@ import { localhostLink } from "../helper/localhost";
 
 const RateBunga = ({ handleOpenRateBunga }) => {
   const [menuTabel, setMenuTabel] = useState(0);
-  const [RateKredit, setRateKredit] = useState([]);
+  const [rateKredit, setRateKredit] = useState([]);
   const [rateDeposito, setRateDeposito] = useState([]);
 
   useEffect(() => {
@@ -84,7 +84,22 @@ const RateBunga = ({ handleOpenRateBunga }) => {
             <p className="">
               Nilai penempatan bunga {menuTabel == 0 ? "kredit" : "deposito"}
             </p>
-            <p className="">Update Terakhir: 12 September 2024</p>
+            <p className="">
+              Update Terakhir:{" "}
+              {rateKredit && rateKredit.updated_at
+                ? new Intl.DateTimeFormat("id-ID", {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric",
+                  }).format(new Date(rateKredit.updated_at))
+                : rateDeposito && rateDeposito.updated_at
+                ? new Intl.DateTimeFormat("id-ID", {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric",
+                  }).format(new Date(rateDeposito.updated_at))
+                : "Tanggal tidak tersedia"}
+            </p>
           </div>
         </div>
 
@@ -120,7 +135,7 @@ const RateBunga = ({ handleOpenRateBunga }) => {
                 </TableHead>
 
                 <TableBody>
-                  {RateKredit.map((cell, index) => (
+                  {rateKredit.map((cell, index) => (
                     <TableRow key={index}>
                       {[
                         cell.plafon,
@@ -154,7 +169,7 @@ const RateBunga = ({ handleOpenRateBunga }) => {
               component={Paper}
               style={{ border: "1px solid black" }}
             >
-              <Table sx={{ minWidth: 500 }} aria-label="tabel rate bunga">
+              <Table sx={{ width: 420 }} aria-label="tabel rate bunga">
                 <TableHead>
                   <TableRow>
                     {["Plafon", " 12 Bulan", "24 Bulan", "36 Bulan"].map(
