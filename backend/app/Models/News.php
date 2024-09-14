@@ -17,6 +17,7 @@ class News extends Model
         'keterangan',
         'image',
         'kategory',
-        'tanggal'
+        'tanggal',
+        'slug'
     ];
 }

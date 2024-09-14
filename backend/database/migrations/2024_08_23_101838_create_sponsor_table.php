@@ -20,11 +20,11 @@ return new class extends Migration
             $table->text('alamat');
             $table->string('bidang_usaha');
             $table->text('nama_usaha');
-            $table->text('catatan');
+            $table->text('catatan')->nullable();
             $table->string('jenis_sponsor');
-            $table->bigInteger('code');
-            $table->string('jenis');
-            $table->string('ip_user');
+            $table->bigInteger('code')->nullable();
+            $table->string('jenis')->nullable();
+            $table->string('ip_user')->nullable();
             $table->timestamps();
         });
     }

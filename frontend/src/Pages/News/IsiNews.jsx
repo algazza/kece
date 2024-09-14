@@ -13,7 +13,7 @@ import { localhostLink } from "../../helper/localhost";
 import Error from "../Error";
 
 const IsiNews = () => {
-  const { judul } = useParams();
+  const { slug } = useParams();
   const [news, setNews] = useState(null);
   const [error, setError] = useState(null);
   const [newsData, setNewsData] = useState([]);
@@ -32,7 +32,7 @@ const IsiNews = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`${localhostLink}/api/news/${judul}`)
+    fetch(`${localhostLink}/api/news/${slug}`)
       .then((response) => {
         if (response.status === 404) {
           setNotFound(true)
@@ -56,7 +56,7 @@ const IsiNews = () => {
         setError(error.message);
         console.error("Error fetching news details:", error);
       });
-  }, [judul]);
+  }, [slug]);
 
   if (notFound) {
     return <Error message="Halaman tidak ditemukan" status={404} />;
@@ -166,7 +166,7 @@ const IsiNews = () => {
                 <div
                   key={news.id}
                   className="md:grid md:grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
-                  onClick={() => navigate(`/berita/${news.id}`)}
+                  onClick={() => navigate(`/berita/${news.slug}`)}
                 >
                   <div className="rounded-t-xl md:rounded-l-xl md:w-40 md:h-40 overflow-hidden">
                     <img

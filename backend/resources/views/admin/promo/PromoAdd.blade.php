@@ -33,16 +33,6 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="mb-4 w-full">
-                            <label class="text-gray-800 text-sm mt-2 block">Kategori</label>
-                            <select class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" name="kategory" required>
-                                <option disabled value="">kategory</option>
-                                <option value="Penghargaan">Penghargaan</option>
-                                <option value="Pengumuman">Pengumuman</option>
-                                <option value="Promo">Promo</option>
-                                <option value="Siaran Pers">Siaran Pers</option>
-                            </select>
-                        </div>
                         <div class="mb-4">
                             <label class="text-gray-800 text-sm mt-2 block">Tanggal</label>
                             <div class="relative flex items-center">
@@ -57,9 +47,6 @@
                     <label class="text-slate-500 text-sm mt-2 block">Keterangan</label>
                     <textarea name="keterangan" id="editor" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter keterangan" required></textarea>
                 </div>
-
-                <input name="penulis" type="hidden" required class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter user name" value="{{ Auth::user()->name }}"/>
-                        
                 
                 <div class="mt-8">
                     <button type="submit" class="bg-blue-600 text-white w-full font-normal text-md py-3 px-4 rounded-[5px] shadow-md hover:bg-blue-800 active:bg-white focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50 transition-colors duration-300 ease-in-out">

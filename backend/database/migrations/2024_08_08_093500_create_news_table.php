@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('kategory');
             $table->text('penulis');
             $table->text('tanggal');
+            $table->string('slug');
             $table->string('image')->nullable();
             $table->timestamps();
         });
