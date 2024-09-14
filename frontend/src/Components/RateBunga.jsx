@@ -15,18 +15,24 @@ import { localhostLink } from "../helper/localhost";
 
 const RateBunga = ({ handleOpenRateBunga }) => {
   const [menuTabel, setMenuTabel] = useState(0);
-  const [rateBungaData, setRateBungaData] = useState([])
+  const [RateKredit, setRateKredit] = useState([]);
+  const [rateDeposito, setRateDeposito] = useState([]);
 
   useEffect(() => {
     fetch(`${localhostLink}/api/ratedKredit`)
       .then((response) => response.json())
-      .then((data) => setRateBungaData(data))
-      .catch((error)=> {
-        console.error("error fetching rate bunga:", error)
-      })
+      .then((data) => setRateKredit(data))
+      .catch((error) => {
+        console.error("error fetching rate bunga kredit:", error);
+      });
 
-  }, [])
-  
+    fetch(`${localhostLink}/api/ratedDeposito`)
+      .then((response) => response.json())
+      .then((data) => setRateDeposito(data))
+      .catch((error) => {
+        console.error("error fetching rate bunga deposito:", error);
+      });
+  }, []);
 
   const handleMenuTabel = (id) => {
     setMenuTabel(id);
@@ -101,7 +107,10 @@ const RateBunga = ({ handleOpenRateBunga }) => {
                         <TableCell
                           key={index}
                           align="left"
-                          style={{ borderBottom: "1px solid black", fontWeight: "bold" }}
+                          style={{
+                            borderBottom: "1px solid black",
+                            fontWeight: "bold",
+                          }}
                         >
                           {row}
                         </TableCell>
@@ -111,7 +120,7 @@ const RateBunga = ({ handleOpenRateBunga }) => {
                 </TableHead>
 
                 <TableBody>
-                  {rateBungaData.map((cell, index) => (
+                  {RateKredit.map((cell, index) => (
                     <TableRow key={index}>
                       {[
                         cell.plafon,
@@ -163,7 +172,7 @@ const RateBunga = ({ handleOpenRateBunga }) => {
                 </TableHead>
 
                 <TableBody>
-                  {rateBungaData.map((cell, index) => (
+                  {rateDeposito.map((cell, index) => (
                     <TableRow key={index}>
                       {[
                         cell.plafon,
