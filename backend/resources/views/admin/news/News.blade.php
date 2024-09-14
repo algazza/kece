@@ -47,7 +47,7 @@
 
   <section class="py-8 grid md:grid-cols-x480 ml-[2rem] mr-[2rem] justify-center gap-6 sm:gap-12">
     @foreach($news as $item)
-    <a href="{{ route('news.edit', ['id' => $item->id]) }}">
+    <a href="{{ route('news.edit', ['judul' => Str::slug($item->judul)]) }}">
         <div
             class="grid grid-flow-col bg-white shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl text-left cursor-pointer hover:bg-gray-100 hover:scale-105 duration-300"
         >

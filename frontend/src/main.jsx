@@ -94,7 +94,7 @@ const router = createBrowserRouter([
         element: <News />,
       },
       {
-        path: "berita/:id",
+        path: "berita/:judul",
         element: <IsiNews />,
       },
       {

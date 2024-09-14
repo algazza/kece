@@ -13,7 +13,7 @@ import { localhostLink } from "../../helper/localhost";
 import Error from "../Error";
 
 const IsiNews = () => {
-  const { id } = useParams();
+  const { judul } = useParams();
   const [news, setNews] = useState(null);
   const [error, setError] = useState(null);
   const [newsData, setNewsData] = useState([]);
@@ -32,7 +32,7 @@ const IsiNews = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`${localhostLink}/api/news/${id}`)
+    fetch(`${localhostLink}/api/news/${judul}`)
       .then((response) => {
         if (response.status === 404) {
           setNotFound(true)
@@ -56,7 +56,7 @@ const IsiNews = () => {
         setError(error.message);
         console.error("Error fetching news details:", error);
       });
-  }, [id]);
+  }, [judul]);
 
   if (notFound) {
     return <Error message="Halaman tidak ditemukan" status={404} />;
