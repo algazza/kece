@@ -13,6 +13,20 @@ import styles from "../../helper/style";
 import { useNavigate } from "react-router-dom";
 import { localhostLink } from "../../helper/localhost";
 
+// Fungsi slugify
+const generateSlug = (text) => {
+  return text
+    .toString()               
+    .toLowerCase()            
+    .normalize('NFD')         
+    .replace(/[\u0300-\u036f]/g, '') 
+    .replace(/\s+/g, '-')     
+    .replace(/[^\w\-]+/g, '') 
+    .replace(/\-\-+/g, '-')   
+    .replace(/^-+/, '')       
+    .replace(/-+$/, '');      
+};
+
 const theme = createTheme({
   palette: {
     merah: {
@@ -156,9 +170,9 @@ const News = () => {
       >
         {filteredBerita.slice(pagination.from, pagination.to).map((news) => (
           <div
-            key={news.id}
+            key={news.judul}
             className="w-[180px] sm:w-[250px] md:w-[550px] md:grid md:grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
-            onClick={() => navigate(`/berita/${news.id}`)}
+            onClick={() => navigate(`/berita/${generateSlug(news.judul)}`)}
           >
             <div className="rounded-t-xl md:rounded-l-xl md:w-40 md:h-40 overflow-hidden">
               <img

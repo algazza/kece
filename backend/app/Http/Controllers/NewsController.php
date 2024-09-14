@@ -36,8 +36,9 @@ class NewsController extends Controller
     
     
 
-    function editNews($id){
-        $news = News::find($id);
+    function editNews(Request $request, string $judul){
+        $judul = str_replace('-', ' ', $judul);
+        $news = News::where('judul', $judul)->first();
 
         if(!$news){
             return redirect()->route('news')->with('eror','tidak di temukan');
@@ -137,11 +138,12 @@ class NewsController extends Controller
         }
     }
 
-    public function show($id)
+    public function show($judul)
     {
         try {
-            $news = News::findOrFail($id);
-            
+            $judul = str_replace('-', ' ', $judul);
+            $news = News::where('judul', $judul)->first();
+
             return response()->json($news);
         } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'Berita tidak ditemukan.'], 404);

@@ -136,7 +136,7 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::get('/News/Add', [NewsController::class, 'viewNewsAdd'])->name('news.form');
     Route::post('/News/Add/Post', [NewsController::class, 'store'])->name('news.post');
     Route::get('/News', [NewsController::class, 'viewNews'])->name('news');
-    Route::get('/News/{id}/edit', [NewsController::class, 'editNews'])->name('news.edit');
+    Route::get('/News/{judul}/edit', [NewsController::class, 'editNews'])->name('news.edit');
     Route::put('/News/{id}', [NewsController::class, 'updateNews'])->name('news.update');
     Route::delete('/News/{id}/delete', [NewsController::class, 'destroyNews'])->name('news.delete');
     Route::get('/Sponsor', [SponsorController::class, 'index'])->name('sponsor.index');
