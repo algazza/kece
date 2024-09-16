@@ -23,7 +23,7 @@ const FormBank = ({
   value,
   endpoint,
   namaRadio = "pekerjaan",
-  judulRadio = "Pekerjaan",
+  judulRadio = "Pekerjaan *",
   dummyprops = formPekerjaan,
 }) => {
   const [inputs, setInputs] = useState({});
@@ -35,9 +35,11 @@ const FormBank = ({
   const [nomor, setNomor] = useState("");
   const [nik, setNik] = useState("");
   const [error, setError] = useState("");
-  const [textareaError, setTextareaError] = useState(false);
+  const [alamatError, setAlamatError] = useState(false);
   const [radioError, setRadioError] = useState(false);
   const [checkboxError, setCheckboxError] = useState(false);
+  const [usahaError, setUsahaError] = useState(false);
+  const [sponsorError, setSponsorError] = useState(false);
 
   useEffect(() => {
     setInputs((values) => ({ ...values, jenis: value }));
@@ -69,8 +71,8 @@ const FormBank = ({
   };
 
   const removeFormatRupiah = (angka) => {
-    if (typeof angka === 'string') {
-      return angka.replace(/[^,\d]/g, '');
+    if (typeof angka === "string") {
+      return angka.replace(/[^,\d]/g, "");
     }
     return angka;
   };
@@ -127,9 +129,9 @@ const FormBank = ({
     const nikGenerated = updatedInputs.nik;
 
     if (!inputs.alamat) {
-      setTextareaError(true);
+      setAlamatError(true);
     } else {
-      setTextareaError(false);
+      setAlamatError(false);
     }
 
     if (!inputs.penghasilan_perbulan) {
@@ -142,6 +144,18 @@ const FormBank = ({
       setCheckboxError(true);
     } else {
       setCheckboxError(false);
+    }
+
+    if (!inputs.nama_usaha) {
+      setUsahaError(true);
+    } else {
+      setUsahaError(false);
+    }
+
+    if (!inputs.jenis_sponsor) {
+      setSponsorError(true);
+    } else {
+      setSponsorError(false);
     }
 
     axios
@@ -190,7 +204,11 @@ const FormBank = ({
               ))}
             </div>
 
-            <div className="form-control bg-abuTerang p-6 border border-black rounded-md md:col-[2/3] md:row-[1/3]">
+            <div
+              className={`form-control p-6 border rounded-md md:col-[2/3] md:row-[1/3] ${
+                radioError ? "border-red-500 text-red-500" : "border-black"
+              }`}
+            >
               <h1 className="">{judulRadio}</h1>
               <FormGroup className="">
                 <RadioGroup
@@ -217,13 +235,17 @@ const FormBank = ({
             </div>
 
             <div className={`${styles.inputSpan}`}>
-              <span>Alamat</span>
+              <span className={alamatError ? "text-red-500" : ""}>
+                Alamat *
+              </span>
               <TextareaAutosize
                 className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
-                  border ${
-                    textareaError ? "border-red-500" : "border-slate-300"
-                  } hover:border 
-                  focus:border-black focus-visible:outline-0 box-border`}
+                  border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
+                  box-border ${
+                    alamatError
+                      ? "border-red-500 hover:border-red-500 text-red-500 focus:border-red-600"
+                      : "border-slate-300"
+                  }`}
                 aria-label="Alamat"
                 minRows={3}
                 placeholder="Alamat"
@@ -231,12 +253,12 @@ const FormBank = ({
                 value={inputs.alamat}
                 onChange={(e) => {
                   handleChange(e);
-                  setTextareaError(false);
+                  setAlamatError(false);
                 }}
                 required
               />
-              {textareaError && (
-                <FormHelperText error>alamat perlu diisi</FormHelperText>
+              {alamatError && (
+                <FormHelperText error>Alamat perlu diisi</FormHelperText>
               )}
             </div>
           </div>
@@ -270,9 +292,13 @@ const FormBank = ({
 
         {React.cloneElement(isiPenting, {
           inputs,
+          usahaError,
+          setUsahaError,
+          sponsorError,
+          setSponsorError,
           handleChange,
           handleDateChange,
-          handleTimeChange
+          handleTimeChange,
         })}
 
         <div>
@@ -284,7 +310,7 @@ const FormBank = ({
                   <Checkbox
                     onChange={(e) => {
                       handleChange(e);
-                      setCheckboxError(false); // Reset error ketika dicentang
+                      setCheckboxError(false);
                     }}
                   />
                 }

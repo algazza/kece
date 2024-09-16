@@ -17,7 +17,7 @@ const IsiNews = () => {
   const [news, setNews] = useState(null);
   const [error, setError] = useState(null);
   const [newsData, setNewsData] = useState([]);
-  const [notFound, setNotFound] = useState(false)
+  const [notFound, setNotFound] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const currentUrl = window.location.origin + location.pathname;
@@ -26,7 +26,7 @@ const IsiNews = () => {
     fetch(`${localhostLink}/api/news`)
       .then((response) => response.json())
       .then((data) => setNewsData(data))
-      .catch((err) => {
+      .catch(() => {
         toast.error("Gagal Memunculkan berita!");
       });
   }, []);
@@ -35,7 +35,7 @@ const IsiNews = () => {
     fetch(`${localhostLink}/api/news/${slug}`)
       .then((response) => {
         if (response.status === 404) {
-          setNotFound(true)
+          setNotFound(true);
           throw new Response("Halaman tidak ditemukan.", { status: 404 });
         }
         if (!response.ok) {
@@ -65,7 +65,6 @@ const IsiNews = () => {
   if (error) {
     return <Error message={error} />;
   }
-
 
   if (!news)
     return (
@@ -111,8 +110,9 @@ const IsiNews = () => {
             <img
               className="max-w-[400px]"
               src={`${localhostLink}/image/public/news/${news.image}`}
-              alt=""
+              alt={news.judul}
             />
+            
             <div className="flex justify-end pt-2 gap-4">
               <a onClick={handleCopyLink} className="cursor-pointer">
                 <LinkIcon className="text-[#646464]" />

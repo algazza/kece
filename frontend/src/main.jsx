@@ -106,7 +106,7 @@ const router = createBrowserRouter([
         element: <Promo />,
       },
       {
-        path: "promo/:id",
+        path: "promo/:slug ",
         element: <IsiPromo />,
       },
       {

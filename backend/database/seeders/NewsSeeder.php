@@ -38,6 +38,7 @@ Darmawan juga menekankan pentingnya kegiatan literasi keuangan seperti ini untuk
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
+                'tanggal' => '22/07/2009'
             ],
             [
                 'judul' => 'Perkuat UMKM, Bank Arto Moro dan Bank Eka Teken Kerja Sama Linkage',
@@ -63,6 +64,7 @@ Lebih jauh, Eko Budiyono berharap bahwa inisiatif kerja sama ini dapat menjadi c
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
+                'tanggal' => '22/07/2009'
             ],
             [
                 'judul' => 'Bank Arto Moro dan BPR Lingga Sejahtera Jalin Kolaborasi',
@@ -89,6 +91,7 @@ Kegiatan ini tidak hanya memperkuat hubungan antara kedua lembaga tetapi juga me
                 'penulis' => 'promosi arto moro',
  
                 'image' => 'profil.jpg',
+                'tanggal' => '22/07/2009'
             ],
             [
                 'judul' => 'Bank Arto Moro Dorong Wirausahawan Baru',
@@ -102,6 +105,7 @@ Pertemuan ketiga sosok tersebut menjadi platform dalam merencanakan langkah stra
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
+                'tanggal' => '22/07/2009'
             ],
             [
                 'judul' => 'Bank Arto Moro dan BPR Pundi Masyarakat Gelar Studi Banding untuk Memperkuat Hubungan dan Branding',
@@ -129,6 +133,7 @@ Darmawan berharap dengan saling berbagi pengetahuan, pengalaman, dan sumber daya
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
+                'tanggal' => '22/07/2009'
             ],
             [
                 'judul' => 'Bank Arto Moro Kembali Meraih Penghargaan TOP 100 BPR The Finance Tahun 2024',
@@ -146,6 +151,7 @@ Eko menerangkan penilaian yang dilakukan oleh The Finance berdasarkan beberapa a
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
+                'tanggal' => '22/07/2009'
             ],
             [
                 'judul' => 'BANK ARTO MORO GELAR BUKA PUASA DAN PRE LAUNCHING BUS PERUSAHAAN',
@@ -176,6 +182,7 @@ Darmawan menargetkan bahwa bus perusahaan tersebut sudah akan dapat dioperasiona
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
+                'tanggal' => '22/07/2009'
             ],
             [
                 'judul' => 'Program CSR Perbankan Beri Bantuan Banjir',
@@ -199,6 +206,7 @@ Tedy Ariyanto juga menyoroti pentingnya kerjasama antara pemerintah, sektor swas
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
+                'tanggal' => '22/07/2009'
             ],
             [
                 'judul' => 'Kembangkan Produk Kredit Haji, Bank Arto Moro Gandeng CIMBNiaga Syariah dan Bank Jombang',
@@ -218,6 +226,7 @@ Dengan terselenggaranya program ini, diharapkan jumlah masyarakat yang dapat mer
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
+                'tanggal' => '22/07/2009'
             ],
             [
                 'judul' => 'Arto Moro Peduli: Berikan Dukungan Kegiatan Berani Gundul 2024',
@@ -243,6 +252,7 @@ Acara ini diharapkan menjadi wadah untuk mengedukasi masyarakat tentang pentingn
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
+                'tanggal' => '22/07/2009'
             ],
         ];
 

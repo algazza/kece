@@ -18,6 +18,7 @@ import {
   RadioGroup,
   Select,
   TextareaAutosize,
+  TextField,
 } from "@mui/material";
 import {
   DatePicker,
@@ -27,10 +28,7 @@ import {
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 
-export const Kredit = ({
-  inputs,
-  handleChange,
-}) => {
+export const Kredit = ({ inputs, handleChange }) => {
   return (
     <div className="">
       <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
@@ -69,7 +67,106 @@ export const Kredit = ({
                 name={selek.name}
                 value={inputs[selek.name]}
                 onChange={handleChange}
-                required
+              >
+                <MenuItem value={selek.option1}>{selek.option1}</MenuItem>
+                <MenuItem value={selek.option2}>{selek.option2}</MenuItem>
+                {selek.option3 && (
+                  <MenuItem value={selek.option3}>{selek.option3}</MenuItem>
+                )}
+              </Select>
+            </FormControl>
+          ))}
+        </div>
+
+        <div className=" md:col-[2/3] md:row-[1/3]">
+          <div className="form-control bg-abuTerang p-6 border border-black rounded-md min-w-[90px]">
+            <h1 className="">Penghasilan Perbulan</h1>
+            <FormGroup className="">
+              <RadioGroup
+                value={inputs.penghasilan_perbulan}
+                name="penghasilan_perbulan"
+                onChange={(e) => {
+                  handleChange(e);
+                }}
+              >
+                {formPenghasilan.map((gaji) => (
+                  <FormControlLabel
+                    key={gaji.id}
+                    control={<Radio />}
+                    label={gaji.title}
+                    value={gaji.id}
+                  />
+                ))}
+              </RadioGroup>
+            </FormGroup>
+          </div>
+        </div>
+
+        <div className={`${styles.inputSpan}`}>
+          <span>Catatan</span>
+          <TextareaAutosize
+            className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg hover:border 
+              focus:border-black focus-visible:outline-0 box-border`}
+            aria-label="Catatan"
+            minRows={3}
+            placeholder="Catatan"
+            name="catatan"
+            value={inputs.catatan}
+            onChange={(e) => {
+              handleChange(e);
+            }}
+          />
+          <p className={`${styles.fontCaption} mt-2 text-abuGelap`}>
+            Mohon mengisi di CATATAN kalo memang ada Informasi Awal yang perlu
+            disampaikan kepada kami. Terima kasih telah memberikan kepercayaan
+            kepada BPR ARTO MORO Semarang, kami akan segera menghubungi melalui
+            No. Handphone Anda.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const Tabungan = ({ inputs, handleChange }) => {
+  return (
+    <div className="">
+      <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
+
+      <div
+        action=""
+        className="grid justify-center gap-4 mx-auto md:grid-cols-x2500"
+      >
+        <div className="grid w-full sm:grid-cols-2 gap-4">
+          <FormControl fullWidth>
+            <InputLabel htmlFor="outlined-adornment-amount">
+              Total Pinjaman
+            </InputLabel>
+            <OutlinedInput
+              id="outlined-adornment-amount"
+              startAdornment={
+                <InputAdornment position="start">Rp.</InputAdornment>
+              }
+              label="Total Pinjaman"
+              name="total_pinjaman"
+              value={inputs.total_pinjaman}
+              onChange={handleChange}
+              inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
+            />
+          </FormControl>
+
+          {formSelectKredit.map((selek) => (
+            <FormControl fullWidth key={selek.id}>
+              <InputLabel id="demo-simple-select-label">
+                {selek.title}
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label={selek.title}
+                name={selek.name}
+                value={inputs[selek.name]}
+                onChange={handleChange}
               >
                 <MenuItem value={selek.option1}>{selek.option1}</MenuItem>
                 <MenuItem value={selek.option2}>{selek.option2}</MenuItem>
@@ -188,7 +285,9 @@ export const Deposito = ({ inputs, handleChange }) => {
               <RadioGroup
                 value={inputs.penghasilan_perbulan}
                 name="penghasilan_perbulan"
-                onChange={handleChange}
+                onChange={(e) => {
+                  handleChange(e);
+                }}
               >
                 {formPenghasilan.map((gaji) => (
                   <FormControlLabel
@@ -206,110 +305,16 @@ export const Deposito = ({ inputs, handleChange }) => {
         <div className={`${styles.inputSpan}`}>
           <span>Catatan</span>
           <TextareaAutosize
-            className="resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
-                border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
+            className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg hover:border 
+              focus:border-black focus-visible:outline-0 box-border`}
             aria-label="Catatan"
             minRows={3}
             placeholder="Catatan"
             name="catatan"
             value={inputs.catatan}
-            onChange={handleChange}
-          />
-          <p className={`${styles.fontCaption} mt-2 text-abuGelap`}>
-            Mohon mengisi di CATATAN kalo memang ada Informasi Awal yang perlu
-            disampaikan kepada kami. Terima kasih telah memberikan kepercayaan
-            kepada BPR ARTO MORO Semarang, kami akan segera menghubungi melalui
-            No. Handphone Anda.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export const Tabungan = ({ inputs, handleChange }) => {
-  return (
-    <div className="">
-      <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
-
-      <div
-        action=""
-        className="grid justify-center gap-4 mx-auto md:grid-cols-x2500"
-      >
-        <div className="grid w-full sm:grid-cols-2 gap-4">
-          <FormControl fullWidth>
-            <InputLabel htmlFor="outlined-adornment-amount">
-              Total Pinjaman
-            </InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-amount"
-              startAdornment={
-                <InputAdornment position="start">Rp.</InputAdornment>
-              }
-              label="Total Pinjaman"
-              type="number"
-              name="total_pinjaman"
-              value={inputs.total_pinjaman}
-              onChange={handleChange}
-            />
-          </FormControl>
-
-          {formSelectKredit.map((selek) => (
-            <FormControl fullWidth key={selek.id}>
-              <InputLabel id="demo-simple-select-label">
-                {selek.title}
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label={selek.title}
-                name={selek.name}
-                value={inputs[selek.name]}
-                onChange={handleChange}
-              >
-                <MenuItem value={selek.option1}>{selek.option1}</MenuItem>
-                <MenuItem value={selek.option2}>{selek.option2}</MenuItem>
-                {selek.option3 && (
-                  <MenuItem value={selek.option3}>{selek.option3}</MenuItem>
-                )}
-              </Select>
-            </FormControl>
-          ))}
-        </div>
-
-        <div className=" md:col-[2/3] md:row-[1/3]">
-          <div className="form-control bg-abuTerang p-6 border border-black rounded-md min-w-[90px]">
-            <h1 className="">Penghasilan Perbulan</h1>
-            <FormGroup className="">
-              <RadioGroup
-                value={inputs.penghasilan_perbulan}
-                name="penghasilan_perbulan"
-                onChange={handleChange}
-              >
-                {formPenghasilan.map((gaji) => (
-                  <FormControlLabel
-                    key={gaji.id}
-                    control={<Radio />}
-                    label={gaji.title}
-                    value={gaji.id}
-                  />
-                ))}
-              </RadioGroup>
-            </FormGroup>
-          </div>
-        </div>
-
-        <div className={`${styles.inputSpan}`}>
-          <span>Catatan</span>
-          <TextareaAutosize
-            className="resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
-                border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
-            aria-label="Catatan"
-            minRows={3}
-            placeholder="Catatan"
-            name="catatan"
-            value={inputs.catatan}
-            onChange={handleChange}
+            onChange={(e) => {
+              handleChange(e);
+            }}
           />
           <p className={`${styles.fontCaption} mt-2 text-abuGelap`}>
             Mohon mengisi di CATATAN kalo memang ada Informasi Awal yang perlu
@@ -417,40 +422,82 @@ export const PickupService = ({ inputs, handleChange }) => {
   );
 };
 
-export const SponsorForm = ({ inputs, handleChange }) => {
+export const SponsorForm = ({
+  inputs,
+  handleChange,
+  usahaError,
+  setUsahaError,
+  sponsorError,
+  setSponsorError,
+}) => {
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log("Selected file:", file.name);
+    }
+  };
+
   return (
     <div>
       <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
       <div className="grid justify-center gap-4 mx-auto md:w-[850px] md:grid-cols-x2500">
         <div className={`${styles.inputSpan}`}>
-          <span>Nama Usaha</span>
+          <span className={usahaError ? "text-red-500" : ""}>Nama Usaha</span>
           <TextareaAutosize
-            className="resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
-                  border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
-            aria-label="Lokasi"
+            className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                  border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
+                  box-border ${
+                    usahaError
+                      ? "border-red-500 hover:border-red-500 text-red-500 focus:border-red-600"
+                      : "border-slate-300"
+                  }`}
+            aria-label="nama usaha"
             minRows={3}
             placeholder="Nama Usaha"
             name="nama_usaha"
             value={inputs.nama_usaha || ""}
-            onChange={handleChange}
+            onChange={(e) => {
+              handleChange(e);
+              setUsahaError(false);
+            }}
+            required
           />
+          {usahaError && (
+            <FormHelperText error>Nama usaha perlu diisi</FormHelperText>
+          )}
         </div>
 
-        <div className="form-control bg-abuTerang p-6 border border-black rounded-md md:col-[2/3] md:row-[1/3]">
+        <div
+          className={`form-control p-6 border rounded-md md:col-[2/3] md:row-[1/3] ${
+            sponsorError ? "border-red-500 text-red-500" : "border-black"
+          }`}
+        >
           <h1 className="">Jenis Sponsor</h1>
           <FormGroup className="">
-            <RadioGroup name="jenis_sponsor" onChange={handleChange}>
+            <RadioGroup
+              name="jenis_sponsor"
+              onChange={(e) => {
+                handleChange(e);
+                setSponsorError(false);
+              }}
+            >
               {formJenisSponsor.map((jenis) => (
                 <FormControlLabel
                   key={jenis.id}
                   control={<Radio />}
                   label={jenis.title}
                   value={jenis.id}
+                  error={sponsorError}
                 />
               ))}
             </RadioGroup>
+            {sponsorError && (
+              <FormHelperText error>pekerjaan perlu diisi</FormHelperText>
+            )}
           </FormGroup>
         </div>
+
+        <TextField type="file" onChange={handleFileChange} fullWidth />
 
         <div className={`${styles.inputSpan}`}>
           <span>Catatan</span>

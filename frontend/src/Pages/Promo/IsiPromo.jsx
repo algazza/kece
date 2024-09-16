@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../helper/style";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { localhostLink } from "../../helper/localhost";
 import { toast, ToastContainer } from "react-toastify";
 import Error from "../Error";
@@ -12,25 +12,26 @@ import XIcon from "@mui/icons-material/X";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 
 const IsiPromo = () => {
+  const { slug } = useParams();
   const [promo, setPromo] = useState(null);
   const [error, setError] = useState(null);
-  const [notFound, setNotFound] = useState(false);
   const [promoData, setPromoData] = useState([]);
-  const { id } = useParams();
+  const [notFound, setNotFound] = useState(false);
+  const location = useLocation();
   const navigate = useNavigate();
   const currentUrl = window.location.origin + location.pathname;
 
   useEffect(() => {
-    fetch(`${localhostLink}/api/news`)
+    fetch(`${localhostLink}/api/promo`)
       .then((response) => response.json())
       .then((data) => setPromoData(data))
       .catch(() => {
-        toast.error("Gagal memunculkan promo!");
+        toast.error("Gagal Memunculkan berita!");
       });
   }, []);
 
   useEffect(() => {
-    fetch(`${localhostLink}/api/news/${id}`)
+    fetch(`${localhostLink}/api/promo/${slug}`)
       .then((response) => {
         if (response.status === 404) {
           setNotFound(true);
@@ -52,8 +53,9 @@ const IsiPromo = () => {
       })
       .catch((error) => {
         setError(error.message);
+        console.error("Error fetching promo details:", error);
       });
-  }, [id]);
+  }, [slug]);
 
   if (notFound) {
     return <Error message="Halaman tidak ditemukan" status={404} />;
@@ -84,16 +86,16 @@ const IsiPromo = () => {
       </div>
     );
 
-    const  handleCopyLink = () => {
-      navigator.clipboard
-        .writeText(currentUrl)
-        .then(()=> {
-          toast.success("Link berhasil disalin")
-        })
-        .catch(() => {
-          toast.error("Gagal menyalin link")
-        })
-    }
+  const handleCopyLink = () => {
+    navigator.clipboard
+      .writeText(currentUrl)
+      .then(() => {
+        toast.success("Link berhasil disalin");
+      })
+      .catch(() => {
+        toast.error("Gagal menyalin link");
+      });
+  };
 
   return (
     <>
@@ -101,14 +103,15 @@ const IsiPromo = () => {
         className={`${styles.paddingY} ${styles.marginX} grid md:grid-cols-x650 pt-12`}
       >
         <div className={`${styles.flexCenter} flex-col gap-12`}>
-          <h5 className={`${styles.heading4} text-center `}>{promo.judul}</h5>
+          <h5 className={`${styles.heading4} text-center`}>{promo.judul}</h5>
 
           <div>
             <img
+              src={`${localhostLink}/image/public/promo/${promo.image}`}
+              alt={promo.judul}
               className="max-w-[400px]"
-              src={`${localhostLink}/image/public/news/${promo.image}`}
-              alt=""
             />
+            
             <div className="flex justify-end pt-2 gap-4">
               <a onClick={handleCopyLink} className="cursor-pointer">
                 <LinkIcon className="text-[#646464]" />
@@ -141,7 +144,6 @@ const IsiPromo = () => {
 
             <div className={`${styles.fontBodyBold}`}>
               <p>{promo.tanggal}</p>
-              <p>{promo.penulis}</p>
             </div>
           </div>
         </div>
@@ -160,21 +162,21 @@ const IsiPromo = () => {
             {promoData.slice(0, 4).map((promo, index) => {
               return (
                 <div
-                key={index}
-                className="p-4 border-2 rounded-md grid gap-2 justify-center cursor-pointer"
-                onClick={() => navigate(`/promo/${promo.id}`)}
-              >
-                <div className="w-60 h-60 overflow-hidden">
-                  <img
-                    src={`${localhostLink}/image/public/news/${promo.image}`}
-                    alt={promo.nama_penghargaan}
-                    className="w-full h-full object-cover"
-                  />
+                  key={index}
+                  className="p-4 border-2 rounded-md grid gap-2 justify-center cursor-pointer"
+                  onClick={() => navigate(`/promo/${promo.slug}`)}
+                >
+                  <div className="w-60 h-60 overflow-hidden">
+                    <img
+                      src={`${localhostLink}/image/public/promo/${promo.image}`}
+                      alt={promo.judul}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h2 className={`${styles.heading6} text-center`}>
+                    {promo.judul}
+                  </h2>
                 </div>
-                <h2 className={`${styles.heading6} text-center`}>
-                  {promo.nama_penghargaan}
-                </h2>
-              </div>
               );
             })}
           </section>
