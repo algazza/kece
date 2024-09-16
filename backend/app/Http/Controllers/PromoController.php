@@ -28,7 +28,7 @@ class PromoController extends Controller
             ]);
 
             $promo = new Promo();
-            $promo->judul = $request->judul;
+            $promo->judul = str_replace(['?', '!'], ' ', $request->judul);
             $promo->keterangan = $request->keterangan;
             $promo->tanggal = $request->tanggal;
             $promo->slug = Str::slug($request->judul, '-');
@@ -62,15 +62,16 @@ class PromoController extends Controller
                 'judul' => 'required|string|max:255',
                 'keterangan' => 'required|string|max:100000',
                 'tanggal' => 'required|string|max:255',
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
             $validateData['slug'] = Str::slug($validateData['judul']);
+            $validateData['judul'] = str_replace(['?', '!'], ' ', $validateData['judul']);
 
             if($request->hasFile('image')){
                 $imageData = time() . '.' . $request->image->extension();
                 $request->image->move(public_path('image/public/promo'), $imageData);
-                $promo->image = $imageData;
+                $validateData['image'] = $imageData;
             } else {
                 if(!isset($validateData['image'])){
                     $validateData['image'] = $promo->image;

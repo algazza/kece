@@ -126,6 +126,10 @@ class DashboardController extends Controller
             return redirect()->route('penghargaan.index');
         } elseif ($query === 'stackholder') {
             return redirect()->route('stackholder.index');
+        }elseif ($query === 'rate') {
+            return redirect()->route('rated.index');
+        } elseif ($query === 'promo') {
+            return redirect()->route('promo.index');
         }
 
         return redirect()->route('dashboard')->with('error', 'Pencarian tidak ditemukan');

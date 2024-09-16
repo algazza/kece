@@ -19,21 +19,9 @@ class SponsorController extends Controller
         return view('admin.Sponsor', compact('sponsor'));
     }
     
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $sponsor = Sponsor::create([
+        $sponsorData = [
             'nama' => $request->nama,
             'email' => $request->email,
             'no_handphone' => $request->no_handphone,
@@ -48,41 +36,16 @@ class SponsorController extends Controller
             'ip_user' => $request->ip_user,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
-        ]);
+        ];
 
-        return response()->json('succes');
-        
+        if($request->hasFile('pdf')){
+            $validateData = time() . '.' . $request->pdf->extension();
+            $request->pdf->move(public_path('image/public/sponsor'), $validateData);
+            $validateData = $validateData['pdf'];
+        }
+        $sponsor = Sponsor::create($sponsorData);
+
+        return response()->json($sponsor);   
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

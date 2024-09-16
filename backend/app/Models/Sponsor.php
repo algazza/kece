@@ -24,5 +24,6 @@ class Sponsor extends Model
         'jenis',
         'ip_user',
         'code',
+        'pdf,'
     ];
 }

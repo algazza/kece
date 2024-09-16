@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('nama_usaha');
             $table->text('catatan')->nullable();
             $table->string('jenis_sponsor');
+            $table->string('pdf');
             $table->bigInteger('code')->nullable();
             $table->string('jenis')->nullable();
             $table->string('ip_user')->nullable();

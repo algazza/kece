@@ -60,6 +60,7 @@ class NewsController extends Controller
         ]);
 
         $validateData['slug'] = Str::slug($validateData['judul']);
+        $validateData['judul'] = str_replace(['?', '!'], ' ', $validateData['judul']);
 
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->extension();  
@@ -117,7 +118,7 @@ class NewsController extends Controller
             ]);
 
             $news = new News();
-            $news->judul = $request->judul;
+            $news->judul = str_replace(['?', '!'],' ', $request->judul);
             $news->penulis = $request->penulis;
             $news->keterangan = $request->keterangan;
             $news->kategory = $request->kategory;
