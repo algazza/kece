@@ -4,8 +4,8 @@
 <div class="bg-gray-100 font-[sans-serif] min-h-screen flex items-center justify-center">
     <div class="w-full max-w-[50rem] p-6">
         <div class="p-8 rounded-2xl bg-white border border-gray-300 shadow-md w-full">
-            <form action="{{ route('news.update', $news->id) }}" method="POST" class="mt-4 space-y-4" enctype="multipart/form-data">
-                <a href="{{ route ('news') }}" class="hidden md:block xl:block">
+            <form action="{{ route('promo.update', $promo->slug) }}" method="POST" class="mt-4 space-y-4" enctype="multipart/form-data">
+                <a href="{{ route ('promo.index') }}" class="hidden md:block xl:block">
                     <i class='bx bx-arrow-back text-4xl rounded-lg font-semibold bg-white border border-gray-300  text-red-600 px-2 hover:bg-gray-300 shadow-sm duration-300 ' ></i>
                 </a>
                 @csrf
@@ -13,7 +13,7 @@
                 <div class="sm:flex">
                     <div class="flex justify-center items-center">
                         <div class="overflow-hidden box-border flex justify-center items-center mr-[2rem] border-blue-400 border-[4px] h-[14rem] w-[14rem]">
-                            <img id="previewImage" src="{{ asset('image/public/news/' . $news->image) }}" alt="" class="w-full h-full object-cover z-10" style="cursor: pointer; display: {{ $news->image ? 'block' : 'none' }};">
+                            <img id="previewImage" src="{{ asset('image/public/promo/' . $promo->image) }}" alt="" class="w-full h-full object-cover z-10" style="cursor: pointer; display: {{ $promo->image ? 'block' : 'none' }};">
                             <div class="bg-white/90 rounded-full w-6 h-6 text-center absolute">
                                 <input type="file" name="image" id="upload_profile" hidden>
                                 <label for="upload_profile">
@@ -30,24 +30,15 @@
                         <div class="mb-2">
                             <label class="text-gray-800 text-sm mt-2 block">Judul</label>
                             <div class="relative flex items-center">
-                                <input name="judul" type="text" required class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter user name" value="{{ $news->judul }}" />
+                                <input name="judul" type="text" required class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter user name" value="{{ $promo->judul }}" />
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-4 h-4 absolute right-4" viewBox="0 0 24 24">
                                 </svg>
                             </div>
                         </div>
-                        <div class="mb-2 w-full">
-                            <label class="text-gray-800 text-sm mt-2 block">Kategori</label>
-                            <select class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" name="kategory" required>
-                                <option value="Penghargaan" {{ $news->kategory == 'Penghargaan' ? 'selected' : '' }}>Penghargaan</option>
-                                <option value="Pengumuman" {{ $news->kategory == 'Pengumuman' ? 'selected' : '' }}>Pengumuman</option>
-                                <option value="Promo" {{ $news->kategory == 'Promo' ? 'selected' : '' }}>Promo</option>
-                                <option value="Siaran Pers" {{ $news->kategory == 'Siaran Pers' ? 'selected' : '' }}>Siaran Pers</option>
-                            </select>
-                        </div>
                         <div class="mb-2">
                             <label class="text-gray-800 text-sm mt-2 block">Tanggal</label>
                             <div class="relative flex items-center">
-                                <input id="datepicker" name="tanggal" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" type="text" placeholder="Pilih Tanggal" value="{{ $news->tanggal }}">
+                                <input id="datepicker" name="tanggal" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" type="text" placeholder="Pilih Tanggal" value="{{ $promo->tanggal }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-4 h-4 absolute right-4" viewBox="0 0 24 24"></svg>
                             </div>
                         </div>                        
@@ -59,10 +50,8 @@
 
                 <div class="mb-4">
                     <label class="text-slate-500 text-sm mt-2 block">Keterangan</label>
-                    <textarea name="keterangan" id="editor" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter keterangan" required>{{ $news->keterangan }}</textarea>
+                    <textarea name="keterangan" id="editor" class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter keterangan" required>{{ $promo->keterangan }}</textarea>
                 </div>
-
-                <input name="penulis" type="hidden" required class="w-full text-slate-500 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600" placeholder="Enter user name" value="{{ Auth::user()->name }}"/>
 
                 <div class="mt-8">
                     <button type="submit" class="bg-blue-600 text-white w-full font-normal text-md py-3 px-4 rounded-[5px] shadow-md hover:bg-blue-800 active:bg-white focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
@@ -71,7 +60,7 @@
                 </div>
             </form>
             <div class="mt-2">
-                <form action="{{ route('news.delete', $news->id) }}" method="POST" class="">
+                <form action="{{ route('promo.delete', $promo->id) }}" method="POST" class="">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="bg-red-500 text-white w-full font-normal text-md py-3 px-4 rounded-[5px] shadow-md hover:bg-red-600 active:bg-white focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50 transition-colors duration-300 ease-in-out">

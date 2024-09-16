@@ -392,13 +392,13 @@ const Home = () => {
       </section>
 
       <section className={`${styles.paddingY} px-12`}>
-        <h2 className={`${styles.heading3} text-center mb-12`}>Updated News</h2>
+        <h2 className={`${styles.heading3} text-center mb-12`}>Berita Terbaru</h2>
         <div className="grid md:grid-cols-3 ss:grid-cols-2 gap-8">
           {newsData.slice(0, 3).map((news) => (
             <div
               key={news.id}
               className="p-4 bg-abuTerang rounded-xl cursor-pointer"
-              onClick={() => navigate(`/berita/${news.id}`)}
+              onClick={() => navigate(`/berita/${news.slug}`)}
             >
               <img
                 src={`${localhostLink}/image/public/news/${news.image}`}

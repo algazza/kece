@@ -21,7 +21,7 @@ const Promo = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${localhostLink}/api/penghargaan`)
+    fetch(`${localhostLink}/api/promo`)
       .then((response) => response.json())
       .then((data) => {
         const reversedData = data.reverse();
@@ -63,17 +63,17 @@ const Promo = () => {
           <div
             key={index}
             className="p-4 border-2 rounded-md grid gap-2 justify-center cursor-pointer"
-            onClick={() => navigate(`/promo/${promo.id}`)}
+            onClick={() => navigate(`/promo/${promo.slug}`)}
           >
             <div className="w-60 h-60 overflow-hidden">
               <img
-                src={`${localhostLink}/image/public/penghargaan/${promo.image}`}
-                alt={promo.nama_penghargaan}
+                src={`${localhostLink}/image/public/promo/${promo.image}`}
+                alt={promo.judul}
                 className="w-full h-full object-cover"
               />
             </div>
             <h2 className={`${styles.heading6} text-center`}>
-              {promo.nama_penghargaan}
+              {promo.judul}
             </h2>
           </div>
         ))}

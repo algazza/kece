@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\News;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -34,11 +35,9 @@ class NewsController extends Controller
         return view('admin.news.News', compact('news'));
     }
     
-    
 
-    function editNews(Request $request, string $judul){
-        $judul = str_replace('-', ' ', $judul);
-        $news = News::where('judul', $judul)->first();
+    function editNews($slug){
+        $news = News::where('slug', $slug)->first();
 
         if(!$news){
             return redirect()->route('news')->with('eror','tidak di temukan');
@@ -47,9 +46,9 @@ class NewsController extends Controller
         return view('admin.news.NewsEdit', compact('news'));
     }
 
-    function updateNews(Request $request, $id){
+    function updateNews(Request $request, $slug){
 
-        $news = News::find($id);
+        $news = News::where('slug', $slug)->first();
 
         $validateData = $request->validate([
             'judul' => 'required|string|max:255',
@@ -59,6 +58,8 @@ class NewsController extends Controller
             'tanggal' => 'required|string|max:255',
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        $validateData['slug'] = Str::slug($validateData['judul']);
 
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->extension();  
@@ -121,6 +122,7 @@ class NewsController extends Controller
             $news->keterangan = $request->keterangan;
             $news->kategory = $request->kategory;
             $news->tanggal = $request->tanggal;
+            $news->slug = Str::slug($request->judul, '-');
             
             if ($request->hasFile('image')) {
                 $imageName = time() . '.' . $request->image->extension();  
@@ -134,19 +136,18 @@ class NewsController extends Controller
 
             return redirect()->route('news')->with('success', 'Berita berhasil ditambahkan.');
         } catch (\Exception $e) {
-            return redirect()->route('news')->with('error', 'Terjadi kesalahan saat menambahkan berita.');
+            return redirect()->route('news', $news->slug)->with('error', 'Terjadi kesalahan saat menambahkan berita.');
         }
     }
 
-    public function show($judul)
+    public function show($slug)
     {
         try {
-            $judul = str_replace('-', ' ', $judul);
-            $news = News::where('judul', $judul)->first();
-
+            $news = News::where('slug', $slug)->first();
             return response()->json($news);
         } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'Berita tidak ditemukan.'], 404);
         }
     }
+
 }

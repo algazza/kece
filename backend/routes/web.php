@@ -136,8 +136,8 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::get('/News/Add', [NewsController::class, 'viewNewsAdd'])->name('news.form');
     Route::post('/News/Add/Post', [NewsController::class, 'store'])->name('news.post');
     Route::get('/News', [NewsController::class, 'viewNews'])->name('news');
-    Route::get('/News/{judul}/edit', [NewsController::class, 'editNews'])->name('news.edit');
-    Route::put('/News/{id}', [NewsController::class, 'updateNews'])->name('news.update');
+    Route::get('/News/{slug}/edit', [NewsController::class, 'editNews'])->name('news.edit');
+    Route::put('/News/{slug}', [NewsController::class, 'updateNews'])->name('news.update');
     Route::delete('/News/{id}/delete', [NewsController::class, 'destroyNews'])->name('news.delete');
     Route::get('/Sponsor', [SponsorController::class, 'index'])->name('sponsor.index');
     Route::get('/Banner', [BannerController::class, 'viewBanner'])->name('banner');
@@ -181,4 +181,6 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 Route::get('/Promo', [PromoController::class, 'viewPromo'])->name('promo.index');
 Route::get('/Promo/add', [PromoController::class, 'viewPromoAdd'])->name('promo.add');
 Route::post('/Promo/post', [PromoController::class, 'store'])->name('promo.post');
-Route::get('/Promo/Edit/{id}', [PromoController::class, 'edit'])->name('promo.edit');
+Route::put('/Promo/update/{slug}', [PromoController::class, 'update'])->name('promo.update');
+Route::get('/Promo/Edit/{slug}', [PromoController::class, 'find'])->name('promo.find');
+Route::delete('/Promo/delete/{id}', [PromoController::class, 'destroy'])->name('promo.delete');

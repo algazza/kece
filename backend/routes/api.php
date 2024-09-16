@@ -5,23 +5,24 @@ use App\Models\Deposito;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PromoController;
+use Database\Seeders\RatedDepositoSeeder;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\KreditController;
 use App\Http\Controllers\PickupController;
+use App\Http\Controllers\DireksiController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\NoAdminController;
+use App\Http\Controllers\PromosiController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\TabunganController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DireksiController;
 use App\Http\Controllers\ManajemenController;
 use App\Http\Controllers\PenghargaanController;
-use App\Http\Controllers\PromosiController;
-use App\Http\Controllers\RatedDepositoController;
 use App\Http\Controllers\RatedKreditController;
 use App\Http\Controllers\StackholderController;
-use Database\Seeders\RatedDepositoSeeder;
+use App\Http\Controllers\RatedDepositoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +53,7 @@ Route::resource('direksi',DireksiController::class);
 Route::resource('stackholder',StackholderController::class);
 Route::resource('ratedDeposito',RatedDepositoController::class);
 Route::resource('ratedKredit',RatedKreditController::class);
-Route::resource('promosi',PromosiController::class);
+Route::resource('promo',PromoController::class);
 
 
 Route::get('/api/dashboard/kredit', [DashboardController::class, 'data']);
@@ -68,5 +69,6 @@ Route::get('/api/tabungan', [DepositoController::class, 'data']);
 
 Route::get('/banner', [BannerController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
-Route::get('/news/{judul}', [NewsController::class, 'show']);
+Route::get('/news/{slug}', [NewsController::class, 'show']);
+Route::get('/promo/{slug}', [PromoController::class, 'show']);
 Route::get('/laporan/download/{filename}', [LaporanController::class, 'download']);

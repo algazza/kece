@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('promo', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
+            $table->string('judul')->unique();
             $table->text('keterangan');
-            $table->string('kategory');
-            $table->text('penulis');
             $table->text('tanggal');
             $table->string('image');
+            $table->string('slug');
             $table->timestamps();
         });
     }

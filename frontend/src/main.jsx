@@ -94,7 +94,7 @@ const router = createBrowserRouter([
         element: <News />,
       },
       {
-        path: "berita/:judul",
+        path: "berita/:slug",
         element: <IsiNews />,
       },
       {
@@ -106,7 +106,7 @@ const router = createBrowserRouter([
         element: <Promo />,
       },
       {
-        path: "promo/:id",
+        path: "promo/:slug ",
         element: <IsiPromo />,
       },
       {

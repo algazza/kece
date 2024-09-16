@@ -13,10 +13,9 @@ class Promo extends Model
 
     protected $fillable = [
         'judul',
-        'penulis',
         'keterangan',
         'image',
-        'kategory',
-        'tanggal'
+        'tanggal',
+        'slug'
     ];
 }

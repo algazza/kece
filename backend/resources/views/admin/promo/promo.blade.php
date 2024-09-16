@@ -25,13 +25,13 @@
 
   <section class="py-8 grid md:grid-cols-x480 ml-[2rem] mr-[2rem] justify-center gap-6 sm:gap-12">
     @foreach($promo as $item)
-    <a href="{{ route('promo.edit', ['id' => $item->id]) }}">
+    <a href="{{ route('promo.find', $item->slug) }}">
         <div
             class="grid grid-flow-col bg-white shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl text-left cursor-pointer hover:bg-gray-100 hover:scale-105 duration-300"
         >
             <div class="rounded-l-xl w-32 h-32 sm:w-[11.5rem] sm:h-[14rem] overflow-hidden">
                 <img
-                    src="{{ url('/image/public/news/' . $item->image) }}"
+                    src="{{ url('/image/public/promo/' . $item->image) }}"
                     alt="{{ $item->judul }}"
                     class="object-cover w-full h-full"
                 />

@@ -13,11 +13,11 @@ import { localhostLink } from "../../helper/localhost";
 import Error from "../Error";
 
 const IsiNews = () => {
-  const { judul } = useParams();
+  const { slug } = useParams();
   const [news, setNews] = useState(null);
   const [error, setError] = useState(null);
   const [newsData, setNewsData] = useState([]);
-  const [notFound, setNotFound] = useState(false)
+  const [notFound, setNotFound] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const currentUrl = window.location.origin + location.pathname;
@@ -26,16 +26,16 @@ const IsiNews = () => {
     fetch(`${localhostLink}/api/news`)
       .then((response) => response.json())
       .then((data) => setNewsData(data))
-      .catch((err) => {
+      .catch(() => {
         toast.error("Gagal Memunculkan berita!");
       });
   }, []);
 
   useEffect(() => {
-    fetch(`${localhostLink}/api/news/${judul}`)
+    fetch(`${localhostLink}/api/news/${slug}`)
       .then((response) => {
         if (response.status === 404) {
-          setNotFound(true)
+          setNotFound(true);
           throw new Response("Halaman tidak ditemukan.", { status: 404 });
         }
         if (!response.ok) {
@@ -56,7 +56,7 @@ const IsiNews = () => {
         setError(error.message);
         console.error("Error fetching news details:", error);
       });
-  }, [judul]);
+  }, [slug]);
 
   if (notFound) {
     return <Error message="Halaman tidak ditemukan" status={404} />;
@@ -65,7 +65,6 @@ const IsiNews = () => {
   if (error) {
     return <Error message={error} />;
   }
-
 
   if (!news)
     return (
@@ -111,8 +110,9 @@ const IsiNews = () => {
             <img
               className="max-w-[400px]"
               src={`${localhostLink}/image/public/news/${news.image}`}
-              alt=""
+              alt={news.judul}
             />
+            
             <div className="flex justify-end pt-2 gap-4">
               <a onClick={handleCopyLink} className="cursor-pointer">
                 <LinkIcon className="text-[#646464]" />
@@ -166,7 +166,7 @@ const IsiNews = () => {
                 <div
                   key={news.id}
                   className="md:grid md:grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
-                  onClick={() => navigate(`/berita/${news.id}`)}
+                  onClick={() => navigate(`/berita/${news.slug}`)}
                 >
                   <div className="rounded-t-xl md:rounded-l-xl md:w-40 md:h-40 overflow-hidden">
                     <img
