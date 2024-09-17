@@ -84,7 +84,7 @@
         $(document).ready(function() {
             function checkToken() {
                 $.ajax({
-                    url: '/api/check-token/kredit',
+                    url: '/newwebsite/admin/public/api/check-token/kredit',
                     method: 'GET',
                     success: function(response) {
                         if (!response.valid) {
@@ -101,7 +101,7 @@
     
             function fetchData(page = 1, search = '') {
                 $.ajax({
-                    url: `/api/kredit?page=${page}&search=${encodeURIComponent(search)}`,
+                    url: `/newwebsite/admin/public/api/kredit?page=${page}&search=${encodeURIComponent(search)}`,
                     method: 'GET',
                     success: function(response) {
                         currentPage = response.pagination.current_page;
