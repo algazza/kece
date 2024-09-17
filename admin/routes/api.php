@@ -69,6 +69,7 @@ Route::get('/api/tabungan', [DepositoController::class, 'data']);
 
 Route::get('/banner', [BannerController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
+Route::get('/promo/update', [PromoController::class, 'updateAt']);
 Route::get('/news/{slug}', [NewsController::class, 'show']);
 Route::get('/promo/{slug}', [PromoController::class, 'show']);
 Route::get('/laporan/download/{filename}', [LaporanController::class, 'download']);
