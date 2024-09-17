@@ -78,7 +78,7 @@
         $(document).ready(function() {
             function checkToken() {
                 $.ajax({
-                    url: '/newwebsite/admin/public/api/check-token/deposito',
+                    url: '{{ $urlPath }}/api/check-token/deposito',
                     method: 'GET',
                     success: function(response) {
                         if (!response.valid) {
@@ -95,7 +95,7 @@
     
             function fetchData(page = 1, search = '') {
                 $.ajax({
-                    url: `/newwebsite/admin/public/api/deposito?page=${page}&search=${encodeURIComponent(search)}`,
+                    url: `{{ $urlPath }}/api/deposito?page=${page}&search=${encodeURIComponent(search)}`,
                     method: 'GET',
                     success: function(response) {
                         currentPage = response.pagination.current_page;
@@ -120,7 +120,7 @@
                     const nomor = (currentPage - 1) * perPage + index + 1;
 
                     content += `
-                    <a href="/deposito/${item.id}">
+                    <a href="{{ $urlPath }}/deposito/${item.id}">
                         <div class="border-b-[0.5px] border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
                             <p class="text-[1.3rem]">
                                 ${nomor}

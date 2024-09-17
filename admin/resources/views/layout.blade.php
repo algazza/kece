@@ -10,6 +10,7 @@
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 </head>
 <body class="bg-gray-200 h-screen">
     <section class="fixed z-40 shadow flex flex-row font-poppins">
@@ -163,11 +164,11 @@
             @endif
               </div>
 
-              <a href="/logout">
+              <a href="{{ route('logout') }}">
                 <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer text-black hover:text-white hover:bg-red-500 bottom-0 w-screen mr-[1rem]">
                   <i class='bx bx-log-out' ></i>
                     <div>
-                      <a href="/logout" class="text-[15px] ml-6">
+                      <a href="{{ route('logout') }}" class="text-[15px] ml-6">
                         Logout
                       </a>
                     </div>

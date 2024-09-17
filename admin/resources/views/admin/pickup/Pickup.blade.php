@@ -2,27 +2,23 @@
 
 @extends('layout')
 @section('content')
-    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center font-poppins overflow-hidden">
+    <section class="box-border p-0 m-0 bg-gray-200 text-center justify-center items-center h-screen font-poppins overflow-hidden">
         <section class="grid grid-cols-1 sm:grid-cols-2 repeat(2, minmax(0, 1fr)); pt-[3rem] justify-center">
-            <div class="w-full p-4 absolute mt-[4.2rem] xxl:ml-[-20rem] xl:ml-[-18rem] lg:ml-[-16rem] z-20">
+            <div class="w-full  p-4 absolute mt-[4.2rem] xxl:ml-[-20rem] xl:ml-[-18rem] lg:ml-[-16rem] z-20">
                 <form id="search-form" class="flex justify-center">
-                    <input type="text" id="search-input" name="search" placeholder="search by name" class="p-[6px] border border-gray-300 rounded-[15px] hidden xl:block">
+                    <input type="text" id="search-input" name="search" placeholder="..." class="p-[6px] border border-gray-300 rounded-[15px] hidden xl:block">
                 </form>
             </div>
             <div class="bg-gray-50 w-[28rem] my-[4rem] rounded-[5px] absolute ml-[3rem] lg:right-[58%] h-[80%] box-border border-[0.5px] border-black shadow-lg xss:w-[70%] sm2:w-[80%] sm:w-1/2 md:w-[30rem] lg:w-[30rem]  overflow-hidden">
-                <div class="flex">
-                    <div class="text-left text-[1.2rem] text-black pl-[2rem] py-[1.2rem] absolute w-screen bg-gray-50 box-border border-black">
-                        <p>All Person Data</p>
-                    </div>
+                <div class="text-left text-[1.2rem] text-black pl-[2rem] py-[1.2rem] absolute w-screen bg-gray-50 box-border border-black">
+                    <p>All Person Data</p>
                 </div>
-                
-                
                 <div class="text-right pl-[8rem] text-[1.2rem] text-black bottom-0 py-[0.8rem] absolute w-screen bg-gray-50 box-border border-black border-t-[0.2px] h-[3.5rem]">
                     <div class="pagination-links flex">
-                        {{-- Pagination --}}
+                        {{-- PAgination --}}
                     </div>
                 </div>
-                <a href="{{ route('export.kredit') }}">
+                <a href="{{ route('export.pickup') }}">
                     <div class="rounded-md border border-gray-300 bg-gray-50  shadow-md px-[0.5rem] py-[0.2rem] absolute bottom-[0.5rem] left-3 cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300">
                         <label for="upload" class="flex flex-wrap items-center cursor-pointer gap-1">
                             <i class='bx bxs-file-export text-[1.8rem]'></i>
@@ -31,10 +27,9 @@
                     </div>
                 </a>
                 <div class=" h-full py-[4rem] overflow-auto" id="content">
-                    
                     @foreach ($kredit as $no => $data)
-                    <a href="{{ route('kredit.show', $data->id) }}">
-                        <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem] overflow-x-scroll">
+                    <a href="{{ route('pickup.show', $data->id) }}">
+                        <div class="border-b-[0.5px]  border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
                             <p class="text-[1.3rem]">
                                 {{ $kredit->firstItem() + $loop->index }}
                             </p>                            
@@ -56,10 +51,10 @@
             </div>
 
             <div class=" mt-[2.5rem] absolute left-[45%] sm:w-1/2 ">
-                <div class="w-[13rem] py-[0.3rem] mb-[1rem] hidden md2:block rounded-[7px] text-[1.1rem] font-semibold bg-gray-50 box-border border-black shadow-lg">
-                    <p>Kredit</p>
+                <div class="w-[13rem] py-[0.3rem] mb-[1rem] rounded-[7px] hidden md2:block  text-[1.1rem] font-semibold bg-gray-50 box-border border-black shadow-lg">
+                    <p>Pickup</p>
                 </div>
-                <div class="grid grid-cols-1 gap-3">
+                <div class=" grid-cols-1 gap-3 hidden lg:block">
                     <div class="w-[45rem] h-[18rem] bg-gray-50 rounded p-4 box-border border-[0.5px] border-black shadow-lg hidden lg:block">
                         {!! $chartWeek->container() !!}
                     </div>    
@@ -76,7 +71,6 @@
     <script src="{{ $chartMonth->cdn() }}"></script>
     {{ $chartMonth->script() }}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
     <script>
         let currentPage = 1;
         const pollingInterval = 5000;  // Mengatur interval polling menjadi 5 detik
@@ -84,7 +78,7 @@
         $(document).ready(function() {
             function checkToken() {
                 $.ajax({
-                    url: '{{ $urlPath }}/api/check-token/kredit',
+                    url: '{{ $urlPath }}/api/check-token/pickup',
                     method: 'GET',
                     success: function(response) {
                         if (!response.valid) {
@@ -101,7 +95,7 @@
     
             function fetchData(page = 1, search = '') {
                 $.ajax({
-                    url: `{{ $urlPath }}/api/kredit?page=${page}&search=${encodeURIComponent(search)}`,
+                    url: `{{ $urlPath }}/api/pickup?page=${page}&search=${encodeURIComponent(search)}`,
                     method: 'GET',
                     success: function(response) {
                         currentPage = response.pagination.current_page;
@@ -122,11 +116,11 @@
                     const createdAt = new Date(item.created_at);
                     const time = createdAt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
                     const date = createdAt.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-                    
+    
                     const nomor = (currentPage - 1) * perPage + index + 1;
 
                     content += `
-                    <a href="{{ $urlPath }}/kredit/${item.id}">
+                    <a href="{{ $urlPath }}/pickup/${item.id}">
                         <div class="border-b-[0.5px] border-black border-dashed mx-[2rem] flex items-center cursor-pointer py-[0.1rem] my-[0.8rem]">
                             <p class="text-[1.3rem]">
                                 ${nomor}
@@ -149,7 +143,6 @@
                 $('#content').html(content);
                 console.log('Konten diperbarui');
             }
-
     
             function updatePagination(pagination) {
                 let paginationHtml = '';
@@ -169,6 +162,14 @@
                 $('.pagination-links').html(paginationHtml);
                 console.log('Pagination diperbarui');
             }
+    
+            $(document).on('click', '.pagination-link', function(e) {
+                e.preventDefault();
+                const page = $(this).data('page');
+                if (page) {
+                    fetchData(page);
+                }
+            });
     
             $(document).on('submit', '#search-form', function(e) {
                 e.preventDefault();
@@ -192,7 +193,6 @@
             // Cek token setiap detik
             setInterval(checkToken, 1000);
         });
-    </script>    
-
+    </script>
     
 @endsection

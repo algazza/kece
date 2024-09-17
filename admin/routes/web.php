@@ -56,7 +56,7 @@ Route::middleware(['guest'])->group(function(){
 
 Route::middleware(['auth'])->group(function(){
     // Logout
-    Route::get('/logout', [AdminController::class, 'logout']); 
+    Route::get('/logout', [AdminController::class, 'logout'])->name('logout'); 
 
     // Show Admin
     Route::get('Admin/{id}/show', [AdminController::class, 'showAdmin'])->name('admin.show');

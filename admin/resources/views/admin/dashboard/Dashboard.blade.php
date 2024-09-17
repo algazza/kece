@@ -302,7 +302,7 @@
     
             function fetchTotalData() {
         $.ajax({
-            url: '/api/dashboard/total-data',
+            url: '{{ $urlPath }}/api/dashboard/total-data',
             method: 'GET',
             success: function(response) {
                 $('#totalData').text(response.totalData);
@@ -315,7 +315,7 @@
 
     function fetchData(page = 1) {
         $.ajax({
-            url: `/api/dashboard/kredit?page=${page}`,
+            url: `{{ $urlPath }}/api/dashboard/kredit?page=${page}`,
             method: 'GET',
             success: function(response) {
                 currentPage = response.pagination.current_page;
