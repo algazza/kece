@@ -11,7 +11,6 @@ import News from "./Pages/News/News.jsx";
 import IsiNews from "./Pages/News/IsiNews.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
 import LocationPage from "./Pages/LocationPage.jsx";
-import Success from "./Pages/Success.jsx";
 import Sponsor from "./Pages/Sponsor.jsx";
 import Sejarah from "./Pages/Sejarah.jsx";
 import Manajemen from "./Pages/Manajemen.jsx";
@@ -106,7 +105,7 @@ const router = createBrowserRouter([
         element: <Promo />,
       },
       {
-        path: "promo/:slug ",
+        path: "promo/:slug",
         element: <IsiPromo />,
       },
       {
@@ -114,10 +113,6 @@ const router = createBrowserRouter([
         element: <Sponsor />,
       },
     ],
-  },
-  {
-    path: "/success",
-    element: <Success />,
   },
   {
     path: "/login",
