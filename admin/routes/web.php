@@ -60,7 +60,6 @@ Route::middleware(['auth'])->group(function(){
 
     // Show Admin
     Route::get('Admin/{id}/show', [AdminController::class, 'showAdmin'])->name('admin.show');
-
     // Dashboard
     Route::get('/Dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('AdminAkses:admin,deposit,kredit,tabungan,pickup,promosi');
     Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
@@ -183,4 +182,3 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::get('/Promo/Edit/{slug}', [PromoController::class, 'find'])->name('promo.find');
     Route::delete('/Promo/delete/{id}', [PromoController::class, 'destroy'])->name('promo.delete');
 });
-
