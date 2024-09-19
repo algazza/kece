@@ -4,15 +4,9 @@ import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import IntroBanner from "../Layouts/IntroBanner";
 import {
   BlueBanner,
-  logoArmor,
-  profileDewanKomisaris,
-  profileMisi,
-  profileNilai,
   profileTimeline,
-  profileVisi,
 } from "../helper";
 import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
 
 const Sejarah = () => {
   const [currentStep, setCurrentStep] = useState(0);

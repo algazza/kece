@@ -43,13 +43,13 @@ const Header = () => {
           className={`list-none sm:flex hidden justify-end items-center flex-1 gap-12 ${styles.fontBody} font-semibold`}
         >
           <li>
-            <FlyoutLink href={"/"}>Home</FlyoutLink>
+            <FlyoutLink href={""}>Home</FlyoutLink>
           </li>
           <li>
             <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink href={"/berita"}>Berita</FlyoutLink>
+            <FlyoutLink href={"berita"}>Berita</FlyoutLink>
           </li>
           <li>
             <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>
@@ -85,7 +85,7 @@ const Header = () => {
               >
                 <ul className="font-semibold">
                   <li className="my-3">
-                    <Link to={"/"}>Home</Link>
+                    <Link to={""}>Home</Link>
                   </li>
                   <li>
                     <Accordion sx={{ boxShadow: "none" }}>
@@ -100,41 +100,19 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/sejarah"}>Sejarah</Link>
-                            <Link to={"/visi-misi"}>Visi Misi</Link>
-                            <Link to={"/penghargaan"}>Penghargaan</Link>
-                            <Link to={"/manajemen"}>Manajemen</Link>
-                            <Link to={"/lokasi"}>Lokasi</Link>
-                            <Link to={"/laporan"}>Laporan</Link>
-                            {/* <li>
-                              {" "}
-                              <Accordion sx={{ boxShadow: "none" }}>
-                                <AccordionSummary
-                                  expandIcon={<ExpandMoreIcon />}
-                                  aria-controls="panel1-content"
-                                  id="panel1-header"
-                                  sx={{ padding: "0px", border: "none" }}
-                                >
-                                  Laporan
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                  <ul>
-                                    <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                                      <Link to={"/sejarah"}>Laporan Triwulan</Link>
-                                      <Link to={"/visi-misi"}>Laporan GCG</Link>
-                                      <Link to={"/laporan"}>Laporan Tahunan</Link>
-                                    </li>
-                                  </ul>
-                                </AccordionDetails>
-                              </Accordion>
-                            </li> */}
+                            <Link to={"sejarah"}>Sejarah</Link>
+                            <Link to={"visi-misi"}>Visi Misi</Link>
+                            <Link to={"penghargaan"}>Penghargaan</Link>
+                            <Link to={"manajemen"}>Manajemen</Link>
+                            <Link to={"lokasi"}>Lokasi</Link>
+                            <Link to={"laporan"}>Laporan</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
                     </Accordion>
                   </li>
                   <li className="my-3">
-                    <Link to={"/berita"}>Berita</Link>
+                    <Link to={"berita"}>Berita</Link>
                   </li>
                   <li>
                     <Accordion sx={{ boxShadow: "none" }}>
@@ -149,9 +127,9 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/kredit"}>Kredit</Link>
-                            <Link to={"/deposito"}>Deposito</Link>
-                            <Link to={"/tabungan"}>Tabungan</Link>
+                            <Link to={"kredit"}>Kredit</Link>
+                            <Link to={"deposito"}>Deposito</Link>
+                            <Link to={"tabungan"}>Tabungan</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -170,11 +148,11 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"/pick-up-service"}>Pick Up</Link>
-                            <Link to={"/armor-properti"}>Armor Properti</Link>
+                            <Link to={"pick-up-service"}>Pick Up</Link>
+                            <Link to={"armor-properti"}>Armor Properti</Link>
                             <Link to={"/#simulasi"}>Simulasi</Link>
-                            <Link to={"/promo"}>Promo</Link>
-                            <Link to={"/sponsor"}>Sponsor</Link>
+                            <Link to={"promo"}>Promo</Link>
+                            <Link to={"sponsor"}>Sponsor</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -235,12 +213,12 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
 // function subMenu
 const AboutUs = () => {
   const items = [
-    { name: "Sejarah", link: "/sejarah" },
-    { name: "Visi Misi", link: "/visi-misi" },
-    { name: "Penghargaan", link: "/penghargaan" },
-    { name: "Manajemen", link: "/manajemen" },
-    { name: "Lokasi", link: "/lokasi" },
-    { name: "Laporan", link: "/laporan" },
+    { name: "Sejarah", link: "sejarah" },
+    { name: "Visi Misi", link: "visi-misi" },
+    { name: "Penghargaan", link: "penghargaan" },
+    { name: "Manajemen", link: "manajemen" },
+    { name: "Lokasi", link: "lokasi" },
+    { name: "Laporan", link: "laporan" },
   ];
 
   return <MenuList items={items} />;
@@ -248,9 +226,9 @@ const AboutUs = () => {
 
 const Product = () => {
   const items = [
-    { name: "Kredit", link: "/kredit" },
-    { name: "Deposito", link: "/deposito" },
-    { name: "Tabungan", link: "/tabungan" },
+    { name: "Kredit", link: "kredit" },
+    { name: "Deposito", link: "deposito" },
+    { name: "Tabungan", link: "tabungan" },
   ];
 
   return <MenuList items={items} />;
@@ -258,11 +236,11 @@ const Product = () => {
 
 const Service = () => {
   const items = [
-    { name: "Pick Up", link: "/pick-up-service" },
-    { name: "Armor Properti", link: "/armor-properti" },
-    { name: "Simulasi", link: "/#simulasi" },
-    { name: "Promo", link: "/promo" },
-    { name: "Sponsor", link: "/sponsor" },
+    { name: "Pick Up", link: "pick-up-service" },
+    { name: "Armor Properti", link: "armor-properti" },
+    { name: "Simulasi", link: "#simulasi" },
+    { name: "Promo", link: "promo" },
+    { name: "Sponsor", link: "sponsor" },
     { name: "Login", link: "https://etna.scxserver.com:2096" },
   ];
 

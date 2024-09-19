@@ -1,15 +1,11 @@
 import { motion } from "framer-motion";
-import {
-  Link,
-  useNavigate,
-  useRouteError,
-} from "react-router-dom";
+import { Link, useNavigate, useRouteError } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import HomeIcon from "@mui/icons-material/Home";
 import UndoIcon from "@mui/icons-material/Undo";
 import styles from "../helper/style";
 
-const Error = ({message, status}) => {
+const Error = ({ message, status }) => {
   const error = useRouteError();
   const navigate = useNavigate();
 
@@ -49,7 +45,11 @@ const Error = ({message, status}) => {
 
         <div className={`${styles.flexCenter} flex-col text-center`}>
           <h1 className={`${styles.heading1}`}>Oops, Something Happened</h1>
-          <p className="mb-6">{displayStatus === 404 ? "Halaman tidak ditemukan" : displayMessage || "Terjadi kesalahan."}</p>
+          <p className="mb-6">
+            {displayStatus === 404
+              ? "Halaman tidak ditemukan"
+              : displayMessage || "Terjadi kesalahan."}
+          </p>
 
           <div className="flex gap-6">
             <button

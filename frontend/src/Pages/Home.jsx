@@ -6,18 +6,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import styles from "../helper/style";
 import ImageBanner from "../Layouts/ImageBanner";
 import {
-  Banneremyu,
-  BennerLiv,
   ImageSimulasi,
-  nunezimg,
   phoneimg,
-  sampleBanner,
   SimulasiPercil1,
   SimulasiPercil2,
   SimulasiPercil3,
   SimulasiPercil4,
   ThumbnailYoutube,
-} from "../helper";
+} from "../helper/index";
 // ==================== ICON ===========================
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";

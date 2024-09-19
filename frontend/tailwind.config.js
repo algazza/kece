@@ -66,13 +66,9 @@ export default {
         x3300: "repeat(3, 300px)",
       },
       backgroundImage: {
-        footerimage: "url('./src/img/footerimg.svg')",
-        footerimagexs: "url('./src/img/footerimg-xs.svg')",
-        imagebgWithTitle: "url('./src/img/imageWithTitle.svg')",
-        checkmark: 'url("./src/img/CheckIcon.svg")',
-      },
-      listStyleImage: {
-        checkmark: 'url("./src/img/CheckIcon.svg")',
+        footerimage: "url('../img/footerimg.svg')",
+        footerimagexs: "url('../img/footerimg-xs.svg')",
+        imagebgWithTitle: "url('../img/imageWithTitle.svg')",
       },
     },
   },

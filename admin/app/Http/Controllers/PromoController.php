@@ -107,9 +107,4 @@ class PromoController extends Controller
         $promo = Promo::where('slug', $slug)->first();
         return response()->json($promo);
     }
-
-    public function updateAt(){
-        $promoUpdate = Promo::orderBy('updated_at', 'DESC')->first(['update_at']);
-        return response()->json($promoUpdate);
-    }
 }

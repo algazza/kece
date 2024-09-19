@@ -3,8 +3,6 @@ import {
   footer1,
   footer2,
   logoArmor,
-  marqueeImage,
-  TiktokIcon,
 } from "../helper/index";
 import styles from "../helper/style";
 // ----- MUI -----

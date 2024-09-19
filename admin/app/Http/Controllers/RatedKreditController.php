@@ -36,4 +36,10 @@ class RatedKreditController extends Controller
         return response()->json($ratedKredit);
     }
 
+    
+    public function updateAt(){
+        $rateKreditUpdate = RatedKredit::orderBy('updated_at', 'DESC')->first(['update_at']);
+        return response()->json($rateKreditUpdate);
+    }
+
 }
