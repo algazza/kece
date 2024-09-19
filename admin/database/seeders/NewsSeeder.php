@@ -39,7 +39,7 @@ Darmawan juga menekankan pentingnya kegiatan literasi keuangan seperti ini untuk
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
                 'tanggal' => '22/07/2009',
-                'slug' => ''
+                'slug' => 'dukung-gencarkan-bank-arto-moro-hadirkan-edukasi-keuangan-di-cfd'
             ],
             [
                 'judul' => 'Perkuat UMKM, Bank Arto Moro dan Bank Eka Teken Kerja Sama Linkage',
@@ -66,7 +66,7 @@ Lebih jauh, Eko Budiyono berharap bahwa inisiatif kerja sama ini dapat menjadi c
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
                 'tanggal' => '22/07/2009',
-                'slug' => ''
+                'slug' => 'perkuat-umkm-bank-arto-moro-dan-bank-eka-teken-kerja-sama-linkage'
             ],
             [
                 'judul' => 'Bank Arto Moro dan BPR Lingga Sejahtera Jalin Kolaborasi',
@@ -94,7 +94,7 @@ Kegiatan ini tidak hanya memperkuat hubungan antara kedua lembaga tetapi juga me
  
                 'image' => 'profil.jpg',
                 'tanggal' => '22/07/2009',
-                'slug' => ''
+                'slug' => 'bank-arto-moro-dan-bpr-lingga-sejahtera-jalin-kolaborasi'
             ],
             [
                 'judul' => 'Bank Arto Moro Dorong Wirausahawan Baru',
@@ -109,7 +109,7 @@ Pertemuan ketiga sosok tersebut menjadi platform dalam merencanakan langkah stra
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
                 'tanggal' => '22/07/2009',
-                'slug' => ''
+                'slug' => 'bank-arto-moro-dorong-wirausahawan-baru'
             ],
             [
                 'judul' => 'Bank Arto Moro dan BPR Pundi Masyarakat Gelar Studi Banding untuk Memperkuat Hubungan dan Branding',
@@ -138,7 +138,7 @@ Darmawan berharap dengan saling berbagi pengetahuan, pengalaman, dan sumber daya
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
                 'tanggal' => '22/07/2009',
-                'slug' => ''
+                'slug' => 'bank-arto-moro-dan-bpr-pundi-masyarakat-gelar-studi-banding-untuk-memperkuat-hubungan-dan-branding'
             ],
             [
                 'judul' => 'Bank Arto Moro Kembali Meraih Penghargaan TOP 100 BPR The Finance Tahun 2024',
