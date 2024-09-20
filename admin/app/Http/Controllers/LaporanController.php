@@ -14,17 +14,17 @@ class LaporanController extends Controller
     }
 
     public function viewTriwulan(){
-        $laporan = Laporan::where('jenis_laporan', 'Triwulan')->get();
+        $laporan = Laporan::orderBy('created_at', 'DESC')->where('jenis_laporan', 'Triwulan')->get();
         return view ('admin.laporan.triwulan.triwulan', compact('laporan'));
     }
 
     public function viewGcg(){
-        $laporan = Laporan::where('jenis_laporan', 'GCG')->get();
+        $laporan = Laporan::orderBy('created_at', 'DESC')->where('jenis_laporan', 'GCG')->get();
         return view ('admin.laporan.gcg.gcg', compact('laporan'));
     }
 
     public function viewTahunan(){
-        $laporan = Laporan::where('jenis_laporan', 'Tahunan')->get();
+        $laporan = Laporan::orderBy('created_at', 'DESC')->where('jenis_laporan', 'Tahunan')->get();
         return view ('admin.laporan.tahunan.tahunan', compact('laporan'));
     }
 
@@ -69,7 +69,7 @@ class LaporanController extends Controller
     }
 
     public function index(){
-        $laporan = Laporan::get();
+        $laporan = Laporan::orderBy('created_at', 'DESC')->get();
         return response()->json($laporan);
     }
 

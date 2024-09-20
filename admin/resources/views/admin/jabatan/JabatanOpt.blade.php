@@ -35,6 +35,20 @@
                     </div>
                 </div>
             </a>
+            <a href="{{ route('pejabat.index') }}" class="relative max-w-md rounded-lg bg-gradient-to-tr w-auto from-white to-white p-0.5 shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 md:w-[20rem]">
+                <div class="bg-white p-7 rounded-md">
+                        <div class="flex">
+                        </div>
+                        <div class="py-2">
+                            <div>
+                                <p class="text-lg tracking-tight font-semibold text-black py-[6px]"><i class='bx bx-user-plus text-7xl'></i></p>
+                                <p class="text-lg tracking-tight font-semibold text-slate-900 py-[6px]">Pejabat</p>
+                                <p class=" tracking-tight text-slate-900 py-[6px]">organ perusahaan yang bertanggung jawab atas pengurusan perusahaan sehari-hari. Direksi memiliki tugas dan tanggung jawab</p>
+                    
+                            </div>  
+                        </div>
+                    </div>
+                </a>
         </ul>
 
     </section>

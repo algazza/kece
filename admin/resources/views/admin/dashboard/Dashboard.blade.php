@@ -17,7 +17,7 @@
             </div>
             @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
             <a href="{{ route('news') }}">
-            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden ss:block">
+            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden lg:block">
                 <div>
                     <div class="mt-[1.3rem]">
                         <div class="text-[5rem]">
@@ -31,7 +31,7 @@
             @endif
             @if (Auth::user()->role == 'promosi' || Auth::user()->role == 'admin')
             <a href="{{ route('sponsor.index') }}">
-            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden sm:block">
+            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden lg:block">
                 <div>
                     <div class="mt-[0.5rem]">
                         <div class="text-[6rem] ">
@@ -45,7 +45,7 @@
             @endif
             @if (Auth::user()->role == 'admin' || Auth::user()->role == 'promosi' )
             <a href="{{ route('banner') }}">
-            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden md2:block">
+            <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden lg:block">
                 <div>
  
                     <div class="mt-[0.5rem]">

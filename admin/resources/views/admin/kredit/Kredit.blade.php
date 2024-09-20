@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <div class=" mt-[2.5rem] absolute left-[45%] sm:w-1/2 ">
+            <div class=" mt-[5rem] absolute left-[45%] flex">
                 <div class="w-[13rem] py-[0.3rem] mb-[1rem] hidden md2:block rounded-[7px] text-[1.1rem] font-semibold bg-gray-50 box-border border-black shadow-lg">
                     <p>Kredit</p>
                 </div>

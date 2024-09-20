@@ -45,7 +45,7 @@
 
   </div>
 
-  <section class="py-8 grid md:grid-cols-x480 ml-[2rem] mr-[2rem] justify-center gap-6 sm:gap-12">
+  <section class="py-8 grid md:grid-cols-2 px-[13rem] md:ml-[2rem] mr-[2rem] justify-center gap-6 sm:gap-12">
     @foreach($news as $item)
     <a href="{{ route('news.edit', ['slug' => $item->slug]) }}">
         <div

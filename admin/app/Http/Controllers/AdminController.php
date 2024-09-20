@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     function viewLogin(){
-        return view('admin.login.login');
+        return view('admin.login.Login');
     }
 
     // Login
