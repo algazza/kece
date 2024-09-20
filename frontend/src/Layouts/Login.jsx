@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   FormControl,
   FormHelperText,
@@ -6,17 +6,15 @@ import {
   InputAdornment,
   InputLabel,
   OutlinedInput,
-  TextField,
 } from "@mui/material";
 import styles from "../helper/style";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Navigate, useNavigate } from "react-router-dom";
-import { loaderIcon, logoArmor } from "../helper";
+import logoArmor from "../../public/img/LOGO-AM-CORAL-BARU.svg";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -33,49 +31,37 @@ const Login = () => {
   //   login function
   const handleSubmit = (event) => {
     event.preventDefault();
-    const correctUsername = "admin123";
-    const correctPassword = "artomorogemesh";
+    const correctPassword = "jonarmor";
 
-    if (username === correctUsername && password === correctPassword) {
+    if (password === correctPassword) {
       // save to localstorage
-      localStorage.setItem("username", username);
+      localStorage.setItem("passkey", password);
       localStorage.setItem("isAuthenticated", "true");
       setError("");
       navigate("/");
     } else {
-      setError("Invalid Username or Password");
+      setError("Passkey salah");
     }
   };
 
   //   mengecek setelah jika seseorang berhasil login
-  const isAuthenticated = localStorage.getItem("username");
+  const isAuthenticated = localStorage.getItem("passkey");
   if (isAuthenticated) {
     return <Navigate to="/" />;
   }
 
   return (
-    <section className="flex flex-col gap-4 justify-center items-center h-dvh">
+    <section
+      className={`${styles.paddingY} flex flex-col gap-2 justify-center items-center h-dvh`}
+    >
       <img src={logoArmor} alt="icon-artomoro" className="w-40" />
-      <form
-        className="p-4 border-2 border-abuGelap rounded-md"
-        onSubmit={handleSubmit}
-      >
-        <h2 className={`${styles.heading1} text-center mb-2`}>Login</h2>
-        <FormControl fullWidth>
-          <TextField
-            id="outlined-basic"
-            label="Username"
-            variant="outlined"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            error={error && !username}
-            helperText={error && !username ? `username is required` : ""}
-          />
-        </FormControl>
+      <h2 className={`${styles.heading3} text-center px-2`}>
+        Maaf Website sedang dalam maintanance
+      </h2>
+      <p className="text-center px-2">Masukkan passkey untuk melihat website</p>
+      <form className="" onSubmit={handleSubmit}>
         <FormControl fullWidth sx={{ marginY: 2 }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">
-            Password
-          </InputLabel>
+          <InputLabel htmlFor="outlined-adornment-password">Passkey</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
             type={showPassword ? "text" : "password"}
@@ -98,7 +84,7 @@ const Login = () => {
             label="Password"
           />
           {error && !password && (
-            <FormHelperText error>Password is required</FormHelperText>
+            <FormHelperText error>Passkey harus diisi</FormHelperText>
           )}
         </FormControl>
 
@@ -107,7 +93,7 @@ const Login = () => {
             type="submit"
             className="font-semibold py-2 px-8 bg-biruMuda-500 rounded-md text-primary"
           >
-            Login
+            Masuk
           </button>
           {error && <p className="text-red-500 text-center mt-2">{error}</p>}
         </div>

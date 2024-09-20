@@ -1,1 +1,1 @@
-export const localhostLink = "http://localhost:8000";
+export const localhostLink = "https://armor-dev.dgx-lab.com/newwebsite/admin/public";

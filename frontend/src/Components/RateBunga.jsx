@@ -38,6 +38,8 @@ const RateBunga = ({ handleOpenRateBunga }) => {
     setMenuTabel(id);
   };
 
+  console.log(rateKredit)
+
   return (
     <motion.div
       initial={{ opacity: 0 }}

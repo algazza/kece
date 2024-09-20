@@ -88,7 +88,7 @@ const SimulasiCalcTabungan = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.5 }}
-      className="bg-biruMuda-200 rounded-xl p-4"
+      className="bg-biruMuda-200 rounded-3xl p-4"
     >
       {!showResult && (
         <form onSubmit={handleCalculations}>

@@ -18,6 +18,7 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import DevicesOtherIcon from "@mui/icons-material/DevicesOther";
 import TabelComp from "../../Components/TabelComp";
 import { localhostLink } from "../../helper/localhost";
+import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 // ===================================================
 const buttonMenuTabungan = [
   {
@@ -77,7 +78,7 @@ const buttonMenuTabungan = [
   {
     id: 7,
     icon: (className) => (
-      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
+      <CardGiftcardIcon className={className} sx={{ fontSize: "40px" }} />
     ),
     title: "SimpHaTi",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
