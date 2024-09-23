@@ -6,20 +6,20 @@
             <div
                 class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center dark:bg-white">
                 <div class="flex">
-                    <a href="{{ route ('manajemen.index') }}" class=" mr-[1rem] hidden md:block xl:block">
+                    <a href="{{ route ('pejabat.index') }}" class=" mr-[1rem] hidden md:block xl:block">
                         <i class='bx bx-arrow-back text-4xl rounded-lg font-semibold bg-white border border-gray-300 text-red-600 px-2 hover:bg-gray-300 shadow-sm duration-300 ' ></i>
                     </a>
                     <h1 class="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2 dark:text-black">
                         Edit Person
                     </h1>
                 </div>
-                    <form enctype="multipart/form-data" method="post" action="{{ route('manajemen.update', $manajemen->id) }}">
+                    <form enctype="multipart/form-data" method="post" action="{{ route('pejabat.update', $pejabat->id) }}">
                         @csrf
                         @method('PUT')
                         <div
                         class="w-full rounded-sm bg-cover bg-center bg-no-repeat items-center">
                         <div class="mx-auto flex justify-center">
-                            <img src="{{ asset('image/public/manajemen/' . $manajemen->image) }}" id="previewImage" class="mr-[-9rem] rounded-full w-[141px] h-[141px] bg-transparent border-black border-[1px] bg-cover bg-center bg-no-repeat" alt>
+                            <img src="{{ asset('image/public/pejabat/' . $pejabat->image) }}" id="previewImage" class="mr-[-9rem] rounded-full w-[141px] h-[141px] bg-transparent border-black border-[1px] bg-cover bg-center bg-no-repeat" alt>
                             <div class="bg-white/90 rounded-full w-6 h-6 text-center ml-28 mt-4">
                                 <input type="file" name="image" id="upload_profile" hidden >
                                     <label for="upload_profile">
@@ -38,20 +38,20 @@
                                 <input type="text"
                                        id="name"
                                        class="mt-2 p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white "
-                                       placeholder="Nama Anda" name="nama" value="{{ $manajemen->nama }}">
+                                       placeholder="Nama Anda" name="nama" value="{{ $pejabat->nama }}">
                             </div>
                             <div class="w-full mb-4 lg:mt-6">
                                 <label class="dark:text-black">Jabatan</label>
                                 <input type="text"
                                        class="mt-2 p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white "
-                                       placeholder="Jabatan" name="jabatan" value="{{ $manajemen->jabatan }}">
+                                       placeholder="Jabatan" name="jabatan" value="{{ $pejabat->jabatan }}">
                             </div>
                         </div>
     
                         <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col xss:flex-col gap-2 justify-center w-full">
                             <div class="w-full">
                                 <h3 class="dark:text-black mb-2">Deskripsi</h3>
-                                <textarea type="text" class="text-grey p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white " name="deskripsi" value="">{{ $manajemen->deskripsi }}</textarea>
+                                <textarea type="text" class="text-grey p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white " name="deskripsi" value="">{{ $pejabat->deskripsi }}</textarea>
                             </div>
                         </div>
                         <div class="w-full rounded-lg bg-blue-500 mt-4 text-white text-lg font-semibold cursor-pointer hover:bg-blue-600 hover:text-white duration-300">
@@ -59,7 +59,7 @@
                         </div>
                     </form>
                         <div class="w-full rounded-lg bg-red-500 mt-4 text-white text-lg font-semibold cursor-pointer hover:bg-red-600 hover:text-white duration-300">
-                            <form action="{{ route('manajemen.delete', $manajemen->id) }}" method="POST">
+                            <form action="{{ route('pejabat.delete', $pejabat->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="w-full p-4">Delete</button>

@@ -5,7 +5,7 @@
         <a href="{{ route ('jabatan') }}" class="hidden md:block xl:block">
         <i class='bx bx-arrow-back text-4xl rounded-lg font-semibold bg-white ml-[5rem] text-red-600 px-2 hover:bg-gray-300 shadow-sm duration-300 ' ></i>
     </a>
-        <h1 class="text-3xl text-gray-700 border border-gray-300 shadow-md shadow-gray-400 font-semibold bg-white mx-auto max-w-xs py-3 px-5 rounded-md">Komisaris</h1>
+        <h1 class="text-3xl text-gray-700 border border-gray-300 shadow-md shadow-gray-400 font-semibold bg-white mx-auto max-w-xs py-3 px-5 rounded-md">Pejabat Eksekutif</h1>
     </div>
     <section class="mx-[5rem] grid grid-cols-1 md2:grid-cols-2 lg:grid-cols-4 mt-[5rem] mb-6">
         @foreach ($pejabat as $item)
