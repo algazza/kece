@@ -500,14 +500,16 @@ export const SponsorForm = ({
         <div className={`${styles.inputSpan}`}>
           <span>Catatan</span>
           <TextareaAutosize
-            className="resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
-                  border border-solid border-slate-300 hover:border focus:border-black focus-visible:outline-0 box-border"
+                className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                  border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
+                  box-border border-slate-300`}
             aria-label="Catatan"
             minRows={3}
             placeholder="Catatan"
             name="catatan"
             value={inputs.catatan || ""}
             onChange={handleChange}
+            required
           />
           <p className={`${styles.fontCaption} mt-2`}>
             Mohon mengisi di CATATAN kalo memang ada Informasi Awal yang perlu

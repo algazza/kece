@@ -62,7 +62,7 @@ const menuHome = [
   {
     id: 4,
     icon: (className) => <PercentIcon className={className} />,
-    title: "Rate Bunga",
+    title: "Suku Bunga",
     link: "",
   },
   {
@@ -216,7 +216,7 @@ const Home = () => {
               <Link
                 to={menu.link}
                 onClick={
-                  menu.title === "Rate Bunga" && (() => handleOpenRateBunga())
+                  menu.title === "Suku Bunga" && (() => handleOpenRateBunga())
                 }
                 key={menu.id}
                 className="group bg-abuTerang grid justify-items-center py-2 sm:px-6 px-3 rounded-xl transition-all duration-300 ease-in-out"

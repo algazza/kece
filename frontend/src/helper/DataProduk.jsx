@@ -53,24 +53,20 @@ export const IsiKredit = [
     ),
     Ketentuan: (
       <ul className="list-inside list-disc pl-4 sm:pl-16">
-        <li className="p-4">
+        <li>
           Suku bunga 10.25% fix 1 tahun. Bunga floating: tahun berikutnya, Suku
           bunga LPS BPR + 7%
         </li>
-        <li className="p-4">
-          Jangka waktu kredit hingga 8 tahun hingga 20 tahun.
-        </li>
-        <li className="p-4">Pembiayaan : Tanah dan Bangunan 80%</li>
-        <li className="p-4">
+        <li>Jangka waktu kredit hingga 8 tahun hingga 20 tahun.</li>
+        <li>Pembiayaan : Tanah dan Bangunan 80%</li>
+        <li>
           Usia debitur minimal 21 th dan pada saat jatuh tempo kredit / maksimal
           1 tahun sebelum pensiun, khusus untuk wiraswasta dan profesional pada
           saat jatuh tempo kredit usia maksimal 70 th.
         </li>
-        <li className="p-4">DP mulai 10%</li>
-        <li className="p-4">Bebas biaya provisi untuk take over kredit</li>
-        <li className="p-4">
-          Pelunasan dalam masa fix rate berjalan, dikenakan pinalty
-        </li>
+        <li>DP mulai 10%</li>
+        <li>Bebas biaya provisi untuk take over kredit</li>
+        <li>Pelunasan dalam masa fix rate berjalan, dikenakan pinalty</li>
       </ul>
     ),
     Tabel: [

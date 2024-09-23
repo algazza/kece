@@ -18,7 +18,8 @@ import MosqueRoundedIcon from "@mui/icons-material/MosqueRounded";
 import FilterVintageRoundedIcon from "@mui/icons-material/FilterVintageRounded";
 import TabelComp from "../../Components/TabelComp";
 import { localhostLink } from "../../helper/localhost";
-
+import TabelSim from "../../Components/TabelSim";
+import TabelBiaya from "../../Components/TabelBiaya";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -167,21 +168,25 @@ const SyaratKredit = () => {
           <section key={kredit.id}>
             {/* Menu pilihan */}
             <section className="pt-10 flex justify-center">
-              {["Syarat", "Ketentuan", "Tabel", "Pengajuan"].map(
-                (menu, index) => (
-                  <div
-                    key={index}
-                    onClick={() => updateTabs(index + 1)}
-                    className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                      tabs === index + 1
-                        ? "bg-biruMuda-500 text-primary rounded-md"
-                        : ""
-                    }`}
-                  >
-                    {menu}
-                  </div>
-                )
-              )}
+              {[
+                "Keuntungan",
+                "Syarat & Ketentuan",
+                "Tabel Simulasi",
+                "Biaya",
+                "Hubungi Kami",
+              ].map((menu, index) => (
+                <div
+                  key={index}
+                  onClick={() => updateTabs(index + 1)}
+                  className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+                    tabs === index + 1
+                      ? "bg-biruMuda-500 text-primary rounded-md"
+                      : ""
+                  }`}
+                >
+                  {menu}
+                </div>
+              ))}
             </section>
 
             {/* Isi dari Menu */}
@@ -199,23 +204,12 @@ const SyaratKredit = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-6 sm:mx-10 sm:px-10 "
                 >
-                  <ul className="text-abuGelap sm:ml-4">
-                    <h3 className={`${styles.heading5} text-black my-5`}>
+                  <ol className="text-abuGelap sm:ml-4">
+                    <li className={`${styles.heading5} text-black`}>
                       A. Keuntungan
-                    </h3>
+                    </li>
                     {kredit.Keuntungan}
-
-                    <h3 className={`${styles.heading5} text-black my-5 `}>
-                      B. Fitur
-                    </h3>
-
-                    {kredit.Fitur}
-
-                    <h3 className={`${styles.heading5} text-black my-5`}>
-                      C. Syarat Pembukuan rekening
-                    </h3>
-                    {kredit.Syarat}
-                  </ul>
+                  </ol>
                 </motion.div>
               ) : null}
 
@@ -228,12 +222,17 @@ const SyaratKredit = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-7 md:mx-10 md:px-10"
                 >
-                  <ul className="text-abuGelap sm:ml-4">
-                    <h3 className={`${styles.heading5} text-black my-4`}>
-                      D. Ketentuan
-                    </h3>
+                  <ol className="list text-abuGelap sm:ml-4">
+                    <li className={`${styles.heading5} text-black`}>
+                      B. Syarat
+                    </li>
+                    {kredit.Syarat}
+
+                    <li className={`${styles.heading5} text-black mt-4`}>
+                      C. Ketentuan
+                    </li>
                     {kredit.Ketentuan}
-                  </ul>
+                  </ol>
                 </motion.div>
               ) : null}
 
@@ -252,12 +251,25 @@ const SyaratKredit = () => {
                     D. Tabel Penempatan Dana
                   </h3>
 
-                  <TabelComp kredit={kredit.Tabel} />
+                  <TabelSim />
                 </motion.div>
               ) : null}
 
               {/* Form */}
               {tabs === 4 ? (
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5 }}
+                  className={`sm:mx-10 sm:px-10 ${styles.flexCenter}`}
+                >
+                  <TabelBiaya/>
+                </motion.div>
+              ) : null}
+
+              {/* Form */}
+              {tabs === 5 ? (
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}

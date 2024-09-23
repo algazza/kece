@@ -50,12 +50,12 @@ const Header = () => {
           </li>
           <li>
             <FlyoutLink FlyoutContent={Service}>Layanan</FlyoutLink>
-            <li>
-              <li>
-                <FlyoutLink href={"berita"}>Berita</FlyoutLink>
-              </li>
-              <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
-            </li>
+          </li>
+          <li>
+            <FlyoutLink href={"berita"}>Berita</FlyoutLink>
+          </li>
+          <li>
+            <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
           </li>
         </ul>
 
