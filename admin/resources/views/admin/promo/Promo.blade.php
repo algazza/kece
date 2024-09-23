@@ -23,7 +23,7 @@
 
   </div>
 
-  <section class="py-8 grid md:grid-cols-x480 ml-[2rem] mr-[2rem] justify-center gap-6 sm:gap-12">
+  <section class="py-8 grid md:grid-cols-3 md:ml-[5rem] mr-[2rem] justify-center gap-6 sm:gap-12">
     @foreach($promo as $item)
     <a href="{{ route('promo.find', $item->slug) }}">
         <div

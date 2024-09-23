@@ -10,7 +10,7 @@ class NoAdminController extends Controller
 {
     public function viewNoAdmin(){
         $noAdmin = NoAdmin::orderBy('created_at', 'DESC')->first();
-        return view('admin.no_admin.noAdmin', compact('noAdmin'));
+        return view('admin.no_admin.NoAdmin', compact('noAdmin'));
     }
 
 
@@ -21,7 +21,7 @@ class NoAdminController extends Controller
             return redirect()->route('noAdmin');
         }
 
-        return view('admin.no_admin.noAdminEdit', compact('noAdmin'));
+        return view('admin.no_admin.NoAdminEdit', compact('noAdmin'));
     }
 
 

@@ -38,7 +38,8 @@ Darmawan juga menekankan pentingnya kegiatan literasi keuangan seperti ini untuk
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
-                'tanggal' => '22/07/2009'
+                'tanggal' => '22/07/2009',
+                'slug' => 'dukung-gencarkan-bank-arto-moro-hadirkan-edukasi-keuangan-di-cfd'
             ],
             [
                 'judul' => 'Perkuat UMKM, Bank Arto Moro dan Bank Eka Teken Kerja Sama Linkage',
@@ -64,7 +65,8 @@ Lebih jauh, Eko Budiyono berharap bahwa inisiatif kerja sama ini dapat menjadi c
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
-                'tanggal' => '22/07/2009'
+                'tanggal' => '22/07/2009',
+                'slug' => 'perkuat-umkm-bank-arto-moro-dan-bank-eka-teken-kerja-sama-linkage'
             ],
             [
                 'judul' => 'Bank Arto Moro dan BPR Lingga Sejahtera Jalin Kolaborasi',
@@ -91,7 +93,8 @@ Kegiatan ini tidak hanya memperkuat hubungan antara kedua lembaga tetapi juga me
                 'penulis' => 'promosi arto moro',
  
                 'image' => 'profil.jpg',
-                'tanggal' => '22/07/2009'
+                'tanggal' => '22/07/2009',
+                'slug' => 'bank-arto-moro-dan-bpr-lingga-sejahtera-jalin-kolaborasi'
             ],
             [
                 'judul' => 'Bank Arto Moro Dorong Wirausahawan Baru',
@@ -105,7 +108,8 @@ Pertemuan ketiga sosok tersebut menjadi platform dalam merencanakan langkah stra
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
-                'tanggal' => '22/07/2009'
+                'tanggal' => '22/07/2009',
+                'slug' => 'bank-arto-moro-dorong-wirausahawan-baru'
             ],
             [
                 'judul' => 'Bank Arto Moro dan BPR Pundi Masyarakat Gelar Studi Banding untuk Memperkuat Hubungan dan Branding',
@@ -133,127 +137,122 @@ Darmawan berharap dengan saling berbagi pengetahuan, pengalaman, dan sumber daya
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
-                'tanggal' => '22/07/2009'
+                'tanggal' => '22/07/2009',
+                'slug' => 'bank-arto-moro-dan-bpr-pundi-masyarakat-gelar-studi-banding-untuk-memperkuat-hubungan-dan-branding'
             ],
             [
                 'judul' => 'Bank Arto Moro Kembali Meraih Penghargaan TOP 100 BPR The Finance Tahun 2024',
                 'keterangan' => 'Semarang – BPR Arto Moro meraih predikat sangat baik dengan nilai total 92,94 dalam kategori BPR dengan Aset lebih dari Rp100 Miliar versi The Finance. Penilaian ini melibatkan 1.400 BPR di seluruh Indonesia. Penganugerahaan penghargaan tersebut dihadiri oleh petinggi BPR-BPR nasional dan diselenggarakan di Royal Ambarrukmo, Yogyakarta (21/6). Penghargaan ini menjadi ajang apresiasi atas kinerja BPR-BPR dalam mencapai pertumbuhan yang konsisten selama tiga tahun terakhir.
-
-Menanggapi raihan tersebut, Direktur Utama BPR Arto Moro, Darmawan, S.Sos., MM., menyatakan bahwa pencapaian ini merupakan buah dari hasil kerja keras dan dedikasi seluruh keluarga besar BPR Arto Moro dalam menyediakan layanan terbaik. “Kami sangat bersyukur atas penghargaan yang diraih. Ini adalah bukti dari komitmen kami untuk memberikan pelayanan terbaik kepada masyarakat serta memperkuat posisi kami sebagai pilar perkonomian lokal,” tutur Darmawan
-
-Darmawan menyampaikan pencapaian ini bukanlah yang pertama bagi BPR Arto Moro. Prestasi ini merupakan capaian berkelanjutan bagi BPR Arto Moro, yang sebelumnya juga telah meraih peringkat TOP 100 BPR nasional. “Raihan ini menjadi suatu kebanggaan bagi jajaran Komisaris, Direksi, Karyawan serta Nasabah kami semua. Penghargaan ini semakin memacu kami untuk terus meningkatkan kinerja dan kualitas layanan ke depannya,” ujar Direktur Utama BPR Arto Moro.
-
-Darmawan percaya pencapaian ini semakin menguatkan komitmen BPR Arto Moro dalam menyediakan layanan perbankan yang berkualitas tinggi bagi nasabahnya. “Kesuksesan BPR Arto Moro adalah hasil dari strategi yang terarah dan fokus pada kepuasan pelanggan. Dengan beragam produk dan layanan yang inovatif, serta pendekatan yang berorientasi pada kebutuhan nasabah, BPR Arto Moro berhasil membangun hubungan dengan masyarakat dan menjadi elemen kunci dalam pertumbuhan ekonomi,” ucap Darmawan.
-
-Di kesempatan yang sama, Chairman Infobank Media Group, Eko B. Supriyanto, mengungkapkan bahwa acara ini bagian dari kegiatan rutin yang diselenggarakan oleh The Finance sebagai bentuk apresiasi terhadap BPR yang berhasil tumbuh dengan positif. “The Finance Top 100 BPR 2024 disusun dengan riset yang mendalam. Penghargaan ini diberikan kepada BPR-BPR dengan kinerja sangat bagus dan konsisten selama 3 tahun berturut-turut. Dari 1400 BPR yang kami nilai, hanya 6% saja yang bisa masuk dalam penghargaan ini,” ungkap Eko dalam sambutannya.
-
-Eko menerangkan penilaian yang dilakukan oleh The Finance berdasarkan beberapa aspek, termasuk pertumbuhan, permodalan, kualitas aset, rentabilitas, likuiditas, dan efisiensi. Laporan ini sebagai gambaran perkembangan BPR-BPR selama tiga tahun terakhir (2021-2023). “Bagi mereka yang masuk dalam TOP 100, pastinya bukan BPR-BPR sembarangan. Para pemenang penghargaan tentu memiliki likuiditas memadai, rentabilitas yang oke, kualitas aset yang luar biasa, dan juga cuan (efisiensi) yang bagus,” jelas pria yang akrab disapa EBS ini.',
+            
+            Menanggapi raihan tersebut, Direktur Utama BPR Arto Moro, Darmawan, S.Sos., MM., menyatakan bahwa pencapaian ini merupakan buah dari hasil kerja keras dan dedikasi seluruh keluarga besar BPR Arto Moro dalam menyediakan layanan terbaik. “Kami sangat bersyukur atas penghargaan yang diraih. Ini adalah bukti dari komitmen kami untuk memberikan pelayanan terbaik kepada masyarakat serta memperkuat posisi kami sebagai pilar perkonomian lokal,” tutur Darmawan
+            
+            Darmawan menyampaikan pencapaian ini bukanlah yang pertama bagi BPR Arto Moro. Prestasi ini merupakan capaian berkelanjutan bagi BPR Arto Moro, yang sebelumnya juga telah meraih peringkat TOP 100 BPR nasional. “Raihan ini menjadi suatu kebanggaan bagi jajaran Komisaris, Direksi, Karyawan serta Nasabah kami semua. Penghargaan ini semakin memacu kami untuk terus meningkatkan kinerja dan kualitas layanan ke depannya,” ujar Direktur Utama BPR Arto Moro.
+            
+            Darmawan percaya pencapaian ini semakin menguatkan komitmen BPR Arto Moro dalam menyediakan layanan perbankan yang berkualitas tinggi bagi nasabahnya. “Kesuksesan BPR Arto Moro adalah hasil dari strategi yang terarah dan fokus pada kepuasan pelanggan. Dengan beragam produk dan layanan yang inovatif, serta pendekatan yang berorientasi pada kebutuhan nasabah, BPR Arto Moro berhasil membangun hubungan dengan masyarakat dan menjadi elemen kunci dalam pertumbuhan ekonomi,” ucap Darmawan.
+            
+            Di kesempatan yang sama, Chairman Infobank Media Group, Eko B. Supriyanto, mengungkapkan bahwa acara ini bagian dari kegiatan rutin yang diselenggarakan oleh The Finance sebagai bentuk apresiasi terhadap BPR yang berhasil tumbuh dengan positif. “The Finance Top 100 BPR 2024 disusun dengan riset yang mendalam. Penghargaan ini diberikan kepada BPR-BPR dengan kinerja sangat bagus dan konsisten selama 3 tahun berturut-turut. Dari 1400 BPR yang kami nilai, hanya 6% saja yang bisa masuk dalam penghargaan ini,” ungkap Eko dalam sambutannya.
+            
+            Eko menerangkan penilaian yang dilakukan oleh The Finance berdasarkan beberapa aspek, termasuk pertumbuhan, permodalan, kualitas aset, rentabilitas, likuiditas, dan efisiensi. Laporan ini sebagai gambaran perkembangan BPR-BPR selama tiga tahun terakhir (2021-2023). “Bagi mereka yang masuk dalam TOP 100, pastinya bukan BPR-BPR sembarangan. Para pemenang penghargaan tentu memiliki likuiditas memadai, rentabilitas yang oke, kualitas aset yang luar biasa, dan juga cuan (efisiensi) yang bagus,” jelas pria yang akrab disapa EBS ini.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
-                'tanggal' => '22/07/2009'
+                'tanggal' => '22/07/2009',
+                'slug' => 'bank-arto-moro-kembali-meraih-penghargaan-top-100-bpr-the-finance-tahun-2024'
             ],
             [
                 'judul' => 'BANK ARTO MORO GELAR BUKA PUASA DAN PRE LAUNCHING BUS PERUSAHAAN',
                 'keterangan' => '
-Semarang―Sebagai bagian dari rangkaian kegiatan di bulan Ramadhan, Bank Arto Moro menggelar acara buka puasa bersama di kantor pusat, Jl. Elang Raya No. 99 Semarang. Kegiatan yang berlangsung pada Senin (1/4) tersebut didahului dengan kegiatan ceremoni Pre-Launching Bank Arto Moro Official Luxury Bus. Kegiatan buka puasa tersebut diikuti oleh seluruh karyawan Bank Arto Moro. Hadir pula adalah Komisaris Utama sekaligus Pemegang Saham Pengendali (PSP) Bank Arto Moro, Prof. Dr. H. Subyakto, SH,MH,MM beserta jajaran pengurus. Beberapa perwakilan bank mitra juga hadir pada acara tersebut.
-
-Direktur Utama Bank Arto Moro, Darmawan, S.Sos mengatakan bahwa kegiatan buka puasa merupakan agenda rutin yang diselenggarakan oleh Bank Arto Moro. Melalui kegiatan tersebut diharapkan akan semakin meningkatkan nilai-nilai keagamaan dalam diri karyawan sehingga nantinya akan lahir pribadi yang amanah dan bertaqwa.
-
-“Ramadhan tidak hanya dimaknai sebagai momen keagamaan, tetapi juga sebagai kesempatan untuk memperkuat silaturahmi dan persaudaraan. Selain meningkatkan ketaqwaan, momen buka puasa diharapkan diharapkan mampu memperkuat hubungan di antara karyawan sebagai satu tim yang solid dan padu,” terang Darmawan.
-
-Dalam acara buka puasa tersebut, juga dilakukan penyerahan secara simbolis Tunjangan Hari Raya (THR) kepada karyawan Bank Arto Moro. Darmawan mengatakan pemberian THR tersebut diharapkan akan semakin menambah kekhusukan dan suka cita karyawan menyambut Lebaran.
-
-“Bank Arto Moro senantiasa berupaya meningkatkan kesejahteraan dan kebahagiaan karyawan. Selain kenaikan gaji berkala, tiap tahun perusahaan menyalurkan THR dan tunjangan jasa produksi di akhir tahun kepada karyawan,” lanjut Darmawan.
-
-Sebelum kegiatan buka puasa tersebut digelar di sore hari, pada siang harinya, bertempat di halaman kantor pusat Bank Arto Moro, diselenggarakan acara Pre Launching Bank Arto Moro Official Luxury Bus. Pada tahun 2024 ini, sebagai bagian dari kegiatan literasi dan edukasi keuangan serta sebagai sarana promosi dan pelayanan terbaik kepada para nasabah yang telah mempercayakan perencanaan keuangannya, Bank Arto Moro merencanakan pengadaan 1 unit bus medium. Acara Pre-Launching Bank Arto Moro Official Luxury Bus ditandari secara simbolis penyerahan kunci unit bus oleh Direktur Utama, Darmawan, kepada perwakilan Karoseri Laksana, Steven A Kalonta.
-
-Darmawan mengatakan bahwa selain untuk mengakomodir mobilitas intern perusahaan yang semakin meningkat, pengadaan bus perusahaan tersebut merupakan salah satu bentuk differensiasi terkait strategi promosi dan pelayanan pelayanan terbaik kepada nasabah.
-
-“Bus perusahaan ini nantinya akan dipakai untuk keperluan internal dan eksternal. Nasabah premium yang mempunyai simpanan dana signifikan di Bank Arto Moro akan mendapatkan fasilitas penggunaan bus untuk digunakan dalam kegiatan atau acara mereka,” tutur Darmawan.
-
-Darmawan menambahkan bahwa strategi promosi yang out of the box dan anti mainstream diperlukan sebagai brand positioning serta sebagai terobosan dalam memenangkan persaingan perbankan yang semakin ketat. Dengan strategi promosi yang nyaris sama oleh semua industri perbankan, benefit yang ditawarkan oleh keberadaan bus perusahaan tersebut diyakini akan mampu meningkatkan fungsi intermediasi secara signifikan.
-
-“Harapan kita, keberadaan bus perusahaan ini nantinya akan membawa Bank Arto Moro one step level higher, baik dalam segi branding maupun pelayanan kepada nasabah. Apabila ini sukses, tidak menutup kemungkinan tahun depan kita akan menambah unit lagi,” ungkap Darmawan.
-
-Darmawan menargetkan bahwa bus perusahaan tersebut sudah akan dapat dioperasionalkan pada Semester II tahun 2024. Setelah dilakukan serah terima, sasis bus dikawal oleh Arto Moro Bikers Club (AMBC) menuju Karoseri Laksana untuk memulai proses pengerjaannya.
-
-“Bus ini kami desain khusus, baik dari segi interior maupun eksteriornya sehingga akan lebih memberikan pengalaman tidak terlupakan kepada karyawan ataupun nasabah yang menggunakannya,” pungkas Darmawan.',
+            Semarang―Sebagai bagian dari rangkaian kegiatan di bulan Ramadhan, Bank Arto Moro menggelar acara buka puasa bersama di kantor pusat, Jl. Elang Raya No. 99 Semarang. Kegiatan yang berlangsung pada Senin (1/4) tersebut didahului dengan kegiatan ceremoni Pre-Launching Bank Arto Moro Official Luxury Bus. Kegiatan buka puasa tersebut diikuti oleh seluruh karyawan Bank Arto Moro. Hadir pula adalah Komisaris Utama sekaligus Pemegang Saham Pengendali (PSP) Bank Arto Moro, Prof. Dr. H. Subyakto, SH,MH,MM beserta jajaran pengurus. Beberapa perwakilan bank mitra juga hadir pada acara tersebut.
+            
+            Direktur Utama Bank Arto Moro, Darmawan, S.Sos mengatakan bahwa kegiatan buka puasa merupakan agenda rutin yang diselenggarakan oleh Bank Arto Moro. Melalui kegiatan tersebut diharapkan akan semakin meningkatkan nilai-nilai keagamaan dalam diri karyawan sehingga nantinya akan lahir pribadi yang amanah dan bertaqwa.
+            
+            “Ramadhan tidak hanya dimaknai sebagai momen keagamaan, tetapi juga sebagai kesempatan untuk memperkuat silaturahmi dan persaudaraan. Selain meningkatkan ketaqwaan, momen buka puasa diharapkan diharapkan mampu memperkuat hubungan di antara karyawan sebagai satu tim yang solid dan padu,” terang Darmawan.
+            
+            Dalam acara buka puasa tersebut, juga dilakukan penyerahan secara simbolis Tunjangan Hari Raya (THR) kepada karyawan Bank Arto Moro. Darmawan mengatakan pemberian THR tersebut diharapkan akan semakin menambah kekhusukan dan suka cita karyawan menyambut Lebaran.
+            
+            “Bank Arto Moro senantiasa berupaya meningkatkan kesejahteraan dan kebahagiaan karyawan. Selain kenaikan gaji berkala, tiap tahun perusahaan menyalurkan THR dan tunjangan jasa produksi di akhir tahun kepada karyawan,” lanjut Darmawan.
+            
+            Sebelum kegiatan buka puasa tersebut digelar di sore hari, pada siang harinya, bertempat di halaman kantor pusat Bank Arto Moro, diselenggarakan acara Pre Launching Bank Arto Moro Official Luxury Bus. Pada tahun 2024 ini, sebagai bagian dari kegiatan literasi dan edukasi keuangan serta sebagai sarana promosi dan pelayanan terbaik kepada para nasabah yang telah mempercayakan perencanaan keuangannya, Bank Arto Moro merencanakan pengadaan 1 unit bus medium. Acara Pre-Launching Bank Arto Moro Official Luxury Bus ditandari secara simbolis penyerahan kunci unit bus oleh Direktur Utama, Darmawan, kepada perwakilan Karoseri Laksana, Steven A Kalonta.
+            
+            Darmawan mengatakan bahwa selain untuk mengakomodir mobilitas intern perusahaan yang semakin meningkat, pengadaan bus perusahaan tersebut merupakan salah satu bentuk differensiasi terkait strategi promosi dan pelayanan pelayanan terbaik kepada nasabah.
+            
+            “Bus perusahaan ini nantinya akan dipakai untuk keperluan internal dan eksternal. Nasabah premium yang mempunyai simpanan dana signifikan di Bank Arto Moro akan mendapatkan fasilitas penggunaan bus untuk digunakan dalam kegiatan atau acara mereka,” tutur Darmawan.
+            
+            Darmawan menambahkan bahwa strategi promosi yang out of the box dan anti mainstream diperlukan sebagai brand positioning serta sebagai terobosan dalam memenangkan persaingan perbankan yang semakin ketat. Dengan strategi promosi yang nyaris sama oleh semua industri perbankan, benefit yang ditawarkan oleh keberadaan bus perusahaan tersebut diyakini akan mampu meningkatkan fungsi intermediasi secara signifikan.
+            
+            “Harapan kita, keberadaan bus perusahaan ini nantinya akan membawa Bank Arto Moro one step level higher, baik dalam segi branding maupun pelayanan kepada nasabah. Apabila ini sukses, tidak menutup kemungkinan tahun depan kita akan menambah unit lagi,” ungkap Darmawan.
+            
+            Darmawan menargetkan bahwa bus perusahaan tersebut sudah akan dapat dioperasionalkan pada Semester II tahun 2024. Setelah dilakukan serah terima, sasis bus dikawal oleh Arto Moro Bikers Club (AMBC) menuju Karoseri Laksana untuk memulai proses pengerjaannya.
+            
+            “Bus ini kami desain khusus, baik dari segi interior maupun eksteriornya sehingga akan lebih memberikan pengalaman tidak terlupakan kepada karyawan ataupun nasabah yang menggunakannya,” pungkas Darmawan.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
-                'tanggal' => '22/07/2009'
+                'tanggal' => '22/07/2009',
+                'slug' => 'bank-arto-moro-gelar-buka-puasa-dan-pre-launching-bus-perusahaan'
             ],
             [
                 'judul' => 'Program CSR Perbankan Beri Bantuan Banjir',
                 'keterangan' => 'Semarang ― Banjir kembali melanda beberapa titik wilayah Kota Semarang akibat hujan dengan intensitas tinggi. Hujan selama tiga hari tanpa henti ditambah meluapnya sungai di sejumlah titik kota semakin memperparah banjir. Meskipun banjir bukan menjadi hal yang asing bagi masyarakat setempat, tetapi banjir tahun ini menjadi yang terparah dalam beberapa tahun terakhir.
-
-Banjir yang sering melanda Kota Semarang telah menimbulkan kerugian yang cukup besar, terutama bagi warga yang tinggal di wilayah rawan banjir. Merespons kejadian tersebut, Bank Arto Moro, sebagai salah satu lembaga perbankan terkemuka di Kota Semarang, menunjukkan kepedulian terhadap warga yang terkena dampak banjir. Dengan tanggap, mereka memberikan bantuan kepada masyarakat di beberapa wilayah yang terkenas dampak.
-
-Banjir tidak hanya menghancurkan harta benda, tetapi juga mempengaruhi kehidupan dan mata pencaharian masyarakat. Di tengah kesulitan yang dihadapi oleh para korban banjir, dukungan dari berbagai pihak menjadi sangat penting untuk membantu proses pemulihan mereka. Bank Arto Moro telah lama mengakui pentingnya tanggung jawab sosial perusahaan dan telah menjalankan berbagai program CSR untuk membantu meningkatkan kesejahteraan masyarakat di sekitar mereka.
-
-Direktur Utama Bank Arto Moro, Darmawan S.Sos, mengungkapkan rasa prihatin atas musibah banjir yang melanda Kota Semarang. “Kami tidak hanya berkomitmen untuk menyediakan layanan keuangan yang berkualitas, tetapi juga untuk menjadi mitra yang dapat diandalkan bagi masyarakat ketika menghadapi berbagai cobaan, termasuk banjir ini. Bank Arto Moro memastikan bahwa proses penyaluran bantuan dilakukan dengan cepat dan efisien, sehingga manfaatnya dapat segera dirasakan oleh masyarakat yang terdampak banjir,” ujar Darmawan.
-
-Darmawan juga menyatakan bahwa langkah ini sebagai panggilan kemanusiaan untuk berdiri bersama masyarakat yang terdampak bencana. Melalui program CSR (Corporate Social Responsibility), mereka berkomitmen untuk memberikan bantuan kepada para korban banjir, tidak hanya sebagai bentuk tanggung jawab sosial, tetapi juga sebagai ekspresi dari nilai-nilai kepedulian yang menjadi landasan perusahaan
-
-“Program Arto Moro Peduli adalah salah satu inisiatif CSR dari perusahaan kami. Program ini bertujuan untuk memberikan dampak positif bagi masyarakat serta karyawan kami yang membutuhkan. Program ini tidak hanya sebagai pemberian bantuan, tetapi juga sebagai bukti konkret bahwa kami memperhatikan kesejahteraan mereka,” tambahnya.
-
-Solidaritas dan empati yang ditunjukkan oleh Bank Arto Moro telah membangun fondasi yang lebih kokoh bagi keberlanjutan sosial dan ekonomi masyarakat luas. Bantuan dan kepedulian ini juga menjadi dorongan moral yang dibutuhkan para korban dalam proses pemulihan pascabanjir. Tindakan ini telah membuktikan bahwa program CSR perusahaan bukan sekadar slogan kosong, melainkan nilai yang diterapkan dalam tindakan nyata. Melalui artikel di atas, kami dapat merekomendasikan Anda gaun terbaru dalam berbagai panjang, warna, dan gaya untuk setiap kesempatan dari merek favorit Anda.
-
-Kasi SDM Bank Arto Moro, Tedy Ariyanto, bersama dengan timnya melakukan kunjungan ke daerah-daerah yang terdampak banjir (16/3). Mereka mengunjungi beberapa wilayah yang dilanda banjir dengan volume air yang cukup tinggi, seperti Krapyak, Pleburan, dan Genuk. Tujuan mereka adalah untuk memantau perkembangan terbaru dan memberikan bantuan yang diharapkan dapat memberikan manfaat bagi masyarakat setempat. “Bantuan ini diharapkan dapat membantu para korban dalam mengatasi kebutuhan mendesak mereka, seperti perbaikan rumah atau penggantian barang-barang yang rusak akibat terendam banjir,” ucap Tedy.
-
-Tedy Ariyanto juga menyoroti pentingnya kerjasama antara pemerintah, sektor swasta, dan masyarakat dalam mengatasi masalah ini. Beliau menilai banjir yang secara berulang melanda Kota Semarang merupakan cerminan dari infrastruktur dan manajemen lingkungan yang buruk. “Perlu respons yang lebih efektif dari pemerintah dan pihak terkait untuk menangani masalah ini. Kondisi banjir tidak hanya mengganggu aktivitas masyarakat, tetapi juga berdampak signifikan terhadap ekonomi dan kesejahteraan umum. Normalisasi sungai dan kontrol drainase harus rutin dilakukan demi meminimalkan kejadian serupa terulang,” jelas Kasi SDM Bank Arto Moro tersebut.',
-                'kategory' => 'Pengumuman',
+            
+            Banjir yang sering melanda Kota Semarang telah menimbulkan kerugian yang cukup besar, terutama bagi warga yang tinggal di wilayah rawan banjir. Merespons kejadian tersebut, Bank Arto Moro, sebagai salah satu lembaga perbankan terkemuka di Kota Semarang, turut serta dalam memberikan bantuan untuk meringankan beban masyarakat yang terkena dampak banjir.
+            
+            Direktur Utama Bank Arto Moro, Darmawan, S.Sos., MM mengatakan bahwa bank yang dipimpinnya memberikan bantuan berupa paket sembako dan perlengkapan penunjang hidup kepada masyarakat yang terdampak banjir di beberapa titik lokasi yang tersebar di wilayah Semarang. Bantuan tersebut disalurkan melalui program Corporate Social Responsibility (CSR) Bank Arto Moro dengan harapan dapat meringankan beban warga yang terdampak.
+            
+            “Bank Arto Moro peduli terhadap kondisi masyarakat di lingkungan sekitar kami. Kami menyadari bahwa banjir kali ini memberikan dampak yang cukup besar bagi masyarakat. Oleh karena itu, kami berinisiatif memberikan bantuan sebagai wujud kepedulian kami,” ujar Darmawan.
+            
+            Selain memberikan bantuan paket sembako dan perlengkapan hidup, Bank Arto Moro juga bekerja sama dengan instansi terkait dalam upaya penanggulangan dampak banjir. Bank Arto Moro turut serta dalam menggalang dana untuk keperluan pengadaan peralatan dan logistik bagi tim relawan dan masyarakat terdampak.
+            
+            “Kami harap bantuan yang kami berikan dapat meringankan beban masyarakat dan mendukung upaya penanggulangan banjir yang dilakukan oleh pihak-pihak terkait. Ini adalah wujud tanggung jawab sosial kami sebagai lembaga keuangan,” lanjut Darmawan.
+            
+            Pihak Bank Arto Moro juga mendorong pihak-pihak lain untuk turut berpartisipasi dalam penanganan dampak banjir ini. Bank Arto Moro berharap akan ada banyak pihak yang berkolaborasi untuk memberikan bantuan kepada masyarakat yang membutuhkan serta mendukung pemulihan pasca-banjir.
+            
+            “Melalui kegiatan CSR ini, kami berharap bisa memberikan kontribusi positif terhadap masyarakat dan lingkungan sekitar. Semoga bantuan ini dapat sedikit meringankan beban dan memberikan semangat kepada mereka yang terdampak,” tutup Darmawan.',
+                'kategory' => 'CSR',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
-                'tanggal' => '22/07/2009'
+                'tanggal' => '22/07/2009',
+                'slug' => 'program-csr-perbankan-beri-bantuan-banjir'
             ],
             [
                 'judul' => 'Kembangkan Produk Kredit Haji, Bank Arto Moro Gandeng CIMBNiaga Syariah dan Bank Jombang',
-                'keterangan' => 'BPR Arto Moro menyelenggarakan kegiatan Sosialisasi dan Pelatihan Implementasi Kredit Multiguna Sarana Ibadah dalam rangka memperkenalkan program kredit haji kepada para karyawan Kegiatan berlangsung di gedung pusat BPR Arto Moro, Jalan Elang Raya No. 99 Mangunharjo, Tembalang, Semarang (17/2). Acara sosialisasi ini bekerja sama dengan Bank Jombang dan diikuti oleh seluruh karyawan Bank Arto yang berjumlah 215 orang. Direktur Utama Bank Jombang, Afandi Nugroho, SE, MM beserta jajaran hadir dalam acara ini sekaligus berperan sebagai narasumber.
-
-Produk kredit haji, juga dikenal sebagai kredit sarana ibadah adalah kredit yang diberikan kepada nasabah dengan plafon sebesar kebutuhan pelaksanaan ibadah haji (25 juta). Dalam sambutannya, Darmawan, S.Sos, mengungkapkan bahwa kerja sama ini merupakan langkah positif untuk memastikan bahwa perencanaan keuangan calon jamaah haji tidak bertentangan dengan kebutuhan finansial rumah tangga. “Kredit haji membantu calon jamaah haji untuk mendapatkan porsi haji tanpa perlu menunda-nunda lagi. Kerja sama ini sangat dinantikan mengingat Bank Arto Moro terus berupaya memperluas jaringan dan meningkatkan kesejahteraan melalui kolaborasi yang sehat,” ungkap Darmawan.
-
-Sosialisasi ini memberikan informasi mendalam seputar produk Kredit Haji, termasuk persyaratan dan prosedur pengajuan, serta mekanisme pembayaran kredit haji. “Dokumen yang disimpan oleh bank sebagai syarat kredit haji itu mudah, hanya buku tabungan haji yang terhubung Kemenag, lalu legalisasi yang dikeluarkan oleh bank atau BPIH, dan terakhir surat antrean haji,” tutur Direktur Utama Bank Jombang, Afandi Nugroho ketika menjadi narasumber. “Selain memiliki syarat yang sederhana, jumlah setoran awal pembelian porsi haji juga relatif rendah, yakni hanya sebesar Rp750.000 yang sebagian akan digunakan untuk membeli jaminan berupa emas seberat 0,25 gram. Kemudahan ini untuk menunjukkan kepada masyarakat bahwa menunaikan ibadah haji tidak serumit kedengarannya,” lanjutnya.
-
-Menyikapi kerja sama ini, Komisaris BPR Arto Moro Prof. Subyakto, menyatakan bahwa hadirnya produk kredit haji memiliki tujuan mulia untuk memfasilitasi masyarakat sekitar dan karyawan yang mungkin menghadapi kendala finansial saat mengumpulkan dana secara mandiri. “Dengan produk kredit haji, masyarakat dan karyawan dapat memperoleh dana yang dibutuhkan untuk membeli porsi antrean haji tanpa perlu menundanya lagi. Diharapkan produk ini membantu mewujudkan impian mereka untuk pergi ke Tanah Suci dengan segera,” ujar Prof. Subyakto.
-
-Sebelumnya, BPR Arto Moro telah menjalin kerja sama dengan Bank CIMBNiaga Syariah Semarang dalam sebuah kemitraan strategis membahas kredit ibadah haji (13/2). Penandatanganan kerja sama ini dilakukan oleh Direktur Utama BPR Arto Moro, Darmawan, S.Sos, dan Branch Manager CIMBNiaga Syariah Semarang, Betty Sumirat. Melalui kolaborasi ini, kedua belah pihak berkomitmen untuk menyediakan solusi keuangan yang inovatif bagi calon jamaah haji, sehingga mereka dapat mempersiapkan diri dengan baik untuk menjalankan ibadah haji.
-
-Branch Manager CIMBNiaga Syariah Semarang, Betty Sumirat menyambut baik hadirnya kolaborasi ini. Melalui kerja sama ini, diharapkan calon jamaah haji dapat memperoleh akses yang lebih mudah terhadap pembiayaan yang diperlukan untuk menjalankan ibadah haji. “Kami sangat bangga dapat bekerja sama dengan Bank Arto Moro dalam menyediakan dana dan memberikan kemudahan bagi masyarakat sekitar yang ingin mendaftar sebagai calon jamaah haji,” jelas Betty Sumirat.
-
-Dengan terselenggaranya program ini, diharapkan jumlah masyarakat yang dapat merealisasikan impian mereka melaksanakan ibadah di Tanah Suci akan semakin meningkat. Kegiatan ini juga memperkuat komitmen BPR Arto Moro dalam meningkatkan aksesibilitas terhadap layanan keuangan bagi masyarakat Indonesia. Langkah BPR Arto Moro dalam menyediakan program kredit haji menjadi bukti BPR Arto Moro dalam mendukung aspirasi keagamaan yang memungkinkan lebih banyak individu mewujudkan impian mereka dalam melaksanakan kewajiban.',
+                'keterangan' => 'Semarang - Bank Arto Moro terus berkomitmen untuk mengembangkan produk dan layanan keuangan yang sesuai dengan kebutuhan nasabah. Terbaru, Bank Arto Moro melakukan kerjasama strategis dengan CIMBNiaga Syariah dan Bank Jombang dalam rangka pengembangan produk kredit haji.
+            
+            Direktur Utama Bank Arto Moro, Darmawan, S.Sos., MM mengatakan bahwa kerjasama ini bertujuan untuk memberikan kemudahan bagi masyarakat yang ingin menunaikan ibadah haji. “Bank Arto Moro berkomitmen untuk menyediakan produk keuangan yang berkualitas dan memenuhi kebutuhan nasabah. Dengan adanya kerjasama ini, kami berharap dapat memberikan solusi yang lebih baik bagi nasabah yang ingin melakukan perjalanan ibadah haji,” ujar Darmawan.
+            
+            Bank Arto Moro menggandeng CIMBNiaga Syariah sebagai mitra strategis dalam penyediaan produk pembiayaan haji yang sesuai dengan prinsip syariah. CIMBNiaga Syariah sendiri dikenal sebagai lembaga keuangan yang memiliki kompetensi dalam produk-produk syariah. Selain itu, Bank Arto Moro juga menjalin kerjasama dengan Bank Jombang sebagai bagian dari upaya memperluas jaringan dan layanan dalam produk kredit haji.
+            
+            Melalui kerjasama ini, Bank Arto Moro bersama CIMBNiaga Syariah dan Bank Jombang akan menghadirkan produk kredit haji yang menawarkan berbagai kemudahan dan fasilitas bagi calon jamaah haji. Produk ini diharapkan dapat memenuhi kebutuhan nasabah dalam melakukan persiapan ibadah haji secara lebih mudah dan efisien.
+            
+            “Dengan adanya produk kredit haji ini, kami berharap bisa mempermudah masyarakat dalam menunaikan ibadah haji. Kami akan terus berinovasi dan bekerja sama dengan berbagai pihak untuk menghadirkan produk-produk yang sesuai dengan kebutuhan masyarakat,” lanjut Darmawan.
+            
+            Bank Arto Moro berharap kerjasama ini dapat memberikan dampak positif bagi masyarakat dan menjadi salah satu langkah strategis dalam memperkuat posisi Bank Arto Moro di pasar perbankan. Selain itu, Bank Arto Moro juga berharap agar produk kredit haji ini dapat memberikan kontribusi bagi peningkatan layanan perbankan berbasis syariah di Indonesia.',
                 'kategory' => 'Pengumuman',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
-                'tanggal' => '22/07/2009'
+                'tanggal' => '22/07/2009',
+                'slug' => 'kembangkan-produk-kredit-haji-bank-arto-moro-gandeng-cimbniaga-syariah-dan-bank-jombang'
             ],
             [
                 'judul' => 'Arto Moro Peduli: Berikan Dukungan Kegiatan Berani Gundul 2024',
-                'keterangan' => 'Setiap tahun, tanggal 15 Februari diperingati sebagai Hari Kanker Anak Sedunia. Peringatan ini hadir untuk meningkatkan kesadaran yang ditimbulkan oleh kanker pada anak-anak. Selain sebagai momen refleksi, peringatan ini juga menjadi ajang untuk menggalang dukungan bagi upaya pencegahan, pengobatan, dan penelitian terkait kanker pada anak-anak. Sebagai langkah mencari dukungan yang lebih luas, acara Berani Gundul diadakan secara rutin sebagai wujud nyata dari dukungan bagi anak-anak penderita kanker.
-
-Bank Arto Moro, sebagai salah satu BPR terbesar di Jawa Tengah ikut berpartisipasi dalam acara Berani Gundul 2024 yang diinisiasi oleh Yayasan Kanker Anak Indonesia (YKAKI) di The Park Mall, Semarang pada tanggal 24-25 Februari 2024. YKAKI bekerjasama dengan Komunitas Barbershop Semarang mengadakan cukur massal sekaligus menjadi ajang penggalangan dana. Partisipasi BPR Arto Moro dalam peringatan Hari Kanker Anak merupakan contoh nyata dari komitmen perusahaan terhadap tanggung jawab sosialnya.
-
-Dalam sambutannya, Direktur Utama BPR Arto Moro, Darmawan, berbagi visi dan komitmen perusahaan dalam memperjuangkan kesejahteraan anak-anak yang terkena dampak kanker. “Kami percaya bahwa setiap anak memiliki hak untuk hidup sehat dan bahagia. Sebagai perusahaan yang mengedepankan nilai-nilai sosial dan kemanusiaan, kami merasa terdorong untuk turut serta dalam upaya pencegahan, pengobatan, dan dukungan bagi anak-anak yang berjuang melawan kanker,” ungkapnya.
-
-BPR Arto Moro berkomitmen untuk terus mendukung berbagai inisiatif yang bertujuan untuk meningkatkan kualitas hidup masyarakat, terutama bagi mereka yang membutuhkan. Dengan Program Arto Moro Peduli sebagai landasan komitmennya, BPR Arto Moro tidak hanya menjadi institusi keuangan yang sukses secara bisnis, tetapi juga menjadi mitra yang terpercaya dalam membangun masyarakat yang lebih baik dan berdaya.
-
-“Sebagai bagian tak terpisahkan terhadap tanggung jawab sosial, kami memiliki program Arto Moro peduli, sebagai program CSR perusahaan. Keterlibatan dalam acara ini menjadi wujud nyata dari komitmen tersebut. Sebelumnya kami juga aktif memberikan bantuan logistik, peralatan medis, atau bantuan keuangan kepada korban bencana atau situasi krisis lainnya,” tambah Darmawan.
-
-Dukungan dari Bank Arto Moro di acara Berani Gundul 2024 membuktikan komitmennya tidak hanya tercermin dalam kata-kata, tetapi juga dalam tindakan nyata. Melalui Program Arto Moro Peduli, perusahaan telah mengalokasikan sumber daya dan waktu untuk menumbuhkan rasa empati dan dukungan yang lebih luas dari masyarakat tentang kanker, memberikan dukungan kepada anak-anak yang sedang berjuang, serta membantu keluarga mereka dalam menghadapi tantangan yang dihadapi.
-
-Kabag SDM, Umum, dan Pengembangan Bank Arto Moro, Sugiarno, mengungkapkan bahwa kegiatan positif ini merupakan langkah hebat dalam memberikan dukungan kepada para pejuang kanker. “Melalui acara ini kami berkomitmen untuk memberikan harapan dan bantuan kepada anak-anak yang berjuang melawan kanker serta keluarga mereka dalam perjalanan mereka menuju kesembuhan,” tutur Sugiarno ketika penyerahan simbolis donasi.
-
-Selain kegiatan cukur massal, acara Berani Gundul 2024 yang berlangsung selama dua hari ini juga diisi dengan berbagai kegiatan yang menyenangkan dan menginspirasi, seperti edukasi tentang penyakit kanker, donor darah, senam zumba, pentas seni, dan berbagai lomba untuk anak-anak. Diadakan juga lomba lari yang diberi nama We Care Charity Run untuk mempromosikan gaya hidup sehat dan aktif, serta membangun solidaritas dan kesadaran akan pentingnya membantu sesama. Selama acara berlangsung, juga dilakukan pembagian doorprize menarik sebagai bentuk apresiasi kepada para peserta yang hadir.
-
-Kepala Cabang YKAKI Semarang, Vita Mahaswari, menyampaikan bahwa kegiatan ini menjadi wadah untuk menyampaikan pesan-pesan tentang pentingnya dukungan terhadap anak-anak yang sedang berjuang melawan kanker. “Kami berkomitmen untuk menjadi pihak terdepan dalam memerangi kanker anak. Melalui acara Berani Gundul, kami harap bisa meningkatkan kesadaran masyarakat dan memberikan dukungan yang nyata kepada anak-anak yang sedang berjuang,” tutur Vita Mahaswari
-
-Acara ini diharapkan menjadi wadah untuk mengedukasi masyarakat tentang pentingnya deteksi dini, perawatan yang tepat, dan dukungan yang diperlukan bagi anak-anak yang terkena kanker. Selain itu, acara ini juga bertujuan untuk menyampaikan pesan bahwa kanker bukanlah penyakit menular, sehingga individu yang terkena kanker tidak perlu diisolasi, justru mereka harus mendapat dukungan dan kasih sayang untuk meningkatkan semangat mereka dalam proses pemulihan.',
-                'kategory' => 'Pengumuman',
+                'keterangan' => 'Semarang - Bank Arto Moro menunjukkan kepedulian sosialnya melalui dukungan terhadap kegiatan sosial “Berani Gundul 2024”. Kegiatan ini merupakan salah satu inisiatif sosial yang bertujuan untuk mengumpulkan dana bantuan bagi anak-anak yang membutuhkan perawatan medis.
+            
+            Direktur Utama Bank Arto Moro, Darmawan, S.Sos., MM mengungkapkan bahwa dukungan terhadap kegiatan sosial ini merupakan wujud komitmen Bank Arto Moro dalam mendukung berbagai inisiatif yang memiliki dampak positif bagi masyarakat. “Bank Arto Moro percaya bahwa memberikan dukungan kepada kegiatan sosial adalah bagian dari tanggung jawab kami sebagai lembaga keuangan. Kami berharap kontribusi kami dapat memberikan manfaat bagi anak-anak yang membutuhkan,” ujar Darmawan.
+            
+            Kegiatan “Berani Gundul 2024” merupakan program sosial yang dilaksanakan oleh komunitas peduli kesehatan dan pendidikan. Program ini mengajak masyarakat untuk berpartisipasi dalam penggalangan dana dengan cara yang kreatif, seperti potong rambut gundul sebagai simbol kepedulian dan solidaritas.
+            
+            Sebagai bentuk dukungan, Bank Arto Moro memberikan sumbangan dana serta memfasilitasi kegiatan ini dengan menyediakan sarana dan prasarana yang dibutuhkan. Kegiatan ini diharapkan dapat meningkatkan kesadaran masyarakat mengenai pentingnya kepedulian terhadap sesama serta memberikan dukungan nyata bagi mereka yang membutuhkan.
+            
+            “Melalui dukungan ini, kami ingin menunjukkan bahwa Bank Arto Moro tidak hanya berfokus pada aspek bisnis, tetapi juga peduli terhadap kesejahteraan masyarakat. Kami berharap kegiatan ini dapat berjalan dengan sukses dan memberikan manfaat yang besar bagi anak-anak yang membutuhkan perawatan medis,” lanjut Darmawan.
+            
+            Darmawan menambahkan bahwa partisipasi dalam kegiatan sosial seperti ini merupakan bagian dari program Corporate Social Responsibility (CSR) Bank Arto Moro. Bank Arto Moro berkomitmen untuk terus mendukung kegiatan sosial yang bermanfaat dan memberikan kontribusi positif bagi masyarakat.',
+                'kategory' => 'CSR',
                 'penulis' => 'promosi arto moro',
                 'image' => 'profil.jpg',
-                'tanggal' => '22/07/2009'
-            ],
+                'tanggal' => '22/07/2009',
+                'slug' => 'arto-moro-peduli-berikan-dukungan-kegiatan-berani-gundul-2024'
+            ]
+            
         ];
 
         foreach($userData as $key => $val){

@@ -20,12 +20,14 @@ use App\Http\Controllers\TabunganController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DireksiController;
 use App\Http\Controllers\ManajemenController;
+use App\Http\Controllers\PejabatEksekutifController;
 use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\PromosiController;
 use App\Http\Controllers\RatedDepositoController;
 use App\Http\Controllers\RatedKreditController;
 use App\Http\Controllers\StackholderController;
+use App\Models\PejabatEksekutif;
 use Illuminate\Routing\Route as RoutingRoute;
 
 /*
@@ -165,6 +167,13 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::put('/Direksi/Update/{id}', [DireksiController::class, 'update'])->name('direksi.update');
     Route::post('/Direksi/Post', [DireksiController::class, 'store'])->name('direksi.post');
     Route::delete('/Direksi/{id}', [DireksiController::class, 'destroy'])->name('direksi.delete');
+
+    Route::get('/Pejabat', [PejabatEksekutifController::class, 'viewPejabat'])->name('pejabat.index');
+    Route::get('/Pejabat/add', [PejabatEksekutifController::class, 'viewPejabatAdd'])->name('pejabat.add');
+    Route::get('/Pejabat/find/{id}', [PejabatEksekutifController::class, 'viewPejabatFind'])->name('pejabat.find');
+    Route::put('/Pejabat/Update/{id}', [PejabatEksekutifController::class, 'update'])->name('pejabat.update');
+    Route::post('/Pejabat/Post', [PejabatEksekutifController::class, 'store'])->name('pejabat.post');
+    Route::delete('/Pejabat/{id}', [PejabatEksekutifController::class, 'destroy'])->name('pejabat.delete');
 
     Route::get('/Stackholder', [StackholderController::class, 'viewStackholder'])->name('stackholder.index');
     Route::post('/Stackholder/post', [StackholderController::class, 'store'])->name('stackholder.post');

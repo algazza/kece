@@ -19,7 +19,7 @@
             <form id="image-update-form-{{ $item->id }}" action="{{ route('stackholder.update', $item->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <label for="update-image-{{ $item->id }}" class="flex items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-blue-600 font-semibold py-2 px-20 rounded-lg">
+                <label for="update-image-{{ $item->id }}" class="flex text-2xl px-[1rem] items-center justify-center lg:text-2xl md:text-2xl sm:text-xl xss:text-base text-blue-600 font-semibold py-2 ml-[5rem] rounded-lg">
                     <i class='bx bx-pencil bg-white py-2 lg:px-3 md:px-3 sm:px-3 xss:px-5 rounded-lg hover:bg-gray-200 hover:scale-95 duration-300 shadow-md'></i>
                     <input id="update-image-{{ $item->id }}" type="file" class="hidden" name="image">
                 </label>
