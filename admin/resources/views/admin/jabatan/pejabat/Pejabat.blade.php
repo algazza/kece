@@ -18,9 +18,6 @@
                     <p class="text-gray-800 text-base font-semibold pb-2">
                     {{ $item->jabatan }}
                     </p>
-                    <p class="text-gray-700 text-base">
-                    {{ $item->deskripsi }}
-                    </p>
                 </div>
             </a>
          @endforeach

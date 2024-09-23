@@ -49,12 +49,6 @@
                             </div>
                         </div>
     
-                        <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col xss:flex-col gap-2 justify-center w-full">
-                            <div class="w-full">
-                                <h3 class="dark:text-black mb-2">Deskripsi</h3>
-                                <textarea type="text" class="text-grey p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white " name="deskripsi"></textarea>
-                            </div>
-                        </div>
                         <div class="w-full rounded-lg bg-blue-500 mt-4 text-white text-lg font-semibold cursor-pointer hover:bg-blue-600 hover:text-white duration-300">
                             <button type="submit" class="w-full p-4">Submit</button>
                         </div>

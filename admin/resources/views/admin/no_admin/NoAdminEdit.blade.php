@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     @vite('resources/css/app.css')
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
     <div class="bg-gray-200">

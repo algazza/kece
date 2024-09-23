@@ -13,7 +13,6 @@ class PejabatEksekutif extends Model
     protected $fillable = [
         'nama',
         'jabatan',
-        'deskripsi',
         'image',
     ];
 }
