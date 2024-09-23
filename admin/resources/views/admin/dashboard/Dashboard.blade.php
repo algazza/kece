@@ -111,7 +111,7 @@
                                     <i class='text-black bx bxs-truck text-5xl'></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
-                                    <h3 class="text-[1.1rem] font-bold pt-2">PickUp</h3>
+                                    <h3 class="text-[1.1rem] font-bold pt-2">PickUp Service</h3>
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                                     <i class='text-black bx bxs-business text-5xl' ></i>
                                 </div>
                                 <div class="block mt-[0.8rem]">
-                                    <h3 class="text-[1.1rem] font-bold pt-2">Stackholder</h3>
+                                    <h3 class="text-[1.1rem] font-bold pt-2">Mitra KAmi</h3>
                                 </div>
                             </div>
                         </div>

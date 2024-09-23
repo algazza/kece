@@ -23,14 +23,12 @@ class PejabatEksekutifController extends Controller
             $request->validate([
                 'nama' => 'required|string',
                 'jabatan' => 'required|string',
-                'deskripsi' => 'required|string',
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
     
             $pejabat = new PejabatEksekutif();
             $pejabat->nama = $request->nama;
             $pejabat->jabatan = $request->jabatan;
-            $pejabat->deskripsi = $request->deskripsi;
     
             if($request->hasFile('image')){
                 $imageName = time() . '.' . $request->image->extension();
@@ -73,7 +71,6 @@ class PejabatEksekutifController extends Controller
             $validateData = $request->validate([
                 'nama' => 'required|string',
                 'jabatan' => 'required|string',
-                'deskripsi' => 'required|string',
                 'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
 
