@@ -9,9 +9,11 @@ import { localhostLink } from "../helper/localhost";
 const Manajemen = () => {
   const [komisaris, setKomisaris] = useState(1);
   const [direksi, setDireksi] = useState(1);
+  const [pejabatEx, setPejabatEx] = useState(1);
   const [manajemenMenu, setManajemenMenu] = useState(0);
   const [profileDewanKomisaris, setProfileDewanKomisaris] = useState([]);
   const [profileDewanDireksi, setProfileDewanDireksi] = useState([]);
+  const [profilePejabatEx, setProfilePejabatEx] = useState([]);
 
   useEffect(() => {
     fetch(`${localhostLink}/api/manajemen`)
@@ -30,6 +32,16 @@ const Manajemen = () => {
         setProfileDewanDireksi(data);
         if (!data.some((profile) => profile.id === 1)) {
           findNextProfileId(1, data, setDireksi);
+        }
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+
+    fetch(`${localhostLink}/api/pejabat`)
+      .then((response) => response.json())
+      .then((data) => {
+        setProfilePejabatEx(data);
+        if (!data.some((profile) => profile.id === 1)) {
+          findNextProfileId(1, data, setPejabatEx);
         }
       })
       .catch((error) => console.error("Error fetching data:", error));
@@ -65,6 +77,15 @@ const Manajemen = () => {
       } else {
         findNextProfileId(id, profileDewanDireksi, setDireksi);
       }
+    } else if (type === "pejabatex") {
+      const profileExists = profilePejabatEx.some(
+        (profile) => profile.id === id
+      );
+      if (profileExists) {
+        setPejabatEx(id);
+      } else {
+        findNextProfileId(id, profilePejabatEx, setPejabatEx);
+      }
     }
   }
 
@@ -96,19 +117,21 @@ const Manajemen = () => {
         </p>
 
         <div className="flex gap-4 py-8 justify-center">
-          {["Dewan Komisaris", "Direksi"].map((manajemen, index) => (
-            <div
-              key={index}
-              onClick={() => updateManajemenMenu(index)}
-              className={`${
-                manajemenMenu === index
-                  ? "bg-biruMuda-500 text-primary"
-                  : "border-biruMuda-500 text-biruMuda-500 "
-              } hover:bg-biruMuda-500 hover:text-primary border-2 duration-500 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 `}
-            >
-              {manajemen}
-            </div>
-          ))}
+          {["Dewan Komisaris", "Direksi", "Pejabat Eksekutif"].map(
+            (manajemen, index) => (
+              <div
+                key={index}
+                onClick={() => updateManajemenMenu(index)}
+                className={`${
+                  manajemenMenu === index
+                    ? "bg-biruMuda-500 text-primary"
+                    : "border-biruMuda-500 text-biruMuda-500 border-2"
+                } hover:bg-biruMuda-500 hover:text-primary duration-500 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 `}
+              >
+                {manajemen}
+              </div>
+            )
+          )}
         </div>
 
         {manajemenMenu === 0 && (
@@ -143,6 +166,7 @@ const Manajemen = () => {
                     exit={{ opacity: 0, y: -50 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     src={`${localhostLink}/image/public/manajemen/${img.image}`}
+                    className="min-w-[360px]"
                     alt=""
                   />
                 )
@@ -160,7 +184,7 @@ const Manajemen = () => {
                     <div className="w-[96px] h-[96px] rounded-full bg-abuGelap overflow-hidden">
                       <img
                         src={`${localhostLink}/image/public/manajemen/${menu.image}`}
-                        alt=""
+                        alt={`foto ${menu.nama}`}
                         className={`${
                           komisaris === menu.id &&
                           "bg-blue-300 transition-all duration-500"
@@ -210,6 +234,7 @@ const Manajemen = () => {
                     exit={{ opacity: 0, y: -50 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     src={`${localhostLink}/image/public/manajemen/${img.image}`}
+                    className="min-w-[360px]"
                     alt=""
                   />
                 )
@@ -227,9 +252,77 @@ const Manajemen = () => {
                     <div className="w-[96px] h-[96px] rounded-full bg-abuGelap overflow-hidden">
                       <img
                         src={`${localhostLink}/image/public/manajemen/${menu.image}`}
-                        alt=""
+                        alt={`foto ${menu.nama}`}
                         className={`${
                           direksi === menu.id &&
+                          "bg-blue-300 transition-all duration-500"
+                        }`}
+                      />
+                    </div>
+                    <div className="pt-2 text-center">
+                      <h3 className={`${styles.fontBodyBold}`}>{menu.nama}</h3>
+                      <p className={`${styles.fontCaption}`}>{menu.jabatan}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {manajemenMenu === 2 && (
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {profilePejabatEx.map((speech) => {
+              return (
+                pejabatEx === speech.id && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: 0.5 }}
+                    className=""
+                  >
+                    <h2 className={`${styles.heading4}`}>{speech.nama}</h2>
+                    <h3 className={`${styles.heading6} font-semibold mb-4`}>
+                      {speech.jabatan}
+                    </h3>
+
+                    <p className="">{speech.deskripsi}</p>
+                  </motion.div>
+                )
+              );
+            })}
+
+            {profilePejabatEx.map((img) => {
+              return (
+                pejabatEx === img.id && (
+                  <motion.img
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    src={`${localhostLink}/image/public/pejabat/${img.image}`}
+                    className="min-w-[360px]"
+                    alt={img.nama}
+                  />
+                )
+              );
+            })}
+
+            <div className="sm:col-span-2 md:col-span-1">
+              <div className="grid grid-cols-3 gap-4">
+                {profilePejabatEx.map((menu) => (
+                  <motion.div
+                    key={menu.id}
+                    className="grid justify-items-center cursor-pointer"
+                    onClick={() => updateProfile(menu.id, "pejabatex")}
+                  >
+                    <div className="w-[96px] h-[96px] rounded-full bg-abuGelap overflow-hidden">
+                      <img
+                        src={`${localhostLink}/image/public/pejabat/${menu.image}`}
+                        alt={`foto ${menu.nama}`}
+                        className={`${
+                          pejabatEx === menu.id &&
                           "bg-blue-300 transition-all duration-500"
                         }`}
                       />

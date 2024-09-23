@@ -64,7 +64,7 @@ const Laporan = () => {
           </div>
           <img
             src={logoArmor}
-            alt=""
+            alt="logo armor"
             className="left-1/2 top-[20%] max-md:-translate-x-1/2 opacity-10 md:opacity-100 max-md:absolute w-[280px] h-[280px]"
           />
         </div>

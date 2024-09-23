@@ -1,42 +1,29 @@
 // ======================== IMAGE ===========================
-import logoArmor from "../../public/img/LOGO-AM-CORAL-BARU.svg";
-import BlueBanner from "../../public/img/sampleimage.svg";
-import SimulasiPercil1 from "../../public/img/simulasiPercil1.svg";
-import SimulasiPercil2 from "../../public/img/simulasiPercil2.svg";
-import SimulasiPercil3 from "../../public/img/simulasiPercil3.svg";
-import SimulasiPercil4 from "../../public/img/simulasiPercil4.svg";
-import nunezimg from "../../public/img/668f755b3c2ba.jpg";
-import sampleNews from "../../public/img/sample-news-684x385.jpg";
-import phoneimg from "../../public/img/phoneimg.svg";
-import BennerLiv from "../../public/img/sampleliv.svg";
-import loaderIcon from "../../public/img/loadingIconArmor.svg";
-import ImageSimulasi from "../../public/img/BankImageSimulasi.svg";
-import TiktokIcon from "../../public/img/tiktok-fill.svg";
-import ThumbnailYoutube from "../../public/img/thumbnailYoutube.png";
+import { urlLink } from "./localhost";
+import { nomorInduk } from "./nomor";
 
-export {
-  logoArmor,
-  BlueBanner,
-  BennerLiv,
-  ImageSimulasi,
-  loaderIcon,
-  phoneimg,
-  nunezimg,
-  sampleNews,
-  TiktokIcon,
-  ThumbnailYoutube,
-  SimulasiPercil1,
-  SimulasiPercil2,
-  SimulasiPercil3,
-  SimulasiPercil4,
-};
+export const logoArmor = `${urlLink}/LOGO-AM-CORAL-BARU.svg`;
+export const BlueBanner = `${urlLink}/sampleimage.svg`;
+export const SimulasiPercil1 = `${urlLink}/simulasiPercil1.svg`;
+export const SimulasiPercil2 = `${urlLink}/simulasiPercil2.svg`;
+export const SimulasiPercil3 = `${urlLink}/simulasiPercil3.svg`;
+export const SimulasiPercil4 = `${urlLink}/simulasiPercil4.svg`;
+export const sejarahImage1 = `${urlLink}/sejarahimage1.jpg`
+export const nunezimg = `${urlLink}/668f755b3c2ba.jpg`;
+export const sampleNews = `${urlLink}/sample-news-684x385.jpg`;
+export const phoneimg = `${urlLink}/phoneimg.svg`;
+export const BennerLiv = `${urlLink}/sampleliv.svg`;
+export const loaderIcon = `${urlLink}/loadingIconArmor.svg`;
+export const ImageSimulasi = `${urlLink}/BankImageSimulasi.svg`;
+export const TiktokIcon = `${urlLink}/tiktok-fill.svg`;
+export const ThumbnailYoutube = `${urlLink}/thumbnailYoutube.png`;
 
 // ====================== PROFILE ======================
 export const profileTimeline = [
   {
     id: 2008,
     era: "Pembangunan",
-    image: nunezimg,
+    image: sejarahImage1,
     title: "Pembangunan Kantor BPR Arto Moro",
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
               fugit, harum adipisci minus impedit quis culpa, soluta tenetur
@@ -421,6 +408,6 @@ export const footer2 = [
   {
     id: "2",
     title: "Hubungi Kami",
-    link: "hubungikami",
+    link: `https://wa.me/+62${nomorInduk}`,
   },
 ];

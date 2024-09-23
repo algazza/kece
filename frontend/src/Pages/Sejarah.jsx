@@ -76,7 +76,7 @@ const Sejarah = () => {
                 <div className="flex-1">
                   <img
                     src={timlin.image}
-                    alt=""
+                    alt={`gambar timeline ${timlin.id}`}
                     className="w-full h-full relative -z-[1]"
                   />
                 </div>

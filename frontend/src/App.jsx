@@ -26,6 +26,8 @@ import ProtectedRoute from "./Layouts/ProtectedRoute.jsx";
 import Promo from "./Pages/Promo/Promo.jsx";
 import IsiPromo from "./Pages/Promo/IsiPromo.jsx";
 import MainLayout from "./MainLayout.jsx";
+import Digital from "./Pages/Digital.jsx";
+import MobilKas from "./Pages/MobilKas.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,50 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "kredit",
+        element: <SyaratKredit />,
+      },
+      {
+        path: "deposito",
+        element: <SyaratDeposito />,
+      },
+      {
+        path: "tabungan",
+        element: <SyaratTabungan />,
+      },
+      {
+        path: "layanan-digital",
+        element: <Digital />,
+      },
+      {
+        path: "mobil-kas",
+        element: <MobilKas/>,
+      },
+      {
+        path: "promo",
+        element: <Promo />,
+      },
+      {
+        path: "promo/:slug",
+        element: <IsiPromo />,
+      },
+      {
+        path: "sponsor",
+        element: <Sponsor />,
+      },
+      {
+        path: "pick-up-service",
+        element: <PickupPage />,
+      },
+      {
+        path: "berita",
+        element: <News />,
+      },
+      {
+        path: "berita/:slug",
+        element: <IsiNews />,
       },
       {
         path: "sejarah",
@@ -76,42 +122,6 @@ const router = createBrowserRouter([
       {
         path: "laporan-tahunan",
         element: <LaporanTahunan />,
-      },
-      {
-        path: "kredit",
-        element: <SyaratKredit />,
-      },
-      {
-        path: "deposito",
-        element: <SyaratDeposito />,
-      },
-      {
-        path: "tabungan",
-        element: <SyaratTabungan />,
-      },
-      {
-        path: "berita",
-        element: <News />,
-      },
-      {
-        path: "berita/:slug",
-        element: <IsiNews />,
-      },
-      {
-        path: "pick-up-service",
-        element: <PickupPage />,
-      },
-      {
-        path: "promo",
-        element: <Promo />,
-      },
-      {
-        path: "promo/:slug",
-        element: <IsiPromo />,
-      },
-      {
-        path: "sponsor",
-        element: <Sponsor />,
       },
     ],
   },

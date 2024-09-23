@@ -101,18 +101,18 @@ const IsiNews = () => {
   return (
     <>
       <section
-        className={`${styles.paddingY} ${styles.marginX} grid md:grid-cols-x650 pt-12`}
+        className={`${styles.paddingY} md:grid md:grid-cols-x650 pt-12`}
       >
-        <div className={`${styles.flexCenter} flex-col gap-12`}>
-          <h5 className={`${styles.heading4} text-center `}>{news.judul}</h5>
+        <div className={`${styles.flexCenter} flex-col gap-12 sm:mx-12 mx-4`}>
+          <h5 className={`${styles.heading5} text-center `}>{news.judul}</h5>
 
           <div>
             <img
-              className="max-w-[400px]"
+              className="ss:min-w-[400px] "
               src={`${localhostLink}/image/public/news/${news.image}`}
               alt={news.judul}
             />
-            
+
             <div className="flex justify-end pt-2 gap-4">
               <a onClick={handleCopyLink} className="cursor-pointer">
                 <LinkIcon className="text-[#646464]" />
@@ -150,8 +150,8 @@ const IsiNews = () => {
           </div>
         </div>
 
-        <div className="px-12">
-          <div className="flex justify-between">
+        <div className="sm:px-12">
+          <div className="flex justify-between px-4 sm:px-0">
             <h6 className={`${styles.heading6} mb-4`}>Baca juga:</h6>
             <Link
               to={"/berita"}
@@ -160,15 +160,15 @@ const IsiNews = () => {
               Lainnya...
             </Link>
           </div>
-          <section className="grid grid-cols-x150 sm:grid-cols-x250 md:grid-cols-1 justify-center gap-6 sm:gap-12">
+          <section className="grid xs:grid-cols-x150 sm:grid-cols-x250 md:grid-cols-1 justify-center gap-6 sm:gap-12 mx-4 sm:mx-0">
             {newsData.slice(0, 4).map((news) => {
               return (
                 <div
                   key={news.id}
                   className="md:grid md:grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
-                  onClick={() => navigate(`/berita/${news.slug}`)}
+                  onClick={() => navigate(`berita/${news.slug}`)}
                 >
-                  <div className="rounded-t-xl md:rounded-l-xl md:w-40 md:h-40 overflow-hidden">
+                  <div className="rounded-t-xl md:rounded-l-xl md:w-36 md:h-36 overflow-hidden">
                     <img
                       src={`${localhostLink}/image/public/news/${news.image}`}
                       alt={news.judul}
@@ -180,8 +180,8 @@ const IsiNews = () => {
                     <p className={`${styles.fontSmallBold} text-merahh-500`}>
                       {news.kategory}
                     </p>
-                    <h6 className={`${styles.fontBodyBold} `}>{news.judul}</h6>
-                    <p className={`${styles.fontSmall} text-abuGelap`}>
+                    <h6 className={styles.fontBodyBold}>{news.judul}</h6>
+                    <p className={`${styles.fontCaption} text-abuGelap`}>
                       {news.tanggal}
                     </p>
                   </div>
