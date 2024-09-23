@@ -69,7 +69,7 @@ const menuHome = [
     id: 5,
     icon: (className) => <LocalShippingIcon className={className} />,
     title: "Mobil Kas",
-    link: "",
+    link: "mobil-kas",
   },
   {
     id: 6,

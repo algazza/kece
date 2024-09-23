@@ -108,6 +108,7 @@ const Header = () => {
                       </AccordionDetails>
                     </Accordion>
                   </li>
+
                   <li>
                     <Accordion sx={{ boxShadow: "none" }}>
                       <AccordionSummary
@@ -121,19 +122,23 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"pick-up-service"}>Pick Up</Link>
-                            <Link to={"armor-properti"}>Armor Properti</Link>
-                            <Link to={"/#simulasi"}>Simulasi</Link>
+                            <Link to={"layanan-digital"}>Layanan Digital</Link>
+                            <Link to={"mobil-kas"}>Mobil Kas</Link>
                             <Link to={"promo"}>Promo</Link>
                             <Link to={"sponsor"}>Sponsor</Link>
+                            <Link to={"pick-up-service"}>Pick Up Service</Link>
+                            <Link to={"mailto:info@bprartomoro.co.id"}>Pengaduan</Link>
+                            <Link to={"armor-properti"}>Armor Properti</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
                     </Accordion>
                   </li>
+
                   <li className="my-3">
                     <Link to={"berita"}>Berita</Link>
                   </li>
+
                   <li>
                     <Accordion sx={{ boxShadow: "none" }}>
                       <AccordionSummary
@@ -236,12 +241,13 @@ const Product = () => {
 
 const Service = () => {
   const items = [
-    { name: "Pick Up", link: "pick-up-service" },
-    { name: "Armor Properti", link: "armor-properti" },
-    { name: "Simulasi", link: "#simulasi" },
+    { name: "Layanan Digital", link: "layanan-digital" },
+    { name: "Mobil Kas", link: "mobil-kas" },
     { name: "Promo", link: "promo" },
     { name: "Sponsor", link: "sponsor" },
-    { name: "Login", link: "https://etna.scxserver.com:2096" },
+    { name: "Pick Up Service", link: "pick-up-service" },
+    { name: "Armor Properti", link: "armor-properti" },
+    { name: "Pengaduan", link: "mailto:info@bprartomoro.co.id" },
   ];
 
   return <MenuList items={items} />;
