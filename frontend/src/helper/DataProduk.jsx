@@ -4,64 +4,73 @@ export const IsiKredit = [
     id: 1,
     Syarat: (
       <ul className="list-inside list-disc pl-4 sm:pl-16">
-        <li>Foto copy <b>identitas</b> calon debitur dan suami/istrinya serta identitas pemilik jaminan dan suami/istri yang masih berlaku, </li>
-                <li>Foto copy <b>kartu keluarga</b> calon debitur dan pemilik agunan, </li>
-                <li>Foto copy <b>surat nikah</b>,</li>
-                <li>Foto copy bukti kepemilikan agunan berupa <b>BPKB beserta STNK dan atau sertifikat tanah beserta PBB terakhir</b>.</li>
+        <li>
+          Foto copy <b>identitas</b> calon debitur dan suami/istrinya serta
+          identitas pemilik jaminan dan suami/istri yang masih berlaku,{" "}
+        </li>
+        <li>
+          Foto copy <b>kartu keluarga</b> calon debitur dan pemilik agunan,{" "}
+        </li>
+        <li>
+          Foto copy <b>surat nikah</b>,
+        </li>
+        <li>
+          Foto copy bukti kepemilikan agunan berupa{" "}
+          <b>
+            BPKB beserta STNK dan atau sertifikat tanah beserta PBB terakhir
+          </b>
+          .
+        </li>
       </ul>
     ),
     Keuntungan: (
       <ul className="list-inside list-disc pl-4 sm:pl-16">
-        <li>
-           Proses Cepat, 5 Hari Kerja
-           </li> <br />
-           <li>
-           Syarat Mudah & Fleksibel
-           </li> <br />
-           <li>
-           Aman & Terpecaya
-           </li>
+        <li>Proses Cepat, 5 Hari Kerja</li> <br />
+        <li>Syarat Mudah & Fleksibel</li> <br />
+        <li>Aman & Terpecaya</li>
       </ul>
     ),
     Fitur: (
       <ul className="list-inside list-disc pl-4 sm:pl-16">
         <li>
-            Suku bunga kredit kompetitif <b>dibanding </b>bank lainnya
-          </li>
-          <li>
+          Suku bunga kredit kompetitif <b>dibanding </b>bank lainnya
+        </li>
+        <li>
           Jangka waktu kredit hingga <b> 1 tahun dan bisa diperpanjang</b>
-          </li>
-          <li>Pinjaman kredit 500 juta hingga 30 Milyar.</li>
-          <li>Presentase pembiayaan hingga <b>60% dari nilai jaminan</b>.</li>
-          <li>Jaminan: <br />
-            - SHM (Sertifikat Hak Milik) <br />
-            - SHGB (Sertifikat Hak Guna Bangunan) untuk rumah, ruko, rukan, atau tanah kosong untuk dibangun <br />
-            - BPKB Kendaraan (sebagai agunan tambahan)</li>
+        </li>
+        <li>Pinjaman kredit 500 juta hingga 30 Milyar.</li>
+        <li>
+          Presentase pembiayaan hingga <b>60% dari nilai jaminan</b>.
+        </li>
+        <li>
+          Jaminan: <br />
+          - SHM (Sertifikat Hak Milik) <br />
+          - SHGB (Sertifikat Hak Guna Bangunan) untuk rumah, ruko, rukan, atau
+          tanah kosong untuk dibangun <br />- BPKB Kendaraan (sebagai agunan
+          tambahan)
+        </li>
       </ul>
     ),
     Ketentuan: (
       <ul className="list-inside list-disc pl-4 sm:pl-16">
-          <li className="p-4">
-          Suku bunga 10.25% fix 1 tahun. Bunga floating: tahun berikutnya, Suku bunga LPS BPR + 7%
-          </li>
-          <li className="p-4">
+        <li className="p-4">
+          Suku bunga 10.25% fix 1 tahun. Bunga floating: tahun berikutnya, Suku
+          bunga LPS BPR + 7%
+        </li>
+        <li className="p-4">
           Jangka waktu kredit hingga 8 tahun hingga 20 tahun.
-          </li>
-          <li className="p-4">
-          Pembiayaan : Tanah dan Bangunan 80%
-          </li>
-          <li className="p-4">
-          Usia debitur minimal 21 th dan pada saat jatuh tempo kredit / maksimal 1 tahun sebelum pensiun, khusus untuk wiraswasta dan profesional pada saat jatuh tempo kredit usia maksimal 70 th.
-          </li>
-          <li className="p-4">
-          DP mulai 10%
-          </li>
-          <li className="p-4">
-          Bebas biaya provisi untuk take over kredit
-          </li>
-          <li className="p-4">
+        </li>
+        <li className="p-4">Pembiayaan : Tanah dan Bangunan 80%</li>
+        <li className="p-4">
+          Usia debitur minimal 21 th dan pada saat jatuh tempo kredit / maksimal
+          1 tahun sebelum pensiun, khusus untuk wiraswasta dan profesional pada
+          saat jatuh tempo kredit usia maksimal 70 th.
+        </li>
+        <li className="p-4">DP mulai 10%</li>
+        <li className="p-4">Bebas biaya provisi untuk take over kredit</li>
+        <li className="p-4">
           Pelunasan dalam masa fix rate berjalan, dikenakan pinalty
-          </li>
+        </li>
       </ul>
     ),
     Tabel: [
@@ -649,5 +658,4 @@ export const IsiKredit = [
       { amount: 500000000, term: "3 tahun", reward: 60000000 },
     ],
   },
-
 ];

@@ -497,8 +497,6 @@ export const SponsorForm = ({
           </FormGroup>
         </div>
 
-        <TextField type="file" onChange={handleFileChange} fullWidth />
-
         <div className={`${styles.inputSpan}`}>
           <span>Catatan</span>
           <TextareaAutosize
@@ -518,6 +516,10 @@ export const SponsorForm = ({
             No. Handphone Anda.
           </p>
         </div>
+      </div>
+
+      <div className="mt-4">
+        <TextField type="file" onChange={handleFileChange} fullWidth />
       </div>
     </div>
   );

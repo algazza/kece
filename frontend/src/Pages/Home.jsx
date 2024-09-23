@@ -258,7 +258,7 @@ const Home = () => {
           </div>
 
           <div className="grid justify-center relative">
-            <img src={phoneimg} alt="" className="w-[260px]" />
+            <img src={phoneimg} alt="handphone" className="w-[260px]" />
             <div className="absolute z-[-1] w-[30rem] h-[30rem] rounded-full blue__gradient" />
           </div>
         </div>
@@ -291,27 +291,27 @@ const Home = () => {
         className={`${styles.paddingY} ${styles.paddingX} md:grid md:grid-cols-2 bg-biruMuda-100 relative`}
       >
         <div className="hidden md:block">
-          <img src={ImageSimulasi} alt="" />
+          <img src={ImageSimulasi} alt="gambar wanita" />
         </div>
 
         <img
           src={SimulasiPercil1}
-          alt=""
+          alt="icon koin"
           className="absolute md:top-[240px] md:left-[130px] max-md:bottom-[70px] max-md:-right-[57px] w-[100px]"
         />
         <img
           src={SimulasiPercil2}
-          alt=""
-          className="absolute md:top-[100px] md:left-[200px] top-[32px] max-md:right-[0px] w-[80px]"
+          alt="icon kartu"
+          className="absolute md:top-[100px] md:left-[210px] top-[32px] max-md:right-[0px] w-[80px]"
         />
         <img
           src={SimulasiPercil3}
-          alt=""
-          className="absolute md:top-[50px] md:left-[480px] top-[120px] -left-[51px]"
+          alt="icon uang"
+          className="absolute md:top-[50px] md:left-[490px] top-[120px] -left-[51px]"
         />
         <img
           src={SimulasiPercil4}
-          alt=""
+          alt="icon celengan"
           className="absolute md:top-[260px] md:left-[520px] max-md:hidden"
         />
 
@@ -394,7 +394,7 @@ const Home = () => {
             <div
               key={news.id}
               className="p-4 bg-abuTerang rounded-xl cursor-pointer"
-              onClick={() => navigate(`/berita/${news.slug}`)}
+              onClick={() => navigate(`berita/${news.slug}`)}
             >
               <img
                 src={`${localhostLink}/image/public/news/${news.image}`}

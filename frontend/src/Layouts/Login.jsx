@@ -11,13 +11,14 @@ import styles from "../helper/style";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Navigate, useNavigate } from "react-router-dom";
-import logoArmor from "../../public/img/LOGO-AM-CORAL-BARU.svg";
+import { logoArmor } from "../helper";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
 
   // visibility password
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -38,7 +39,7 @@ const Login = () => {
       localStorage.setItem("passkey", password);
       localStorage.setItem("isAuthenticated", "true");
       setError("");
-      navigate("/");
+      navigate("/newwebsite");
     } else {
       setError("Passkey salah");
     }

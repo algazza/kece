@@ -127,7 +127,7 @@ const SyaratTabungan = () => {
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={"Tabugan"} />
+        <TitleBlueBanner title={"Tabungan"} />
       </section>
 
       <span className="-mt-[100px] pb-[100px] block" id="section2">

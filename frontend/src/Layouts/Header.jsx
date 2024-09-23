@@ -46,16 +46,16 @@ const Header = () => {
             <FlyoutLink href={""}>Home</FlyoutLink>
           </li>
           <li>
-            <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
-          </li>
-          <li>
-            <FlyoutLink href={"berita"}>Berita</FlyoutLink>
-          </li>
-          <li>
             <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>
           </li>
           <li>
             <FlyoutLink FlyoutContent={Service}>Layanan</FlyoutLink>
+            <li>
+              <li>
+                <FlyoutLink href={"berita"}>Berita</FlyoutLink>
+              </li>
+              <FlyoutLink FlyoutContent={AboutUs}>Tentang Kami</FlyoutLink>
+            </li>
           </li>
         </ul>
 
@@ -86,33 +86,6 @@ const Header = () => {
                 <ul className="font-semibold">
                   <li className="my-3">
                     <Link to={""}>Home</Link>
-                  </li>
-                  <li>
-                    <Accordion sx={{ boxShadow: "none" }}>
-                      <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1-content"
-                        id="panel1-header"
-                        sx={{ padding: "0px", border: "none" }}
-                      >
-                        Tentang Kami
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <ul>
-                          <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"sejarah"}>Sejarah</Link>
-                            <Link to={"visi-misi"}>Visi Misi</Link>
-                            <Link to={"penghargaan"}>Penghargaan</Link>
-                            <Link to={"manajemen"}>Manajemen</Link>
-                            <Link to={"lokasi"}>Lokasi</Link>
-                            <Link to={"laporan"}>Laporan</Link>
-                          </li>
-                        </ul>
-                      </AccordionDetails>
-                    </Accordion>
-                  </li>
-                  <li className="my-3">
-                    <Link to={"berita"}>Berita</Link>
                   </li>
                   <li>
                     <Accordion sx={{ boxShadow: "none" }}>
@@ -153,6 +126,33 @@ const Header = () => {
                             <Link to={"/#simulasi"}>Simulasi</Link>
                             <Link to={"promo"}>Promo</Link>
                             <Link to={"sponsor"}>Sponsor</Link>
+                          </li>
+                        </ul>
+                      </AccordionDetails>
+                    </Accordion>
+                  </li>
+                  <li className="my-3">
+                    <Link to={"berita"}>Berita</Link>
+                  </li>
+                  <li>
+                    <Accordion sx={{ boxShadow: "none" }}>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1-content"
+                        id="panel1-header"
+                        sx={{ padding: "0px", border: "none" }}
+                      >
+                        Tentang Kami
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <ul>
+                          <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
+                            <Link to={"sejarah"}>Sejarah</Link>
+                            <Link to={"visi-misi"}>Visi Misi</Link>
+                            <Link to={"penghargaan"}>Penghargaan</Link>
+                            <Link to={"manajemen"}>Manajemen</Link>
+                            <Link to={"lokasi"}>Lokasi</Link>
+                            <Link to={"laporan"}>Laporan</Link>
                           </li>
                         </ul>
                       </AccordionDetails>

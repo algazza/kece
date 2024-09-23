@@ -12,7 +12,7 @@ const styles = {
     fontBody: "xs:text-[16px] text-[14px]",
     fontSmallBold: "font-bold xs:text-[12.8px] text-[11.67px]",
     fontSmall: "xs:text-[12.8px] text-[11.67px]",
-    fontCaption: "xs:text-[10.24px] text-[9.72px] font-medium",
+    fontCaption: "xs:text-[10.24px] text-[9.72px]",
 
     flexCenter: "flex justify-center items-center",
     flexStart: "flex justify-center items-start",

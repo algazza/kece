@@ -1,9 +1,5 @@
 // ----- Folder Data -----
-import {
-  footer1,
-  footer2,
-  logoArmor,
-} from "../helper/index";
+import { footer1, footer2, logoArmor } from "../helper/index";
 import styles from "../helper/style";
 // ----- MUI -----
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
@@ -57,6 +53,7 @@ const Footer = () => {
               <img
                 src={`${localhostLink}/image/public/stackholder/${img.image}`}
                 key={img.id}
+                alt={`stackholder ${img.id}`}
                 className="pr-20"
               />
             ))}
@@ -72,6 +69,7 @@ const Footer = () => {
               <img
                 src={`${localhostLink}/image/public/stackholder/${img.image}`}
                 key={img.id}
+                alt={`stackholder ${img.id}`}
                 className="pr-20"
               />
             ))}
@@ -82,7 +80,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between bg-footerimage bg-no-repeat">
         <div className="flex flex-col py-4 pl-8 pr-12 xs:py-2 xs:px-8 gap-2 xs:gap-2 text-white">
           <a href="/" className="flex items-center gap-3">
-            <img src={logoArmor} alt="logo" className=" xs:w-16" />
+            <img src={logoArmor} alt="logo" className="xs:w-16" />
             <span
               className={`${styles.heading5} xs:leading-[24px] leading-[20px]`}
             >
@@ -120,7 +118,11 @@ const Footer = () => {
             <ul>
               {footer2.map((futer) => (
                 <li key={futer.id} className="">
-                  <a href={futer.link} className={`${styles.fontBody}`}>
+                  <a
+                    href={futer.link}
+                    target={futer.id == 2 && "_blank"}
+                    className={`${styles.fontBody}`}
+                  >
                     {futer.title}
                   </a>
                 </li>
@@ -159,6 +161,11 @@ const Footer = () => {
             </li>
           ))}
         </ul>
+
+        <div className="flex gap-4 text-primary">
+          <p className="">info@bprartomoro.co.id</p>
+          <p className="">0813 2789 0199</p>
+        </div>
 
         <span className={`text-primary ${styles.fontSmall} `}>
           &#169; 2024 Bank BPR Arto Moro All rights reserved.

@@ -172,7 +172,7 @@ const News = () => {
           <div
             key={news.judul}
             className="w-[180px] sm:w-[250px] md:w-[550px] md:grid md:grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
-            onClick={() => navigate(`/berita/${generateSlug(news.slug)}`)}
+            onClick={() => navigate(`${generateSlug(news.slug)}`)}
           >
             <div className="rounded-t-xl md:rounded-l-xl md:w-40 md:h-40 overflow-hidden">
               <img
@@ -189,13 +189,6 @@ const News = () => {
               <h6 className={`${styles.heading6} `}>{news.judul}</h6>
               <p className={`${styles.fontSmall} text-abuGelap`}>
                 {news.tanggal}
-              </p>
-              <p className={`${styles.fontSmall} text-biruTuwa-600 font-bold`}>
-                {new Intl.DateTimeFormat("id-ID", {
-                  day: "2-digit",
-                  month: "long",
-                  year: "numeric",
-                }).format(new Date(news.updated_at))}
               </p>
             </div>
           </div>
