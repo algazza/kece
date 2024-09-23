@@ -3,6 +3,7 @@ import styles from '../helper/style'
 import TitleBlueBanner from '../Layouts/TitleBlueBanner'
 import IntroBanner from '../Layouts/IntroBanner'
 import { BlueBanner } from '../helper'
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 
 const buttonMenuDigital = [
   {
