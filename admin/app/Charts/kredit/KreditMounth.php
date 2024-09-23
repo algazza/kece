@@ -20,7 +20,6 @@ class KreditMounth
         $now = Carbon::now();
         $startTime = $now->copy()->subMonth()->startOfMonth();
 
-        // Mengelompokkan data setiap 4 hari
         $kredits = Kredit::whereBetween('created_at', [$startTime, $now])
                          ->select('created_at')
                          ->orderBy('created_at')

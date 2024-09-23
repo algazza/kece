@@ -7,14 +7,14 @@
             class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center dark:bg-white">
             <div class="">
                 <div class="flex">
-                <a href="{{ route ('manajemen.index') }}" class=" mr-[1rem] hidden md:block xl:block">
+                <a href="{{ route ('pejabat.index') }}" class=" mr-[1rem] hidden md:block xl:block">
                     <i class='bx bx-arrow-back text-4xl rounded-lg font-semibold bg-white border border-gray-300 text-red-600 px-2 hover:bg-gray-300 shadow-sm duration-300 ' ></i>
                 </a>
                 <h1 class="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2 dark:text-black">
                     Add Person
                 </h1>
             </div>
-                    <form enctype="multipart/form-data" method="post" action="{{ route('manajemen.post') }}">
+                    <form enctype="multipart/form-data" method="post" action="{{ route('pejabat.post') }}">
                         @csrf
                         <div
                         class="w-full rounded-sm bg-cover bg-center bg-no-repeat items-center">

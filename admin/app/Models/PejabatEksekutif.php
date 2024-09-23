@@ -10,5 +10,10 @@ class PejabatEksekutif extends Model
     use HasFactory;
 
     protected $table = 'pejabat_eksekutif';
-    
+    protected $fillable = [
+        'nama',
+        'jabatan',
+        'deskripsi',
+        'image',
+    ];
 }
