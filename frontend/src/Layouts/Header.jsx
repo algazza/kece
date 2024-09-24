@@ -100,9 +100,9 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"kredit"}>Kredit</Link>
-                            <Link to={"deposito"}>Deposito</Link>
                             <Link to={"tabungan"}>Tabungan</Link>
+                            <Link to={"deposito"}>Deposito</Link>
+                            <Link to={"kredit"}>Kredit</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -231,9 +231,9 @@ const AboutUs = () => {
 
 const Product = () => {
   const items = [
-    { name: "Kredit", link: "kredit" },
-    { name: "Deposito", link: "deposito" },
     { name: "Tabungan", link: "tabungan" },
+    { name: "Deposito", link: "deposito" },
+    { name: "Kredit", link: "kredit" },
   ];
 
   return <MenuList items={items} />;

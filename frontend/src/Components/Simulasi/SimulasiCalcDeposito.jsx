@@ -22,7 +22,7 @@ const SimulasiCalcDeposito = () => {
     { label: "Setoran Awal", value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")}` },
     { label: "Angka Bunga", value: `${bunga}%` },
     { label: "Nilai Bunga", value: hasilBunga },
-    { label: "Total", value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")} + ${hasilBunga}` },
+    { label: "Total Bunga", value: `${hasilBunga} * ${waktu}` },
   ];
 
   const formatRupiah = (value) => {

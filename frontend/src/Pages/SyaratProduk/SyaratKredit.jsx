@@ -167,48 +167,29 @@ const SyaratKredit = () => {
         return menu === kredit.id ? (
           <section key={kredit.id}>
             {/* Menu pilihan */}
-            <section className="pt-10 flex justify-center gap-4 md:max-w-full max-w-80 overflow-auto">
-              {[
-                "Keuntungan",
-                "Syarat & Ketentuan",
-                "Tabel Simulasi",
-                "Biaya",
-                "Hubungi Kami",
-              ].map((menu, index) => (
-                <div
-                  key={index}
-                  onClick={() => updateTabs(index + 1)}
-                  className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
-                    tabs === index + 1
-                      ? "bg-biruMuda-500 text-primary rounded-md"
-                      : ""
-                  }`}
-                >
-                  {menu}
-                </div>
-              ))}
+            <section className={styles.flexCenter}>
+              <div className="pt-10 flex gap-4 md:max-w-full max-w-80 overflow-auto">
+                {[
+                  "Keuntungan",
+                  "Syarat & Ketentuan",
+                  "Tabel Simulasi",
+                  "Biaya",
+                  "Hubungi Kami",
+                ].map((menu, index) => (
+                  <div
+                    key={index}
+                    onClick={() => updateTabs(index + 1)}
+                    className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
+                      tabs === index + 1
+                        ? "bg-biruMuda-500 text-primary rounded-md"
+                        : ""
+                    }`}
+                  >
+                    {menu}
+                  </div>
+                ))}
+              </div>
             </section>
-            {/* <section className="pt-10 flex justify-center">
-              {[
-                "Keuntungan",
-                "Syarat & Ketentuan",
-                "Tabel Simulasi",
-                "Biaya",
-                "Hubungi Kami",
-              ].map((menu, index) => (
-                <div
-                  key={index}
-                  onClick={() => updateTabs(index + 1)}
-                  className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                    tabs === index + 1
-                      ? "bg-biruMuda-500 text-primary rounded-md"
-                      : ""
-                  }`}
-                >
-                  {menu}
-                </div>
-              ))}
-            </section> */}
 
             {/* Isi dari Menu */}
             <section
