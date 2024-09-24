@@ -40,7 +40,7 @@ const Footer = () => {
   return (
     <footer className="mt-8 bg-biruMuda-100 shadow-[inset_0px_0px_164px_116px_#fcfffe]">
       <div className={`${styles.paddingY} border-t-2 border-abuGelap`}>
-        <h3 className={`${styles.heading3} text-center mb-10`}>Stackholder</h3>
+        <h3 className={`${styles.heading3} text-center mb-10`}>Mitra Kami</h3>
 
         <div className={`overflow-hidden flex`}>
           <motion.div

@@ -89,11 +89,11 @@ const SyaratDeposito = () => {
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
                 dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-                menawarkan berbagai produk kredit yang dapat disesuaikan dengan
+Deposito                menawarkan berbagai produk kredit yang dapat disesuaikan dengan
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={"Deposito"} />
+        <TitleBlueBanner title={""} />
       </section>
 
       <span className="-mt-[100px] pb-[100px] block" id="section2">

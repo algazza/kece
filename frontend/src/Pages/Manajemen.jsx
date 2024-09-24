@@ -107,6 +107,7 @@ const Manajemen = () => {
       <span className="-mt-[100px] pb-[100px] block" id="section2">
         &nbsp;
       </span>
+
       <section className={`${styles.paddingX} ${styles.paddingY} bg-abuTerang`}>
         <h2 className={`${styles.heading4} text-center text-biruMuda-500`}>
           PROFILE
@@ -117,7 +118,7 @@ const Manajemen = () => {
         </p>
 
         <div className="flex gap-4 py-8 justify-center">
-          {["Dewan Komisaris", "Direksi", "Pejabat Eksekutif"].map(
+          {["Dewan Komisaris", "Direksi"].map(
             (manajemen, index) => (
               <div
                 key={index}
@@ -270,73 +271,32 @@ const Manajemen = () => {
           </div>
         )}
 
-        {manajemenMenu === 2 && (
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {profilePejabatEx.map((speech) => {
-              return (
-                pejabatEx === speech.id && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.5 }}
-                    className=""
-                  >
-                    <h2 className={`${styles.heading4}`}>{speech.nama}</h2>
-                    <h3 className={`${styles.heading6} font-semibold mb-4`}>
-                      {speech.jabatan}
-                    </h3>
+      </section>
 
-                    <p className="">{speech.deskripsi}</p>
-                  </motion.div>
-                )
-              );
-            })}
+      <section className={`${styles.paddingX} ${styles.paddingY}`}>
+        <h1 className={`${styles.heading4} text-center text-biruMuda-500 mb-8`}>
+          Dewan Komisaris
+        </h1>
 
-            {profilePejabatEx.map((img) => {
-              return (
-                pejabatEx === img.id && (
-                  <motion.img
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    src={`${localhostLink}/image/public/pejabat/${img.image}`}
-                    className="min-w-[360px]"
-                    alt={img.nama}
-                  />
-                )
-              );
-            })}
-
-            <div className="sm:col-span-2 md:col-span-1">
-              <div className="grid grid-cols-3 gap-4">
-                {profilePejabatEx.map((menu) => (
-                  <motion.div
-                    key={menu.id}
-                    className="grid justify-items-center cursor-pointer"
-                    onClick={() => updateProfile(menu.id, "pejabatex")}
-                  >
-                    <div className="w-[96px] h-[96px] rounded-full bg-abuGelap overflow-hidden">
-                      <img
-                        src={`${localhostLink}/image/public/pejabat/${menu.image}`}
-                        alt={`foto ${menu.nama}`}
-                        className={`${
-                          pejabatEx === menu.id &&
-                          "bg-blue-300 transition-all duration-500"
-                        }`}
-                      />
-                    </div>
-                    <div className="pt-2 text-center">
-                      <h3 className={`${styles.fontBodyBold}`}>{menu.nama}</h3>
-                      <p className={`${styles.fontCaption}`}>{menu.jabatan}</p>
-                    </div>
-                  </motion.div>
-                ))}
+        <div className={`${styles.flexCenter} flex-wrap gap-16`}>
+          {profilePejabatEx.map((img) => (
+            <div key={img.nama} className={`${styles.flexCenter} flex-col`}>
+              <div
+                key={img.nama}
+                className="w-[190px] h-[190px] rounded-full bg-abuGelap overflow-hidden"
+              >
+                <img
+                  src={`${localhostLink}/image/public/pejabat/${img.image}`}
+                  alt={`foto ${img.nama}`}
+                />
+              </div>
+              <div className="pt-2 text-center">
+                <h3 className={`${styles.heading6}`}>{img.nama}</h3>
+                <p >{img.jabatan}</p>
               </div>
             </div>
-          </div>
-        )}
+          ))}
+        </div>
       </section>
     </>
   );
