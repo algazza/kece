@@ -60,11 +60,11 @@ const RateBunga = ({ handleOpenRateBunga }) => {
         <div className="cursor-pointer" onClick={() => handleOpenRateBunga()}>
           <ArrowBackIosIcon />
         </div>
-        <h3 className={`${styles.heading4} text-center`}>Rate Bunga</h3>
+        <h3 className={`${styles.heading4} text-center`}>Suku Bunga</h3>
 
         <div className="my-8 flex flex-col items-center gap-8">
           <div className="relative flex gap-16 text-center">
-            {["Kredit", "Deposito"].map((ratemenu, index) => (
+            {["Tabungan", "Deposito"].map((ratemenu, index) => (
               <div
                 key={index}
                 className={`${styles.heading6} cursor-pointer`}

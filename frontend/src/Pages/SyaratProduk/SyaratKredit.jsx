@@ -167,7 +167,28 @@ const SyaratKredit = () => {
         return menu === kredit.id ? (
           <section key={kredit.id}>
             {/* Menu pilihan */}
-            <section className="pt-10 flex justify-center">
+            <section className="pt-10 flex justify-center gap-4 md:max-w-full max-w-80 overflow-auto">
+              {[
+                "Keuntungan",
+                "Syarat & Ketentuan",
+                "Tabel Simulasi",
+                "Biaya",
+                "Hubungi Kami",
+              ].map((menu, index) => (
+                <div
+                  key={index}
+                  onClick={() => updateTabs(index + 1)}
+                  className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
+                    tabs === index + 1
+                      ? "bg-biruMuda-500 text-primary rounded-md"
+                      : ""
+                  }`}
+                >
+                  {menu}
+                </div>
+              ))}
+            </section>
+            {/* <section className="pt-10 flex justify-center">
               {[
                 "Keuntungan",
                 "Syarat & Ketentuan",
@@ -187,7 +208,7 @@ const SyaratKredit = () => {
                   {menu}
                 </div>
               ))}
-            </section>
+            </section> */}
 
             {/* Isi dari Menu */}
             <section
@@ -264,7 +285,7 @@ const SyaratKredit = () => {
                   transition={{ duration: 0.5 }}
                   className={`sm:mx-10 sm:px-10 ${styles.flexCenter}`}
                 >
-                  <TabelBiaya/>
+                  <TabelBiaya />
                 </motion.div>
               ) : null}
 

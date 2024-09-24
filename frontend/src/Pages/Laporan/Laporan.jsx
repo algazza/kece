@@ -12,21 +12,21 @@ const buttonMenuProfile = [
     icon: (className) => <TrendingUpIcon className={className} />,
     title: "Laporan Triwulan",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
-    href: "laporan-triwulan",
+    href: "laporan/laporan-triwulan",
   },
   {
     id: 2,
     icon: (className) => <TrendingUpIcon className={className} />,
     title: "Laporan GCG",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
-    href: "laporan-gcg",
+    href: "laporan/laporan-gcg",
   },
   {
     id: 3,
     icon: (className) => <TrendingUpIcon className={className} />,
     title: "Laporan Tahunan",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
-    href: "laporan-tahunan",
+    href: "laporan/laporan-tahunan",
   },
 ];
 

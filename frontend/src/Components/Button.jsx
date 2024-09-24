@@ -10,7 +10,7 @@ export const ButtonGetDown = ({
   return (
     <a href="#section2" className={`border-2 ${BorderColor} py-2 px-4 rounded-xl mt-4`}>
       <span className={`${TextColor} ${styles.fontBodyBold} mr-4`}>
-        Telusuri Lebih Dalam
+        Info Selengkapnya
       </span>
       <ArrowDownwardIcon
         className={`${TextColor} place-items-center animate-bounce`}
