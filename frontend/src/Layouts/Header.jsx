@@ -43,7 +43,7 @@ const Header = () => {
           className={`list-none sm:flex hidden justify-end items-center flex-1 gap-12 ${styles.fontBody} font-semibold`}
         >
           <li>
-            <FlyoutLink href={""}>Home</FlyoutLink>
+            <FlyoutLink href={"/newwebsite"}>Home</FlyoutLink>
           </li>
           <li>
             <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>

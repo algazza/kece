@@ -278,12 +278,12 @@ const Manajemen = () => {
           Dewan Komisaris
         </h1>
 
-        <div className={`${styles.flexCenter} flex-wrap gap-8`}>
+        <div className={`${styles.flexCenter} flex-wrap gap-16`}>
           {profilePejabatEx.map((img) => (
             <div key={img.nama} className={`${styles.flexCenter} flex-col`}>
               <div
                 key={img.nama}
-                className="w-[150px] h-[150px] rounded-full bg-abuGelap overflow-hidden"
+                className="w-[190px] h-[190px] rounded-full bg-abuGelap overflow-hidden"
               >
                 <img
                   src={`${localhostLink}/image/public/pejabat/${img.image}`}
