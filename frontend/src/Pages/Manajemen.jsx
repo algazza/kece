@@ -276,7 +276,7 @@ const Manajemen = () => {
             <div key={img.nama} className={`${styles.flexCenter} flex-col`}>
               <div
                 key={img.nama}
-                className="w-[190px] h-[190px] rounded-full bg-abuGelap overflow-hidden"
+                className="w-[190px] h-[190px] rounded-full bg-abuGelap overflow-hidden hover:scale-105 duration-300"
               >
                 <img
                   src={`${localhostLink}/image/public/pejabat/${img.image}`}
@@ -285,7 +285,7 @@ const Manajemen = () => {
               </div>
               <div className="pt-2 text-center">
                 <h3 className={`${styles.heading6}`}>{img.nama}</h3>
-                <p >{img.jabatan}</p>
+                <p className={styles.fontSmall}>{img.jabatan}</p>
               </div>
             </div>
           ))}
