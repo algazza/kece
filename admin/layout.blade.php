@@ -7,10 +7,9 @@
     <title>Arto Moro</title>
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 <body class="bg-gray-200 h-screen">
@@ -33,7 +32,7 @@
                 <label class="input flex items-center gap-2 rounded-[10px] bg-gray-100 box-border border-[0.5px] border-black h-[2.5rem]">
                   <form action="{{ route('dashboard.search') }}" method="post">
                     @csrf
-                      <input type="text" class="rounded-[10px] h-[2rem] ml-[-0.8rem]" placeholder="Search" id="searchInput" name="query"/>
+                      <input type="text" class="rounded-[10px] h-[2rem] ml-[0.5rem]" placeholder="Search" id="searchInput" name="query"/>
                       <button type="submit">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"

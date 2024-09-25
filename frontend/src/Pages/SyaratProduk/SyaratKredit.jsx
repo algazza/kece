@@ -15,6 +15,7 @@ import PlaylistAddCheckRoundedIcon from "@mui/icons-material/PlaylistAddCheckRou
 import { localhostLink } from "../../helper/localhost";
 import TabelBiaya from "../../Components/TabelBiaya";
 import { TabelSimKredit } from "../../Components/TabelSim";
+import { useMenu } from "../../MenuProvider";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -56,8 +57,8 @@ const buttonMenuTabungan = [
 ];
 
 const SyaratKredit = () => {
+  const { menu, setMenu } = useMenu();
   const [tabs, setTabs] = useState(1);
-  const [menu, setMenu] = useState(0);
 
   // tab
   function updateTabs(id) {
@@ -74,6 +75,8 @@ const SyaratKredit = () => {
   function updateMenu(id) {
     setMenu(id);
   }
+
+  console.log(menu)
 
   return (
     <>
@@ -193,7 +196,7 @@ const SyaratKredit = () => {
                   className="md:mx-10 md:px-10"
                 >
                   <h3
-                    className={`${styles.heading5} text-black my-4 ml-8 sm:ml-4`}
+                    className={`${styles.heading5} text-black my-4`}
                   >
                     Tabel Penempatan Dana
                   </h3>
@@ -210,12 +213,7 @@ const SyaratKredit = () => {
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.5 }}
                   className={`sm:mx-10 sm:px-10 ${styles.flexCenter}`}
-                >
-                  <h3
-                    className={`${styles.heading5} text-black my-4 ml-8 sm:ml-4`}
-                  >
-                    Tabel Biaya
-                  </h3>
+                >                  
                   <TabelBiaya />
                 </motion.div>
               ) : null}

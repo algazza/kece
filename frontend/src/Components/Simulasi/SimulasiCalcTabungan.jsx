@@ -7,18 +7,19 @@ import {
   OutlinedInput,
   Select,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../helper/style";
 import { motion } from "framer-motion";
 
 const SimulasiCalcTabungan = () => {
   const [nominal, setNominal] = useState("");
-  const [waktu, setWaktu] = useState();
+  const [produk, setProduk] = useState();
   const [bunga, setBunga] = useState();
   const [hasilTotal, setHasilTotal] = useState();
   const [hasilBunga, setHasilBunga] = useState();
   const [showResult, setShowResult] = useState(false);
   const [rawNominal, setRawNominal] = useState("");
+  const nominalNumber = parseFloat(nominal.replace(/\./g, ""));
 
   const CalcDataFields = [
     {
@@ -57,25 +58,32 @@ const SimulasiCalcTabungan = () => {
 
     setNominal(formatRupiah(rawValue));
   };
+  
+  useEffect(() => {
+    if (produk === "Tabungan Pro Aktif") {
+      if (nominalNumber >= 20000 && nominalNumber <= 1000000) {
+        setBunga(3);
+      } else if (nominalNumber > 1000000 && nominalNumber <= 2500000) {
+        setBunga(3.5);
+      } else if (nominalNumber > 2500000 && nominalNumber <= 5000000) {
+        setBunga(4);
+      } else if (nominalNumber > 5000000) {
+        setBunga(4.5);
+      } else {
+        setBunga("");
+      }
+    }
+  }, [produk, nominalNumber]);
 
   const handleCalculations = (e) => {
     e.preventDefault();
-    const nominalNumber = parseFloat(nominal.replace(/\./g, ""));
-    const waktuNumber = parseFloat(waktu);
-    const bungaNumber = parseFloat(bunga);
 
-    if (
-      !nominal ||
-      !waktu ||
-      !bunga ||
-      nominalNumber <= 0 ||
-      waktuNumber <= 0 ||
-      bungaNumber <= 0
-    ) {
+    if (!nominal || nominalNumber <= 20000) {
       setHasilTotal("Mohon isi semua field");
       setShowResult(false);
     } else {
-      let hasilBungaTotal = ((nominalNumber / waktuNumber) * bungaNumber) / 100;
+      // switch
+      let hasilBungaTotal = (0.8 / 100) * (nominalNumber * (bunga / 100) * 30);
       let hasilPerkalianTotal = nominalNumber + hasilBungaTotal;
 
       setHasilTotal(`Rp. ${hasilPerkalianTotal.toLocaleString("id-ID")}`);
@@ -85,7 +93,7 @@ const SimulasiCalcTabungan = () => {
   };
 
   const handleShowResult = () => {
-    if (!nominal || !waktu || !bunga) {
+    if (!nominal || !bunga) {
       setShowResult(false);
     } else {
       setShowResult(!showResult);
@@ -114,8 +122,8 @@ const SimulasiCalcTabungan = () => {
                 name="Jangka Waktu"
                 className="bg-primary"
                 required
-                value={waktu}
-                onChange={(e) => setWaktu(e.target.value)}
+                value={produk}
+                onChange={(e) => setProduk(e.target.value)}
               >
                 {[
                   "Tabungan Pro Aktif",
@@ -155,11 +163,10 @@ const SimulasiCalcTabungan = () => {
                 id="outlined-adornment-amount"
                 endAdornment={<InputAdornment position="end">%</InputAdornment>}
                 type="number"
-                name="total_pinjaman"
+                name="bunga"
                 className="bg-primary"
-                required
+                disabled
                 value={bunga}
-                onChange={(e) => setBunga(e.target.value)}
               />
             </FormControl>
           </div>

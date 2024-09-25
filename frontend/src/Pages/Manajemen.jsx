@@ -227,7 +227,7 @@ const Manajemen = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    src={`${localhostLink}/image/public/manajemen/${img.image}`}
+                    src={`${localhostLink}/image/public/direksi/${img.image}`}
                     className="min-w-[360px]"
                     alt=""
                   />
@@ -245,7 +245,7 @@ const Manajemen = () => {
                   >
                     <div className="w-[96px] h-[96px] rounded-full bg-abuGelap overflow-hidden">
                       <img
-                        src={`${localhostLink}/image/public/manajemen/${menu.image}`}
+                        src={`${localhostLink}/image/public/direksi/${menu.image}`}
                         alt={`foto ${menu.nama}`}
                         className={`${
                           direksi === menu.id &&

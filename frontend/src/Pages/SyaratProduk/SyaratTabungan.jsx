@@ -13,6 +13,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import { localhostLink } from "../../helper/localhost";
 import TabelBiaya from "../../Components/TabelBiaya";
+import { useMenu } from "../../MenuProvider";
 // ===================================================
 const buttonMenuTabungan = [
   {
@@ -45,8 +46,8 @@ const buttonMenuTabungan = [
 ];
 
 const SyaratTabungan = () => {
+  const { menu, setMenu } = useMenu();
   const [tabs, setTabs] = useState(1);
-  const [menu, setMenu] = useState(0);
 
   // tab
   function updateTabs(id) {

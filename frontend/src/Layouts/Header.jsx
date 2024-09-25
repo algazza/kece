@@ -7,10 +7,12 @@ import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useMenu } from "../MenuProvider";
 
 const Header = () => {
   const [hasShadow, setHasShadow] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const { setMenu } = useMenu();
 
   // shadow
   useEffect(() => {
@@ -216,24 +218,12 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
 };
 
 // function subMenu
-const AboutUs = () => {
-  const items = [
-    { name: "Sejarah", link: "sejarah" },
-    { name: "Visi Misi", link: "visi-misi" },
-    { name: "Penghargaan", link: "penghargaan" },
-    { name: "Manajemen", link: "manajemen" },
-    { name: "Lokasi", link: "lokasi" },
-    { name: "Laporan", link: "laporan" },
-  ];
-
-  return <MenuList items={items} />;
-};
 
 const Product = () => {
   const items = [
-    { name: "Tabungan", link: "tabungan" },
-    { name: "Deposito", link: "deposito" },
-    { name: "Kredit", link: "kredit" },
+    { name: "Tabungan", link: "tabungan", onclcik: () => setMenu(0) },
+    { name: "Deposito", link: "deposito", onclcik: () => setMenu(0) },
+    { name: "Kredit", link: "kredit", onclcik: () => setMenu(0) },
     { name: "Armor Properti", link: "armor-properti" },
   ];
 
@@ -249,6 +239,19 @@ const Service = () => {
     { name: "Pick Up Service", link: "pick-up-service" },
     { name: "Pengaduan", link: "mailto:info@bprartomoro.co.id" },
   ];
+  
+  return <MenuList items={items} />;
+};
+
+const AboutUs = () => {
+  const items = [
+    { name: "Sejarah", link: "sejarah" },
+    { name: "Visi Misi", link: "visi-misi" },
+    { name: "Penghargaan", link: "penghargaan" },
+    { name: "Manajemen", link: "manajemen" },
+    { name: "Lokasi", link: "lokasi" },
+    { name: "Laporan", link: "laporan" },
+  ];
 
   return <MenuList items={items} />;
 };
@@ -260,7 +263,7 @@ const MenuList = ({ items }) => {
       <ul className="flex flex-col text-center flex-1 gap-2">
         {items.map((item, index) => (
           <li key={index} className="hover:text-merahh-500 duration-300">
-            <Link to={item.link}>{item.name}</Link>
+            <Link to={item.link} onClick={item.onclcik}>{item.name}</Link>
           </li>
         ))}
       </ul>

@@ -9,9 +9,9 @@
     </div>
     <section class="mx-[5rem] grid grid-cols-1 md2:grid-cols-2 lg:grid-cols-4 mt-[5rem] mb-6">
         @foreach ($direksi as $item)
-            <a href="{{ route('direksi.find', $item->id) }}" class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md my-6 xl:mx-6 md2:mx-6">
+            <a href="{{ route('manajemen.find', $item->id) }}" class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-md my-6 xl:mx-6 md2:mx-6">
                 <div class="relative">
-                    <img class="w-full h-64 object-cover" src="{{ asset('image/public/direksi/' . $item->image) }}" alt="Image">
+                    <img class="w-full h-64 object-cover" src="{{ asset('image/public/manajemen/' . $item->image) }}" alt="Image">
                 </div>
                 <div class="p-4">
                     <h3 class="text-xl font-semibold mb-1">{{ $item->nama }}</h3>
