@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { localhostLink } from "../helper/localhost";
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
-import { TabelKredit } from "../helper";
+import { TabelDeposito, TabelKredit } from "../helper";
 
 export const TabelSimDeposito = () => {
   return (
@@ -9,7 +9,7 @@ export const TabelSimDeposito = () => {
       <Table aria-label="tabel rate bunga">
         <TableHead>
         <TableRow className="bg-abuTerang">
-            {["Plafon", " 12 Bulan", "24 Bulan", "36 Bulan"].map(
+            {["Jumlah Deposito", "1 Bulan", "3 Bulan", "6 Bulan", "12 Bulan"].map(
               (row, index) => (
                 <TableCell
                   key={index}
@@ -27,9 +27,9 @@ export const TabelSimDeposito = () => {
         </TableHead>
 
         <TableBody>
-          {TabelKredit.map((cell, index) => (
+          {TabelDeposito.map((cell, index) => (
             <TableRow key={index} className={index % 2 && "bg-abuTerang"}>
-              {[cell.plafon, cell.satutahun, cell.duatahun, cell.tigatahun].map(
+              {[cell.jumlah, cell.satubulan, cell.tigabulan, cell.enambulan, cell.satutahun].map(
                 (cellmap, index) => (
                   <TableCell
                     key={index}
