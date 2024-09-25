@@ -32,7 +32,7 @@ class DireksiController extends Controller
     
             if($request->hasFile('image')){
                 $manajemenImage = time() . '.' . $request->image->extension();
-                $request->image->move(public_path('image/public/manajemen'), $manajemenImage);
+                $request->image->move(public_path('image/public/direksi'), $manajemenImage);
                 $direksi->image = $manajemenImage;
             }
     
@@ -57,7 +57,7 @@ class DireksiController extends Controller
 
     public function viewManajemenFind($id){
         $direksi = direksi::find($id);
-        return view('admin.jabatan.JabatanEdit', compact('direksi'));
+        return view('admin.jabatan.direksi.DireksiEdit', compact('direksi'));
     }
 
     public function update(Request $request,$id){
