@@ -53,7 +53,7 @@
                         </div> 
                         <p class="text-black pt-1 text-sm ">Max File 2MB</p>                  
                         <div class="mt-4 px-[2rem] w-full">
-                            <input type="text" name="tanggal" class="rounded-[5px] block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner text-center shadow-gray-400" placeholder="Tanggal"/>
+                            <input type="number" name="tanggal" class="rounded-[5px] block p-2.5 w-full z-20 text-sm text-gray-900 shadow-inner text-center shadow-gray-400" placeholder="Tanggal"/>
                             <input type="hidden" name="jenis_laporan" value="Tahunan">
                         </div>
                         <div class="mt-4 mb-2">

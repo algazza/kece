@@ -53,8 +53,6 @@ Route::resource('manajemen',ManajemenController::class);
 Route::resource('direksi',DireksiController::class);
 Route::resource('pejabat',PejabatEksekutifController::class);
 Route::resource('stackholder',StackholderController::class);
-Route::resource('ratedDeposito',RatedDepositoController::class);
-Route::resource('ratedKredit',RatedKreditController::class);
 Route::resource('promo',PromoController::class);
 
 
@@ -71,7 +69,6 @@ Route::get('/api/tabungan', [DepositoController::class, 'data']);
 
 Route::get('/banner', [BannerController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
-Route::get('/ratedKredit/update', [RatedKreditController::class, 'updateAt']);
 Route::get('/news/{slug}', [NewsController::class, 'show']);
 Route::get('/promo/{slug}', [PromoController::class, 'show']);
 Route::get('/laporan/download/{filename}', [LaporanController::class, 'download']);

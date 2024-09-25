@@ -19,7 +19,7 @@ class LaporanController extends Controller
     }
 
     public function viewGcg(){
-        $laporan = Laporan::orderBy('created_at', 'DESC')->where('jenis_laporan', 'GCG')->get();
+        $laporan = Laporan::orderBy('tanggal', 'DESC')->where('jenis_laporan', 'GCG')->get();
         return view ('admin.laporan.gcg.gcg', compact('laporan'));
     }
 
@@ -43,7 +43,8 @@ class LaporanController extends Controller
             $laporan->jenis_laporan = $request->jenis_laporan;
             
             if ($request->hasFile('file_laporan')) {
-                $pdfName = $request->file_laporan->getClientOriginalName();
+                $pdfRandom = $request->file_laporan->getClientOriginalName();
+                $pdfName = time() . '-' . $pdfRandom;
                 $pdfName = pathinfo($pdfName, PATHINFO_FILENAME);
                 $pdfName = $pdfName . '.' . $request->file_laporan->extension();
     
