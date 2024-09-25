@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import IntroBanner from "../../Layouts/IntroBanner";
 import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
 import FormBank from "../../Components/FormBank";
@@ -6,19 +6,13 @@ import styles from "../../helper/style";
 import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
 import { Kredit } from "../../Components/Form";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../../helper/DataProduk";
 import { nomorInduk } from "../../helper/nomor";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import SchoolIcon from "@mui/icons-material/School";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import MosqueIcon from "@mui/icons-material/Mosque";
-import ElderlyIcon from "@mui/icons-material/Elderly";
-import GroupsIcon from "@mui/icons-material/Groups";
-import DevicesOtherIcon from "@mui/icons-material/DevicesOther";
-import TabelComp from "../../Components/TabelComp";
 import { localhostLink } from "../../helper/localhost";
-import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
+import TabelBiaya from "../../Components/TabelBiaya";
 // ===================================================
 const buttonMenuTabungan = [
   {
@@ -120,7 +114,6 @@ const SyaratTabungan = () => {
                 {[
                   "Keuntungan",
                   "Syarat & Ketentuan",
-                  "Tabel Simulasi",
                   "Biaya",
                   "Hubungi Kami",
                 ].map((menu, index) => (
@@ -189,25 +182,6 @@ const SyaratTabungan = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.5 }}
-                  className="md:mx-10 md:px-10"
-                >
-                  <h3
-                    className={`${styles.heading5} text-black my-4 ml-8 sm:ml-4`}
-                  >
-                    Tabel Penempatan Dana
-                  </h3>
-
-                  <TabelSim />
-                </motion.div>
-              ) : null}
-
-              {/* Tabel */}
-              {tabs === 4 ? (
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
                   className={`sm:mx-10 sm:px-10 ${styles.flexCenter}`}
                 >
                   <h3
@@ -220,7 +194,7 @@ const SyaratTabungan = () => {
               ) : null}
 
               {/* Form */}
-              {tabs === 5 ? (
+              {tabs === 4 ? (
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}

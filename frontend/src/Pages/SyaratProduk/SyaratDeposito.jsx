@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 import { Deposito } from "../../Components/Form";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../../helper/DataProduk";
-import TabelComp from "../../Components/TabelComp";
 import { nomorInduk } from "../../helper/nomor";
 import { localhostLink } from "../../helper/localhost";
+import { TabelSimDeposito } from "../../Components/TabelSim";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -171,7 +171,7 @@ const SyaratDeposito = () => {
                     Tabel Penempatan Dana
                   </h3>
 
-                  <TabelSim />
+                  <TabelSimDeposito />
                 </motion.div>
               ) : null}
 

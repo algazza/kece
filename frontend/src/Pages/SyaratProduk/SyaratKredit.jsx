@@ -13,8 +13,8 @@ import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWorkRounded";
 import PlaylistAddCheckRoundedIcon from "@mui/icons-material/PlaylistAddCheckRounded";
 import { localhostLink } from "../../helper/localhost";
-import TabelSim from "../../Components/TabelSim";
 import TabelBiaya from "../../Components/TabelBiaya";
+import { TabelSimKredit } from "../../Components/TabelSim";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -198,7 +198,7 @@ const SyaratKredit = () => {
                     Tabel Penempatan Dana
                   </h3>
 
-                  <TabelSim />
+                  <TabelSimKredit />
                 </motion.div>
               ) : null}
 
