@@ -3,7 +3,9 @@ import {
   FormControl,
   InputAdornment,
   InputLabel,
+  MenuItem,
   OutlinedInput,
+  Select,
 } from "@mui/material";
 import React, { useState } from "react";
 import styles from "../../helper/style";
@@ -141,6 +143,33 @@ const SimulasiCalcKredit = () => {
                 value={bunga}
                 onChange={(e) => setBunga(e.target.value)}
               />
+            </FormControl>
+          </div>
+
+          <div className="grid gap-2 pt-6">
+            <h2 className={`${styles.heading6} text-center`}>Tipe Bunga</h2>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                name="Jangka Waktu"
+                className="bg-primary"
+                required
+                value={waktu}
+                onChange={(e) => setWaktu(e.target.value)}
+              >
+                {[
+                  "Anuitas",
+                  "Flat",
+                  "Efektif",
+                ].map((bulan, index) => (
+                  <MenuItem key={index} value={bulan}>
+                    {bulan}
+                  </MenuItem>
+                ))}
+              </Select>
             </FormControl>
           </div>
 

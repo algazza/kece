@@ -18,13 +18,15 @@ const LocationPage = () => {
                 <h2 className={`${styles.fontBodyBold} text-merahh-500`}>
                   Kantor Pusat:
                 </h2>
-                <li>Jl. Elang Raya</li>
-                <h2 className={`${styles.fontBodyBold} text-biruMuda-500`}>
+                <li>Jl. Elang Raya No. 99 Mangunharjo, Tembalang, Semarang</li>
+                <h2 className={`${styles.fontBodyBold} text-biruMuda-500 mt-4`}>
                   Kantor Kas:
                 </h2>
-                <li>Jl. Gajah Raya</li>
-                <li>Jl. Untung</li>
-                <li>Jl. Kol</li>
+                <li>Jl. Gajah Raya No. 155, Semarang</li>
+                <li>Jl. Untung Suropati No. 18 Kav.5, Kalipancur, Semarang</li>
+                <li>
+                  Jl. Kol.H.Imam Suprapto No.1 Bulusan, Tembalang, Semarang
+                </li>
               </ul>
             </div>
             <ButtonGetDown />
@@ -102,7 +104,6 @@ const LocationPage = () => {
       <div className="bg-abuTerang p-10 w-auto m-5 ">
         <div className="flex justify-between mt-20 ">
           <div className="flex-none p-10">
-
             <div className="">
               <h2 className={`${styles.heading5}`}>Kantor Kas Gajah </h2>
               <p className={`${styles.fontBody} flex-auto`}>
@@ -154,7 +155,6 @@ const LocationPage = () => {
       <div className="bg-abuTerang p-10 w-auto m-5 ">
         <div className="flex justify-between mt-20 ">
           <div className="flex-none p-10">
-
             <div className="">
               <h2 className={`${styles.heading5}`}>Kantor Kas Kalipancur </h2>
               <p className={`${styles.fontBody} flex-auto`}>
@@ -206,7 +206,6 @@ const LocationPage = () => {
       <div className="bg-abuTerang p-10 w-auto m-5 ">
         <div className="flex justify-between mt-20 ">
           <div className="flex-none p-10">
-
             <div className="">
               <h2 className={`${styles.heading5}`}>Kantor Kas Bulusan </h2>
               <p className={`${styles.fontBody} flex-auto`}>

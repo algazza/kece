@@ -171,7 +171,7 @@ const News = () => {
         {filteredBerita.slice(pagination.from, pagination.to).map((news) => (
           <div
             key={news.judul}
-            className="w-[180px] sm:w-[250px] md:w-[550px] md:grid md:grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
+            className="w-[187px] sm:w-[250px] md:w-[550px] md:grid md:grid-flow-col shadow-[3px_5px_9px_1px_#1e1e1e1e] rounded-xl cursor-pointer"
             onClick={() => navigate(`${generateSlug(news.slug)}`)}
           >
             <div className="rounded-t-xl md:rounded-l-xl md:w-40 md:h-40 overflow-hidden">

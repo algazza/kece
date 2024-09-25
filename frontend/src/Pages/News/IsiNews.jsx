@@ -101,9 +101,9 @@ const IsiNews = () => {
   return (
     <>
       <section
-        className={`${styles.paddingY} md:grid md:grid-cols-x650 pt-12`}
+        className={`${styles.paddingY} md:grid md:grid-cols-x1fr480 pt-12`}
       >
-        <div className={`${styles.flexCenter} flex-col gap-12 sm:mx-12 mx-4`}>
+        <div className={`${styles.flexCenter} flex-col gap-12 sm:mx-8 mx-4`}>
           <h5 className={`${styles.heading5} text-center `}>{news.judul}</h5>
 
           <div>
@@ -118,7 +118,7 @@ const IsiNews = () => {
                 <LinkIcon className="text-[#646464]" />
               </a>
               <a
-                href={`whatsapp://send?text=${news.judul}. Lihatlah selengkapnya di ${currentUrl}`}
+                href={`whatsapp://send?text=${news.slug}. Lihatlah selengkapnya di ${currentUrl}`}
               >
                 <WhatsAppIcon className="text-[#25D366]" />
               </a>
@@ -150,7 +150,7 @@ const IsiNews = () => {
           </div>
         </div>
 
-        <div className="sm:px-12">
+        <div className="sm:px-8">
           <div className="flex justify-between px-4 sm:px-0">
             <h6 className={`${styles.heading6} mb-4`}>Baca juga:</h6>
             <Link
@@ -160,6 +160,7 @@ const IsiNews = () => {
               Lainnya...
             </Link>
           </div>
+          
           <section className="grid xs:grid-cols-x150 sm:grid-cols-x250 md:grid-cols-1 justify-center gap-6 sm:gap-12 mx-4 sm:mx-0">
             {newsData.slice(0, 4).map((news) => {
               return (

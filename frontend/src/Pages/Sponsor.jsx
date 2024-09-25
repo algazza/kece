@@ -16,11 +16,7 @@ const Sponsor = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Sponsor"}
           DescriptionBanner={`
-              Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
-              memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
-              dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-              menawarkan berbagai produk kredit yang dapat disesuaikan dengan
-              keperluan Anda.
+              Tugas Aldara
             `}
         />
         <TitleBlueBanner title={"Sponsor"} />

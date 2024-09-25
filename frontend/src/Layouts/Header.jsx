@@ -103,6 +103,7 @@ const Header = () => {
                             <Link to={"tabungan"}>Tabungan</Link>
                             <Link to={"deposito"}>Deposito</Link>
                             <Link to={"kredit"}>Kredit</Link>
+                            <Link to={"armor-properti"}>Armor Properti</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -128,7 +129,6 @@ const Header = () => {
                             <Link to={"sponsor"}>Sponsor</Link>
                             <Link to={"pick-up-service"}>Pick Up Service</Link>
                             <Link to={"mailto:info@bprartomoro.co.id"}>Pengaduan</Link>
-                            <Link to={"armor-properti"}>Armor Properti</Link>
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -234,6 +234,7 @@ const Product = () => {
     { name: "Tabungan", link: "tabungan" },
     { name: "Deposito", link: "deposito" },
     { name: "Kredit", link: "kredit" },
+    { name: "Armor Properti", link: "armor-properti" },
   ];
 
   return <MenuList items={items} />;
@@ -246,7 +247,6 @@ const Service = () => {
     { name: "Promo", link: "promo" },
     { name: "Sponsor", link: "sponsor" },
     { name: "Pick Up Service", link: "pick-up-service" },
-    { name: "Armor Properti", link: "armor-properti" },
     { name: "Pengaduan", link: "mailto:info@bprartomoro.co.id" },
   ];
 

@@ -38,12 +38,12 @@ const Penghargaan = () => {
       </section>
 
       <section
-        className={`${styles.paddingY} ${styles.paddingX} grid md:grid-cols-x3300 justify-center gap-8`}
+        className={`${styles.paddingY} ${styles.paddingX} flex flex-wrap justify-center gap-8`}
       >
         {penghargaanData.map((award, index) => (
           <div
             key={index}
-            className="p-4 border-2 rounded-md grid gap-2 justify-center"
+            className="w-[300px] p-4 border-2 rounded-md grid gap-2 justify-center"
           >
             <img
               src={`${localhostLink}/image/public/penghargaan/${award.image}`}

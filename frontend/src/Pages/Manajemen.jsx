@@ -108,17 +108,10 @@ const Manajemen = () => {
         &nbsp;
       </span>
 
-      <section className={`${styles.paddingX} ${styles.paddingY} bg-abuTerang`}>
-        <h2 className={`${styles.heading4} text-center text-biruMuda-500`}>
-          PROFILE
-        </h2>
-        <p className="text-center">
-          Temukan informasi tentang pimpinan perusahaan BPR Arto Moro dan
-          kontribusi mereka dalam memberikan layanan terbaik bagi nasabah kami.
-        </p>
+      <section className={`${styles.paddingX}`}>
 
         <div className="flex gap-4 py-8 justify-center">
-          {["Dewan Komisaris", "Direksi"].map(
+          {["Dewan Komisaris", "Dewan Direksi"].map(
             (manajemen, index) => (
               <div
                 key={index}
@@ -167,7 +160,7 @@ const Manajemen = () => {
                     exit={{ opacity: 0, y: -50 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     src={`${localhostLink}/image/public/manajemen/${img.image}`}
-                    className="min-w-[360px]"
+                    className="max-w-[367px]"
                     alt=""
                   />
                 )
@@ -275,7 +268,7 @@ const Manajemen = () => {
 
       <section className={`${styles.paddingX} ${styles.paddingY}`}>
         <h1 className={`${styles.heading4} text-center text-biruMuda-500 mb-8`}>
-          Dewan Komisaris
+          Pejabat Eksekutif
         </h1>
 
         <div className={`${styles.flexCenter} flex-wrap gap-16`}>

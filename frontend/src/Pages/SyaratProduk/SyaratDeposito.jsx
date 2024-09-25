@@ -19,43 +19,8 @@ const buttonMenuTabungan = [
     icon: (className) => (
       <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
     ),
-    title: "Kredit Investasi",
+    title: "Deposito",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
-    jenis: "Via online",
-  },
-  {
-    id: 2,
-    icon: (className) => (
-      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Kredit Modal",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
-  },
-  {
-    id: 3,
-    icon: (className) => (
-      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Kredit KPR",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
-    jenis: "Via online",
-  },
-  {
-    id: 4,
-    icon: (className) => (
-      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Kredit Multiguna",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
-    jenis: "Via online",
-  },
-  {
-    id: 5,
-    icon: (className) => (
-      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Kredit Pensiun",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
 ];
 
@@ -89,11 +54,11 @@ const SyaratDeposito = () => {
                 Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
                 memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
                 dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-Deposito                menawarkan berbagai produk kredit yang dapat disesuaikan dengan
+                Deposito menawarkan berbagai produk kredit yang dapat disesuaikan dengan
                 keperluan Anda.
             `}
         />
-        <TitleBlueBanner title={""} />
+        <TitleBlueBanner title={"Deposito"} />
       </section>
 
       <span className="-mt-[100px] pb-[100px] block" id="section2">
@@ -102,13 +67,13 @@ Deposito                menawarkan berbagai produk kredit yang dapat disesuaikan
       {/* Menu utama */}
       {menu === 0 ? (
         <section
-          className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}
+          className={`${styles.paddingY} px-16 flex flex-wrap gap-8 justify-center justify-items-center`}
         >
           {/* menu button */}
           {buttonMenuTabungan.map((menu, index) => (
             <a
               href="#section2"
-              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
+              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-[300px] flex flex-col items-center align-middle text-center cursor-pointer`}
               key={index}
               onClick={() => updateMenu(menu.id)}
             >
@@ -124,13 +89,19 @@ Deposito                menawarkan berbagai produk kredit yang dapat disesuaikan
         return menu === kredit.id ? (
           <section key={kredit.id}>
             {/* Menu pilihan */}
-            <section className="pt-10 flex justify-center">
-              {["Syarat", "Ketentuan", "Tabel", "Pengajuan"].map(
-                (menu, index) => (
+            <section className={styles.flexCenter}>
+              <div className="pt-10 flex gap-4 md:max-w-full max-w-80 overflow-auto">
+                {[
+                  "Keuntungan",
+                  "Syarat & Ketentuan",
+                  "Tabel Simulasi",
+                  "Biaya",
+                  "Hubungi Kami",
+                ].map((menu, index) => (
                   <div
                     key={index}
                     onClick={() => updateTabs(index + 1)}
-                    className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+                    className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
                       tabs === index + 1
                         ? "bg-biruMuda-500 text-primary rounded-md"
                         : ""
@@ -138,12 +109,14 @@ Deposito                menawarkan berbagai produk kredit yang dapat disesuaikan
                   >
                     {menu}
                   </div>
-                )
-              )}
+                ))}
+              </div>
             </section>
 
             {/* Isi dari Menu */}
-            <section className="sm:pb-16 m-8 bg-abuTerang md:p-10 p-4 rounded-lg">
+            <section
+              className={` sm:pb-16 md:p-10 rounded-lg`}
+            >
               {/* Syarat */}
               {tabs === 1 ? (
                 <motion.div
@@ -153,23 +126,12 @@ Deposito                menawarkan berbagai produk kredit yang dapat disesuaikan
                   transition={{ duration: 0.5 }}
                   className="mx-6 sm:mx-10 sm:px-10 "
                 >
-                  <ul className="text-abuGelap sm:ml-4">
-                    <h3 className={`${styles.heading5} text-black my-5`}>
-                      A. Keuntungan
-                    </h3>
+                  <ol className="text-abuGelap sm:ml-4">
+                    <li className={`${styles.heading5} text-black`}>
+                      Keuntungan
+                    </li>
                     {kredit.Keuntungan}
-
-                    <h3 className={`${styles.heading5} text-black my-5 `}>
-                      B. Fitur
-                    </h3>
-
-                    {kredit.Fitur}
-
-                    <h3 className={`${styles.heading5} text-black my-5`}>
-                      C. Syarat Pembukuan rekening
-                    </h3>
-                    {kredit.Syarat}
-                  </ul>
+                  </ol>
                 </motion.div>
               ) : null}
 
@@ -182,12 +144,15 @@ Deposito                menawarkan berbagai produk kredit yang dapat disesuaikan
                   transition={{ duration: 0.5 }}
                   className="mx-7 md:mx-10 md:px-10"
                 >
-                  <ul className="text-abuGelap sm:ml-4">
-                    <h3 className={`${styles.heading5} text-black my-4`}>
-                      D. Ketentuan
-                    </h3>
+                  <ol className="list text-abuGelap sm:ml-4">
+                    <li className={`${styles.heading5} text-black`}>Syarat</li>
+                    {kredit.Syarat}
+
+                    <li className={`${styles.heading5} text-black mt-4`}>
+                      Ketentuan
+                    </li>
                     {kredit.Ketentuan}
-                  </ul>
+                  </ol>
                 </motion.div>
               ) : null}
 
@@ -203,27 +168,45 @@ Deposito                menawarkan berbagai produk kredit yang dapat disesuaikan
                   <h3
                     className={`${styles.heading5} text-black my-4 ml-8 sm:ml-4`}
                   >
-                    D. Tabel Penempatan Dana
+                    Tabel Penempatan Dana
                   </h3>
 
-                  <TabelComp kredit={kredit.Tabel} />
+                  <TabelSim />
                 </motion.div>
               ) : null}
 
-              {/* Form */}
+              {/* Tabel */}
               {tabs === 4 ? (
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.5 }}
-                  className="mx-6 sm:mx-10 sm:px-10"
+                  className={`sm:mx-10 sm:px-10 ${styles.flexCenter}`}
+                >
+                  <h3
+                    className={`${styles.heading5} text-black my-4 ml-8 sm:ml-4`}
+                  >
+                    Tabel Biaya
+                  </h3>
+                  <TabelBiaya />
+                </motion.div>
+              ) : null}
+
+              {/* Form */}
+              {tabs === 5 ? (
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5 }}
+                  className="sm:mx-10 sm:px-10"
                 >
                   <FormBank
-                    isiPenting={<Deposito />}
-                    value={"Deposito"}
+                    isiPenting={<Kredit />}
+                    value={"Kredit"}
                     nomer={nomorInduk}
-                    endpoint={`${localhostLink}/api/deposito`}
+                    endpoint={`${localhostLink}/api/kredit`}
                   />
                 </motion.div>
               ) : null}
@@ -231,28 +214,31 @@ Deposito                menawarkan berbagai produk kredit yang dapat disesuaikan
 
             {/* Button next prev */}
             <section className="flex justify-center gap-4">
-              <div
+              <a
+                href="#section2"
                 onClick={() => updateMenu(0)}
                 className={`bg-biruMuda-700 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Kembali Menu
-              </div>
-              <div
+              </a>
+              <a
+                href="#section2"
                 onClick={() => prevTab(tabs)}
                 className={`${
                   tabs === 1 && "hidden"
                 } text-biruMuda-500 border-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Sebelumnya
-              </div>
-              <div
+              </a>
+              <a
+                href="#section2"
                 onClick={() => nextTab(tabs)}
                 className={`${
-                  tabs === 4 && "hidden"
+                  tabs === 5 && "hidden"
                 } bg-biruMuda-500 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Lanjut
-              </div>
+              </a>
             </section>
           </section>
         ) : null;

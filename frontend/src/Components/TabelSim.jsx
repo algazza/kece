@@ -1,32 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { localhostLink } from "../helper/localhost";
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { TabelKredit } from "../helper";
 
 const TabelSim = () => {
-  const [rateKredit, setRateKredit] = useState([]);
-
-  useEffect(() => {
-    fetch(`${localhostLink}/api/ratedKredit`)
-      .then((response) => response.json())
-      .then((data) => setRateKredit(data))
-      .catch((error) => {
-        console.error("error fetching rate bunga kredit:", error);
-      });
-  }, []);
-
   return (
-    <TableContainer component={Paper} style={{ border: "1px solid black" }}>
+    <TableContainer component={Paper} style={{ border: "1px solid #cbd5e1" }}>
       <Table aria-label="tabel rate bunga">
         <TableHead>
-          <TableRow>
+        <TableRow className="bg-abuTerang">
             {["Plafon", " 12 Bulan", "24 Bulan", "36 Bulan"].map(
               (row, index) => (
                 <TableCell
                   key={index}
                   align="left"
-                  className="bg-biruMuda-400"
                   style={{
-                    borderBottom: "1px solid black",
+                    borderBottom: "1px solid #cbd5e1",
                     fontWeight: "bold",
                   }}
                 >
@@ -38,13 +27,13 @@ const TabelSim = () => {
         </TableHead>
 
         <TableBody>
-          {rateKredit.map((cell, index) => (
-            <TableRow key={index}>
-              {[cell.plafon, cell.bulan_12, cell.bulan_24, cell.bulan_36].map(
+          {TabelKredit.map((cell, index) => (
+            <TableRow key={index} className={index % 2 && "bg-abuTerang"}>
+              {[cell.plafon, cell.satutahun, cell.duatahun, cell.tigatahun].map(
                 (cellmap, index) => (
                   <TableCell
                     key={index}
-                    style={{ borderBottom: "1px solid black" }}
+                    style={{ borderBottom: "1px solid #cbd5e1" }}
                   >
                     {cellmap.toLocaleString("id-ID")}
                   </TableCell>

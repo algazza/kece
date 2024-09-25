@@ -3,7 +3,9 @@ import {
   FormControl,
   InputAdornment,
   InputLabel,
+  MenuItem,
   OutlinedInput,
+  Select,
 } from "@mui/material";
 import React, { useState } from "react";
 import styles from "../../helper/style";
@@ -19,10 +21,13 @@ const SimulasiCalcDeposito = () => {
   const [rawNominal, setRawNominal] = useState("");
 
   const CalcDataFields = [
-    { label: "Setoran Awal", value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")}` },
+    {
+      label: "Setoran Awal",
+      value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")}`,
+    },
     { label: "Angka Bunga", value: `${bunga}%` },
-    { label: "Nilai Bunga", value: hasilBunga },
-    { label: "Total Bunga", value: `${hasilBunga} * ${waktu}` },
+    { label: "Bunga/bulan", value: hasilBunga },
+    { label: "Total Bunga", value: `${hasilBunga} x ${waktu}` },
   ];
 
   const formatRupiah = (value) => {
@@ -48,6 +53,28 @@ const SimulasiCalcDeposito = () => {
     setNominal(formatRupiah(rawValue));
   };
 
+  const handleWaktuChange = (e) => {
+    const selectedWaktu = e.target.value;
+    setWaktu(selectedWaktu);
+
+    switch (selectedWaktu) {
+      case "1 bulan":
+        setBunga(5.75);
+        break;
+      case "3 bulan":
+        setBunga(6);
+        break;
+      case "6 bulan":
+        setBunga(6.25);
+        break;
+      case "12 bulan":
+        setBunga(6.5);
+        break;
+      default:
+        setBunga("");
+    }
+  };
+
   const handleCalculations = (e) => {
     e.preventDefault();
     const nominalNumber = parseFloat(nominal.replace(/\./g, ""));
@@ -65,8 +92,9 @@ const SimulasiCalcDeposito = () => {
       setHasilTotal("Mohon isi semua field");
       setShowResult(false);
     } else {
-      let hasilBungaTotal = nominalNumber * bungaNumber / 100 / waktuNumber * 0.8 ;
-      let hasilPerkalianTotal = nominalNumber + hasilBungaTotal;
+      let hasilBungaTotal =
+        ((nominalNumber * bungaNumber / 100) / 12) * 0.8;
+      let hasilPerkalianTotal = hasilBungaTotal * waktuNumber;
 
       setHasilTotal(`Rp. ${hasilPerkalianTotal.toLocaleString("id-ID")}`);
       setHasilBunga(`Rp. ${hasilBungaTotal.toLocaleString("id-ID")}`);
@@ -81,6 +109,8 @@ const SimulasiCalcDeposito = () => {
       setShowResult(!showResult);
     }
   };
+
+  console.log(waktu)
 
   return (
     <motion.div
@@ -113,18 +143,23 @@ const SimulasiCalcDeposito = () => {
           <div className="grid gap-2 pt-6">
             <h2 className={`${styles.heading6} text-center`}>Jangka Waktu</h2>
             <FormControl fullWidth>
-              <OutlinedInput
-                id="outlined-adornment-amount"
-                endAdornment={
-                  <InputAdornment position="end">Bulan</InputAdornment>
-                }
-                type="number"
-                name="total_pinjaman"
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                name="Jangka Waktu"
                 className="bg-primary"
                 required
                 value={waktu}
-                onChange={(e) => setWaktu(e.target.value)}
-              />
+                onChange={handleWaktuChange}
+              >
+                {["1 bulan", "3 bulan", "6 bulan", "12 bulan"].map(
+                  (bulan, index) => (
+                    <MenuItem key={index} value={bulan}>
+                      {bulan}
+                    </MenuItem>
+                  )
+                )}
+              </Select>
             </FormControl>
           </div>
 
@@ -137,7 +172,7 @@ const SimulasiCalcDeposito = () => {
                 type="number"
                 name="total_pinjaman"
                 className="bg-primary"
-                required
+                disabled
                 value={bunga}
                 onChange={(e) => setBunga(e.target.value)}
               />
@@ -159,22 +194,17 @@ const SimulasiCalcDeposito = () => {
         <div className="">
           <h2 className={`${styles.heading3} text-center`}>Hasil Hitung</h2>
           <div className="space-y-2 my-8">
-          {CalcDataFields.map((field, index) => (
-            <div
-              key={index}
-              className="flex sm:items-center"
-            >
-              <span className="font-bold w-1/3">
-                {field.label}
-              </span>
-              <span className="text-base w-2/3 break-words">
-                : {field.value}
-              </span>
-            </div>
-          ))}
-        </div>
+            {CalcDataFields.map((field, index) => (
+              <div key={index} className="flex sm:items-center">
+                <span className="font-bold w-1/3">{field.label}</span>
+                <span className="text-base w-2/3 break-words">
+                  : {field.value}
+                </span>
+              </div>
+            ))}
+          </div>
 
-          <h2 className={`${styles.heading5} text-center`}>Estimasi Akhir</h2>
+          <h2 className={`${styles.heading5} text-center`}>Total Bunga</h2>
           <h2 className={`${styles.heading3} text-center text-biruMuda-500`}>
             {hasilTotal}
           </h2>
