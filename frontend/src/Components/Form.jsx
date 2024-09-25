@@ -520,7 +520,8 @@ export const SponsorForm = ({
         </div>
       </div>
 
-      <div className="mt-4">
+      <div className={`${styles.inputSpan} mt-4`}>
+      <span>Uplod Proposal (opsional)</span>
         <TextField type="file" onChange={handleFileChange} fullWidth />
       </div>
     </div>

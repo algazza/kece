@@ -112,15 +112,15 @@ const router = createBrowserRouter([
         element: <Laporan />,
       },
       {
-        path: "laporan-triwulan",
+        path: "laporan/laporan-triwulan",
         element: <LaporanTriwulan />,
       },
       {
-        path: "laporan-gcg",
+        path: "laporan/laporan-gcg",
         element: <LaporanGCG />,
       },
       {
-        path: "laporan-tahunan",
+        path: "laporan/laporan-tahunan",
         element: <LaporanTahunan />,
       },
     ],

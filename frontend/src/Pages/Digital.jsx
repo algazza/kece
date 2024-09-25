@@ -11,7 +11,7 @@ const buttonMenuDigital = [
     icon: (className) => (
       <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
     ),
-    title: "Kredit Investasi",
+    title: "ATM Cardless",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
     jenis: "Via online",
   },
@@ -20,7 +20,7 @@ const buttonMenuDigital = [
     icon: (className) => (
       <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
     ),
-    title: "Kredit Investasi",
+    title: "Armor Mobile",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
     jenis: "Via online",
   },
@@ -29,7 +29,7 @@ const buttonMenuDigital = [
     icon: (className) => (
       <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
     ),
-    title: "Kredit Investasi",
+    title: "Infobank Transfer",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
     jenis: "Via online",
   },
@@ -38,7 +38,7 @@ const buttonMenuDigital = [
     icon: (className) => (
       <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
     ),
-    title: "Kredit Investasi",
+    title: "Armor Pay",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
     jenis: "Via online",
   },
@@ -47,7 +47,16 @@ const buttonMenuDigital = [
     icon: (className) => (
       <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
     ),
-    title: "Kredit Investasi",
+    title: "Armor Merchant",
+    deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
+    jenis: "Via online",
+  },
+  {
+    id: 6,
+    icon: (className) => (
+      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
+    ),
+    title: "Armor Wa Notif",
     deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
     jenis: "Via online",
   },
@@ -75,13 +84,13 @@ const Digital = () => {
       </span>
 
       <section
-          className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}
+          className={`${styles.paddingY} px-16 flex flex-wrap gap-8 justify-center justify-items-center`}
         >
           {/* menu button */}
           {buttonMenuDigital.map((menu, index) => (
             <a
               href="#section2"
-              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
+              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-[300px] flex flex-col items-center align-middle text-center cursor-pointer`}
               key={index}
               // onClick={() => updateMenu(menu.id)}
             >

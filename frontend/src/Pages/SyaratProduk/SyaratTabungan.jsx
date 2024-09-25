@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import IntroBanner from "../../Layouts/IntroBanner";
 import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
 import FormBank from "../../Components/FormBank";
@@ -6,90 +6,40 @@ import styles from "../../helper/style";
 import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
 import { Kredit } from "../../Components/Form";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../../helper/DataProduk";
 import { nomorInduk } from "../../helper/nomor";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import SchoolIcon from "@mui/icons-material/School";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import MosqueIcon from "@mui/icons-material/Mosque";
-import ElderlyIcon from "@mui/icons-material/Elderly";
-import GroupsIcon from "@mui/icons-material/Groups";
-import DevicesOtherIcon from "@mui/icons-material/DevicesOther";
-import TabelComp from "../../Components/TabelComp";
 import { localhostLink } from "../../helper/localhost";
-import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
+import TabelBiaya from "../../Components/TabelBiaya";
 // ===================================================
 const buttonMenuTabungan = [
   {
     id: 1,
-    icon: (className) => (
-      <AccountBalanceIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Tabungan Umum",
-    deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
-  },
-  {
-    id: 2,
     icon: (className) => (
       <AccountBalanceWalletIcon
         className={className}
         sx={{ fontSize: "40px" }}
       />
     ),
-    title: "Tabungan ProActive",
+    title: "Tabungan Pro Aktif",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
-    jenis: "Via online",
   },
+      {
+        id: 2,
+        icon: (className) => (
+          <AccountBalanceIcon className={className} sx={{ fontSize: "40px" }} />
+        ),
+        title: "Tabungan Tagar",
+        deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
+      },
   {
     id: 3,
     icon: (className) => (
       <SchoolIcon className={className} sx={{ fontSize: "40px" }} />
     ),
     title: "Tabungan Simpel",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
-    jenis: "Via online",
-  },
-  {
-    id: 4,
-    icon: (className) => (
-      <MosqueIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Tabungan Umroh (TABUM)",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
-  },
-  {
-    id: 5,
-    icon: (className) => (
-      <ElderlyIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Tabungan Pensiun",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
-    jenis: "Via online",
-  },
-  {
-    id: 6,
-    icon: (className) => (
-      <GroupsIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Tabungan Arisan",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
-  },
-  {
-    id: 7,
-    icon: (className) => (
-      <CardGiftcardIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "SimpHaTi",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
-    jenis: "Via online",
-  },
-  {
-    id: 8,
-    icon: (className) => (
-      <DevicesOtherIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Tabungan Gemilang",
     deskripsi: "Lorem ipsum dolor sit amet consectetur.",
   },
 ];
@@ -137,20 +87,20 @@ const SyaratTabungan = () => {
       {/* Menu utama */}
       {menu === 0 ? (
         <section
-          href="#section2"
-          className={`${styles.paddingY} grid md:grid-cols-x3300 gap-8 justify-center justify-items-center`}
+          className={`${styles.paddingY} px-16 flex flex-wrap gap-8 justify-center justify-items-center`}
         >
           {/* menu button */}
           {buttonMenuTabungan.map((menu, index) => (
-            <div
-              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-72 flex flex-col items-center align-middle text-center cursor-pointer`}
+            <a
+              href="#section2"
+              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-[300px] flex flex-col items-center align-middle text-center cursor-pointer`}
               key={index}
               onClick={() => updateMenu(menu.id)}
             >
               {menu.icon("m-2 text-blue-400")}
               <h6 className={`${styles.heading6}`}>{menu.title}</h6>
               <p className="mt-4">{menu.deskripsi}</p>
-            </div>
+            </a>
           ))}
         </section>
       ) : null}
@@ -159,13 +109,18 @@ const SyaratTabungan = () => {
         return menu === kredit.id ? (
           <section key={kredit.id}>
             {/* Menu pilihan */}
-            <section className="pt-10 flex justify-center">
-              {["Syarat", "Ketentuan", "Tabel", "Pengajuan"].map(
-                (menu, index) => (
+            <section className={styles.flexCenter}>
+              <div className="pt-10 flex gap-4 md:max-w-full max-w-80 overflow-auto">
+                {[
+                  "Keuntungan",
+                  "Syarat & Ketentuan",
+                  "Biaya",
+                  "Hubungi Kami",
+                ].map((menu, index) => (
                   <div
                     key={index}
                     onClick={() => updateTabs(index + 1)}
-                    className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
+                    className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
                       tabs === index + 1
                         ? "bg-biruMuda-500 text-primary rounded-md"
                         : ""
@@ -173,12 +128,14 @@ const SyaratTabungan = () => {
                   >
                     {menu}
                   </div>
-                )
-              )}
+                ))}
+              </div>
             </section>
 
             {/* Isi dari Menu */}
-            <section className="sm:pb-16 m-8 bg-abuTerang md:p-10 p-4 rounded-lg">
+            <section
+              className={` sm:pb-16 md:p-10 rounded-lg`}
+            >
               {/* Syarat */}
               {tabs === 1 ? (
                 <motion.div
@@ -188,23 +145,12 @@ const SyaratTabungan = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-6 sm:mx-10 sm:px-10 "
                 >
-                  <ul className="text-abuGelap sm:ml-4">
-                    <h3 className={`${styles.heading5} text-black my-5`}>
-                      A. Keuntungan
-                    </h3>
+                  <ol className="text-abuGelap sm:ml-4">
+                    <li className={`${styles.heading5} text-black`}>
+                      Keuntungan
+                    </li>
                     {kredit.Keuntungan}
-
-                    <h3 className={`${styles.heading5} text-black my-5 `}>
-                      B. Fitur
-                    </h3>
-
-                    {kredit.Fitur}
-
-                    <h3 className={`${styles.heading5} text-black my-5`}>
-                      C. Syarat Pembukuan rekening
-                    </h3>
-                    {kredit.Syarat}
-                  </ul>
+                  </ol>
                 </motion.div>
               ) : null}
 
@@ -217,12 +163,15 @@ const SyaratTabungan = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-7 md:mx-10 md:px-10"
                 >
-                  <ul className="text-abuGelap sm:ml-4">
-                    <h3 className={`${styles.heading5} text-black my-4`}>
-                      D. Ketentuan
-                    </h3>
+                  <ol className="list text-abuGelap sm:ml-4">
+                    <li className={`${styles.heading5} text-black`}>Syarat</li>
+                    {kredit.Syarat}
+
+                    <li className={`${styles.heading5} text-black mt-4`}>
+                      Ketentuan
+                    </li>
                     {kredit.Ketentuan}
-                  </ul>
+                  </ol>
                 </motion.div>
               ) : null}
 
@@ -233,15 +182,14 @@ const SyaratTabungan = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.5 }}
-                  className="md:mx-10 md:px-10"
+                  className={`sm:mx-10 sm:px-10 ${styles.flexCenter}`}
                 >
                   <h3
                     className={`${styles.heading5} text-black my-4 ml-8 sm:ml-4`}
                   >
-                    D. Tabel Penempatan Dana
+                    Tabel Biaya
                   </h3>
-
-                  <TabelComp kredit={kredit.Tabel} />
+                  <TabelBiaya />
                 </motion.div>
               ) : null}
 
@@ -252,44 +200,45 @@ const SyaratTabungan = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.5 }}
-                  className="mx-6 sm:mx-10 sm:px-10"
+                  className="sm:mx-10 sm:px-10"
                 >
-                  <div className={`${styles.flexCenter}`}>
-                    <FormBank
-                      isiPenting={<Kredit />}
-                      value={"Tabungan"}
-                      nomer={nomorInduk}
-                      endpoint={`${localhostLink}/api/tabungan`}
-                    />
-                  </div>
+                  <FormBank
+                    isiPenting={<Kredit />}
+                    value={"Kredit"}
+                    nomer={nomorInduk}
+                    endpoint={`${localhostLink}/api/kredit`}
+                  />
                 </motion.div>
               ) : null}
             </section>
 
             {/* Button next prev */}
             <section className="flex justify-center gap-4">
-              <div
+              <a
+                href="#section2"
                 onClick={() => updateMenu(0)}
                 className={`bg-biruMuda-700 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Kembali Menu
-              </div>
-              <div
+              </a>
+              <a
+                href="#section2"
                 onClick={() => prevTab(tabs)}
                 className={`${
                   tabs === 1 && "hidden"
                 } text-biruMuda-500 border-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Sebelumnya
-              </div>
-              <div
+              </a>
+              <a
+                href="#section2"
                 onClick={() => nextTab(tabs)}
                 className={`${
-                  tabs === 4 && "hidden"
+                  tabs === 5 && "hidden"
                 } bg-biruMuda-500 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Lanjut
-              </div>
+              </a>
             </section>
           </section>
         ) : null;

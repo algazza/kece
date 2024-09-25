@@ -38,7 +38,43 @@ const RateBunga = ({ handleOpenRateBunga }) => {
     setMenuTabel(id);
   };
 
-  console.log(rateKredit)
+  const depositoSukuBunga = [
+    {
+      bulan: "1 bulan",
+      bunga: "5.75%",
+    },
+    {
+      bulan: "3 bulan",
+      bunga: "6%",
+    },
+    {
+      bulan: "6 bulan",
+      bunga: "6.25%",
+    },
+    {
+      bulan: "12 bulan",
+      bunga: "6.5%",
+    },
+  ];
+
+  const tabunganProAktif = [
+    {
+      nominal: "20.000 - 1.000.000",
+      bunga: "3%",
+    },
+    {
+      nominal: "1.000.001 - 2.500.000",
+      bunga: "3.5%",
+    },
+    {
+      nominal: "2.500.001 - 5.000.000",
+      bunga: "4%",
+    },
+    {
+      nominal: "> 5.000.000",
+      bunga: "4.5%",
+    },
+  ];
 
   return (
     <motion.div
@@ -60,11 +96,11 @@ const RateBunga = ({ handleOpenRateBunga }) => {
         <div className="cursor-pointer" onClick={() => handleOpenRateBunga()}>
           <ArrowBackIosIcon />
         </div>
-        <h3 className={`${styles.heading4} text-center`}>Rate Bunga</h3>
+        <h3 className={`${styles.heading4} text-center`}>Suku Bunga</h3>
 
         <div className="my-8 flex flex-col items-center gap-8">
           <div className="relative flex gap-16 text-center">
-            {["Kredit", "Deposito"].map((ratemenu, index) => (
+            {["Tabungan", "Deposito"].map((ratemenu, index) => (
               <div
                 key={index}
                 className={`${styles.heading6} cursor-pointer`}
@@ -84,11 +120,11 @@ const RateBunga = ({ handleOpenRateBunga }) => {
 
           <div className="text-center">
             <p className="">
-              Nilai penempatan bunga {menuTabel == 0 ? "kredit" : "deposito"}
+              Nilai penempatan bunga {menuTabel == 0 ? "tabungan" : "deposito"}
             </p>
             <p className="">
-              Update Terakhir:{" "}
-              {rateKredit && rateKredit.updated_at
+              Update Terakhir: 12 September 2024
+              {/* {rateKredit && rateKredit.updated_at
                 ? new Intl.DateTimeFormat("id-ID", {
                     day: "2-digit",
                     month: "long",
@@ -100,7 +136,7 @@ const RateBunga = ({ handleOpenRateBunga }) => {
                     month: "long",
                     year: "numeric",
                   }).format(new Date(rateDeposito.updated_at))
-                : "Tanggal tidak tersedia"}
+                : "Tanggal tidak tersedia"} */}
             </p>
           </div>
         </div>
@@ -112,51 +148,127 @@ const RateBunga = ({ handleOpenRateBunga }) => {
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5 }}
           >
-            <TableContainer
-              component={Paper}
-              style={{ border: "1px solid black" }}
-            >
-              <Table sx={{ width: 420 }} aria-label="tabel rate bunga">
-                <TableHead>
-                  <TableRow>
-                    {["Plafon", " 12 Bulan", "24 Bulan", "36 Bulan"].map(
-                      (row, index) => (
+            <div className="my-4">
+              <h2 className={`${styles.heading5} text-center mb-2`}>
+                Tabungan Pro Aktif
+              </h2>
+              <TableContainer
+                component={Paper}
+                style={{ border: "1px solid #cbd5e1" }}
+              >
+                <Table sx={{ width: 420 }} aria-label="tabel rate bunga">
+                  <TableHead>
+                    <TableRow className="bg-abuTerang">
+                      {["Nominal", "Suku Bunga"].map((row, index) => (
                         <TableCell
                           key={index}
                           align="left"
-                          style={{
-                            borderBottom: "1px solid black",
-                            fontWeight: "bold",
-                          }}
+                          style={{ borderBottom: "1px solid #cbd5e1" }}
                         >
                           {row}
                         </TableCell>
-                      )
-                    )}
-                  </TableRow>
-                </TableHead>
+                      ))}
+                    </TableRow>
+                  </TableHead>
 
-                <TableBody>
-                  {rateKredit.map((cell, index) => (
-                    <TableRow key={index}>
-                      {[
-                        cell.plafon,
-                        cell.bulan_12,
-                        cell.bulan_24,
-                        cell.bulan_36,
-                      ].map((cellmap, index) => (
+                  <TableBody>
+                    {tabunganProAktif.map((cell, index) => (
+                      <TableRow
+                        key={index}
+                        className={index % 2 && "bg-abuTerang"}
+                      >
+                        {[cell.nominal, cell.bunga].map((cellmap, index) => (
+                          <TableCell
+                            key={index}
+                            style={{ borderBottom: "1px solid #cbd5e1" }}
+                          >
+                            {cellmap}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
+
+            <div className="my-4">
+              <h2 className={`${styles.heading5} text-center mb-2`}>
+                Tabungan Tagar
+              </h2>
+              <TableContainer
+                component={Paper}
+                style={{ border: "1px solid #cbd5e1" }}
+              >
+                <Table sx={{ width: 420 }} aria-label="tabel rate bunga">
+                  <TableHead>
+                    <TableRow className="bg-abuTerang">
+                      {["Nominal", "Suku Bunga"].map((row, index) => (
                         <TableCell
                           key={index}
-                          style={{ borderBottom: "1px solid black" }}
+                          align="left"
+                          style={{ borderBottom: "1px solid #cbd5e1" }}
                         >
-                          {cellmap.toLocaleString("id-ID")}
+                          {row}
                         </TableCell>
                       ))}
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
+                  </TableHead>
+
+                  <TableBody>
+                      <TableRow>
+                        {["> 5.000.000", "1%"].map((cellmap, index) => (
+                          <TableCell
+                            key={index}
+                            style={{ borderBottom: "1px solid #cbd5e1" }}
+                          >
+                            {cellmap}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
+
+            <div className="my-4">
+              <h2 className={`${styles.heading5} text-center mb-2`}>
+                Tabungan Simpel
+              </h2>
+              <TableContainer
+                component={Paper}
+                style={{ border: "1px solid #cbd5e1" }}
+              >
+                <Table sx={{ width: 420 }} aria-label="tabel rate bunga">
+                  <TableHead>
+                    <TableRow className="bg-abuTerang">
+                      {["Nominal", "Suku Bunga"].map((row, index) => (
+                        <TableCell
+                          key={index}
+                          align="left"
+                          style={{ borderBottom: "1px solid #cbd5e1" }}
+                        >
+                          {row}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  </TableHead>
+
+                  <TableBody>
+                      <TableRow>
+                        {["> 20.000", "2%"].map((cellmap, index) => (
+                          <TableCell
+                            key={index}
+                            style={{ borderBottom: "1px solid #cbd5e1" }}
+                          >
+                            {cellmap}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
           </motion.div>
         )}
 
@@ -169,39 +281,35 @@ const RateBunga = ({ handleOpenRateBunga }) => {
           >
             <TableContainer
               component={Paper}
-              style={{ border: "1px solid black" }}
+              style={{ border: "1px solid #cbd5e1" }}
             >
               <Table sx={{ width: 420 }} aria-label="tabel rate bunga">
                 <TableHead>
-                  <TableRow>
-                    {["Plafon", " 12 Bulan", "24 Bulan", "36 Bulan"].map(
-                      (row, index) => (
-                        <TableCell
-                          key={index}
-                          align={index == 0 ? "center" : "left"}
-                          style={{ borderBottom: "1px solid black" }}
-                        >
-                          {row}
-                        </TableCell>
-                      )
-                    )}
+                  <TableRow className="bg-abuTerang">
+                    {["Jangka Waktu", "Suku Bunga"].map((row, index) => (
+                      <TableCell
+                        key={index}
+                        align="left"
+                        style={{ borderBottom: "1px solid #cbd5e1" }}
+                      >
+                        {row}
+                      </TableCell>
+                    ))}
                   </TableRow>
                 </TableHead>
 
                 <TableBody>
-                  {rateDeposito.map((cell, index) => (
-                    <TableRow key={index}>
-                      {[
-                        cell.plafon,
-                        cell.satutahun,
-                        cell.duatahun,
-                        cell.tigatahun,
-                      ].map((cellmap, index) => (
+                  {depositoSukuBunga.map((cell, index) => (
+                    <TableRow
+                      key={index}
+                      className={index % 2 && "bg-abuTerang"}
+                    >
+                      {[cell.bulan, cell.bunga].map((cellmap, index) => (
                         <TableCell
                           key={index}
-                          style={{ borderBottom: "1px solid black" }}
+                          style={{ borderBottom: "1px solid #cbd5e1" }}
                         >
-                          {cellmap.toLocaleString("id-ID")}
+                          {cellmap}
                         </TableCell>
                       ))}
                     </TableRow>

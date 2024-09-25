@@ -100,24 +100,24 @@ const IsiPromo = () => {
   return (
     <>
       <section
-        className={`${styles.paddingY} ${styles.marginX} grid md:grid-cols-x650 pt-12`}
+        className={`${styles.paddingY} md:grid md:grid-cols-x1fr300 pt-12`}
       >
-        <div className={`${styles.flexCenter} flex-col gap-12`}>
-          <h5 className={`${styles.heading4} text-center`}>{promo.judul}</h5>
+        <div className={`${styles.flexCenter} flex-col gap-12 sm:mx-8 mx-4`}>
+          <h5 className={`${styles.heading5} text-center `}>{promo.judul}</h5>
 
           <div>
             <img
+              className="ss:min-w-[400px] "
               src={`${localhostLink}/image/public/promo/${promo.image}`}
               alt={promo.judul}
-              className="max-w-[400px]"
             />
-            
+
             <div className="flex justify-end pt-2 gap-4">
               <a onClick={handleCopyLink} className="cursor-pointer">
                 <LinkIcon className="text-[#646464]" />
               </a>
               <a
-                href={`whatsapp://send?text=${promo.judul}. Lihatlah selengkapnya di ${currentUrl}`}
+                href={`whatsapp://send?text=${promo.slug}. Lihatlah selengkapnya di ${currentUrl}`}
               >
                 <WhatsAppIcon className="text-[#25D366]" />
               </a>
@@ -144,39 +144,41 @@ const IsiPromo = () => {
 
             <div className={`${styles.fontBodyBold}`}>
               <p>{promo.tanggal}</p>
+              <p>{promo.penulis}</p>
             </div>
           </div>
         </div>
 
-        <div className="px-12">
-          <div className="flex justify-between">
+        <div className="sm:px-8">
+          <div className="flex justify-between px-4 sm:px-0">
             <h6 className={`${styles.heading6} mb-4`}>Baca juga:</h6>
             <Link
-              to={"/promo"}
+              to={"/berita"}
               className={`${styles.heading6} mb-4 text-abuGelap`}
             >
               Lainnya...
             </Link>
           </div>
-          <section className="grid grid-cols-x150 sm:grid-cols-x250 md:grid-cols-1 justify-center gap-6 sm:gap-12">
+          
+          <section className="grid xs:grid-cols-x150 sm:grid-cols-x250 md:grid-cols-1 justify-center gap-6 sm:gap-12 mx-4 sm:mx-0">
             {promoData.slice(0, 4).map((promo, index) => {
               return (
                 <div
-                  key={index}
-                  className="p-4 border-2 rounded-md grid gap-2 justify-center cursor-pointer"
-                  onClick={() => navigate(`/promo/${promo.slug}`)}
-                >
-                  <div className="w-60 h-60 overflow-hidden">
-                    <img
-                      src={`${localhostLink}/image/public/promo/${promo.image}`}
-                      alt={promo.judul}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h2 className={`${styles.heading6} text-center`}>
-                    {promo.judul}
-                  </h2>
+                key={index}
+                className="p-4 border-2 rounded-md grid gap-2 justify-center cursor-pointer"
+                onClick={() => navigate(`${promo.slug}`)}
+              >
+                <div className="w-60 h-60 overflow-hidden">
+                  <img
+                    src={`${localhostLink}/image/public/promo/${promo.image}`}
+                    alt={promo.judul}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
+                <h2 className={`${styles.heading6} text-center`}>
+                  {promo.judul}
+                </h2>
+              </div>
               );
             })}
           </section>

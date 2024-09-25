@@ -3,7 +3,9 @@ import {
   FormControl,
   InputAdornment,
   InputLabel,
+  MenuItem,
   OutlinedInput,
+  Select,
 } from "@mui/material";
 import React, { useState } from "react";
 import styles from "../../helper/style";
@@ -19,10 +21,18 @@ const SimulasiCalcTabungan = () => {
   const [rawNominal, setRawNominal] = useState("");
 
   const CalcDataFields = [
-    { label: "Setoran Awal", value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")}` },
+    {
+      label: "Setoran Awal",
+      value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")}`,
+    },
     { label: "Angka Bunga", value: `${bunga}%` },
     { label: "Nilai Bunga", value: hasilBunga },
-    { label: "Total", value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")} + ${hasilBunga}` },
+    {
+      label: "Total",
+      value: `Rp. ${parseInt(rawNominal).toLocaleString(
+        "id-ID"
+      )} + ${hasilBunga}`,
+    },
   ];
 
   const formatRupiah = (value) => {
@@ -65,7 +75,7 @@ const SimulasiCalcTabungan = () => {
       setHasilTotal("Mohon isi semua field");
       setShowResult(false);
     } else {
-      let hasilBungaTotal = nominalNumber / waktuNumber * bungaNumber / 100;
+      let hasilBungaTotal = ((nominalNumber / waktuNumber) * bungaNumber) / 100;
       let hasilPerkalianTotal = nominalNumber + hasilBungaTotal;
 
       setHasilTotal(`Rp. ${hasilPerkalianTotal.toLocaleString("id-ID")}`);
@@ -93,6 +103,34 @@ const SimulasiCalcTabungan = () => {
       {!showResult && (
         <form onSubmit={handleCalculations}>
           <div className="grid gap-2 pt-6">
+            <h2 className={`${styles.heading6} text-center`}>Produk</h2>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">
+                {/* Jangka Waktu */}
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                name="Jangka Waktu"
+                className="bg-primary"
+                required
+                value={waktu}
+                onChange={(e) => setWaktu(e.target.value)}
+              >
+                {[
+                  "Tabungan Pro Aktif",
+                  "Tabungan Simpel",
+                  "Tabungan Tagar",
+                ].map((bulan, index) => (
+                  <MenuItem key={index} value={bulan}>
+                    {bulan}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </div>
+
+          <div className="grid gap-2 pt-6">
             <h2 className={`${styles.heading6} text-center`}>Nominal</h2>
             <FormControl fullWidth>
               <OutlinedInput
@@ -106,24 +144,6 @@ const SimulasiCalcTabungan = () => {
                 value={nominal}
                 onChange={handleNominalChange}
                 inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
-              />
-            </FormControl>
-          </div>
-
-          <div className="grid gap-2 pt-6">
-            <h2 className={`${styles.heading6} text-center`}>Jangka Waktu</h2>
-            <FormControl fullWidth>
-              <OutlinedInput
-                id="outlined-adornment-amount"
-                endAdornment={
-                  <InputAdornment position="end">Bulan</InputAdornment>
-                }
-                type="number"
-                name="total_pinjaman"
-                className="bg-primary"
-                required
-                value={waktu}
-                onChange={(e) => setWaktu(e.target.value)}
               />
             </FormControl>
           </div>
@@ -159,20 +179,15 @@ const SimulasiCalcTabungan = () => {
         <div className="">
           <h2 className={`${styles.heading3} text-center`}>Hasil Hitung</h2>
           <div className="space-y-2 my-8">
-          {CalcDataFields.map((field, index) => (
-            <div
-              key={index}
-              className="flex sm:items-center"
-            >
-              <span className="font-bold w-1/3">
-                {field.label}
-              </span>
-              <span className="text-base w-2/3 break-words">
-                : {field.value}
-              </span>
-            </div>
-          ))}
-        </div>
+            {CalcDataFields.map((field, index) => (
+              <div key={index} className="flex sm:items-center">
+                <span className="font-bold w-1/3">{field.label}</span>
+                <span className="text-base w-2/3 break-words">
+                  : {field.value}
+                </span>
+              </div>
+            ))}
+          </div>
 
           <h2 className={`${styles.heading5} text-center`}>Estimasi Akhir</h2>
           <h2 className={`${styles.heading3} text-center text-biruMuda-500`}>

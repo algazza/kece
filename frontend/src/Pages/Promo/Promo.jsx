@@ -46,24 +46,20 @@ const Promo = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Promo"}
           DescriptionBanner={`
-                Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
-                memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
-                dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-                menawarkan berbagai produk kredit yang dapat disesuaikan dengan
-                keperluan Anda.
+                Tugasnya Dani Sama Gambar Juga yang sebelahnya -->>
             `}
         />
         <TitleBlueBanner title={"Promo"} />
       </section>
 
       <section
-        className={`${styles.paddingY} ${styles.paddingX} grid md:grid-cols-x3300 justify-center gap-8`}
+        className={`${styles.paddingY} ${styles.paddingX} flex flex-wrap justify-center gap-8`}
       >
         {promoData.slice(pagination.from, pagination.to).map((promo, index) => (
           <div
             key={index}
-            className="p-4 border-2 rounded-md grid gap-2 justify-center cursor-pointer"
-            onClick={() => navigate(`/promo/${promo.slug}`)}
+            className="w-[300px] p-4 border-2 rounded-md grid gap-2 justify-items-center items-center cursor-pointer"
+            onClick={() => navigate(`${promo.slug}`)}
           >
             <div className="w-60 h-60 overflow-hidden">
               <img

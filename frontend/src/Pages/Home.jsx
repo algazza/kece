@@ -15,23 +15,16 @@ import {
   ThumbnailYoutube,
 } from "../helper/index";
 // ==================== ICON ===========================
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
-import HomeIcon from "@mui/icons-material/Home";
 import DiscountIcon from "@mui/icons-material/Discount";
 import CalculateIcon from "@mui/icons-material/Calculate";
-import PercentIcon from "@mui/icons-material/Percent";
 import MovingIcon from "@mui/icons-material/Moving";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import GroupsIcon from "@mui/icons-material/Groups";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+import PublicIcon from '@mui/icons-material/Public';
+import FeedIcon from '@mui/icons-material/Feed';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
 import SimulasiCalcKredit from "../Components/Simulasi/SimulasiCalcKredit";
@@ -42,63 +35,33 @@ import { localhostLink } from "../helper/localhost";
 
 const menuHome = [
   {
-    id: 1,
-    icon: (className) => <AccountBalanceIcon className={className} />,
-    title: "Kredit",
-    link: "kredit",
-  },
-  {
-    id: 2,
-    icon: (className) => <MonetizationOnIcon className={className} />,
-    title: "Deposito",
-    link: "deposito",
-  },
-  {
-    id: 3,
-    icon: (className) => <AccountBalanceWalletIcon className={className} />,
-    title: "Tabungan",
-    link: "tabungan",
-  },
-  {
-    id: 4,
-    icon: (className) => <PercentIcon className={className} />,
-    title: "Suku Bunga",
-    link: "",
-  },
-  {
-    id: 5,
-    icon: (className) => <LocalShippingIcon className={className} />,
-    title: "Mobil Kas",
-    link: "mobil-kas",
-  },
-  {
-    id: 6,
-    icon: (className) => <DirectionsCarIcon className={className} />,
-    title: "Pickup",
-    link: "pick-up-service",
-  },
-  {
-    id: 7,
-    icon: (className) => <HomeIcon className={className} />,
-    title: "Properti",
-    link: "armor-prop",
-  },
-  {
-    id: 8,
     icon: (className) => <DiscountIcon className={className} />,
     title: "Promo",
-    link: "",
+    link: "promo",
   },
   {
-    id: 9,
     icon: (className) => <CalculateIcon className={className} />,
     title: "Simulasi",
     link: "#simulasi",
   },
   {
-    id: 10,
+    icon: (className) => <EmojiEventsIcon className={className} />,
+    title: "Penghargaan",
+    link: "penghargaan",
+  },
+  {
+    icon: (className) => <FeedIcon className={className} />,
+    title: "Berita Terbaru",
+    link: "",
+  },
+  {
+    icon: (className) => <PublicIcon className={className} />,
+    title: "Layanan Digital",
+    link: "digital-banking",
+  },
+  {
     icon: (className) => <LocationOnIcon className={className} />,
-    title: "Location",
+    title: "Lokasi",
     link: "lokasi",
   },
 ];
@@ -205,34 +168,23 @@ const Home = () => {
           <ImageBanner images={images} />
         </div>
 
-        <div className={`${styles.flexStart} py-4 sm:px-8 sm:gap-8 gap-2`}>
-          <motion.div
-            className={`grid md:grid-cols-x5170 grid-cols-3 gap-x-2 gap-y-8 sm:gap-8 justify-center p-4 rounded-lg border-b-4 border-abu `}
-            initial={{ height: "5.5rem", overflow: "hidden" }}
-            animate={{ height: openMenu ? "auto" : "5.9rem" }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            {menuHome.map((menu) => (
+        <div className={`${styles.flexStart} py-4 sm:px-8`}>
+          <div className="flex flex-wrap gap-4 sm:gap-8 justify-center p-4">
+          {menuHome.map((menu, index) => (
               <Link
                 to={menu.link}
                 onClick={
                   menu.title === "Suku Bunga" && (() => handleOpenRateBunga())
                 }
-                key={menu.id}
-                className="group bg-abuTerang grid justify-items-center py-2 sm:px-6 px-3 rounded-xl transition-all duration-300 ease-in-out"
+                key={index}
+                className="group bg-abuTerang grid justify-items-center sm:w-[160px] w-[110px] sm:py-4 py-2 sm:px-4 px-2 rounded-xl transition-all duration-300 ease-in-out"
               >
                 {menu.icon("text-abuGelap group-hover:text-merahh-500 ")}
-                <h2 className={`${styles.fontBodyBold} flex-shrink-0 `}>
+                <h2 className={`${styles.fontBodyBold} flex-shrink-0 text-center`}>
                   {menu.title}
                 </h2>
               </Link>
             ))}
-          </motion.div>
-
-          <div className="w-10 cursor-pointer" onClick={handleOpen}>
-            <div className="bg-abuTerang rounded-xl p-2">
-              {openMenu ? <RemoveIcon /> : <AddIcon />}
-            </div>
           </div>
         </div>
 
@@ -241,6 +193,7 @@ const Home = () => {
             <RateBunga handleOpenRateBunga={handleOpenRateBunga} />
           )}
         </AnimatePresence>
+        {/* <RateBunga handleOpenRateBunga={handleOpenRateBunga} /> */}
       </section>
 
       <section className={`${styles.marginX} ${styles.paddingY}`}>

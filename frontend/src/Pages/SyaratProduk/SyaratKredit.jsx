@@ -12,14 +12,9 @@ import { nomorInduk } from "../../helper/nomor";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWorkRounded";
 import PlaylistAddCheckRoundedIcon from "@mui/icons-material/PlaylistAddCheckRounded";
-import ElderlyRoundedIcon from "@mui/icons-material/ElderlyRounded";
-import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-import MosqueRoundedIcon from "@mui/icons-material/MosqueRounded";
-import FilterVintageRoundedIcon from "@mui/icons-material/FilterVintageRounded";
-import TabelComp from "../../Components/TabelComp";
 import { localhostLink } from "../../helper/localhost";
-import TabelSim from "../../Components/TabelSim";
 import TabelBiaya from "../../Components/TabelBiaya";
+import { TabelSimKredit } from "../../Components/TabelSim";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -28,16 +23,15 @@ const buttonMenuTabungan = [
     icon: (className) => (
       <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
     ),
-    title: "Kredit Investasi",
+    title: "Kredit Rekening Koran",
     deskripsi: "Raih keuntungan maksimal, masa depan gemilang",
-    jenis: "Via online",
   },
   {
     id: 2,
     icon: (className) => (
       <LocalAtmIcon className={className} sx={{ fontSize: "40px" }} />
     ),
-    title: "Kredit Modal",
+    title: "Kredit Musiman",
     deskripsi: " Tambah modal usaha, sukses di tangan Anda",
   },
   {
@@ -45,9 +39,8 @@ const buttonMenuTabungan = [
     icon: (className) => (
       <MapsHomeWorkIcon className={className} sx={{ fontSize: "40px" }} />
     ),
-    title: "Kredit KPR",
+    title: "Kredit Angsuran",
     deskripsi: "Miliki rumah idaman, proses mudah dan cepat.",
-    jenis: "Via online",
   },
   {
     id: 4,
@@ -57,48 +50,8 @@ const buttonMenuTabungan = [
         sx={{ fontSize: "40px" }}
       />
     ),
-    title: "Kredit Multiguna",
+    title: "Kredit Back to Back",
     deskripsi: "Solusi pinjaman untuk semua kebutuhan Anda",
-    jenis: "Via online",
-  },
-  {
-    id: 5,
-    icon: (className) => (
-      <ElderlyRoundedIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Kredit Pensiun",
-    deskripsi: "Nikmati hari tua nyaman dengan finansial aman",
-  },
-  {
-    id: 6,
-    icon: (className) => (
-      <ShoppingCartRoundedIcon
-        className={className}
-        sx={{ fontSize: "40px" }}
-      />
-    ),
-    title: "Kredit Konsumtif",
-    deskripsi: "Penuhi kebutuhan hidup Anda dengan pinjaman cepat dan mudah",
-  },
-  {
-    id: 7,
-    icon: (className) => (
-      <MosqueRoundedIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Kredit Pembiayaan Umroh",
-    deskripsi: "Rencanakan umroh, jalani ibadah dengan tenang",
-  },
-  {
-    id: 8,
-    icon: (className) => (
-      <FilterVintageRoundedIcon
-        className={className}
-        sx={{ fontSize: "40px" }}
-      />
-    ),
-    title: "Kredit Pembiayaan Ziarah",
-    deskripsi: "Nikmati ziarah penuh makna dengan biaya terjangkau dan mudah",
-    jenis: "Via online",
   },
 ];
 
@@ -129,11 +82,7 @@ const SyaratKredit = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Kredit"}
           DescriptionBanner={`
-                Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
-                memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
-                dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-                menawarkan berbagai produk kredit yang dapat disesuaikan dengan
-                keperluan Anda.
+                Tugasnya Aldara dan Dani sama gambar sebelahnya -->
             `}
         />
         <TitleBlueBanner title={"Kredit"} />
@@ -167,33 +116,33 @@ const SyaratKredit = () => {
         return menu === kredit.id ? (
           <section key={kredit.id}>
             {/* Menu pilihan */}
-            <section className="pt-10 flex justify-center">
-              {[
-                "Keuntungan",
-                "Syarat & Ketentuan",
-                "Tabel Simulasi",
-                "Biaya",
-                "Hubungi Kami",
-              ].map((menu, index) => (
-                <div
-                  key={index}
-                  onClick={() => updateTabs(index + 1)}
-                  className={` text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-x-[1px] px-4 py-2 hover:rounded-md font-bold cursor-pointer ${
-                    tabs === index + 1
-                      ? "bg-biruMuda-500 text-primary rounded-md"
-                      : ""
-                  }`}
-                >
-                  {menu}
-                </div>
-              ))}
+            <section className={styles.flexCenter}>
+              <div className="pt-10 flex gap-4 md:max-w-full max-w-80 overflow-auto">
+                {[
+                  "Keuntungan",
+                  "Syarat & Ketentuan",
+                  "Tabel Simulasi",
+                  "Biaya",
+                  "Hubungi Kami",
+                ].map((menu, index) => (
+                  <div
+                    key={index}
+                    onClick={() => updateTabs(index + 1)}
+                    className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
+                      tabs === index + 1
+                        ? "bg-biruMuda-500 text-primary rounded-md"
+                        : ""
+                    }`}
+                  >
+                    {menu}
+                  </div>
+                ))}
+              </div>
             </section>
 
             {/* Isi dari Menu */}
             <section
-              className={`${
-                tabs === 4 ? "" : "m-8 p-4 bg-abuTerang"
-              } sm:pb-16 md:p-10 rounded-lg`}
+              className={` sm:pb-16 md:p-10 rounded-lg`}
             >
               {/* Syarat */}
               {tabs === 1 ? (
@@ -206,7 +155,7 @@ const SyaratKredit = () => {
                 >
                   <ol className="text-abuGelap sm:ml-4">
                     <li className={`${styles.heading5} text-black`}>
-                      A. Keuntungan
+                      Keuntungan
                     </li>
                     {kredit.Keuntungan}
                   </ol>
@@ -223,13 +172,11 @@ const SyaratKredit = () => {
                   className="mx-7 md:mx-10 md:px-10"
                 >
                   <ol className="list text-abuGelap sm:ml-4">
-                    <li className={`${styles.heading5} text-black`}>
-                      B. Syarat
-                    </li>
+                    <li className={`${styles.heading5} text-black`}>Syarat</li>
                     {kredit.Syarat}
 
                     <li className={`${styles.heading5} text-black mt-4`}>
-                      C. Ketentuan
+                      Ketentuan
                     </li>
                     {kredit.Ketentuan}
                   </ol>
@@ -248,14 +195,14 @@ const SyaratKredit = () => {
                   <h3
                     className={`${styles.heading5} text-black my-4 ml-8 sm:ml-4`}
                   >
-                    D. Tabel Penempatan Dana
+                    Tabel Penempatan Dana
                   </h3>
 
-                  <TabelSim />
+                  <TabelSimKredit />
                 </motion.div>
               ) : null}
 
-              {/* Form */}
+              {/* Tabel */}
               {tabs === 4 ? (
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
@@ -264,7 +211,12 @@ const SyaratKredit = () => {
                   transition={{ duration: 0.5 }}
                   className={`sm:mx-10 sm:px-10 ${styles.flexCenter}`}
                 >
-                  <TabelBiaya/>
+                  <h3
+                    className={`${styles.heading5} text-black my-4 ml-8 sm:ml-4`}
+                  >
+                    Tabel Biaya
+                  </h3>
+                  <TabelBiaya />
                 </motion.div>
               ) : null}
 
@@ -309,7 +261,7 @@ const SyaratKredit = () => {
                 href="#section2"
                 onClick={() => nextTab(tabs)}
                 className={`${
-                  tabs === 4 && "hidden"
+                  tabs === 5 && "hidden"
                 } bg-biruMuda-500 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Lanjut
