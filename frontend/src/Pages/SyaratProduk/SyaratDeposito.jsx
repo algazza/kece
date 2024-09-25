@@ -11,6 +11,7 @@ import { IsiKredit } from "../../helper/DataProduk";
 import { nomorInduk } from "../../helper/nomor";
 import { localhostLink } from "../../helper/localhost";
 import { TabelSimDeposito } from "../../Components/TabelSim";
+import { useMenu } from "../../MenuProvider";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -25,8 +26,8 @@ const buttonMenuTabungan = [
 ];
 
 const SyaratDeposito = () => {
+  const { menu, setMenu } = useMenu();
   const [tabs, setTabs] = useState(1);
-  const [menu, setMenu] = useState(0);
 
   // tab
   function updateTabs(id) {

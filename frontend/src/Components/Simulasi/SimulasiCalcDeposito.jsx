@@ -79,21 +79,19 @@ const SimulasiCalcDeposito = () => {
     e.preventDefault();
     const nominalNumber = parseFloat(nominal.replace(/\./g, ""));
     const waktuNumber = parseFloat(waktu);
-    const bungaNumber = parseFloat(bunga);
 
     if (
       !nominal ||
       !waktu ||
       !bunga ||
       nominalNumber <= 0 ||
-      waktuNumber <= 0 ||
-      bungaNumber <= 0
+      waktuNumber <= 0
     ) {
       setHasilTotal("Mohon isi semua field");
       setShowResult(false);
     } else {
       let hasilBungaTotal =
-        ((nominalNumber * bungaNumber / 100) / 12) * 0.8;
+        ((nominalNumber * bunga / 100) / 12) * 0.8;
       let hasilPerkalianTotal = hasilBungaTotal * waktuNumber;
 
       setHasilTotal(`Rp. ${hasilPerkalianTotal.toLocaleString("id-ID")}`);
@@ -110,7 +108,6 @@ const SimulasiCalcDeposito = () => {
     }
   };
 
-  console.log(waktu)
 
   return (
     <motion.div

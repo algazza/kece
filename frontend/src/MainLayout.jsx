@@ -10,6 +10,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { nomorInduk } from "./helper/nomor";
+import { MenuProvider } from "./MenuProvider";
 
 const MainLayout = () => {
   const [addShortcut, setAddShortcut] = useState(false);
@@ -34,7 +35,7 @@ const MainLayout = () => {
   };
 
   return (
-    <>
+    <MenuProvider>
       <Header />
       <main
         className={`overflow-hidden font-jakarta ${styles.fontBody} py-[4.5rem]`}
@@ -56,11 +57,12 @@ const MainLayout = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 50 }}
-                transition={{ duration: 0.5, delay: 0.25 }}
-                href="lokasi"
-                className={`bg-merahh-500 rounded-full w-[45px] h-[45px] ${styles.flexCenter} z-[100]`}
+                transition={{ duration: 0.5, delay: 0.25  }}
+                href={`https://wa.me/+62${nomorInduk}`}
+                target="_blank"
+                className={`bg-[#25D366] rounded-full w-[45px] h-[45px] ${styles.flexCenter} z-[100]`}
               >
-                <LocationOnIcon className="text-white" />
+                <WhatsAppIcon className="text-white" />
               </motion.a>
             )}
 
@@ -84,11 +86,10 @@ const MainLayout = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5 }}
-                href={`https://wa.me/+62${nomorInduk}`}
-                target="_blank"
-                className={`bg-[#25D366] rounded-full w-[45px] h-[45px] ${styles.flexCenter} z-[100] mb-4`}
+                href="lokasi"
+                className={`bg-merahh-500 rounded-full w-[45px] h-[45px] ${styles.flexCenter} z-[100] mb-4`}
               >
-                <WhatsAppIcon className="text-white" />
+                <LocationOnIcon className="text-white" />
               </motion.a>
             )}
           </AnimatePresence>
@@ -130,7 +131,7 @@ const MainLayout = () => {
         </div>
       </main>
       <Footer />
-    </>
+    </MenuProvider>
   );
 };
 

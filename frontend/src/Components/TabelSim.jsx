@@ -6,7 +6,7 @@ import { TabelDeposito, TabelKredit } from "../helper";
 export const TabelSimDeposito = () => {
   return (
     <TableContainer component={Paper} style={{ border: "1px solid #cbd5e1" }}>
-      <Table aria-label="tabel rate bunga">
+      <Table aria-label="tabel simulasi deposito">
         <TableHead>
         <TableRow className="bg-abuTerang">
             {["Jumlah Deposito", "1 Bulan", "3 Bulan", "6 Bulan", "12 Bulan"].map(
@@ -50,7 +50,7 @@ export const TabelSimDeposito = () => {
 export const TabelSimKredit = () => {
   return (
     <TableContainer component={Paper} style={{ border: "1px solid #cbd5e1" }}>
-      <Table aria-label="tabel rate bunga">
+      <Table aria-label="tabel simulasi kredit">
         <TableHead>
         <TableRow className="bg-abuTerang">
             {["Plafon", " 12 Bulan", "24 Bulan", "36 Bulan"].map(
