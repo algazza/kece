@@ -1,38 +1,149 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import {
+  FormControl,
+  FormGroup,
+  FormHelperText,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextareaAutosize,
+  TextField,
+} from "@mui/material";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import { nomorInduk } from "../helper/nomor";
 
-const WaInput = ({handleModal}) => {
+const WaInput = ({ handleModal }) => {
+  const [nameUser, setNameUser] = useState("");
+  const [produkSelect, setProdukSelect] = useState("");
+  const [pengaduan, setPengaduan] = useState("");
+  const [errorName, setErrorName] = useState(false);
+  const [errorProduct, setErrorProduct] = useState(false)
+  const [errorPengaduan, setErrorPengaduan] = useState(false)
+
+  useEffect(() => {
+    if(!nameUser){
+      setErrorName(true)
+    } else{
+      setErrorName(false)
+    }
+  
+    if(!produkSelect){
+      setErrorProduct(true)
+    } else{
+      setErrorProduct(false)
+    }
+  
+    if(!pengaduan){
+      setErrorPengaduan(true)
+    } else{
+      setErrorPengaduan(false)
+    }
+  }, [nameUser, produkSelect, pengaduan])
+  
+
   return (
-    <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed z-40">
-    <div
-      className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed bg-gray-900/50 backdrop-blur-sm"
-      onClick={handleModal}
-    >
+    <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed z-[1000]">
       <div
-        className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/4 bg-primary p-12"
-        onClick={(e) => e.stopPropagation()}
+        className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed bg-gray-900/50 backdrop-blur-sm"
+        onClick={handleModal}
       >
         <div
-          className="absolute right-2 top-2 cursor-pointer"
-          onClick={handleModal}
+          className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/4 bg-primary p-12 min-w-[900px]"
+          onClick={(e) => e.stopPropagation()}
         >
-          <CloseIcon />
+          <div
+            className="absolute right-2 top-2 cursor-pointer"
+            onClick={handleModal}
+          >
+            <CloseIcon />
+          </div>
+
+          <FormGroup className="felx flex-col gap-4">
+            <TextField
+              id="outlined-basic"
+              label="Nama"
+              type="text"
+              name="Nama User"
+              variant="outlined"
+              className="rounded-md outline-none"
+              value={nameUser}
+              onChange={(e) => setNameUser(e.target.value)}
+              required
+              error={errorName && !nameUser}
+              helperText={errorName && !nameUser ? "Nama Perlu Diisi" : ""}
+            />
+
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">
+                Produk/Layanan
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Produk/Layanan"
+                error={errorProduct && !produkSelect}
+                required
+                name="Produk/Layanan"
+                value={produkSelect}
+                onChange={(e) => setProdukSelect(e.target.value)}
+              >
+                {[
+                  "Tabungan",
+                  "Deposito",
+                  "Kredit",
+                  "Layanan Digital",
+                  "Mobil Kas",
+                  "Promo",
+                  "Sponsor",
+                  "Pick Up Service",
+                ].map((selek, index) => (
+                  <MenuItem key={index} value={selek}>
+                    {selek}
+                  </MenuItem>
+                ))}
+              </Select>
+              {errorProduct && (
+                  <FormHelperText error>Product/Layanan perlu diisi</FormHelperText>
+                )}
+            </FormControl>
+
+<FormControl>
+              <TextareaAutosize
+                className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg border 
+                hover:border-black focus:border-blue-600 focus-visible:outline-0 box-border ${
+                  errorPengaduan
+                    ? "border-red-500 hover:border-red-500 text-red-500 focus:border-red-600"
+                    : "border-slate-300"
+                }`}
+                aria-label="Pengaduan"
+                minRows={5}
+                placeholder="Silahkan Tulis Aduan Anda..."
+                name="pengaduan"
+                required
+                value={pengaduan}
+                onChange={(e) => setPengaduan(e.target.value)}
+              />
+              {errorPengaduan && (
+                  <FormHelperText error>Pengaduan perlu diisi</FormHelperText>
+                )}
+</FormControl>
+
+            <a
+              className={`bg-[#12a50b] px-4 py-2 rounded-md text-primary font-semibold text-center  ${
+                errorName || errorProduct|| errorPengaduan ? "bg-[#71c96d] cursor-default pointer-events-none" : ""
+              }`}
+              href={`https://wa.me/+62${nomorInduk}?text=Saya%20${nameUser}%20ingin%20menanyakan%20tentang%20${produkSelect},%20${pengaduan}`}
+              target="_blank"
+            >
+              <WhatsAppIcon className="text-primary mr-2" />
+              Lanjutkan
+            </a>
+          </FormGroup>
         </div>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/QfhNO1_GSEM?si=XYAIDIf6xs0zuBg6"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-          className="w-[18rem] h-[11rem] sm:w-[40rem] sm:h-[22rem]"
-        ></iframe>
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default WaInput
+export default WaInput;
