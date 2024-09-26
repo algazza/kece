@@ -5,7 +5,7 @@
     <section id="testimonials" aria-label="What our customers are saying" class=" py-20 sm:py-32">
         <div class=" mx-auto max-w-7xl px-5 sm:px-6 lg:px-6">
           <div class="mx-auto max-w-2xl md:text-center ">
-            <h2 class="font-display text-3xl tracking-tight text-center text-slate-900 sm:text-4xl bg-white py-4 px-8 rounded-md shadow-md  xss:ml-[1rem] xs:ml-[1rem]">Companies We Are Sponsor</h2>
+            <h2 class="font-display text-3xl tracking-tight text-center text-slate-900 sm:text-4xl bg-white py-4 px-8 rounded-md shadow-md  xss:ml-[1rem] xs:ml-[1rem]">Daftar Permintaan Sponsor</h2>
           </div>
           <div class=" grid grid-cols-1 lg:grid-cols-4 mx-auto my-8 md:text-center xss:ml-[1rem] xs:ml-[1rem] md:ml-[3rem]" class="hidden xss:block sm2:block">
             <a href="{{ route('sponsor.index') }}"
@@ -16,18 +16,18 @@
               class="w-full flex justify-center font-medium rounded-md px-5 py-2 border bg-white text-gray-800 border-gray-200 cursor-pointer hover:bg-gray-900 hover:scale-105 hover:text-white duration-300">
               MMT
            </a>
-           
+
            <a href="{{ route('sponsor.index', ['jenis_sponsor' => 'Tempat Tissue / Gelas']) }}"
               class="w-full flex justify-center font-medium rounded-md px-5 py-2 border bg-white text-gray-800 border-gray-200 cursor-pointer hover:bg-gray-900 hover:scale-105 hover:text-white duration-300">
               Tempat Tissue / Gelas
            </a>
-           
+
            <a href="{{ route('sponsor.index', ['jenis_sponsor' => 'Nomor Meja']) }}"
             class="w-full flex justify-center font-medium rounded-md px-5 py-2 border bg-white text-gray-800 border-gray-200 cursor-pointer hover:bg-gray-900 hover:scale-105 hover:text-white duration-300">
             Nomor Meja
          </a>
           </div>
-          <ul role="list"  
+          <ul role="list"
             class="mx-auto mt-8 grid max-w-2xl xss:ml-[1rem] xs:ml-[1rem] ml-[5rem]  grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
 
             @foreach ($sponsor as $item)
@@ -68,12 +68,12 @@
                         </div>
                         </div>
                 </div>
-              </div>    
-            @endforeach 
+              </div>
+            @endforeach
 
             </ul>
 
     </section>
-   
-    
+
+
 @endsection
