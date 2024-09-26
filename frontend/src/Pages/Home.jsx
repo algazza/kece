@@ -23,14 +23,14 @@ import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import GroupsIcon from "@mui/icons-material/Groups";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-import PublicIcon from '@mui/icons-material/Public';
-import FeedIcon from '@mui/icons-material/Feed';
+import PublicIcon from "@mui/icons-material/Public";
+import FeedIcon from "@mui/icons-material/Feed";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
 import SimulasiCalcKredit from "../Components/Simulasi/SimulasiCalcKredit";
 import SimulasiCalcDeposito from "../Components/Simulasi/SimulasiCalcDeposito";
 import SimulasiCalcTabungan from "../Components/Simulasi/SimulasiCalcTabungan";
-import RateBunga from "../Components/RateBunga";
+import RateBunga from "../Components/Modal/RateBunga";
 import { localhostLink } from "../helper/localhost";
 
 const menuHome = [
@@ -170,7 +170,7 @@ const Home = () => {
 
         <div className={`${styles.flexStart} py-4 sm:px-8`}>
           <div className="flex flex-wrap gap-4 sm:gap-8 justify-center p-4">
-          {menuHome.map((menu, index) => (
+            {menuHome.map((menu, index) => (
               <Link
                 to={menu.link}
                 onClick={
@@ -180,7 +180,9 @@ const Home = () => {
                 className="group bg-abuTerang grid justify-items-center sm:w-[160px] w-[110px] sm:py-4 py-2 sm:px-4 px-2 rounded-xl transition-all duration-300 ease-in-out"
               >
                 {menu.icon("text-abuGelap group-hover:text-merahh-500 ")}
-                <h2 className={`${styles.fontBodyBold} flex-shrink-0 text-center`}>
+                <h2
+                  className={`${styles.fontBodyBold} flex-shrink-0 text-center`}
+                >
                   {menu.title}
                 </h2>
               </Link>
@@ -291,6 +293,19 @@ const Home = () => {
           {menuCalc === 0 && <SimulasiCalcDeposito />}
           {menuCalc === 1 && <SimulasiCalcTabungan />}
           {menuCalc === 2 && <SimulasiCalcKredit />}
+
+          <div className={`${styles.fontSmall} text-abuGelap mt-4`}>
+            Syarat & Ketentuan
+            <p>
+              * Setelah jangka waktu fixed rate berakhir, suku bunga yang
+              berlaku adalah suku bunga floating rate.
+            </p>
+            <p>
+              * Perincian Kredit di atas hanya merupakan simulasi/ estimasi
+              biaya.
+            </p>
+            <p>* Perhitungan tersebut masih belum termasuk biaya lain-lain.</p>
+          </div>
         </div>
       </section>
 
@@ -341,7 +356,9 @@ const Home = () => {
       </section>
 
       <section className={`${styles.paddingY} px-12`}>
-        <h2 className={`${styles.heading3} text-center mb-12`}>Berita Terbaru</h2>
+        <h2 className={`${styles.heading3} text-center mb-12`}>
+          Berita Terbaru
+        </h2>
         <div className="grid md:grid-cols-3 ss:grid-cols-2 gap-8">
           {newsData.slice(0, 3).map((news) => (
             <div

@@ -1,7 +1,7 @@
 import React from "react";
-import { nomorInduk } from "../helper/nomor";
+import { nomorInduk } from "../../helper/nomor";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import styles from "../helper/style";
+import styles from "../../helper/style";
 
 const PopUp = ({
   nama,

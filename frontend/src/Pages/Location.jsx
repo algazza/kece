@@ -91,7 +91,7 @@ const Location = () => {
                     style={{ marginRight: 3 + "em" }}
                     allowfullscreen=""
                     loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
+                    referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </div>
               </motion.div>
