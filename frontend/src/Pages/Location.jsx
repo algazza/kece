@@ -38,7 +38,7 @@ const Location = () => {
 
       <section className={styles.flexCenter}>
         <div className="my-10 flex gap-4 sm:max-w-full max-w-80 overflow-auto">
-          {["Kantor Pusat", "Kas Gajah", "Kas Kalipancur", "Kas Bulusan"].map(
+          {["Kantor Pusat", "Kantor Kas Gajah", "Kantor Kas Kalipancur", "Kantor Kas Bulusan"].map(
             (menu, index) => (
               <div
                 key={index}
@@ -78,6 +78,7 @@ const Location = () => {
                     </p>
                   </div>
 
+                  <h2 className={`${styles.heading5}`}>Jam Layanan</h2>
                   {jadwalData.map((scedul, index) => (
                     <div
                       key={index}

@@ -140,7 +140,7 @@ export const profileNilai = [
 export const formIdentitas = [
   {
     id: "nama",
-    title: "Name",
+    title: "Nama",
     type: "text",
   },
   {
