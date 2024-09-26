@@ -43,6 +43,7 @@ class SponsorController extends Controller
             $request->pdf->move(public_path('image/public/sponsor'), $validateData);
             $validateData = $validateData['pdf'];
         }
+        
         $sponsor = Sponsor::create($sponsorData);
 
         return response()->json($sponsor);   
