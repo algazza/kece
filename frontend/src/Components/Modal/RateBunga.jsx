@@ -90,8 +90,8 @@ const RateBunga = ({ handleOpenRateBunga }) => {
         animate={{ x: 0 }}
         exit={{ x: "100%" }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className="bg-primary p-8 h-full overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
+        className="bg-primary p-8 h-full overflow-y-auto"
       >
         <div className="cursor-pointer" onClick={() => handleOpenRateBunga()}>
           <ArrowBackIosIcon />
