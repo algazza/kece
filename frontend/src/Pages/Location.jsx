@@ -65,13 +65,18 @@ const Location = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.5 }}
-                className="md:min-w-[850px] bg-abuTerang flex flex-col-reverse md:flex-row rounded-lg"
+                className="md:min-w-[1100px] bg-abuTerang flex flex-col-reverse md:flex-row rounded-lg"
               >
                 <div className="md:w-1/2 md:m-12 m-8">
-                  <h2 className={`${styles.heading5}`}>{location.kantor}</h2>
-                  <p className={`${styles.fontBody} flex-auto my-4`}>
-                    {location.alamat}
-                  </p>
+                  <div className="mb-8">
+                    <h2 className={`${styles.heading5}`}>{location.kantor}</h2>
+                    <p className={`${styles.fontBody} flex-auto my-2`}>
+                      {location.alamat}
+                    </p>
+                    <p className={`${styles.fontBody} flex-auto`}>
+                      {location.nomor}
+                    </p>
+                  </div>
 
                   {jadwalData.map((scedul, index) => (
                     <div
@@ -84,7 +89,7 @@ const Location = () => {
                   ))}
                 </div>
 
-                <div className="max-w-full">
+                <div className="w-full">
                   <iframe
                     className="rounded-lg w-full h-full"
                     src={location.gmaps}

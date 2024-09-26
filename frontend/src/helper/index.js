@@ -660,22 +660,26 @@ export const locationDescription = [
   {
     kantor: "Kantor Pusat",
     alamat: "Jl. Elang Raya No. 99 Mangunharjo, Tembalang, Semarang",
+    nomor: "+62 8132 7890 199",
     gmaps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.726844710513!2d110.46356827504492!3d-7.041353492960724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708d4a93de1f07%3A0xc0c45f754cb4c6!2sBank%20Bpr%20Arto%20Moro!5e0!3m2!1sid!2sid!4v1722830824389!5m2!1sid!2sid"
   },
   {
     kantor: "Kantor Kas Gajah",
     alamat: "Jl. Gajah Raya No.155, Sambirejo, Semarang",
+    nomor: "024 7641 1138",
     gmaps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63363.17426659836!2d110.39369218248164!3d-6.985896064714817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708cb8ce22a96f%3A0xc90fd38b29a4a39!2sPT.%20BPR%20Arto%20Moro!5e0!3m2!1sid!2sid!4v1727150026455!5m2!1sid!2sid"
   },
   {
     kantor: "Kantor Kas Kalipancur",
     alamat: "Jl. Untung Suropati No. 18 Kav.5, Kalipancur, Semarang",
+    nomor: "024 7643 2286",
     gmaps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63359.710098900985!2d110.30874802167966!3d-7.0114135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b0248046a7b%3A0x7cfa34011298f579!2sBank%20BPR%20Arto%20Moro!5e0!3m2!1sid!2sid!4v1727150272851!5m2!1sid!2sid"
 
   },
   {
     kantor: "Kantor Kas Bulusan",
     alamat: "Jl. Kol.H.Imam Suprapto No.1 Bulusan, Tembalang",
+    nomor: "024 7864 82553",
     gmaps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63353.01228503741!2d110.37449322167971!3d-7.0604900999999956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708f38030bedb9%3A0x1c5c9d9477088d7b!2sKantor%20Kas%20BPR%20Artomoro!5e0!3m2!1sid!2sid!4v1727150386926!5m2!1sid!2sid"
   },
 ]
