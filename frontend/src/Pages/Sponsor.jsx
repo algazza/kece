@@ -4,7 +4,6 @@ import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import FormBank from "../Components/FormBank";
 import { BlueBanner, formUsahaSponsor } from "../helper";
 import { SponsorForm } from "../Components/Form";
-import styles from "../helper/style";
 import { nomorInduk } from "../helper/nomor";
 import { localhostLink } from "../helper/localhost";
 

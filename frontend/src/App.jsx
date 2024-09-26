@@ -10,7 +10,6 @@ import SyaratTabungan from "./Pages/SyaratProduk/SyaratTabungan.jsx";
 import News from "./Pages/News/News.jsx";
 import IsiNews from "./Pages/News/IsiNews.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
-import LocationPage from "./Pages/LocationPage.jsx";
 import Sponsor from "./Pages/Sponsor.jsx";
 import Sejarah from "./Pages/Sejarah.jsx";
 import Manajemen from "./Pages/Manajemen.jsx";
@@ -28,6 +27,7 @@ import IsiPromo from "./Pages/Promo/IsiPromo.jsx";
 import MainLayout from "./MainLayout.jsx";
 import Digital from "./Pages/Digital.jsx";
 import MobilKas from "./Pages/MobilKas.jsx";
+import Location from "./Pages/Location.jsx";
 
 const router = createBrowserRouter([
   {
@@ -105,7 +105,7 @@ const router = createBrowserRouter([
       },
       {
         path: "lokasi",
-        element: <LocationPage />,
+        element: <Location />,
       },
       {
         path: "laporan",

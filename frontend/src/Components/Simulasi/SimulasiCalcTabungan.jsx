@@ -1,6 +1,7 @@
 import {
   FilledInput,
   FormControl,
+  FormHelperText,
   InputAdornment,
   InputLabel,
   MenuItem,
@@ -19,15 +20,16 @@ const SimulasiCalcTabungan = () => {
   const [hasilBunga, setHasilBunga] = useState();
   const [showResult, setShowResult] = useState(false);
   const [rawNominal, setRawNominal] = useState("");
+  const [errNominal, setErrNominal] = useState(false);
   const nominalNumber = parseFloat(nominal.replace(/\./g, ""));
 
   const CalcDataFields = [
+    { label: "Produk Tabungan", value: produk },
     {
       label: "Setoran Awal",
       value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")}`,
     },
     { label: "Angka Bunga", value: `${bunga}%` },
-    { label: "Nilai Bunga", value: hasilBunga },
     {
       label: "Total",
       value: `Rp. ${parseInt(rawNominal).toLocaleString(
@@ -58,7 +60,7 @@ const SimulasiCalcTabungan = () => {
 
     setNominal(formatRupiah(rawValue));
   };
-  
+
   useEffect(() => {
     if (produk === "Tabungan Pro Aktif") {
       if (nominalNumber >= 20000 && nominalNumber <= 1000000) {
@@ -72,23 +74,59 @@ const SimulasiCalcTabungan = () => {
       } else {
         setBunga("");
       }
+    } else if (produk === "Tabungan Simpel") {
+      if (nominalNumber >= 20000) {
+        setBunga(2);
+      } else {
+        setBunga("");
+      }
+    } else if (produk === "Tabungan Tagar") {
+      if (nominalNumber >= 5000000) {
+        setBunga(1);
+      } else {
+        setBunga("");
+      }
+    } else {
+      setBunga("");
     }
   }, [produk, nominalNumber]);
 
   const handleCalculations = (e) => {
     e.preventDefault();
 
-    if (!nominal || nominalNumber <= 20000) {
-      setHasilTotal("Mohon isi semua field");
-      setShowResult(false);
-    } else {
-      // switch
-      let hasilBungaTotal = (0.8 / 100) * (nominalNumber * (bunga / 100) * 30);
-      let hasilPerkalianTotal = nominalNumber + hasilBungaTotal;
+    if (produk === "Tabungan Pro Aktif" || produk === "Tabungan Simpel") {
+      if (!nominal || nominalNumber < 20000) {
+        setHasilTotal("Mohon isi semua field");
+        setShowResult(false);
+        setErrNominal(true);
+      } else {
+        setErrNominal(false)
+        let hasilBungaTotal = 0;
 
-      setHasilTotal(`Rp. ${hasilPerkalianTotal.toLocaleString("id-ID")}`);
-      setHasilBunga(`Rp. ${hasilBungaTotal.toLocaleString("id-ID")}`);
-      setShowResult(!showResult);
+        if (nominalNumber >= 7500000) {
+          hasilBungaTotal = ((nominalNumber * (bunga / 100) * 30) / 365) * (0.8 / 100) ;
+        } else {
+          hasilBungaTotal = (nominalNumber * (bunga / 100) * 30) / 365;
+        }
+
+        setHasilTotal(`Rp. ${hasilBungaTotal.toLocaleString("id-ID")}`);
+        setHasilBunga(`Rp. ${hasilBungaTotal.toLocaleString("id-ID")}`);
+        setShowResult(!showResult);
+      }
+    } else if (produk === "Tabungan Tagar") {
+      if (!nominal || nominalNumber < 5000000) {
+        setHasilTotal("Mohon isi semua field");
+        setShowResult(false);
+        setErrNominal(true);
+      } else {
+        let hasilBungaTotal =
+          (0.8 / 100) * (nominalNumber * (bunga / 100) * 30);
+        let hasilPerkalianTotal = nominalNumber + hasilBungaTotal;
+
+        setHasilTotal(`Rp. ${hasilPerkalianTotal.toLocaleString("id-ID")}`);
+        setHasilBunga(`Rp. ${hasilBungaTotal.toLocaleString("id-ID")}`);
+        setShowResult(!showResult);
+      }
     }
   };
 
@@ -150,9 +188,11 @@ const SimulasiCalcTabungan = () => {
                 className="bg-primary"
                 required
                 value={nominal}
+                error = {errNominal}
                 onChange={handleNominalChange}
                 inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
               />
+              {errNominal && <FormHelperText error>Nominal Terlalu Kecil</FormHelperText>}
             </FormControl>
           </div>
 

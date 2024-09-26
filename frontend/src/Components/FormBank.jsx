@@ -325,7 +325,7 @@ const FormBank = ({
                 </FormHelperText>
               )}
             </FormGroup>
-            <span className="text-merahh-500">* Form ini bukan merupakan pengajuan resmi</span>
+            <span className="text-merahh-400">* Form ini bukan merupakan pengajuan resmi</span>
             <span>
               * Proses analisa dan persetujuan dilakukan bank penyalur KUR
             </span>

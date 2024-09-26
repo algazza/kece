@@ -18,8 +18,10 @@ import {
   RadioGroup,
   Select,
   TextareaAutosize,
-  TextField,
 } from "@mui/material";
+import FileUploadIcon from "@mui/icons-material/FileUpload";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import DeleteIcon from "@mui/icons-material/Delete";
 import {
   DatePicker,
   LocalizationProvider,
@@ -27,6 +29,7 @@ import {
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
+import { useState } from "react";
 
 export const Kredit = ({ inputs, handleChange }) => {
   return (
@@ -430,6 +433,9 @@ export const SponsorForm = ({
   sponsorError,
   setSponsorError,
 }) => {
+  const [filepdf, setFilepdf] = useState(null);
+  const [fileName, setFileName] = useState("File Tidak Terpilih");
+
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -500,7 +506,7 @@ export const SponsorForm = ({
         <div className={`${styles.inputSpan}`}>
           <span>Catatan</span>
           <TextareaAutosize
-                className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+            className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
                   border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
                   box-border border-slate-300`}
             aria-label="Catatan"
@@ -520,9 +526,40 @@ export const SponsorForm = ({
         </div>
       </div>
 
-      <div className={`${styles.inputSpan} mt-4`}>
-      <span>Uplod Proposal (opsional)</span>
-        <TextField type="file" onChange={handleFileChange} fullWidth />
+      <div
+        className={`${styles.flexCenter} flex-col w-full h-[200px] mt-4 border-2 border-dashed border-slate-300 cursor-pointer rounded-[5px]`}
+        onClick={() => document.querySelector(".input-file").click()}
+      >
+        <input
+          type="file"
+          onChange={({ target: { files } }) => {
+            files[0] && setFileName(files[0].name);
+            if (files) {
+              setFilepdf(URL.createObjectURL(files[0]));
+            }
+          }}
+          className="input-file"
+          hidden
+        />
+
+        {filepdf ? (
+          <embed src={filepdf} width={150} height={150} />
+        ) : (
+          <>
+            <FileUploadIcon /> <span>Uplod Proposal (opsional)</span>
+          </>
+        )}
+      </div>
+
+      <div className="my-2 flex justify-between items-center py-4 px-5 rounded-[10px] bg-slate-300">
+        <PictureAsPdfIcon />
+
+        <span className="flex items-center">
+          {fileName} -
+          <DeleteIcon className="text-merahh-500 cursor-pointer" 
+          onClick={() => {setFileName("Tidak Ada File"); setFilepdf(null)}}
+          />
+        </span>
       </div>
     </div>
   );

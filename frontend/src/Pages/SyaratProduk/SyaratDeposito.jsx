@@ -91,7 +91,7 @@ const SyaratDeposito = () => {
           <section key={kredit.id}>
             {/* Menu pilihan */}
             <section className={styles.flexCenter}>
-              <div className="pt-10 flex gap-4 md:max-w-full max-w-80 overflow-auto">
+              <div className="pt-10 flex gap-4 sm:max-w-full max-w-80 overflow-auto">
                 {[
                   "Keuntungan",
                   "Syarat & Ketentuan",
@@ -115,9 +115,7 @@ const SyaratDeposito = () => {
             </section>
 
             {/* Isi dari Menu */}
-            <section
-              className={` sm:pb-16 md:p-10 rounded-lg`}
-            >
+            <section className={` sm:pb-16 md:p-10 rounded-lg`}>
               {/* Syarat */}
               {tabs === 1 ? (
                 <motion.div
@@ -127,12 +125,12 @@ const SyaratDeposito = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-6 sm:mx-10 sm:px-10 "
                 >
-                  <ol className="text-abuGelap sm:ml-4">
-                    <li className={`${styles.heading5} text-black`}>
+                  <div className="text-abuGelap sm:ml-4">
+                    <h3 className={`${styles.heading5} text-black`}>
                       Keuntungan
-                    </li>
+                    </h3>
                     {kredit.Keuntungan}
-                  </ol>
+                  </div>
                 </motion.div>
               ) : null}
 
@@ -145,15 +143,15 @@ const SyaratDeposito = () => {
                   transition={{ duration: 0.5 }}
                   className="mx-7 md:mx-10 md:px-10"
                 >
-                  <ol className="list text-abuGelap sm:ml-4">
-                    <li className={`${styles.heading5} text-black`}>Syarat</li>
+                  <div className="list text-abuGelap sm:ml-4">
+                    <h3 className={`${styles.heading5} text-black`}>Syarat</h3>
                     {kredit.Syarat}
 
-                    <li className={`${styles.heading5} text-black mt-4`}>
+                    <h3 className={`${styles.heading5} text-black mt-4`}>
                       Ketentuan
-                    </li>
+                    </h3>
                     {kredit.Ketentuan}
-                  </ol>
+                  </div>
                 </motion.div>
               ) : null}
 
