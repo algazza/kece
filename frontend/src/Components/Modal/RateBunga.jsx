@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "../helper/style";
+import styles from "../../helper/style";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import {
   Paper,
@@ -11,7 +11,7 @@ import {
   TableRow,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { localhostLink } from "../helper/localhost";
+import { localhostLink } from "../../helper/localhost";
 
 const RateBunga = ({ handleOpenRateBunga }) => {
   const [menuTabel, setMenuTabel] = useState(0);
@@ -124,19 +124,6 @@ const RateBunga = ({ handleOpenRateBunga }) => {
             </p>
             <p className="">
               Update Terakhir: 12 September 2024
-              {/* {rateKredit && rateKredit.updated_at
-                ? new Intl.DateTimeFormat("id-ID", {
-                    day: "2-digit",
-                    month: "long",
-                    year: "numeric",
-                  }).format(new Date(rateKredit.updated_at))
-                : rateDeposito && rateDeposito.updated_at
-                ? new Intl.DateTimeFormat("id-ID", {
-                    day: "2-digit",
-                    month: "long",
-                    year: "numeric",
-                  }).format(new Date(rateDeposito.updated_at))
-                : "Tanggal tidak tersedia"} */}
             </p>
           </div>
         </div>
@@ -216,16 +203,16 @@ const RateBunga = ({ handleOpenRateBunga }) => {
                   </TableHead>
 
                   <TableBody>
-                      <TableRow>
-                        {["> 5.000.000", "1%"].map((cellmap, index) => (
-                          <TableCell
-                            key={index}
-                            style={{ borderBottom: "1px solid #cbd5e1" }}
-                          >
-                            {cellmap}
-                          </TableCell>
-                        ))}
-                      </TableRow>
+                    <TableRow>
+                      {["> 5.000.000", "1%"].map((cellmap, index) => (
+                        <TableCell
+                          key={index}
+                          style={{ borderBottom: "1px solid #cbd5e1" }}
+                        >
+                          {cellmap}
+                        </TableCell>
+                      ))}
+                    </TableRow>
                   </TableBody>
                 </Table>
               </TableContainer>
@@ -255,16 +242,16 @@ const RateBunga = ({ handleOpenRateBunga }) => {
                   </TableHead>
 
                   <TableBody>
-                      <TableRow>
-                        {["> 20.000", "2%"].map((cellmap, index) => (
-                          <TableCell
-                            key={index}
-                            style={{ borderBottom: "1px solid #cbd5e1" }}
-                          >
-                            {cellmap}
-                          </TableCell>
-                        ))}
-                      </TableRow>
+                    <TableRow>
+                      {["> 20.000", "2%"].map((cellmap, index) => (
+                        <TableCell
+                          key={index}
+                          style={{ borderBottom: "1px solid #cbd5e1" }}
+                        >
+                          {cellmap}
+                        </TableCell>
+                      ))}
+                    </TableRow>
                   </TableBody>
                 </Table>
               </TableContainer>

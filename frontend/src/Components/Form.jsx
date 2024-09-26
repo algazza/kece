@@ -436,13 +436,6 @@ export const SponsorForm = ({
   const [filepdf, setFilepdf] = useState(null);
   const [fileName, setFileName] = useState("File Tidak Terpilih");
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      console.log("Selected file:", file.name);
-    }
-  };
-
   return (
     <div>
       <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
@@ -461,7 +454,7 @@ export const SponsorForm = ({
             minRows={3}
             placeholder="Nama Usaha"
             name="nama_usaha"
-            value={inputs.nama_usaha || ""}
+            value={inputs.nama_usaha }
             onChange={(e) => {
               handleChange(e);
               setUsahaError(false);
@@ -532,6 +525,8 @@ export const SponsorForm = ({
       >
         <input
           type="file"
+          name="pdf"
+          value={inputs.pdf || ""}
           onChange={({ target: { files } }) => {
             files[0] && setFileName(files[0].name);
             if (files) {

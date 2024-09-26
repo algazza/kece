@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import { ButtonFull, ButtonOutline } from "./Button";
 import { toast } from "react-toastify";
-import PopUp from "./PopUp";
+import PopUp from "./Modal/PopUp";
 
 const FormBank = ({
   isiPenting,
