@@ -5,7 +5,7 @@ import FormBank from "../../Components/FormBank";
 import styles from "../../helper/style";
 import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
-import { Kredit } from "../../Components/Form";
+import { Kredit, Tabungan } from "../../Components/Form";
 import { IsiKredit } from "../../helper/DataProduk";
 import { nomorInduk } from "../../helper/nomor";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
@@ -183,11 +183,6 @@ const SyaratTabungan = () => {
                   transition={{ duration: 0.5 }}
                   className={`sm:mx-10 sm:px-10 ${styles.flexCenter}`}
                 >
-                  <h3
-                    className={`${styles.heading5} text-black my-4 ml-8 sm:ml-4`}
-                  >
-                    Tabel Biaya
-                  </h3>
                   <TabelBiaya />
                 </motion.div>
               ) : null}
@@ -202,7 +197,7 @@ const SyaratTabungan = () => {
                   className="sm:mx-10 sm:px-10"
                 >
                   <FormBank
-                    isiPenting={<Kredit />}
+                    isiPenting={<Tabungan />}
                     value={"Kredit"}
                     nomer={nomorInduk}
                     endpoint={`${localhostLink}/api/kredit`}

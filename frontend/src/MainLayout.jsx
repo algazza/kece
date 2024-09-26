@@ -11,11 +11,17 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { nomorInduk } from "./helper/nomor";
 import { MenuProvider } from "./MenuProvider";
+import WaInput from "./Components/WaInput";
 
 const MainLayout = () => {
   const [addShortcut, setAddShortcut] = useState(false);
+  const [modal, setModal] = useState(false);
   const location = useLocation();
   const { pathname } = useLocation();
+
+  function handleModal() {
+    setModal(!modal);
+  }
 
   useEffect(() => {
     if (location.hash) {
@@ -50,20 +56,25 @@ const MainLayout = () => {
           <Outlet />
         </motion.div>
 
-        <div className="fixed bottom-8 right-4 z-[100]">
+        <div className="fixed bottom-8 right-4 z-[98]">
           <AnimatePresence>
             {addShortcut == true && (
-              <motion.a
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 50 }}
-                transition={{ duration: 0.5, delay: 0.25  }}
-                href={`https://wa.me/+62${nomorInduk}`}
-                target="_blank"
-                className={`bg-[#25D366] rounded-full w-[45px] h-[45px] ${styles.flexCenter} z-[100]`}
-              >
-                <WhatsAppIcon className="text-white" />
-              </motion.a>
+              <>
+                <motion.a
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.5, delay: 0.25 }}
+                  onClick={handleModal}
+                  // href={`https://wa.me/+62${nomorInduk}`}
+                  // target="_blank"
+                  className={`bg-[#25D366] rounded-full w-[45px] h-[45px] ${styles.flexCenter} z-[100] cursor-pointer`}
+                >
+                  <WhatsAppIcon className="text-white" />
+                </motion.a>
+
+                {modal && <WaInput handleModal={handleModal} />}
+              </>
             )}
 
             {addShortcut == true && (
@@ -97,7 +108,7 @@ const MainLayout = () => {
           <div className={styles.flexCenter}>
             <a
               onClick={handleSetAddShortcut}
-              className={`bg-abuGelap rounded-full w-[45px] h-[45px] ${styles.flexCenter} z-[99] cursor-pointer`}
+              className={`bg-abuGelap rounded-full w-[45px] h-[45px] ${styles.flexCenter} z-[98] cursor-pointer`}
             >
               {addShortcut == false ? (
                 <AddIcon className="text-white" />
@@ -114,7 +125,7 @@ const MainLayout = () => {
                 repeat: Infinity,
                 repeatDelay: 0.2,
               }}
-              className="bg-[#e0e0e0] px-4 py-4 rounded-full absolute z-[98]"
+              className="bg-[#e0e0e0] px-4 py-4 rounded-full absolute z-[97]"
             ></motion.div>
             <motion.div
               initial={{ opacity: 1, scale: 1 }}
@@ -125,7 +136,7 @@ const MainLayout = () => {
                 repeat: Infinity,
                 repeatDelay: 0.2,
               }}
-              className="bg-[#a2a2a2] px-4 py-4 rounded-full absolute z-[98]"
+              className="bg-[#a2a2a2] px-4 py-4 rounded-full absolute z-[97]"
             ></motion.div>
           </div>
         </div>

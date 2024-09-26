@@ -12,6 +12,7 @@ import { nomorInduk } from "../../helper/nomor";
 import { localhostLink } from "../../helper/localhost";
 import { TabelSimDeposito } from "../../Components/TabelSim";
 import { useMenu } from "../../MenuProvider";
+import TabelBiaya from "../../Components/TabelBiaya";
 
 // ===================================================
 const buttonMenuTabungan = [
@@ -183,11 +184,6 @@ const SyaratDeposito = () => {
                   transition={{ duration: 0.5 }}
                   className={`sm:mx-10 sm:px-10 ${styles.flexCenter}`}
                 >
-                  <h3
-                    className={`${styles.heading5} text-black my-4 ml-8 sm:ml-4`}
-                  >
-                    Tabel Biaya
-                  </h3>
                   <TabelBiaya />
                 </motion.div>
               ) : null}
@@ -202,7 +198,7 @@ const SyaratDeposito = () => {
                   className="sm:mx-10 sm:px-10"
                 >
                   <FormBank
-                    isiPenting={<Kredit />}
+                    isiPenting={<Deposito />}
                     value={"Kredit"}
                     nomer={nomorInduk}
                     endpoint={`${localhostLink}/api/kredit`}

@@ -59,7 +59,7 @@
                                 <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : {{ $item->nama_usaha }}</p>
                                 <div class="flex flex-col">
                                   <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->catatan }}</p>
-                                  <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3">  <a href="your-file.pdf" download class="flex items-center px-3 py-1 bg-white text-black hover:text-white rounded-lg shadow-lg hover:bg-red-600 transition">
+                                  <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3">  <a href="{{ asset('image/public/sponsor/' . $item->pdf) }}" download class="flex items-center px-3 py-1 bg-white text-black hover:text-white rounded-lg shadow-lg hover:bg-red-600 transition">
                                     <i class='bx bxs-file-pdf'></i>
                                     <span>Download PDF</span>
                                   </a></p>
