@@ -21,32 +21,36 @@ class SponsorController extends Controller
     
     public function store(Request $request)
     {
-        $sponsorData = [
-            'nama' => $request->nama,
-            'email' => $request->email,
-            'no_handphone' => $request->no_handphone,
-            'nik' => $request->nik,
-            'alamat' => $request->alamat,
-            'bidang_usaha' => $request->bidang_usaha,
-            'nama_usaha' => $request->nama_usaha,
-            'catatan' => $request->catatan,
-            'jenis_sponsor' => $request->jenis_sponsor,
-            'jenis' => $request->jenis,
-            'code' => $request->code,
-            'ip_user' => $request->ip_user,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
-        ];
-
-        if($request->hasFile('pdf')){
-            $validateData = time() . '.' . $request->pdf->extension();
-            $request->pdf->move(public_path('image/public/sponsor'), $validateData);
-            $validateData = $validateData['pdf'];
-        }
+        $sponsor = new Sponsor();
+    
+        $sponsor->nama = $request->nama;
+        $sponsor->email = $request->email;
+        $sponsor->no_handphone = $request->no_handphone;
+        $sponsor->nik = $request->nik;
+        $sponsor->alamat = $request->alamat;
+        $sponsor->bidang_usaha = $request->bidang_usaha;
+        $sponsor->nama_usaha = $request->nama_usaha;
+        $sponsor->catatan = $request->catatan;
+        $sponsor->jenis_sponsor = $request->jenis_sponsor;
+        $sponsor->jenis = $request->jenis;
+        $sponsor->code = $request->code;
+        $sponsor->ip_user = $request->ip_user;
         
-        $sponsor = Sponsor::create($sponsorData);
 
-        return response()->json($sponsor);   
+        if ($request->hasFile('pdf')) {
+            $fileName = time() . '.' . $request->pdf->getClientOriginalExtension();
+            $request->pdf->move(public_path('image/public/sponsor'), $fileName);
+            $sponsor->pdf = $fileName;
+        }
+    
+        $sponsor->created_at = Carbon::now();
+        $sponsor->updated_at = Carbon::now();
+    
+        $sponsor->save();
+    
+        return response()->json($sponsor);
     }
+    
+
 
 }
