@@ -13,12 +13,12 @@ const Sponsor = () => {
       <section>
         <IntroBanner
           ImageBanner={BlueBanner}
-          TitleBanner={"Sponsor"}
+          TitleBanner={"Kerja Sama"}
           DescriptionBanner={`
               Tugas Aldara
             `}
         />
-        <TitleBlueBanner title={"Sponsor"} />
+        <TitleBlueBanner title={"Kerja Sama"} />
       </section>
 
       <span className="-mt-[100px] pb-[100px] block" id="section2">
