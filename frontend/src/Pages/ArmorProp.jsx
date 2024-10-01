@@ -2,8 +2,10 @@ import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
 import {Armordata, BlueBanner} from "../helper";
 import styles from "../helper/style";
+import {useNavigate} from "react-router-dom";
 
 const ArmorProp = () => {
+    const navigate = useNavigate();
     return (
         <>
             <section>
@@ -27,7 +29,11 @@ const ArmorProp = () => {
                 <div className="grid grid-cols-4 gap-12">
                     {Armordata.map((armor) => (
 
-                    <a key={armor.alamat} className="bg-abuTerang rounded-xl cursor-pointer" href={armor.link}>
+                    <div
+                        key={armor.alamat}
+                        className="bg-abuTerang rounded-xl cursor-pointer"
+                        onClick={() => navigate("http://localhost")}
+                    >
                         <img
                             src={armor.img}
                             alt={armor.alamat}
@@ -36,7 +42,7 @@ const ArmorProp = () => {
                         <div className="p-2">
                             <h6 className={`${styles.heading5}`}>Rp. {armor.harga}</h6>
                             <p className={`${styles.heading6}`}>{armor.alamat}</p>
-                            <p className="text-abuGelap">{armor.kabupaten}</p>
+                            <p className="text-abuGelap">{armor.kecamatan}</p>
                         </div>
                         <div
                             className="border-abuGelap border-t-[1px] flex gap-2 p-2 font-semibold text-abuGelap"
@@ -48,7 +54,7 @@ const ArmorProp = () => {
                                 LT: <span>{armor.lt}</span>m²
                             </p>
                         </div>
-                    </a>
+                    </div>
                     ))}
                 </div>
             </section>
