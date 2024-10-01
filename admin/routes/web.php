@@ -197,3 +197,6 @@ Route::get('brand', function () {
 Route::get('Datas', function () {
     return view('admin.SponsorData');
 });
+Route::get('Propert', function () {
+    return view('admin.armorprop.ArmorProp');
+});
