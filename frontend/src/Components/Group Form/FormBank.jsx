@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React from "react";
 import axios from "axios";
-import styles from "../helper/style";
-import { formIdentitas, formPekerjaan } from "../helper/index";
+import styles from "../../helper/style.js";
+import { formIdentitas, formPekerjaan } from "../../helper/index.js";
 import {
   Checkbox,
   FormControlLabel,
@@ -14,9 +14,9 @@ import {
   TextField,
   TextareaAutosize,
 } from "@mui/material";
-import { ButtonFull, ButtonOutline } from "./Button";
+import { ButtonFull, ButtonOutline } from "../Button.jsx";
 import { toast } from "react-toastify";
-import PopUp from "./Modal/PopUp";
+import PopUp from "../Modal/PopUp.jsx";
 
 const FormBank = ({
   isiPenting,

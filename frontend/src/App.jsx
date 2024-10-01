@@ -10,7 +10,7 @@ import SyaratTabungan from "./Pages/SyaratProduk/SyaratTabungan.jsx";
 import News from "./Pages/News/News.jsx";
 import IsiNews from "./Pages/News/IsiNews.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
-import Sponsor from "./Pages/Sponsor.jsx";
+import Sponsor from "./Pages/KerjaSama.jsx";
 import Sejarah from "./Pages/Sejarah.jsx";
 import Manajemen from "./Pages/Manajemen.jsx";
 import Error from "./Pages/Error.jsx";
@@ -20,22 +20,24 @@ import LaporanGCG from "./Pages/Laporan/LaporanGCG.jsx";
 import LaporanTahunan from "./Pages/Laporan/LaporanTahunan.jsx";
 import LaporanTriwulan from "./Pages/Laporan/LaporanTriwulan.jsx";
 import Penghargaan from "./Pages/Penghargaan.jsx";
-import Login from "./Layouts/Login.jsx";
-import ProtectedRoute from "./Layouts/ProtectedRoute.jsx";
+// import Login from "./Layouts/Login.jsx";
+// import ProtectedRoute from "./Layouts/ProtectedRoute.jsx";
 import Promo from "./Pages/Promo/Promo.jsx";
 import IsiPromo from "./Pages/Promo/IsiPromo.jsx";
 import MainLayout from "./MainLayout.jsx";
 import Digital from "./Pages/Digital.jsx";
 import MobilKas from "./Pages/MobilKas.jsx";
 import Location from "./Pages/Location.jsx";
+import ArmorProp from "@/Pages/ArmorProp.jsx";
+import IsiArmorProp from "@/Pages/IsiArmorProp.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/newwebsite",
     element: (
-      <ProtectedRoute>
         <MainLayout />
-      </ProtectedRoute>
+      // <ProtectedRoute>
+      // </ProtectedRoute>
     ),
     errorElement: <Error />,
     children: [
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
         element: <SyaratTabungan />,
       },
       {
+        path: "armor-properti",
+        element: <ArmorProp />,
+      },
+      {
+        path: "armor-properti/hash",
+        element: <IsiArmorProp />,
+      },
+      {
         path: "layanan-digital",
         element: <Digital />,
       },
@@ -72,7 +82,7 @@ const router = createBrowserRouter([
         element: <IsiPromo />,
       },
       {
-        path: "sponsor",
+        path: "kerja-sama",
         element: <Sponsor />,
       },
       {
@@ -125,10 +135,10 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "login",
-    element: <Login />,
-  },
+  // {
+  //   path: "login",
+  //   element: <Login />,
+  // },
 ]);
 
 const App = () => {

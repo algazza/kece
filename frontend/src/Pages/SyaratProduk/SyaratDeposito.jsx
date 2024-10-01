@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import IntroBanner from "../../Layouts/IntroBanner";
 import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
-import FormBank from "../../Components/FormBank";
+import FormBank from "../../Components/Group Form/FormBank.jsx";
 import styles from "../../helper/style";
 import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
-import { Deposito } from "../../Components/Form";
+import { Deposito } from "../../Components/Group Form/Form.jsx";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../../helper/DataProduk";
 import { nomorInduk } from "../../helper/nomor";
@@ -116,7 +116,7 @@ const SyaratDeposito = () => {
             </section>
 
             {/* Isi dari Menu */}
-            <section className={` sm:pb-16 md:p-10 rounded-lg`}>
+            <section className={` sm:pb-16 md:p-10 p-4 rounded-lg`}>
               {/* Syarat */}
               {tabs === 1 ? (
                 <motion.div
@@ -199,9 +199,9 @@ const SyaratDeposito = () => {
                 >
                   <FormBank
                     isiPenting={<Deposito />}
-                    value={"Kredit"}
+                    value={"deposito"}
                     nomer={nomorInduk}
-                    endpoint={`${localhostLink}/api/kredit`}
+                    endpoint={`${localhostLink}/api/deposito`}
                   />
                 </motion.div>
               ) : null}

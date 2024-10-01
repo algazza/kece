@@ -22,6 +22,7 @@ const Location = () => {
             <ul className="list-disc list-inside">
               <h2 className="font-bold text-merahh-500">Kantor Pusat:</h2>
               <li>Jl. Elang Raya No. 99 Mangunharjo, Tembalang, Semarang</li>
+              
               <h2 className="font-bold text-biruMuda-500 mt-4">Kantor Kas:</h2>
               <li>Jl. Gajah Raya No. 155, Semarang</li>
               <li>Jl. Untung Suropati No. 18 Kav.5, Kalipancur, Semarang</li>

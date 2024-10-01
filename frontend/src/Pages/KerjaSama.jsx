@@ -1,13 +1,13 @@
 import React from "react";
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
-import FormBank from "../Components/FormBank";
+import FormBank from "../Components/Group Form/FormBank.jsx";
 import { BlueBanner, formUsahaSponsor } from "../helper";
-import { SponsorForm } from "../Components/Form";
+import { SponsorForm } from "../Components/Group Form/Form.jsx";
 import { nomorInduk } from "../helper/nomor";
 import { localhostLink } from "../helper/localhost";
 
-const Sponsor = () => {
+const KerjaSama = () => {
   return (
     <>
       <section>
@@ -39,4 +39,4 @@ const Sponsor = () => {
   );
 };
 
-export default Sponsor;
+export default KerjaSama;

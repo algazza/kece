@@ -1,11 +1,11 @@
 import { useState } from "react";
 import IntroBanner from "../../Layouts/IntroBanner";
 import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
-import FormBank from "../../Components/FormBank";
+import FormBank from "../../Components/Group Form/FormBank.jsx";
 import styles from "../../helper/style";
 import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
-import { Kredit, Tabungan } from "../../Components/Form";
+import { Kredit, Tabungan } from "../../Components/Group Form/Form.jsx";
 import { IsiKredit, IsiTabungan } from "../../helper/DataProduk";
 import { nomorInduk } from "../../helper/nomor";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
@@ -134,7 +134,7 @@ const SyaratTabungan = () => {
             </section>
 
             {/* Isi dari Menu */}
-            <section className={` sm:pb-16 md:p-10 rounded-lg`}>
+            <section className={` sm:pb-16 md:p-10 p-4 rounded-lg`}>
               {/* Syarat */}
               {tabs === 1 ? (
                 <motion.div
@@ -198,9 +198,9 @@ const SyaratTabungan = () => {
                 >
                   <FormBank
                     isiPenting={<Tabungan />}
-                    value={"Kredit"}
+                    value={"tabungan"}
                     nomer={nomorInduk}
-                    endpoint={`${localhostLink}/api/kredit`}
+                    endpoint={`${localhostLink}/api/tabungan`}
                   />
                 </motion.div>
               ) : null}

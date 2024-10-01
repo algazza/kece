@@ -1,7 +1,7 @@
 import IntroBanner from "../Layouts/IntroBanner";
 import TitleBlueBanner from "../Layouts/TitleBlueBanner";
-import FormBank from "../Components/FormBank";
-import { PickupService } from "../Components/Form";
+import FormBank from "../Components/Group Form/FormBank.jsx";
+import { PickupService } from "../Components/Group Form/Form.jsx";
 import styles from "../helper/style";
 import { BlueBanner } from "../helper";
 import { nomorInduk } from "../helper/nomor";

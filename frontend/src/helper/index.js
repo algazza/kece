@@ -18,6 +18,80 @@ export const ImageSimulasi = `${urlLink}/BankImageSimulasi.svg`;
 export const TiktokIcon = `${urlLink}/tiktok-fill.svg`;
 export const ThumbnailYoutube = `${urlLink}/thumbnailYoutube.png`;
 
+// ======================== HEADER =============
+export const headerProduk = [
+  {
+    title: "Tabungan",
+    link: "kredit",
+  },
+  {
+    title: "Deposito",
+    link: "deposito",
+  },
+  {
+    title: "Kredit",
+    link: "kredit",
+  },
+  {
+    title: "Armor Properti",
+    link: "armor-properti",
+  },
+]
+
+export const headerLayanan = [
+  {
+    title: "Layanan Digitial",
+    link: "layanan-digital",
+  },
+  {
+    title: "Mobil Kas",
+    link: "mobil-kas",
+  },
+  {
+    title: "Promo",
+    link: "promo",
+  },
+  {
+    title: "Kerja Sama",
+    link: "kerja-sama",
+  },
+  {
+    title: "Pick Up Service",
+    link: "pick-up-service",
+  },
+  {
+    title: "Pengaduan",
+    link: "mailto:info@bprartomoro.co.id",
+  },
+]
+
+export const headerTentangKami = [
+  {
+    title:"Sejarah",
+    link: "sejarah",
+  },
+  {
+    title:"Visi Misi",
+    link: "visi-misi",
+  },
+  {
+    title:"Penghargaan",
+    link: "penghargaan",
+  },
+  {
+    title:"Manajemen",
+    link: "manajemen",
+  },
+  {
+    title:"Lokasi",
+    link: "lokasi",
+  },
+  {
+    title:"Laporan",
+    link: "laporan",
+  },
+]
+
 // ====================== PROFILE ======================
 export const profileTimeline = [
   {
@@ -628,6 +702,21 @@ export const TabelDeposito = [
   },
 ]
 
+// =================== ArmorProp ======================
+export const Armordata = [
+  {
+    link: "https://www.instagram.com/p/DAh2DYqSvnu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    img: "https://media.dekoruma.com/dekohouse/property/real-estate/PLMA-JDSR/perumahan-jds-resort-depok-general-fasad-1.jpg?auto=webp&optimize=medium&width=328&format=jpg&fit=bounds&dpr=1.5",
+    harga: "2,7 M",
+    alamat: "Gayamsari",
+    alamatLengkap: "Jl. Gempolsari I, Pandean Lamper, Kec. Gayamsari, Kota Semarang, Jawa Tengah",
+    kecamatan: "Kec. Gayamsari, Kota Semarang",
+    lb: 20,
+    lt: 30,
+  },
+]
+
+// ================= LOCATION =======================
 export const jadwalData = [
   {
     hari: "Senin",
@@ -655,7 +744,6 @@ export const jadwalData = [
   },
 ]
 
-// ================= LOCATION =======================
 export const locationDescription = [
   {
     kantor: "Kantor Pusat",
