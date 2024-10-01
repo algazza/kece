@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import IntroBanner from "../../Layouts/IntroBanner";
 import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
-import FormBank from "../../Components/FormBank";
+import FormBank from "../../Components/Group Form/FormBank.jsx";
 import styles from "../../helper/style";
 import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
-import { Kredit } from "../../Components/Form";
+import { Kredit } from "../../Components/Group Form/Form.jsx";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { IsiKredit } from "../../helper/DataProduk";
 import { nomorInduk } from "../../helper/nomor";

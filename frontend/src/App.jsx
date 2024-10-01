@@ -10,7 +10,7 @@ import SyaratTabungan from "./Pages/SyaratProduk/SyaratTabungan.jsx";
 import News from "./Pages/News/News.jsx";
 import IsiNews from "./Pages/News/IsiNews.jsx";
 import PickupPage from "./Pages/PickupPage.jsx";
-import Sponsor from "./Pages/Sponsor.jsx";
+import Sponsor from "./Pages/KerjaSama.jsx";
 import Sejarah from "./Pages/Sejarah.jsx";
 import Manajemen from "./Pages/Manajemen.jsx";
 import Error from "./Pages/Error.jsx";
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
         element: <IsiPromo />,
       },
       {
-        path: "sponsor",
+        path: "kerja-sama",
         element: <Sponsor />,
       },
       {

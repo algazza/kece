@@ -230,7 +230,7 @@ const Service = () => {
     { name: "Layanan Digital", link: "layanan-digital" },
     { name: "Mobil Kas", link: "mobil-kas" },
     { name: "Promo", link: "promo" },
-    { name: "Sponsor", link: "sponsor" },
+    { name: "Kerja Sama", link: "kerja-sama" },
     { name: "Pick Up Service", link: "pick-up-service" },
     { name: "Pengaduan", link: "mailto:info@bprartomoro.co.id" },
   ];
