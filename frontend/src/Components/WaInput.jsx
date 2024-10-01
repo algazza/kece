@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import {
   FormControl,
   FormGroup,
-  FormHelperText,
   InputLabel,
   MenuItem,
   Select,
@@ -17,30 +16,6 @@ const WaInput = ({ handleModal }) => {
   const [nameUser, setNameUser] = useState("");
   const [produkSelect, setProdukSelect] = useState("");
   const [pengaduan, setPengaduan] = useState("");
-  const [errorName, setErrorName] = useState(false);
-  const [errorProduct, setErrorProduct] = useState(false)
-  const [errorPengaduan, setErrorPengaduan] = useState(false)
-
-  useEffect(() => {
-    if(!nameUser){
-      setErrorName(true)
-    } else{
-      setErrorName(false)
-    }
-  
-    if(!produkSelect){
-      setErrorProduct(true)
-    } else{
-      setErrorProduct(false)
-    }
-  
-    if(!pengaduan){
-      setErrorPengaduan(true)
-    } else{
-      setErrorPengaduan(false)
-    }
-  }, [nameUser, produkSelect, pengaduan])
-  
 
   return (
     <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed z-[1000]">
@@ -49,7 +24,7 @@ const WaInput = ({ handleModal }) => {
         onClick={handleModal}
       >
         <div
-          className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/4 bg-primary p-12 min-w-[900px]"
+          className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/4 bg-primary p-12 md:min-w-[900px] min-w-[400px]"
           onClick={(e) => e.stopPropagation()}
         >
           <div
@@ -69,9 +44,6 @@ const WaInput = ({ handleModal }) => {
               className="rounded-md outline-none"
               value={nameUser}
               onChange={(e) => setNameUser(e.target.value)}
-              required
-              error={errorName && !nameUser}
-              helperText={errorName && !nameUser ? "Nama Perlu Diisi" : ""}
             />
 
             <FormControl fullWidth>
@@ -82,8 +54,6 @@ const WaInput = ({ handleModal }) => {
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 label="Produk/Layanan"
-                error={errorProduct && !produkSelect}
-                required
                 name="Produk/Layanan"
                 value={produkSelect}
                 onChange={(e) => setProdukSelect(e.target.value)}
@@ -103,37 +73,29 @@ const WaInput = ({ handleModal }) => {
                   </MenuItem>
                 ))}
               </Select>
-              {errorProduct && (
-                  <FormHelperText error>Product/Layanan perlu diisi</FormHelperText>
-                )}
             </FormControl>
 
-<FormControl>
+            <FormControl>
               <TextareaAutosize
                 className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg border 
-                hover:border-black focus:border-blue-600 focus-visible:outline-0 box-border ${
-                  errorPengaduan
-                    ? "border-red-500 hover:border-red-500 text-red-500 focus:border-red-600"
-                    : "border-slate-300"
-                }`}
+                hover:border-black focus:border-blue-600 focus-visible:outline-0 box-border border-slate-300 `}
                 aria-label="Pengaduan"
                 minRows={5}
-                placeholder="Silahkan Tulis Aduan Anda..."
+                placeholder="Masukan Pertanyaan Anda..."
                 name="pengaduan"
-                required
                 value={pengaduan}
                 onChange={(e) => setPengaduan(e.target.value)}
               />
-              {errorPengaduan && (
-                  <FormHelperText error>Pengaduan perlu diisi</FormHelperText>
-                )}
-</FormControl>
+            </FormControl>
 
             <a
-              className={`bg-[#12a50b] px-4 py-2 rounded-md text-primary font-semibold text-center  ${
-                errorName || errorProduct|| errorPengaduan ? "bg-[#71c96d] cursor-default pointer-events-none" : ""
-              }`}
-              href={`https://wa.me/+62${nomorInduk}?text=Saya%20${nameUser}%20ingin%20menanyakan%20tentang%20${produkSelect},%20${pengaduan}`}
+              className={`bg-[#12a50b] px-4 py-2 rounded-md text-primary font-semibold text-center`}
+              href={
+                nameUser || produkSelect == true 
+                  ? `https://wa.me/+62${nomorInduk}?text=Saya%20${nameUser}%20ingin%20menanyakan%20tentang%20${produkSelect},%20${pengaduan}`
+                  : `https://wa.me/+62${nomorInduk}?text=Halo`
+              }
+              // href={`https://wa.me/+62${nomorInduk}?text=Saya%20${nameUser}%20ingin%20menanyakan%20tentang%20${produkSelect},%20${pengaduan}`}
               target="_blank"
             >
               <WhatsAppIcon className="text-primary mr-2" />

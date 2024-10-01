@@ -34,7 +34,7 @@ const SimulasiCalcTabungan = () => {
       label: "Total",
       value: `Rp. ${parseInt(rawNominal).toLocaleString(
         "id-ID"
-      )} + ${hasilBunga}`,
+      )} + ${produk === "Tabungan Tagar" ? "Rp. 1.000(admin)" : {hasilBunga}}`,
     },
   ];
 
@@ -120,8 +120,8 @@ const SimulasiCalcTabungan = () => {
         setErrNominal(true);
       } else {
         let hasilBungaTotal =
-          (0.8 / 100) * (nominalNumber * (bunga / 100) * 30);
-        let hasilPerkalianTotal = nominalNumber + hasilBungaTotal;
+          nominalNumber * bunga + 1000;
+        let hasilPerkalianTotal = hasilBungaTotal;
 
         setHasilTotal(`Rp. ${hasilPerkalianTotal.toLocaleString("id-ID")}`);
         setHasilBunga(`Rp. ${hasilBungaTotal.toLocaleString("id-ID")}`);
@@ -192,7 +192,7 @@ const SimulasiCalcTabungan = () => {
                 onChange={handleNominalChange}
                 inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
               />
-              {errNominal && <FormHelperText error>Nominal Terlalu Kecil</FormHelperText>}
+              {errNominal && <FormHelperText error>Minimal Nominal {produk === "Tabungan Pro Aktif" || produk === "Tabungan Simpel" ? "Rp. 20.000" : "5.000.000"} </FormHelperText>}
             </FormControl>
           </div>
 

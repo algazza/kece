@@ -5,7 +5,7 @@
     <section id="testimonials" aria-label="What our customers are saying" class=" py-20 sm:py-32">
         <div class=" mx-auto max-w-7xl px-5 sm:px-6 lg:px-6">
           <div class="mx-auto max-w-2xl md:text-center ">
-            <h2 class="font-display text-3xl tracking-tight text-center text-slate-900 sm:text-4xl bg-white py-4 px-8 rounded-md shadow-md  xss:ml-[1rem] xs:ml-[1rem]">Companies We Are Sponsor</h2>
+            <h2 class="font-display text-3xl tracking-tight text-center text-slate-900 sm:text-4xl bg-white py-4 px-8 rounded-md shadow-md  xss:ml-[1rem] xs:ml-[1rem]">Daftar Permintaan Sponsor</h2>
           </div>
           <div class=" grid grid-cols-1 lg:grid-cols-4 mx-auto my-8 md:text-center xss:ml-[1rem] xs:ml-[1rem] md:ml-[3rem]" class="hidden xss:block sm2:block">
             <a href="{{ route('sponsor.index') }}"

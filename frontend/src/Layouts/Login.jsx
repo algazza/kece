@@ -48,7 +48,7 @@ const Login = () => {
   //   mengecek setelah jika seseorang berhasil login
   const isAuthenticated = localStorage.getItem("passkey");
   if (isAuthenticated) {
-    return <Navigate to="/" />;
+    return <Navigate to="/newwebsite" />;
   }
 
   return (

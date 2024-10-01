@@ -22,6 +22,7 @@ const Location = () => {
             <ul className="list-disc list-inside">
               <h2 className="font-bold text-merahh-500">Kantor Pusat:</h2>
               <li>Jl. Elang Raya No. 99 Mangunharjo, Tembalang, Semarang</li>
+              
               <h2 className="font-bold text-biruMuda-500 mt-4">Kantor Kas:</h2>
               <li>Jl. Gajah Raya No. 155, Semarang</li>
               <li>Jl. Untung Suropati No. 18 Kav.5, Kalipancur, Semarang</li>
@@ -38,7 +39,7 @@ const Location = () => {
 
       <section className={styles.flexCenter}>
         <div className="my-10 flex gap-4 sm:max-w-full max-w-80 overflow-auto">
-          {["Kantor Pusat", "Kas Gajah", "Kas Kalipancur", "Kas Bulusan"].map(
+          {["Kantor Pusat", "Kantor Kas Gajah", "Kantor Kas Kalipancur", "Kantor Kas Bulusan"].map(
             (menu, index) => (
               <div
                 key={index}
@@ -78,6 +79,7 @@ const Location = () => {
                     </p>
                   </div>
 
+                  <h2 className={`${styles.heading5}`}>Jam Layanan</h2>
                   {jadwalData.map((scedul, index) => (
                     <div
                       key={index}

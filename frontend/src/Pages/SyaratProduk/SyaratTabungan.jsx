@@ -6,7 +6,7 @@ import styles from "../../helper/style";
 import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
 import { Kredit, Tabungan } from "../../Components/Form";
-import { IsiKredit } from "../../helper/DataProduk";
+import { IsiKredit, IsiTabungan } from "../../helper/DataProduk";
 import { nomorInduk } from "../../helper/nomor";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import SchoolIcon from "@mui/icons-material/School";
@@ -106,7 +106,7 @@ const SyaratTabungan = () => {
         </section>
       ) : null}
 
-      {IsiKredit.map((kredit) => {
+      {IsiTabungan.map((kredit) => {
         return menu === kredit.id ? (
           <section key={kredit.id}>
             {/* Menu pilihan */}
@@ -134,7 +134,7 @@ const SyaratTabungan = () => {
             </section>
 
             {/* Isi dari Menu */}
-            <section className={` sm:pb-16 md:p-10 rounded-lg`}>
+            <section className={` sm:pb-16 md:p-10 p-4 rounded-lg`}>
               {/* Syarat */}
               {tabs === 1 ? (
                 <motion.div
@@ -198,9 +198,9 @@ const SyaratTabungan = () => {
                 >
                   <FormBank
                     isiPenting={<Tabungan />}
-                    value={"Kredit"}
+                    value={"tabungan"}
                     nomer={nomorInduk}
-                    endpoint={`${localhostLink}/api/kredit`}
+                    endpoint={`${localhostLink}/api/tabungan`}
                   />
                 </motion.div>
               ) : null}
