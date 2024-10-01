@@ -200,3 +200,6 @@ Route::get('Datas', function () {
 Route::get('Propert', function () {
     return view('admin.armorprop.ArmorProp');
 });
+Route::get('PropertData', function () {
+    return view('admin.armorprop.IsiArmorProp');
+});
