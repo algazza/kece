@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import {
   FormControl,
   FormGroup,
-  FormHelperText,
   InputLabel,
   MenuItem,
   Select,
@@ -17,29 +16,6 @@ const WaInput = ({ handleModal }) => {
   const [nameUser, setNameUser] = useState("");
   const [produkSelect, setProdukSelect] = useState("");
   const [pengaduan, setPengaduan] = useState("");
-  const [errorName, setErrorName] = useState(false);
-  const [errorProduct, setErrorProduct] = useState(false);
-  const [errorPengaduan, setErrorPengaduan] = useState(false);
-
-  useEffect(() => {
-    if (!nameUser) {
-      setErrorName(true);
-    } else {
-      setErrorName(false);
-    }
-
-    if (!produkSelect) {
-      setErrorProduct(true);
-    } else {
-      setErrorProduct(false);
-    }
-
-    if (!pengaduan) {
-      setErrorPengaduan(true);
-    } else {
-      setErrorPengaduan(false);
-    }
-  }, [nameUser, produkSelect, pengaduan]);
 
   return (
     <div className="w-screen h-dvh top-0 left-0 bottom-0 right-0 fixed z-[1000]">
@@ -68,7 +44,6 @@ const WaInput = ({ handleModal }) => {
               className="rounded-md outline-none"
               value={nameUser}
               onChange={(e) => setNameUser(e.target.value)}
-              
             />
 
             <FormControl fullWidth>
@@ -79,7 +54,6 @@ const WaInput = ({ handleModal }) => {
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 label="Produk/Layanan"
-                
                 name="Produk/Layanan"
                 value={produkSelect}
                 onChange={(e) => setProdukSelect(e.target.value)}
@@ -109,7 +83,6 @@ const WaInput = ({ handleModal }) => {
                 minRows={5}
                 placeholder="Masukan Pertanyaan Anda..."
                 name="pengaduan"
-                
                 value={pengaduan}
                 onChange={(e) => setPengaduan(e.target.value)}
               />
@@ -117,8 +90,12 @@ const WaInput = ({ handleModal }) => {
 
             <a
               className={`bg-[#12a50b] px-4 py-2 rounded-md text-primary font-semibold text-center`}
-              // href={pro}
-              href={`https://wa.me/+62${nomorInduk}?text=Saya%20${nameUser}%20ingin%20menanyakan%20tentang%20${produkSelect},%20${pengaduan}`}
+              href={
+                nameUser || produkSelect == true 
+                  ? `https://wa.me/+62${nomorInduk}?text=Saya%20${nameUser}%20ingin%20menanyakan%20tentang%20${produkSelect},%20${pengaduan}`
+                  : `https://wa.me/+62${nomorInduk}?text=Halo`
+              }
+              // href={`https://wa.me/+62${nomorInduk}?text=Saya%20${nameUser}%20ingin%20menanyakan%20tentang%20${produkSelect},%20${pengaduan}`}
               target="_blank"
             >
               <WhatsAppIcon className="text-primary mr-2" />

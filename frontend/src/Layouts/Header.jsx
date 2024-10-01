@@ -1,6 +1,6 @@
 import styles from "../helper/style";
 import { useEffect, useState } from "react";
-import { logoArmor } from "../helper";
+import {headerLayanan, headerProduk, headerTentangKami, logoArmor} from "../helper";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
@@ -102,10 +102,11 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"tabungan"}>Tabungan</Link>
-                            <Link to={"deposito"}>Deposito</Link>
-                            <Link to={"kredit"}>Kredit</Link>
-                            <Link to={"armor-properti"}>Armor Properti</Link>
+                            {headerProduk.map((produk, index) => (
+                                <Link onClick={index === 3 ? "" : "() => setMenu(0)"} key={produk.title} to={produk.link}>
+                                  {produk.title}
+                                </Link>
+                            ))}
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -125,12 +126,9 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"layanan-digital"}>Layanan Digital</Link>
-                            <Link to={"mobil-kas"}>Mobil Kas</Link>
-                            <Link to={"promo"}>Promo</Link>
-                            <Link to={"sponsor"}>Sponsor</Link>
-                            <Link to={"pick-up-service"}>Pick Up Service</Link>
-                            <Link to={"mailto:info@bprartomoro.co.id"}>Pengaduan</Link>
+                            {headerLayanan.map((layanan) => (
+                              <Link key={layanan.title} to={layanan.link}>{layanan.title}</Link>
+                            ))}
                           </li>
                         </ul>
                       </AccordionDetails>
@@ -154,12 +152,9 @@ const Header = () => {
                       <AccordionDetails>
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
-                            <Link to={"sejarah"}>Sejarah</Link>
-                            <Link to={"visi-misi"}>Visi Misi</Link>
-                            <Link to={"penghargaan"}>Penghargaan</Link>
-                            <Link to={"manajemen"}>Manajemen</Link>
-                            <Link to={"lokasi"}>Lokasi</Link>
-                            <Link to={"laporan"}>Laporan</Link>
+                            {headerTentangKami.map((kami) => (
+                                <Link key={kami.title} to={kami.link}>{kami.title}</Link>
+                            ))}
                           </li>
                         </ul>
                       </AccordionDetails>

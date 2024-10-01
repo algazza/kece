@@ -144,7 +144,7 @@ const SyaratKredit = () => {
             </section>
 
             {/* Isi dari Menu */}
-            <section className={` sm:pb-16 md:p-10 rounded-lg`}>
+            <section className={` sm:pb-16 md:p-10 p-4 rounded-lg`}>
               {/* Syarat */}
               {tabs === 1 ? (
                 <motion.div

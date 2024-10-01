@@ -134,7 +134,7 @@ const SyaratTabungan = () => {
             </section>
 
             {/* Isi dari Menu */}
-            <section className={` sm:pb-16 md:p-10 rounded-lg`}>
+            <section className={` sm:pb-16 md:p-10 p-4 rounded-lg`}>
               {/* Syarat */}
               {tabs === 1 ? (
                 <motion.div
@@ -198,9 +198,9 @@ const SyaratTabungan = () => {
                 >
                   <FormBank
                     isiPenting={<Tabungan />}
-                    value={"Kredit"}
+                    value={"tabungan"}
                     nomer={nomorInduk}
-                    endpoint={`${localhostLink}/api/kredit`}
+                    endpoint={`${localhostLink}/api/tabungan`}
                   />
                 </motion.div>
               ) : null}
