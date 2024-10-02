@@ -13,7 +13,17 @@ return new class extends Migration
     {
         Schema::create('armor_property', function (Blueprint $table) {
             $table->id();
-            
+            $table->text('instagram');
+            $table->string('image');
+            $table->bigInteger('harga');
+            $table->string('alamat');
+            $table->text('alamat_lengkap');
+            $table->text('kecamatan');
+            $table->integer('bed');
+            $table->integer('shower');
+            $table->integer('luas_bangunan');
+            $table->integer('luas_tanah');
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }
