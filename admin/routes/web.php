@@ -59,7 +59,7 @@ Route::middleware(['guest'])->group(function(){
 
 Route::middleware(['auth'])->group(function(){
     // Logout
-    Route::get('/logout', [AdminController::class, 'logout'])->name('logout'); 
+    Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 
     // Show Admin
     Route::get('Admin/{id}/show', [AdminController::class, 'showAdmin'])->name('admin.show');
@@ -80,10 +80,10 @@ Route::middleware(['auth', 'AdminAkses:admin'])->group(function () {
     Route::post('/Admin/Add/Post', [AdminController::class, 'store'])->name('admin.post');
 
     // No Admin
-    Route::get('/Nomor/Admin', [NoAdminController::class, 'viewNoAdmin'])->name('noAdmin');  
+    Route::get('/Nomor/Admin', [NoAdminController::class, 'viewNoAdmin'])->name('noAdmin');
     Route::get('/No/{id}/Edit', [NoAdminController::class, 'editData'])->name('noAdmin.edit');
     Route::put('/No/{id}/Update', [NoAdminController::class, 'updateData'])->name('noAdmin.update');
-    
+
     // Laporan
     Route::get('/Laporan', [LaporanController::class, 'viewLaporan'])->name('laporan.index');
     Route::delete('/Laporan/delete/{id}', [LaporanController::class, 'destroy'])->name('laporan.delete');
@@ -146,13 +146,13 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::post('/Banner/Post', [BannerController::class, 'store'])->name('banner.add');
     Route::delete('/Banner/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
     Route::put('/Banner/update/{id}', [BannerController::class, 'update'])->name('banner.update');
-    
+
     Route::get('/Penghargaan', [PenghargaanController::class, 'viewPenghargaan'])->name('penghargaan.index');
     Route::get('/Penghargaan/Page/{id}', [PenghargaanController::class, 'viewPenghargaanUpdate'])->name('penghargaan.update.page');
     Route::put('/Penghargaan/Update/{id}', [PenghargaanController::class, 'update'])->name('penghargaan.update');
     Route::post('/Penghargaan/Post', [PenghargaanController::class, 'store'])->name('penghargaan.post');
     Route::delete('/Penghargaan/{id}', [PenghargaanController::class, 'destroy'])->name('penghargaan.delete');
-    
+
     Route::get('/Jabatan', function () {return view('admin.jabatan.JabatanOpt'); })->name('jabatan');
 
     Route::get('/Manajemen', [ManajemenController::class, 'viewManajemen'])->name('manajemen.index');
@@ -180,7 +180,7 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::post('/Stackholder/post', [StackholderController::class, 'store'])->name('stackholder.post');
     Route::put('/Stackholder/{id}/edit', [StackholderController::class, 'update'])->name('stackholder.update');
     Route::delete('/Stackholder/post/{id}', [StackholderController::class, 'destroy'])->name('stackholder.delete');
-    
+
     Route::get('/Promo', [PromoController::class, 'viewPromo'])->name('promo.index');
     Route::get('/Promo/add', [PromoController::class, 'viewPromoAdd'])->name('promo.add');
     Route::post('/Promo/post', [PromoController::class, 'store'])->name('promo.post');
@@ -197,3 +197,21 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::delete('/armor/delete/{id}', [ArmorController::class, 'destroy'])->name('armor.delete');
 });
 
+<<<<<<< HEAD
+=======
+
+
+
+Route::get('brand', function () {
+    return view('admin.Brand');
+});
+Route::get('Datas', function () {
+    return view('admin.SponsorData');
+});
+Route::get('Propert', function () {
+    return view('admin.armorprop.ArmorProp');
+});
+Route::get('PropertData', function () {
+    return view('admin.armorprop.IsiArmorProp');
+});
+>>>>>>> d4a7310b580b9c3e54d9df5cc3dbc933b6410709
