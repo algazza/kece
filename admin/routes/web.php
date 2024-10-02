@@ -197,15 +197,13 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::delete('/armor/delete/{id}', [ArmorController::class, 'destroy'])->name('armor.delete');
 });
 
-<<<<<<< HEAD
-=======
 
 
 
 Route::get('brand', function () {
     return view('admin.Brand');
 });
-Route::get('Datas', function () {
+Route::get('/Datas', function () {
     return view('admin.SponsorData');
 });
 Route::get('Propert', function () {
@@ -214,4 +212,3 @@ Route::get('Propert', function () {
 Route::get('PropertData', function () {
     return view('admin.armorprop.IsiArmorProp');
 });
->>>>>>> d4a7310b580b9c3e54d9df5cc3dbc933b6410709
