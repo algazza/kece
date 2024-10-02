@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('no_admin', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('no_induk');
+            $table->bigInteger('no_armor');
             $table->timestamps();
         });
     }

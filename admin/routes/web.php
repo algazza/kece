@@ -194,7 +194,7 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 Route::get('brand', function () {
     return view('admin.Brand');
 });
-Route::get('Datas', function () {
+Route::get('/Datas', function () {
     return view('admin.SponsorData');
 });
 Route::get('/Propert', function () {
@@ -203,7 +203,10 @@ Route::get('/Propert', function () {
 Route::get('/PropertIsi', function () {
     return view('admin.armorprop.IsiArmorProp');
 });
+<<<<<<< HEAD
 Route::get('/PropertAdd', function () {
     return view('admin.armorprop.AddProp');
 });
 
+=======
+>>>>>>> 6c282e93ec8dc732a4b1e256ed45b17eb11a8b9d

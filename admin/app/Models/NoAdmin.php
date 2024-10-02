@@ -14,5 +14,6 @@ class NoAdmin extends Model
 
     protected $fillable = [
         'no_induk',
+        'no_armor',
     ];
 }
