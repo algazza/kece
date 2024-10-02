@@ -6,7 +6,7 @@
             <h1 class="text-center text-3xl font-semibold">Daftar Permintaan Brand</h1>
         </div>
         <div class="flex"></div>
-
+            
 
     </section>
 </section>
