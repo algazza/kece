@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArmorController;
 use App\Models\Kredit;
 use App\Models\Deposito;
 use Illuminate\Http\Request;
@@ -24,6 +25,7 @@ use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\RatedKreditController;
 use App\Http\Controllers\StackholderController;
 use App\Http\Controllers\RatedDepositoController;
+use App\Models\ArmorProperty;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +56,7 @@ Route::resource('direksi',DireksiController::class);
 Route::resource('pejabat',PejabatEksekutifController::class);
 Route::resource('stackholder',StackholderController::class);
 Route::resource('promo',PromoController::class);
+Route::resource('armor',ArmorController::class);
 
 
 Route::get('/api/dashboard/kredit', [DashboardController::class, 'data']);
@@ -71,4 +74,5 @@ Route::get('/banner', [BannerController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
 Route::get('/news/{slug}', [NewsController::class, 'show']);
 Route::get('/promo/{slug}', [PromoController::class, 'show']);
+Route::get('/armor/{id}', [ArmorController::class, 'findArmor']);
 Route::get('/laporan/download/{filename}', [LaporanController::class, 'download']);

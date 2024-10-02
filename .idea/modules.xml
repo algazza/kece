@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/.idea/kece.iml" filepath="$PROJECT_DIR$/.idea/kece.iml" />
+=======
       <module fileurl="file://$PROJECT_DIR$/.idea/laravelreact.iml" filepath="$PROJECT_DIR$/.idea/laravelreact.iml" />
+>>>>>>> 2df6f69aa88277e22a54edc9bf21387b02508de3
     </modules>
   </component>
 </project>
