@@ -47,7 +47,7 @@
             <a href="{{ route('banner') }}">
             <div class="bg-gray-50 w-[16rem] h-[10rem]  justify-center rounded-[5px] box-border border-[1px] border-black shadow-lg cursor-pointer hover:bg-gray-200 hover:scale-95 duration-300 hidden lg:block">
                 <div>
- 
+
                     <div class="mt-[0.5rem]">
                         <div class="text-[6rem] ">
                             <i class='text-black bx bx-credit-card' ></i>
@@ -260,14 +260,14 @@
 
            </div>
             <div class="bg-gray-50 w-23 sm:w-[33rem] my-[1rem] h-[28rem] xxl:h-[39rem] rounded-[5px] box-border border-[0.5px] border-black shadow-lg sm:flex-row lg:flex-warp relative hidden lg:block">
-                
+
                 <div class="text-left text-[1.2rem] text-black pl-[2rem] pt-[1.2rem] bg-gray-50 w-[25rem] sm:flex">
-                    
+
                     <div>
-                        
-                        <p>All Person Data</p> 
+
+                        <p>All Person Data</p>
                     </div>
-                    
+
                 </div>
                 <div class="h-[calc(100%-4.7rem)] pb-[2rem] overflow-auto" id="content">
                         {{-- data user form --}}
@@ -276,7 +276,7 @@
                     {{-- {{ $dashboard->links() }} --}}
                 </div>
             </div>
-            
+
         </div>
     </section>
 
@@ -285,7 +285,7 @@
     <script>
         let currentPage = 1;
         const pollingInterval = 3000;
-    
+
             function fetchTotalData() {
         $.ajax({
             url: '{{ $urlPath }}/api/dashboard/total-data',
@@ -308,7 +308,7 @@
                 updateContent(response.data);
                 updatePagination(response.pagination);
             },
-            error: function(xhr, status, error) {  
+            error: function(xhr, status, error) {
                 console.error('Gagal mengambil data:', error);
             }
         });
@@ -346,7 +346,7 @@
         if (pagination.current_page > 1) {
             paginationHtml += `  <button class="pagination-link flex items-center justify-center px-3 h-8 text-sm font-medium text-black bg-gray-50 rounded-s hover:bg-gray-100 box-border border-[0.5px] border-gray-400 shadow-smz shadow-gray-400" data-page="${pagination.current_page - 1}">
                                         Prev
-                                      </button> 
+                                      </button>
 `;
         }
 
