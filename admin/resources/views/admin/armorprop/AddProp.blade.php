@@ -3,52 +3,18 @@
 @extends('layout')
 @section('content')
     <section class="box-border p-0 m-0 bg-gray-100 text-center justify-center items-center h-screen font-poppins overflow-auto">
-        <div class="mt-[5rem] mr-[1rem] lg:mr-[10rem] ml-[2rem] lg:ml-[14rem] md:ml-[2rem] xss:ml-[3rem] sm:ml-[2rem] mb-[2rem] ">
+        <div class="mt-[5rem] mr-[1rem] lg:mr-[10rem] ml-[2rem] lg:ml-[14rem] md:ml-[5rem] xss:ml-[3rem] sm:ml-[2rem] mb-[2rem]">
             <div class="bg-white max-w-full text-3xl font-semibold rounded-md py-3 max-sm:text-base max-md:text-xl">Add ArmorProperty</div>
             <form class="mt-[5rem]">
-
-                <div class=" max-w-full">
-                    <div x-data="{ files: null }" id="FileUpload"
-                        class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray">
-                        <input type="file" multiple
-                               class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
-                               x-on:change="files = $event.target.files; console.log($event.target.files);"
-                               x-on:dragover="$el.classList.add('active')" x-on:dragleave="$el.classList.remove('active')" x-on:drop="$el.classList.remove('active')"
-                        >
-                        <template x-if="files !== null">
-                            <div class="flex flex-col space-y-1">
-                                <template x-for="(_,index) in Array.from({ length: files.length })">
-                                    <div class="flex flex-row items-center space-x-2">
-                                        <template
-                                            x-if="files[index].type.includes('audio/')"><i class="far fa-file-audio fa-fw"></i></template>
-                                        <template
-                                            x-if="files[index].type.includes('application/')"><i class="far fa-file-alt fa-fw"></i></template>
-                                        <template
-                                            x-if="files[index].type.includes('image/')"><i class="far fa-file-image fa-fw"></i></template>
-                                        <template
-                                            x-if="files[index].type.includes('video/')"><i class="far fa-file-video fa-fw"></i></template>
-                                        <span class="font-medium text-gray-900" x-text="files[index].name">Uploading</span>
-                                        <span class="text-xs self-end text-gray-500" x-text="filesize(files[index].size)">...</span>
-                                    </div>
-                                </template>
-                            </div>
-                        </template>
-                        <template x-if="files === null">
-                            <div class="flex flex-col space-y-2 items-center justify-center">
-                                <i class="fas fa-cloud-upload-alt fa-3x text-currentColor"></i>
-                                <p class="text-gray-700">Drag your files here or click in this area.</p>
-                                <a href="javascript:void(0)"
-                                    class="flex items-center mx-auto py-2 px-4 text-white text-center font-medium border border-transparent rounded-md outline-none cursor-pointer  bg-red-700">Select
-                                    a file</a>
-                            </div>
-                        </template>
+                <div class="flex justify-center">
+                <div class="bg-white p-8 rounded-lg shadow-md my-4 w-auto">
+                    <h2 class="text-lg font-bold mb-4">Unggah Gambar</h2>
+                    <input type="file" id="imageInput" accept="image/*" class="mb-4 flex justify-center w-auto" onchange="previewImage(event)">
+                    <div id="imagePreview" class="w-auto h-64 bg-gray-200 flex items-center justify-center rounded-lg">
+                        <span class="text-gray-500">Preview</span>
                     </div>
                 </div>
-
-                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-                <script src="https://cdn.filesizejs.com/filesize.min.js"></script>
-                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet" />
-
+            </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 <div class="w-auto">
                   <label for="no_handphone" class="block text-gray-700 font-semibold mb-1">Harga</label>
@@ -106,7 +72,7 @@
 
                 <div class="mt-8">
                     <button type="submit" class="bg-blue-600 text-white w-full font-normal text-md py-3 px-4 rounded-[5px] shadow-md hover:bg-blue-800 active:bg-white focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
-                        create
+                        Add
                     </button>
                 </div>
 
@@ -125,7 +91,24 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
 
+    function previewImage(event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const imgPreview = document.getElementById('imagePreview');
+                    imgPreview.style.backgroundImage = `url(${e.target.result})`;
+                    imgPreview.style.backgroundSize = 'cover';
+                    imgPreview.style.backgroundPosition = 'center';
+                    imgPreview.innerHTML = ''; // Clear the preview text
+                };
+
+                if (file) {
+                    reader.readAsDataURL(file);
+                }
+            }
 CKEDITOR.replace('editor');
+
 
 flatpickr("#datepicker", {
         dateFormat: "d-m-Y",
