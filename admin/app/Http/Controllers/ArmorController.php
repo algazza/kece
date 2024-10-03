@@ -2,22 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ArmorProperty;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\ArmorProperty;
 use Symfony\Component\HttpFoundation\Response;
 
 class ArmorController extends Controller
 {
     public function viewArmor(){
-        $armor = ArmorProperty::orderBy('created', 'DESC')->get();
-        return view('',compact('armor'));
+        $armor = ArmorProperty::orderBy('created_at', 'DESC')->get();
+        return view('admin.armorprop.ArmorProp',compact('armor'));
+    }
+
+    public function viewArmorAdd(){
+        return view('admin.armorprop.AddProp');
     }
 
     public function store(Request $request){
         try{
             $request->validate([
                 'instagram' => 'required|string',
-                'image' => 'required|string',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
                 'harga' => 'required',
                 'alamat' => 'required',
                 'alamat_lengkap' => 'required',
@@ -31,7 +36,6 @@ class ArmorController extends Controller
     
             $armor = new ArmorProperty();
             $armor->instagram = $request->instagram;
-            $armor->harga = $request->harga;
             $armor->alamat = $request->alamat;
             $armor->alamat_lengkap = $request->alamat_lengkap;
             $armor->kecamatan = $request->kecamatan;
@@ -40,7 +44,21 @@ class ArmorController extends Controller
             $armor->luas_bangunan = $request->luas_bangunan;
             $armor->luas_tanah = $request->luas_tanah;
             $armor->deskripsi = $request->deskripsi;
-    
+            $armor->slug = time();
+
+            $jumlaHarga = $request->harga;
+            if(strlen($jumlaHarga) >= 7 && strlen($jumlaHarga) <= 9){
+                $nilaiHarga = substr($jumlaHarga,0,-6);
+                $nilaiHargaProperty = $nilaiHarga . " Juta";
+                $armor->harga = $nilaiHargaProperty;
+            } else if (strlen($jumlaHarga) >= 10 && strlen($jumlaHarga) <= 12){
+                $nilaiHarga = substr($jumlaHarga,0,-9);
+                $nilaiHargaProperty = $nilaiHarga . " Miliar";
+                $armor->harga = $nilaiHargaProperty;
+            } else {
+                $armor->harga = $request->harga;
+            }
+
             if($request->hasFile('image')){
                 $imageFile = time() . '.' . $request->image->extension();
                 $request->image->move(public_path('image/public/armor'), $imageFile);
@@ -51,7 +69,7 @@ class ArmorController extends Controller
     
             return redirect()->route('armor.index')->with('success', 'Data Property Berhasil DI Tambah');
         } catch (\Exception $e) {
-            return back()->with('error', 'Data Property Gagal DI Tambah');
+            return back()->with('error', 'Data Property Gagal DI Tambah' . $e);
         }
     }
 
@@ -82,7 +100,6 @@ class ArmorController extends Controller
             $request->validate([
                 'instagram' => 'required|string',
                 'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
-                'harga' => 'required',
                 'alamat' => 'required',
                 'alamat_lengkap' => 'required',
                 'kecamatan' => 'required|string',
@@ -91,11 +108,11 @@ class ArmorController extends Controller
                 'luas_bangunan' => 'required',
                 'luas_tanah' => 'required',
                 'deskripsi' => 'required',
+                'slug' => 'required',
             ]);
     
             $armor = new ArmorProperty();
             $armor->instagram = $request->instagram;
-            $armor->harga = $request->harga;
             $armor->alamat = $request->alamat;
             $armor->alamat_lengkap = $request->alamat_lengkap;
             $armor->kecamatan = $request->kecamatan;
@@ -104,6 +121,20 @@ class ArmorController extends Controller
             $armor->luas_bangunan = $request->luas_bangunan;
             $armor->luas_tanah = $request->luas_tanah;
             $armor->deskripsi = $request->deskripsi;
+            $armor->slug = $request->slug;
+
+            $jumlaHarga = $request->harga;
+            if(strlen($jumlaHarga) >= 7 && strlen($jumlaHarga) <= 9){
+                $nilaiHarga = substr($jumlaHarga,0,-6);
+                $nilaiHargaProperty = $nilaiHarga . " Juta";
+                $armor->harga = $nilaiHargaProperty;
+            } else if (strlen($jumlaHarga) >= 10 && strlen($jumlaHarga) <= 12){
+                $nilaiHarga = substr($jumlaHarga,0,-9);
+                $nilaiHargaProperty = $nilaiHarga . " Miliar";
+                $armor->harga = $nilaiHargaProperty;
+            } else {
+                $armor->harga = $request->harga;
+            }
     
             if($request->hasFile('image')){
                 $imageFile = time() . '.' . $request->image->extension();

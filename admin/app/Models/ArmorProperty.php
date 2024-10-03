@@ -22,6 +22,7 @@ class ArmorProperty extends Model
         'shower',
         'luas_bangunan',
         'luas_tanah',
-        'deskripsi'
+        'deskripsi',
+        'slug'
     ];
 }

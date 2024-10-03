@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArmorController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\KreditController;
@@ -186,6 +187,16 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::put('/Promo/update/{slug}', [PromoController::class, 'update'])->name('promo.update');
     Route::get('/Promo/Edit/{slug}', [PromoController::class, 'find'])->name('promo.find');
     Route::delete('/Promo/delete/{id}', [PromoController::class, 'destroy'])->name('promo.delete');
+
+    Route::get('/armor', [ArmorController::class, 'viewArmor'])->name('armor.index');
+    Route::get('/armor/add', [ArmorController::class, 'viewArmorAdd'])->name('armor.add');
+    Route::post('/armor/post', [ArmorController::class, 'store'])->name('armor.post');
+    Route::put('/armor/update/{slug}', [ArmorController::class, 'update'])->name('armor.update');
+    Route::get('/armor/Edit/{slug}', [ArmorController::class, 'find'])->name('armor.find');
+    Route::delete('/armor/delete/{id}', [ArmorController::class, 'destroy'])->name('armor.delete');
+    Route::get('/PropertIsi', function () {
+        return view('admin.armorprop.IsiArmorProp');
+    });
 });
 
 
@@ -196,14 +207,5 @@ Route::get('brand', function () {
 });
 Route::get('/Datas', function () {
     return view('admin.SponsorData');
-});
-Route::get('/Propert', function () {
-    return view('admin.armorprop.ArmorProp');
-});
-Route::get('/PropertIsi', function () {
-    return view('admin.armorprop.IsiArmorProp');
-});
-Route::get('/PropertAdd', function () {
-    return view('admin.armorprop.AddProp');
 });
 
