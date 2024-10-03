@@ -52,16 +52,10 @@
                       <input type="number" id="no_handphone" name="luas_tanah" class="block w-full rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" />
                     </div>
                   </div>
-                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div class="w-auto">
-                      <label for="no_handphone" class="block text-gray-700 font-semibold mb-1">No Handphone</label>
-                      <input type="number" id="no_handphone" name="no_handphone" class="block w-full rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" />
-                    </div>
                     <div class="w-auto">
                       <label for="no_handphone" class="block text-gray-700 font-semibold mb-1">Instagram</label>
                       <input type="text" id="no_handphone" name="instagram" class="block w-full rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" />
                     </div>
-                  </div>
 
                 <div class="mb-4">
                     <label class="text-slate-500 text-sm mt-2 block">Deskripsi</label>
