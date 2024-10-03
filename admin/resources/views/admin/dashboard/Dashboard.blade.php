@@ -59,7 +59,7 @@
             <a>
             @endif
         </div>
-        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center mb-[5rem] xxl:h-[50rem] h-[38rem] xl:h-[30rem] lg:h-[30rem] md:h-[30rem] sm:h-[25rem] xss:h-[25rem]">
+        <div class="flex flex-col md:flex-row items-center md:items-start mt-[-1rem] gap-8 justify-center mb-[5rem] xxl:h-[50rem] h-[38rem] xl:h-[28rem] lg:h-[28rem] md:h-[28rem] sm:h-[25rem] xss:h-[25rem]">
             <div class="block  bg-gray-200 text-left overflow-auto h-[105%] mt-[0.5rem]">
                 @if (Auth::user()->role == 'kredit' || Auth::user()->role == 'admin')
                     <a href="{{ route('kredit.index') }}">

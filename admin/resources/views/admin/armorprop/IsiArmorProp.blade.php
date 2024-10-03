@@ -14,9 +14,9 @@
                         <h1 class="text-gray-500 text-base text-start ml-4"><i class='bx bxs-bed mr-2'></i>2</h1>
                         <h1 class="text-gray-500 text-base text-start ml-4"><i class='bx bxs-shower mr-2'></i> 2</h1>
                     </div>
-                    <div class="bg-white rounded-md py-5 shadow-md grid grid-cols-1 lg:grid-cols-2 gap-2">
-                        <a href="" class="bg-green-500 text-white font-semibold text-lg py-2 rounded-md px-12 mx-3"><i class='bx bxl-whatsapp'></i> Whatsapp</a>
-                        <a href="" class="bg-[#e1306c] text-white font-semibold text-lg py-2 rounded-md px-12 mx-3"><i class='bx bxl-instagram' ></i> instagram</a>
+                    <div class="bg-white rounded-md py-5 border border-gray-900 grid grid-cols-1 gap-1 ">
+                        <a href="" class="bg-green-500 text-white font-semibold text-lg py-2 rounded-lg px-1 mx-3"><i class='bx bxl-whatsapp'></i> Whatsapp</a>
+                        <a href="" class="bg-[#e1306c] text-white font-semibold text-lg py-2 rounded-lg px-1 mx-3"><i class='bx bxl-instagram' ></i> instagram</a>
                     </div>
 
                 </div>
@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div class="mt-2">
+        <div class="mt-5">
             <a href="/" class="bg-red-500 py-1 px-6 text-white rounded-md">Kembali</a>
         </div>
     </div>
