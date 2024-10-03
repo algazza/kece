@@ -161,8 +161,8 @@ class ArmorController extends Controller
         ]);
     }
 
-    public function findArmor($id){
-        $armor = ArmorProperty::find($id);
+    public function findArmor($slug){
+        $armor = ArmorProperty::where('slug', $slug)->first();
 
         if(!$armor){
             return response()->json([
