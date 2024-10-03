@@ -48,8 +48,11 @@ class ArmorController extends Controller
 
             $jumlaHarga = $request->harga;
             if(strlen($jumlaHarga) >= 7 && strlen($jumlaHarga) <= 9){
-                $nilaiHarga = substr($jumlaHarga,0,-6);
-                $nilaiHargaProperty = $nilaiHarga . " Juta";
+                $reverse = strrev($jumlaHarga);
+                $modifReverse = preg_replace_callback('/\d{3}/', function($matches) {
+                    return $matches[0] . '.';
+                }, $reverse);
+                $nilaiHargaProperty = strrev($modifReverse);
                 $armor->harga = $nilaiHargaProperty;
             } else if (strlen($jumlaHarga) >= 10 && strlen($jumlaHarga) <= 12){
                 $nilaiHarga = substr($jumlaHarga,0,-9);
@@ -77,7 +80,7 @@ class ArmorController extends Controller
         try{
             $armor = ArmorProperty::find($id);
             $armor->delete();
-            return redirect()->route('')->with('success', 'Data Berhasil DI Hapus');
+            return back()->with('success', 'Data Berhasil DI Hapus');
         } catch(\Exception $e){
             return back()->with('error', 'Data Gagal DI Hapus');
         }
