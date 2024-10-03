@@ -7,6 +7,7 @@ import {
   Radio,
   RadioGroup,
   Select,
+  TextareaAutosize,
   TextField,
 } from "@mui/material";
 import styles from "../../helper/style";
@@ -30,7 +31,6 @@ export const FormSponsor = () => {
   const [fileName, setFileName] = useState("File Tidak Terpilih");
   const [filepdf, setFilepdf] = useState(null);
   const [selectPosition, setSelectPosition] = useState(null);
-
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -91,16 +91,18 @@ export const FormSponsor = () => {
                 // }
               />
 
-              <div className="flex justify-between items-center">
+              <div className="flex flex-col sm:flex-row justify-between gap-2 items-center">
                 <DatePicker label="Tanggal Awal Acara" />
                 <span>sampai</span>
                 <DatePicker label="Tanggal Akhir Acara" />
               </div>
 
               <div className={`${styles.inputSpan}`}>
-                <SelectMap selectPosition={selectPosition} setSelectPosition={setSelectPosition}/>
+                <SelectMap
+                  selectPosition={selectPosition}
+                  setSelectPosition={setSelectPosition}
+                />
                 <Maps selectPosition={selectPosition} />
-
               </div>
             </DemoContainer>
           </LocalizationProvider>
@@ -145,6 +147,22 @@ export const FormSponsor = () => {
               </span>
             </div>
           </div>
+
+          <div className={`${styles.inputSpan}`}>
+            <span>Catatan</span>
+            <TextareaAutosize
+              className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                  border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
+                  box-border border-slate-300`}
+              aria-label="Catatan"
+              minRows={3}
+              placeholder="Catatan"
+              name="catatan"
+              // value={inputs.catatan || ""}
+              // onChange={handleChange}
+              required
+            />
+          </div>
         </div>
 
         <div className="flex items-center gap-4">
@@ -166,6 +184,7 @@ export const FormSponsor = () => {
 export const FormBranding = () => {
   const [fileName, setFileName] = useState("File Tidak Terpilih");
   const [filepdf, setFilepdf] = useState(null);
+  const [selectPosition, setSelectPosition] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -277,71 +296,69 @@ export const FormBranding = () => {
             </div>
 
             <div className={`${styles.inputSpan}`}>
-              <TextField
-                id="outlined-basic"
-                label={"Lokasi"}
-                type={"text"}
-                name={"nama usaha"}
-                variant="outlined"
-                className="rounded-md outline-none"
-                required
-                // value={inputs[iden.id]}
-                // onChange={handleChange}
-                // error={error && !inputs[iden.id]}
-                // helperText={
-                //   error && !inputs[iden.id] ? `${iden.title} perlu diisi` : ""
-                // }
+              <SelectMap
+                selectPosition={selectPosition}
+                setSelectPosition={setSelectPosition}
               />
-              <div className="w-full">
-                <iframe
-                  className="rounded-lg w-full h-full"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.726844710513!2d110.46356827504492!3d-7.041353492960724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708d4a93de1f07%3A0xc0c45f754cb4c6!2sBank%20Bpr%20Arto%20Moro!5e0!3m2!1sid!2sid!4v1722830824389!5m2!1sid!2sid"
-                  style={{ marginRight: 3 + "em" }}
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+              <Maps selectPosition={selectPosition} />
             </div>
           </div>
 
-          <div
-            className={`${styles.flexCenter} p-4 flex-col w-full h-[250px] mt-4 border-2 border-dashed border-slate-300 cursor-pointer rounded-[5px]`}
-            onClick={() => document.querySelector(".input-file").click()}
-          >
-            <input
-              type="file"
-              name="pdf"
-              onChange={handleFileChange}
-              className="input-file"
-              hidden
-              // accept=".pdf, .png"
-            />
-
-            {filepdf ? (
-              <embed
-                src={URL.createObjectURL(filepdf)}
-                className="w-full h-full"
+          <div>
+            <div
+              className={`${styles.flexCenter} p-4 flex-col w-full h-[250px] mt-4 border-2 border-dashed border-slate-300 cursor-pointer rounded-[5px]`}
+              onClick={() => document.querySelector(".input-file").click()}
+            >
+              <input
+                type="file"
+                name="pdf"
+                onChange={handleFileChange}
+                className="input-file"
+                hidden
+                // accept=".pdf, .png"
               />
-            ) : (
-              <>
-                <FileUploadIcon /> <span>Upload Proposal (opsional)</span>
-              </>
-            )}
+
+              {filepdf ? (
+                <embed
+                  src={URL.createObjectURL(filepdf)}
+                  className="w-full h-full"
+                />
+              ) : (
+                <>
+                  <FileUploadIcon /> <span>Upload Proposal (opsional)</span>
+                </>
+              )}
+            </div>
+
+            <div className="my-2 flex justify-between items-center py-4 px-5 rounded-[10px] bg-slate-300">
+              <PictureAsPdfIcon />
+              <span className="flex items-center">
+                {fileName} -
+                <DeleteIcon
+                  className="text-merahh-500 cursor-pointer"
+                  onClick={() => {
+                    setFileName("Tidak Ada File");
+                    setFilepdf(null);
+                  }}
+                />
+              </span>
+            </div>
           </div>
 
-          <div className="my-2 flex justify-between items-center py-4 px-5 rounded-[10px] bg-slate-300">
-            <PictureAsPdfIcon />
-            <span className="flex items-center">
-              {fileName} -
-              <DeleteIcon
-                className="text-merahh-500 cursor-pointer"
-                onClick={() => {
-                  setFileName("Tidak Ada File");
-                  setFilepdf(null);
-                }}
-              />
-            </span>
+          <div className={`${styles.inputSpan}`}>
+            <span>Catatan</span>
+            <TextareaAutosize
+              className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                  border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
+                  box-border border-slate-300`}
+              aria-label="Catatan"
+              minRows={3}
+              placeholder="Catatan"
+              name="catatan"
+              // value={inputs.catatan || ""}
+              // onChange={handleChange}
+              required
+            />
           </div>
         </div>
 
