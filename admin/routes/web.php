@@ -190,22 +190,23 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
     Route::get('/armor', [ArmorController::class, 'viewArmor'])->name('armor.index');
     Route::get('/armor/add', [ArmorController::class, 'viewArmorAdd'])->name('armor.add');
+    Route::get('/armor/{slug}', [ArmorController::class, 'viewArmorIsi'])->name('armor.view');
     Route::post('/armor/post', [ArmorController::class, 'store'])->name('armor.post');
     Route::put('/armor/update/{slug}', [ArmorController::class, 'update'])->name('armor.update');
     Route::get('/armor/Edit/{slug}', [ArmorController::class, 'find'])->name('armor.find');
     Route::delete('/armor/delete/{id}', [ArmorController::class, 'destroy'])->name('armor.delete');
-    Route::get('/PropertIsi', function () {
-        return view('admin.armorprop.IsiArmorProp');
-    });
 });
 
 
 
 
 Route::get('brand', function () {
-    return view('admin.Brand');
+    return view('admin.sponsor_brand.Brand');
+});
+Route::get('brandd', function () {
+    return view('admin.sponsor_brand.BrandData');
 });
 Route::get('/Datas', function () {
-    return view('admin.SponsorData');
+    return view('admin.sponsor_brand.SponsorData');
 });
 
