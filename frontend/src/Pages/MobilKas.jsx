@@ -19,11 +19,10 @@ const MobilKas = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Mobil Kas"}
           DescriptionBanner={`
-                Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
-                memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
-                dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-                menawarkan berbagai produk kredit yang dapat disesuaikan dengan
-                keperluan Anda.
+                Layanan mobil kas Bank Arto Moro memungkinkan akses perbankan langsung di lokasi seperti sekolah, kantor, dan fasilitas 
+                umum. Program ini bertujuan mempermudah transaksi, meningkatkan literasi dan inklusi keuangan, serta mendukung ekonomi 
+                lokal. Mobil kas rutin mengunjungi sekolah-sekolah di Semarang, seperti SDN Wonolopo, SDN Kebon Dalem, dan Eagle School, 
+                mengajarkan siswa pentingnya menabung dan memberikan edukasi tentang pengelolaan keuangan serta produk perbankan.
             `}
         />
         <TitleBlueBanner title={"Mobil Kas"} />
@@ -34,14 +33,14 @@ const MobilKas = () => {
       </span>
 
       <section className={styles.flexCenter}>
-        <div className="pt-10 flex gap-4 sm:max-w-full max-w-80 overflow-auto">
+        <div className="pt-10 sm:px-0 px-6 flex gap-4 overflow-auto">
           {["Keuntungan", "Syarat & Ketentuan", "Biaya", "Hubungi Kami"].map(
             (menu, index) => (
               <div
                 key={index}
                 onClick={() => updateTabs(index)}
                 className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
-                  tabs === index 
+                  tabs === index
                     ? "bg-biruMuda-500 text-primary rounded-md"
                     : ""
                 }`}
@@ -53,7 +52,7 @@ const MobilKas = () => {
         </div>
       </section>
 
-      <section className={`sm:pb-16 md:p-10 rounded-lg`}>
+      <section className={`sm:pb-16 md:p-10 m-2 rounded-lg`}>
         {tabs === 0 && (
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -77,7 +76,9 @@ const MobilKas = () => {
             className="mx-6 sm:mx-10 sm:px-10 "
           >
             <div className="text-abuGelap sm:ml-4">
-              <h3 className={`${styles.heading5} text-black`}>Syarat & Ketentuan</h3>
+              <h3 className={`${styles.heading5} text-black`}>
+                Syarat & Ketentuan
+              </h3>
             </div>
           </motion.div>
         )}

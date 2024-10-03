@@ -201,9 +201,12 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
 
 Route::get('brand', function () {
-    return view('admin.Brand');
+    return view('admin.sponsor_brand.Brand');
+});
+Route::get('brandd', function () {
+    return view('admin.sponsor_brand.BrandData');
 });
 Route::get('/Datas', function () {
-    return view('admin.SponsorData');
+    return view('admin.sponsor_brand.SponsorData');
 });
 

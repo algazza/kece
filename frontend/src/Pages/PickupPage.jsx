@@ -15,11 +15,10 @@ const PickupPage = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Pick Up Service"}
           DescriptionBanner={`
-                  Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
-                  memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
-                  dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-                  menawarkan berbagai produk kredit yang dapat disesuaikan dengan
-                  keperluan Anda.
+                  Layanan pick up service BPR Arto Moro memudahkan nasabah dengan mengunjungi mereka di kantor atau rumah untuk 
+                  setoran deposito atau tabungan. Nasabah cukup menghubungi tim Marketing Funding untuk mengatur janji temu, 
+                  tanpa harus datang langsung ke bank. Layanan ini dirancang untuk nasabah yang sibuk, menawarkan kenyamanan 
+                  dan efisiensi transaksi.
                 `}
         />
         <TitleBlueBanner title={"Pick Up Service"} />

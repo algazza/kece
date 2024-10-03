@@ -85,7 +85,11 @@ const SyaratKredit = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Kredit"}
           DescriptionBanner={`
-                Tugasnya Aldara dan Dani sama gambar sebelahnya -->
+                BPR Arto Moro berkomitmen membantu mewujudkan impian nasabah melalui kredit dengan plafon tinggi, tenor panjang, 
+                dan suku bunga bersaing. Proses pengajuan cepat dan persyaratan mudah menjadikan kredit ini ideal untuk kebutuhan 
+                pribadi dan usaha. Layanan pembiayaan mencakup Kredit Investasi, Kredit Modal Usaha, KPR, Kredit Multiguna, 
+                Kredit Konsumtif, serta Pembiayaan Umroh dan Ziarah, mendukung pertumbuhan ekonomi dan memberikan akses pembiayaan 
+                tepat bagi nasabah.
             `}
         />
         <TitleBlueBanner title={"Kredit"} />
@@ -120,7 +124,7 @@ const SyaratKredit = () => {
           <section key={kredit.id}>
             {/* Menu pilihan */}
             <section className={styles.flexCenter}>
-              <div className="pt-10 flex gap-4 sm:max-w-full max-w-80 overflow-auto">
+              <div className="pt-10 flex gap-4 sm:px-0 px-6 overflow-auto">
                 {[
                   "Keuntungan",
                   "Syarat & Ketentuan",

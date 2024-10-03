@@ -46,7 +46,10 @@ const Promo = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Promo"}
           DescriptionBanner={`
-                Tugasnya Dani Sama Gambar Juga yang sebelahnya -->>
+                Halaman promo merupakan bagian yang menyajikan berbagai penawaran spesial yang dirancang khusus 
+                kepada nasabah setia maupun nasabah baru Bank Arto Moro. Nasabah dapat menemukan informasi mengenai 
+                berbagai promo menarik, seperti penawaran suku bunga deposito dalam periode tertentu, cashback, diskon, 
+                atau hadiah menarik lainnya.
             `}
         />
         <TitleBlueBanner title={"Promo"} />

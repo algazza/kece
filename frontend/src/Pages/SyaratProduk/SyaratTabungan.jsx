@@ -72,12 +72,10 @@ const SyaratTabungan = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Tabungan"}
           DescriptionBanner={`
-                Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
-                memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
-                dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-                menawarkan berbagai produk kredit yang dapat disesuaikan dengan
-                keperluan Anda.
-            `}
+            Tabungan Bank Arto Moro adalah produk simpanan untuk semua kalangan dengan setoran awal minimal Rp 20.000 dan 
+            bunga 2% per tahun, tanpa potongan administrasi bulanan. Dana nasabah dijamin Lembaga Penjamin Simpanan (LPS) 
+            hingga Rp 2 miliar per rekening.          
+          `}
         />
         <TitleBlueBanner title={"Tabungan"} />
       </section>
@@ -111,7 +109,7 @@ const SyaratTabungan = () => {
           <section key={kredit.id}>
             {/* Menu pilihan */}
             <section className={styles.flexCenter}>
-              <div className="pt-10 flex gap-4 sm:max-w-full max-w-80 overflow-auto">
+              <div className="pt-10 flex gap-4 sm:px-0 px-6 overflow-auto">
                 {[
                   "Keuntungan",
                   "Syarat & Ketentuan",
