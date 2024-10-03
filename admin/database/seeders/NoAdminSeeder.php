@@ -16,6 +16,7 @@ class NoAdminSeeder extends Seeder
         $userData = [
             [
                 'no_induk' => '81327890199',
+                'no_armor' => '82200289283'
             ],
         ];
 

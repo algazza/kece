@@ -712,6 +712,8 @@ export const Armordata = [
     alamat: "Gayamsari",
     alamatLengkap: "Jl. Gempolsari I, Pandean Lamper, Kec. Gayamsari, Kota Semarang, Jawa Tengah",
     kecamatan: "Kec. Gayamsari, Kota Semarang",
+    bed: 3,
+    shower: 2,
     lb: 20,
     lt: 30,
   },

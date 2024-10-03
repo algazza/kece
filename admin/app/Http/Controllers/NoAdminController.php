@@ -32,6 +32,7 @@ class NoAdminController extends Controller
     
             $validateData = $request->validate([
                 'no_induk' => 'required|integer',
+                'no_armor' => 'required|integer',
             ]);
     
             $noAdmin->update($validateData);

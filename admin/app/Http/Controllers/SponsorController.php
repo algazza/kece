@@ -35,6 +35,8 @@ class SponsorController extends Controller
         $sponsor->jenis = $request->jenis;
         $sponsor->code = $request->code;
         $sponsor->ip_user = $request->ip_user;
+        $sponsor->created_at = Carbon::now();
+        $sponsor->updated_at = Carbon::now();
         
 
         if ($request->hasFile('pdf')) {
@@ -43,8 +45,6 @@ class SponsorController extends Controller
             $sponsor->pdf = $fileName;
         }
     
-        $sponsor->created_at = Carbon::now();
-        $sponsor->updated_at = Carbon::now();
     
         $sponsor->save();
     
