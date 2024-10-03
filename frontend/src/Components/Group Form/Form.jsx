@@ -440,7 +440,7 @@ export const SponsorForm = ({
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setFilepdf(file); 
+      setFilepdf(file);
       setFileName(file.name);
     }
   };
@@ -454,7 +454,11 @@ export const SponsorForm = ({
           <TextareaAutosize
             className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
                   border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
-                  box-border ${usahaError ? "border-red-500 hover:border-red-500 text-red-500 focus:border-red-600" : "border-slate-300"}`}
+                  box-border ${
+                    usahaError
+                      ? "border-red-500 hover:border-red-500 text-red-500 focus:border-red-600"
+                      : "border-slate-300"
+                  }`}
             aria-label="nama usaha"
             minRows={3}
             placeholder="Nama Usaha"
@@ -471,7 +475,11 @@ export const SponsorForm = ({
           )}
         </div>
 
-        <div className={`form-control p-6 border rounded-md md:col-[2/3] md:row-[1/3] ${sponsorError ? "border-red-500 text-red-500" : "border-black"}`}>
+        <div
+          className={`p-6 border rounded-md md:col-[2/3] md:row-[1/3] ${
+            sponsorError ? "border-red-500 text-red-500" : "border-black"
+          }`}
+        >
           <h1 className="">Jenis Sponsor</h1>
           <FormGroup className="">
             <RadioGroup
@@ -490,7 +498,7 @@ export const SponsorForm = ({
                   error={sponsorError}
                 />
               ))}
-            </RadioGroup>
+            </RadioGroup>cd 
             {sponsorError && (
               <FormHelperText error>pekerjaan perlu diisi</FormHelperText>
             )}
@@ -512,7 +520,10 @@ export const SponsorForm = ({
             required
           />
           <p className={`${styles.fontCaption} mt-2`}>
-            Mohon mengisi di CATATAN kalo memang ada Informasi Awal yang perlu disampaikan kepada kami. Terima kasih telah memberikan kepercayaan kepada BPR ARTO MORO Semarang, kami akan segera menghubungi melalui No. Handphone Anda.
+            Mohon mengisi di CATATAN kalo memang ada Informasi Awal yang perlu
+            disampaikan kepada kami. Terima kasih telah memberikan kepercayaan
+            kepada BPR ARTO MORO Semarang, kami akan segera menghubungi melalui
+            No. Handphone Anda.
           </p>
         </div>
       </div>
@@ -521,14 +532,14 @@ export const SponsorForm = ({
         className={`${styles.flexCenter} flex-col w-full h-[200px] mt-4 border-2 border-dashed border-slate-300 cursor-pointer rounded-[5px]`}
         onClick={() => document.querySelector(".input-file").click()}
       >
-    <input
-        type="file"
-        name="pdf"
-        onChange={handleFileChange}
-        className="input-file"
-        hidden
-        accept=".pdf" // Membatasi tipe file yang dapat dipilih
-    />
+        <input
+          type="file"
+          name="pdf"
+          onChange={handleFileChange}
+          className="input-file"
+          hidden
+          accept=".pdf" // Membatasi tipe file yang dapat dipilih
+        />
 
         {filepdf ? (
           <embed src={URL.createObjectURL(filepdf)} width={150} height={150} />
@@ -543,8 +554,12 @@ export const SponsorForm = ({
         <PictureAsPdfIcon />
         <span className="flex items-center">
           {fileName} -
-          <DeleteIcon className="text-merahh-500 cursor-pointer" 
-          onClick={() => {setFileName("Tidak Ada File"); setFilepdf(null)}}
+          <DeleteIcon
+            className="text-merahh-500 cursor-pointer"
+            onClick={() => {
+              setFileName("Tidak Ada File");
+              setFilepdf(null);
+            }}
           />
         </span>
       </div>

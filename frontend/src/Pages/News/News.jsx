@@ -16,15 +16,15 @@ import { localhostLink } from "../../helper/localhost";
 // Fungsi slugify
 const generateSlug = (text) => {
   return text
-    .toString()               
-    .toLowerCase()            
-    .normalize('NFD')         
-    .replace(/[\u0300-\u036f]/g, '') 
-    .replace(/\s+/g, '-')     
-    .replace(/[^\w\-]+/g, '') 
-    .replace(/\-  \-+/g, '-')
-    .replace(/^-+/, '')       
-    .replace(/-+$/, '');      
+    .toString()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
 };
 
 const theme = createTheme({
@@ -99,7 +99,12 @@ const News = () => {
       <section className="">
         <IntroBanner
           TitleBanner="Berita"
-          DescriptionBanner="Daparkan informasi secara tepat, cepat dan terpercaya mengenai BPR Arto Moro"
+          DescriptionBanner={`
+            Berita merupakan platform informasi yang menyajikan pembaruan terkini tentang berbagai 
+            kegiatan dan inisiatif BPR Arto Moro. Nasabah dan pengunjung dapat menemukan informasi mengenai acara, 
+            peluncuran produk atau layanan baru, serta aktivitas bisnis yang relevan. Halaman ini memastikan bahwa 
+            semua informasi selalu up-to-date dan mudah diakses.
+          `}
           ImageBanner={BlueBanner}
         />
       </section>
@@ -107,62 +112,66 @@ const News = () => {
       <span className="-mt-[100px] pb-[100px] block" id="section2">
         &nbsp;
       </span>
-      
-      <section className={`${styles.flexCenter} flex-col gap-6`}>
+
+      <section className="">
         <h1 className={`${styles.heading1} text-center`}>Berita</h1>
 
-        <div className="flex gap-4 sm:max-w-full max-w-80 overflow-auto">
-          {["All", "Penghargaan", "Promo", "Pengumuman", "Siaran Pers"].map(
-            (category) => (
-              <div
-                key={category}
-                onClick={() => setSelectFilter(category)}
-                className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
-                  selectFilter === category
-                    ? "bg-biruMuda-500 text-primary"
-                    : ""
-                }`}
-              >
-                {category}
-              </div>
-            )
-          )}
+        <div className={`${styles.flexCenter} my-6`}>
+          <div className="flex gap-4 sm:px-0 px-6 overflow-auto">
+            {["All", "Penghargaan", "Promo", "Pengumuman", "Siaran Pers"].map(
+              (category) => (
+                <div
+                  key={category}
+                  onClick={() => setSelectFilter(category)}
+                  className={`border-biruMuda-500 text-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-6 py-2 rounded-md font-bold cursor-pointer flex-shrink-0 ${
+                    selectFilter === category
+                      ? "bg-biruMuda-500 text-primary"
+                      : ""
+                  }`}
+                >
+                  {category}
+                </div>
+              )
+            )}
+          </div>
         </div>
 
-        <ThemeProvider theme={theme}>
-          <TextField
-            color="merah"
-            id="outlined-basic"
-            variant="outlined"
-            label="Cari Berita..."
-            onChange={(e) => setQuery(e.target.value)}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <SearchIcon sx={{ color: "merah.main" }} />
-                </InputAdornment>
-              ),
-            }}
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: "merah.main",
-                  borderWidth: "1.5px",
-                  borderRadius: "6px",
+        <div className={styles.flexCenter}>
+          <ThemeProvider theme={theme}>
+            <TextField
+              color="merah"
+              id="outlined-basic"
+              variant="outlined"
+              label="Cari Berita..."
+              onChange={(e) => setQuery(e.target.value)}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <SearchIcon sx={{ color: "merah.main" }} />
+                  </InputAdornment>
+                ),
+              }}
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "merah.main",
+                    borderWidth: "1.5px",
+                    borderRadius: "6px",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "merah.main",
+                  },
                 },
-                "&:hover fieldset": {
-                  borderColor: "merah.main",
+                "& .MuiInputLabel-root": {
+                  color: "merah.main",
                 },
-              },
-              "& .MuiInputLabel-root": {
-                color: "merah.main",
-              },
-              "& .MuiInputLabel-root.Mui-focused": {
-                color: "merah.main",
-              },
-            }}
-          />
-        </ThemeProvider>
+                "& .MuiInputLabel-root.Mui-focused": {
+                  color: "merah.main",
+                },
+              }}
+            />
+          </ThemeProvider>
+        </div>
       </section>
 
       <section

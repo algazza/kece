@@ -224,7 +224,7 @@ export const formIdentitas = [
   },
   {
     id: "no_handphone",
-    title: "No. Handphone",
+    title: "No. Wa",
     type: "number",
   },
   {
@@ -233,6 +233,7 @@ export const formIdentitas = [
     type: "number",
   },
 ];
+
 
 export const formPekerjaan = [
   {

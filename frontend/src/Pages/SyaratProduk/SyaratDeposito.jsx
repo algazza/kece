@@ -53,11 +53,10 @@ const SyaratDeposito = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Deposito"}
           DescriptionBanner={`
-                Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
-                memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
-                dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-                Deposito menawarkan berbagai produk kredit yang dapat disesuaikan dengan
-                keperluan Anda.
+                Deposito Arto Moro adalah simpanan berjangka dengan bunga hingga 6,75%, lebih tinggi dibandingkan bank umum, dan menawarkan 
+                hadiah menarik seperti souvenir, voucher, serta kesempatan liburan ke luar negeri. Dana nasabah dijamin oleh 
+                Lembaga Penjamin Simpanan (LPS) hingga Rp 2 miliar per rekening. 
+                Menempatkan dana di deposito ini juga berkontribusi pada penyaluran kredit untuk mendukung pertumbuhan ekonomi lokal.
             `}
         />
         <TitleBlueBanner title={"Deposito"} />
@@ -92,7 +91,7 @@ const SyaratDeposito = () => {
           <section key={kredit.id}>
             {/* Menu pilihan */}
             <section className={styles.flexCenter}>
-              <div className="pt-10 flex gap-4 sm:max-w-full max-w-80 overflow-auto">
+              <div className="pt-10 sm:px-0 px-6 flex gap-4 overflow-auto">
                 {[
                   "Keuntungan",
                   "Syarat & Ketentuan",
@@ -116,7 +115,7 @@ const SyaratDeposito = () => {
             </section>
 
             {/* Isi dari Menu */}
-            <section className={` sm:pb-16 md:p-10 p-4 rounded-lg`}>
+            <section className="sm:pb-16 md:p-10 p-4 rounded-lg">
               {/* Syarat */}
               {tabs === 1 ? (
                 <motion.div

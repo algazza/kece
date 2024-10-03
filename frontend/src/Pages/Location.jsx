@@ -38,7 +38,7 @@ const Location = () => {
       </span>
 
       <section className={styles.flexCenter}>
-        <div className="my-10 flex gap-4 sm:max-w-full max-w-80 overflow-auto">
+        <div className="my-10 flex gap-4 sm:px-0 px-6 overflow-auto">
           {["Kantor Pusat", "Kantor Kas Gajah", "Kantor Kas Kalipancur", "Kantor Kas Bulusan"].map(
             (menu, index) => (
               <div

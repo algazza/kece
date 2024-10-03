@@ -142,10 +142,6 @@ const Home = () => {
     };
   }, [openModal, openRateBunga]);
 
-  const handleOpen = () => {
-    setOpenMenu(!openMenu);
-  };
-
   const handleModal = () => {
     setOpenModal(!openModal);
   };
@@ -170,13 +166,10 @@ const Home = () => {
         </div>
 
         <div className={`${styles.flexStart} py-4 sm:px-8`}>
-          <div className="flex flex-wrap gap-4 sm:gap-8 justify-center p-4">
+          <div className="flex flex-wrap gap-8 justify-center py-4">
             {menuHome.map((menu, index) => (
               <Link
                 to={menu.link}
-                onClick={
-                  menu.title === "Suku Bunga" && (() => handleOpenRateBunga())
-                }
                 key={index}
                 className="group bg-abuTerang grid justify-items-center sm:w-[160px] w-[110px] sm:py-4 py-2 sm:px-4 px-2 rounded-xl transition-all duration-300 ease-in-out"
               >
