@@ -8,7 +8,7 @@
 
             <div class="mt-[3rem] grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-3">
                 @foreach ($armor as $item)              
-                <a href="" class="bg-gray-100 rounded-xl cursor-pointer">
+                <a href="{{ route('armor.view', ['slug' => $item->slug]) }}" class="bg-gray-100 rounded-xl cursor-pointer">
                     <div class="flex justify-center items-center py-4 px-3">
                     <img src="{{ asset('image/public/armor/' . $item->image) }}" alt="" class=" rounded-xl max-h-[220px]">
                     </div>

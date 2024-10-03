@@ -84,10 +84,10 @@ class ArmorController extends Controller
     }
 
 
-    public function find($id){
+    public function viewArmorIsi($slug){
         try{
-            $armor = ArmorProperty::find($id);
-            return view('admin.armor.edit', compact('armor'))->with('success', 'Data PRoperty Berhasil Di Tambah');
+            $armor = ArmorProperty::where('slug',$slug)->first();
+            return view('admin.armorprop.IsiArmorProp', compact('armor'));
         }  catch(\Exception $e){
             return back()->with('error', 'Data Tidak Ditemukan');
         }
