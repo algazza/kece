@@ -24,7 +24,7 @@
                         </div>
                     </a>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-1 mx-3 mb-3">
-                        <button class="bg-blue-500 rounded-md cursor-pointer hover:bg-blue-600 duration-300 text-white font-semibold py-[0.3rem]">Edit</button>
+                        <a href="{{ route('armor.find', ['slug' => $item->slug]) }}" class="bg-blue-500 rounded-md cursor-pointer hover:bg-blue-600 duration-300 text-white font-semibold py-[0.3rem]">Edit</a>
                         <form action="{{ route('armor.delete', $item->id) }}" method="POST" enctype="multipart/form-data" class="bg-red-500 rounded-md cursor-pointer hover:bg-red-600 duration-300 text-white font-semibold py-[0.3rem]">
                             @csrf
                             @method('DELETE')
