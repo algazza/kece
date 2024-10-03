@@ -27,11 +27,10 @@ const Penghargaan = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Penghargaan"}
           DescriptionBanner={`
-            Selamat datang di BPR Arto Moro, solusi finansial terpercaya untuk
-            memenuhi berbagai kebutuhan Anda. Kami memahami bahwa setiap individu
-            dan usaha memiliki kebutuhan yang unik, oleh karena itu kami
-            menawarkan berbagai produk kredit yang dapat disesuaikan dengan
-            keperluan Anda.
+            Halaman Penghargaan menampilkan berbagai prestasi yang diraih Bank Arto Moro sebagai pengakuan atas kinerja dan kontribusinya 
+            di dunia perbankan. Pengunjung dapat menemukan informasi tentang jenis penghargaan, lembaga pemberi, serta kategori seperti 
+            layanan terbaik, inovasi produk, dan tanggung jawab sosial. Penghargaan ini meningkatkan reputasi BPR Arto Moro dan 
+            menunjukkan dedikasinya dalam memberikan layanan berkualitas dan berkelanjutan.
           `}
         />
         <TitleBlueBanner title={"Penghargaan"} />

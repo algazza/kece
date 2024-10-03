@@ -239,7 +239,7 @@ const FormBank = ({
 
   return (
     <section
-      className={`${styles.fontBody} mx-14 md:mx-auto ${styles.paddingY} ${styles.flexCenter}`}
+      className={`${styles.paddingY} ${styles.flexCenter} mx-14 md:mx-auto`}
     >
       <FormGroup className="grid mb-12 gap-6 sm:gap-12">
         <div className="">
