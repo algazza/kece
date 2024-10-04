@@ -79,7 +79,7 @@ export const FormSponsor = () => {
                 id="outlined-basic"
                 label={"Nama Acara"}
                 type={"text"}
-                name={"nama acara"}
+                name={"nama_acara"}
                 variant="outlined"
                 className="rounded-md outline-none"
                 required
@@ -92,9 +92,9 @@ export const FormSponsor = () => {
               />
 
               <div className="flex justify-between items-center">
-                <DatePicker label="Tanggal Awal Acara" />
+                <DatePicker label="Tanggal Awal Acara" name="tanggal_awal"/>
                 <span>sampai</span>
-                <DatePicker label="Tanggal Akhir Acara" />
+                <DatePicker label="Tanggal Akhir Acara" name="tanggal_akhir"/>
               </div>
 
               <div className={`${styles.inputSpan}`}>
@@ -112,7 +112,7 @@ export const FormSponsor = () => {
             >
               <input
                 type="file"
-                name="pdf"
+                name="file"
                 onChange={handleFileChange}
                 className="input-file"
                 hidden
@@ -217,7 +217,7 @@ export const FormBranding = () => {
                 id="outlined-basic"
                 label={"Nama Unit Usaha"}
                 type={"text"}
-                name={"nama usaha"}
+                name={"nama_usaha"}
                 variant="outlined"
                 className="rounded-md outline-none"
                 required
@@ -237,7 +237,7 @@ export const FormBranding = () => {
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   label={"Bidang Usaha"}
-                  name={"bidang usaha"}
+                  name={"bidang_usaha"}
                   // value={inputs[selek.name]}
                   // onChange={handleChange}
                 >
@@ -281,7 +281,7 @@ export const FormBranding = () => {
                 id="outlined-basic"
                 label={"Lokasi"}
                 type={"text"}
-                name={"nama usaha"}
+                name={"lokasi"}
                 variant="outlined"
                 className="rounded-md outline-none"
                 required
@@ -311,7 +311,7 @@ export const FormBranding = () => {
           >
             <input
               type="file"
-              name="pdf"
+              name="file"
               onChange={handleFileChange}
               className="input-file"
               hidden

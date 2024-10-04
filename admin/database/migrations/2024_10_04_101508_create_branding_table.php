@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sponsor', function (Blueprint $table) {
+        Schema::create('branding', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('email');
-            $table->bigInteger('no_handphone');
-            $table->text('nama_acara');
-            $table->string('tanggal_awal');
-            $table->string('tanggal_akhir');
+            $table->text('nama');
+            $table->text('email');
+            $table->integer('no_handphone');
+            $table->text('nama_usaha');
+            $table->string('bidang_usaha');
+            $table->string('jenis_sponsor');
             $table->double('lokasi');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->text('catatan')->nullable();
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sponsor');
+        Schema::dropIfExists('branding');
     }
 };
