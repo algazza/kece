@@ -17,6 +17,7 @@ const NOMINATIM_BASE_URL = "https://nominatim.openstreetmap.org/search?";
 const SelectMap = ({ selectPosition, setSelectPosition }) => {
   const [searchAddress, setSearchAddress] = useState("");
   const [listplace, setListplace] = useState([]);
+  const [showList, setShowList] = useState(false);
 
   const ShowListAddress = () => {
     const params = {
@@ -39,6 +40,7 @@ const SelectMap = ({ selectPosition, setSelectPosition }) => {
       .then((result) => {
         console.log(JSON.parse(result));
         setListplace(JSON.parse(result));
+        setShowList(true);
       })
       .catch((err) => console.log("err:", err));
   };
@@ -53,7 +55,7 @@ const SelectMap = ({ selectPosition, setSelectPosition }) => {
         value={selectPosition ? selectPosition.display_name : searchAddress}
         onChange={(e) => {
           setSearchAddress(e.target.value);
-          setSelectPosition(null)
+          setSelectPosition(null);
           ShowListAddress();
         }}
         InputProps={{
@@ -64,30 +66,35 @@ const SelectMap = ({ selectPosition, setSelectPosition }) => {
           ),
         }}
       />
-      <div className="max-w-[700px] max-h-[15rem] overflow-auto">
-        <List className={`${setSearchAddress && "bg-primary"} rounded-lg`}>
-          {listplace.map((item) => (
-            <div key={item}>
-              <ListItem
-                disablePadding
-                onClick={() => {
-                  setSelectPosition(item);
-                  setSearchAddress(item.display_name);
-                }}
-              >
-                <ListItemButton>
-                  <ListItemIcon>
-                    <LocationOnIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={item?.display_name} />
-                </ListItemButton>
-              </ListItem>
-              <Divider />
-            </div>
-          ))}
-        </List>
-      </div>
-      <p className="text-abuGelap ml-4">Map dibawah hanya bisa menampilkan</p>
+
+      {showList && (
+        <div className="max-w-[700px] max-h-[15rem] overflow-auto">
+          <List className="rounded-lg">
+            {listplace.map((item) => (
+              <div key={item}>
+                <ListItem
+                  disablePadding
+                  onClick={() => {
+                    setSelectPosition(item);
+                    setSearchAddress(item.display_name);
+                    setShowList(false);
+                  }}
+                >
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <LocationOnIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={item?.display_name} />
+                  </ListItemButton>
+                </ListItem>
+                <Divider />
+              </div>
+            ))}
+          </List>
+        </div>
+      )}
+
+      <p className="text-abuGelap">Map dibawah hanya bisa menampilkan</p>
     </div>
   );
 };
