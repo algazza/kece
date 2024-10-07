@@ -209,4 +209,7 @@ Route::get('brandd', function () {
 Route::get('/Datas', function () {
     return view('admin.sponsor_brand.SponsorData');
 });
+Route::get('/Tapos', function () {
+    return view('admin.tabungan.TabunganUser2');
+});
 
