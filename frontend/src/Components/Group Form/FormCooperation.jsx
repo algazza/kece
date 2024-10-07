@@ -79,7 +79,7 @@ export const FormSponsor = () => {
                 id="outlined-basic"
                 label={"Nama Acara"}
                 type={"text"}
-                name={"nama_acara"}
+                name={"nama acara"}
                 variant="outlined"
                 className="rounded-md outline-none"
                 required
@@ -91,10 +91,10 @@ export const FormSponsor = () => {
                 // }
               />
 
-              <div className="flex justify-between items-center">
-                <DatePicker label="Tanggal Awal Acara" name="tanggal_awal"/>
+              <div className="flex flex-col sm:flex-row justify-between gap-2 items-center">
+                <DatePicker label="Tanggal Awal Acara" />
                 <span>sampai</span>
-                <DatePicker label="Tanggal Akhir Acara" name="tanggal_akhir"/>
+                <DatePicker label="Tanggal Akhir Acara" />
               </div>
 
               <div className={`${styles.inputSpan}`}>
@@ -114,7 +114,7 @@ export const FormSponsor = () => {
             >
               <input
                 type="file"
-                name="file"
+                name="pdf"
                 onChange={handleFileChange}
                 className="input-file"
                 hidden
@@ -236,7 +236,7 @@ export const FormBranding = () => {
                 id="outlined-basic"
                 label={"Nama Unit Usaha"}
                 type={"text"}
-                name={"nama_usaha"}
+                name={"nama usaha"}
                 variant="outlined"
                 className="rounded-md outline-none"
                 required
@@ -256,7 +256,7 @@ export const FormBranding = () => {
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   label={"Bidang Usaha"}
-                  name={"bidang_usaha"}
+                  name={"bidang usaha"}
                   // value={inputs[selek.name]}
                   // onChange={handleChange}
                 >
@@ -304,19 +304,19 @@ export const FormBranding = () => {
             </div>
           </div>
 
-          <div
-            className={`${styles.flexCenter} p-4 flex-col w-full h-[250px] mt-4 border-2 border-dashed border-slate-300 cursor-pointer rounded-[5px]`}
-            onClick={() => document.querySelector(".input-file").click()}
-          >
-            <input
-              type="file"
-              name="file"
-              onChange={handleFileChange}
-              className="input-file"
-              hidden
-              // accept=".pdf, .png"
-            />
-
+          <div>
+            <div
+              className={`${styles.flexCenter} p-4 flex-col w-full h-[250px] mt-4 border-2 border-dashed border-slate-300 cursor-pointer rounded-[5px]`}
+              onClick={() => document.querySelector(".input-file").click()}
+            >
+              <input
+                type="file"
+                name="pdf"
+                onChange={handleFileChange}
+                className="input-file"
+                hidden
+                // accept=".pdf, .png"
+              />
 
               {filepdf ? (
                 <embed
