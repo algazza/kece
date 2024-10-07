@@ -317,11 +317,6 @@ export const FormBranding = () => {
               // accept=".pdf, .png"
             />
 
-            {filepdf ? (
-              <embed
-                src={URL.createObjectURL(filepdf)}
-                className="w-full h-full"
-              />
 
               {filepdf ? (
                 <embed
