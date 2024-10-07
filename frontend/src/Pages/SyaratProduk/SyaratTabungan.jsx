@@ -5,7 +5,6 @@ import FormBank from "../../Components/Group Form/FormBank.jsx";
 import styles from "../../helper/style";
 import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
-import { Kredit, Tabungan } from "../../Components/Group Form/Form.jsx";
 import { IsiKredit, IsiTabungan } from "../../helper/DataProduk";
 import { nomorInduk } from "../../helper/nomor";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
@@ -14,8 +13,9 @@ import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import { localhostLink } from "../../helper/localhost";
 import TabelBiaya from "../../Components/TabelBiaya";
 import { useMenu } from "../../MenuProvider";
+import { Tabungan } from "../../Components/Group Form/Form.jsx";
 // ===================================================
-const buttonMenuTabungan = [
+const buttonMenuProduk = [
   {
     id: 1,
     icon: (className) => (
@@ -65,6 +65,11 @@ const SyaratTabungan = () => {
     setMenu(id);
   }
 
+  const handleName = () => {
+    const selectedMenu = buttonMenuProduk.find((item) => item.id === menu);
+    return selectedMenu ? selectedMenu.title : "Tabungan";
+  };
+
   return (
     <>
       <section>
@@ -77,7 +82,7 @@ const SyaratTabungan = () => {
             hingga Rp 2 miliar per rekening.          
           `}
         />
-        <TitleBlueBanner title={"Tabungan"} />
+        <TitleBlueBanner title={handleName()} />
       </section>
 
       <span className="-mt-[100px] pb-[100px] block" id="section2">
@@ -89,7 +94,7 @@ const SyaratTabungan = () => {
           className={`${styles.paddingY} px-16 flex flex-wrap gap-8 justify-center justify-items-center`}
         >
           {/* menu button */}
-          {buttonMenuTabungan.map((menu, index) => (
+          {buttonMenuProduk.map((menu, index) => (
             <a
               href="#section2"
               className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-[300px] flex flex-col items-center align-middle text-center cursor-pointer`}
@@ -108,8 +113,8 @@ const SyaratTabungan = () => {
         return menu === kredit.id ? (
           <section key={kredit.id}>
             {/* Menu pilihan */}
-            <section className={styles.flexCenter}>
-              <div className="pt-10 flex gap-4 sm:px-0 px-6 overflow-auto">
+            <section className={`${styles.flexCenter} bg-abuTerang p-4`}>
+              <div className="flex gap-4 sm:px-0 px-6 overflow-auto">
                 {[
                   "Keuntungan",
                   "Syarat & Ketentuan",
@@ -196,8 +201,7 @@ const SyaratTabungan = () => {
                 >
                   <FormBank
                     isiPenting={<Tabungan />}
-                    value={"tabungan"}
-                    nomer={nomorInduk}
+                    value={handleName()}
                     endpoint={`${localhostLink}/api/tabungan`}
                   />
                 </motion.div>

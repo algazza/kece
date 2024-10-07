@@ -32,7 +32,6 @@ const PickupPage = () => {
         <FormBank
           isiPenting={<PickupService />}
           value={"Pickup"}
-          nomer={nomorInduk}
           page={"/PickupPage"}
           endpoint={`${localhostLink}/api/Pickup`}
         />

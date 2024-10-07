@@ -7,7 +7,7 @@ import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
 import { Deposito } from "../../Components/Group Form/Form.jsx";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import { IsiKredit } from "../../helper/DataProduk";
+import {isiDepostio, IsiKredit} from "../../helper/DataProduk";
 import { nomorInduk } from "../../helper/nomor";
 import { localhostLink } from "../../helper/localhost";
 import { TabelSimDeposito } from "../../Components/TabelSim";
@@ -15,19 +15,8 @@ import { useMenu } from "../../MenuProvider";
 import TabelBiaya from "../../Components/TabelBiaya";
 
 // ===================================================
-const buttonMenuTabungan = [
-  {
-    id: 1,
-    icon: (className) => (
-      <TrendingUpIcon className={className} sx={{ fontSize: "40px" }} />
-    ),
-    title: "Deposito",
-    deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
-  },
-];
 
 const SyaratDeposito = () => {
-  const { menu, setMenu } = useMenu();
   const [tabs, setTabs] = useState(1);
 
   // tab
@@ -39,11 +28,6 @@ const SyaratDeposito = () => {
   }
   function prevTab(id) {
     updateTabs(id - 1);
-  }
-
-  // menu
-  function updateMenu(id) {
-    setMenu(id);
   }
 
   return (
@@ -65,30 +49,7 @@ const SyaratDeposito = () => {
       <span className="-mt-[100px] pb-[100px] block" id="section2">
         &nbsp;
       </span>
-      {/* Menu utama */}
-      {menu === 0 ? (
-        <section
-          className={`${styles.paddingY} px-16 flex flex-wrap gap-8 justify-center justify-items-center`}
-        >
-          {/* menu button */}
-          {buttonMenuTabungan.map((menu, index) => (
-            <a
-              href="#section2"
-              className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-[300px] flex flex-col items-center align-middle text-center cursor-pointer`}
-              key={index}
-              onClick={() => updateMenu(menu.id)}
-            >
-              {menu.icon("m-2 text-blue-400")}
-              <h6 className={`${styles.heading6}`}>{menu.title}</h6>
-              <p className="mt-4">{menu.deskripsi}</p>
-            </a>
-          ))}
-        </section>
-      ) : null}
 
-      {IsiKredit.map((kredit) => {
-        return menu === kredit.id ? (
-          <section key={kredit.id}>
             {/* Menu pilihan */}
             <section className={styles.flexCenter}>
               <div className="pt-10 sm:px-0 px-6 flex gap-4 overflow-auto">
@@ -129,7 +90,7 @@ const SyaratDeposito = () => {
                     <h3 className={`${styles.heading5} text-black`}>
                       Keuntungan
                     </h3>
-                    {kredit.Keuntungan}
+                    {isiDepostio.Keuntungan}
                   </div>
                 </motion.div>
               ) : null}
@@ -145,12 +106,12 @@ const SyaratDeposito = () => {
                 >
                   <div className="list text-abuGelap sm:ml-4">
                     <h3 className={`${styles.heading5} text-black`}>Syarat</h3>
-                    {kredit.Syarat}
+                    {isiDepostio.Syarat}
 
                     <h3 className={`${styles.heading5} text-black mt-4`}>
                       Ketentuan
                     </h3>
-                    {kredit.Ketentuan}
+                    {isiDepostio.Ketentuan}
                   </div>
                 </motion.div>
               ) : null}
@@ -174,7 +135,7 @@ const SyaratDeposito = () => {
                 </motion.div>
               ) : null}
 
-              {/* Tabel */}
+              {/* Biaya */}
               {tabs === 4 ? (
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
@@ -199,7 +160,6 @@ const SyaratDeposito = () => {
                   <FormBank
                     isiPenting={<Deposito />}
                     value={"deposito"}
-                    nomer={nomorInduk}
                     endpoint={`${localhostLink}/api/deposito`}
                   />
                 </motion.div>
@@ -208,13 +168,6 @@ const SyaratDeposito = () => {
 
             {/* Button next prev */}
             <section className="flex justify-center gap-4">
-              <a
-                href="#section2"
-                onClick={() => updateMenu(0)}
-                className={`bg-biruMuda-700 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
-              >
-                Kembali Menu
-              </a>
               <a
                 href="#section2"
                 onClick={() => prevTab(tabs)}
@@ -234,9 +187,7 @@ const SyaratDeposito = () => {
                 Lanjut
               </a>
             </section>
-          </section>
-        ) : null;
-      })}
+
     </>
   );
 };

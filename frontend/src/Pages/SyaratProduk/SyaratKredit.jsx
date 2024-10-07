@@ -18,7 +18,7 @@ import { TabelSimKredit } from "../../Components/TabelSim";
 import { useMenu } from "../../MenuProvider";
 
 // ===================================================
-const buttonMenuTabungan = [
+const buttonMenuProduk = [
   {
     id: 1,
     icon: (className) => (
@@ -76,7 +76,10 @@ const SyaratKredit = () => {
     setMenu(id);
   }
 
-  console.log(menu);
+  const handleName = () => {
+    const selectedMenu = buttonMenuProduk.find((item) => item.id === menu);
+    return selectedMenu ? selectedMenu.title : "Kredit";
+  };
 
   return (
     <>
@@ -92,7 +95,7 @@ const SyaratKredit = () => {
                 tepat bagi nasabah.
             `}
         />
-        <TitleBlueBanner title={"Kredit"} />
+        <TitleBlueBanner title={handleName()} />
       </section>
 
       <span className="-mt-[100px] pb-[100px] block" id="section2">
@@ -104,7 +107,7 @@ const SyaratKredit = () => {
           className={`${styles.paddingY} px-16 flex flex-wrap gap-8 justify-center justify-items-center`}
         >
           {/* menu button */}
-          {buttonMenuTabungan.map((menu, index) => (
+          {buttonMenuProduk.map((menu, index) => (
             <a
               href="#section2"
               className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-[300px] flex flex-col items-center align-middle text-center cursor-pointer`}
@@ -229,8 +232,7 @@ const SyaratKredit = () => {
                 >
                   <FormBank
                     isiPenting={<Kredit />}
-                    value={"Kredit"}
-                    nomer={nomorInduk}
+                    value={handleName()}
                     endpoint={`${localhostLink}/api/kredit`}
                   />
                 </motion.div>

@@ -73,16 +73,6 @@ const KerjaSama = () => {
         <FormBranding />
       </motion.div>}
 
-      {/* <FormBank
-        isiPenting={<SponsorForm />}
-        judulRadio="Bidang Usaha *"
-        namaRadio="bidang_usaha"
-        dummyprops={formUsahaSponsor}
-        value={"Sponsor"}
-        nomer={nomorInduk}
-        page={"/Sponsor"}
-        endpoint={`${localhostLink}/api/sponsor`}
-      /> */}
     </>
   );
 };

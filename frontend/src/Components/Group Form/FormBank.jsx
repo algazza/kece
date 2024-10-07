@@ -353,7 +353,7 @@ const FormBank = ({
           onChange={handleChange}
         />
 
-        {React.cloneElement(isiPenting, {
+        {isiPenting ? (React.cloneElement(isiPenting, {
           inputs,
           usahaError,
           setUsahaError,
@@ -364,7 +364,7 @@ const FormBank = ({
           handleChange,
           handleDateChange,
           handleTimeChange,
-        })}
+        })) : null}
 
         <div>
           <div className="flex flex-col gap-2 ">

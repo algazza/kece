@@ -108,8 +108,9 @@ export const Kredit = ({ inputs, handleChange }) => {
         <div className={`${styles.inputSpan}`}>
           <span>Catatan</span>
           <TextareaAutosize
-            className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg hover:border 
-              focus:border-black focus-visible:outline-0 box-border`}
+            className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                    border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
+                    box-border border-slate-300`}
             aria-label="Catatan"
             minRows={3}
             placeholder="Catatan"
@@ -136,80 +137,12 @@ export const Tabungan = ({ inputs, handleChange }) => {
     <div className="">
       <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
 
-      <div
-        action=""
-        className="grid justify-center gap-4 mx-auto md:grid-cols-x2500"
-      >
-        <div className="grid w-full sm:grid-cols-2 gap-4">
-          <FormControl fullWidth>
-            <InputLabel htmlFor="outlined-adornment-amount">
-              Total Pinjaman
-            </InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-amount"
-              startAdornment={
-                <InputAdornment position="start">Rp.</InputAdornment>
-              }
-              label="Total Pinjaman"
-              name="total_pinjaman"
-              value={inputs.total_pinjaman}
-              onChange={handleChange}
-              inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
-            />
-          </FormControl>
-
-          {formSelectKredit.map((selek) => (
-            <FormControl fullWidth key={selek.id}>
-              <InputLabel id="demo-simple-select-label">
-                {selek.title}
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label={selek.title}
-                name={selek.name}
-                value={inputs[selek.name]}
-                onChange={handleChange}
-              >
-                <MenuItem value={selek.option1}>{selek.option1}</MenuItem>
-                <MenuItem value={selek.option2}>{selek.option2}</MenuItem>
-                {selek.option3 && (
-                  <MenuItem value={selek.option3}>{selek.option3}</MenuItem>
-                )}
-              </Select>
-            </FormControl>
-          ))}
-        </div>
-
-        <div className=" md:col-[2/3] md:row-[1/3]">
-          <div className="form-control bg-abuTerang p-6 border border-black rounded-md min-w-[90px]">
-            <h1 className="">Penghasilan Perbulan</h1>
-            <FormGroup className="">
-              <RadioGroup
-                value={inputs.penghasilan_perbulan}
-                name="penghasilan_perbulan"
-                onChange={(e) => {
-                  handleChange(e);
-                }}
-              >
-                {formPenghasilan.map((gaji) => (
-                  <FormControlLabel
-                    key={gaji.id}
-                    control={<Radio />}
-                    label={gaji.title}
-                    value={gaji.id}
-                  />
-                ))}
-              </RadioGroup>
-            </FormGroup>
-          </div>
-        </div>
-
-        <div className={`${styles.inputSpan}`}>
+        <div action="" className={`${styles.inputSpan} md:w-[850px]`}>
           <span>Catatan</span>
           <TextareaAutosize
-            className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg hover:border 
-              focus:border-black focus-visible:outline-0 box-border`}
+              className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
+                box-border border-slate-300`}
             aria-label="Catatan"
             minRows={3}
             placeholder="Catatan"
@@ -226,6 +159,10 @@ export const Tabungan = ({ inputs, handleChange }) => {
             No. Handphone Anda.
           </p>
         </div>
+      <div
+        action=""
+        className="grid justify-center gap-4 mx-auto md:grid-cols-x2500"
+      >
       </div>
     </div>
   );
@@ -236,80 +173,48 @@ export const Deposito = ({ inputs, handleChange }) => {
     <div className="">
       <h2 className={`${styles.heading3} mb-4`}>Pengajuan</h2>
 
-      <div
-        action=""
-        className="grid justify-center gap-4 mx-auto md:grid-cols-x2500"
-      >
+      <div action="" className="grid justify-center gap-4 mx-auto md:w-[850px]">
         <div className="grid w-full sm:grid-cols-2 gap-4">
           <FormControl fullWidth>
-            <InputLabel htmlFor="outlined-adornment-amount">
-              Total Pinjaman
-            </InputLabel>
+            <InputLabel htmlFor="outlined-adornment-amount">Nominal</InputLabel>
             <OutlinedInput
               id="outlined-adornment-amount"
               startAdornment={
                 <InputAdornment position="start">Rp.</InputAdornment>
               }
-              label="Total Pinjaman"
-              name="total_pinjaman"
-              value={inputs.total_pinjaman}
+              label="Nominal"
+              name="nominal"
+              value={inputs.nominal}
               onChange={handleChange}
               inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
             />
           </FormControl>
 
-          {formSelectKredit.map((selek) => (
-            <FormControl fullWidth key={selek.id}>
-              <InputLabel id="demo-simple-select-label">
-                {selek.title}
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label={selek.title}
-                name={selek.name}
-                value={inputs[selek.name]}
-                onChange={handleChange}
-              >
-                <MenuItem value={selek.option1}>{selek.option1}</MenuItem>
-                <MenuItem value={selek.option2}>{selek.option2}</MenuItem>
-                {selek.option3 && (
-                  <MenuItem value={selek.option3}>{selek.option3}</MenuItem>
-                )}
-              </Select>
-            </FormControl>
-          ))}
-        </div>
-
-        <div className=" md:col-[2/3] md:row-[1/3]">
-          <div className="form-control bg-abuTerang p-6 border border-black rounded-md min-w-[90px]">
-            <h1 className="">Penghasilan Perbulan</h1>
-            <FormGroup className="">
-              <RadioGroup
-                value={inputs.penghasilan_perbulan}
-                name="penghasilan_perbulan"
-                onChange={(e) => {
-                  handleChange(e);
-                }}
-              >
-                {formPenghasilan.map((gaji) => (
-                  <FormControlLabel
-                    key={gaji.id}
-                    control={<Radio />}
-                    label={gaji.title}
-                    value={gaji.id}
-                  />
-                ))}
-              </RadioGroup>
-            </FormGroup>
-          </div>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Jangka Waktu</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Jangka Waktu"
+              name="jangka_waktu"
+              value={inputs.jangka_waktu}
+              onChange={handleChange}
+            >
+              {["1 Bulan", "3 Bulan", "6 Bulan", "12 Bulan"].map((selek) => (
+                <MenuItem key={selek} value={selek}>
+                  {selek}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
         </div>
 
         <div className={`${styles.inputSpan}`}>
           <span>Catatan</span>
           <TextareaAutosize
-            className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg hover:border 
-              focus:border-black focus-visible:outline-0 box-border`}
+              className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
+                box-border border-slate-300`}
             aria-label="Catatan"
             minRows={3}
             placeholder="Catatan"
@@ -498,7 +403,7 @@ export const SponsorForm = ({
                   error={sponsorError}
                 />
               ))}
-            </RadioGroup>cd 
+            </RadioGroup>
             {sponsorError && (
               <FormHelperText error>pekerjaan perlu diisi</FormHelperText>
             )}
