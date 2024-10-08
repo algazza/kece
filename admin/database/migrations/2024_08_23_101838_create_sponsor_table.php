@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('nama_acara');
             $table->string('tanggal_awal');
             $table->string('tanggal_akhir');
-            $table->double('lokasi');
+            $table->text('lokasi')->nullable();
             $table->string('file');
             $table->text('catatan')->nullable();
             $table->timestamps();

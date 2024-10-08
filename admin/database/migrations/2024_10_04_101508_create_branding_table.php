@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('nama_usaha');
             $table->string('bidang_usaha');
             $table->string('jenis_sponsor');
-            $table->double('lokasi');
+            $table->text('lokasi')->nullable();
             $table->string('file')->nullable();
             $table->text('catatan')->nullable();
             $table->timestamps();
