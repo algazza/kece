@@ -199,26 +199,36 @@ class ArmorController extends Controller
     }
 
     public function index(){
-        $armor = ArmorProperty::orderBy('created', 'DESC')->get();
-        return response()->json([
-            'data' => $armor,
-            'message' => 'Data Property Berhasil Di Tampilkan'
-        ]);
-    }
-
-    public function findArmor($slug){
-        $armor = ArmorProperty::where('slug', $slug)->first();
-
-        if(!$armor){
+        try{
+            $armor = ArmorProperty::orderBy('created_at', 'DESC')->get();
             return response()->json([
-                'message' => 'Data Tidak Ditemukan',
-                'status' => Response::HTTP_NOT_FOUND,
+                'data' => $armor,
+                'message' => 'Data Property Berhasil Di Tampilkan'
+            ]);
+        } catch(\Exception $e){
+            return response()->json([
+                'message' => $e
             ]);
         }
-        return response()->json([
-            'data' => $armor,
-            'message' => 'Data Property Berhasil Di Tampilkan'
-        ]);
+    }
+
+    public function show($slug)
+    {
+        try {
+            $armor = ArmorProperty::where('slug', $slug)->first();
+                
+            return response()->json([
+                'data' => $armor,
+                'message' => 'Data Property Berhasil Ditampilkan',
+                'status' => Response::HTTP_OK,
+            ], Response::HTTP_OK);
+    
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => 'Terjadi kesalahan: ' . $e->getMessage(),
+                'status' => Response::HTTP_INTERNAL_SERVER_ERROR,
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 
     
