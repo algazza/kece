@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArmorController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BrandingController;
 use App\Http\Controllers\KreditController;
 use App\Http\Controllers\PickupController;
 use App\Http\Controllers\LaporanController;
@@ -141,7 +142,13 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::get('/News/{slug}/edit', [NewsController::class, 'editNews'])->name('news.edit');
     Route::put('/News/{slug}', [NewsController::class, 'updateNews'])->name('news.update');
     Route::delete('/News/{id}/delete', [NewsController::class, 'destroyNews'])->name('news.delete');
+
+
     Route::get('/Sponsor', [SponsorController::class, 'index'])->name('sponsor.index');
+    Route::get('/Brand', [BrandingController::class, 'viewBranding'])->name('brand.index');
+
+
+
     Route::get('/Banner', [BannerController::class, 'viewBanner'])->name('banner');
     Route::post('/Banner/Post', [BannerController::class, 'store'])->name('banner.add');
     Route::delete('/Banner/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
@@ -196,20 +203,3 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
     Route::get('/armor/Edit/{slug}', [ArmorController::class, 'find'])->name('armor.find');
     Route::delete('/armor/delete/{id}', [ArmorController::class, 'destroy'])->name('armor.delete');
 });
-
-
-
-
-Route::get('/brand', function () {
-    return view('admin.sponsor_brand.Brand');
-});
-Route::get('/brandd', function () {
-    return view('admin.sponsor_brand.BrandData');
-});
-Route::get('/Datas', function () {
-    return view('admin.sponsor_brand.SponsorData');
-});
-Route::get('/Tapos', function () {
-    return view('admin.tabungan.TabunganUser2');
-});
-
