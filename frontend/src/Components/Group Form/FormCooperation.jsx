@@ -25,7 +25,6 @@ import { ButtonFull } from "../Button";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-
 import axios from "axios";
 import { localhostLink } from "../../helper/localhost";
 import PopUpCoop from "../Modal/PopUpCoop";
@@ -39,10 +38,11 @@ export const FormSponsor = () => {
   const [nomor, setNomor] = useState("");
   const [error, setError] = useState("");
   const [usahaError, setUsahaError] = useState(false);
-  const [bidangError, setBidangError] = useState(false);
-  const [sponsorError, setSponsorError] = useState(false);
+  const [awalError, setAwalError] = useState(false)
+  const [akhirError, setAkhirError] = useState(false)
   const [alamatError, setAlamatError] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [pdfError, setPdfError] = useState(false)
   const [filepdf, setFilepdf] = useState(null);
   const [fileName, setFileName] = useState("File Tidak Terpilih");
 
@@ -74,22 +74,28 @@ export const FormSponsor = () => {
       setAlamatError(false);
     }
 
-    if (!inputs.penghasilan_perbulan) {
+    if (!inputs.nama_acara) {
       setUsahaError(true);
     } else {
       setUsahaError(false);
     }
 
-    if (!inputs.checkbox) {
-      setBidangError(true);
+    if (!inputs.tanggal_awal) {
+      setAwalError(true);
     } else {
-      setBidangError(false);
+      setAwalError(false);
     }
 
-    if (!inputs.jenis_sponsor) {
-      setSponsorError(true);
+    if (!inputs.tanggal_akhir) {
+      setAkhirError(true);
     } else {
-      setSponsorError(false);
+      setAkhirError(false);
+    }
+
+    if (!inputs.file) {
+      setPdfError(true);
+    } else {
+      setPdfError(false);
     }
 
     const formData = new FormData();
@@ -339,13 +345,23 @@ export const FormSponsor = () => {
           <ButtonFull
             WidthButton="w-36"
             WidthShadow="w-40"
-            // onClick={value === "Sponsor" ? submitFormSponsor : submitForm}
-            // onClick={submitForm}
+            onClick={submitFormSponsor}
           >
             Hubungi Kami
           </ButtonFull>
           {/* {error && <p className="text-red-500">{error}</p>} */}
         </div>
+        
+        {openModal && (
+          <PopUpCoop
+            nama={nameInputs}
+            email={email}
+            nomor={nomor}
+            jenis={value}
+            setOpenModal={setOpenModal}
+            openModal={openModal}
+          />
+        )}
       </FormGroup>
     </section>
   );
@@ -365,11 +381,7 @@ export const FormBranding = () => {
   const [filepdf, setFilepdf] = useState(null);
   const [fileName, setFileName] = useState("File Tidak Terpilih");
 
-  const value = "Branding";
-
-  useEffect(() => {
-    setInputs((values) => ({ ...values, jenis: value }));
-  }, [value]);
+  const value = "branding";
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -382,98 +394,64 @@ export const FormBranding = () => {
     const updatedInputs = {
       ...inputs,
     };
-
+  
     const nameGenerated = updatedInputs.nama;
     const emailGenerated = updatedInputs.email;
     const nomorGenerated = updatedInputs.no_handphone;
 
+    console.log(updatedInputs)
+  
     if (!inputs.lokasi) {
       setAlamatError(true);
     } else {
       setAlamatError(false);
     }
-
+  
     if (!inputs.nama_usaha) {
       setUsahaError(true);
     } else {
       setUsahaError(false);
     }
-
+  
     if (!inputs.bidang_usaha) {
       setBidangError(true);
     } else {
       setBidangError(false);
     }
-
+  
     if (!inputs.jenis_sponsor) {
       setSponsorError(true);
     } else {
       setSponsorError(false);
     }
-
-    const formData = new FormData();
-
-    const fieldsToInclude = [
-      "nama",
-      "email",
-      "no_handphone",
-      "nama_usaha",
-      "bidang_usaha",
-      "jenis_sponsor",
-      "lokasi",
-      "file",
-      "catatan",
-    ];
-
-    axios
-      .post(`${localhostLink}/api/branding`, updatedInputs)
-      .then((response) => {
+  
+    try {
+      // Kirim data sebagai JSON
+      const response = await fetch(`${localhostLink}/api/branding`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedInputs), // Konversi objek ke JSON
+      });
+  
+      if (response.ok) {
+        const result = await response.json(); // Ambil hasil sebagai JSON
         setNameInputs(nameGenerated);
         setEmail(emailGenerated);
         setNomor(nomorGenerated);
         setOpenModal(true);
-        console.log(updatedInputs);
-      })
-      .catch((err) => {
-        setError("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
-        toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
-      });
-
-    fieldsToInclude.forEach((field) => {
-      if (updatedInputs[field] !== undefined && updatedInputs[field] !== null) {
-        formData.append(field, updatedInputs[field]);
-      }
-    });
-
-    if (filepdf) {
-      console.log("Appending file:", filepdf);
-      formData.append("pdf", filepdf);
-    }
-
-    for (const pair of formData.entries()) {
-      console.log(
-        `Field: ${pair[0]}, Value: ${
-          pair[1] instanceof File ? pair[1].name : pair[1]
-        }`
-      );
-    }
-
-    try {
-      const response = await fetch(`${localhostLink}/api/branding`, {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        const result = await response.json();
         console.log("Success:", result);
       } else {
         console.error("Error:", response.statusText);
       }
     } catch (error) {
       console.error("Error:", error);
+      setError("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
+      toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
     }
   };
+  
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
