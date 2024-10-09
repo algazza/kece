@@ -47,7 +47,7 @@ const PopUpCoop = ({
           </button>
           <a
             className="border-2 border-[#12a50b] px-4 py-2 rounded-md text-[#12a50b] font-semibold text-center"
-            href={`https://wa.me/+62${nomorInduk}?text=Saya%20${nama}%20dengan%20kode%20${code}%20pengajuan%20${jenis}`}
+            href={`https://wa.me/+62${nomorInduk}?text=Saya%20${nama}%20pengajuan%20${jenis}`}
             target="_blank"
           >
             <WhatsAppIcon className="text-[#12a50b] mr-2" />
