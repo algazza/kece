@@ -235,13 +235,6 @@ export const FormSponsor = () => {
                       },
                     })
                   }
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      error={awalError}
-                      helperText={awalError ? "This field is required" : ""}
-                    />
-                  )}
                 />
                 <span className="md:block hidden">sampai</span>
                 <DatePicker
@@ -259,15 +252,17 @@ export const FormSponsor = () => {
                       },
                     })
                   }
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      error={akhirError}
-                      helperText={akhirError ? "This field is required" : ""}
-                    />
-                  )}
                 />
               </div>
+              {awalError || akhirError ? (
+                <p
+                  className={`text-merahh-500 text-center ${styles.fontSmall}`}
+                >
+                  Tanggal Belom terisi
+                </p>
+              ) : (
+                ""
+              )}
 
               <div className={`${styles.inputSpan}`}>
                 <span className={alamatError ? "text-red-500" : ""}>
@@ -276,7 +271,11 @@ export const FormSponsor = () => {
                 <TextareaAutosize
                   className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
                   border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
-                  box-border`}
+                  box-border ${
+                    alamatError
+                      ? "border-red-500 hover:border-red-500 text-red-500 focus:border-red-600"
+                      : "border-slate-300"
+                  }`}
                   aria-label="Lokasi"
                   minRows={3}
                   placeholder="Lokasi"
@@ -338,7 +337,9 @@ export const FormSponsor = () => {
               <span className="flex items-center">
                 {fileName} -
                 <DeleteIcon
-                  className="text-merahh-500 cursor-pointer"
+                  className={`cursor-pointer ${
+                    pdfError ? "text-white" : "text-merahh-500"
+                  }`}
                   onClick={() => {
                     setFileName(
                       pdfError ? "File Harus Diisi" : "Tidak Ada File"
