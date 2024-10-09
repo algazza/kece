@@ -1,56 +1,120 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FormControl, InputLabel, TextField } from "@mui/material";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import styles from "../helper/style";
 import ShowerIcon from "@mui/icons-material/Shower";
 import BedIcon from "@mui/icons-material/Bed";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import CloseIcon from "@mui/icons-material/Close";
+import { localhostLink } from "../helper/localhost";
+import { toast } from "react-toastify";
+import Error from "./Error";
+import { motion } from "framer-motion";
+import { loaderIcon } from "../helper";
+import { nomorArmor } from "../helper/nomor";
 
 const IsiArmorProp = () => {
+  const { slug } = useParams();
+  const [armor, setArmor] = useState(null)
+  const [error, setError] = useState(null);
+  const [notFound, setNotFound] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-
+  const [nameUser, setNameUser] = useState("");
   const location = useLocation();
-  const { nomer } = location.state || {};
+  const currentUrl = window.location.origin + location.pathname;
 
   const handleModal = () => {
     setOpenModal(!openModal);
   };
 
+  useEffect(() => {
+    fetch(`${localhostLink}/api/armor/${slug}`)
+      .then((response) => {
+        if (response.status === 404) {
+          setNotFound(true);
+          return Promise.reject("Halaman tidak ditemukan.");
+        }
+        if (!response.ok) {
+          return Promise.reject(`HTTP error! Status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then((text) => {
+        try {
+          const data = JSON.parse(text);
+          setArmor(data);
+        } catch (error) {
+          setError("Data tidak dalam format JSON.");
+          console.error("Error parsing JSON:", error);
+        }
+      })
+      .catch((error) => {
+        setError(error);
+        console.error("Error fetching promo details:", error);
+      });
+  }, [slug]);
+  
+
+  if (notFound) {
+    return <Error message="Halaman tidak ditemukan" status={404} />;
+  }
+
+  if (error) {
+    return <Error message={error} />;
+  }
+
+  if (!armor)
+    return (
+      <div className="w-screen h-dvh flex justify-center items-center">
+        <div className="">
+          <motion.img
+            initial={{ rotate: 0 }}
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+            src={loaderIcon}
+            alt=""
+          />
+
+          <h1 className={`${styles.heading1}`}>Loading...</h1>
+        </div>
+      </div>
+    );
+
   return (
     <>
       <section className="grid sm:justify-center md:items-center md:gap-y-2 md:gap-x-20 md:grid-cols-x2440">
         <div className="text-center">
-          <h1 className={`${styles.heading3} `}>Gayamsari</h1>
-          <p className="">
-            Jl. Gempolsari I, Pandean Lamper, Kec. Gayamsari, Kota Semarang,
-            Jawa Tengah
-          </p>
+          <h1 className={styles.heading3}>{armor.alamat}</h1>
+          <p className="">{armor.alamat_lengkap}</p>
         </div>
 
         <div className="m-4 grid justify-center gap-2 md:-order-1 md:row-[1/3]">
           <img
-            src="https://media.dekoruma.com/dekohouse/property/real-estate/PLMA-JDSR/perumahan-jds-resort-depok-general-fasad-1.jpg?auto=webp&optimize=medium&width=328&format=jpg&fit=bounds&dpr=1.5"
-            alt=""
+            src={`${localhostLink}/image/public/armor/${armor.image}`}
+            alt={armor.alamat}
             className="shadow-[0px_5px_20px_0px_#00000024]"
           />
           <h2 className={`${styles.heading4} text-start`}>
-            Rp. <span>1,2 Miliar</span>
+            Rp. <span>{armor.harga}</span>
           </h2>
 
           <div className="flex justify-between text-abuGelap">
             <p>
-              LB : <span>20</span>m²
+              LB : <span>{armor.luas_bangunan}</span>m²
             </p>
             <p>
-              LT: <span>30</span>m²
+              LT: <span>{armor.luas_tanah}</span>m²
             </p>
             <div>
-              <BedIcon /> <span className="ml-2">3</span>
+              <BedIcon /> <span className="ml-2">{armor.bed}</span>
             </div>
             <div>
-              <ShowerIcon /> <span className="ml-2">2</span>
+              <ShowerIcon /> <span className="ml-2">{armor.shower}</span>
             </div>
           </div>
 
@@ -62,44 +126,23 @@ const IsiArmorProp = () => {
               <WhatsAppIcon /> Whatsapp
             </div>
 
-            <div
+            <a
               className="mt-2 py-2 bg-[#e1306c] text-primary rounded-xl cursor-pointer flex justify-center gap-4"
-              onClick={handleModal}
+              href={armor.instagram}
+              target="_blank"
             >
               <InstagramIcon /> Instagram
-            </div>
+            </a>
           </div>
         </div>
 
         <div className="p-4 md:p-0">
           <h1 className={`${styles.heading4}`}>Deskripsi</h1>
 
-          <div className="">
-            📍{" "}
-            <span>
-              Jl. Gempolsari I, Pandean Lamper, Kec. Gayamsari, Kota Semarang,
-              Jawa Tengah
-            </span>
-            <ul className="list-disc mt-4 list-inside">
-              <li>Luas Tanah 149 m²</li>
-              <li>Luas Bangunan 90 m²</li>
-              <li>Air artetis</li>
-              <li>Listrik 1300 watt</li>
-              <li>Menghadap selatan</li>
-            </ul>
-            <p className="mt-4">
-              Lokasi Strategis:
-              <ul className="list-disc list-inside">
-                <li>1 menit ke Rumah Sakit Bhayangkara Semarang</li>
-                <li>1 menit ke SPBU Pertamina Lamper</li>
-                <li>1 menit ke PT. Piranti Housewares Indo Prima</li>
-                <li>2 menit ke Pemancingan Bhakti Galatama</li>
-                <li>2 menit ke Pasar Gayamsari</li>
-                <li>3 menit ke Spider Futsal Stadium</li>
-                <li>4 menit ke Taman Citra Satwa</li>
-              </ul>
-            </p>
-          </div>
+          <div
+              className="pb-6"
+              dangerouslySetInnerHTML={{ __html: armor.deskripsi }}
+            />
         </div>
 
         {openModal && (
@@ -123,7 +166,8 @@ const IsiArmorProp = () => {
                     name="nama"
                     variant="outlined"
                     className="rounded-md outline-none"
-                    value={nameInputs}
+                    value={nameUser}
+                    onChange={(e) => setNameUser(e.target.value)}
                   />
                   <TextField
                     id="outlined-basic"
@@ -135,7 +179,7 @@ const IsiArmorProp = () => {
                   />
                 </FormControl>
                 <a
-                  href={`https://wa.me/+62${nomer}?text=Saya%20${nameInputs}%20dengan%20url%20${url}`}
+                  href={`https://wa.me/+62${nomorArmor}?text=Saya%20${nameUser}%20dengan%20url%20${currentUrl}`}
                   className="text-center py-2 bg-biruMuda-500 text-primary rounded-xl"
                 >
                   Ajukan!
