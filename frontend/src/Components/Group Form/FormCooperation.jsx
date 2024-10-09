@@ -55,6 +55,15 @@ export const FormSponsor = () => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setFilepdf(file);
+      setFileName(file.name);
+      setInputs((values) => ({ ...values, file: file }));
+    }
+  };
+
   const submitFormSponsor = async () => {
     const updatedInputs = {
       ...inputs,
@@ -63,6 +72,8 @@ export const FormSponsor = () => {
     const nameGenerated = updatedInputs.nama;
     const emailGenerated = updatedInputs.email;
     const nomorGenerated = updatedInputs.no_handphone;
+
+    console.log(updatedInputs);
 
     if (!inputs.lokasi) {
       setAlamatError(true);
@@ -94,75 +105,32 @@ export const FormSponsor = () => {
       setPdfError(false);
     }
 
-    const formData = new FormData();
-
-    const fieldsToInclude = [
-      "nama",
-      "email",
-      "no_handphone",
-      "nama_acara",
-      "tanggal_awal",
-      "tanggal_akhir",
-      "lokasi",
-      "file",
-      "catatan",
-    ];
-
-    axios
-      .post(`${localhostLink}/api/sponsor`, updatedInputs)
-      .then((response) => {
-        setNameInputs(nameGenerated);
-        setEmail(emailGenerated);
-        setNomor(nomorGenerated);
-        setOpenModal(true);
-        console.log(updatedInputs);
-      })
-      .catch((err) => {
-        setError("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
-        toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
-      });
-
-    fieldsToInclude.forEach((field) => {
-      if (updatedInputs[field] !== undefined && updatedInputs[field] !== null) {
-        formData.append(field, updatedInputs[field]);
-      }
-    });
-
-    if (filepdf) {
-      console.log("Appending file:", filepdf);
-      formData.append("pdf", filepdf);
-    }
-
-    for (const pair of formData.entries()) {
-      console.log(
-        `Field: ${pair[0]}, Value: ${
-          pair[1] instanceof File ? pair[1].name : pair[1]
-        }`
-      );
-    }
-
     try {
-      const response = await fetch(`${localhostLink}/api/branding`, {
+      const formData = new FormData();
+      for (const key in updatedInputs) {
+        formData.append(key, updatedInputs[key]);
+      }
+
+      const response = await fetch(`${localhostLink}/api/${value}`, {
         method: "POST",
         body: formData,
       });
 
       if (response.ok) {
         const result = await response.json();
+        setNameInputs(nameGenerated);
+        setEmail(emailGenerated);
+        setNomor(nomorGenerated);
+        setOpenModal(true);
         console.log("Success:", result);
+        toast.success("Data berhasil disimpan!");
       } else {
         console.error("Error:", response.statusText);
       }
     } catch (error) {
       console.error("Error:", error);
-    }
-  };
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setFilepdf(file);
-      setFileName(file.name);
+      setError("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
+      toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
     }
   };
 
@@ -430,47 +398,52 @@ export const FormBranding = () => {
 
     if (!inputs.lokasi) {
       setAlamatError(true);
-    } else {
-      setAlamatError(false);
+      return;
     }
 
     if (!inputs.nama_usaha) {
       setUsahaError(true);
-    } else {
-      setUsahaError(false);
+      return;
     }
 
     if (!inputs.bidang_usaha) {
       setBidangError(true);
-    } else {
-      setBidangError(false);
+      return;
     }
 
     if (!inputs.jenis_sponsor) {
       setSponsorError(true);
-    } else {
-      setSponsorError(false);
+      return;
     }
 
     try {
-      // Kirim data sebagai JSON
-      const response = await fetch(`${localhostLink}/api/branding`, {
+      const formData = new FormData();
+      for (const key in updatedInputs) {
+        formData.append(key, updatedInputs[key]);
+      }
+
+      if (filepdf) {
+        formData.append('file', filepdf);
+      }
+
+      const response = await fetch(`${localhostLink}/api/${value}`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedInputs), // Konversi objek ke JSON
+        body: formData,
       });
 
       if (response.ok) {
-        const result = await response.json(); // Ambil hasil sebagai JSON
+        const result = await response.json();
         setNameInputs(nameGenerated);
         setEmail(emailGenerated);
         setNomor(nomorGenerated);
         setOpenModal(true);
         console.log("Success:", result);
+        toast.success("Data berhasil disimpan!");
       } else {
-        console.error("Error:", response.statusText);
+        const errorData = await response.json();
+        console.error("Error:", errorData);
+        setError(errorData.message || "Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
+        toast.error(errorData.message || "Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -484,9 +457,9 @@ export const FormBranding = () => {
     if (file) {
       setFilepdf(file);
       setFileName(file.name);
+      setInputs((values) => ({ ...values, file: file }));
     }
   };
-
   return (
     <section
       className={`${styles.paddingY} ${styles.flexCenter} mx-14 md:mx-auto`}
