@@ -146,6 +146,8 @@ Route::middleware(['auth', 'AdminAkses:promosi,admin'])->group(function(){
 
     Route::get('/Sponsor', [SponsorController::class, 'index'])->name('sponsor.index');
     Route::get('/Brand', [BrandingController::class, 'viewBranding'])->name('brand.index');
+    Route::get('/Sponsor/{id}', [SponsorController::class, 'find'])->name('sponsor.find');
+    Route::get('/Brand/{id}', [BrandingController::class, 'find'])->name('brand.find');
 
 
 
