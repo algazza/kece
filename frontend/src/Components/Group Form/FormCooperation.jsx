@@ -34,7 +34,7 @@ import { toast } from "react-toastify";
 
 export const FormSponsor = () => {
   const [fileName, setFileName] = useState("File Tidak Terpilih");
-  const [filepdf, setFilepdf] = useState(null);\
+  const [filepdf, setFilepdf] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
