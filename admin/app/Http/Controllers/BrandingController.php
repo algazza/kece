@@ -57,7 +57,7 @@ class BrandingController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Data Berhasil Di Terima'
-            ])->header('Access-Control-Allow-Origin', '*');
+            ]);
         } catch (\Exception $e){
             return response()->json([
                 'success' => false,

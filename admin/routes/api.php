@@ -78,3 +78,5 @@ Route::get('/news/{slug}', [NewsController::class, 'show']);
 Route::get('/promo/{slug}', [PromoController::class, 'show']);
 Route::get('/armor/{slug}', [ArmorController::class, 'show']);
 Route::get('/laporan/download/{filename}', [LaporanController::class, 'download']);
+
+
