@@ -27,7 +27,6 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import SelectMap from "../../Layouts/SelectMap";
 import Maps from "../../Layouts/Maps";
-import PopUp from "../Modal/PopUp";
 import axios from "axios";
 import { localhostLink } from "../../helper/localhost";
 import PopUpCoop from "../Modal/PopUpCoop";
@@ -36,7 +35,6 @@ import { toast } from "react-toastify";
 export const FormSponsor = () => {
   const [fileName, setFileName] = useState("File Tidak Terpilih");
   const [filepdf, setFilepdf] = useState(null);
-  const [selectPosition, setSelectPosition] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -104,12 +102,28 @@ export const FormSponsor = () => {
               </div>
 
               <div className={`${styles.inputSpan}`}>
-                <SelectMap
-                  selectPosition={selectPosition}
-                  setSelectPosition={setSelectPosition}
-                />
-                <Maps selectPosition={selectPosition} />
-              </div>
+              {/* <span className={alamatError ? "text-red-500" : ""}>
+                Lokasi *
+              </span> */}
+              <TextareaAutosize
+                className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                  border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
+                  box-border`}
+                aria-label="Lokasi"
+                minRows={3}
+                placeholder="Lokasi"
+                name="lokasi"
+                // value={inputs.lokasi}
+                // onChange={(e) => {
+                //   handleChange(e);
+                //   setAlamatError(false);
+                // }}
+                required
+              />
+              {/* {alamatError && (
+                <FormHelperText error>Alamat perlu diisi</FormHelperText>
+              )} */}
+            </div>
             </DemoContainer>
           </LocalizationProvider>
 
