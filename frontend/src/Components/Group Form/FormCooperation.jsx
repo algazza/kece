@@ -25,8 +25,7 @@ import { ButtonFull } from "../Button";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import SelectMap from "../../Layouts/SelectMap";
-import Maps from "../../Layouts/Maps";
+
 import axios from "axios";
 import { localhostLink } from "../../helper/localhost";
 import PopUpCoop from "../Modal/PopUpCoop";
