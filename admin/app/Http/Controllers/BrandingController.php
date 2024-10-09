@@ -6,12 +6,12 @@ use App\Models\Branding;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ModelController extends Controller
+class BrandingController extends Controller
 {
 
     public function viewBranding(){
         $branding = Branding::orderBy('created_at', 'DESC')->get();
-        return view('admin.branding.view', compact('branding'));
+        return view('admin.sponsor_brand.Brand', compact('branding'));
     }
 
 
@@ -72,6 +72,6 @@ class ModelController extends Controller
 
     public function find($id){
         $branding = Branding::find($id);
-        return view('', compact('id'));
+        return view('admin.sponsor_brand.BrandData', compact('branding'));
     }
 }

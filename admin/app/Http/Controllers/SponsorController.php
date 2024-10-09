@@ -12,7 +12,7 @@ class SponsorController extends Controller
     {
 
         $sponsor = Sponsor::orderBy('created_at', 'DESC')->get();
-        return view('admin.Sponsor', compact('sponsor'));
+        return view('admin.sponsor_brand.Sponsor', compact('sponsor'));
     }
 
     public function store(Request $request)
@@ -38,12 +38,12 @@ class SponsorController extends Controller
 
         $sponsor->save();
 
-        return response()->json($sponsor);
+        return response()->json($sponsor)->header('Access-Control-Allow-Origin', '*');
     }
 
     public function find($id){
         $sponsor = Sponsor::find($id);
-        return view('', compact('id'));
+        return view('admin.sponsor_brand.SponsorData', compact('sponsor'));
     }
 
 

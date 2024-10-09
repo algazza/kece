@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\ArmorController;
 use App\Models\Kredit;
 use App\Models\Deposito;
 use Illuminate\Http\Request;
+use App\Models\ArmorProperty;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ArmorController;
 use App\Http\Controllers\PromoController;
 use Database\Seeders\RatedDepositoSeeder;
 use App\Http\Controllers\BannerController;
@@ -16,16 +17,16 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\NoAdminController;
 use App\Http\Controllers\PromosiController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\BrandingController;
 use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\TabunganController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManajemenController;
-use App\Http\Controllers\PejabatEksekutifController;
 use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\RatedKreditController;
 use App\Http\Controllers\StackholderController;
 use App\Http\Controllers\RatedDepositoController;
-use App\Models\ArmorProperty;
+use App\Http\Controllers\PejabatEksekutifController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,7 @@ Route::resource('deposito',DepositoController::class);
 Route::resource('tabungan',TabunganController::class);
 Route::resource('noAdmin',NoAdminController::class);
 Route::resource('sponsor',SponsorController::class);
+Route::resource('branding',BrandingController::class);
 Route::resource('laporan',LaporanController::class);
 Route::resource('penghargaan',PenghargaanController::class);
 Route::resource('manajemen',ManajemenController::class);
@@ -76,3 +78,5 @@ Route::get('/news/{slug}', [NewsController::class, 'show']);
 Route::get('/promo/{slug}', [PromoController::class, 'show']);
 Route::get('/armor/{slug}', [ArmorController::class, 'show']);
 Route::get('/laporan/download/{filename}', [LaporanController::class, 'download']);
+
+
