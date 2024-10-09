@@ -38,7 +38,7 @@ class SponsorController extends Controller
 
         $sponsor->save();
 
-        return response()->json($sponsor);
+        return response()->json($sponsor)->header('Access-Control-Allow-Origin', '*');
     }
 
     public function find($id){
