@@ -51,12 +51,14 @@
         <textarea name="textarea" id="text" class=" w-full resize-none rounded-md border border-slate-300 p-5 text-gray-500" id="readonlyinput" readonly> {{ $sponsor->catatan }} </textarea>
       </div>
     </div>
-    <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3 "><a href="" download class="flex items-center px-3 py-1 bg-white text-black border border-gray-700 rounded-lg shadow-lg hover:bg-gray-200 duration-300
-         transition">
-        <i class='bx bxs-file-pdf'></i>
-        <a href="{{ asset('image/public/sponsor/' . $sponsor->file )}}">Download PDF</a>
-      </a></p>
 
+    <a href="{{ asset('image/public/sponsor/' . $sponsor->file )}}" class="text-lg tracking-tight text-slate-900 py-[6px] px-3 ">
+      <div download class="flex brands-center px-3 py-1 bg-white text-black border border-gray-700 rounded-lg shadow-lg hover:bg-gray-200 duration-300
+         transition">
+        <i class='bx bxs-file-pdf'><p href="">Download PDF</p></i>
+        
+      </div>
+    </a>
   </div>
 </div>
     </section>
