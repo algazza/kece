@@ -30,10 +30,131 @@ import axios from "axios";
 import { localhostLink } from "../../helper/localhost";
 import PopUpCoop from "../Modal/PopUpCoop";
 import { toast } from "react-toastify";
+import dayjs from "dayjs";
 
 export const FormSponsor = () => {
-  const [fileName, setFileName] = useState("File Tidak Terpilih");
+  const [inputs, setInputs] = useState({});
+  const [nameInputs, setNameInputs] = useState("");
+  const [email, setEmail] = useState("");
+  const [nomor, setNomor] = useState("");
+  const [error, setError] = useState("");
+  const [usahaError, setUsahaError] = useState(false);
+  const [bidangError, setBidangError] = useState(false);
+  const [sponsorError, setSponsorError] = useState(false);
+  const [alamatError, setAlamatError] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const [filepdf, setFilepdf] = useState(null);
+  const [fileName, setFileName] = useState("File Tidak Terpilih");
+
+  const value = "Sponsor";
+
+  useEffect(() => {
+    setInputs((values) => ({ ...values, jenis: value }));
+  }, [value]);
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    let value = event.target.value;
+
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
+  const submitFormSponsor = async () => {
+    const updatedInputs = {
+      ...inputs,
+    };
+
+    const nameGenerated = updatedInputs.nama;
+    const emailGenerated = updatedInputs.email;
+    const nomorGenerated = updatedInputs.no_handphone;
+
+    if (!inputs.lokasi) {
+      setAlamatError(true);
+    } else {
+      setAlamatError(false);
+    }
+
+    if (!inputs.penghasilan_perbulan) {
+      setUsahaError(true);
+    } else {
+      setUsahaError(false);
+    }
+
+    if (!inputs.checkbox) {
+      setBidangError(true);
+    } else {
+      setBidangError(false);
+    }
+
+    if (!inputs.jenis_sponsor) {
+      setSponsorError(true);
+    } else {
+      setSponsorError(false);
+    }
+
+    const formData = new FormData();
+
+    const fieldsToInclude = [
+      "nama",
+      "email",
+      "no_handphone",
+      "nama_acara",
+      "tanggal_awal",
+      "tanggal_akhir",
+      "lokasi",
+      "file",
+      "catatan",
+    ];
+
+    axios
+      .post(`${localhostLink}/api/branding`, updatedInputs)
+      .then((response) => {
+        setNameInputs(nameGenerated);
+        setEmail(emailGenerated);
+        setNomor(nomorGenerated);
+        setOpenModal(true);
+        console.log(updatedInputs);
+      })
+      .catch((err) => {
+        setError("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
+        toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
+      });
+
+    fieldsToInclude.forEach((field) => {
+      if (updatedInputs[field] !== undefined && updatedInputs[field] !== null) {
+        formData.append(field, updatedInputs[field]);
+      }
+    });
+
+    if (filepdf) {
+      console.log("Appending file:", filepdf);
+      formData.append("pdf", filepdf);
+    }
+
+    for (const pair of formData.entries()) {
+      console.log(
+        `Field: ${pair[0]}, Value: ${
+          pair[1] instanceof File ? pair[1].name : pair[1]
+        }`
+      );
+    }
+
+    try {
+      const response = await fetch(`${localhostLink}/api/branding`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Success:", result);
+      } else {
+        console.error("Error:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -62,12 +183,12 @@ export const FormSponsor = () => {
                 variant="outlined"
                 className="rounded-md outline-none"
                 required
-                // value={inputs[iden.id]}
-                // onChange={handleChange}
-                // error={error && !inputs[iden.id]}
-                // helperText={
-                //   error && !inputs[iden.id] ? `${iden.title} perlu diisi` : ""
-                // }
+                value={inputs[iden.id]}
+                onChange={handleChange}
+                error={error && !inputs[iden.id]}
+                helperText={
+                  error && !inputs[iden.id] ? `${iden.title} perlu diisi` : ""
+                }
               />
             ))}
           </div>
@@ -82,47 +203,77 @@ export const FormSponsor = () => {
                 id="outlined-basic"
                 label={"Nama Acara"}
                 type={"text"}
-                name={"nama acara"}
+                name={"nama_acara"}
                 variant="outlined"
                 className="rounded-md outline-none"
                 required
-                // value={inputs[iden.id]}
+                // value={inputs.nama_acara}
                 // onChange={handleChange}
-                // error={error && !inputs[iden.id]}
+                // error={acaraError && !inputs.nama_acara}
                 // helperText={
-                //   error && !inputs[iden.id] ? `${iden.title} perlu diisi` : ""
+                //   acaraError && !inputs.nama_acara ? `nama acara perlu diisi` : ""
                 // }
               />
 
               <div className="flex flex-col sm:flex-row justify-between gap-2 items-center">
-                <DatePicker label="Tanggal Awal Acara" />
+                <DatePicker
+                  label="Tanggal Awal Acara"
+                  value={
+                    inputs.tanggal_awal
+                      ? dayjs(inputs.tanggal_awal, "DD/MM/YYYY")
+                      : null
+                  }
+                  onChange={(newValue) =>
+                    handleChange({
+                      target: {
+                        name: "tanggal",
+                        value: newValue.format("DD/MM/YYYY"),
+                      },
+                    })
+                  }
+                />
                 <span className="md:block hidden">sampai</span>
-                <DatePicker label="Tanggal Akhir Acara" />
+                <DatePicker
+                  label="Tanggal Akhir Acara"
+                  value={
+                    inputs.tanggal_akhir
+                      ? dayjs(inputs.tanggal_akhir, "DD/MM/YYYY")
+                      : null
+                  }
+                  onChange={(newValue) =>
+                    handleChange({
+                      target: {
+                        name: "tanggal",
+                        value: newValue.format("DD/MM/YYYY"),
+                      },
+                    })
+                  }
+                />
               </div>
 
               <div className={`${styles.inputSpan}`}>
-              {/* <span className={alamatError ? "text-red-500" : ""}>
+                {/* <span className={alamatError ? "text-red-500" : ""}>
                 Lokasi *
               </span> */}
-              <TextareaAutosize
-                className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
+                <TextareaAutosize
+                  className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
                   border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
                   box-border`}
-                aria-label="Lokasi"
-                minRows={3}
-                placeholder="Lokasi"
-                name="lokasi"
-                // value={inputs.lokasi}
-                // onChange={(e) => {
-                //   handleChange(e);
-                //   setAlamatError(false);
-                // }}
-                required
-              />
-              {/* {alamatError && (
+                  aria-label="Lokasi"
+                  minRows={3}
+                  placeholder="Lokasi"
+                  name="lokasi"
+                  // value={inputs.lokasi}
+                  // onChange={(e) => {
+                  //   handleChange(e);
+                  //   setAlamatError(false);
+                  // }}
+                  required
+                />
+                {/* {alamatError && (
                 <FormHelperText error>Alamat perlu diisi</FormHelperText>
               )} */}
-            </div>
+              </div>
             </DemoContainer>
           </LocalizationProvider>
 
@@ -242,13 +393,13 @@ export const FormBranding = () => {
       setAlamatError(false);
     }
 
-    if (!inputs.penghasilan_perbulan) {
+    if (!inputs.nama_usaha) {
       setUsahaError(true);
     } else {
       setUsahaError(false);
     }
 
-    if (!inputs.checkbox) {
+    if (!inputs.bidang_usaha) {
       setBidangError(true);
     } else {
       setBidangError(false);
