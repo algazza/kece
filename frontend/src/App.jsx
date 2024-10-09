@@ -62,7 +62,7 @@ const router = createBrowserRouter([
         element: <ArmorProp />,
       },
       {
-        path: "armor-properti/hash",
+        path: "armor-properti/:slug",
         element: <IsiArmorProp />,
       },
       {

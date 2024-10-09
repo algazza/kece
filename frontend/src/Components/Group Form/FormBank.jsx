@@ -390,7 +390,7 @@ const FormBank = ({
                 </FormHelperText>
               )}
             </FormGroup>
-            <span className="text-merahh-400">
+            <span className="text-merahh-300">
               * Form ini bukan merupakan pengajuan resmi
             </span>
             <span>
@@ -407,8 +407,7 @@ const FormBank = ({
           <ButtonFull
             WidthButton="w-36"
             WidthShadow="w-40"
-            onClick={value === "Sponsor" ? submitFormSponsor : submitForm}
-            // onClick={submitForm}
+            onClick={submitForm}
           >
             Hubungi Kami
           </ButtonFull>
