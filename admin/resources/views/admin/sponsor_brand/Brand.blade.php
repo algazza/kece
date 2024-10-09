@@ -30,50 +30,9 @@
             </div>
         </div>
     </div>
-    <ul role="list"
-    class="mx-auto mt-8 grid max-w-2xl xss:ml-[1rem] xs:ml-[1rem] ml-[5rem]  grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
-    @foreach ($sponsor as $item)
-
-    <div class="relative mx-auto max-w-md rounded-lg bg-gradient-to-tr from-white to-white p-0.5 shadow-lg">
-        <div class="bg-white p-7 rounded-md">
-            <div class="flex">
-                <div class="font-display text-base text-slate-900 font-normal">{{ $item->bidang_usaha }}</div>
-                <div class="px-2 border-r-2 border-gray-200"></div>
-                <div class="font-display font-semibold text-base text-slate-900 px-2">{{ $item->jenis_sponsor }}</div>
-            </div>
-            <div class="py-2">
-                <div class="flex">
-                    <div>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px]">Name</p>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px]">Nik</p>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px]">Email</p>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px]">Alamat</p>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px]">No Hp</p>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px]">Usaha</p>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px]">Notes</p>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px]">Proposal :</p>
-                    </div>
-                    <div>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->nik }}</p>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> :</p>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->alamat }}</p>
-                        <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->no_handphone }}</p>
-                        <p class="text-lg tracking-tight text-slate-900 py-[5px] px-3"> : {{ $item->nama_usaha }}</p>
-                        <div class="flex flex-col">
-                            <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3"> : {{ $item->catatan }}</p>
-                            <p class="text-lg tracking-tight text-slate-900 py-[6px] px-3">  <a href="{{ asset('image/public/sponsor/' . $item->pdf) }}" download class="flex items-center px-3 py-1 bg-white text-black hover:text-white rounded-lg shadow-lg hover:bg-red-600 transition">
-                                <i class='bx bxs-file-pdf'></i>
-                                <span>Download PDF</span>
-                            </a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-              </div>
-              @endforeach
-            </ul>
-            <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 md2:grid-cols-2 sm:grid-cols-1 gap-1">
+            <ul role="list"
+            class="mx-auto mt-8 grid max-w-2xl xss:ml-[1rem] xs:ml-[1rem] ml-[5rem]  grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
+            @foreach ($sponsor as $item)
                 <div class="bg-white rounded-3xl mx-4 md:mx-auto max-w-screen-md border-2 border-gray-400 mt-16">
                     <div class="px-8 py-6 md:p-10">
                         <div class="flex">
@@ -91,6 +50,8 @@
 
                 </div>
             </div>
+            @endforeach
+            </ul>
         </div>
     </section>
 </section>
