@@ -13,17 +13,13 @@ class Sponsor extends Model
 
     protected $fillable = [
         'nama',
-        'nik',
         'email',
-        'alamat',
         'no_handphone',
-        'bidang_usaha',
-        'nama_usaha',
-        'catatan',
-        'jenis_sponsor',
-        'jenis',
-        'ip_user',
-        'code',
-        'pdf,'
+        'nama_acara',
+        'tanggal_awal',
+        'tanggal_akhir',
+        'lokasi',
+        'file',
+        'catatan'
     ];
 }
