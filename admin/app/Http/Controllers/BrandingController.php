@@ -69,4 +69,9 @@ class ModelController extends Controller
         
 
     }
+
+    public function find($id){
+        $branding = Branding::find($id);
+        return view('', compact('id'));
+    }
 }
