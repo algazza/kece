@@ -37,26 +37,31 @@ export const FormSponsor = () => {
   const [email, setEmail] = useState("");
   const [nomor, setNomor] = useState("");
   const [error, setError] = useState("");
-  const [usahaError, setUsahaError] = useState(false);
-  const [awalError, setAwalError] = useState(false)
-  const [akhirError, setAkhirError] = useState(false)
+  const [acaraError, setAcaraError] = useState(false);
+  const [awalError, setAwalError] = useState(false);
+  const [akhirError, setAkhirError] = useState(false);
   const [alamatError, setAlamatError] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  const [pdfError, setPdfError] = useState(false)
+  const [pdfError, setPdfError] = useState(false);
   const [filepdf, setFilepdf] = useState(null);
   const [fileName, setFileName] = useState("File Tidak Terpilih");
 
-  const value = "Sponsor";
-
-  useEffect(() => {
-    setInputs((values) => ({ ...values, jenis: value }));
-  }, [value]);
+  const value = "sponsor";
 
   const handleChange = (event) => {
     const name = event.target.name;
     let value = event.target.value;
 
     setInputs((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setFilepdf(file);
+      setFileName(file.name);
+      setInputs((values) => ({ ...values, file: file }));
+    }
   };
 
   const submitFormSponsor = async () => {
@@ -68,6 +73,8 @@ export const FormSponsor = () => {
     const emailGenerated = updatedInputs.email;
     const nomorGenerated = updatedInputs.no_handphone;
 
+    console.log(updatedInputs);
+
     if (!inputs.lokasi) {
       setAlamatError(true);
     } else {
@@ -75,9 +82,9 @@ export const FormSponsor = () => {
     }
 
     if (!inputs.nama_acara) {
-      setUsahaError(true);
+      setAcaraError(true);
     } else {
-      setUsahaError(false);
+      setAcaraError(false);
     }
 
     if (!inputs.tanggal_awal) {
@@ -98,75 +105,32 @@ export const FormSponsor = () => {
       setPdfError(false);
     }
 
-    const formData = new FormData();
-
-    const fieldsToInclude = [
-      "nama",
-      "email",
-      "no_handphone",
-      "nama_acara",
-      "tanggal_awal",
-      "tanggal_akhir",
-      "lokasi",
-      "file",
-      "catatan",
-    ];
-
-    axios
-      .post(`${localhostLink}/api/branding`, updatedInputs)
-      .then((response) => {
-        setNameInputs(nameGenerated);
-        setEmail(emailGenerated);
-        setNomor(nomorGenerated);
-        setOpenModal(true);
-        console.log(updatedInputs);
-      })
-      .catch((err) => {
-        setError("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
-        toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
-      });
-
-    fieldsToInclude.forEach((field) => {
-      if (updatedInputs[field] !== undefined && updatedInputs[field] !== null) {
-        formData.append(field, updatedInputs[field]);
-      }
-    });
-
-    if (filepdf) {
-      console.log("Appending file:", filepdf);
-      formData.append("pdf", filepdf);
-    }
-
-    for (const pair of formData.entries()) {
-      console.log(
-        `Field: ${pair[0]}, Value: ${
-          pair[1] instanceof File ? pair[1].name : pair[1]
-        }`
-      );
-    }
-
     try {
-      const response = await fetch(`${localhostLink}/api/branding`, {
+      const formData = new FormData();
+      for (const key in updatedInputs) {
+        formData.append(key, updatedInputs[key]);
+      }
+
+      const response = await fetch(`${localhostLink}/api/${value}`, {
         method: "POST",
         body: formData,
       });
 
       if (response.ok) {
         const result = await response.json();
+        setNameInputs(nameGenerated);
+        setEmail(emailGenerated);
+        setNomor(nomorGenerated);
+        setOpenModal(true);
         console.log("Success:", result);
+        toast.success("Data berhasil disimpan!");
       } else {
         console.error("Error:", response.statusText);
       }
     } catch (error) {
       console.error("Error:", error);
-    }
-  };
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setFilepdf(file);
-      setFileName(file.name);
+      setError("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
+      toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
     }
   };
 
@@ -213,12 +177,14 @@ export const FormSponsor = () => {
                 variant="outlined"
                 className="rounded-md outline-none"
                 required
-                // value={inputs.nama_acara}
-                // onChange={handleChange}
-                // error={acaraError && !inputs.nama_acara}
-                // helperText={
-                //   acaraError && !inputs.nama_acara ? `nama acara perlu diisi` : ""
-                // }
+                value={inputs.nama_acara}
+                onChange={handleChange}
+                error={acaraError && !inputs.nama_acara}
+                helperText={
+                  acaraError && !inputs.nama_acara
+                    ? `nama acara perlu diisi`
+                    : ""
+                }
               />
 
               <div className="flex flex-col sm:flex-row justify-between gap-2 items-center">
@@ -232,7 +198,7 @@ export const FormSponsor = () => {
                   onChange={(newValue) =>
                     handleChange({
                       target: {
-                        name: "tanggal",
+                        name: "tanggal_awal",
                         value: newValue.format("DD/MM/YYYY"),
                       },
                     })
@@ -249,49 +215,70 @@ export const FormSponsor = () => {
                   onChange={(newValue) =>
                     handleChange({
                       target: {
-                        name: "tanggal",
+                        name: "tanggal_akhir",
                         value: newValue.format("DD/MM/YYYY"),
                       },
                     })
                   }
                 />
               </div>
+              {awalError || akhirError ? (
+                <p
+                  className={`text-merahh-500 text-center ${styles.fontSmall}`}
+                >
+                  Tanggal Belom terisi
+                </p>
+              ) : (
+                ""
+              )}
 
               <div className={`${styles.inputSpan}`}>
-                {/* <span className={alamatError ? "text-red-500" : ""}>
-                Lokasi *
-              </span> */}
+                <span className={alamatError ? "text-red-500" : ""}>
+                  Lokasi *
+                </span>
                 <TextareaAutosize
                   className={`resize-none text-sm font-sans font-normal leading-5 px-3 py-2 rounded-lg 
                   border hover:border-black focus:border-blue-600 focus:border-2 focus-visible:outline-0 
-                  box-border`}
+                  box-border ${
+                    alamatError
+                      ? "border-red-500 hover:border-red-500 text-red-500 focus:border-red-600"
+                      : "border-slate-300"
+                  }`}
                   aria-label="Lokasi"
                   minRows={3}
                   placeholder="Lokasi"
                   name="lokasi"
-                  // value={inputs.lokasi}
-                  // onChange={(e) => {
-                  //   handleChange(e);
-                  //   setAlamatError(false);
-                  // }}
+                  value={inputs.lokasi}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setAlamatError(false);
+                  }}
                   required
                 />
-                {/* {alamatError && (
-                <FormHelperText error>Alamat perlu diisi</FormHelperText>
-              )} */}
+                {alamatError && (
+                  <FormHelperText error>Alamat perlu diisi</FormHelperText>
+                )}
               </div>
             </DemoContainer>
           </LocalizationProvider>
 
           <div>
             <div
-              className={`${styles.flexCenter} p-4 flex-col w-full h-[250px] mt-4 border-2 border-dashed border-slate-300 cursor-pointer rounded-[5px]`}
+              className={`${
+                styles.flexCenter
+              } p-4 flex-col w-full h-[250px] mt-4 border-2 border-dashed cursor-pointer rounded-[5px] ${
+                pdfError ? "border-red-500 text-red-500" : "border-slate-300"
+              }`}
               onClick={() => document.querySelector(".input-file").click()}
             >
               <input
                 type="file"
-                name="pdf"
-                onChange={handleFileChange}
+                name="file"
+                onChange={(e) => {
+                  handleFileChange(e);
+                  setPdfError(false);
+                }}
+                required
                 className="input-file"
                 hidden
                 // accept=".pdf, .png"
@@ -309,14 +296,22 @@ export const FormSponsor = () => {
               )}
             </div>
 
-            <div className="my-2 flex justify-between items-center py-4 px-5 rounded-[10px] bg-slate-300">
+            <div
+              className={`my-2 flex justify-between items-center py-4 px-5 rounded-[10px] ${
+                pdfError ? "bg-merahh-500 text-white" : "bg-slate-200"
+              }`}
+            >
               <PictureAsPdfIcon />
               <span className="flex items-center">
                 {fileName} -
                 <DeleteIcon
-                  className="text-merahh-500 cursor-pointer"
+                  className={`cursor-pointer ${
+                    pdfError ? "text-white" : "text-merahh-500"
+                  }`}
                   onClick={() => {
-                    setFileName("Tidak Ada File");
+                    setFileName(
+                      pdfError ? "File Harus Diisi" : "Tidak Ada File"
+                    );
                     setFilepdf(null);
                   }}
                 />
@@ -334,8 +329,8 @@ export const FormSponsor = () => {
               minRows={3}
               placeholder="Catatan"
               name="catatan"
-              // value={inputs.catatan || ""}
-              // onChange={handleChange}
+              value={inputs.catatan || ""}
+              onChange={handleChange}
               required
             />
           </div>
@@ -351,7 +346,7 @@ export const FormSponsor = () => {
           </ButtonFull>
           {/* {error && <p className="text-red-500">{error}</p>} */}
         </div>
-        
+
         {openModal && (
           <PopUpCoop
             nama={nameInputs}
@@ -394,56 +389,61 @@ export const FormBranding = () => {
     const updatedInputs = {
       ...inputs,
     };
-  
+
     const nameGenerated = updatedInputs.nama;
     const emailGenerated = updatedInputs.email;
     const nomorGenerated = updatedInputs.no_handphone;
 
-    console.log(updatedInputs)
-  
+    console.log(updatedInputs);
+
     if (!inputs.lokasi) {
       setAlamatError(true);
-    } else {
-      setAlamatError(false);
+      return;
     }
-  
+
     if (!inputs.nama_usaha) {
       setUsahaError(true);
-    } else {
-      setUsahaError(false);
+      return;
     }
-  
+
     if (!inputs.bidang_usaha) {
       setBidangError(true);
-    } else {
-      setBidangError(false);
+      return;
     }
-  
+
     if (!inputs.jenis_sponsor) {
       setSponsorError(true);
-    } else {
-      setSponsorError(false);
+      return;
     }
-  
+
     try {
-      // Kirim data sebagai JSON
-      const response = await fetch(`${localhostLink}/api/branding`, {
+      const formData = new FormData();
+      for (const key in updatedInputs) {
+        formData.append(key, updatedInputs[key]);
+      }
+
+      if (filepdf) {
+        formData.append('file', filepdf);
+      }
+
+      const response = await fetch(`${localhostLink}/api/${value}`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedInputs), // Konversi objek ke JSON
+        body: formData,
       });
-  
+
       if (response.ok) {
-        const result = await response.json(); // Ambil hasil sebagai JSON
+        const result = await response.json();
         setNameInputs(nameGenerated);
         setEmail(emailGenerated);
         setNomor(nomorGenerated);
         setOpenModal(true);
         console.log("Success:", result);
+        toast.success("Data berhasil disimpan!");
       } else {
-        console.error("Error:", response.statusText);
+        const errorData = await response.json();
+        console.error("Error:", errorData);
+        setError(errorData.message || "Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
+        toast.error(errorData.message || "Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -451,16 +451,15 @@ export const FormBranding = () => {
       toast.error("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
     }
   };
-  
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       setFilepdf(file);
       setFileName(file.name);
+      setInputs((values) => ({ ...values, file: file }));
     }
   };
-
   return (
     <section
       className={`${styles.paddingY} ${styles.flexCenter} mx-14 md:mx-auto`}
@@ -612,7 +611,7 @@ export const FormBranding = () => {
             >
               <input
                 type="file"
-                name="pdf"
+                name="file"
                 onChange={handleFileChange}
                 className="input-file"
                 hidden

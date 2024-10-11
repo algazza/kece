@@ -116,67 +116,6 @@ const FormBank = ({
     return code;
   };
 
-  const submitFormSponsor = async () => {
-    const codeGenerated = generateCode();
-    const updatedInputs = {
-      ...inputs,
-      code: codeGenerated,
-      ip_user: ip,
-    };
-
-    const formData = new FormData();
-
-    const fieldsToInclude = [
-      "nama",
-      "nik",
-      "email",
-      "alamat",
-      "no_handphone",
-      "bidang_usaha",
-      "nama_usaha",
-      "catatan",
-      "jenis_sponsor",
-      "jenis",
-      "ip_user",
-      "code",
-    ];
-
-    fieldsToInclude.forEach((field) => {
-      if (updatedInputs[field] !== undefined && updatedInputs[field] !== null) {
-        formData.append(field, updatedInputs[field]);
-      }
-    });
-
-    if (filepdf) {
-      console.log("Appending file:", filepdf);
-      formData.append("pdf", filepdf);
-    }
-
-    for (const pair of formData.entries()) {
-      console.log(
-        `Field: ${pair[0]}, Value: ${
-          pair[1] instanceof File ? pair[1].name : pair[1]
-        }`
-      );
-    }
-
-    try {
-      const response = await fetch(`${endpoint}`, {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        console.log("Success:", result);
-      } else {
-        console.error("Error:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
   const submitForm = () => {
     const codeGenerated = generateCode();
     const updatedInputs = {
@@ -230,6 +169,7 @@ const FormBank = ({
         setNik(nikGenerated);
         setOpenModal(true);
         console.log(updatedInputs);
+        toast.success("Data berhasil disimpan!");
       })
       .catch((err) => {
         setError("Gagal Memasukkan Data, Mohon Perhatikan Lagi!");
