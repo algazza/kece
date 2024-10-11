@@ -17,28 +17,31 @@ class SponsorController extends Controller
 
     public function store(Request $request)
     {
-        $sponsor = new Sponsor();
-
-        $sponsor->nama = $request->nama;
-        $sponsor->email = $request->email;
-        $sponsor->no_handphone = $request->no_handphone;
-        $sponsor->nama_acara = $request->nama_acara;
-        $sponsor->tanggal_awal = $request->tanggal_awal;
-        $sponsor->tanggal_akhir = $request->tanggal_akhir;
-        $sponsor->lokasi = $request->lokasi;
-        $sponsor->catatan = $request->tanggal_akhir;
-
-
-        if ($request->hasFile('file')) {
-            $fileName = time() . '.' . $request->file->getClientOriginalExtension();
-            $request->file->move(public_path('image/public/sponsor'), $fileName);
-            $sponsor->file = $fileName;
+        try{
+            $sponsor = new Sponsor();
+            $sponsor->nama = $request->nama;
+            $sponsor->email = $request->email;
+            $sponsor->no_handphone = $request->no_handphone;
+            $sponsor->nama_acara = $request->nama_acara;
+            $sponsor->tanggal_awal = $request->tanggal_awal;
+            $sponsor->tanggal_akhir = $request->tanggal_akhir;
+            $sponsor->lokasi = $request->lokasi;
+            $sponsor->catatan = $request->tanggal_akhir;
+    
+    
+            if ($request->hasFile('file')) {
+                $fileName = time() . '.' . $request->file->getClientOriginalExtension();
+                $request->file->move(public_path('image/public/sponsor'), $fileName);
+                $sponsor->file = $fileName;
+            }
+    
+    
+            $sponsor->save();
+    
+            return response()->json($sponsor);
+        } catch(\Exception $e){
+            return response()->json($e);
         }
-
-
-        $sponsor->save();
-
-        return response()->json($sponsor)->header('Access-Control-Allow-Origin', '*');
     }
 
     public function find($id){
