@@ -61,7 +61,7 @@ const Error = ({ message, status }) => {
             </button>
 
             <Link
-              to="/newwebsite"
+              to="/"
               className="flex gap-2 py-2 px-4 bg-abuGelap text-primary cursor-pointer w-fit rounded-lg"
             >
               <HomeIcon width={20} />

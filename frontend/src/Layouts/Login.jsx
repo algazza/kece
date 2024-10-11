@@ -19,7 +19,6 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-
   // visibility password
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
@@ -39,7 +38,7 @@ const Login = () => {
       localStorage.setItem("passkey", password);
       localStorage.setItem("isAuthenticated", "true");
       setError("");
-      navigate("/newwebsite");
+      navigate("/");
     } else {
       setError("Passkey salah");
     }
@@ -48,7 +47,7 @@ const Login = () => {
   //   mengecek setelah jika seseorang berhasil login
   const isAuthenticated = localStorage.getItem("passkey");
   if (isAuthenticated) {
-    return <Navigate to="/newwebsite" />;
+    return <Navigate to="/" />;
   }
 
   return (

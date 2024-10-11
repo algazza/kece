@@ -28,17 +28,13 @@ import MainLayout from "./MainLayout.jsx";
 import Digital from "./Pages/Digital.jsx";
 import MobilKas from "./Pages/MobilKas.jsx";
 import Location from "./Pages/Location.jsx";
-import ArmorProp from "@/Pages/ArmorProp.jsx";
-import IsiArmorProp from "@/Pages/IsiArmorProp.jsx";
+import ArmorProp from "./Pages/ArmorProp.jsx";
+import IsiArmorProp from "./Pages/IsiArmorProp.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/newwebsite",
-    element: (
-        <MainLayout />
-      // <ProtectedRoute>
-      // </ProtectedRoute>
-    ),
+    path: "/",
+    element: <MainLayout />,
     errorElement: <Error />,
     children: [
       {
@@ -71,7 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: "mobil-kas",
-        element: <MobilKas/>,
+        element: <MobilKas />,
       },
       {
         path: "promo",
@@ -135,11 +131,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "login",
-  //   element: <Login />,
-  // },
-]);
+], {
+  basename: "/new"
+});
 
 const App = () => {
   return (

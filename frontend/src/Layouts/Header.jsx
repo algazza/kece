@@ -1,6 +1,11 @@
 import styles from "../helper/style";
 import { useEffect, useState } from "react";
-import {headerLayanan, headerProduk, headerTentangKami, logoArmor} from "../helper";
+import {
+  headerLayanan,
+  headerProduk,
+  headerTentangKami,
+  logoArmor,
+} from "../helper";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
@@ -45,7 +50,7 @@ const Header = () => {
           className={`list-none sm:flex hidden justify-end items-center flex-1 gap-12 ${styles.fontBody} font-semibold`}
         >
           <li>
-            <FlyoutLink href={"/newwebsite"}>Home</FlyoutLink>
+            <FlyoutLink href={"/"}>Home</FlyoutLink>
           </li>
           <li>
             <FlyoutLink FlyoutContent={Product}>Produk</FlyoutLink>
@@ -103,9 +108,13 @@ const Header = () => {
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
                             {headerProduk.map((produk, index) => (
-                                <Link onClick={index === 3 ? "" : "() => setMenu(0)"} key={produk.title} to={produk.link}>
-                                  {produk.title}
-                                </Link>
+                              <Link
+                                onClick={index === 3 ? "" : "() => setMenu(0)"}
+                                key={produk.title}
+                                to={produk.link}
+                              >
+                                {produk.title}
+                              </Link>
                             ))}
                           </li>
                         </ul>
@@ -127,7 +136,9 @@ const Header = () => {
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
                             {headerLayanan.map((layanan) => (
-                              <Link key={layanan.title} to={layanan.link}>{layanan.title}</Link>
+                              <Link key={layanan.title} to={layanan.link}>
+                                {layanan.title}
+                              </Link>
                             ))}
                           </li>
                         </ul>
@@ -153,7 +164,9 @@ const Header = () => {
                         <ul>
                           <li className="flex flex-col gap-4 pl-4 text-abuGelap border-l-2 border-l-abuGelap">
                             {headerTentangKami.map((kami) => (
-                                <Link key={kami.title} to={kami.link}>{kami.title}</Link>
+                              <Link key={kami.title} to={kami.link}>
+                                {kami.title}
+                              </Link>
                             ))}
                           </li>
                         </ul>
@@ -234,7 +247,7 @@ const Service = () => {
     { name: "Pick Up Service", link: "pick-up-service" },
     { name: "Pengaduan", link: "mailto:info@bprartomoro.co.id" },
   ];
-  
+
   return <MenuList items={items} />;
 };
 
@@ -258,7 +271,9 @@ const MenuList = ({ items }) => {
       <ul className="flex flex-col text-center flex-1 gap-2">
         {items.map((item, index) => (
           <li key={index} className="hover:text-merahh-500 duration-300">
-            <Link to={item.link} onClick={item.onclcik}>{item.name}</Link>
+            <Link to={item.link} onClick={item.onclcik}>
+              {item.name}
+            </Link>
           </li>
         ))}
       </ul>

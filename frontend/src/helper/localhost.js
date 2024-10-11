@@ -1,2 +1,2 @@
-export const localhostLink = "https://armor-dev.dgx-lab.com/newwebsite/admin/public";
-export const urlLink = "https://armor-dev.dgx-lab.com/newwebsite/img"
+export const localhostLink = "https://bprartomoro.co.id/new/admin/public";
+export const urlLink = "https://bprartomoro.co.id/new/img";
