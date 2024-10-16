@@ -92,7 +92,7 @@ const WaInput = ({ handleModal }) => {
               className={`bg-[#12a50b] px-4 py-2 rounded-md text-primary font-semibold text-center`}
               href={
                 nameUser || produkSelect == true 
-                  ? `https://wa.me/+62${nomorInduk}?text=halo,%20saya%20${nameUser}%20ingin%20mengetahui%20lebih%20lanjut%20mengenai%20${produkSelect}.${pengaduan}`
+                  ? `https://wa.me/+62${nomorInduk}?text=halo,%20saya%20${nameUser}%20ingin%20mengetahui%20lebih%20lanjut%20mengenai%20${produkSelect}.%20${pengaduan}`
                   : `https://wa.me/+62${nomorInduk}?text=Halo`
               }
               target="_blank"
