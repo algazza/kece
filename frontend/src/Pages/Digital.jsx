@@ -4,6 +4,7 @@ import TitleBlueBanner from '../Layouts/TitleBlueBanner'
 import IntroBanner from '../Layouts/IntroBanner'
 import { BlueBanner } from '../helper'
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import { Link } from 'react-router-dom'
 
 const buttonMenuDigital = [
   {
@@ -88,8 +89,8 @@ const Digital = () => {
         >
           {/* menu button */}
           {buttonMenuDigital.map((menu, index) => (
-            <a
-              href="#section2"
+            <Link
+              to="#section2"
               className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-[300px] flex flex-col items-center align-middle text-center cursor-pointer`}
               key={index}
               // onClick={() => updateMenu(menu.id)}
@@ -97,7 +98,7 @@ const Digital = () => {
               {menu.icon("m-2 text-blue-400")}
               <h6 className={`${styles.heading6}`}>{menu.title}</h6>
               <p className="mt-4">{menu.deskripsi}</p>
-            </a>
+            </Link>
           ))}
         </section>
     </>

@@ -16,6 +16,7 @@ import { localhostLink } from "../../helper/localhost";
 import TabelBiaya from "../../Components/TabelBiaya";
 import { TabelSimKredit } from "../../Components/TabelSim";
 import { useMenu } from "../../MenuProvider";
+import { Link } from "react-router-dom";
 
 // ===================================================
 const buttonMenuProduk = [
@@ -108,8 +109,8 @@ const SyaratKredit = () => {
         >
           {/* menu button */}
           {buttonMenuProduk.map((menu, index) => (
-            <a
-              href="#section2"
+            <Link
+              to="#section2"
               className={`bg-abuTerang drop-shadow-lg rounded-lg p-5 w-[300px] flex flex-col items-center align-middle text-center cursor-pointer`}
               key={index}
               onClick={() => updateMenu(menu.id)}
@@ -117,7 +118,7 @@ const SyaratKredit = () => {
               {menu.icon("m-2 text-blue-400")}
               <h6 className={`${styles.heading6}`}>{menu.title}</h6>
               <p className="mt-4">{menu.deskripsi}</p>
-            </a>
+            </Link>
           ))}
         </section>
       ) : null}
@@ -241,31 +242,31 @@ const SyaratKredit = () => {
 
             {/* Button next prev */}
             <section className="flex justify-center gap-4">
-              <a
-                href="#section2"
+              <Link
+                to="#section2"
                 onClick={() => updateMenu(0)}
                 className={`bg-biruMuda-700 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Kembali Menu
-              </a>
-              <a
-                href="#section2"
+              </Link>
+              <Link
+                to="#section2"
                 onClick={() => prevTab(tabs)}
                 className={`${
                   tabs === 1 && "hidden"
                 } text-biruMuda-500 border-biruMuda-500 hover:bg-biruMuda-500 hover:text-primary duration-500 border-2 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Sebelumnya
-              </a>
-              <a
-                href="#section2"
+              </Link>
+              <Link
+                to="#section2"
                 onClick={() => nextTab(tabs)}
                 className={`${
                   tabs === 5 && "hidden"
                 } bg-biruMuda-500 text-primary hover:text-biruMuda-500 hover:border-biruMuda-500 hover:bg-primary hover:border-2 duration-500 px-4 py-2 rounded-md font-bold cursor-pointer`}
               >
                 Lanjut
-              </a>
+              </Link>
             </section>
           </section>
         ) : null;
