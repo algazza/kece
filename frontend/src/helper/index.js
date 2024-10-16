@@ -15,8 +15,8 @@ export const phoneimg = `${urlLink}/phoneimg.svg`;
 export const BennerLiv = `${urlLink}/sampleliv.svg`;
 export const loaderIcon = `${urlLink}/loadingIconArmor.svg`;
 export const ImageSimulasi = `${urlLink}/BankImageSimulasi.svg`;
-export const TiktokIcon = `${urlLink}/tiktok-fill.svg`;
 export const ThumbnailYoutube = `${urlLink}/thumbnailYoutube.png`;
+export const TiktokIcon = `${urlLink}/tiktok-fill.svg`;
 
 // ======================== HEADER =============
 export const headerProduk = [

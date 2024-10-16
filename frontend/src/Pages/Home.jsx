@@ -26,7 +26,6 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import PublicIcon from "@mui/icons-material/Public";
 import FeedIcon from "@mui/icons-material/Feed";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import CloseIcon from "@mui/icons-material/Close";
 import SimulasiCalcKredit from "../Components/Simulasi/SimulasiCalcKredit";
 import SimulasiCalcDeposito from "../Components/Simulasi/SimulasiCalcDeposito";
 import SimulasiCalcTabungan from "../Components/Simulasi/SimulasiCalcTabungan";

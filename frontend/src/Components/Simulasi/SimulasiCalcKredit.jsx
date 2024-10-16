@@ -16,6 +16,7 @@ const SimulasiCalcKredit = () => {
   const [nominal, setNominal] = useState("");
   const [waktu, setWaktu] = useState();
   const [bunga, setBunga] = useState();
+  const [tipeBung, setTipeBung] = useState()
   const [hasilTotal, setHasilTotal] = useState();
   const [hasilBunga, setHasilBunga] = useState();
   const [showResult, setShowResult] = useState(false);
@@ -158,8 +159,8 @@ const SimulasiCalcKredit = () => {
                 name="Jangka Waktu"
                 className="bg-primary"
                 required
-                value={waktu}
-                onChange={(e) => setWaktu(e.target.value)}
+                value={tipeBung}
+                onChange={(e) => setTipeBung(e.target.value)}
               >
                 {[
                   "Anuitas",
