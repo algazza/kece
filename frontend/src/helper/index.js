@@ -14,8 +14,7 @@ export const sampleNews = `${urlLink}/sample-news-684x385.jpg`;
 export const phoneimg = `${urlLink}/phoneimg.svg`;
 export const BennerLiv = `${urlLink}/sampleliv.svg`;
 export const loaderIcon = `${urlLink}/loadingIconArmor.svg`;
-//export const ImageSimulasi = `${urlLink}/model_ayu_bank_arto_moro.png`;
-export const ImageSimulasi = "../../public/img/model_ayu_bank_arto_moro.png";
+export const ImageSimulasi = `${urlLink}/model_ayu_bank_arto_moro.png`;
 export const ThumbnailYoutube = `${urlLink}/thumbnailYoutube.png`;
 export const TiktokIcon = `${urlLink}/tiktok-fill.svg`;
 
