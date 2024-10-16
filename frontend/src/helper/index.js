@@ -22,7 +22,7 @@ export const TiktokIcon = `${urlLink}/tiktok-fill.svg`;
 export const headerProduk = [
   {
     title: "Tabungan",
-    link: "kredit",
+    link: "tabungan",
   },
   {
     title: "Deposito",
