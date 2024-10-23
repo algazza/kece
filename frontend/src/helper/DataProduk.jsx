@@ -272,11 +272,10 @@ export const IsiTabungan = [
     Syarat: (
       <ul className="list-inside list-disc pl-4 sm:pl-16">
         <li>
-          Foto copy <b>identitas</b> calon debitur dan suami/istrinya serta
-          identitas pemilik jaminan dan suami/istri yang masih berlaku,{" "}
+          Foto copy <b>identitas</b> calon nasabah yang masih berlaku,{" "}
         </li>
         <li>
-          Foto copy <b>kartu keluarga</b> calon debitur dan pemilik agunan,{" "}
+          Foto copy <b>kartu keluarga</b> calon nasabah,{" "}
         </li>
         <li>
           Foto copy <b>surat nikah</b>,
@@ -292,8 +291,9 @@ export const IsiTabungan = [
     ),
     Keuntungan: (
       <ul className="list-inside list-disc pl-4 sm:pl-16">
-        <li>Proses Cepat, 5 Hari Kerja</li> <br />
+        <li>Bebas Biaya Administrasi</li> <br />
         <li>Syarat Mudah & Fleksibel</li> <br />
+        <li>Bungan tinggi dijamin LPS</li> <br />
         <li>Aman & Terpecaya</li>
       </ul>
     ),
