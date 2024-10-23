@@ -6,7 +6,13 @@ import {
   InputLabel,
   MenuItem,
   OutlinedInput,
+  Paper,
   Select,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import styles from "../../helper/style";
@@ -32,9 +38,9 @@ const SimulasiCalcTabungan = () => {
     { label: "Angka Bunga", value: `${bunga}%` },
     {
       label: "Total",
-      value: `Rp. ${parseInt(rawNominal).toLocaleString(
-        "id-ID"
-      )} + ${produk === "Tabungan Tagar" ? "Rp. 1.000(admin)" : {hasilBunga}}`,
+      value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")} + ${
+        produk === "Tabungan Tagar" ? "Rp. 1.000(admin)" : { hasilBunga }
+      }`,
     },
   ];
 
@@ -100,11 +106,12 @@ const SimulasiCalcTabungan = () => {
         setShowResult(false);
         setErrNominal(true);
       } else {
-        setErrNominal(false)
+        setErrNominal(false);
         let hasilBungaTotal = 0;
 
         if (nominalNumber >= 7500000) {
-          hasilBungaTotal = ((nominalNumber * (bunga / 100) * 30) / 365) * (0.8 / 100) ;
+          hasilBungaTotal =
+            ((nominalNumber * (bunga / 100) * 30) / 365) * (0.8 / 100);
         } else {
           hasilBungaTotal = (nominalNumber * (bunga / 100) * 30) / 365;
         }
@@ -119,8 +126,7 @@ const SimulasiCalcTabungan = () => {
         setShowResult(false);
         setErrNominal(true);
       } else {
-        let hasilBungaTotal =
-          nominalNumber * bunga + 1000;
+        let hasilBungaTotal = nominalNumber * bunga + 1000;
         let hasilPerkalianTotal = hasilBungaTotal;
 
         setHasilTotal(`Rp. ${hasilPerkalianTotal.toLocaleString("id-ID")}`);
@@ -188,11 +194,19 @@ const SimulasiCalcTabungan = () => {
                 className="bg-primary"
                 required
                 value={nominal}
-                error = {errNominal}
+                error={errNominal}
                 onChange={handleNominalChange}
                 inputProps={{ inputMode: "numeric", pattern: "[0-9,.]*" }}
               />
-              {errNominal && <FormHelperText error>Minimal Nominal {produk === "Tabungan Pro Aktif" || produk === "Tabungan Simpel" ? "Rp. 20.000" : "5.000.000"} </FormHelperText>}
+              {errNominal && (
+                <FormHelperText error>
+                  Minimal Nominal{" "}
+                  {produk === "Tabungan Pro Aktif" ||
+                  produk === "Tabungan Simpel"
+                    ? "Rp. 20.000"
+                    : "5.000.000"}{" "}
+                </FormHelperText>
+              )}
             </FormControl>
           </div>
 
@@ -225,16 +239,31 @@ const SimulasiCalcTabungan = () => {
       {showResult && (
         <div className="">
           <h2 className={`${styles.heading3} text-center`}>Hasil Hitung</h2>
-          <div className="space-y-2 my-8">
-            {CalcDataFields.map((field, index) => (
-              <div key={index} className="flex sm:items-center">
-                <span className="font-bold w-1/3">{field.label}</span>
-                <span className="text-base w-2/3 break-words">
-                  : {field.value}
-                </span>
-              </div>
-            ))}
-          </div>
+          <TableContainer
+            component={Paper}
+            style={{ border: "1px solid #cbd5e1", boxShadow: "inherit" }}
+            className="space-y-2 my-8"
+          >
+            <Table aria-label="Tabel Hasil Kredit">
+              <TableBody>
+                {CalcDataFields.map((field, index) => (
+                  <TableRow key={index} className={index % 2 && "bg-abuTerang"}>
+                    {[field.label, field.value].map((cellmap, index) => (
+                      <TableCell
+                        key={index}
+                        style={{
+                          borderBottom: "1px solid #cbd5e1",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {cellmap}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
 
           <h2 className={`${styles.heading5} text-center`}>Estimasi Akhir</h2>
           <h2 className={`${styles.heading3} text-center text-biruMuda-500`}>

@@ -242,27 +242,6 @@ const Home = () => {
           <img src={ImageSimulasi} alt="gambar wanita" />
         </div>
 
-        <img
-          src={SimulasiPercil1}
-          alt="icon koin"
-          className="absolute md:top-[240px] md:left-[130px] max-md:bottom-[70px] max-md:-right-[57px] w-[100px]"
-        />
-        <img
-          src={SimulasiPercil2}
-          alt="icon kartu"
-          className="absolute md:top-[100px] md:left-[210px] top-[32px] max-md:right-[0px] w-[80px]"
-        />
-        <img
-          src={SimulasiPercil3}
-          alt="icon uang"
-          className="absolute md:top-[50px] md:left-[490px] top-[120px] -left-[51px]"
-        />
-        <img
-          src={SimulasiPercil4}
-          alt="icon celengan"
-          className="absolute md:top-[260px] md:left-[520px] max-md:hidden"
-        />
-
         <div>
           <h2 className={`${styles.heading4} mb-4`}>
             <span className="text-biruMuda-500">Simulasi Hitung</span> Tabungan,

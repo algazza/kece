@@ -152,9 +152,9 @@ export const FormSponsor = () => {
                 name={iden.id}
                 variant="outlined"
                 className="rounded-md outline-none"
-                required
                 value={inputs[iden.id]}
                 onChange={handleChange}
+                required  
                 error={error && !inputs[iden.id]}
                 helperText={
                   error && !inputs[iden.id] ? `${iden.title} perlu diisi` : ""

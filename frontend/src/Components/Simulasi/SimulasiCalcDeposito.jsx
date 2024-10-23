@@ -5,7 +5,13 @@ import {
   InputLabel,
   MenuItem,
   OutlinedInput,
+  Paper,
   Select,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
 } from "@mui/material";
 import React, { useState } from "react";
 import styles from "../../helper/style";
@@ -90,8 +96,7 @@ const SimulasiCalcDeposito = () => {
       setHasilTotal("Mohon isi semua field");
       setShowResult(false);
     } else {
-      let hasilBungaTotal =
-        ((nominalNumber * bunga / 100) / 12) * 0.8;
+      let hasilBungaTotal = ((nominalNumber * bunga) / 100 / 12) * 0.8;
       let hasilPerkalianTotal = hasilBungaTotal * waktuNumber;
 
       setHasilTotal(`Rp. ${hasilPerkalianTotal.toLocaleString("id-ID")}`);
@@ -107,7 +112,6 @@ const SimulasiCalcDeposito = () => {
       setShowResult(!showResult);
     }
   };
-
 
   return (
     <motion.div
@@ -190,18 +194,33 @@ const SimulasiCalcDeposito = () => {
       {showResult && (
         <div className="">
           <h2 className={`${styles.heading3} text-center`}>Hasil Hitung</h2>
-          <div className="space-y-2 my-8">
-            {CalcDataFields.map((field, index) => (
-              <div key={index} className="flex sm:items-center">
-                <span className="font-bold w-1/3">{field.label}</span>
-                <span className="text-base w-2/3 break-words">
-                  : {field.value}
-                </span>
-              </div>
-            ))}
-          </div>
+          <TableContainer
+            component={Paper}
+            style={{ border: "1px solid #cbd5e1", boxShadow: "inherit" }}
+            className="space-y-2 my-8"
+          >
+            <Table aria-label="Tabel Hasil Kredit">
+              <TableBody>
+                {CalcDataFields.map((field, index) => (
+                  <TableRow key={index} className={index % 2 && "bg-abuTerang"}>
+                    {[field.label, field.value].map((cellmap, index) => (
+                      <TableCell
+                        key={index}
+                        style={{
+                          borderBottom: "1px solid #cbd5e1",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {cellmap}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
 
-          <h2 className={`${styles.heading5} text-center`}>Total Bunga</h2>
+          <h2 className={`${styles.heading5} text-center`}>Estimasi Akhir</h2>
           <h2 className={`${styles.heading3} text-center text-biruMuda-500`}>
             {hasilTotal}
           </h2>
