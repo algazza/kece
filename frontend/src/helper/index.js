@@ -16,7 +16,7 @@ export const BennerLiv = `${urlLink}/sampleliv.svg`;
 export const loaderIcon = `${urlLink}/loadingIconArmor.svg`;
 export const ImageSimulasi = `${urlLink}/model_ayu_bank_arto_moro.png`;
 export const ThumbnailYoutube = `${urlLink}/thumbnailYoutube.png`;
-export const TiktokIcon = `${urlLink}/tiktok-fill.svg`;
+export const Tiktokimage = `${urlLink}/tiktok-fill.svg`
 
 // ======================== HEADER =============
 export const headerProduk = [

@@ -17,6 +17,7 @@ import TabelBiaya from "../../Components/TabelBiaya";
 import { TabelSimKredit } from "../../Components/TabelSim";
 import { useMenu } from "../../MenuProvider";
 import { Link } from "react-router-dom";
+import RateBunga from "../../Components/Modal/RateBunga.jsx";
 
 // ===================================================
 const buttonMenuProduk = [
@@ -98,6 +99,7 @@ const SyaratKredit = () => {
         />
         <TitleBlueBanner title={handleName()} />
       </section>
+      <RateBunga/>
 
       <span className="-mt-[100px] pb-[100px] block" id="section2">
         &nbsp;

@@ -1,4 +1,3 @@
-
 import {
   FilledInput,
   FormControl,
@@ -6,7 +5,13 @@ import {
   InputLabel,
   MenuItem,
   OutlinedInput,
+  Paper,
   Select,
+  TableContainer,
+  Table,
+  TableBody,
+  TableRow,
+  TableCell,
 } from "@mui/material";
 import React, { useState } from "react";
 import styles from "../../helper/style";
@@ -16,17 +21,24 @@ const SimulasiCalcKredit = () => {
   const [nominal, setNominal] = useState("");
   const [waktu, setWaktu] = useState();
   const [bunga, setBunga] = useState();
-  const [tipeBung, setTipeBung] = useState()
   const [hasilTotal, setHasilTotal] = useState();
   const [hasilBunga, setHasilBunga] = useState();
   const [showResult, setShowResult] = useState(false);
   const [rawNominal, setRawNominal] = useState("");
 
   const CalcDataFields = [
-    { label: "Setoran Awal", value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")}` },
+    {
+      label: "Plafon",
+      value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")}`,
+    },
     { label: "Angka Bunga", value: `${bunga}%` },
     { label: "Nilai Bunga", value: hasilBunga },
-    { label: "Total", value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")} + ${hasilBunga}` },
+    {
+      label: "Total",
+      value: `Rp. ${parseInt(rawNominal).toLocaleString(
+        "id-ID"
+      )} + ${hasilBunga}`,
+    },
   ];
 
   const formatRupiah = (value) => {
@@ -69,7 +81,10 @@ const SimulasiCalcKredit = () => {
       setHasilTotal("Mohon isi semua field");
       setShowResult(false);
     } else {
-      let hasilBungaTotal = (nominalNumber * bungaNumber) / waktuNumber;
+      let hasilBungaTotal =
+        (nominalNumber * (bungaNumber / 100)) /
+        (1 - (1 + (bungaNumber / 100) ** -waktuNumber));
+      // nominalNumber * ((bungaNumber / 100) / 12 / 1 - (1 + (bungaNumber / 100) / 12 - waktuNumber));
       let hasilPerkalianTotal = nominalNumber + hasilBungaTotal;
 
       setHasilTotal(`Rp. ${hasilPerkalianTotal.toLocaleString("id-ID")}`);
@@ -148,33 +163,6 @@ const SimulasiCalcKredit = () => {
             </FormControl>
           </div>
 
-          <div className="grid gap-2 pt-6">
-            <h2 className={`${styles.heading6} text-center`}>Tipe Bunga</h2>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                name="Jangka Waktu"
-                className="bg-primary"
-                required
-                value={tipeBung}
-                onChange={(e) => setTipeBung(e.target.value)}
-              >
-                {[
-                  "Anuitas",
-                  "Flat",
-                  "Efektif",
-                ].map((bulan, index) => (
-                  <MenuItem key={index} value={bulan}>
-                    {bulan}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </div>
-
           <div className="pt-6">
             <button
               className="bg-primary rounded-lg py-2 px-8 font-bold "
@@ -189,21 +177,31 @@ const SimulasiCalcKredit = () => {
       {showResult && (
         <div className="">
           <h2 className={`${styles.heading3} text-center`}>Hasil Hitung</h2>
-          <div className="space-y-2 my-8">
-          {CalcDataFields.map((field, index) => (
-            <div
-              key={index}
-              className="flex sm:items-center"
-            >
-              <span className="font-bold w-1/3">
-                {field.label}
-              </span>
-              <span className="text-base w-2/3 break-words">
-                : {field.value}
-              </span>
-            </div>
-          ))}
-        </div>
+          <TableContainer
+            component={Paper}
+            style={{ border: "1px solid #cbd5e1", boxShadow: "inherit" }}
+            className="space-y-2 my-8"
+          >
+            <Table aria-label="Tabel Hasil Kredit">
+              <TableBody>
+                {CalcDataFields.map((field, index) => (
+                  <TableRow key={index} className={index % 2 && "bg-abuTerang"}>
+                    {[field.label, field.value].map((cellmap, index) => (
+                      <TableCell
+                        key={index}
+                        style={{
+                          borderBottom: "1px solid #cbd5e1",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {cellmap}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
 
           <h2 className={`${styles.heading5} text-center`}>Estimasi Akhir</h2>
           <h2 className={`${styles.heading3} text-center text-biruMuda-500`}>
