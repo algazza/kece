@@ -26,7 +26,7 @@ const buttonMenuProduk = [
       />
     ),
     title: "Tabungan Pro Aktif",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    deskripsi: "Menabung Aman dengan Keuntungan Hingga 4,5%.",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const buttonMenuProduk = [
       <AccountBalanceIcon className={className} sx={{ fontSize: "40px" }} />
     ),
     title: "Tabungan Tagar",
-    deskripsi: "panduan perilaku dan prinsip moral bagi karyawan bank.",
+    deskripsi: "Tabungan dengan Keuntungan Hingga 4,5%.",
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ const buttonMenuProduk = [
       <SchoolIcon className={className} sx={{ fontSize: "40px" }} />
     ),
     title: "Tabungan Simpel",
-    deskripsi: "Lorem ipsum dolor sit amet consectetur.",
+    deskripsi: "Tabungan khusus pelajar mendorong budaya menabung sejak dini. ",
   },
 ];
 
@@ -78,9 +78,9 @@ const SyaratTabungan = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Tabungan"}
           DescriptionBanner={`
-            Tabungan Bank Arto Moro adalah produk simpanan untuk semua kalangan dengan setoran awal minimal Rp 20.000 dan 
+            Tabungan Bank Arto Moro adalah produk simpanan untuk semua kalangan dengan setoran awal minimal Rp 20.000 serta 
             bunga 2% per tahun, tanpa potongan administrasi bulanan. Dana nasabah dijamin Lembaga Penjamin Simpanan (LPS) 
-            hingga Rp 2 miliar per rekening.          
+            hingga Rp 2 miliar per rekening per nasabah.          
           `}
         />
         <TitleBlueBanner title={handleName()} />
