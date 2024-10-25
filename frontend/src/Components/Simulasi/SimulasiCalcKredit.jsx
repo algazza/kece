@@ -34,7 +34,7 @@ const SimulasiCalcKredit = () => {
     { label: "Angka Bunga", value: `${bunga}%` },
     { label: "Nilai Bunga", value: hasilBunga },
     {
-      label: "Total",
+      label: "Nominal Setoran",
       value: `Rp. ${parseInt(rawNominal).toLocaleString(
         "id-ID"
       )} + ${hasilBunga}`,

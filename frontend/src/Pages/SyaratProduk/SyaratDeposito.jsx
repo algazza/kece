@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import IntroBanner from "../../Layouts/IntroBanner";
 import TitleBlueBanner from "../../Layouts/TitleBlueBanner";
 import FormBank from "../../Components/Group Form/FormBank.jsx";
 import styles from "../../helper/style";
 import { BlueBanner } from "../../helper";
 import { motion } from "framer-motion";
-import { Deposito } from "../../Components/Group Form/Form.jsx";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import { Tabungan } from "../../Components/Group Form/Form.jsx";
 import {isiDepostio, IsiKredit} from "../../helper/DataProduk";
-import { nomorInduk } from "../../helper/nomor";
 import { localhostLink } from "../../helper/localhost";
 import { TabelSimDeposito } from "../../Components/TabelSim";
-import { useMenu } from "../../MenuProvider";
 import TabelBiaya from "../../Components/TabelBiaya";
 import { Link } from "react-router-dom";
 
@@ -159,7 +156,7 @@ const SyaratDeposito = () => {
                   className="sm:mx-10 sm:px-10"
                 >
                   <FormBank
-                    isiPenting={<Deposito />}
+                    isiPenting={<Tabungan />}
                     value={"deposito"}
                     endpoint={`${localhostLink}/api/deposito`}
                   />

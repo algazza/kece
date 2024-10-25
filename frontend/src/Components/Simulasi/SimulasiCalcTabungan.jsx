@@ -37,7 +37,7 @@ const SimulasiCalcTabungan = () => {
     },
     { label: "Angka Bunga", value: `${bunga}%` },
     {
-      label: "Total",
+      label: "Nominal Setoran",
       value: `Rp. ${parseInt(rawNominal).toLocaleString("id-ID")} + ${
         produk === "Tabungan Tagar" ? "Rp. 1.000(admin)" : { hasilBunga }
       }`,

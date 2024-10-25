@@ -99,7 +99,6 @@ const SyaratKredit = () => {
         />
         <TitleBlueBanner title={handleName()} />
       </section>
-      <RateBunga/>
 
       <span className="-mt-[100px] pb-[100px] block" id="section2">
         &nbsp;

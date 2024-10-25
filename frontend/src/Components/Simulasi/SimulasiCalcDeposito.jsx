@@ -33,7 +33,7 @@ const SimulasiCalcDeposito = () => {
     },
     { label: "Angka Bunga", value: `${bunga}%` },
     { label: "Bunga/bulan", value: hasilBunga },
-    { label: "Total Bunga", value: `${hasilBunga} x ${waktu}` },
+    { label: "Nominal Setoran", value: `${hasilBunga} x ${waktu}` },
   ];
 
   const formatRupiah = (value) => {

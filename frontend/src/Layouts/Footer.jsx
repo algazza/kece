@@ -111,7 +111,7 @@ const Footer = () => {
                 <span>024-674 7220</span> | <span>024-7660 6993</span>
               </p>
               <p>
-                <span>info@bprartomoro.co.ic</span>
+                <span>info@bprartomoro.co.id</span>
               </p>
             </div>
           </div>
