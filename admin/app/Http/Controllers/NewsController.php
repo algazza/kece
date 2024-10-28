@@ -133,6 +133,8 @@ class NewsController extends Controller
                 $news->image = 'profil.jpg';
             }
 
+            dd($news);
+
             $news->save();
 
             return redirect()->route('news')->with('success', 'Berita berhasil ditambahkan.');
