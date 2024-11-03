@@ -9,11 +9,8 @@ import WaInput from "./Components/WaInput";
 import FloatInfo from "./Components/Modal/FloatInfo";
 
 const MainLayout = () => {
-
   const location = useLocation();
   const { pathname } = useLocation();
-
-
 
   useEffect(() => {
     if (location.hash) {
