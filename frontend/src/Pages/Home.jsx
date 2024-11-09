@@ -104,13 +104,14 @@ const Home = () => {
   const [newsData, setNewsData] = useState([]);
   const [expanded, setExpanded] = useState(false);
   const [menuCalc, setMenuCalc] = useState(0);
+  const [marqueeImage, setMarqueeImage] = useState([]);
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     fetch(`${localhostLink}/api/banner`)
-      .then((response) => response.json())
-      .then((data) => {
-        const imageUrls = data.map(
+    .then((response) => response.json())
+    .then((data) => {
+      const imageUrls = data.map(
           (item) => `${localhostLink}/image/public/banner/${item.image}`
         );
         setImages(imageUrls);
@@ -118,8 +119,8 @@ const Home = () => {
       .catch((error) => {
         console.error("Error fetching banner images:", error);
       });
-
-    fetch(`${localhostLink}/api/news`)
+      
+      fetch(`${localhostLink}/api/news`)
       .then((response) => response.json())
       .then((data) => {
         setNewsData(data);
@@ -127,37 +128,44 @@ const Home = () => {
       .catch((err) => {
         toast.error("Gagal Memunculkan Berita!");
       });
-  }, []);
-
-  useEffect(() => {
-    if (openModal || openRateBunga) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-
-    return () => {
-      document.body.classList.remove("overflow-hidden");
+    }, []);
+    
+    useEffect(() => {
+      if (openModal || openRateBunga) {
+        document.body.classList.add("overflow-hidden");
+      } else {
+        document.body.classList.remove("overflow-hidden");
+      }
+      
+      return () => {
+        document.body.classList.remove("overflow-hidden");
+      };
+    }, [openModal, openRateBunga]);
+    
+    useEffect(() => {
+      fetch(`${localhostLink}/api/stackholder`)
+        .then((response) => response.json())
+        .then((data) => setMarqueeImage(data))
+        .catch((error) => console.error("Error fetching data:", error));
+    }, []);
+    
+    const handleModal = () => {
+      setOpenModal(!openModal);
     };
-  }, [openModal, openRateBunga]);
-
-  const handleModal = () => {
-    setOpenModal(!openModal);
-  };
-
-  const handleOpenRateBunga = () => {
-    setOpenRateBunga(!openRateBunga);
-  };
-
-  const handlemenuCalc = (id) => {
-    setMenuCalc(id);
-  };
-
-  const handleAccordion = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
-
-  return (
+    
+    const handleOpenRateBunga = () => {
+      setOpenRateBunga(!openRateBunga);
+    };
+    
+    const handlemenuCalc = (id) => {
+      setMenuCalc(id);
+    };
+    
+    const handleAccordion = (panel) => (event, isExpanded) => {
+      setExpanded(isExpanded ? panel : false);
+    };
+    
+    return (
       <>
         <section className="pb-6">
           <div className="rounded-br-[100px] sm:rounded-br-[200px] md:rounded-br-[300px] overflow-hidden">
@@ -440,6 +448,46 @@ const Home = () => {
                 </p>
               </AccordionDetails>
             </Accordion>
+          </div>
+        </section>
+
+        <section className="mt-8 bg-biruMuda-100 shadow-[inset_0px_0px_164px_116px_#fcfffe]">
+          <div className={`${styles.paddingY} border-t-2 border-abuGelap`}>
+            <h3 className={`${styles.heading3} text-center mb-10`}>Mitra Kami</h3>
+
+            <div className={`overflow-hidden flex`}>
+              <motion.div
+                initial={{ x: 0 }}
+                animate={{ x: "-100%" }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                className="flex flex-shrink-0"
+              >
+                {marqueeImage.map((img) => (
+                  <img
+                    src={`${localhostLink}/image/public/stackholder/${img.image}`}
+                    key={img.id}
+                    alt={`stackholder ${img.id}`}
+                    className="pr-20"
+                  />
+                ))}
+              </motion.div>
+
+              <motion.div
+                initial={{ x: 0 }}
+                animate={{ x: "-100%" }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                className="flex flex-shrink-0"
+              >
+                {marqueeImage.map((img) => (
+                  <img
+                    src={`${localhostLink}/image/public/stackholder/${img.image}`}
+                    key={img.id}
+                    alt={`stackholder ${img.id}`}
+                    className="pr-20"
+                  />
+                ))}
+              </motion.div>
+            </div>
           </div>
         </section>
         <ToastContainer />

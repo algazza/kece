@@ -26,16 +26,20 @@ const TabelBiaya = () => {
         <TableBody>
           {TabelKredit.map((cell, index) => (
             <TableRow key={index} className={index % 2 ? "" : "bg-abuTerang"}>
-              {[cell.plafon, cell.satutahun, cell.duatahun, cell.tigatahun].map(
-                (cellmap, index) => (
                   <TableCell
-                    key={index}
                     style={{ borderBottom: "1px solid #cbd5e1" }}
                   >
-                    {cellmap.toLocaleString("id-ID")}
+                    {cell.label}
                   </TableCell>
+                  <TableCell
+                    style={{ borderBottom: "1px solid #cbd5e1" }}
+                  >
+                    {cell.value == isNaN ? (cell.value) : (cell.value.toLocaleString("id-ID"))}
+                  </TableCell>
+              {/* {[cell.label, cell.value].map(
+                (cellmap, index) => (
                 )
-              )}
+              )} */}
             </TableRow>
           ))}
         </TableBody>
