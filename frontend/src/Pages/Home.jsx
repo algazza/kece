@@ -297,7 +297,7 @@ const Home = () => {
             <img
                 src={ThumbnailYoutube}
                 alt=""
-                className="cursor-pointer "
+                className="cursor-pointer md:w-[1100px]"
                 onClick={handleModal}
             />
           </div>
