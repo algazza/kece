@@ -4,6 +4,7 @@ import { nomorInduk } from "./nomor";
 
 export const logoArmor = `${urlLink}/LOGO-AM-CORAL-BARU.svg`;
 export const BlueBanner = `${urlLink}/sampleimage.svg`;
+export const IntroBannerTabungan = `${urlLink}/samsung-galaxy-a15-17_169.jpeg` 
 export const SimulasiPercil1 = `${urlLink}/simulasiPercil1.svg`;
 export const SimulasiPercil2 = `${urlLink}/simulasiPercil2.svg`;
 export const SimulasiPercil3 = `${urlLink}/simulasiPercil3.svg`;
