@@ -15,7 +15,6 @@ class SponsorSeeder extends Seeder
                 'nama' => 'Nama Pertama',
                 'email' => 'email1@example.com',
                 'no_handphone' => 1234567890,
-                'nik' => 1234567890123456,
                 'alamat' => 'Alamat Pertama',
                 'bidang_usaha' => 'Bidang Usaha 1',
                 'nama_usaha' => 'Nama Usaha 1',
@@ -29,7 +28,6 @@ class SponsorSeeder extends Seeder
                 'nama' => 'Nama Kedua',
                 'email' => 'email2@example.com',
                 'no_handphone' => 2345678901,
-                'nik' => 2345678901234567,
                 'alamat' => 'Alamat Kedua',
                 'bidang_usaha' => 'Bidang Usaha 2',
                 'nama_usaha' => 'Nama Usaha 2',
@@ -40,7 +38,7 @@ class SponsorSeeder extends Seeder
                 'ip_user' => '192.168.1.2'
             ],
         ];
-        
+
 
 
         foreach($userData as $key => $val ){
