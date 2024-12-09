@@ -97,7 +97,6 @@ const penghargaanHome = [
 ];
 
 const Home = () => {
-  const [openMenu, setOpenMenu] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [openRateBunga, setOpenRateBunga] = useState(false);
   const [images, setImages] = useState([]);
@@ -125,7 +124,7 @@ const Home = () => {
       .then((data) => {
         setNewsData(data);
       })
-      .catch((err) => {
+      .catch(() => {
         toast.error("Gagal Memunculkan Berita!");
       });
   }, []);
