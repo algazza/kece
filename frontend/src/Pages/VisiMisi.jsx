@@ -19,9 +19,10 @@ const VisiMisi = () => {
       <span className="-mt-[100px] pb-[100px] block" id="section2">
         &nbsp;
       </span>
+      
       <section className="px-8 sm:px-24 py-8 bg-biruMuda-100" id="visi-misi">
         <h2 className={`${styles.heading4} mb-4`}>Visi</h2>
-        <ol className="list-none pl-4">
+        <ol className="list-disc pl-4">
           {profileVisi.map((visi, index) => (
             <li key={index} className="flex items-center mb-2">
               <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain mr-2 bg-checkmark"></span>
@@ -31,16 +32,16 @@ const VisiMisi = () => {
         </ol>
       </section>
 
-      <section className="px-9 sm:px-24 py-9 text-end">
+      <section className="px-8 sm:px-24 py-8">
         <h2 className={`${styles.heading4} mb-4`}>Misi</h2>
-        <ol className="list-none pr-4 ">
-          {profileMisi.map((misi, index) => (
-            <li key={index} className="flex flex-row-reverse items-center mb-2">
-              <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain ml-2 bg-checkmark"></span>
-              {misi}
+        <ul className="list-disc pl-4">
+          {profileMisi.map((visi, index) => (
+            <li key={index} className="flex items-center mb-2 list-disc">
+              <span className="inline-block w-6 h-6 bg-no-repeat bg-center bg-contain mr-2 bg-checkmark"></span>
+              {visi}
             </li>
           ))}
-        </ol>
+        </ul>
       </section>
 
       <section className={`${styles.paddingX} py-8 bg-biruMuda-100`}>

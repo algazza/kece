@@ -27,7 +27,7 @@ const KerjaSama = () => {
           ImageBanner={BlueBanner}
           TitleBanner={"Kerja Sama"}
           DescriptionBanner={`
-              Tugas Aldara
+              BANK ARTO MORO MEMBUKA KESEMPATAN
             `}
         />
         <TitleBlueBanner title={"Kerja Sama"} />

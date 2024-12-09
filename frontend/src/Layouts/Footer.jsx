@@ -45,56 +45,8 @@ const sosmedIcon = [
 ];
 
 const Footer = () => {
-  const [marqueeImage, setMarqueeImage] = useState([]);
-
-  useEffect(() => {
-    fetch(`${localhostLink}/api/stackholder`)
-      .then((response) => response.json())
-      .then((data) => setMarqueeImage(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
-
   return (
-    <footer className="mt-8 bg-biruMuda-100 shadow-[inset_0px_0px_164px_116px_#fcfffe]">
-      <div className={`${styles.paddingY} border-t-2 border-abuGelap`}>
-        <h3 className={`${styles.heading3} text-center mb-10`}>Mitra Kami</h3>
-
-        <div className={`overflow-hidden flex`}>
-          <motion.div
-            initial={{ x: 0 }}
-            animate={{ x: "-100%" }}
-            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            className="flex flex-shrink-0"
-          >
-            {marqueeImage.map((img) => (
-              <img
-                src={`${localhostLink}/image/public/stackholder/${img.image}`}
-                key={img.id}
-                alt={`stackholder ${img.id}`}
-                className="pr-20"
-              />
-            ))}
-          </motion.div>
-
-          <motion.div
-            initial={{ x: 0 }}
-            animate={{ x: "-100%" }}
-            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            className="flex flex-shrink-0"
-          >
-            {marqueeImage.map((img) => (
-              <img
-                src={`${localhostLink}/image/public/stackholder/${img.image}`}
-                key={img.id}
-                alt={`stackholder ${img.id}`}
-                className="pr-20"
-              />
-            ))}
-          </motion.div>
-        </div>
-      </div>
-
-      <div className={`bg-biruMuda-700 text-white ${styles.fontSmall}`}>
+      <footer className={`bg-biruMuda-700 text-white ${styles.fontSmall}`}>
         <div className="py-6 flex gap-12 flex-col md:flex-row justify-between px-8">
           <div className="gap-4 flex flex-col">
             <a href="/" className="flex items-center gap-2 ">
@@ -178,8 +130,7 @@ const Footer = () => {
             &#169; 2024 Bank BPR Arto Moro All rights reserved.
           </span>
         </div>
-      </div>
-    </footer>
+      </footer>
   );
 };
 

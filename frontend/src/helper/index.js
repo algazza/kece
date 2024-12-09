@@ -4,6 +4,7 @@ import { nomorInduk } from "./nomor";
 
 export const logoArmor = `${urlLink}/LOGO-AM-CORAL-BARU.svg`;
 export const BlueBanner = `${urlLink}/sampleimage.svg`;
+export const IntroBannerTabungan = `${urlLink}/samsung-galaxy-a15-17_169.jpeg` 
 export const SimulasiPercil1 = `${urlLink}/simulasiPercil1.svg`;
 export const SimulasiPercil2 = `${urlLink}/simulasiPercil2.svg`;
 export const SimulasiPercil3 = `${urlLink}/simulasiPercil3.svg`;
@@ -362,132 +363,17 @@ export const formJenisSponsor = [
 
 // ===================== TABEL ======================
 export const TabelKredit = [
-  {
-    plafon: 100000000,
-    satutahun: 9683333,
-    duatahun: 5516667,
-    tigatahun: 4127778,
-  },
-  {
-    plafon: 150000000,
-    satutahun: 14525000,
-    duatahun: 8275000,
-    tigatahun: 6191667,
-  },
-  {
-    plafon: 200000000,
-    satutahun: 19366667,
-    duatahun: 11033333,
-    tigatahun: 8255556,
-  },
-  {
-    plafon: 250000000,
-    satutahun: 24208333,
-    duatahun: 13791667,
-    tigatahun: 10319444,
-  },
-  {
-    plafon: 300000000,
-    satutahun: 29050000,
-    duatahun: 16550000,
-    tigatahun: 12383333,
-  },
-  {
-    plafon: 350000000,
-    satutahun: 33891667,
-    duatahun: 19308333,
-    tigatahun: 14447222,
-  },
-  {
-    plafon: 400000000,
-    satutahun: 38733333,
-    duatahun: 22066667,
-    tigatahun: 16511111,
-  },
-  {
-    plafon: 450000000,
-    satutahun: 43575000,
-    duatahun: 24825000,
-    tigatahun: 18575000,
-  },
-  {
-    plafon: 500000000,
-    satutahun: 48416667,
-    duatahun: 27583333,
-    tigatahun: 20638889,
-  },
-  {
-    plafon: 550000000,
-    satutahun: 53258333,
-    duatahun: 30341667,
-    tigatahun: 22702778,
-  },
-  {
-    plafon: 600000000,
-    satutahun: 58100000,
-    duatahun: 33100000,
-    tigatahun: 24766667,
-  },
-  {
-    plafon: 650000000,
-    satutahun: 62941667,
-    duatahun: 33858333,
-    tigatahun: 26830556,
-  },
-  {
-    plafon: 700000000,
-    satutahun: 67783333,
-    duatahun: 38616667,
-    tigatahun: 28894444,
-  },
-  {
-    plafon: 750000000,
-    satutahun: 72625000,
-    duatahun: 41375000,
-    tigatahun: 30958333,
-  },
-  {
-    plafon: 800000000,
-    satutahun: 77466667,
-    duatahun: 44133333,
-    tigatahun: 33022222,
-  },
-  {
-    plafon: 850000000,
-    satutahun: 82308333,
-    duatahun: 46891667,
-    tigatahun: 35086111,
-  },
-  {
-    plafon: 900000000,
-    satutahun: 87150000,
-    duatahun: 49650000,
-    tigatahun: 37150000,
-  },
-  {
-    plafon: 950000000,
-    satutahun: 91991667,
-    duatahun: 52408333,
-    tigatahun: 39213889,
-  },
-  {
-    plafon: 1000000000,
-    satutahun: 96833333,
-    duatahun: 55166667,
-    tigatahun: 41277778,
-  },
-  {
-    plafon: 1500000000,
-    satutahun: 142250000,
-    duatahun: 82750000,
-    tigatahun: 61916667,
-  },
-  {
-    plafon: 2000000000,
-    satutahun: 193666667,
-    duatahun: 110333333,
-    tigatahun: 82555556,
-  },
+  { label: "Setoran Awal", value: 500000 },
+  { label: "Minimum Setoran Selanjutnya", value: 5000 },
+  { label: "Minimum Saldo", value: 150000 },
+  { label: "Denda di bawah saldo minimum", value: 5000 },
+  { label: "Biaya Pengelolaan Rekening per bulan", value: 11000 },
+  { label: "Biaya Penggantian Buku", value: 1500 },
+  { label: "Biaya Penutupan Rekening", value: 10000 },
+  { label: "Biaya Lainnya (berlaku sejak Juni 2016)", value: "" },
+  { label: "Tunggakan Biaya Administrasi", value: "Maximal 3x tunggakan" },
+  { label: "Tunggakan Denda di bawah saldo minimum", value: "Maximal 3x tunggakan" },
+  { label: "Tunggakan Biaya Administrasi Kartu", value: "Maximal 10.000" },
 ];
 
 export const TabelDeposito = [
