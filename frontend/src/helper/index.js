@@ -10,6 +10,9 @@ export const SimulasiPercil2 = `${urlLink}/simulasiPercil2.svg`;
 export const SimulasiPercil3 = `${urlLink}/simulasiPercil3.svg`;
 export const SimulasiPercil4 = `${urlLink}/simulasiPercil4.svg`;
 export const sejarahImage1 = `${urlLink}/sejarahimage1.jpg`
+export const sejarahImage2 = `${urlLink}/peresmian_kantor_001-616x385.jpg`
+export const sejarahImage3 = `${urlLink}/peresmian_kantor_cov.jpg`
+export const sejarahImage4 = `${urlLink}/gedung_artomoro.jpeg`
 export const nunezimg = `${urlLink}/668f755b3c2ba.jpg`;
 export const sampleNews = `${urlLink}/sample-news-684x385.jpg`;
 export const phoneimg = `${urlLink}/phoneimg.svg`;
@@ -100,72 +103,28 @@ export const profileTimeline = [
     era: "Pembangunan",
     image: sejarahImage1,
     title: "Pembangunan Kantor BPR Arto Moro",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              fugit, harum adipisci minus impedit quis culpa, soluta tenetur
-              nesciunt tempora esse quidem quisquam assumenda incidunt quo
-              repellendus. Nobis, minima adipisci.
-              
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              non dolore adipisci voluptatibus quibusdam a nemo deserunt officia
-              maxime nobis? Delectus, eveniet alias. Illum placeat reprehenderit
-              blanditiis reiciendis velit molestiae. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Eum consectetur ut reiciendis, ipsam
-              rerum provident quas natus iusto! Eveniet ut doloremque nihil quas
-              ad ab numquam tempora laboriosam perferendis quo.`,
+    description: "PT BPR Arto Moro didirikan pada tanggal 3 Mei 2008 oleh Dr. H. Subyakto, SH, MH, MM. Peresmian kantor pusat yang berlokasi di Jalan Gajah Raya No. 155, Semarang, dilakukan oleh Gubernur Jawa Tengah, Ali Mufidz. Sejak awal, BPR Arto Moro berkomitmen melayani masyarakat Semarang dan sekitarnya dengan memberikan solusi untuk meningkatkan perekonomian lokal.",
   },
   {
     id: 2019,
     era: "Peresmian",
-    image: BennerLiv,
-    title: "Peresmian Kantor BPR Arto Moro",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              fugit, harum adipisci minus impedit quis culpa, soluta tenetur
-              nesciunt tempora esse quidem quisquam assumenda incidunt quo
-              repellendus. Nobis, minima adipisci.
-              
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              non dolore adipisci voluptatibus quibusdam a nemo deserunt officia
-              maxime nobis? Delectus, eveniet alias. Illum placeat reprehenderit
-              blanditiis reiciendis velit molestiae. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Eum consectetur ut reiciendis, ipsam
-              rerum provident quas natus iusto! Eveniet ut doloremque nihil quas
-              ad ab numquam tempora laboriosam perferendis quo.`,
+    image: sejarahImage2,
+    title: "Pertumbuhan Aset yang Signifikan",
+    description: "Pada tahun 2019, BPR Arto Moro mencatatkan pertumbuhan aset sebesar 62%, yang merupakan pertumbuhan tertinggi di antara BPR di Jawa Tengah. Prestasi ini menunjukkan dinamika dan progresivitas perusahaan dalam mewujudkan visi dan misinya. Capaian ini menjadi fondasi yang kokoh untuk terus berkembang di masa mendatang.",
   },
   {
     id: 2020,
     era: "Launching",
-    image: nunezimg,
-    title: "Peresmian Kantor BPR Arto Moro",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              fugit, harum adipisci minus impedit quis culpa, soluta tenetur
-              nesciunt tempora esse quidem quisquam assumenda incidunt quo
-              repellendus. Nobis, minima adipisci.
-              
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              non dolore adipisci voluptatibus quibusdam a nemo deserunt officia
-              maxime nobis? Delectus, eveniet alias. Illum placeat reprehenderit
-              blanditiis reiciendis velit molestiae. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Eum consectetur ut reiciendis, ipsam
-              rerum provident quas natus iusto! Eveniet ut doloremque nihil quas
-              ad ab numquam tempora laboriosam perferendis quo.`,
+    image: sejarahImage3,
+    title: "Prestasi dan Pengakuan",
+    description: "Pada ulang tahun ke-12 di tahun 2020, BPR Arto Moro masuk ke dalam jajaran 5 besar BPR di Kota Semarang. Prestasi ini diperoleh berkat tenaga profesional yang tersebar di kantor pusat, dua kantor kas, dan pembangunan gedung baru 9 lantai di Jalan Elang Raya, Mangunharjo, Tembalang, Semarang. Di tahun yang sama, BPR Arto Moro menerima penghargaan dari Majalah Infobank untuk kategori BPR dengan Kinerja Keuangan Sangat Bagus, melanjutkan penghargaan serupa yang diterima dua tahun berturut-turut sebelumnya.",
   },
   {
     id: 2023,
     era: "Pembukaan",
-    image: BennerLiv,
-    title: "Peresmian Kantor BPR Arto Moro",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              fugit, harum adipisci minus impedit quis culpa, soluta tenetur
-              nesciunt tempora esse quidem quisquam assumenda incidunt quo
-              repellendus. Nobis, minima adipisci.
-              
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              non dolore adipisci voluptatibus quibusdam a nemo deserunt officia
-              maxime nobis? Delectus, eveniet alias. Illum placeat reprehenderit
-              blanditiis reiciendis velit molestiae. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Eum consectetur ut reiciendis, ipsam
-              rerum provident quas natus iusto! Eveniet ut doloremque nihil quas
-              ad ab numquam tempora laboriosam perferendis quo.`,
+    image: sejarahImage4,
+    title: "Target Aset dan Masa Depan",
+    description: "Berdasarkan rencana strategis yang telah disusun, BPR Arto Moro menargetkan aset senilai Rp 1 triliun pada tahun 2023. Dengan dukungan dari masyarakat dan stakeholder yang terus tumbuh, perusahaan optimis bahwa pertumbuhan ini akan meningkatkan kesejahteraan masyarakat, menggerakkan roda perekonomian, serta memperkuat layanan dan produk demi pengalaman nasabah yang lebih baik.",
   },
 ];
 

@@ -75,7 +75,7 @@ const SyaratTabungan = () => {
     <>
       <section>
         <IntroBanner
-          ImageBanner={IntroBannerTabungan}
+          ImageBanner={BlueBanner}
           TitleBanner={"Tabungan"}
           DescriptionBanner={`
             Tabungan Bank Arto Moro adalah produk simpanan untuk semua kalangan dengan setoran awal minimal Rp 20.000 serta 
