@@ -65,10 +65,6 @@
                             </select>
                         </div>
                         <div class="w-full">
-                            <h3 class="dark:text-black mb-2">Password</h3>
-                            <input type="password" class="text-grey p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white " name="password">
-                        </div>
-                        <div class="w-full">
                             <h3 class="dark:text-black mb-2">No Handphone</h3>
                             <input type="text" class="text-grey p-4 w-full border-2 rounded-lg dark:text-black dark:border-gray-200 dark:bg-white " name="no_handphone" value="{{ old('no_handphone', $admin->no_handphone) }}">
                         </div>
@@ -86,19 +82,19 @@
     document.getElementById('upload_profile').addEventListener('change', function(event) {
     const file = event.target.files[0];
     const previewImage = document.getElementById('previewImage');
-    
+
     if (file) {
         const reader = new FileReader();
-        
+
         reader.onload = function(e) {
             previewImage.src = e.target.result;
             previewImage.style.display = 'block';
         }
-        
+
         reader.readAsDataURL(file);
     } else {
         previewImage.src = '';
-        previewImage.style.display = 'none'; 
+        previewImage.style.display = 'none';
     }
 });
 

@@ -67,7 +67,7 @@
 
                 <div class="mt-8">
                     <button type="submit" class="bg-blue-600 text-white w-full font-normal text-md py-3 px-4 rounded-[5px] shadow-md hover:bg-blue-800 active:bg-white focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50 transition-colors duration-300 ease-in-out">
-                        Add
+                        Update
                     </button>
                 </div>
 

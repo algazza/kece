@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('instagram');
             $table->string('image');
-            $table->text('harga');
+            $table->bigInteger('harga');
             $table->string('alamat');
             $table->text('alamat_lengkap');
             $table->text('kecamatan');

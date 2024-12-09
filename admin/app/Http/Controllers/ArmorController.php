@@ -33,7 +33,7 @@ class ArmorController extends Controller
                 'luas_tanah' => 'required',
                 'deskripsi' => 'required',
             ]);
-    
+
             $armor = new ArmorProperty();
             $armor->instagram = $request->instagram;
             $armor->alamat = $request->alamat;
@@ -45,42 +45,16 @@ class ArmorController extends Controller
             $armor->luas_tanah = $request->luas_tanah;
             $armor->deskripsi = $request->deskripsi;
             $armor->slug = time();
-
-            $jumlaHarga = $request->harga;
-            if(strlen($jumlaHarga) >= 7 && strlen($jumlaHarga) <= 9){
-                if(strlen($jumlaHarga) === 9){
-                    $reverse = strrev($jumlaHarga);
-                    $modifReverse = preg_replace_callback('/\d{3}/', function($matches) {
-                        return $matches[0] . '.';
-                    }, $reverse);
-                    $nilaiJuta = strrev($modifReverse);
-                    $nilaiHargaProperty = Str::substr($nilaiJuta, 1);
-                    $armor->harga = $nilaiHargaProperty;
-                } else {
-                    $reverse = strrev($jumlaHarga);
-                    $modifReverse = preg_replace_callback('/\d{3}/', function($matches) {
-                        return $matches[0] . '.';
-                    }, $reverse);
-                    $nilaiHargaProperty = strrev($modifReverse);
-                    $armor->harga = $nilaiHargaProperty;
-                }
-            } else if (strlen($jumlaHarga) >= 10 && strlen($jumlaHarga) <= 12){
-                $nilaiHarga = substr($jumlaHarga,0,-9);
-                $hargaInsert = Str::substr($nilaiHarga, 0 ,1) . "." . Str::substr($nilaiHarga,1);
-                $hargaArmor = $hargaInsert . " Miliar";
-                $armor->harga = $hargaArmor;
-            } else {
-                $armor->harga = $request->harga;
-            }
+            $armor->harga = $request->harga;
 
             if($request->hasFile('image')){
                 $imageFile = time() . '.' . $request->image->extension();
                 $request->image->move(public_path('image/public/armor'), $imageFile);
                 $armor->image = $imageFile;
             }
-    
+
             $armor->save();
-    
+
             return redirect()->route('armor.index')->with('success', 'Data Property Berhasil DI Tambah');
         } catch (\Exception $e) {
             return back()->with('error', 'Data Property Gagal DI Tambah' . $e);
@@ -114,11 +88,11 @@ class ArmorController extends Controller
 
             if( Str::contains($hargaArmor, 'Miliar')) {
                 $hapusMiliar = Str::replace(['Miliar', '.', ' '], '', $hargaArmor);
-                $harga = $hapusMiliar . "000000000"; 
+                $harga = $hapusMiliar . "000000000";
             } else {
-                $harga = Str::replace('.',"", $hargaArmor);            
+                $harga = Str::replace('.',"", $hargaArmor);
             }
-            
+
             return view('admin.armorprop.EditProp', compact('armor', 'harga'));
         }  catch(\Exception $e){
             return back()->with('error', 'Data Tidak Ditemukan' . $e);
@@ -142,7 +116,7 @@ class ArmorController extends Controller
                 'deskripsi' => 'required',
                 'slug' => 'required',
             ]);
-    
+
             $armor->instagram = $request->instagram;
             $armor->alamat = $request->alamat;
             $armor->alamat_lengkap = $request->alamat_lengkap;
@@ -153,34 +127,8 @@ class ArmorController extends Controller
             $armor->luas_tanah = $request->luas_tanah;
             $armor->deskripsi = $request->deskripsi;
             $armor->slug = $request->slug;
+            $armor->harga = $request->harga;
 
-            $jumlaHarga = $request->harga;
-            if(strlen($jumlaHarga) >= 7 && strlen($jumlaHarga) <= 9){
-                if(strlen($jumlaHarga) === 9){
-                    $reverse = strrev($jumlaHarga);
-                    $modifReverse = preg_replace_callback('/\d{3}/', function($matches) {
-                        return $matches[0] . '.';
-                    }, $reverse);
-                    $nilaiJuta = strrev($modifReverse);
-                    $nilaiHargaProperty = Str::substr($nilaiJuta, 1);
-                    $armor->harga = $nilaiHargaProperty;
-                } else {
-                    $reverse = strrev($jumlaHarga);
-                    $modifReverse = preg_replace_callback('/\d{3}/', function($matches) {
-                        return $matches[0] . '.';
-                    }, $reverse);
-                    $nilaiHargaProperty = strrev($modifReverse);
-                    $armor->harga = $nilaiHargaProperty;
-                }
-            } else if (strlen($jumlaHarga) >= 10 && strlen($jumlaHarga) <= 12){
-                $nilaiHarga = substr($jumlaHarga,0,-9);
-                $hargaInsert = Str::substr($nilaiHarga, 0 ,1) . "." . Str::substr($nilaiHarga,1);
-                $hargaArmor = $hargaInsert . " Miliar";
-                $armor->harga = $hargaArmor;
-            } else {
-                $armor->harga = $request->harga;
-            }
-    
             if($request->hasFile('image')){
                 $imageFile = time() . '.' . $request->image->extension();
                 $request->image->move(public_path('image/public/armor'), $imageFile);
@@ -190,7 +138,7 @@ class ArmorController extends Controller
                     $armor->image = $armor->image;
                 }
             }
-    
+
             $armor->save();
             return redirect()->route('armor.index')->with('success', 'Data Property Berhasil Di Update');
         } catch(\Exception $e){
@@ -216,13 +164,13 @@ class ArmorController extends Controller
     {
         try {
             $armor = ArmorProperty::where('slug', $slug)->first();
-                
+
             return response()->json([
                 'data' => $armor,
                 'message' => 'Data Property Berhasil Ditampilkan',
                 'status' => Response::HTTP_OK,
             ], Response::HTTP_OK);
-    
+
         } catch (\Exception $e) {
             return response()->json([
                 'message' => 'Terjadi kesalahan: ' . $e->getMessage(),
@@ -231,5 +179,5 @@ class ArmorController extends Controller
         }
     }
 
-    
+
 }

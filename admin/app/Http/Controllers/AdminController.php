@@ -17,7 +17,7 @@ class AdminController extends Controller
 
     function login(Request $request){
         $request->validate([
-            'email' => 'required|email', 
+            'email' => 'required|email',
             'password' => 'required',
         ],
         [
@@ -120,23 +120,23 @@ class AdminController extends Controller
                 'role' => 'required',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
-    
+
             $admin = new Admin();
             $admin->name = $request->name;
             $admin->email = $request->email;
             $admin->password = bcrypt($request->password);
             $admin->no_handphone = $request->no_handphone;
             $admin->role = $request->role;
-    
-    
+
+
             if ($request->hasFile('image')) {
-                $imageName = time() . '.' . $request->image->extension();  
+                $imageName = time() . '.' . $request->image->extension();
                 $request->image->move(public_path('image/admin'), $imageName);
                 $admin->image = $imageName;
             } else {
                 $admin->image = 'profil.jpg';
             }
-        
+
             $admin->save();
             return redirect()->route('admin')->with('success', 'User Berhasil Ditambahkan');
         } catch(\Illuminate\Database\QueryException $e){
@@ -174,7 +174,7 @@ class AdminController extends Controller
 
     function updateAdmin(Request $request, $id) {
         $admin = Admin::find($id);
-    
+
         $validateData = $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -182,9 +182,9 @@ class AdminController extends Controller
             'role' => 'required',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-    
+
         if ($request->hasFile('image')) {
-            $imageName = time() . '.' . $request->image->extension();  
+            $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('image/admin'), $imageName);
             $admin->image = $imageName;
         } else {
@@ -192,17 +192,17 @@ class AdminController extends Controller
                 $admin->image = 'profil.jpg';
             }
         }
-        
-    
+
+
         if (!$admin) {
             return redirect()->route('admin')->with('error', 'User tidak ditemukan');
         }
 
         $admin->update($validateData);
-    
+
         return redirect()->route('admin')->with('success', 'Admin berhasil diperbarui');
     }
-    
+
 
 
     function destroyAdmin($id){
