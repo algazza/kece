@@ -19,11 +19,6 @@ return new class extends Migration
             $table->bigInteger('nik');
             $table->string('pekerjaan');
             $table->text('alamat');
-            // $table->bigInteger('total_pinjaman')->nullable();
-            // $table->string('jangka_waktu')->nullable();
-            // $table->string('jenis_angunan')->nullable();
-            // $table->string('perhitungan_bunga')->nullable();
-            // $table->string('penghasilan_perbulan')->nullable();
             $table->text('catatan')->nullable();
             $table->string('jenis')->nullable();
             $table->bigInteger('code')->nullable();
