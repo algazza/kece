@@ -13,7 +13,7 @@ import { TabelKredit } from "../helper";
 
 const TabelBiaya = () => {
   return (
-    <div>
+    <div className="overflow-auto">
       <h3 className={`${styles.heading5} text-black my-4 `}>
         Tabel Biaya
       </h3>
