@@ -39,12 +39,12 @@ const PopUpCoop = ({
         </div>
         <p className="mt-4 text-sm">Silahkan lanjut jika berminat</p>
         <div className="flex flex-col sm:flex-row gap-4 mt-4">
-          <button
+        <Link
             className="border-2 border-gray-600 px-4 py-2 rounded-md text-gray-600 font-semibold text-center"
-            onClick={() => setOpenModal(!openModal)}
+            to={"/"}
           >
-            Kembali
-          </button>
+            Kembali ke Home
+          </Link>
           <a
             className="border-2 border-[#12a50b] px-4 py-2 rounded-md text-[#12a50b] font-semibold text-center"
             href={`https://wa.me/+62${nomorInduk}?text=Saya%20${nama}%20pengajuan%20${jenis}`}
